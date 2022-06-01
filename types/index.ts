@@ -4,24 +4,23 @@ export interface Gem {
   primary_attribute: string;
 }
 
-export interface Reward {
+export interface QuestReward {
   item_id: string;
   classes?: string[];
 }
 
-export interface QuestRewards {
-  quest_id: string;
-  quest: string;
-  act: string;
-  rewards: Reward[];
+export interface VendorReward {
+  item_id: string;
+  classes?: string[];
+  npc: string;
 }
 
-export interface VendorRewards {
+export interface Quest {
   quest_id: string;
   quest: string;
   act: string;
-  rewards: Reward[];
-  npc: string;
+  quest_rewards: QuestReward[];
+  vendor_rewards: VendorReward[];
 }
 
 export interface Area {

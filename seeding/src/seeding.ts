@@ -1,11 +1,19 @@
 import { cargoQuery, getImageUrl } from "./wiki";
-import {
-  Area,
-  Gem,
-  Monster,
-  QuestRewards as QuestReward,
-  VendorRewards,
-} from "../../types";
+import { Area, Gem, Monster, Quest } from "../../types";
+
+function ensureRecord<K extends keyof any, T>(
+  record: Record<K, T>,
+  key: K,
+  defaultValue: T
+) {
+  let value = record[key];
+  if (value === undefined) {
+    value = defaultValue;
+    record[key] = value;
+  }
+
+  return value;
+}
 
 export async function getGems() {
   const queryResult = await cargoQuery({
@@ -37,6 +45,53 @@ export async function getGems() {
   return result;
 }
 
+export async function getQuests() {
+  const questRewards = await getQuestRewards();
+  const vendorRewards = await getVendorRewards();
+
+  const result: Record<Quest["quest_id"], Quest> = {};
+  for (const item of questRewards) {
+    let quest = result[item.quest_id];
+    if (!quest) {
+      quest = {
+        quest_id: item.quest_id,
+        quest: item.quest,
+        act: item.act,
+        quest_rewards: [],
+        vendor_rewards: [],
+      };
+      result[item.quest_id] = quest;
+    }
+
+    quest.quest_rewards.push({
+      item_id: item.item_id,
+      classes: item.classes?.split(",") || [],
+    });
+  }
+
+  for (const item of vendorRewards) {
+    let quest = result[item.quest_id];
+    if (!quest) {
+      quest = {
+        quest_id: item.quest_id,
+        quest: item.quest,
+        act: item.act,
+        quest_rewards: [],
+        vendor_rewards: [],
+      };
+      result[item.quest_id] = quest;
+    }
+
+    quest.vendor_rewards.push({
+      item_id: item.item_id,
+      classes: item.classes?.split(",") || [],
+      npc: item.npc,
+    });
+  }
+
+  return result;
+}
+
 export async function getQuestRewards() {
   const queryResult = await cargoQuery({
     tables: ["quest_rewards"],
@@ -50,26 +105,7 @@ export async function getQuestRewards() {
     order_by: ["act", "quest_id"],
   });
 
-  const result: Record<QuestReward["quest_id"], QuestReward> = {};
-  for (const item of queryResult) {
-    let questReward = result[item.quest_id];
-    if (!questReward) {
-      questReward = {
-        quest_id: item.quest_id,
-        quest: item.quest,
-        act: item.act,
-        rewards: [],
-      };
-      result[item.quest_id] = questReward;
-    }
-
-    questReward.rewards.push({
-      item_id: item.item_id,
-      classes: item.classes?.split(",") || [],
-    });
-  }
-
-  return result;
+  return queryResult;
 }
 
 export async function getVendorRewards() {
@@ -86,27 +122,7 @@ export async function getVendorRewards() {
     order_by: ["act", "quest_id"],
   });
 
-  const result: Record<VendorRewards["quest_id"], VendorRewards> = {};
-  for (const item of queryResult) {
-    let vendorReward = result[item.quest_id];
-    if (!vendorReward) {
-      vendorReward = {
-        quest_id: item.quest_id,
-        quest: item.quest,
-        act: item.act,
-        npc: item.npc,
-        rewards: [],
-      };
-      result[item.quest_id] = vendorReward;
-    }
-
-    vendorReward.rewards.push({
-      item_id: item.item_id,
-      classes: item.classes?.split(",") || [],
-    });
-  }
-
-  return result;
+  return queryResult;
 }
 
 export async function getAreas() {
