@@ -19,14 +19,14 @@ export async function main() {
   if (!fs.existsSync(persistPath))
     fs.mkdirSync(persistPath, { recursive: true });
 
-  // const gems = await getGems();
-  // persistData("gems", gems);
+  const gems = await getGems();
+  persistData("gems", gems);
 
   const quests = await getQuests();
   persistData("quests", quests);
 
-  // const areas = await getAreas();
-  // persistData("areas", areas);
+  const areas = await getAreas();
+  persistData("areas", areas);
 }
 
 main();
