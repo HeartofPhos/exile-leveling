@@ -1,0 +1,8664 @@
+[
+  {
+    "page": "Added Cold Damage Support",
+    "act": "1",
+    "classes": "Ranger,Scion,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Added Fire Damage Support",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Templar",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Added Lightning Damage Support",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Additional Accuracy Support",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Templar",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Ancestral Call Support",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Ancestral Protector",
+    "act": "1",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Animate Weapon",
+    "act": "1",
+    "classes": "Scion,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Arc",
+    "act": "1",
+    "classes": "Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Arcane Surge Support",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar",
+    "npc": "Nessa",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Arcane Surge Support",
+    "act": "1",
+    "classes": "Witch",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Arrow Nova Support",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Ballista Totem Support",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Barrage",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Bear Trap",
+    "act": "1",
+    "classes": "Marauder,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Blade Trap",
+    "act": "1",
+    "classes": "Ranger,Shadow,Scion",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Blade Vortex",
+    "act": "1",
+    "classes": "Ranger,Scion,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Blastchain Mine Support",
+    "act": "1",
+    "classes": "Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Blazing Salvo",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Blight",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Blind Support",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Blink Arrow",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Blood and Sand",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Bodyswap",
+    "act": "1",
+    "classes": "Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Bone Offering",
+    "act": "1",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Burning Arrow",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Caustic Arrow",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Chain Hook",
+    "act": "1",
+    "classes": "Duelist,Marauder,Scion",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Chance to Bleed Support",
+    "act": "1",
+    "classes": "Duelist",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Chance to Bleed Support",
+    "act": "1",
+    "classes": "Marauder,Ranger,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Chance to Flee Support",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Chance to Poison Support",
+    "act": "1",
+    "classes": "Ranger,Scion",
+    "npc": "Nessa",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Chance to Poison Support",
+    "act": "1",
+    "classes": "Shadow",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Clarity",
+    "act": "1",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Cleave",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Cobra Lash",
+    "act": "1",
+    "classes": "Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Combustion Support",
+    "act": "1",
+    "classes": "Marauder,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Contagion",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Conversion Trap",
+    "act": "1",
+    "classes": "Ranger,Scion,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Creeping Frost",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Dash",
+    "act": "1",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Decoy Totem",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Detonate Dead",
+    "act": "1",
+    "classes": "Ranger,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Devouring Totem",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Double Strike",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Dual Strike",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Earthbreaker Support",
+    "act": "1",
+    "classes": "Marauder,Templar,Duelist,Scion",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Earthshatter",
+    "act": "1",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Efficacy Support",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Elemental Hit",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Elemental Proliferation Support",
+    "act": "1",
+    "classes": "Scion,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Elemental Proliferation Support",
+    "act": "1",
+    "classes": "Templar",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Enduring Cry",
+    "act": "1",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Essence Drain",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Ethereal Knives",
+    "act": "1",
+    "classes": "Marauder,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Explosive Trap",
+    "act": "1",
+    "classes": "Ranger,Scion,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Exsanguinate",
+    "act": "1",
+    "classes": "Marauder,Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Fire Trap",
+    "act": "1",
+    "classes": "Ranger,Scion,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Fireball",
+    "act": "1",
+    "classes": "Marauder,Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Flame Dash",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Flame Surge",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Flame Wall",
+    "act": "1",
+    "classes": "Witch,Templar,Shadow,Scion",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Flesh Offering",
+    "act": "1",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Flicker Strike",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Freezing Pulse",
+    "act": "1",
+    "classes": "Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Frost Blades",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Frost Bomb",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Frost Wall",
+    "act": "1",
+    "classes": "Duelist,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Frostblink",
+    "act": "1",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Frostbolt",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Galvanic Arrow",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Glacial Hammer",
+    "act": "1",
+    "classes": "Duelist,Marauder,Templar",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Ground Slam",
+    "act": "1",
+    "classes": "Duelist,Marauder,Templar",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Heavy Strike",
+    "act": "1",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Holy Flame Totem",
+    "act": "1",
+    "classes": "Marauder,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Ice Nova",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Ice Shot",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Ice Spear",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Icicle Mine",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Incinerate",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Increased Critical Strikes Support",
+    "act": "1",
+    "classes": "Ranger,Scion,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Infernal Blow",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Infernal Legion Support",
+    "act": "1",
+    "classes": "Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Infused Channelling Support",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Intimidating Cry",
+    "act": "1",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Kinetic Bolt",
+    "act": "1",
+    "classes": "Ranger,Scion,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Knockback Support",
+    "act": "1",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Lacerate",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Templar",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Leap Slam",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Lesser Multiple Projectiles Support",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Life Gain on Hit Support",
+    "act": "1",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Lifetap Support",
+    "act": "1",
+    "classes": "Marauder,Templar,Duelist,Scion",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Lightning Arrow",
+    "act": "1",
+    "classes": "Duelist,Ranger,Shadow",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Lightning Strike",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion,Shadow,Templar",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Lightning Tendrils",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Lightning Trap",
+    "act": "1",
+    "classes": "Ranger,Scion,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Lightning Warp",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Maim Support",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Manabond",
+    "act": "1",
+    "classes": "Templar,Witch,Shadow,Scion",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Melee Splash Support",
+    "act": "1",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Minion Damage Support",
+    "act": "1",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Mirage Archer Support",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Molten Shell",
+    "act": "1",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Molten Strike",
+    "act": "1",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Multiple Traps Support",
+    "act": "1",
+    "classes": "Ranger,Scion,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Onslaught Support",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Shadow,Templar",
+    "npc": "Nessa",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Onslaught Support",
+    "act": "1",
+    "classes": "Scion",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Orb of Storms",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Perforate",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Pierce Support",
+    "act": "1",
+    "classes": "Duelist,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Pierce Support",
+    "act": "1",
+    "classes": "Ranger",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Poisonous Concoction",
+    "act": "1",
+    "classes": "Duelist,Shadow,Scion,Ranger",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Power Siphon",
+    "act": "1",
+    "classes": "Scion,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Precision",
+    "act": "1",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Puncture",
+    "act": "1",
+    "classes": "Duelist,Ranger,Shadow",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Purifying Flame",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Rain of Arrows",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Raise Zombie",
+    "act": "1",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Reave",
+    "act": "1",
+    "classes": "Duelist,Ranger,Shadow",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Reckoning",
+    "act": "1",
+    "classes": "Duelist,Marauder,Templar",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Rejuvenation Totem",
+    "act": "1",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Riposte",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Shadow",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Rolling Magma",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Ruthless Support",
+    "act": "1",
+    "classes": "Duelist,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Ruthless Support",
+    "act": "1",
+    "classes": "Marauder",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Scorching Ray",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Searing Bond",
+    "act": "1",
+    "classes": "Marauder,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Shattering Steel",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Shield Charge",
+    "act": "1",
+    "classes": "Duelist,Marauder,Templar",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Shield Crush",
+    "act": "1",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Shrapnel Ballista",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Siege Ballista",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Siphoning Trap",
+    "act": "1",
+    "classes": "Scion,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Smite",
+    "act": "1",
+    "classes": "Marauder,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Smoke Mine",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Spark",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Spectral Helix",
+    "act": "1",
+    "classes": "Marauder,Templar,Duelist,Ranger,Shadow,Scion",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Spectral Throw",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Templar",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Spell Cascade Support",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Spell Totem Support",
+    "act": "1",
+    "classes": "Marauder,Scion,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Spirit Offering",
+    "act": "1",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Split Arrow",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Splitting Steel",
+    "act": "1",
+    "classes": "Duelist,Scion,Ranger",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Static Strike",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Steelskin",
+    "act": "1",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Storm Brand",
+    "act": "1",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Storm Burst",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Storm Call",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Stormblast Mine",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Stun Support",
+    "act": "1",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Summon Holy Relic",
+    "act": "1",
+    "classes": "Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Summon Phantasm Support",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Summon Raging Spirit",
+    "act": "1",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Summon Skeletons",
+    "act": "1",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Sunder",
+    "act": "1",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Sweep",
+    "act": "1",
+    "classes": "Duelist,Marauder,Templar",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Swift Assembly Support",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Toxic Rain",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Trap Support",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Unbound Ailments Support",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Unearth",
+    "act": "1",
+    "classes": "Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Venom Gyre",
+    "act": "1",
+    "classes": "Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Vigilant Strike",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Viper Strike",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Nessa",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Vitality",
+    "act": "1",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Void Manipulation Support",
+    "act": "1",
+    "classes": "Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Volatile Dead",
+    "act": "1",
+    "classes": "Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Volley Support",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Voltaxic Burst",
+    "act": "1",
+    "classes": "Shadow,Scion,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "War Banner",
+    "act": "1",
+    "classes": "Duelist,Marauder,Ranger,Scion,Templar",
+    "npc": "Nessa",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Whirling Blades",
+    "act": "1",
+    "classes": "Duelist,Ranger,Shadow",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Wintertide Brand",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Wither",
+    "act": "1",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Withering Step",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion,Shadow,Witch",
+    "npc": "Nessa",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Ancestral Cry",
+    "act": "2",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Arcane Cloak",
+    "act": "2",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Arctic Armour",
+    "act": "2",
+    "classes": "Duelist,Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Blade Blast",
+    "act": "2",
+    "classes": "Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Blood Rage",
+    "act": "2",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Bloodlust Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Templar",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Bloodlust Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Templar",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Brand Recall",
+    "act": "2",
+    "classes": "Marauder,Scion,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Close Combat Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Templar",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Close Combat Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Templar",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Cold Snap",
+    "act": "2",
+    "classes": "Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Cold to Fire Support",
+    "act": "2",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Cold to Fire Support",
+    "act": "2",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Concentrated Effect Support",
+    "act": "2",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Controlled Destruction Support",
+    "act": "2",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Controlled Destruction Support",
+    "act": "2",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Corrupting Fever",
+    "act": "2",
+    "classes": "Marauder,Duelist,Scion,Templar",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Cruelty Support",
+    "act": "2",
+    "classes": "Marauder,Templar,Witch,Scion,Duelist",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Culling Strike Support",
+    "act": "2",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Culling Strike Support",
+    "act": "2",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Damage on Full Life Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Damage on Full Life Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Deadly Ailments Support",
+    "act": "2",
+    "classes": "Duelist,Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Deadly Ailments Support",
+    "act": "2",
+    "classes": "Duelist,Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Defiance Banner",
+    "act": "2",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Desecrate",
+    "act": "2",
+    "classes": "Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Elemental Damage with Attacks Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Templar",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Elemental Damage with Attacks Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Templar",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Elemental Focus Support",
+    "act": "2",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Endurance Charge on Melee Stun Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Endurance Charge on Melee Stun Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Ensnaring Arrow",
+    "act": "2",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Faster Attacks Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Templar",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Faster Attacks Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Templar",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Faster Casting Support",
+    "act": "2",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Faster Casting Support",
+    "act": "2",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Flesh and Stone",
+    "act": "2",
+    "classes": "Duelist,Marauder,Scion",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Forbidden Rite",
+    "act": "2",
+    "classes": "Witch,Shadow,Scion",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Frenzy",
+    "act": "2",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Herald of Agony",
+    "act": "2",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Herald of Ash",
+    "act": "2",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Herald of Ice",
+    "act": "2",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Herald of Purity",
+    "act": "2",
+    "classes": "Duelist,Marauder,Scion,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Herald of Thunder",
+    "act": "2",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Increased Critical Damage Support",
+    "act": "2",
+    "classes": "Ranger,Scion,Shadow,Witch",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Iron Grip Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Ranger,Scion,Templar",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Iron Grip Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Ranger,Scion,Templar",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Iron Will Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Iron Will Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Melee Physical Damage Support",
+    "act": "2",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Minion Life Support",
+    "act": "2",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Minion Speed Support",
+    "act": "2",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Minion Speed Support",
+    "act": "2",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Nightblade Support",
+    "act": "2",
+    "classes": "Ranger,Scion,Shadow",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Nightblade Support",
+    "act": "2",
+    "classes": "Ranger,Scion,Shadow",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Physical to Lightning Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Templar",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Physical to Lightning Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Templar",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Plague Bearer",
+    "act": "2",
+    "classes": "Duelist",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Point Blank Support",
+    "act": "2",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Point Blank Support",
+    "act": "2",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Power Charge On Critical Support",
+    "act": "2",
+    "classes": "Ranger,Scion,Shadow,Witch",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Power Charge On Critical Support",
+    "act": "2",
+    "classes": "Ranger,Scion,Shadow,Witch",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Predator Support",
+    "act": "2",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Predator Support",
+    "act": "2",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Rage Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Templar",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Rage Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Templar",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Righteous Fire",
+    "act": "2",
+    "classes": "Marauder,Scion,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Seismic Cry",
+    "act": "2",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Shockwave Support",
+    "act": "2",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Summon Skitterbots",
+    "act": "2",
+    "classes": "Ranger,Scion,Shadow,Witch",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Tempest Shield",
+    "act": "2",
+    "classes": "Duelist,Marauder,Scion,Shadow,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Trap and Mine Damage Support",
+    "act": "2",
+    "classes": "Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Trap and Mine Damage Support",
+    "act": "2",
+    "classes": "Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "The Root of the Problem",
+    "quest_id": "a2q9"
+  },
+  {
+    "page": "Trinity Support",
+    "act": "2",
+    "classes": "Witch,Duelist,Ranger,Templar,Scion",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Vicious Projectiles Support",
+    "act": "2",
+    "classes": "Duelist,Ranger,Scion",
+    "npc": "Yeena",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Wave of Conviction",
+    "act": "2",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Yeena",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Added Chaos Damage Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Added Cold Damage Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Added Fire Damage Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Added Lightning Damage Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Additional Accuracy Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Advanced Traps Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Advanced Traps Support",
+    "act": "3",
+    "classes": "Ranger,Scion,Shadow,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Ancestral Call Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Ancestral Cry",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Ancestral Protector",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Ancestral Warchief",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Ancestral Warchief",
+    "act": "3",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Anger",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Anger",
+    "act": "3",
+    "classes": "Duelist,Marauder,Ranger,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Animate Guardian",
+    "act": "3",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Animate Guardian",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Animate Weapon",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Arc",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Arcane Cloak",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Arcane Surge Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Archmage Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Archmage Support",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Arctic Armour",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Armageddon Brand",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Armageddon Brand",
+    "act": "3",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Arrogance Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Arrogance Support",
+    "act": "3",
+    "classes": "Marauder,Templar,Duelist,Scion",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Arrow Nova Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Artillery Ballista",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Artillery Ballista",
+    "act": "3",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Assassin's Mark",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Assassin's Mark",
+    "act": "3",
+    "classes": "Ranger,Shadow,Duelist,Scion",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Ball Lightning",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Ball Lightning",
+    "act": "3",
+    "classes": "Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Ballista Totem Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Bane",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Bane",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Barrage",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Battlemage's Cry",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Battlemage's Cry",
+    "act": "3",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Bear Trap",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Blade Blast",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Blade Flurry",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Blade Flurry",
+    "act": "3",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Blade Trap",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Blade Vortex",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Bladefall",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Bladefall",
+    "act": "3",
+    "classes": "Ranger,Scion,Shadow,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Bladestorm",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Bladestorm",
+    "act": "3",
+    "classes": "Duelist,Marauder,Scion",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Blasphemy Support",
+    "act": "3",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Blasphemy Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Blast Rain",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Blast Rain",
+    "act": "3",
+    "classes": "Duelist,Ranger,Scion",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Blastchain Mine Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Blazing Salvo",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Blight",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Blind Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Blink Arrow",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Blood and Sand",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Blood Rage",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Bloodlust Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Bloodthirst Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Bloodthirst Support",
+    "act": "3",
+    "classes": "Marauder,Duelist,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Bodyswap",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Bone Offering",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Boneshatter",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Boneshatter",
+    "act": "3",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Brand Recall",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Burning Arrow",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Burning Damage Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Burning Damage Support",
+    "act": "3",
+    "classes": "Marauder,Scion,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Caustic Arrow",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Chain Hook",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Chance to Bleed Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Chance to Flee Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Chance to Poison Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Charged Dash",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Charged Dash",
+    "act": "3",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Templar",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Charged Mines Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Charged Mines Support",
+    "act": "3",
+    "classes": "Scion,Shadow,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Charged Traps Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Charged Traps Support",
+    "act": "3",
+    "classes": "Scion,Shadow,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Clarity",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Cleave",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Close Combat Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Cobra Lash",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Cold Penetration Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Cold Penetration Support",
+    "act": "3",
+    "classes": "Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Cold Snap",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Cold to Fire Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Combustion Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Concentrated Effect Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Conductivity",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Conductivity",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Consecrated Path",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Consecrated Path",
+    "act": "3",
+    "classes": "Marauder,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Contagion",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Controlled Destruction Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Conversion Trap",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Convocation",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Convocation",
+    "act": "3",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Corrupting Fever",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Crackling Lance",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Crackling Lance",
+    "act": "3",
+    "classes": "Shadow,Templar,Witch,Scion",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Creeping Frost",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Cremation",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Cremation",
+    "act": "3",
+    "classes": "Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Critical Strike Affliction Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Critical Strike Affliction Support",
+    "act": "3",
+    "classes": "Ranger,Scion,Shadow",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Cruelty Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Culling Strike Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Cyclone",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Cyclone",
+    "act": "3",
+    "classes": "Duelist,Marauder,Ranger,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Damage on Full Life Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Dark Pact",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Dark Pact",
+    "act": "3",
+    "classes": "Scion,Shadow,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Dash",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Deadly Ailments Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Decoy Totem",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Defiance Banner",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Desecrate",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Despair",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Despair",
+    "act": "3",
+    "classes": "Ranger,Scion,Shadow,Witch",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Determination",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Determination",
+    "act": "3",
+    "classes": "Duelist,Marauder,Templar",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Detonate Dead",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Devouring Totem",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Discharge",
+    "act": "3",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Discharge",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Discipline",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Discipline",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Divine Blessing Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Divine Blessing Support",
+    "act": "3",
+    "classes": "Templar",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Divine Ire",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Divine Ire",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Dominating Blow",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Dominating Blow",
+    "act": "3",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Double Strike",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Dread Banner",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Dread Banner",
+    "act": "3",
+    "classes": "Duelist,Marauder,Ranger,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Dual Strike",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Earthbreaker Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Earthquake",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Earthquake",
+    "act": "3",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Earthshatter",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Efficacy Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Elemental Army Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Elemental Army Support",
+    "act": "3",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Elemental Damage with Attacks Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Elemental Focus Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Elemental Hit",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Elemental Proliferation Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Elemental Weakness",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Elemental Weakness",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Endurance Charge on Melee Stun Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Enduring Cry",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Energy Blade",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Energy Blade",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Energy Leech Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Energy Leech Support",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Enfeeble",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Enfeeble",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Ensnaring Arrow",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Essence Drain",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Ethereal Knives",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Explosive Arrow",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Explosive Arrow",
+    "act": "3",
+    "classes": "Duelist,Marauder,Ranger",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Explosive Concoction",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Explosive Concoction",
+    "act": "3",
+    "classes": "Duelist,Shadow,Scion,Ranger",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Explosive Trap",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Exsanguinate",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Eye of Winter",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Eye of Winter",
+    "act": "3",
+    "classes": "Templar,Shadow,Scion,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Faster Attacks Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Faster Casting Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Faster Projectiles Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Faster Projectiles Support",
+    "act": "3",
+    "classes": "Ranger,Scion,Shadow,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Feeding Frenzy Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Feeding Frenzy Support",
+    "act": "3",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Fire Penetration Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Fire Penetration Support",
+    "act": "3",
+    "classes": "Marauder,Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Fire Trap",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Fireball",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Firestorm",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Firestorm",
+    "act": "3",
+    "classes": "Shadow,Scion,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Flame Dash",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Flame Surge",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Flame Wall",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Flameblast",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Flameblast",
+    "act": "3",
+    "classes": "Marauder,Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Flamethrower Trap",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Flamethrower Trap",
+    "act": "3",
+    "classes": "Scion,Shadow,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Flammability",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Flammability",
+    "act": "3",
+    "classes": "Marauder,Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Flesh and Stone",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Flesh Offering",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Flicker Strike",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Focused Ballista Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Focused Ballista Support",
+    "act": "3",
+    "classes": "Duelist,Shadow,Scion,Ranger",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Forbidden Rite",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Fork Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Fork Support",
+    "act": "3",
+    "classes": "Duelist,Ranger,Scion,Shadow,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Fortify Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Fortify Support",
+    "act": "3",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Templar",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Freezing Pulse",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Frenzy",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Frost Blades",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Frost Bomb",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Frost Wall",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Frostbite",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Frostbite",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch,Ranger",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Frostblink",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Frostbolt",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Galvanic Arrow",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "General's Cry",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "General's Cry",
+    "act": "3",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Generosity Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Generosity Support",
+    "act": "3",
+    "classes": "Marauder,Scion,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Glacial Cascade",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Glacial Cascade",
+    "act": "3",
+    "classes": "Shadow,Templar,Witch,Scion",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Glacial Hammer",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Grace",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Grace",
+    "act": "3",
+    "classes": "Duelist,Ranger,Shadow",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Ground Slam",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Haste",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Haste",
+    "act": "3",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Hatred",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Hatred",
+    "act": "3",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Witch",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Heavy Strike",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Herald of Agony",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Herald of Ash",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Herald of Ice",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Herald of Purity",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Herald of Thunder",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Hexblast",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Hexblast",
+    "act": "3",
+    "classes": "Shadow,Templar,Witch,Scion",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "High-Impact Mine Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "High-Impact Mine Support",
+    "act": "3",
+    "classes": "Scion,Shadow,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Holy Flame Totem",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Hypothermia Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Hypothermia Support",
+    "act": "3",
+    "classes": "Duelist,Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Ice Bite Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Ice Bite Support",
+    "act": "3",
+    "classes": "Duelist,Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Ice Crash",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Ice Crash",
+    "act": "3",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Templar",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Ice Nova",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Ice Shot",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Ice Spear",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Ice Trap",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Ice Trap",
+    "act": "3",
+    "classes": "Scion,Shadow,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Icicle Mine",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Impale Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Impale Support",
+    "act": "3",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Impending Doom Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Impending Doom Support",
+    "act": "3",
+    "classes": "Shadow,Templar,Witch,Scion",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Incinerate",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Increased Critical Damage Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Increased Critical Strikes Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Increased Duration Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Increased Duration Support",
+    "act": "3",
+    "classes": "Duelist,Marauder,Templar",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Infernal Blow",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Infernal Cry",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Infernal Cry",
+    "act": "3",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Infernal Legion Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Infused Channelling Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Innervate Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Innervate Support",
+    "act": "3",
+    "classes": "Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Inspiration Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Inspiration Support",
+    "act": "3",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Intensify Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Intensify Support",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Intimidating Cry",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Iron Grip Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Iron Will Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Item Rarity Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Item Rarity Support",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Kinetic Blast",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Kinetic Blast",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Kinetic Bolt",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Knockback Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Lacerate",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Lancing Steel",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Lancing Steel",
+    "act": "3",
+    "classes": "Duelist,Ranger,Scion",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Leap Slam",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Less Duration Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Less Duration Support",
+    "act": "3",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Lesser Multiple Projectiles Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Life Gain on Hit Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Life Leech Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Life Leech Support",
+    "act": "3",
+    "classes": "Duelist,Marauder,Ranger,Scion,Shadow,Templar",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Lifetap Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Lightning Arrow",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Lightning Penetration Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Lightning Penetration Support",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Lightning Spire Trap",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Lightning Spire Trap",
+    "act": "3",
+    "classes": "Scion,Shadow,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Lightning Strike",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Lightning Tendrils",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Lightning Trap",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Lightning Warp",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Maim Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Malevolence",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Malevolence",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Mana Leech Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Mana Leech Support",
+    "act": "3",
+    "classes": "Duelist,Ranger,Scion,Shadow,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Manabond",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Meat Shield Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Meat Shield Support",
+    "act": "3",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Melee Physical Damage Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Melee Splash Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Minion Damage Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Minion Life Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Minion Speed Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Mirage Archer Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Mirror Arrow",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Molten Shell",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Molten Strike",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Multiple Traps Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Nightblade Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Onslaught Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Orb of Storms",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Penance Brand",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Penance Brand",
+    "act": "3",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Perforate",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Pestilent Strike",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Pestilent Strike",
+    "act": "3",
+    "classes": "Ranger,Scion,Shadow",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Petrified Blood",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Petrified Blood",
+    "act": "3",
+    "classes": "Marauder,Duelist,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Physical to Lightning Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Pierce Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Pinpoint Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Pinpoint Support",
+    "act": "3",
+    "classes": "Shadow,Templar,Witch,Scion",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Plague Bearer",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Plague Bearer",
+    "act": "3",
+    "classes": "Ranger,Scion,Shadow",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Poacher's Mark",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Poacher's Mark",
+    "act": "3",
+    "classes": "Duelist,Ranger,Shadow,Scion",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Point Blank Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Poisonous Concoction",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Power Charge On Critical Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Power Siphon",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Precision",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Predator Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Pride",
+    "act": "3",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Pride",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Pulverise Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Pulverise Support",
+    "act": "3",
+    "classes": "Duelist,Marauder,Ranger,Scion,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Puncture",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Punishment",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Punishment",
+    "act": "3",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Purifying Flame",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Purity of Elements",
+    "act": "3",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Purity of Elements",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Purity of Fire",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Purity of Fire",
+    "act": "3",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Purity of Ice",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Purity of Ice",
+    "act": "3",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Purity of Lightning",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Purity of Lightning",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Pyroclast Mine",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Pyroclast Mine",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Rage Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Rage Vortex",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Rage Vortex",
+    "act": "3",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Rain of Arrows",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Raise Spectre",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Raise Spectre",
+    "act": "3",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Raise Zombie",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Rallying Cry",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Rallying Cry",
+    "act": "3",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Reap",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Reap",
+    "act": "3",
+    "classes": "Marauder,Templar,Witch,Scion,Shadow",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Reave",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Reckoning",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Rejuvenation Totem",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Righteous Fire",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Riposte",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Rolling Magma",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Ruthless Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Scorching Ray",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Scourge Arrow",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Scourge Arrow",
+    "act": "3",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Searing Bond",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Second Wind Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Second Wind Support",
+    "act": "3",
+    "classes": "Duelist,Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Seismic Cry",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Seismic Trap",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Seismic Trap",
+    "act": "3",
+    "classes": "Scion,Shadow,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Shattering Steel",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Shield Charge",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Shield Crush",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Shock Nova",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Shock Nova",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Shockwave Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Shockwave Totem",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Shockwave Totem",
+    "act": "3",
+    "classes": "Marauder,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Shrapnel Ballista",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Siege Ballista",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Siphoning Trap",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Slower Projectiles Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Slower Projectiles Support",
+    "act": "3",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Smite",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Smoke Mine",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Sniper's Mark",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Sniper's Mark",
+    "act": "3",
+    "classes": "Duelist,Ranger,Shadow,Scion",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Soulrend",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Soulrend",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Spark",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Spectral Helix",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Spectral Shield Throw",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Spectral Shield Throw",
+    "act": "3",
+    "classes": "Duelist,Marauder,Ranger,Scion,Templar",
+    "npc": "Maramoa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Spectral Throw",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Spell Cascade Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Spell Totem Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Spellslinger",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Spellslinger",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Spirit Offering",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Split Arrow",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Splitting Steel",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Static Strike",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Steelskin",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Storm Brand",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Storm Burst",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Storm Call",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Storm Rain",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Storm Rain",
+    "act": "3",
+    "classes": "Duelist,Shadow,Scion,Ranger",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Stormbind",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Stormbind",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Stormblast Mine",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Stun Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Summon Holy Relic",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Summon Phantasm Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Summon Raging Spirit",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Summon Reaper",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Summon Reaper",
+    "act": "3",
+    "classes": "Witch,Templar,Scion",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Summon Skeletons",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Summon Skitterbots",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Sunder",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Sweep",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Swift Affliction Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Swift Affliction Support",
+    "act": "3",
+    "classes": "Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Swift Assembly Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Swiftbrand Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Swiftbrand Support",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Tectonic Slam",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Tectonic Slam",
+    "act": "3",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Tempest Shield",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Temporal Chains",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Temporal Chains",
+    "act": "3",
+    "classes": "Witch,Scion,Shadow,Ranger",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Tornado Shot",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Tornado Shot",
+    "act": "3",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Toxic Rain",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Trap and Mine Damage Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Trap Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Trinity Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Unbound Ailments Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Unearth",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Urgent Orders Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Urgent Orders Support",
+    "act": "3",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Vengeance",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Vengeance",
+    "act": "3",
+    "classes": "Duelist,Marauder,Templar",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Venom Gyre",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Vicious Projectiles Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Vigilant Strike",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Viper Strike",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Vitality",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Void Manipulation Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Volatile Dead",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Volley Support",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Voltaxic Burst",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Vortex",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Vortex",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Vulnerability",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Vulnerability",
+    "act": "3",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "War Banner",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Warlord's Mark",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Warlord's Mark",
+    "act": "3",
+    "classes": "Marauder,Duelist,Ranger,Scion",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Wave of Conviction",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Whirling Blades",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Wild Strike",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Wild Strike",
+    "act": "3",
+    "classes": "Ranger,Scion,Shadow",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Winter Orb",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Winter Orb",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Wintertide Brand",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Wither",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Withering Step",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Wrath",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Wrath",
+    "act": "3",
+    "classes": "Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Zealotry",
+    "act": "3",
+    "npc": "Siosa",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Zealotry",
+    "act": "3",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Clarissa",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Ambush",
+    "act": "4",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Arcanist Brand",
+    "act": "4",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Barrage Support",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Behead Support",
+    "act": "4",
+    "classes": "Templar,Scion,Marauder,Duelist",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Berserk",
+    "act": "4",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Bonechill Support",
+    "act": "4",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Brutality Support",
+    "act": "4",
+    "classes": "Duelist,Marauder,Scion",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Cast On Critical Strike Support",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Cast on Death Support",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Cast on Melee Kill Support",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Cast when Damage Taken Support",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Cast when Stunned Support",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Cast while Channelling Support",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Chain Support",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Cluster Traps Support",
+    "act": "4",
+    "classes": "Ranger,Scion,Shadow,Witch",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Decay Support",
+    "act": "4",
+    "classes": "Scion,Shadow,Witch",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Destructive Link",
+    "act": "4",
+    "classes": "Scion,Shadow,Witch",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Eternal Blessing Support",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Fist of War Support",
+    "act": "4",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Flame Link",
+    "act": "4",
+    "classes": "Scion,Marauder,Templar,Duelist",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Frost Shield",
+    "act": "4",
+    "classes": "Witch,Templar,Shadow,Scion",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Greater Multiple Projectiles Support",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Greater Volley Support",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Hextouch Support",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Hydrosphere",
+    "act": "4",
+    "classes": "Witch,Templar,Shadow,Scion",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Ignite Proliferation Support",
+    "act": "4",
+    "classes": "Scion,Templar,Witch",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Immolate Support",
+    "act": "4",
+    "classes": "Marauder,Scion,Templar,Witch",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Immortal Call",
+    "act": "4",
+    "classes": "Duelist,Marauder,Scion,Templar",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Increased Area of Effect Support",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Intuitive Link",
+    "act": "4",
+    "classes": "Duelist,Shadow,Ranger,Scion",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Mark On Hit Support",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Minefield Support",
+    "act": "4",
+    "classes": "Scion,Shadow,Witch",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Multiple Totems Support",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Multistrike Support",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Phase Run",
+    "act": "4",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Protective Link",
+    "act": "4",
+    "classes": "Scion,Marauder,Templar",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Sigil of Power",
+    "act": "4",
+    "classes": "Witch,Templar,Shadow,Scion",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Soul Link",
+    "act": "4",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Spell Echo Support",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Summon Carrion Golem",
+    "act": "4",
+    "classes": "Ranger,Scion,Shadow,Templar,Witch",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Summon Chaos Golem",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Summon Flame Golem",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Summon Ice Golem",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Summon Lightning Golem",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Summon Stone Golem",
+    "act": "4",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Temporal Rift",
+    "act": "4",
+    "classes": "Scion,Shadow,Ranger,Witch",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Tornado",
+    "act": "4",
+    "classes": "Ranger,Scion,Shadow",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Unleash Support",
+    "act": "4",
+    "classes": "Scion,Shadow,Templar,Witch",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Vampiric Link",
+    "act": "4",
+    "classes": "Scion,Duelist,Ranger",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Vile Toxins Support",
+    "act": "4",
+    "classes": "Ranger,Scion,Shadow",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Void Sphere",
+    "act": "4",
+    "classes": "Witch,Templar,Shadow,Scion",
+    "npc": "Petarus and Vanja",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Withering Touch Support",
+    "act": "4",
+    "classes": "Duelist,Ranger,Scion,Shadow",
+    "npc": "Petarus and Vanja",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Added Chaos Damage Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Added Cold Damage Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Added Fire Damage Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Added Lightning Damage Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Additional Accuracy Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Advanced Traps Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Ambush",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Ancestral Call Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Ancestral Cry",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Ancestral Protector",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Ancestral Warchief",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Anger",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Animate Guardian",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Animate Weapon",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Arc",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Arcane Cloak",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Arcanist Brand",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Archmage Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Arctic Armour",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Armageddon Brand",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Arrogance Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Arrow Nova Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Artillery Ballista",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Assassin's Mark",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Ball Lightning",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Ballista Totem Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Bane",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Barrage",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Barrage Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Battlemage's Cry",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Bear Trap",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Behead Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Berserk",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Blade Blast",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Blade Flurry",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Blade Trap",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Blade Vortex",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Bladefall",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Bladestorm",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Blasphemy Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Blast Rain",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Blastchain Mine Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Blazing Salvo",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Blight",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Blind Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Blink Arrow",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Blood and Sand",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Blood Rage",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Bloodlust Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Bloodthirst Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Bodyswap",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Bone Offering",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Bonechill Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Boneshatter",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Brand Recall",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Brutality Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Burning Arrow",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Burning Damage Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Cast On Critical Strike Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Cast on Death Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Cast on Melee Kill Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Cast when Damage Taken Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Cast when Stunned Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Cast while Channelling Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Caustic Arrow",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Chain Hook",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Chain Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Chance to Flee Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Charged Dash",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Charged Mines Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Charged Traps Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Clarity",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Cleave",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Cluster Traps Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Cobra Lash",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Cold Penetration Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Cold Snap",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Cold to Fire Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Combustion Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Concentrated Effect Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Conductivity",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Consecrated Path",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Contagion",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Conversion Trap",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Convocation",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Corrupting Fever",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Crackling Lance",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Creeping Frost",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Cremation",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Critical Strike Affliction Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Cruelty Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Culling Strike Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Cyclone",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Damage on Full Life Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Dark Pact",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Dash",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Decay Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Decoy Totem",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Defiance Banner",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Desecrate",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Despair",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Destructive Link",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Determination",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Detonate Dead",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Detonate Mines",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Devouring Totem",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Discharge",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Discipline",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Divine Blessing Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Divine Ire",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Dominating Blow",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Double Strike",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Dread Banner",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Dual Strike",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Earthbreaker Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Earthquake",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Earthshatter",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Efficacy Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Elemental Army Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Elemental Focus Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Elemental Hit",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Elemental Weakness",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Endurance Charge on Melee Stun Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Enduring Cry",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Energy Blade",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Energy Leech Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Enfeeble",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Ensnaring Arrow",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Essence Drain",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Eternal Blessing Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Ethereal Knives",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Explosive Arrow",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Explosive Concoction",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Explosive Trap",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Exsanguinate",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Eye of Winter",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Faster Projectiles Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Feeding Frenzy Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Fire Penetration Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Fire Trap",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Fireball",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Firestorm",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Fist of War Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Flame Dash",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Flame Link",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Flame Surge",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Flame Wall",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Flameblast",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Flamethrower Trap",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Flammability",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Flesh and Stone",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Flesh Offering",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Flicker Strike",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Focused Ballista Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Forbidden Rite",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Fork Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Fortify Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Freezing Pulse",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Frenzy",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Frost Blades",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Frost Bomb",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Frost Shield",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Frost Wall",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Frostbite",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Frostblink",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Frostbolt",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Galvanic Arrow",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "General's Cry",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Generosity Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Glacial Cascade",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Glacial Hammer",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Grace",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Greater Multiple Projectiles Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Greater Volley Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Ground Slam",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Haste",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Hatred",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Heavy Strike",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Herald of Agony",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Herald of Ash",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Herald of Ice",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Herald of Purity",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Herald of Thunder",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Hexblast",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Hextouch Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "High-Impact Mine Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Holy Flame Totem",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Hydrosphere",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Hypothermia Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Ice Bite Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Ice Crash",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Ice Nova",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Ice Shot",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Ice Spear",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Ice Trap",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Icicle Mine",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Ignite Proliferation Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Immolate Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Immortal Call",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Impale Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Impending Doom Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Incinerate",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Increased Area of Effect Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Increased Critical Damage Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Increased Critical Strikes Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Increased Duration Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Infernal Blow",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Infernal Cry",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Infernal Legion Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Infused Channelling Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Innervate Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Inspiration Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Intensify Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Intimidating Cry",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Intuitive Link",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Iron Grip Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Iron Will Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Item Rarity Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Kinetic Blast",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Kinetic Bolt",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Knockback Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Lacerate",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Lancing Steel",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Leap Slam",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Less Duration Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Lesser Multiple Projectiles Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Life Gain on Hit Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Life Leech Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Lifetap Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Lightning Arrow",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Lightning Penetration Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Lightning Spire Trap",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Lightning Strike",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Lightning Tendrils",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Lightning Trap",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Lightning Warp",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Maim Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Malevolence",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Mana Leech Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Manabond",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Mark On Hit Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Meat Shield Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Melee Physical Damage Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Melee Splash Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Minefield Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Minion Damage Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Minion Life Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Mirage Archer Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Mirror Arrow",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Molten Shell",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Molten Strike",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Multiple Totems Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Multiple Traps Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Multistrike Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Orb of Storms",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Penance Brand",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Perforate",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Pestilent Strike",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Petrified Blood",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Phase Run",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Physical to Lightning Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Pinpoint Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Poacher's Mark",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Point Blank Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Poisonous Concoction",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Power Charge On Critical Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Power Siphon",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Precision",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Pride",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Protective Link",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Pulverise Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Puncture",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Punishment",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Purifying Flame",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Purity of Elements",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Purity of Fire",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Purity of Ice",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Purity of Lightning",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Pyroclast Mine",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Rage Vortex",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Rain of Arrows",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Raise Spectre",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Raise Zombie",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Rallying Cry",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Reap",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Reave",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Reckoning",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Rejuvenation Totem",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Righteous Fire",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Riposte",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Rolling Magma",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Scorching Ray",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Scourge Arrow",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Searing Bond",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Second Wind Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Seismic Cry",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Seismic Trap",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Shattering Steel",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Shield Charge",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Shield Crush",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Shock Nova",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Shockwave Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Shockwave Totem",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Shrapnel Ballista",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Siege Ballista",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Sigil of Power",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Siphoning Trap",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Slower Projectiles Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Smite",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Smoke Mine",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Sniper's Mark",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Soul Link",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Soulrend",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Spark",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Spectral Helix",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Spectral Shield Throw",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Spectral Throw",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Spell Cascade Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Spell Echo Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Spell Totem Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Spellslinger",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Spirit Offering",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Split Arrow",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Splitting Steel",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Static Strike",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Steelskin",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Storm Brand",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Storm Burst",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Storm Call",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Storm Rain",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Stormbind",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Stormblast Mine",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Stun Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Summon Carrion Golem",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Summon Chaos Golem",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Summon Flame Golem",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Summon Holy Relic",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Summon Ice Golem",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Summon Lightning Golem",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Summon Phantasm Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Summon Raging Spirit",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Summon Reaper",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Summon Skeletons",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Summon Skitterbots",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Summon Stone Golem",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Sunder",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Sweep",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Swift Affliction Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Swift Assembly Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Swiftbrand Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Tectonic Slam",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Tempest Shield",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Temporal Chains",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Temporal Rift",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Tornado",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Tornado Shot",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Toxic Rain",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Trap Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Trinity Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Unbound Ailments Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Unearth",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Unleash Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Urgent Orders Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Vampiric Link",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Vengeance",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Venom Gyre",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Vicious Projectiles Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Vigilant Strike",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Vile Toxins Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Viper Strike",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Vitality",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Void Manipulation Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Void Sphere",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Volatile Dead",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Volley Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Voltaxic Burst",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Vortex",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Vulnerability",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "War Banner",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Warlord's Mark",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Wave of Conviction",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Whirling Blades",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Wild Strike",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Winter Orb",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Wintertide Brand",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Wither",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Withering Step",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Withering Touch Support",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Wrath",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Zealotry",
+    "act": "6",
+    "npc": "Lilly Roth",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  }
+]

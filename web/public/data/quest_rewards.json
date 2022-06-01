@@ -1,0 +1,3204 @@
+[
+  {
+    "page": "Added Cold Damage Support",
+    "act": "1",
+    "classes": "Ranger,Shadow,Scion",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Added Fire Damage Support",
+    "act": "1",
+    "classes": "Templar,Marauder,Duelist,Scion",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Added Lightning Damage Support",
+    "act": "1",
+    "classes": "Witch,Templar,Shadow,Scion",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Ancestral Call Support",
+    "act": "1",
+    "classes": "Templar,Marauder,Duelist,Scion",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Ancestral Protector",
+    "act": "1",
+    "classes": "Templar,Marauder,Duelist",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Arc",
+    "act": "1",
+    "classes": "Witch",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Arcane Surge Support",
+    "act": "1",
+    "classes": "Templar,Scion",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Arrow Nova Support",
+    "act": "1",
+    "classes": "Ranger",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Bear Trap",
+    "act": "1",
+    "classes": "Ranger,Shadow,Scion",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Blade Vortex",
+    "act": "1",
+    "classes": "Shadow,Scion",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Blazing Salvo",
+    "act": "1",
+    "classes": "Witch,Templar",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Blight",
+    "act": "1",
+    "classes": "Witch,Shadow",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Blink Arrow",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Blood and Sand",
+    "act": "1",
+    "classes": "Duelist",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Bodyswap",
+    "act": "1",
+    "classes": "Witch",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Book of Regrets (A Dirty Job)",
+    "act": "1",
+    "quest": "A Dirty Job",
+    "quest_id": "a1q8"
+  },
+  {
+    "page": "Book of Skill (The Dweller of the Deep)",
+    "act": "1",
+    "quest": "The Dweller of the Deep",
+    "quest_id": "a1q7"
+  },
+  {
+    "page": "Book of Skill (The Marooned Mariner)",
+    "act": "1",
+    "quest": "The Marooned Mariner",
+    "quest_id": "a1q6"
+  },
+  {
+    "page": "Book of Skill (The Way Forward)",
+    "act": "1",
+    "quest": "The Way Forward",
+    "quest_id": "a1q9"
+  },
+  {
+    "page": "Caustic Arrow",
+    "act": "1",
+    "classes": "Ranger",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Chain Hook",
+    "act": "1",
+    "classes": "Marauder",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Chance to Bleed Support",
+    "act": "1",
+    "classes": "Templar,Marauder,Scion",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Chance to Poison Support",
+    "act": "1",
+    "classes": "Witch,Duelist,Ranger,Scion",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Clarity",
+    "act": "1",
+    "classes": "Witch,Templar,Shadow",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Cleave",
+    "act": "1",
+    "classes": "Duelist",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Cobra Lash",
+    "act": "1",
+    "classes": "Shadow",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Combustion Support",
+    "act": "1",
+    "classes": "Witch,Templar",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Contagion",
+    "act": "1",
+    "classes": "Witch,Shadow",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Creeping Frost",
+    "act": "1",
+    "classes": "Witch",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Dash",
+    "act": "1",
+    "classes": "Duelist,Ranger,Shadow,Scion",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Decoy Totem",
+    "act": "1",
+    "classes": "Marauder,Duelist,Scion",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Detonate Dead",
+    "act": "1",
+    "classes": "Witch,Shadow",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Earthshatter",
+    "act": "1",
+    "classes": "Marauder,Duelist",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Efficacy Support",
+    "act": "1",
+    "classes": "Witch",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Elemental Hit",
+    "act": "1",
+    "classes": "Ranger",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Elemental Proliferation Support",
+    "act": "1",
+    "classes": "Witch,Shadow,Scion",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Enduring Cry",
+    "act": "1",
+    "classes": "Marauder,Duelist",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Essence Drain",
+    "act": "1",
+    "classes": "Witch,Shadow",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Ethereal Knives",
+    "act": "1",
+    "classes": "Shadow",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Explosive Trap",
+    "act": "1",
+    "classes": "Shadow",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Exsanguinate",
+    "act": "1",
+    "classes": "Scion",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Fire Trap",
+    "act": "1",
+    "classes": "Shadow",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Flame Dash",
+    "act": "1",
+    "classes": "Witch,Templar,Shadow,Scion",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Flame Wall",
+    "act": "1",
+    "classes": "Witch,Templar",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Flesh Offering",
+    "act": "1",
+    "classes": "Witch",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Freezing Pulse",
+    "act": "1",
+    "classes": "Witch,Shadow",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Frost Blades",
+    "act": "1",
+    "classes": "Ranger",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Frost Bomb",
+    "act": "1",
+    "classes": "Witch,Templar,Scion",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Frostblink",
+    "act": "1",
+    "classes": "Witch,Templar,Shadow,Scion",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Frostbolt",
+    "act": "1",
+    "classes": "Templar",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Galvanic Arrow",
+    "act": "1",
+    "classes": "Duelist,Ranger",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Ground Slam",
+    "act": "1",
+    "classes": "Marauder",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Holy Flame Totem",
+    "act": "1",
+    "classes": "Templar",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Ice Nova",
+    "act": "1",
+    "classes": "Witch,Templar,Scion",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Ice Shot",
+    "act": "1",
+    "classes": "Ranger",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Icicle Mine",
+    "act": "1",
+    "classes": "Shadow",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Infernal Blow",
+    "act": "1",
+    "classes": "Marauder",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Infernal Legion Support",
+    "act": "1",
+    "classes": "Witch",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Infused Channelling Support",
+    "act": "1",
+    "classes": "Witch,Templar,Shadow",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Intimidating Cry",
+    "act": "1",
+    "classes": "Marauder,Duelist",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Kinetic Bolt",
+    "act": "1",
+    "classes": "Witch",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Lacerate",
+    "act": "1",
+    "classes": "Duelist",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Leap Slam",
+    "act": "1",
+    "classes": "Templar,Marauder,Duelist,Scion",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Lesser Multiple Projectiles Support",
+    "act": "1",
+    "classes": "Duelist,Ranger,Shadow,Scion",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Lifetap Support",
+    "act": "1",
+    "classes": "Marauder,Templar,Duelist,Scion",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Lightning Arrow",
+    "act": "1",
+    "classes": "Ranger",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Lightning Strike",
+    "act": "1",
+    "classes": "Ranger",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Lightning Tendrils",
+    "act": "1",
+    "classes": "Witch,Templar,Scion",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Lightning Trap",
+    "act": "1",
+    "classes": "Shadow",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Lightning Warp",
+    "act": "1",
+    "classes": "Witch",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Maim Support",
+    "act": "1",
+    "classes": "Duelist",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Manabond",
+    "act": "1",
+    "classes": "Templar,Witch",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Medium Life Flask",
+    "act": "1",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Medium Mana Flask",
+    "act": "1",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Melee Splash Support",
+    "act": "1",
+    "classes": "Templar,Marauder,Duelist,Ranger,Scion",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Minion Damage Support",
+    "act": "1",
+    "classes": "Witch",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Mirage Archer Support",
+    "act": "1",
+    "classes": "Duelist,Ranger",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Molten Shell",
+    "act": "1",
+    "classes": "Marauder",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Molten Strike",
+    "act": "1",
+    "classes": "Templar,Marauder,Duelist,Scion",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Multiple Traps Support",
+    "act": "1",
+    "classes": "Shadow",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Onslaught Support",
+    "act": "1",
+    "classes": "Templar,Marauder,Duelist,Ranger,Shadow",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Orb of Storms",
+    "act": "1",
+    "classes": "Witch,Shadow",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Perforate",
+    "act": "1",
+    "classes": "Duelist",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Pierce Support",
+    "act": "1",
+    "classes": "Duelist,Shadow,Scion",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Poisonous Concoction",
+    "act": "1",
+    "classes": "Ranger",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Precision",
+    "act": "1",
+    "classes": "Duelist,Ranger",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Puncture",
+    "act": "1",
+    "classes": "Duelist,Ranger",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Purifying Flame",
+    "act": "1",
+    "classes": "Templar",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Pylon",
+    "act": "1",
+    "quest": "The Sacred Grove",
+    "quest_id": "harvest1"
+  },
+  {
+    "page": "Quicksilver Flask",
+    "act": "1",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Rain of Arrows",
+    "act": "1",
+    "classes": "Duelist,Ranger,Scion",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Raise Zombie",
+    "act": "1",
+    "classes": "Witch",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Reave",
+    "act": "1",
+    "classes": "Ranger,Shadow",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Riposte",
+    "act": "1",
+    "classes": "Ranger,Shadow",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Rolling Magma",
+    "act": "1",
+    "classes": "Witch,Templar",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Ruthless Support",
+    "act": "1",
+    "classes": "Templar,Duelist,Scion",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Scorching Ray",
+    "act": "1",
+    "classes": "Witch,Templar,Scion",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Searing Bond",
+    "act": "1",
+    "classes": "Templar",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Shattering Steel",
+    "act": "1",
+    "classes": "Duelist",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Shield Charge",
+    "act": "1",
+    "classes": "Marauder",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Shield Crush",
+    "act": "1",
+    "classes": "Templar,Marauder,Duelist,Scion",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Shrapnel Ballista",
+    "act": "1",
+    "classes": "Ranger",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Siege Ballista",
+    "act": "1",
+    "classes": "Ranger",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Siphoning Trap",
+    "act": "1",
+    "classes": "Shadow",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Smite",
+    "act": "1",
+    "classes": "Templar",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Smoke Mine",
+    "act": "1",
+    "classes": "Ranger,Shadow",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Spectral Helix",
+    "act": "1",
+    "classes": "Scion",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Spell Cascade Support",
+    "act": "1",
+    "classes": "Witch,Templar,Shadow,Scion",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Split Arrow",
+    "act": "1",
+    "classes": "Ranger,Scion",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Splitting Steel",
+    "act": "1",
+    "classes": "Duelist,Scion",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Static Strike",
+    "act": "1",
+    "classes": "Templar,Marauder,Scion",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Steelskin",
+    "act": "1",
+    "classes": "Templar,Marauder,Duelist,Scion",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Storm Brand",
+    "act": "1",
+    "classes": "Templar",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Storm Burst",
+    "act": "1",
+    "classes": "Templar,Scion",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Storm Call",
+    "act": "1",
+    "classes": "Templar",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Stormblast Mine",
+    "act": "1",
+    "classes": "Shadow",
+    "quest": "Enemy at the Gate",
+    "quest_id": "a1q1"
+  },
+  {
+    "page": "Summon Holy Relic",
+    "act": "1",
+    "classes": "Templar",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Summon Phantasm Support",
+    "act": "1",
+    "classes": "Witch,Scion",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Summon Raging Spirit",
+    "act": "1",
+    "classes": "Witch",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Summon Skeletons",
+    "act": "1",
+    "classes": "Witch",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Sunder",
+    "act": "1",
+    "classes": "Marauder",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Sweep",
+    "act": "1",
+    "classes": "Marauder,Duelist",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Swift Assembly Support",
+    "act": "1",
+    "classes": "Shadow",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Toxic Rain",
+    "act": "1",
+    "classes": "Ranger",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Unbound Ailments Support",
+    "act": "1",
+    "classes": "Witch,Scion",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Unearth",
+    "act": "1",
+    "classes": "Shadow",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Venom Gyre",
+    "act": "1",
+    "classes": "Shadow",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Vigilant Strike",
+    "act": "1",
+    "classes": "Templar,Marauder,Duelist,Scion",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Vitality",
+    "act": "1",
+    "classes": "Marauder,Templar,Duelist",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Void Manipulation Support",
+    "act": "1",
+    "classes": "Witch,Ranger,Shadow",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Volatile Dead",
+    "act": "1",
+    "classes": "Witch,Shadow",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Volley Support",
+    "act": "1",
+    "classes": "Duelist,Ranger,Shadow,Scion",
+    "quest": "Mercy Mission",
+    "quest_id": "a1q5"
+  },
+  {
+    "page": "Voltaxic Burst",
+    "act": "1",
+    "classes": "Shadow",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "War Banner",
+    "act": "1",
+    "classes": "Duelist",
+    "quest": "Breaking Some Eggs",
+    "quest_id": "a1q4"
+  },
+  {
+    "page": "Whirling Blades",
+    "act": "1",
+    "classes": "Duelist,Ranger,Shadow",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Wintertide Brand",
+    "act": "1",
+    "classes": "Templar",
+    "quest": "The Siren's Cadence",
+    "quest_id": "a1q3"
+  },
+  {
+    "page": "Wither",
+    "act": "1",
+    "classes": "Witch",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Withering Step",
+    "act": "1",
+    "classes": "Shadow,Scion",
+    "quest": "The Caged Brute",
+    "quest_id": "a1q2"
+  },
+  {
+    "page": "Aquamarine Flask",
+    "act": "10",
+    "quest": "Safe Passage",
+    "quest_id": "a10q1"
+  },
+  {
+    "page": "Basalt Flask",
+    "act": "10",
+    "quest": "Safe Passage",
+    "quest_id": "a10q1"
+  },
+  {
+    "page": "Blood Raiment",
+    "act": "10",
+    "classes": "Witch,Shadow,Ranger,Scion",
+    "quest": "Death and Rebirth",
+    "quest_id": "a10q2"
+  },
+  {
+    "page": "Book of Regrets (No Love for Old Ghosts)",
+    "act": "10",
+    "quest": "No Love for Old Ghosts",
+    "quest_id": "a10q4"
+  },
+  {
+    "page": "Book of Skill (An End to Hunger)",
+    "act": "10",
+    "quest": "An End to Hunger",
+    "quest_id": "a10q3"
+  },
+  {
+    "page": "Book of Skill (Vilenta's Vengeance)",
+    "act": "10",
+    "quest": "Vilenta's Vengeance",
+    "quest_id": "a10q6"
+  },
+  {
+    "page": "Chain Belt",
+    "act": "10",
+    "quest": "Map to Tsoatha",
+    "quest_id": "a10q5"
+  },
+  {
+    "page": "Cloth Belt",
+    "act": "10",
+    "quest": "Map to Tsoatha",
+    "quest_id": "a10q5"
+  },
+  {
+    "page": "Corundum Flask",
+    "act": "10",
+    "quest": "Safe Passage",
+    "quest_id": "a10q1"
+  },
+  {
+    "page": "Divine Life Flask",
+    "act": "10",
+    "quest": "Safe Passage",
+    "quest_id": "a10q1"
+  },
+  {
+    "page": "Divine Mana Flask",
+    "act": "10",
+    "quest": "Safe Passage",
+    "quest_id": "a10q1"
+  },
+  {
+    "page": "Elegant Ringmail",
+    "act": "10",
+    "classes": "Marauder,Templar,Witch,Scion",
+    "quest": "Death and Rebirth",
+    "quest_id": "a10q2"
+  },
+  {
+    "page": "General's Brigandine",
+    "act": "10",
+    "classes": "Marauder,Ranger,Duelist,Scion",
+    "quest": "Death and Rebirth",
+    "quest_id": "a10q2"
+  },
+  {
+    "page": "Gladiator Plate",
+    "act": "10",
+    "classes": "Marauder,Templar,Duelist,Scion",
+    "quest": "Death and Rebirth",
+    "quest_id": "a10q2"
+  },
+  {
+    "page": "Heavy Belt",
+    "act": "10",
+    "quest": "Map to Tsoatha",
+    "quest_id": "a10q5"
+  },
+  {
+    "page": "Leather Belt",
+    "act": "10",
+    "quest": "Map to Tsoatha",
+    "quest_id": "a10q5"
+  },
+  {
+    "page": "Quartz Flask",
+    "act": "10",
+    "quest": "Safe Passage",
+    "quest_id": "a10q1"
+  },
+  {
+    "page": "Rustic Sash",
+    "act": "10",
+    "quest": "Map to Tsoatha",
+    "quest_id": "a10q5"
+  },
+  {
+    "page": "Silver Flask",
+    "act": "10",
+    "quest": "Safe Passage",
+    "quest_id": "a10q1"
+  },
+  {
+    "page": "Stibnite Flask",
+    "act": "10",
+    "quest": "Safe Passage",
+    "quest_id": "a10q1"
+  },
+  {
+    "page": "Studded Belt",
+    "act": "10",
+    "quest": "Map to Tsoatha",
+    "quest_id": "a10q5"
+  },
+  {
+    "page": "Sulphur Flask",
+    "act": "10",
+    "quest": "Safe Passage",
+    "quest_id": "a10q1"
+  },
+  {
+    "page": "Widowsilk Robe",
+    "act": "10",
+    "classes": "Templar,Witch,Shadow,Scion",
+    "quest": "Death and Rebirth",
+    "quest_id": "a10q2"
+  },
+  {
+    "page": "Zodiac Leather",
+    "act": "10",
+    "classes": "Shadow,Ranger,Duelist,Scion",
+    "quest": "Death and Rebirth",
+    "quest_id": "a10q2"
+  },
+  {
+    "page": "Viridian Watchstone",
+    "act": "11",
+    "quest": "The Hunter (quest)",
+    "quest_id": "a11q3"
+  },
+  {
+    "page": "Ancestral Cry",
+    "act": "2",
+    "classes": "Marauder,Duelist",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Arcane Cloak",
+    "act": "2",
+    "classes": "Witch,Templar,Shadow",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Arctic Armour",
+    "act": "2",
+    "classes": "Witch,Ranger,Shadow,Scion",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Bismuth Flask",
+    "act": "2",
+    "quest": "The Great White Beast",
+    "quest_id": "a2q10"
+  },
+  {
+    "page": "Blade Blast",
+    "act": "2",
+    "classes": "Shadow",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Blood Rage",
+    "act": "2",
+    "classes": "Duelist,Ranger,Shadow",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Book of Regrets (Through Sacred Ground)",
+    "act": "2",
+    "quest": "Through Sacred Ground",
+    "quest_id": "a2q5"
+  },
+  {
+    "page": "Brand Recall",
+    "act": "2",
+    "classes": "Templar",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Chain Belt",
+    "act": "2",
+    "quest": "The Great White Beast",
+    "quest_id": "a2q10"
+  },
+  {
+    "page": "Close Combat Support",
+    "act": "2",
+    "classes": "Marauder,Duelist,Ranger",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Cold Snap",
+    "act": "2",
+    "classes": "Witch,Shadow",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Concentrated Effect Support",
+    "act": "2",
+    "classes": "Witch,Templar,Scion",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Controlled Destruction Support",
+    "act": "2",
+    "classes": "Witch,Templar",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Corrupting Fever",
+    "act": "2",
+    "classes": "Marauder,Duelist,Scion",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Cruelty Support",
+    "act": "2",
+    "classes": "Marauder,Templar,Witch,Scion",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Deadly Ailments Support",
+    "act": "2",
+    "classes": "Shadow,Scion",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Defiance Banner",
+    "act": "2",
+    "classes": "Duelist",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Desecrate",
+    "act": "2",
+    "classes": "Witch",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Elemental Damage with Attacks Support",
+    "act": "2",
+    "classes": "Templar,Marauder,Duelist,Ranger,Scion",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Elemental Focus Support",
+    "act": "2",
+    "classes": "Witch,Templar,Shadow",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Ensnaring Arrow",
+    "act": "2",
+    "classes": "Ranger",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Faster Attacks Support",
+    "act": "2",
+    "classes": "Marauder,Duelist,Ranger,Shadow,Scion",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Faster Casting Support",
+    "act": "2",
+    "classes": "Witch,Templar,Shadow,Scion",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Flesh and Stone",
+    "act": "2",
+    "classes": "Duelist",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Frenzy",
+    "act": "2",
+    "classes": "Duelist,Ranger,Scion",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Greater Life Flask",
+    "act": "2",
+    "quest": "The Great White Beast",
+    "quest_id": "a2q10"
+  },
+  {
+    "page": "Greater Mana Flask",
+    "act": "2",
+    "quest": "The Great White Beast",
+    "quest_id": "a2q10"
+  },
+  {
+    "page": "Heavy Belt",
+    "act": "2",
+    "quest": "The Great White Beast",
+    "quest_id": "a2q10"
+  },
+  {
+    "page": "Herald of Agony",
+    "act": "2",
+    "classes": "Ranger,Shadow",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Herald of Ash",
+    "act": "2",
+    "classes": "Witch,Templar,Marauder,Duelist,Ranger,Shadow,Scion",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Herald of Ice",
+    "act": "2",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Herald of Purity",
+    "act": "2",
+    "classes": "Templar",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Herald of Thunder",
+    "act": "2",
+    "classes": "Witch,Templar,Marauder,Duelist,Ranger,Shadow,Scion",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Leather Belt",
+    "act": "2",
+    "quest": "The Great White Beast",
+    "quest_id": "a2q10"
+  },
+  {
+    "page": "Melee Physical Damage Support",
+    "act": "2",
+    "classes": "Templar,Marauder,Duelist,Shadow,Scion",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Minion Speed Support",
+    "act": "2",
+    "classes": "Witch",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Nightblade Support",
+    "act": "2",
+    "classes": "Shadow",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Predator Support",
+    "act": "2",
+    "classes": "Witch",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Quicksilver Flask",
+    "act": "2",
+    "quest": "The Great White Beast",
+    "quest_id": "a2q10"
+  },
+  {
+    "page": "Rage Support",
+    "act": "2",
+    "classes": "Marauder,Duelist",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Rustic Sash",
+    "act": "2",
+    "quest": "The Great White Beast",
+    "quest_id": "a2q10"
+  },
+  {
+    "page": "Seismic Cry",
+    "act": "2",
+    "classes": "Marauder,Duelist",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Shockwave Support",
+    "act": "2",
+    "classes": "Templar,Marauder",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Summon Skitterbots",
+    "act": "2",
+    "classes": "Shadow",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Survival Instincts",
+    "act": "2",
+    "quest": "Through Sacred Ground",
+    "quest_id": "a2q5"
+  },
+  {
+    "page": "Survival Secrets",
+    "act": "2",
+    "quest": "Through Sacred Ground",
+    "quest_id": "a2q5"
+  },
+  {
+    "page": "Survival Skills",
+    "act": "2",
+    "quest": "Through Sacred Ground",
+    "quest_id": "a2q5"
+  },
+  {
+    "page": "The Apex",
+    "act": "2",
+    "quest": "Deal with the Bandits",
+    "quest_id": "a2q7"
+  },
+  {
+    "page": "Trap and Mine Damage Support",
+    "act": "2",
+    "classes": "Shadow",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Trinity Support",
+    "act": "2",
+    "classes": "Witch,Duelist,Ranger",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Vicious Projectiles Support",
+    "act": "2",
+    "classes": "Duelist,Ranger,Scion",
+    "quest": "Sharp and Cruel",
+    "quest_id": "a2q4"
+  },
+  {
+    "page": "Wave of Conviction",
+    "act": "2",
+    "classes": "Templar",
+    "quest": "Intruders in Black",
+    "quest_id": "a2q6"
+  },
+  {
+    "page": "Amber Amulet",
+    "act": "3",
+    "quest": "The Ribbon Spool",
+    "quest_id": "a3q4"
+  },
+  {
+    "page": "Ancestral Warchief",
+    "act": "3",
+    "classes": "Marauder",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Anger",
+    "act": "3",
+    "classes": "Marauder,Scion",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Archmage Support",
+    "act": "3",
+    "classes": "Witch,Templar,Shadow",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Armageddon Brand",
+    "act": "3",
+    "classes": "Templar",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Arrogance Support",
+    "act": "3",
+    "classes": "Marauder,Templar,Duelist,Scion",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Artillery Ballista",
+    "act": "3",
+    "classes": "Ranger",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Assassin's Mark",
+    "act": "3",
+    "classes": "Shadow,Ranger",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Ball Lightning",
+    "act": "3",
+    "classes": "Witch,Shadow",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Bane",
+    "act": "3",
+    "classes": "Witch,Shadow,Scion",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Battlemage's Cry",
+    "act": "3",
+    "classes": "Templar",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Blade Flurry",
+    "act": "3",
+    "classes": "Ranger,Shadow,Scion",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Bladefall",
+    "act": "3",
+    "classes": "Shadow,Scion",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Bladestorm",
+    "act": "3",
+    "classes": "Duelist",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Blasphemy Support",
+    "act": "3",
+    "classes": "Witch,Templar",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Blast Rain",
+    "act": "3",
+    "classes": "Duelist,Ranger",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Bloodthirst Support",
+    "act": "3",
+    "classes": "Marauder,Duelist,Scion",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Boneshatter",
+    "act": "3",
+    "classes": "Marauder",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Book of Skill (Piety's Pets)",
+    "act": "3",
+    "quest": "Piety's Pets",
+    "quest_id": "a3q9"
+  },
+  {
+    "page": "Book of Skill (Victario's Secrets)",
+    "act": "3",
+    "quest": "Victario's Secrets",
+    "quest_id": "a3q11"
+  },
+  {
+    "page": "Burning Damage Support",
+    "act": "3",
+    "classes": "Witch,Templar",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Charged Dash",
+    "act": "3",
+    "classes": "Duelist,Ranger,Shadow,Scion",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Charged Mines Support",
+    "act": "3",
+    "classes": "Shadow",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Charged Traps Support",
+    "act": "3",
+    "classes": "Shadow",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Cold Penetration Support",
+    "act": "3",
+    "classes": "Witch,Templar,Shadow,Scion",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Conductivity",
+    "act": "3",
+    "classes": "Witch,Templar,Shadow,Scion",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Consecrated Path",
+    "act": "3",
+    "classes": "Templar",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Convocation",
+    "act": "3",
+    "classes": "Witch",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Coral Ring",
+    "act": "3",
+    "quest": "A Swig of Hope",
+    "quest_id": "a3q13"
+  },
+  {
+    "page": "Crackling Lance",
+    "act": "3",
+    "classes": "Witch",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Cremation",
+    "act": "3",
+    "classes": "Witch,Shadow",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Critical Strike Affliction Support",
+    "act": "3",
+    "classes": "Ranger,Shadow",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Cyclone",
+    "act": "3",
+    "classes": "Marauder,Duelist,Scion",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Despair",
+    "act": "3",
+    "classes": "Witch,Ranger,Shadow",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Determination",
+    "act": "3",
+    "classes": "Marauder",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Discipline",
+    "act": "3",
+    "classes": "Witch",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Divine Blessing Support",
+    "act": "3",
+    "classes": "Templar",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Divine Ire",
+    "act": "3",
+    "classes": "Templar,Scion",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Dominating Blow",
+    "act": "3",
+    "classes": "Templar",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Dread Banner",
+    "act": "3",
+    "classes": "Duelist",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Earthquake",
+    "act": "3",
+    "classes": "Marauder",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Elemental Weakness",
+    "act": "3",
+    "classes": "Witch,Templar,Shadow,Scion",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Energy Leech Support",
+    "act": "3",
+    "classes": "Witch,Templar,Shadow,Scion",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Enfeeble",
+    "act": "3",
+    "classes": "Shadow,Templar,Witch",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Explosive Concoction",
+    "act": "3",
+    "classes": "Ranger",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Eye of Winter",
+    "act": "3",
+    "classes": "Witch",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Faster Projectiles Support",
+    "act": "3",
+    "classes": "Shadow",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Feeding Frenzy Support",
+    "act": "3",
+    "classes": "Witch,Templar",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Fire Penetration Support",
+    "act": "3",
+    "classes": "Witch,Templar,Scion",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Firestorm",
+    "act": "3",
+    "classes": "Witch,Templar",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Flameblast",
+    "act": "3",
+    "classes": "Witch,Templar,Scion",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Flamethrower Trap",
+    "act": "3",
+    "classes": "Shadow",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Flammability",
+    "act": "3",
+    "classes": "Witch,Templar,Shadow,Scion",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Focused Ballista Support",
+    "act": "3",
+    "classes": "Ranger",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Fork Support",
+    "act": "3",
+    "classes": "Ranger",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Fortify Support",
+    "act": "3",
+    "classes": "Templar,Marauder,Duelist,Ranger,Scion",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Frostbite",
+    "act": "3",
+    "classes": "Witch,Templar,Shadow,Scion",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "General's Cry",
+    "act": "3",
+    "classes": "Marauder",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Glacial Cascade",
+    "act": "3",
+    "classes": "Witch",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Gold Amulet",
+    "act": "3",
+    "quest": "The Ribbon Spool",
+    "quest_id": "a3q4"
+  },
+  {
+    "page": "Gold Ring",
+    "act": "3",
+    "quest": "A Swig of Hope",
+    "quest_id": "a3q13"
+  },
+  {
+    "page": "Grace",
+    "act": "3",
+    "classes": "Duelist,Ranger",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Hatred",
+    "act": "3",
+    "classes": "Duelist,Ranger,Shadow,Scion",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Hexblast",
+    "act": "3",
+    "classes": "Shadow,Witch,Scion",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "High-Impact Mine Support",
+    "act": "3",
+    "classes": "Shadow",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Hypothermia Support",
+    "act": "3",
+    "classes": "Duelist,Ranger",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Ice Bite Support",
+    "act": "3",
+    "classes": "Ranger,Shadow,Scion",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Ice Crash",
+    "act": "3",
+    "classes": "Templar,Marauder,Duelist",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Impale Support",
+    "act": "3",
+    "classes": "Marauder,Duelist,Ranger",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Impending Doom Support",
+    "act": "3",
+    "classes": "Shadow,Witch,Scion",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Increased Duration Support",
+    "act": "3",
+    "classes": "Marauder",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Infernal Cry",
+    "act": "3",
+    "classes": "Marauder",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Infernal Talc",
+    "act": "3",
+    "quest": "Fiery Dust",
+    "quest_id": "a3q5"
+  },
+  {
+    "page": "Innervate Support",
+    "act": "3",
+    "classes": "Shadow,Scion",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Intensify Support",
+    "act": "3",
+    "classes": "Witch,Templar,Scion",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Jade Amulet",
+    "act": "3",
+    "quest": "The Ribbon Spool",
+    "quest_id": "a3q4"
+  },
+  {
+    "page": "Kinetic Blast",
+    "act": "3",
+    "classes": "Witch",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Lancing Steel",
+    "act": "3",
+    "classes": "Duelist",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Lapis Amulet",
+    "act": "3",
+    "quest": "The Ribbon Spool",
+    "quest_id": "a3q4"
+  },
+  {
+    "page": "Life Leech Support",
+    "act": "3",
+    "classes": "Marauder,Duelist,Ranger,Scion",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Lightning Penetration Support",
+    "act": "3",
+    "classes": "Witch,Templar,Shadow,Scion",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Lightning Spire Trap",
+    "act": "3",
+    "classes": "Shadow",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Malevolence",
+    "act": "3",
+    "classes": "Witch,Shadow,Scion",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Meat Shield Support",
+    "act": "3",
+    "classes": "Witch,Templar",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Paua Ring",
+    "act": "3",
+    "quest": "A Swig of Hope",
+    "quest_id": "a3q13"
+  },
+  {
+    "page": "Penance Brand",
+    "act": "3",
+    "classes": "Templar",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Pestilent Strike",
+    "act": "3",
+    "classes": "Shadow",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Petrified Blood",
+    "act": "3",
+    "classes": "Marauder,Duelist,Scion",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Pinpoint Support",
+    "act": "3",
+    "classes": "Shadow,Witch",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Plague Bearer",
+    "act": "3",
+    "classes": "Shadow",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Poacher's Mark",
+    "act": "3",
+    "classes": "Duelist,Ranger",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Pride",
+    "act": "3",
+    "classes": "Marauder,Duelist",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Pulverise Support",
+    "act": "3",
+    "classes": "Templar,Marauder,Duelist",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Punishment",
+    "act": "3",
+    "classes": "Marauder,Scion,Templar",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Purity of Elements",
+    "act": "3",
+    "classes": "Witch",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Pyroclast Mine",
+    "act": "3",
+    "classes": "Shadow",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Rage Vortex",
+    "act": "3",
+    "classes": "Marauder",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Raise Spectre",
+    "act": "3",
+    "classes": "Witch",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Rallying Cry",
+    "act": "3",
+    "classes": "Duelist",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Reap",
+    "act": "3",
+    "classes": "Scion",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Scourge Arrow",
+    "act": "3",
+    "classes": "Ranger",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Second Wind Support",
+    "act": "3",
+    "classes": "Ranger,Shadow",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Seismic Trap",
+    "act": "3",
+    "classes": "Shadow",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Sewer Keys",
+    "act": "3",
+    "quest": "Lost in Love",
+    "quest_id": "a3q2"
+  },
+  {
+    "page": "Shock Nova",
+    "act": "3",
+    "classes": "Templar",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Shockwave Totem",
+    "act": "3",
+    "classes": "Templar",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Sniper's Mark",
+    "act": "3",
+    "classes": "Ranger,Duelist",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Soulrend",
+    "act": "3",
+    "classes": "Witch,Shadow,Scion",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Spectral Shield Throw",
+    "act": "3",
+    "classes": "Duelist",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Spellslinger",
+    "act": "3",
+    "classes": "Witch",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Storm Rain",
+    "act": "3",
+    "classes": "Ranger",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Stormbind",
+    "act": "3",
+    "classes": "Witch,Templar",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Summon Reaper",
+    "act": "3",
+    "classes": "Witch",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Swift Affliction Support",
+    "act": "3",
+    "classes": "Witch,Shadow",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Swiftbrand Support",
+    "act": "3",
+    "classes": "Templar",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Tectonic Slam",
+    "act": "3",
+    "classes": "Marauder,Scion",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Temporal Chains",
+    "act": "3",
+    "classes": "Witch,Scion,Shadow",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Tornado Shot",
+    "act": "3",
+    "classes": "Ranger,Scion",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Urgent Orders Support",
+    "act": "3",
+    "classes": "Marauder,Duelist",
+    "quest": "A Fixture of Fate",
+    "quest_id": "a3q12"
+  },
+  {
+    "page": "Vengeance",
+    "act": "3",
+    "classes": "Marauder",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Vulnerability",
+    "act": "3",
+    "classes": "Marauder,Templar,Scion",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Warlord's Mark",
+    "act": "3",
+    "classes": "Marauder,Duelist",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Wild Strike",
+    "act": "3",
+    "classes": "Ranger",
+    "quest": "Sever the Right Hand",
+    "quest_id": "a3q8"
+  },
+  {
+    "page": "Wrath",
+    "act": "3",
+    "classes": "Shadow,Scion",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Zealotry",
+    "act": "3",
+    "classes": "Witch,Templar,Scion",
+    "quest": "Lost in Love",
+    "quest_id": "a3q1"
+  },
+  {
+    "page": "Ambush",
+    "act": "4",
+    "classes": "Shadow",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Arcanist Brand",
+    "act": "4",
+    "classes": "Templar",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Barrage Support",
+    "act": "4",
+    "classes": "Duelist,Ranger,Shadow,Scion",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Behead Support",
+    "act": "4",
+    "classes": "Marauder,Duelist",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Berserk",
+    "act": "4",
+    "classes": "Marauder",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Bonechill Support",
+    "act": "4",
+    "classes": "Witch,Shadow",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Book of Skill (An Indomitable Spirit)",
+    "act": "4",
+    "quest": "An Indomitable Spirit",
+    "quest_id": "a4q6"
+  },
+  {
+    "page": "Brutality Support",
+    "act": "4",
+    "classes": "Marauder",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Chain Support",
+    "act": "4",
+    "classes": "Witch,Templar,Marauder,Duelist,Ranger,Shadow,Scion",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Cluster Traps Support",
+    "act": "4",
+    "classes": "Shadow",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Decay Support",
+    "act": "4",
+    "classes": "Witch,Scion",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Eternal Blessing Support",
+    "act": "4",
+    "classes": "Marauder",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Fist of War Support",
+    "act": "4",
+    "classes": "Templar,Marauder,Duelist",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Flame Link",
+    "act": "4",
+    "classes": "Scion",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Frost Shield",
+    "act": "4",
+    "classes": "Witch,Templar,Shadow,Scion",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Greater Multiple Projectiles Support",
+    "act": "4",
+    "classes": "Witch,Templar,Marauder,Duelist,Ranger,Shadow,Scion",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Greater Volley Support",
+    "act": "4",
+    "classes": "Duelist,Ranger,Shadow,Scion",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Hydrosphere",
+    "act": "4",
+    "classes": "Witch,Templar",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Ignite Proliferation Support",
+    "act": "4",
+    "classes": "Templar",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Immolate Support",
+    "act": "4",
+    "classes": "Witch,Scion",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Increased Area of Effect Support",
+    "act": "4",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Intuitive Link",
+    "act": "4",
+    "classes": "Scion",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Minefield Support",
+    "act": "4",
+    "classes": "Shadow",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Multiple Totems Support",
+    "act": "4",
+    "classes": "Witch,Templar,Marauder",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Multistrike Support",
+    "act": "4",
+    "classes": "Witch,Templar,Marauder,Duelist,Ranger,Shadow,Scion",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Sigil of Power",
+    "act": "4",
+    "classes": "Witch,Templar",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Soul Link",
+    "act": "4",
+    "classes": "Scion",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Spell Echo Support",
+    "act": "4",
+    "classes": "Witch,Templar,Marauder,Duelist,Ranger,Shadow,Scion",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Summon Carrion Golem",
+    "act": "4",
+    "classes": "Witch,Templar",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Summon Chaos Golem",
+    "act": "4",
+    "classes": "Witch,Templar,Marauder,Duelist,Ranger,Shadow,Scion",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Summon Flame Golem",
+    "act": "4",
+    "classes": "Witch,Templar,Marauder,Duelist,Ranger,Shadow,Scion",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Summon Ice Golem",
+    "act": "4",
+    "classes": "Witch,Templar,Marauder,Duelist,Ranger,Shadow,Scion",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Summon Lightning Golem",
+    "act": "4",
+    "classes": "Witch,Templar,Marauder,Duelist,Ranger,Shadow,Scion",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Summon Stone Golem",
+    "act": "4",
+    "classes": "Witch,Templar,Marauder,Duelist,Ranger,Shadow,Scion",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Temporal Rift",
+    "act": "4",
+    "classes": "Shadow",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Tornado",
+    "act": "4",
+    "classes": "Ranger,Shadow",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Unleash Support",
+    "act": "4",
+    "classes": "Witch,Templar,Shadow,Scion",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Vile Toxins Support",
+    "act": "4",
+    "classes": "Shadow",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Void Sphere",
+    "act": "4",
+    "classes": "Witch,Templar,Shadow,Scion",
+    "quest": "Breaking the Seal",
+    "quest_id": "a4q2"
+  },
+  {
+    "page": "Withering Touch Support",
+    "act": "4",
+    "classes": "Ranger,Shadow",
+    "quest": "The Eternal Nightmare",
+    "quest_id": "a4q1"
+  },
+  {
+    "page": "Amethyst Flask",
+    "act": "5",
+    "quest": "The Key to Freedom",
+    "quest_id": "a5q2"
+  },
+  {
+    "page": "Assassin's Haste",
+    "act": "5",
+    "quest": "The King's Feast",
+    "quest_id": "a5q5"
+  },
+  {
+    "page": "Book of Skill (In Service to Science)",
+    "act": "5",
+    "quest": "In Service to Science",
+    "quest_id": "a5q3"
+  },
+  {
+    "page": "Book of Skill (Kitava's Torments)",
+    "act": "5",
+    "quest": "Kitava's Torments",
+    "quest_id": "a5q7"
+  },
+  {
+    "page": "Cobalt Jewel",
+    "act": "5",
+    "quest": "Death to Purity",
+    "quest_id": "a5q4"
+  },
+  {
+    "page": "Crimson Jewel",
+    "act": "5",
+    "quest": "Death to Purity",
+    "quest_id": "a5q4"
+  },
+  {
+    "page": "Diamond Flask",
+    "act": "5",
+    "quest": "The Key to Freedom",
+    "quest_id": "a5q2"
+  },
+  {
+    "page": "Granite Flask",
+    "act": "5",
+    "quest": "The Key to Freedom",
+    "quest_id": "a5q2"
+  },
+  {
+    "page": "Jade Flask",
+    "act": "5",
+    "quest": "The Key to Freedom",
+    "quest_id": "a5q2"
+  },
+  {
+    "page": "Poacher's Aim",
+    "act": "5",
+    "quest": "The King's Feast",
+    "quest_id": "a5q5"
+  },
+  {
+    "page": "Ruby Flask",
+    "act": "5",
+    "quest": "The Key to Freedom",
+    "quest_id": "a5q2"
+  },
+  {
+    "page": "Ruby Ring",
+    "act": "5",
+    "quest": "Return to Oriath",
+    "quest_id": "a5q1b"
+  },
+  {
+    "page": "Sapphire Flask",
+    "act": "5",
+    "quest": "The Key to Freedom",
+    "quest_id": "a5q2"
+  },
+  {
+    "page": "Sapphire Ring",
+    "act": "5",
+    "quest": "Return to Oriath",
+    "quest_id": "a5q1b"
+  },
+  {
+    "page": "Topaz Flask",
+    "act": "5",
+    "quest": "The Key to Freedom",
+    "quest_id": "a5q2"
+  },
+  {
+    "page": "Topaz Ring",
+    "act": "5",
+    "quest": "Return to Oriath",
+    "quest_id": "a5q1b"
+  },
+  {
+    "page": "Two-Stone Ring (ruby and sapphire)",
+    "act": "5",
+    "quest": "Return to Oriath",
+    "quest_id": "a5q1b"
+  },
+  {
+    "page": "Two-Stone Ring (ruby and topaz)",
+    "act": "5",
+    "quest": "Return to Oriath",
+    "quest_id": "a5q1b"
+  },
+  {
+    "page": "Two-Stone Ring (sapphire and topaz)",
+    "act": "5",
+    "quest": "Return to Oriath",
+    "quest_id": "a5q1b"
+  },
+  {
+    "page": "Viridian Jewel",
+    "act": "5",
+    "quest": "Death to Purity",
+    "quest_id": "a5q4"
+  },
+  {
+    "page": "Warlord's Reach",
+    "act": "5",
+    "quest": "The King's Feast",
+    "quest_id": "a5q5"
+  },
+  {
+    "page": "Agate Amulet",
+    "act": "6",
+    "quest": "Bestel's Epic",
+    "quest_id": "a6q5"
+  },
+  {
+    "page": "Book of Regrets (Fallen from Grace)",
+    "act": "6",
+    "quest": "Fallen from Grace",
+    "quest_id": "a6q4"
+  },
+  {
+    "page": "Book of Skill (The Cloven One)",
+    "act": "6",
+    "quest": "The Cloven One",
+    "quest_id": "a6q7"
+  },
+  {
+    "page": "Book of Skill (The Father of War)",
+    "act": "6",
+    "quest": "The Father of War",
+    "quest_id": "a6q3"
+  },
+  {
+    "page": "Book of Skill (The Puppet Mistress)",
+    "act": "6",
+    "quest": "The Puppet Mistress",
+    "quest_id": "a6q6"
+  },
+  {
+    "page": "Callous Mask",
+    "act": "6",
+    "classes": "Witch,Shadow,Ranger,Scion",
+    "quest": "Essence of Umbra",
+    "quest_id": "a6q2"
+  },
+  {
+    "page": "Chain Belt",
+    "act": "6",
+    "quest": "Bestel's Epic",
+    "quest_id": "a6q5"
+  },
+  {
+    "page": "Citrine Amulet",
+    "act": "6",
+    "quest": "Bestel's Epic",
+    "quest_id": "a6q5"
+  },
+  {
+    "page": "Fencer Helm",
+    "act": "6",
+    "classes": "Marauder,Ranger,Duelist,Scion",
+    "quest": "Essence of Umbra",
+    "quest_id": "a6q2"
+  },
+  {
+    "page": "Heavy Belt",
+    "act": "6",
+    "quest": "Bestel's Epic",
+    "quest_id": "a6q5"
+  },
+  {
+    "page": "Leather Belt",
+    "act": "6",
+    "quest": "Bestel's Epic",
+    "quest_id": "a6q5"
+  },
+  {
+    "page": "Noble Tricorne",
+    "act": "6",
+    "classes": "Shadow,Ranger,Duelist,Scion",
+    "quest": "Essence of Umbra",
+    "quest_id": "a6q2"
+  },
+  {
+    "page": "Rustic Sash",
+    "act": "6",
+    "quest": "Bestel's Epic",
+    "quest_id": "a6q5"
+  },
+  {
+    "page": "Siege Helmet",
+    "act": "6",
+    "classes": "Marauder,Templar,Duelist,Scion",
+    "quest": "Essence of Umbra",
+    "quest_id": "a6q2"
+  },
+  {
+    "page": "Steel Circlet",
+    "act": "6",
+    "classes": "Templar,Witch,Shadow,Scion",
+    "quest": "Essence of Umbra",
+    "quest_id": "a6q2"
+  },
+  {
+    "page": "Turquoise Amulet",
+    "act": "6",
+    "quest": "Bestel's Epic",
+    "quest_id": "a6q5"
+  },
+  {
+    "page": "Zealot Helmet",
+    "act": "6",
+    "classes": "Marauder,Templar,Witch,Scion",
+    "quest": "Essence of Umbra",
+    "quest_id": "a6q2"
+  },
+  {
+    "page": "Agate Amulet",
+    "act": "7",
+    "quest": "In Memory of Greust",
+    "quest_id": "a7q8"
+  },
+  {
+    "page": "Aquamarine Flask",
+    "act": "7",
+    "quest": "The Silver Locket",
+    "quest_id": "a7q5"
+  },
+  {
+    "page": "Book of Skill (Kishara's Star)",
+    "act": "7",
+    "quest": "Kishara's Star",
+    "quest_id": "a7q6"
+  },
+  {
+    "page": "Book of Skill (Queen of Despair)",
+    "act": "7",
+    "quest": "Queen of Despair",
+    "quest_id": "a7q9"
+  },
+  {
+    "page": "Book of Skill (The Master of a Million Faces)",
+    "act": "7",
+    "quest": "The Master of a Million Faces",
+    "quest_id": "a7q1"
+  },
+  {
+    "page": "Carnal Boots",
+    "act": "7",
+    "classes": "Witch,Shadow,Ranger,Scion",
+    "quest": "Essence of the Artist",
+    "quest_id": "a7q2"
+  },
+  {
+    "page": "Citrine Amulet",
+    "act": "7",
+    "quest": "In Memory of Greust",
+    "quest_id": "a7q8"
+  },
+  {
+    "page": "Conjurer Boots",
+    "act": "7",
+    "classes": "Templar,Witch,Shadow,Scion",
+    "quest": "Essence of the Artist",
+    "quest_id": "a7q2"
+  },
+  {
+    "page": "Corundum Flask",
+    "act": "7",
+    "quest": "The Silver Locket",
+    "quest_id": "a7q5"
+  },
+  {
+    "page": "Diamond Flask",
+    "act": "7",
+    "quest": "The Silver Locket",
+    "quest_id": "a7q5"
+  },
+  {
+    "page": "Gold Amulet",
+    "act": "7",
+    "quest": "In Memory of Greust",
+    "quest_id": "a7q8"
+  },
+  {
+    "page": "Goliath Greaves",
+    "act": "7",
+    "classes": "Marauder,Templar,Duelist,Scion",
+    "quest": "Essence of the Artist",
+    "quest_id": "a7q2"
+  },
+  {
+    "page": "Granite Flask",
+    "act": "7",
+    "quest": "The Silver Locket",
+    "quest_id": "a7q5"
+  },
+  {
+    "page": "Jade Flask",
+    "act": "7",
+    "quest": "The Silver Locket",
+    "quest_id": "a7q5"
+  },
+  {
+    "page": "Obsidian Key",
+    "act": "7",
+    "quest": "Web of Secrets",
+    "quest_id": "a7q3"
+  },
+  {
+    "page": "Onyx Amulet",
+    "act": "7",
+    "quest": "In Memory of Greust",
+    "quest_id": "a7q8"
+  },
+  {
+    "page": "Quartz Flask",
+    "act": "7",
+    "quest": "The Silver Locket",
+    "quest_id": "a7q5"
+  },
+  {
+    "page": "Shagreen Boots",
+    "act": "7",
+    "classes": "Shadow,Ranger,Duelist,Scion",
+    "quest": "Essence of the Artist",
+    "quest_id": "a7q2"
+  },
+  {
+    "page": "Soldier Boots",
+    "act": "7",
+    "classes": "Marauder,Templar,Witch,Scion",
+    "quest": "Essence of the Artist",
+    "quest_id": "a7q2"
+  },
+  {
+    "page": "Sulphur Flask",
+    "act": "7",
+    "quest": "The Silver Locket",
+    "quest_id": "a7q5"
+  },
+  {
+    "page": "Turquoise Amulet",
+    "act": "7",
+    "quest": "In Memory of Greust",
+    "quest_id": "a7q8"
+  },
+  {
+    "page": "Wyrmscale Boots",
+    "act": "7",
+    "classes": "Marauder,Ranger,Duelist,Scion",
+    "quest": "Essence of the Artist",
+    "quest_id": "a7q2"
+  },
+  {
+    "page": "Book of Skill (Love is Dead)",
+    "act": "8",
+    "quest": "Love is Dead",
+    "quest_id": "a8q6"
+  },
+  {
+    "page": "Book of Skill (Reflection of Terror)",
+    "act": "8",
+    "quest": "Reflection of Terror",
+    "quest_id": "a8q4"
+  },
+  {
+    "page": "Book of Skill (The Gemling Legion)",
+    "act": "8",
+    "quest": "The Gemling Legion",
+    "quest_id": "a8q7"
+  },
+  {
+    "page": "Conqueror's Efficiency",
+    "act": "8",
+    "quest": "The Wings of Vastiri",
+    "quest_id": "a8q5"
+  },
+  {
+    "page": "Conqueror's Longevity",
+    "act": "8",
+    "quest": "The Wings of Vastiri",
+    "quest_id": "a8q5"
+  },
+  {
+    "page": "Conqueror's Potency",
+    "act": "8",
+    "quest": "The Wings of Vastiri",
+    "quest_id": "a8q5"
+  },
+  {
+    "page": "Two-Stone Ring (ruby and sapphire)",
+    "act": "8",
+    "quest": "Essence of the Hag",
+    "quest_id": "a8q1"
+  },
+  {
+    "page": "Two-Stone Ring (ruby and topaz)",
+    "act": "8",
+    "quest": "Essence of the Hag",
+    "quest_id": "a8q1"
+  },
+  {
+    "page": "Two-Stone Ring (sapphire and topaz)",
+    "act": "8",
+    "quest": "Essence of the Hag",
+    "quest_id": "a8q1"
+  },
+  {
+    "page": "Unset Ring",
+    "act": "8",
+    "quest": "Essence of the Hag",
+    "quest_id": "a8q1"
+  },
+  {
+    "page": "Alder Spiked Shield",
+    "act": "9",
+    "classes": "Shadow",
+    "quest": "The Storm Blade",
+    "quest_id": "a9q3"
+  },
+  {
+    "page": "Ambusher",
+    "act": "9",
+    "classes": "Ranger,Shadow,Witch",
+    "quest": "The Storm Blade",
+    "quest_id": "a9q3"
+  },
+  {
+    "page": "Book of Regrets (Fastis Fortuna)",
+    "act": "9",
+    "quest": "Fastis Fortuna",
+    "quest_id": "a9q4"
+  },
+  {
+    "page": "Book of Skill (Queen of the Sands)",
+    "act": "9",
+    "quest": "Queen of the Sands",
+    "quest_id": "a9q5"
+  },
+  {
+    "page": "Book of Skill (The Ruler of Highgate)",
+    "act": "9",
+    "quest": "The Ruler of Highgate",
+    "quest_id": "a9q2"
+  },
+  {
+    "page": "Bottled Storm",
+    "act": "9",
+    "quest": "Queen of the Sands",
+    "quest_id": "a9q5"
+  },
+  {
+    "page": "Branded Kite Shield",
+    "act": "9",
+    "classes": "Templar",
+    "quest": "The Storm Blade",
+    "quest_id": "a9q3"
+  },
+  {
+    "page": "Ebony Tower Shield",
+    "act": "9",
+    "classes": "Marauder",
+    "quest": "The Storm Blade",
+    "quest_id": "a9q3"
+  },
+  {
+    "page": "Ezomyte Blade",
+    "act": "9",
+    "classes": "Duelist,Scion",
+    "quest": "The Storm Blade",
+    "quest_id": "a9q3"
+  },
+  {
+    "page": "Fossilised Spirit Shield",
+    "act": "9",
+    "classes": "Witch",
+    "quest": "The Storm Blade",
+    "quest_id": "a9q3"
+  },
+  {
+    "page": "Gavel",
+    "act": "9",
+    "classes": "Marauder,Duelist,Templar",
+    "quest": "The Storm Blade",
+    "quest_id": "a9q3"
+  },
+  {
+    "page": "Gladius",
+    "act": "9",
+    "classes": "Marauder,Duelist,Ranger",
+    "quest": "The Storm Blade",
+    "quest_id": "a9q3"
+  },
+  {
+    "page": "Imbued Wand",
+    "act": "9",
+    "classes": "Shadow,Witch,Templar,Scion",
+    "quest": "The Storm Blade",
+    "quest_id": "a9q3"
+  },
+  {
+    "page": "Lacquered Buckler",
+    "act": "9",
+    "classes": "Ranger",
+    "quest": "The Storm Blade",
+    "quest_id": "a9q3"
+  },
+  {
+    "page": "Lathi",
+    "act": "9",
+    "classes": "Witch,Templar,Scion",
+    "quest": "The Storm Blade",
+    "quest_id": "a9q3"
+  },
+  {
+    "page": "Opal Sceptre",
+    "act": "9",
+    "classes": "Witch,Templar",
+    "quest": "The Storm Blade",
+    "quest_id": "a9q3"
+  },
+  {
+    "page": "Piledriver",
+    "act": "9",
+    "classes": "Marauder,Templar",
+    "quest": "The Storm Blade",
+    "quest_id": "a9q3"
+  },
+  {
+    "page": "Ranger Bow",
+    "act": "9",
+    "classes": "Duelist,Ranger,Shadow,Scion",
+    "quest": "The Storm Blade",
+    "quest_id": "a9q3"
+  },
+  {
+    "page": "Reaver Axe",
+    "act": "9",
+    "classes": "Marauder,Duelist,Scion",
+    "quest": "The Storm Blade",
+    "quest_id": "a9q3"
+  },
+  {
+    "page": "Spike-Point Arrow Quiver",
+    "act": "9",
+    "classes": "Ranger,Shadow,Scion",
+    "quest": "The Storm Blade",
+    "quest_id": "a9q3"
+  },
+  {
+    "page": "Sundering Axe",
+    "act": "9",
+    "classes": "Marauder",
+    "quest": "The Storm Blade",
+    "quest_id": "a9q3"
+  },
+  {
+    "page": "Teak Round Shield",
+    "act": "9",
+    "classes": "Duelist",
+    "quest": "The Storm Blade",
+    "quest_id": "a9q3"
+  },
+  {
+    "page": "Tempered Foil",
+    "act": "9",
+    "classes": "Ranger",
+    "quest": "The Storm Blade",
+    "quest_id": "a9q3"
+  },
+  {
+    "page": "Throat Stabber",
+    "act": "9",
+    "classes": "Shadow,Witch",
+    "quest": "The Storm Blade",
+    "quest_id": "a9q3"
+  }
+]
