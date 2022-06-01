@@ -1,13 +1,14 @@
 import { cargoQuery, getImageUrl } from "./wiki";
+import {
+  Area,
+  Gem,
+  Monster,
+  QuestRewards as QuestReward,
+  VendorRewards,
+} from "../../types";
 
-interface Gem {
-  page: string;
-  inventory_icon: string;
-  image_url: string;
-}
-
-export async function getGems(): Promise<Gem[]> {
-  const result = await cargoQuery({
+export async function getGems() {
+  const queryResult = await cargoQuery({
     tables: ["items", "skill_gems"],
     join_on: ["items._pageName = skill_gems._pageName"],
     fields: [
@@ -17,82 +18,106 @@ export async function getGems(): Promise<Gem[]> {
     ],
     where:
       '(items.tags HOLDS "gem") AND (NOT items._pageName LIKE "Template:%")',
+    order_by: ["items._pageName"],
   });
 
   let cnt = 0;
-  for (const item of result) {
-    item.inventory_icon = await getImageUrl(item.inventory_icon);
-    console.log(`gem image: ${++cnt}/${result.length}`);
+  const result: Record<Gem["id"], Gem> = {};
+  for (const item of queryResult) {
+    const image_url = await getImageUrl(item.inventory_icon);
+    console.log(`gem image: ${++cnt}/${queryResult.length}`);
+
+    result[item.page] = {
+      id: item.page,
+      image_url: image_url,
+      primary_attribute: item.primary_attribute,
+    };
   }
 
   return result;
 }
 
-interface QuestReward {
-  page: string;
-  act: string;
-  classes: string;
-  quest: string;
-  quest_id: string;
-}
-
-export async function getQuestRewards(): Promise<QuestReward[]> {
-  const result = await cargoQuery({
+export async function getQuestRewards() {
+  const queryResult = await cargoQuery({
     tables: ["quest_rewards"],
-    fields: ["_pageName=page", "act", "classes", "quest", "quest_id=quest_id"],
+    fields: [
+      "quest_id=quest_id",
+      "quest",
+      "_pageName=item_id",
+      "act",
+      "classes",
+    ],
+    order_by: ["act", "quest_id"],
   });
+
+  const result: Record<QuestReward["quest_id"], QuestReward> = {};
+  for (const item of queryResult) {
+    let questReward = result[item.quest_id];
+    if (!questReward) {
+      questReward = {
+        quest_id: item.quest_id,
+        quest: item.quest,
+        act: item.act,
+        rewards: [],
+      };
+      result[item.quest_id] = questReward;
+    }
+
+    questReward.rewards.push({
+      item_id: item.item_id,
+      classes: item.classes?.split(",") || [],
+    });
+  }
 
   return result;
 }
 
-interface VendorReward {
-  page: string;
-  act: string;
-  classes: string;
-  npc: string;
-  quest: string;
-  quest_id: string;
-}
-
-export async function getVendorRewards(): Promise<VendorReward[]> {
-  const result = await cargoQuery({
+export async function getVendorRewards() {
+  const queryResult = await cargoQuery({
     tables: ["vendor_rewards"],
     fields: [
-      "_pageName=page",
+      "quest_id=quest_id",
+      "quest",
+      "_pageName=item_id",
       "act",
       "classes",
       "npc",
-      "quest",
-      "quest_id=quest_id",
     ],
+    order_by: ["act", "quest_id"],
   });
+
+  const result: Record<VendorRewards["quest_id"], VendorRewards> = {};
+  for (const item of queryResult) {
+    let vendorReward = result[item.quest_id];
+    if (!vendorReward) {
+      vendorReward = {
+        quest_id: item.quest_id,
+        quest: item.quest,
+        act: item.act,
+        npc: item.npc,
+        rewards: [],
+      };
+      result[item.quest_id] = vendorReward;
+    }
+
+    vendorReward.rewards.push({
+      item_id: item.item_id,
+      classes: item.classes?.split(",") || [],
+    });
+  }
 
   return result;
 }
 
-interface Area {
-  id: string;
-  name: string;
-  act: string;
-  has_waypoint: boolean;
-  is_town_area: boolean;
-  connection_ids: string[];
-  bosses: Monster[];
-}
-
-interface Monster {
-  metadata_id: string;
-  name: string;
-}
-
-export async function getAreas(): Promise<Area[]> {
-  let result: Area[] = [];
+export async function getAreas() {
+  const result: Record<Area["id"], Area> = {};
 
   let done = new Set<string>();
   let todo = ["1_1_1"];
 
+  let cnt = 0;
   while (todo.length > 0) {
-    const areas = await cargoQuery({
+    const areaQueryResult = await cargoQuery({
       tables: ["areas"],
       fields: [
         "id",
@@ -111,7 +136,7 @@ export async function getAreas(): Promise<Area[]> {
     }
     todo.length = 0;
 
-    for (const area of areas) {
+    for (const area of areaQueryResult) {
       let connection_ids: string[];
       if (area.connection_ids) {
         connection_ids = area.connection_ids.split(",");
@@ -127,7 +152,7 @@ export async function getAreas(): Promise<Area[]> {
       let bosses: Monster[];
       if (area.boss_monster_ids) {
         const boss_monster_ids: string[] = area.boss_monster_ids.split(",");
-        const monsters = await cargoQuery({
+        const monsterQueryResult = await cargoQuery({
           tables: ["monsters"],
           fields: ["metadata_id=metadata_id", "name"],
           where: `metadata_id IN (${boss_monster_ids
@@ -135,7 +160,7 @@ export async function getAreas(): Promise<Area[]> {
             .join(",")})`,
         });
 
-        bosses = monsters.map((x) => ({
+        bosses = monsterQueryResult.map((x) => ({
           metadata_id: x.metadata_id,
           name: x.name,
         }));
@@ -143,18 +168,20 @@ export async function getAreas(): Promise<Area[]> {
         bosses = [];
       }
 
-      result.push({
+      result[area.id] = {
         id: area.id,
         name: area.name,
         act: area.act,
-        has_waypoint: area.has_waypoint,
-        is_town_area: area.is_town_area,
+        has_waypoint: area.has_waypoint == "1",
+        is_town_area: area.is_town_area == "1",
         connection_ids: connection_ids,
         bosses: bosses,
-      });
+      };
+
+      cnt++;
     }
 
-    console.log(`Areas ${result.length}`);
+    console.log(`Areas ${cnt}`);
   }
 
   return result;

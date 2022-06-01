@@ -1,2447 +1,2442 @@
-[
-  {
-    "page": "Added Chaos Damage Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/2e/Added_Chaos_Damage_Support_inventory_icon.png",
+{
+  "Added Chaos Damage Support": {
+    "id": "Added Chaos Damage Support",
+    "image_url": "https://www.poewiki.net/w/images/2/2e/Added_Chaos_Damage_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Added Cold Damage Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/39/Added_Cold_Damage_Support_inventory_icon.png",
+  "Added Cold Damage Support": {
+    "id": "Added Cold Damage Support",
+    "image_url": "https://www.poewiki.net/w/images/3/39/Added_Cold_Damage_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Added Fire Damage Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/5b/Added_Fire_Damage_Support_inventory_icon.png",
+  "Added Fire Damage Support": {
+    "id": "Added Fire Damage Support",
+    "image_url": "https://www.poewiki.net/w/images/5/5b/Added_Fire_Damage_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Added Lightning Damage Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/1b/Added_Lightning_Damage_Support_inventory_icon.png",
+  "Added Lightning Damage Support": {
+    "id": "Added Lightning Damage Support",
+    "image_url": "https://www.poewiki.net/w/images/1/1b/Added_Lightning_Damage_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Additional Accuracy Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/05/Additional_Accuracy_Support_inventory_icon.png",
+  "Additional Accuracy Support": {
+    "id": "Additional Accuracy Support",
+    "image_url": "https://www.poewiki.net/w/images/0/05/Additional_Accuracy_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Advanced Traps Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/5d/Advanced_Traps_Support_inventory_icon.png",
+  "Advanced Traps Support": {
+    "id": "Advanced Traps Support",
+    "image_url": "https://www.poewiki.net/w/images/5/5d/Advanced_Traps_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Ambush",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/be/Ambush_inventory_icon.png",
+  "Ambush": {
+    "id": "Ambush",
+    "image_url": "https://www.poewiki.net/w/images/b/be/Ambush_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Ancestral Call Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/f5/Ancestral_Call_Support_inventory_icon.png",
+  "Ancestral Call Support": {
+    "id": "Ancestral Call Support",
+    "image_url": "https://www.poewiki.net/w/images/f/f5/Ancestral_Call_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Ancestral Cry",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/38/Ancestral_Cry_inventory_icon.png",
+  "Ancestral Cry": {
+    "id": "Ancestral Cry",
+    "image_url": "https://www.poewiki.net/w/images/3/38/Ancestral_Cry_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Ancestral Protector",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/f2/Ancestral_Protector_inventory_icon.png",
+  "Ancestral Protector": {
+    "id": "Ancestral Protector",
+    "image_url": "https://www.poewiki.net/w/images/f/f2/Ancestral_Protector_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Ancestral Warchief",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/f4/Ancestral_Warchief_inventory_icon.png",
+  "Ancestral Warchief": {
+    "id": "Ancestral Warchief",
+    "image_url": "https://www.poewiki.net/w/images/f/f4/Ancestral_Warchief_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Anger",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/16/Anger_inventory_icon.png",
+  "Anger": {
+    "id": "Anger",
+    "image_url": "https://www.poewiki.net/w/images/1/16/Anger_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Animate Guardian",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/97/Animate_Guardian_inventory_icon.png",
+  "Animate Guardian": {
+    "id": "Animate Guardian",
+    "image_url": "https://www.poewiki.net/w/images/9/97/Animate_Guardian_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Animate Weapon",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/0d/Animate_Weapon_inventory_icon.png",
+  "Animate Weapon": {
+    "id": "Animate Weapon",
+    "image_url": "https://www.poewiki.net/w/images/0/0d/Animate_Weapon_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Arc",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/71/Arc_inventory_icon.png",
+  "Arc": {
+    "id": "Arc",
+    "image_url": "https://www.poewiki.net/w/images/7/71/Arc_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Arcane Cloak",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/85/Arcane_Cloak_inventory_icon.png",
+  "Arcane Cloak": {
+    "id": "Arcane Cloak",
+    "image_url": "https://www.poewiki.net/w/images/8/85/Arcane_Cloak_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Arcane Surge Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/5c/Arcane_Surge_Support_inventory_icon.png",
+  "Arcane Surge Support": {
+    "id": "Arcane Surge Support",
+    "image_url": "https://www.poewiki.net/w/images/5/5c/Arcane_Surge_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Arcanist Brand",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/ff/Arcanist_Brand_inventory_icon.png",
+  "Arcanist Brand": {
+    "id": "Arcanist Brand",
+    "image_url": "https://www.poewiki.net/w/images/f/ff/Arcanist_Brand_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Archmage Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/41/Archmage_Support_inventory_icon.png",
+  "Archmage Support": {
+    "id": "Archmage Support",
+    "image_url": "https://www.poewiki.net/w/images/4/41/Archmage_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Arctic Armour",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/04/Arctic_Armour_inventory_icon.png",
+  "Arctic Armour": {
+    "id": "Arctic Armour",
+    "image_url": "https://www.poewiki.net/w/images/0/04/Arctic_Armour_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Armageddon Brand",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/90/Armageddon_Brand_inventory_icon.png",
+  "Armageddon Brand": {
+    "id": "Armageddon Brand",
+    "image_url": "https://www.poewiki.net/w/images/9/90/Armageddon_Brand_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Arrogance Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/71/Arrogance_Support_inventory_icon.png",
+  "Arrogance Support": {
+    "id": "Arrogance Support",
+    "image_url": "https://www.poewiki.net/w/images/7/71/Arrogance_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Arrow Nova Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/ee/Arrow_Nova_Support_inventory_icon.png",
+  "Arrow Nova Support": {
+    "id": "Arrow Nova Support",
+    "image_url": "https://www.poewiki.net/w/images/e/ee/Arrow_Nova_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Artillery Ballista",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/19/Artillery_Ballista_inventory_icon.png",
+  "Artillery Ballista": {
+    "id": "Artillery Ballista",
+    "image_url": "https://www.poewiki.net/w/images/1/19/Artillery_Ballista_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Assassin's Mark",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e2/Assassin%27s_Mark_inventory_icon.png",
+  "Assassin's Mark": {
+    "id": "Assassin's Mark",
+    "image_url": "https://www.poewiki.net/w/images/e/e2/Assassin%27s_Mark_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Awakened Added Chaos Damage Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e2/Awakened_Added_Chaos_Damage_Support_inventory_icon.png",
+  "Awakened Added Chaos Damage Support": {
+    "id": "Awakened Added Chaos Damage Support",
+    "image_url": "https://www.poewiki.net/w/images/e/e2/Awakened_Added_Chaos_Damage_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Awakened Added Cold Damage Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/89/Awakened_Added_Cold_Damage_Support_inventory_icon.png",
+  "Awakened Added Cold Damage Support": {
+    "id": "Awakened Added Cold Damage Support",
+    "image_url": "https://www.poewiki.net/w/images/8/89/Awakened_Added_Cold_Damage_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Awakened Added Fire Damage Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/47/Awakened_Added_Fire_Damage_Support_inventory_icon.png",
+  "Awakened Added Fire Damage Support": {
+    "id": "Awakened Added Fire Damage Support",
+    "image_url": "https://www.poewiki.net/w/images/4/47/Awakened_Added_Fire_Damage_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Awakened Added Lightning Damage Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/45/Awakened_Added_Lightning_Damage_Support_inventory_icon.png",
+  "Awakened Added Lightning Damage Support": {
+    "id": "Awakened Added Lightning Damage Support",
+    "image_url": "https://www.poewiki.net/w/images/4/45/Awakened_Added_Lightning_Damage_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Awakened Ancestral Call Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/73/Awakened_Ancestral_Call_Support_inventory_icon.png",
+  "Awakened Ancestral Call Support": {
+    "id": "Awakened Ancestral Call Support",
+    "image_url": "https://www.poewiki.net/w/images/7/73/Awakened_Ancestral_Call_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Awakened Arrow Nova Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/1c/Awakened_Arrow_Nova_Support_inventory_icon.png",
+  "Awakened Arrow Nova Support": {
+    "id": "Awakened Arrow Nova Support",
+    "image_url": "https://www.poewiki.net/w/images/1/1c/Awakened_Arrow_Nova_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Awakened Blasphemy Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/70/Awakened_Blasphemy_Support_inventory_icon.png",
+  "Awakened Blasphemy Support": {
+    "id": "Awakened Blasphemy Support",
+    "image_url": "https://www.poewiki.net/w/images/7/70/Awakened_Blasphemy_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Awakened Brutality Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/65/Awakened_Brutality_Support_inventory_icon.png",
+  "Awakened Brutality Support": {
+    "id": "Awakened Brutality Support",
+    "image_url": "https://www.poewiki.net/w/images/6/65/Awakened_Brutality_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Awakened Burning Damage Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d4/Awakened_Burning_Damage_Support_inventory_icon.png",
+  "Awakened Burning Damage Support": {
+    "id": "Awakened Burning Damage Support",
+    "image_url": "https://www.poewiki.net/w/images/d/d4/Awakened_Burning_Damage_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Awakened Cast On Critical Strike Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/8e/Awakened_Cast_On_Critical_Strike_Support_inventory_icon.png",
+  "Awakened Cast On Critical Strike Support": {
+    "id": "Awakened Cast On Critical Strike Support",
+    "image_url": "https://www.poewiki.net/w/images/8/8e/Awakened_Cast_On_Critical_Strike_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Awakened Cast While Channelling Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/7f/Awakened_Cast_While_Channelling_Support_inventory_icon.png",
+  "Awakened Cast While Channelling Support": {
+    "id": "Awakened Cast While Channelling Support",
+    "image_url": "https://www.poewiki.net/w/images/7/7f/Awakened_Cast_While_Channelling_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Awakened Chain Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e5/Awakened_Chain_Support_inventory_icon.png",
+  "Awakened Chain Support": {
+    "id": "Awakened Chain Support",
+    "image_url": "https://www.poewiki.net/w/images/e/e5/Awakened_Chain_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Awakened Cold Penetration Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/2a/Awakened_Cold_Penetration_Support_inventory_icon.png",
+  "Awakened Cold Penetration Support": {
+    "id": "Awakened Cold Penetration Support",
+    "image_url": "https://www.poewiki.net/w/images/2/2a/Awakened_Cold_Penetration_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Awakened Controlled Destruction Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e0/Awakened_Controlled_Destruction_Support_inventory_icon.png",
+  "Awakened Controlled Destruction Support": {
+    "id": "Awakened Controlled Destruction Support",
+    "image_url": "https://www.poewiki.net/w/images/e/e0/Awakened_Controlled_Destruction_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Awakened Deadly Ailments Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/53/Awakened_Deadly_Ailments_Support_inventory_icon.png",
+  "Awakened Deadly Ailments Support": {
+    "id": "Awakened Deadly Ailments Support",
+    "image_url": "https://www.poewiki.net/w/images/5/53/Awakened_Deadly_Ailments_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Awakened Elemental Damage with Attacks Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/10/Awakened_Elemental_Damage_with_Attacks_Support_inventory_icon.png",
+  "Awakened Elemental Damage with Attacks Support": {
+    "id": "Awakened Elemental Damage with Attacks Support",
+    "image_url": "https://www.poewiki.net/w/images/1/10/Awakened_Elemental_Damage_with_Attacks_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Awakened Elemental Focus Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/4b/Awakened_Elemental_Focus_Support_inventory_icon.png",
+  "Awakened Elemental Focus Support": {
+    "id": "Awakened Elemental Focus Support",
+    "image_url": "https://www.poewiki.net/w/images/4/4b/Awakened_Elemental_Focus_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Awakened Fire Penetration Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/55/Awakened_Fire_Penetration_Support_inventory_icon.png",
+  "Awakened Fire Penetration Support": {
+    "id": "Awakened Fire Penetration Support",
+    "image_url": "https://www.poewiki.net/w/images/5/55/Awakened_Fire_Penetration_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Awakened Fork Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/c8/Awakened_Fork_Support_inventory_icon.png",
+  "Awakened Fork Support": {
+    "id": "Awakened Fork Support",
+    "image_url": "https://www.poewiki.net/w/images/c/c8/Awakened_Fork_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Awakened Generosity Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/bf/Awakened_Generosity_Support_inventory_icon.png",
+  "Awakened Generosity Support": {
+    "id": "Awakened Generosity Support",
+    "image_url": "https://www.poewiki.net/w/images/b/bf/Awakened_Generosity_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Awakened Greater Multiple Projectiles Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/70/Awakened_Greater_Multiple_Projectiles_Support_inventory_icon.png",
+  "Awakened Greater Multiple Projectiles Support": {
+    "id": "Awakened Greater Multiple Projectiles Support",
+    "image_url": "https://www.poewiki.net/w/images/7/70/Awakened_Greater_Multiple_Projectiles_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Awakened Hextouch Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/a1/Awakened_Hextouch_Support_inventory_icon.png",
+  "Awakened Hextouch Support": {
+    "id": "Awakened Hextouch Support",
+    "image_url": "https://www.poewiki.net/w/images/a/a1/Awakened_Hextouch_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Awakened Increased Area Of Effect Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/71/Awakened_Increased_Area_Of_Effect_Support_inventory_icon.png",
+  "Awakened Increased Area Of Effect Support": {
+    "id": "Awakened Increased Area Of Effect Support",
+    "image_url": "https://www.poewiki.net/w/images/7/71/Awakened_Increased_Area_Of_Effect_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Awakened Lightning Penetration Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/89/Awakened_Lightning_Penetration_Support_inventory_icon.png",
+  "Awakened Lightning Penetration Support": {
+    "id": "Awakened Lightning Penetration Support",
+    "image_url": "https://www.poewiki.net/w/images/8/89/Awakened_Lightning_Penetration_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Awakened Melee Physical Damage Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/bf/Awakened_Melee_Physical_Damage_Support_inventory_icon.png",
+  "Awakened Melee Physical Damage Support": {
+    "id": "Awakened Melee Physical Damage Support",
+    "image_url": "https://www.poewiki.net/w/images/b/bf/Awakened_Melee_Physical_Damage_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Awakened Melee Splash Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e4/Awakened_Melee_Splash_Support_inventory_icon.png",
+  "Awakened Melee Splash Support": {
+    "id": "Awakened Melee Splash Support",
+    "image_url": "https://www.poewiki.net/w/images/e/e4/Awakened_Melee_Splash_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Awakened Minion Damage Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e6/Awakened_Minion_Damage_Support_inventory_icon.png",
+  "Awakened Minion Damage Support": {
+    "id": "Awakened Minion Damage Support",
+    "image_url": "https://www.poewiki.net/w/images/e/e6/Awakened_Minion_Damage_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Awakened Multistrike Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/6a/Awakened_Multistrike_Support_inventory_icon.png",
+  "Awakened Multistrike Support": {
+    "id": "Awakened Multistrike Support",
+    "image_url": "https://www.poewiki.net/w/images/6/6a/Awakened_Multistrike_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Awakened Spell Cascade Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/5c/Awakened_Spell_Cascade_Support_inventory_icon.png",
+  "Awakened Spell Cascade Support": {
+    "id": "Awakened Spell Cascade Support",
+    "image_url": "https://www.poewiki.net/w/images/5/5c/Awakened_Spell_Cascade_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Awakened Spell Echo Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/19/Awakened_Spell_Echo_Support_inventory_icon.png",
+  "Awakened Spell Echo Support": {
+    "id": "Awakened Spell Echo Support",
+    "image_url": "https://www.poewiki.net/w/images/1/19/Awakened_Spell_Echo_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Awakened Swift Affliction Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/14/Awakened_Swift_Affliction_Support_inventory_icon.png",
+  "Awakened Swift Affliction Support": {
+    "id": "Awakened Swift Affliction Support",
+    "image_url": "https://www.poewiki.net/w/images/1/14/Awakened_Swift_Affliction_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Awakened Unbound Ailments Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/ca/Awakened_Unbound_Ailments_Support_inventory_icon.png",
+  "Awakened Unbound Ailments Support": {
+    "id": "Awakened Unbound Ailments Support",
+    "image_url": "https://www.poewiki.net/w/images/c/ca/Awakened_Unbound_Ailments_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Awakened Unleash Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/4e/Awakened_Unleash_Support_inventory_icon.png",
+  "Awakened Unleash Support": {
+    "id": "Awakened Unleash Support",
+    "image_url": "https://www.poewiki.net/w/images/4/4e/Awakened_Unleash_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Awakened Vicious Projectiles Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/f0/Awakened_Vicious_Projectiles_Support_inventory_icon.png",
+  "Awakened Vicious Projectiles Support": {
+    "id": "Awakened Vicious Projectiles Support",
+    "image_url": "https://www.poewiki.net/w/images/f/f0/Awakened_Vicious_Projectiles_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Awakened Void Manipulation Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/79/Awakened_Void_Manipulation_Support_inventory_icon.png",
+  "Awakened Void Manipulation Support": {
+    "id": "Awakened Void Manipulation Support",
+    "image_url": "https://www.poewiki.net/w/images/7/79/Awakened_Void_Manipulation_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Ball Lightning",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e4/Ball_Lightning_inventory_icon.png",
+  "Ball Lightning": {
+    "id": "Ball Lightning",
+    "image_url": "https://www.poewiki.net/w/images/e/e4/Ball_Lightning_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Ballista Totem Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/66/Ballista_Totem_Support_inventory_icon.png",
+  "Ballista Totem Support": {
+    "id": "Ballista Totem Support",
+    "image_url": "https://www.poewiki.net/w/images/6/66/Ballista_Totem_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Bane",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/c9/Bane_inventory_icon.png",
+  "Bane": {
+    "id": "Bane",
+    "image_url": "https://www.poewiki.net/w/images/c/c9/Bane_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Barrage",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/7c/Barrage_inventory_icon.png",
+  "Barrage": {
+    "id": "Barrage",
+    "image_url": "https://www.poewiki.net/w/images/7/7c/Barrage_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Barrage Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/4c/Barrage_Support_inventory_icon.png",
+  "Barrage Support": {
+    "id": "Barrage Support",
+    "image_url": "https://www.poewiki.net/w/images/4/4c/Barrage_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Battlemage's Cry",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/fd/Battlemage%27s_Cry_inventory_icon.png",
+  "Battlemage's Cry": {
+    "id": "Battlemage's Cry",
+    "image_url": "https://www.poewiki.net/w/images/f/fd/Battlemage%27s_Cry_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Bear Trap",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d6/Bear_Trap_inventory_icon.png",
+  "Bear Trap": {
+    "id": "Bear Trap",
+    "image_url": "https://www.poewiki.net/w/images/d/d6/Bear_Trap_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Behead Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/fd/Behead_Support_inventory_icon.png",
+  "Behead Support": {
+    "id": "Behead Support",
+    "image_url": "https://www.poewiki.net/w/images/f/fd/Behead_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Berserk",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/07/Berserk_inventory_icon.png",
+  "Berserk": {
+    "id": "Berserk",
+    "image_url": "https://www.poewiki.net/w/images/0/07/Berserk_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Blade Blast",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/1c/Blade_Blast_inventory_icon.png",
+  "Blade Blast": {
+    "id": "Blade Blast",
+    "image_url": "https://www.poewiki.net/w/images/1/1c/Blade_Blast_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Blade Flurry",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/df/Blade_Flurry_inventory_icon.png",
+  "Blade Flurry": {
+    "id": "Blade Flurry",
+    "image_url": "https://www.poewiki.net/w/images/d/df/Blade_Flurry_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Blade Trap",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/75/Blade_Trap_inventory_icon.png",
+  "Blade Trap": {
+    "id": "Blade Trap",
+    "image_url": "https://www.poewiki.net/w/images/7/75/Blade_Trap_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Blade Vortex",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/49/Blade_Vortex_inventory_icon.png",
+  "Blade Vortex": {
+    "id": "Blade Vortex",
+    "image_url": "https://www.poewiki.net/w/images/4/49/Blade_Vortex_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Bladefall",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/30/Bladefall_inventory_icon.png",
+  "Bladefall": {
+    "id": "Bladefall",
+    "image_url": "https://www.poewiki.net/w/images/3/30/Bladefall_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Bladestorm",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/28/Bladestorm_inventory_icon.png",
+  "Bladestorm": {
+    "id": "Bladestorm",
+    "image_url": "https://www.poewiki.net/w/images/2/28/Bladestorm_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Blasphemy Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/cb/Blasphemy_Support_inventory_icon.png",
+  "Blasphemy Support": {
+    "id": "Blasphemy Support",
+    "image_url": "https://www.poewiki.net/w/images/c/cb/Blasphemy_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Blast Rain",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/98/Blast_Rain_inventory_icon.png",
+  "Blast Rain": {
+    "id": "Blast Rain",
+    "image_url": "https://www.poewiki.net/w/images/9/98/Blast_Rain_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Blastchain Mine Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/a8/Blastchain_Mine_Support_inventory_icon.png",
+  "Blastchain Mine Support": {
+    "id": "Blastchain Mine Support",
+    "image_url": "https://www.poewiki.net/w/images/a/a8/Blastchain_Mine_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Blazing Salvo",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/c0/Blazing_Salvo_inventory_icon.png",
+  "Blazing Salvo": {
+    "id": "Blazing Salvo",
+    "image_url": "https://www.poewiki.net/w/images/c/c0/Blazing_Salvo_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Blight",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/13/Blight_inventory_icon.png",
+  "Blight": {
+    "id": "Blight",
+    "image_url": "https://www.poewiki.net/w/images/1/13/Blight_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Blind Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/96/Blind_Support_inventory_icon.png",
+  "Blind Support": {
+    "id": "Blind Support",
+    "image_url": "https://www.poewiki.net/w/images/9/96/Blind_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Blink Arrow",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/49/Blink_Arrow_inventory_icon.png",
+  "Blink Arrow": {
+    "id": "Blink Arrow",
+    "image_url": "https://www.poewiki.net/w/images/4/49/Blink_Arrow_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Block Chance Reduction Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/1c/Block_Chance_Reduction_Support_inventory_icon.png",
+  "Block Chance Reduction Support": {
+    "id": "Block Chance Reduction Support",
+    "image_url": "https://www.poewiki.net/w/images/1/1c/Block_Chance_Reduction_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Blood and Sand",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/6e/Blood_and_Sand_inventory_icon.png",
+  "Blood and Sand": {
+    "id": "Blood and Sand",
+    "image_url": "https://www.poewiki.net/w/images/6/6e/Blood_and_Sand_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Blood Rage",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/f3/Blood_Rage_inventory_icon.png",
+  "Blood Rage": {
+    "id": "Blood Rage",
+    "image_url": "https://www.poewiki.net/w/images/f/f3/Blood_Rage_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Bloodlust Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/3f/Bloodlust_Support_inventory_icon.png",
+  "Bloodlust Support": {
+    "id": "Bloodlust Support",
+    "image_url": "https://www.poewiki.net/w/images/3/3f/Bloodlust_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Bloodthirst Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/fc/Bloodthirst_Support_inventory_icon.png",
+  "Bloodthirst Support": {
+    "id": "Bloodthirst Support",
+    "image_url": "https://www.poewiki.net/w/images/f/fc/Bloodthirst_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Bodyswap",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/1e/Bodyswap_inventory_icon.png",
+  "Bodyswap": {
+    "id": "Bodyswap",
+    "image_url": "https://www.poewiki.net/w/images/1/1e/Bodyswap_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Bone Offering",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/9f/Bone_Offering_inventory_icon.png",
+  "Bone Offering": {
+    "id": "Bone Offering",
+    "image_url": "https://www.poewiki.net/w/images/9/9f/Bone_Offering_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Bonechill Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/51/Bonechill_Support_inventory_icon.png",
+  "Bonechill Support": {
+    "id": "Bonechill Support",
+    "image_url": "https://www.poewiki.net/w/images/5/51/Bonechill_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Boneshatter",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/15/Boneshatter_inventory_icon.png",
+  "Boneshatter": {
+    "id": "Boneshatter",
+    "image_url": "https://www.poewiki.net/w/images/1/15/Boneshatter_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Brand Recall",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/ac/Brand_Recall_inventory_icon.png",
+  "Brand Recall": {
+    "id": "Brand Recall",
+    "image_url": "https://www.poewiki.net/w/images/a/ac/Brand_Recall_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Brutality Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/c9/Brutality_Support_inventory_icon.png",
+  "Brutality Support": {
+    "id": "Brutality Support",
+    "image_url": "https://www.poewiki.net/w/images/c/c9/Brutality_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Burning Arrow",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/31/Burning_Arrow_inventory_icon.png",
+  "Burning Arrow": {
+    "id": "Burning Arrow",
+    "image_url": "https://www.poewiki.net/w/images/3/31/Burning_Arrow_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Burning Damage Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/96/Burning_Damage_Support_inventory_icon.png",
+  "Burning Damage Support": {
+    "id": "Burning Damage Support",
+    "image_url": "https://www.poewiki.net/w/images/9/96/Burning_Damage_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Cast On Critical Strike Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/29/Cast_On_Critical_Strike_Support_inventory_icon.png",
+  "Cast On Critical Strike Support": {
+    "id": "Cast On Critical Strike Support",
+    "image_url": "https://www.poewiki.net/w/images/2/29/Cast_On_Critical_Strike_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Cast on Death Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/b6/Cast_on_Death_Support_inventory_icon.png",
+  "Cast on Death Support": {
+    "id": "Cast on Death Support",
+    "image_url": "https://www.poewiki.net/w/images/b/b6/Cast_on_Death_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Cast on Melee Kill Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/ea/Cast_on_Melee_Kill_Support_inventory_icon.png",
+  "Cast on Melee Kill Support": {
+    "id": "Cast on Melee Kill Support",
+    "image_url": "https://www.poewiki.net/w/images/e/ea/Cast_on_Melee_Kill_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Cast when Damage Taken Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/c4/Cast_when_Damage_Taken_Support_inventory_icon.png",
+  "Cast when Damage Taken Support": {
+    "id": "Cast when Damage Taken Support",
+    "image_url": "https://www.poewiki.net/w/images/c/c4/Cast_when_Damage_Taken_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Cast when Stunned Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/4a/Cast_when_Stunned_Support_inventory_icon.png",
+  "Cast when Stunned Support": {
+    "id": "Cast when Stunned Support",
+    "image_url": "https://www.poewiki.net/w/images/4/4a/Cast_when_Stunned_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Cast while Channelling Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/67/Cast_while_Channelling_Support_inventory_icon.png",
+  "Cast while Channelling Support": {
+    "id": "Cast while Channelling Support",
+    "image_url": "https://www.poewiki.net/w/images/6/67/Cast_while_Channelling_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Caustic Arrow",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/6c/Caustic_Arrow_inventory_icon.png",
+  "Caustic Arrow": {
+    "id": "Caustic Arrow",
+    "image_url": "https://www.poewiki.net/w/images/6/6c/Caustic_Arrow_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Chain Hook",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/cf/Chain_Hook_inventory_icon.png",
+  "Chain Hook": {
+    "id": "Chain Hook",
+    "image_url": "https://www.poewiki.net/w/images/c/cf/Chain_Hook_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Chain Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/49/Chain_Support_inventory_icon.png",
+  "Chain Support": {
+    "id": "Chain Support",
+    "image_url": "https://www.poewiki.net/w/images/4/49/Chain_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Chance to Bleed Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/c4/Chance_to_Bleed_Support_inventory_icon.png",
+  "Chance to Bleed Support": {
+    "id": "Chance to Bleed Support",
+    "image_url": "https://www.poewiki.net/w/images/c/c4/Chance_to_Bleed_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Chance to Flee Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/b9/Chance_to_Flee_Support_inventory_icon.png",
+  "Chance to Flee Support": {
+    "id": "Chance to Flee Support",
+    "image_url": "https://www.poewiki.net/w/images/b/b9/Chance_to_Flee_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Chance to Poison Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/91/Chance_to_Poison_Support_inventory_icon.png",
+  "Chance to Poison Support": {
+    "id": "Chance to Poison Support",
+    "image_url": "https://www.poewiki.net/w/images/9/91/Chance_to_Poison_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Charged Dash",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/a9/Charged_Dash_inventory_icon.png",
+  "Charged Dash": {
+    "id": "Charged Dash",
+    "image_url": "https://www.poewiki.net/w/images/a/a9/Charged_Dash_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Charged Mines Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d5/Charged_Mines_Support_inventory_icon.png",
+  "Charged Mines Support": {
+    "id": "Charged Mines Support",
+    "image_url": "https://www.poewiki.net/w/images/d/d5/Charged_Mines_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Charged Traps Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/7d/Charged_Traps_Support_inventory_icon.png",
+  "Charged Traps Support": {
+    "id": "Charged Traps Support",
+    "image_url": "https://www.poewiki.net/w/images/7/7d/Charged_Traps_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Clarity",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/09/Clarity_inventory_icon.png",
+  "Clarity": {
+    "id": "Clarity",
+    "image_url": "https://www.poewiki.net/w/images/0/09/Clarity_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Cleave",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/74/Cleave_inventory_icon.png",
+  "Cleave": {
+    "id": "Cleave",
+    "image_url": "https://www.poewiki.net/w/images/7/74/Cleave_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Close Combat Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/5a/Close_Combat_Support_inventory_icon.png",
+  "Close Combat Support": {
+    "id": "Close Combat Support",
+    "image_url": "https://www.poewiki.net/w/images/5/5a/Close_Combat_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Cluster Traps Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/71/Cluster_Traps_Support_inventory_icon.png",
+  "Cluster Traps Support": {
+    "id": "Cluster Traps Support",
+    "image_url": "https://www.poewiki.net/w/images/7/71/Cluster_Traps_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Cobra Lash",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/f0/Cobra_Lash_inventory_icon.png",
+  "Cobra Lash": {
+    "id": "Cobra Lash",
+    "image_url": "https://www.poewiki.net/w/images/f/f0/Cobra_Lash_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Cold Penetration Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/6a/Cold_Penetration_Support_inventory_icon.png",
+  "Cold Penetration Support": {
+    "id": "Cold Penetration Support",
+    "image_url": "https://www.poewiki.net/w/images/6/6a/Cold_Penetration_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Cold Snap",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d1/Cold_Snap_inventory_icon.png",
+  "Cold Snap": {
+    "id": "Cold Snap",
+    "image_url": "https://www.poewiki.net/w/images/d/d1/Cold_Snap_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Cold to Fire Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/b0/Cold_to_Fire_Support_inventory_icon.png",
+  "Cold to Fire Support": {
+    "id": "Cold to Fire Support",
+    "image_url": "https://www.poewiki.net/w/images/b/b0/Cold_to_Fire_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Combustion Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/18/Combustion_Support_inventory_icon.png",
+  "Combustion Support": {
+    "id": "Combustion Support",
+    "image_url": "https://www.poewiki.net/w/images/1/18/Combustion_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Concentrated Effect Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d4/Concentrated_Effect_Support_inventory_icon.png",
+  "Concentrated Effect Support": {
+    "id": "Concentrated Effect Support",
+    "image_url": "https://www.poewiki.net/w/images/d/d4/Concentrated_Effect_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Conductivity",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/36/Conductivity_inventory_icon.png",
+  "Conductivity": {
+    "id": "Conductivity",
+    "image_url": "https://www.poewiki.net/w/images/3/36/Conductivity_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Consecrated Path",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/04/Consecrated_Path_inventory_icon.png",
+  "Consecrated Path": {
+    "id": "Consecrated Path",
+    "image_url": "https://www.poewiki.net/w/images/0/04/Consecrated_Path_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Contagion",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/5b/Contagion_inventory_icon.png",
+  "Contagion": {
+    "id": "Contagion",
+    "image_url": "https://www.poewiki.net/w/images/5/5b/Contagion_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Controlled Destruction Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/75/Controlled_Destruction_Support_inventory_icon.png",
+  "Controlled Destruction Support": {
+    "id": "Controlled Destruction Support",
+    "image_url": "https://www.poewiki.net/w/images/7/75/Controlled_Destruction_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Conversion Trap",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/88/Conversion_Trap_inventory_icon.png",
+  "Conversion Trap": {
+    "id": "Conversion Trap",
+    "image_url": "https://www.poewiki.net/w/images/8/88/Conversion_Trap_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Convocation",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/95/Convocation_inventory_icon.png",
+  "Convocation": {
+    "id": "Convocation",
+    "image_url": "https://www.poewiki.net/w/images/9/95/Convocation_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Corrupting Fever",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/b1/Corrupting_Fever_inventory_icon.png",
+  "Corrupting Fever": {
+    "id": "Corrupting Fever",
+    "image_url": "https://www.poewiki.net/w/images/b/b1/Corrupting_Fever_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Crackling Lance",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/48/Crackling_Lance_inventory_icon.png",
+  "Crackling Lance": {
+    "id": "Crackling Lance",
+    "image_url": "https://www.poewiki.net/w/images/4/48/Crackling_Lance_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Creeping Frost",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/c7/Creeping_Frost_inventory_icon.png",
+  "Creeping Frost": {
+    "id": "Creeping Frost",
+    "image_url": "https://www.poewiki.net/w/images/c/c7/Creeping_Frost_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Cremation",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/ac/Cremation_inventory_icon.png",
+  "Cremation": {
+    "id": "Cremation",
+    "image_url": "https://www.poewiki.net/w/images/a/ac/Cremation_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Critical Strike Affliction Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/14/Critical_Strike_Affliction_Support_inventory_icon.png",
+  "Critical Strike Affliction Support": {
+    "id": "Critical Strike Affliction Support",
+    "image_url": "https://www.poewiki.net/w/images/1/14/Critical_Strike_Affliction_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Cruelty Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/ed/Cruelty_Support_inventory_icon.png",
+  "Cruelty Support": {
+    "id": "Cruelty Support",
+    "image_url": "https://www.poewiki.net/w/images/e/ed/Cruelty_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Culling Strike Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/cf/Culling_Strike_Support_inventory_icon.png",
+  "Culling Strike Support": {
+    "id": "Culling Strike Support",
+    "image_url": "https://www.poewiki.net/w/images/c/cf/Culling_Strike_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Cyclone",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/8d/Cyclone_inventory_icon.png",
+  "Cyclone": {
+    "id": "Cyclone",
+    "image_url": "https://www.poewiki.net/w/images/8/8d/Cyclone_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Damage on Full Life Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/20/Damage_on_Full_Life_Support_inventory_icon.png",
+  "Damage on Full Life Support": {
+    "id": "Damage on Full Life Support",
+    "image_url": "https://www.poewiki.net/w/images/2/20/Damage_on_Full_Life_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Dark Pact",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/21/Dark_Pact_inventory_icon.png",
+  "Dark Pact": {
+    "id": "Dark Pact",
+    "image_url": "https://www.poewiki.net/w/images/2/21/Dark_Pact_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Dash",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/65/Dash_inventory_icon.png",
+  "Dash": {
+    "id": "Dash",
+    "image_url": "https://www.poewiki.net/w/images/6/65/Dash_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Deadly Ailments Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/31/Deadly_Ailments_Support_inventory_icon.png",
+  "Deadly Ailments Support": {
+    "id": "Deadly Ailments Support",
+    "image_url": "https://www.poewiki.net/w/images/3/31/Deadly_Ailments_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Decay Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/c9/Decay_Support_inventory_icon.png",
+  "Decay Support": {
+    "id": "Decay Support",
+    "image_url": "https://www.poewiki.net/w/images/c/c9/Decay_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Decoy Totem",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/f1/Decoy_Totem_inventory_icon.png",
+  "Decoy Totem": {
+    "id": "Decoy Totem",
+    "image_url": "https://www.poewiki.net/w/images/f/f1/Decoy_Totem_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Defiance Banner",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/2c/Defiance_Banner_inventory_icon.png",
+  "Defiance Banner": {
+    "id": "Defiance Banner",
+    "image_url": "https://www.poewiki.net/w/images/2/2c/Defiance_Banner_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Desecrate",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/cb/Desecrate_inventory_icon.png",
+  "Desecrate": {
+    "id": "Desecrate",
+    "image_url": "https://www.poewiki.net/w/images/c/cb/Desecrate_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Despair",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/48/Despair_inventory_icon.png",
+  "Despair": {
+    "id": "Despair",
+    "image_url": "https://www.poewiki.net/w/images/4/48/Despair_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Destructive Link",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/aa/Destructive_Link_inventory_icon.png",
+  "Destructive Link": {
+    "id": "Destructive Link",
+    "image_url": "https://www.poewiki.net/w/images/a/aa/Destructive_Link_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Determination",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d8/Determination_inventory_icon.png",
+  "Determination": {
+    "id": "Determination",
+    "image_url": "https://www.poewiki.net/w/images/d/d8/Determination_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Detonate Dead",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/31/Detonate_Dead_inventory_icon.png",
+  "Detonate Dead": {
+    "id": "Detonate Dead",
+    "image_url": "https://www.poewiki.net/w/images/3/31/Detonate_Dead_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Detonate Mines",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e5/Detonate_Mines_inventory_icon.png",
+  "Detonate Mines": {
+    "id": "Detonate Mines",
+    "image_url": "https://www.poewiki.net/w/images/e/e5/Detonate_Mines_inventory_icon.png",
     "primary_attribute": "none"
   },
-  {
-    "page": "Devouring Totem",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/7e/Devouring_Totem_inventory_icon.png",
+  "Devouring Totem": {
+    "id": "Devouring Totem",
+    "image_url": "https://www.poewiki.net/w/images/7/7e/Devouring_Totem_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Discharge",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/83/Discharge_inventory_icon.png",
+  "Discharge": {
+    "id": "Discharge",
+    "image_url": "https://www.poewiki.net/w/images/8/83/Discharge_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Discipline",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/b2/Discipline_inventory_icon.png",
+  "Discipline": {
+    "id": "Discipline",
+    "image_url": "https://www.poewiki.net/w/images/b/b2/Discipline_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Divine Blessing Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e4/Divine_Blessing_Support_inventory_icon.png",
+  "Divine Blessing Support": {
+    "id": "Divine Blessing Support",
+    "image_url": "https://www.poewiki.net/w/images/e/e4/Divine_Blessing_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Divine Ire",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/1b/Divine_Ire_inventory_icon.png",
+  "Divine Ire": {
+    "id": "Divine Ire",
+    "image_url": "https://www.poewiki.net/w/images/1/1b/Divine_Ire_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Dominating Blow",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/8b/Dominating_Blow_inventory_icon.png",
+  "Dominating Blow": {
+    "id": "Dominating Blow",
+    "image_url": "https://www.poewiki.net/w/images/8/8b/Dominating_Blow_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Double Strike",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/8a/Double_Strike_inventory_icon.png",
+  "Double Strike": {
+    "id": "Double Strike",
+    "image_url": "https://www.poewiki.net/w/images/8/8a/Double_Strike_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Dread Banner",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/9a/Dread_Banner_inventory_icon.png",
+  "Dread Banner": {
+    "id": "Dread Banner",
+    "image_url": "https://www.poewiki.net/w/images/9/9a/Dread_Banner_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Dual Strike",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/37/Dual_Strike_inventory_icon.png",
+  "Dual Strike": {
+    "id": "Dual Strike",
+    "image_url": "https://www.poewiki.net/w/images/3/37/Dual_Strike_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Earthbreaker Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/00/Earthbreaker_Support_inventory_icon.png",
+  "Earthbreaker Support": {
+    "id": "Earthbreaker Support",
+    "image_url": "https://www.poewiki.net/w/images/0/00/Earthbreaker_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Earthquake",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/83/Earthquake_inventory_icon.png",
+  "Earthquake": {
+    "id": "Earthquake",
+    "image_url": "https://www.poewiki.net/w/images/8/83/Earthquake_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Earthshatter",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/9c/Earthshatter_inventory_icon.png",
+  "Earthshatter": {
+    "id": "Earthshatter",
+    "image_url": "https://www.poewiki.net/w/images/9/9c/Earthshatter_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Efficacy Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/a5/Efficacy_Support_inventory_icon.png",
+  "Efficacy Support": {
+    "id": "Efficacy Support",
+    "image_url": "https://www.poewiki.net/w/images/a/a5/Efficacy_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Elemental Army Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d9/Elemental_Army_Support_inventory_icon.png",
+  "Elemental Army Support": {
+    "id": "Elemental Army Support",
+    "image_url": "https://www.poewiki.net/w/images/d/d9/Elemental_Army_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Elemental Damage with Attacks Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/14/Elemental_Damage_with_Attacks_Support_inventory_icon.png",
+  "Elemental Damage with Attacks Support": {
+    "id": "Elemental Damage with Attacks Support",
+    "image_url": "https://www.poewiki.net/w/images/1/14/Elemental_Damage_with_Attacks_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Elemental Focus Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/0e/Elemental_Focus_Support_inventory_icon.png",
+  "Elemental Focus Support": {
+    "id": "Elemental Focus Support",
+    "image_url": "https://www.poewiki.net/w/images/0/0e/Elemental_Focus_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Elemental Hit",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d4/Elemental_Hit_inventory_icon.png",
+  "Elemental Hit": {
+    "id": "Elemental Hit",
+    "image_url": "https://www.poewiki.net/w/images/d/d4/Elemental_Hit_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Elemental Penetration Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/0f/Elemental_Penetration_Support_inventory_icon.png",
+  "Elemental Penetration Support": {
+    "id": "Elemental Penetration Support",
+    "image_url": "https://www.poewiki.net/w/images/0/0f/Elemental_Penetration_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Elemental Proliferation Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e2/Elemental_Proliferation_Support_inventory_icon.png",
+  "Elemental Proliferation Support": {
+    "id": "Elemental Proliferation Support",
+    "image_url": "https://www.poewiki.net/w/images/e/e2/Elemental_Proliferation_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Elemental Weakness",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/77/Elemental_Weakness_inventory_icon.png",
+  "Elemental Weakness": {
+    "id": "Elemental Weakness",
+    "image_url": "https://www.poewiki.net/w/images/7/77/Elemental_Weakness_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Empower Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/f8/Empower_Support_inventory_icon.png",
+  "Empower Support": {
+    "id": "Empower Support",
+    "image_url": "https://www.poewiki.net/w/images/f/f8/Empower_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Endurance Charge on Melee Stun Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e4/Endurance_Charge_on_Melee_Stun_Support_inventory_icon.png",
+  "Endurance Charge on Melee Stun Support": {
+    "id": "Endurance Charge on Melee Stun Support",
+    "image_url": "https://www.poewiki.net/w/images/e/e4/Endurance_Charge_on_Melee_Stun_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Enduring Cry",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/25/Enduring_Cry_inventory_icon.png",
+  "Enduring Cry": {
+    "id": "Enduring Cry",
+    "image_url": "https://www.poewiki.net/w/images/2/25/Enduring_Cry_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Energy Blade",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/0b/Energy_Blade_inventory_icon.png",
+  "Energy Blade": {
+    "id": "Energy Blade",
+    "image_url": "https://www.poewiki.net/w/images/0/0b/Energy_Blade_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Energy Leech Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/ca/Energy_Leech_Support_inventory_icon.png",
+  "Energy Leech Support": {
+    "id": "Energy Leech Support",
+    "image_url": "https://www.poewiki.net/w/images/c/ca/Energy_Leech_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Enfeeble",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/01/Enfeeble_inventory_icon.png",
+  "Enfeeble": {
+    "id": "Enfeeble",
+    "image_url": "https://www.poewiki.net/w/images/0/01/Enfeeble_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Enhance Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/78/Enhance_Support_inventory_icon.png",
+  "Enhance Support": {
+    "id": "Enhance Support",
+    "image_url": "https://www.poewiki.net/w/images/7/78/Enhance_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Enlighten Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/3d/Enlighten_Support_inventory_icon.png",
+  "Enlighten Support": {
+    "id": "Enlighten Support",
+    "image_url": "https://www.poewiki.net/w/images/3/3d/Enlighten_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Ensnaring Arrow",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/6b/Ensnaring_Arrow_inventory_icon.png",
+  "Ensnaring Arrow": {
+    "id": "Ensnaring Arrow",
+    "image_url": "https://www.poewiki.net/w/images/6/6b/Ensnaring_Arrow_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Essence Drain",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/9e/Essence_Drain_inventory_icon.png",
+  "Essence Drain": {
+    "id": "Essence Drain",
+    "image_url": "https://www.poewiki.net/w/images/9/9e/Essence_Drain_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Eternal Blessing Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/6e/Eternal_Blessing_Support_inventory_icon.png",
+  "Eternal Blessing Support": {
+    "id": "Eternal Blessing Support",
+    "image_url": "https://www.poewiki.net/w/images/6/6e/Eternal_Blessing_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Ethereal Knives",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/4a/Ethereal_Knives_inventory_icon.png",
+  "Ethereal Knives": {
+    "id": "Ethereal Knives",
+    "image_url": "https://www.poewiki.net/w/images/4/4a/Ethereal_Knives_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Explosive Arrow",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/b6/Explosive_Arrow_inventory_icon.png",
+  "Explosive Arrow": {
+    "id": "Explosive Arrow",
+    "image_url": "https://www.poewiki.net/w/images/b/b6/Explosive_Arrow_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Explosive Concoction",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/ad/Explosive_Concoction_inventory_icon.png",
+  "Explosive Concoction": {
+    "id": "Explosive Concoction",
+    "image_url": "https://www.poewiki.net/w/images/a/ad/Explosive_Concoction_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Explosive Trap",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/a9/Explosive_Trap_inventory_icon.png",
+  "Explosive Trap": {
+    "id": "Explosive Trap",
+    "image_url": "https://www.poewiki.net/w/images/a/a9/Explosive_Trap_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Exsanguinate",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/86/Exsanguinate_inventory_icon.png",
+  "Exsanguinate": {
+    "id": "Exsanguinate",
+    "image_url": "https://www.poewiki.net/w/images/8/86/Exsanguinate_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Eye of Winter",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/6b/Eye_of_Winter_inventory_icon.png",
+  "Eye of Winter": {
+    "id": "Eye of Winter",
+    "image_url": "https://www.poewiki.net/w/images/6/6b/Eye_of_Winter_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Faster Attacks Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/21/Faster_Attacks_Support_inventory_icon.png",
+  "Faster Attacks Support": {
+    "id": "Faster Attacks Support",
+    "image_url": "https://www.poewiki.net/w/images/2/21/Faster_Attacks_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Faster Casting Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/43/Faster_Casting_Support_inventory_icon.png",
+  "Faster Casting Support": {
+    "id": "Faster Casting Support",
+    "image_url": "https://www.poewiki.net/w/images/4/43/Faster_Casting_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Faster Projectiles Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/97/Faster_Projectiles_Support_inventory_icon.png",
+  "Faster Projectiles Support": {
+    "id": "Faster Projectiles Support",
+    "image_url": "https://www.poewiki.net/w/images/9/97/Faster_Projectiles_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Feeding Frenzy Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/21/Feeding_Frenzy_Support_inventory_icon.png",
+  "Feeding Frenzy Support": {
+    "id": "Feeding Frenzy Support",
+    "image_url": "https://www.poewiki.net/w/images/2/21/Feeding_Frenzy_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Fire Penetration Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d4/Fire_Penetration_Support_inventory_icon.png",
+  "Fire Penetration Support": {
+    "id": "Fire Penetration Support",
+    "image_url": "https://www.poewiki.net/w/images/d/d4/Fire_Penetration_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Fire Trap",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/09/Fire_Trap_inventory_icon.png",
+  "Fire Trap": {
+    "id": "Fire Trap",
+    "image_url": "https://www.poewiki.net/w/images/0/09/Fire_Trap_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Fireball",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/b2/Fireball_inventory_icon.png",
+  "Fireball": {
+    "id": "Fireball",
+    "image_url": "https://www.poewiki.net/w/images/b/b2/Fireball_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Firestorm",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/35/Firestorm_inventory_icon.png",
+  "Firestorm": {
+    "id": "Firestorm",
+    "image_url": "https://www.poewiki.net/w/images/3/35/Firestorm_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Fist of War Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/3f/Fist_of_War_Support_inventory_icon.png",
+  "Fist of War Support": {
+    "id": "Fist of War Support",
+    "image_url": "https://www.poewiki.net/w/images/3/3f/Fist_of_War_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Flame Dash",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/55/Flame_Dash_inventory_icon.png",
+  "Flame Dash": {
+    "id": "Flame Dash",
+    "image_url": "https://www.poewiki.net/w/images/5/55/Flame_Dash_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Flame Link",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/ce/Flame_Link_inventory_icon.png",
+  "Flame Link": {
+    "id": "Flame Link",
+    "image_url": "https://www.poewiki.net/w/images/c/ce/Flame_Link_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Flame Surge",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/fe/Flame_Surge_inventory_icon.png",
+  "Flame Surge": {
+    "id": "Flame Surge",
+    "image_url": "https://www.poewiki.net/w/images/f/fe/Flame_Surge_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Flame Wall",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/25/Flame_Wall_inventory_icon.png",
+  "Flame Wall": {
+    "id": "Flame Wall",
+    "image_url": "https://www.poewiki.net/w/images/2/25/Flame_Wall_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Flameblast",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/22/Flameblast_inventory_icon.png",
+  "Flameblast": {
+    "id": "Flameblast",
+    "image_url": "https://www.poewiki.net/w/images/2/22/Flameblast_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Flamethrower Trap",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/57/Flamethrower_Trap_inventory_icon.png",
+  "Flamethrower Trap": {
+    "id": "Flamethrower Trap",
+    "image_url": "https://www.poewiki.net/w/images/5/57/Flamethrower_Trap_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Flammability",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/16/Flammability_inventory_icon.png",
+  "Flammability": {
+    "id": "Flammability",
+    "image_url": "https://www.poewiki.net/w/images/1/16/Flammability_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Flesh and Stone",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/61/Flesh_and_Stone_inventory_icon.png",
+  "Flesh and Stone": {
+    "id": "Flesh and Stone",
+    "image_url": "https://www.poewiki.net/w/images/6/61/Flesh_and_Stone_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Flesh Offering",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d7/Flesh_Offering_inventory_icon.png",
+  "Flesh Offering": {
+    "id": "Flesh Offering",
+    "image_url": "https://www.poewiki.net/w/images/d/d7/Flesh_Offering_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Flicker Strike",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/3c/Flicker_Strike_inventory_icon.png",
+  "Flicker Strike": {
+    "id": "Flicker Strike",
+    "image_url": "https://www.poewiki.net/w/images/3/3c/Flicker_Strike_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Focused Ballista Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/dc/Focused_Ballista_Support_inventory_icon.png",
+  "Focused Ballista Support": {
+    "id": "Focused Ballista Support",
+    "image_url": "https://www.poewiki.net/w/images/d/dc/Focused_Ballista_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Forbidden Rite",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/6a/Forbidden_Rite_inventory_icon.png",
+  "Forbidden Rite": {
+    "id": "Forbidden Rite",
+    "image_url": "https://www.poewiki.net/w/images/6/6a/Forbidden_Rite_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Fork Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/38/Fork_Support_inventory_icon.png",
+  "Fork Support": {
+    "id": "Fork Support",
+    "image_url": "https://www.poewiki.net/w/images/3/38/Fork_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Fortify Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d5/Fortify_Support_inventory_icon.png",
+  "Fortify Support": {
+    "id": "Fortify Support",
+    "image_url": "https://www.poewiki.net/w/images/d/d5/Fortify_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Freezing Pulse",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/87/Freezing_Pulse_inventory_icon.png",
+  "Freezing Pulse": {
+    "id": "Freezing Pulse",
+    "image_url": "https://www.poewiki.net/w/images/8/87/Freezing_Pulse_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Frenzy",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/37/Frenzy_inventory_icon.png",
+  "Frenzy": {
+    "id": "Frenzy",
+    "image_url": "https://www.poewiki.net/w/images/3/37/Frenzy_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Frost Blades",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/06/Frost_Blades_inventory_icon.png",
+  "Frost Blades": {
+    "id": "Frost Blades",
+    "image_url": "https://www.poewiki.net/w/images/0/06/Frost_Blades_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Frost Bomb",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/a6/Frost_Bomb_inventory_icon.png",
+  "Frost Bomb": {
+    "id": "Frost Bomb",
+    "image_url": "https://www.poewiki.net/w/images/a/a6/Frost_Bomb_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Frost Shield",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/ec/Frost_Shield_inventory_icon.png",
+  "Frost Shield": {
+    "id": "Frost Shield",
+    "image_url": "https://www.poewiki.net/w/images/e/ec/Frost_Shield_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Frost Wall",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/22/Frost_Wall_inventory_icon.png",
+  "Frost Wall": {
+    "id": "Frost Wall",
+    "image_url": "https://www.poewiki.net/w/images/2/22/Frost_Wall_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Frostbite",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/1c/Frostbite_inventory_icon.png",
+  "Frostbite": {
+    "id": "Frostbite",
+    "image_url": "https://www.poewiki.net/w/images/1/1c/Frostbite_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Frostblink",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/ec/Frostblink_inventory_icon.png",
+  "Frostblink": {
+    "id": "Frostblink",
+    "image_url": "https://www.poewiki.net/w/images/e/ec/Frostblink_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Frostbolt",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d3/Frostbolt_inventory_icon.png",
+  "Frostbolt": {
+    "id": "Frostbolt",
+    "image_url": "https://www.poewiki.net/w/images/d/d3/Frostbolt_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Galvanic Arrow",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/95/Galvanic_Arrow_inventory_icon.png",
+  "Galvanic Arrow": {
+    "id": "Galvanic Arrow",
+    "image_url": "https://www.poewiki.net/w/images/9/95/Galvanic_Arrow_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "General's Cry",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/1d/General%27s_Cry_inventory_icon.png",
+  "General's Cry": {
+    "id": "General's Cry",
+    "image_url": "https://www.poewiki.net/w/images/1/1d/General%27s_Cry_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Generosity Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e5/Generosity_Support_inventory_icon.png",
+  "Generosity Support": {
+    "id": "Generosity Support",
+    "image_url": "https://www.poewiki.net/w/images/e/e5/Generosity_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Glacial Cascade",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/db/Glacial_Cascade_inventory_icon.png",
+  "Glacial Cascade": {
+    "id": "Glacial Cascade",
+    "image_url": "https://www.poewiki.net/w/images/d/db/Glacial_Cascade_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Glacial Hammer",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/f9/Glacial_Hammer_inventory_icon.png",
+  "Glacial Hammer": {
+    "id": "Glacial Hammer",
+    "image_url": "https://www.poewiki.net/w/images/f/f9/Glacial_Hammer_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Grace",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/a5/Grace_inventory_icon.png",
+  "Grace": {
+    "id": "Grace",
+    "image_url": "https://www.poewiki.net/w/images/a/a5/Grace_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Greater Multiple Projectiles Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d2/Greater_Multiple_Projectiles_Support_inventory_icon.png",
+  "Greater Multiple Projectiles Support": {
+    "id": "Greater Multiple Projectiles Support",
+    "image_url": "https://www.poewiki.net/w/images/d/d2/Greater_Multiple_Projectiles_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Greater Volley Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/3a/Greater_Volley_Support_inventory_icon.png",
+  "Greater Volley Support": {
+    "id": "Greater Volley Support",
+    "image_url": "https://www.poewiki.net/w/images/3/3a/Greater_Volley_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Ground Slam",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d9/Ground_Slam_inventory_icon.png",
+  "Ground Slam": {
+    "id": "Ground Slam",
+    "image_url": "https://www.poewiki.net/w/images/d/d9/Ground_Slam_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Haste",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/06/Haste_inventory_icon.png",
+  "Haste": {
+    "id": "Haste",
+    "image_url": "https://www.poewiki.net/w/images/0/06/Haste_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Hatred",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/57/Hatred_inventory_icon.png",
+  "Hatred": {
+    "id": "Hatred",
+    "image_url": "https://www.poewiki.net/w/images/5/57/Hatred_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Heavy Strike",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/58/Heavy_Strike_inventory_icon.png",
+  "Heavy Strike": {
+    "id": "Heavy Strike",
+    "image_url": "https://www.poewiki.net/w/images/5/58/Heavy_Strike_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Herald of Agony",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/fb/Herald_of_Agony_inventory_icon.png",
+  "Herald of Agony": {
+    "id": "Herald of Agony",
+    "image_url": "https://www.poewiki.net/w/images/f/fb/Herald_of_Agony_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Herald of Ash",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/3f/Herald_of_Ash_inventory_icon.png",
+  "Herald of Ash": {
+    "id": "Herald of Ash",
+    "image_url": "https://www.poewiki.net/w/images/3/3f/Herald_of_Ash_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Herald of Ice",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e7/Herald_of_Ice_inventory_icon.png",
+  "Herald of Ice": {
+    "id": "Herald of Ice",
+    "image_url": "https://www.poewiki.net/w/images/e/e7/Herald_of_Ice_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Herald of Purity",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/39/Herald_of_Purity_inventory_icon.png",
+  "Herald of Purity": {
+    "id": "Herald of Purity",
+    "image_url": "https://www.poewiki.net/w/images/3/39/Herald_of_Purity_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Herald of Thunder",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/7b/Herald_of_Thunder_inventory_icon.png",
+  "Herald of Thunder": {
+    "id": "Herald of Thunder",
+    "image_url": "https://www.poewiki.net/w/images/7/7b/Herald_of_Thunder_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Hexblast",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/bf/Hexblast_inventory_icon.png",
+  "Hexblast": {
+    "id": "Hexblast",
+    "image_url": "https://www.poewiki.net/w/images/b/bf/Hexblast_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Hextouch Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/02/Hextouch_Support_inventory_icon.png",
+  "Hextouch Support": {
+    "id": "Hextouch Support",
+    "image_url": "https://www.poewiki.net/w/images/0/02/Hextouch_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "High-Impact Mine Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/05/High-Impact_Mine_Support_inventory_icon.png",
+  "High-Impact Mine Support": {
+    "id": "High-Impact Mine Support",
+    "image_url": "https://www.poewiki.net/w/images/0/05/High-Impact_Mine_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Holy Flame Totem",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/0e/Holy_Flame_Totem_inventory_icon.png",
+  "Holy Flame Totem": {
+    "id": "Holy Flame Totem",
+    "image_url": "https://www.poewiki.net/w/images/0/0e/Holy_Flame_Totem_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Hydrosphere",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/83/Hydrosphere_inventory_icon.png",
+  "Hydrosphere": {
+    "id": "Hydrosphere",
+    "image_url": "https://www.poewiki.net/w/images/8/83/Hydrosphere_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Hypothermia Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/62/Hypothermia_Support_inventory_icon.png",
+  "Hypothermia Support": {
+    "id": "Hypothermia Support",
+    "image_url": "https://www.poewiki.net/w/images/6/62/Hypothermia_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Ice Bite Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e2/Ice_Bite_Support_inventory_icon.png",
+  "Ice Bite Support": {
+    "id": "Ice Bite Support",
+    "image_url": "https://www.poewiki.net/w/images/e/e2/Ice_Bite_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Ice Crash",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/aa/Ice_Crash_inventory_icon.png",
+  "Ice Crash": {
+    "id": "Ice Crash",
+    "image_url": "https://www.poewiki.net/w/images/a/aa/Ice_Crash_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Ice Nova",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/33/Ice_Nova_inventory_icon.png",
+  "Ice Nova": {
+    "id": "Ice Nova",
+    "image_url": "https://www.poewiki.net/w/images/3/33/Ice_Nova_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Ice Shot",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/08/Ice_Shot_inventory_icon.png",
+  "Ice Shot": {
+    "id": "Ice Shot",
+    "image_url": "https://www.poewiki.net/w/images/0/08/Ice_Shot_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Ice Spear",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/f2/Ice_Spear_inventory_icon.png",
+  "Ice Spear": {
+    "id": "Ice Spear",
+    "image_url": "https://www.poewiki.net/w/images/f/f2/Ice_Spear_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Ice Trap",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/4c/Ice_Trap_inventory_icon.png",
+  "Ice Trap": {
+    "id": "Ice Trap",
+    "image_url": "https://www.poewiki.net/w/images/4/4c/Ice_Trap_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Icicle Mine",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/1f/Icicle_Mine_inventory_icon.png",
+  "Icicle Mine": {
+    "id": "Icicle Mine",
+    "image_url": "https://www.poewiki.net/w/images/1/1f/Icicle_Mine_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Ignite Proliferation Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/5d/Ignite_Proliferation_Support_inventory_icon.png",
+  "Ignite Proliferation Support": {
+    "id": "Ignite Proliferation Support",
+    "image_url": "https://www.poewiki.net/w/images/5/5d/Ignite_Proliferation_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Immolate Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/f6/Immolate_Support_inventory_icon.png",
+  "Immolate Support": {
+    "id": "Immolate Support",
+    "image_url": "https://www.poewiki.net/w/images/f/f6/Immolate_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Immortal Call",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/8e/Immortal_Call_inventory_icon.png",
+  "Immortal Call": {
+    "id": "Immortal Call",
+    "image_url": "https://www.poewiki.net/w/images/8/8e/Immortal_Call_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Impale Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/c0/Impale_Support_inventory_icon.png",
+  "Impale Support": {
+    "id": "Impale Support",
+    "image_url": "https://www.poewiki.net/w/images/c/c0/Impale_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Impending Doom Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/a3/Impending_Doom_Support_inventory_icon.png",
+  "Impending Doom Support": {
+    "id": "Impending Doom Support",
+    "image_url": "https://www.poewiki.net/w/images/a/a3/Impending_Doom_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Incinerate",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/ae/Incinerate_inventory_icon.png",
+  "Incinerate": {
+    "id": "Incinerate",
+    "image_url": "https://www.poewiki.net/w/images/a/ae/Incinerate_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Increased Area of Effect Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/ae/Increased_Area_of_Effect_Support_inventory_icon.png",
+  "Increased Area of Effect Support": {
+    "id": "Increased Area of Effect Support",
+    "image_url": "https://www.poewiki.net/w/images/a/ae/Increased_Area_of_Effect_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Increased Critical Damage Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/09/Increased_Critical_Damage_Support_inventory_icon.png",
+  "Increased Critical Damage Support": {
+    "id": "Increased Critical Damage Support",
+    "image_url": "https://www.poewiki.net/w/images/0/09/Increased_Critical_Damage_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Increased Critical Strikes Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/f0/Increased_Critical_Strikes_Support_inventory_icon.png",
+  "Increased Critical Strikes Support": {
+    "id": "Increased Critical Strikes Support",
+    "image_url": "https://www.poewiki.net/w/images/f/f0/Increased_Critical_Strikes_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Increased Duration Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/11/Increased_Duration_Support_inventory_icon.png",
+  "Increased Duration Support": {
+    "id": "Increased Duration Support",
+    "image_url": "https://www.poewiki.net/w/images/1/11/Increased_Duration_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Infernal Blow",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/a8/Infernal_Blow_inventory_icon.png",
+  "Infernal Blow": {
+    "id": "Infernal Blow",
+    "image_url": "https://www.poewiki.net/w/images/a/a8/Infernal_Blow_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Infernal Cry",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/56/Infernal_Cry_inventory_icon.png",
+  "Infernal Cry": {
+    "id": "Infernal Cry",
+    "image_url": "https://www.poewiki.net/w/images/5/56/Infernal_Cry_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Infernal Legion Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e0/Infernal_Legion_Support_inventory_icon.png",
+  "Infernal Legion Support": {
+    "id": "Infernal Legion Support",
+    "image_url": "https://www.poewiki.net/w/images/e/e0/Infernal_Legion_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Infused Channelling Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e6/Infused_Channelling_Support_inventory_icon.png",
+  "Infused Channelling Support": {
+    "id": "Infused Channelling Support",
+    "image_url": "https://www.poewiki.net/w/images/e/e6/Infused_Channelling_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Innervate Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/1d/Innervate_Support_inventory_icon.png",
+  "Innervate Support": {
+    "id": "Innervate Support",
+    "image_url": "https://www.poewiki.net/w/images/1/1d/Innervate_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Inspiration Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/2c/Inspiration_Support_inventory_icon.png",
+  "Inspiration Support": {
+    "id": "Inspiration Support",
+    "image_url": "https://www.poewiki.net/w/images/2/2c/Inspiration_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Intensify Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/ce/Intensify_Support_inventory_icon.png",
+  "Intensify Support": {
+    "id": "Intensify Support",
+    "image_url": "https://www.poewiki.net/w/images/c/ce/Intensify_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Intimidating Cry",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d2/Intimidating_Cry_inventory_icon.png",
+  "Intimidating Cry": {
+    "id": "Intimidating Cry",
+    "image_url": "https://www.poewiki.net/w/images/d/d2/Intimidating_Cry_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Intuitive Link",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/c9/Intuitive_Link_inventory_icon.png",
+  "Intuitive Link": {
+    "id": "Intuitive Link",
+    "image_url": "https://www.poewiki.net/w/images/c/c9/Intuitive_Link_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Iron Grip Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/3c/Iron_Grip_Support_inventory_icon.png",
+  "Iron Grip Support": {
+    "id": "Iron Grip Support",
+    "image_url": "https://www.poewiki.net/w/images/3/3c/Iron_Grip_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Iron Will Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/1b/Iron_Will_Support_inventory_icon.png",
+  "Iron Will Support": {
+    "id": "Iron Will Support",
+    "image_url": "https://www.poewiki.net/w/images/1/1b/Iron_Will_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Item Quantity Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/53/Item_Quantity_Support_inventory_icon.png",
+  "Item Quantity Support": {
+    "id": "Item Quantity Support",
+    "image_url": "https://www.poewiki.net/w/images/5/53/Item_Quantity_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Item Rarity Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/70/Item_Rarity_Support_inventory_icon.png",
+  "Item Rarity Support": {
+    "id": "Item Rarity Support",
+    "image_url": "https://www.poewiki.net/w/images/7/70/Item_Rarity_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Kinetic Blast",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/0c/Kinetic_Blast_inventory_icon.png",
+  "Kinetic Blast": {
+    "id": "Kinetic Blast",
+    "image_url": "https://www.poewiki.net/w/images/0/0c/Kinetic_Blast_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Kinetic Bolt",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/19/Kinetic_Bolt_inventory_icon.png",
+  "Kinetic Bolt": {
+    "id": "Kinetic Bolt",
+    "image_url": "https://www.poewiki.net/w/images/1/19/Kinetic_Bolt_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Knockback Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/08/Knockback_Support_inventory_icon.png",
+  "Knockback Support": {
+    "id": "Knockback Support",
+    "image_url": "https://www.poewiki.net/w/images/0/08/Knockback_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Lacerate",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/b9/Lacerate_inventory_icon.png",
+  "Lacerate": {
+    "id": "Lacerate",
+    "image_url": "https://www.poewiki.net/w/images/b/b9/Lacerate_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Lancing Steel",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/98/Lancing_Steel_inventory_icon.png",
+  "Lancing Steel": {
+    "id": "Lancing Steel",
+    "image_url": "https://www.poewiki.net/w/images/9/98/Lancing_Steel_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Leap Slam",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/76/Leap_Slam_inventory_icon.png",
+  "Leap Slam": {
+    "id": "Leap Slam",
+    "image_url": "https://www.poewiki.net/w/images/7/76/Leap_Slam_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Less Duration Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/00/Less_Duration_Support_inventory_icon.png",
+  "Less Duration Support": {
+    "id": "Less Duration Support",
+    "image_url": "https://www.poewiki.net/w/images/0/00/Less_Duration_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Lesser Multiple Projectiles Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/c6/Lesser_Multiple_Projectiles_Support_inventory_icon.png",
+  "Lesser Multiple Projectiles Support": {
+    "id": "Lesser Multiple Projectiles Support",
+    "image_url": "https://www.poewiki.net/w/images/c/c6/Lesser_Multiple_Projectiles_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Life Gain on Hit Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/8d/Life_Gain_on_Hit_Support_inventory_icon.png",
+  "Life Gain on Hit Support": {
+    "id": "Life Gain on Hit Support",
+    "image_url": "https://www.poewiki.net/w/images/8/8d/Life_Gain_on_Hit_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Life Leech Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/f6/Life_Leech_Support_inventory_icon.png",
+  "Life Leech Support": {
+    "id": "Life Leech Support",
+    "image_url": "https://www.poewiki.net/w/images/f/f6/Life_Leech_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Lifetap Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/41/Lifetap_Support_inventory_icon.png",
+  "Lifetap Support": {
+    "id": "Lifetap Support",
+    "image_url": "https://www.poewiki.net/w/images/4/41/Lifetap_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Lightning Arrow",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/9e/Lightning_Arrow_inventory_icon.png",
+  "Lightning Arrow": {
+    "id": "Lightning Arrow",
+    "image_url": "https://www.poewiki.net/w/images/9/9e/Lightning_Arrow_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Lightning Penetration Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/80/Lightning_Penetration_Support_inventory_icon.png",
+  "Lightning Penetration Support": {
+    "id": "Lightning Penetration Support",
+    "image_url": "https://www.poewiki.net/w/images/8/80/Lightning_Penetration_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Lightning Spire Trap",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/91/Lightning_Spire_Trap_inventory_icon.png",
+  "Lightning Spire Trap": {
+    "id": "Lightning Spire Trap",
+    "image_url": "https://www.poewiki.net/w/images/9/91/Lightning_Spire_Trap_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Lightning Strike",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/bc/Lightning_Strike_inventory_icon.png",
+  "Lightning Strike": {
+    "id": "Lightning Strike",
+    "image_url": "https://www.poewiki.net/w/images/b/bc/Lightning_Strike_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Lightning Tendrils",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/2d/Lightning_Tendrils_inventory_icon.png",
+  "Lightning Tendrils": {
+    "id": "Lightning Tendrils",
+    "image_url": "https://www.poewiki.net/w/images/2/2d/Lightning_Tendrils_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Lightning Trap",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/17/Lightning_Trap_inventory_icon.png",
+  "Lightning Trap": {
+    "id": "Lightning Trap",
+    "image_url": "https://www.poewiki.net/w/images/1/17/Lightning_Trap_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Lightning Warp",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/da/Lightning_Warp_inventory_icon.png",
+  "Lightning Warp": {
+    "id": "Lightning Warp",
+    "image_url": "https://www.poewiki.net/w/images/d/da/Lightning_Warp_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Maim Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/13/Maim_Support_inventory_icon.png",
+  "Maim Support": {
+    "id": "Maim Support",
+    "image_url": "https://www.poewiki.net/w/images/1/13/Maim_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Malevolence",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/24/Malevolence_inventory_icon.png",
+  "Malevolence": {
+    "id": "Malevolence",
+    "image_url": "https://www.poewiki.net/w/images/2/24/Malevolence_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Mana Leech Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/ea/Mana_Leech_Support_inventory_icon.png",
+  "Mana Leech Support": {
+    "id": "Mana Leech Support",
+    "image_url": "https://www.poewiki.net/w/images/e/ea/Mana_Leech_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Manabond",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/16/Manabond_inventory_icon.png",
+  "Manabond": {
+    "id": "Manabond",
+    "image_url": "https://www.poewiki.net/w/images/1/16/Manabond_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Mark On Hit Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/9d/Mark_On_Hit_Support_inventory_icon.png",
+  "Mark On Hit Support": {
+    "id": "Mark On Hit Support",
+    "image_url": "https://www.poewiki.net/w/images/9/9d/Mark_On_Hit_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Meat Shield Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/13/Meat_Shield_Support_inventory_icon.png",
+  "Meat Shield Support": {
+    "id": "Meat Shield Support",
+    "image_url": "https://www.poewiki.net/w/images/1/13/Meat_Shield_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Melee Physical Damage Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/68/Melee_Physical_Damage_Support_inventory_icon.png",
+  "Melee Physical Damage Support": {
+    "id": "Melee Physical Damage Support",
+    "image_url": "https://www.poewiki.net/w/images/6/68/Melee_Physical_Damage_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Melee Splash Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/3e/Melee_Splash_Support_inventory_icon.png",
+  "Melee Splash Support": {
+    "id": "Melee Splash Support",
+    "image_url": "https://www.poewiki.net/w/images/3/3e/Melee_Splash_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Minefield Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/ff/Minefield_Support_inventory_icon.png",
+  "Minefield Support": {
+    "id": "Minefield Support",
+    "image_url": "https://www.poewiki.net/w/images/f/ff/Minefield_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Minion Damage Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/66/Minion_Damage_Support_inventory_icon.png",
+  "Minion Damage Support": {
+    "id": "Minion Damage Support",
+    "image_url": "https://www.poewiki.net/w/images/6/66/Minion_Damage_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Minion Life Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/92/Minion_Life_Support_inventory_icon.png",
+  "Minion Life Support": {
+    "id": "Minion Life Support",
+    "image_url": "https://www.poewiki.net/w/images/9/92/Minion_Life_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Minion Speed Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/ee/Minion_Speed_Support_inventory_icon.png",
+  "Minion Speed Support": {
+    "id": "Minion Speed Support",
+    "image_url": "https://www.poewiki.net/w/images/e/ee/Minion_Speed_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Mirage Archer Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/b0/Mirage_Archer_Support_inventory_icon.png",
+  "Mirage Archer Support": {
+    "id": "Mirage Archer Support",
+    "image_url": "https://www.poewiki.net/w/images/b/b0/Mirage_Archer_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Mirror Arrow",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/8a/Mirror_Arrow_inventory_icon.png",
+  "Mirror Arrow": {
+    "id": "Mirror Arrow",
+    "image_url": "https://www.poewiki.net/w/images/8/8a/Mirror_Arrow_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Molten Shell",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/cb/Molten_Shell_inventory_icon.png",
+  "Molten Shell": {
+    "id": "Molten Shell",
+    "image_url": "https://www.poewiki.net/w/images/c/cb/Molten_Shell_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Molten Strike",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/c1/Molten_Strike_inventory_icon.png",
+  "Molten Strike": {
+    "id": "Molten Strike",
+    "image_url": "https://www.poewiki.net/w/images/c/c1/Molten_Strike_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Multiple Totems Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/cd/Multiple_Totems_Support_inventory_icon.png",
+  "Multiple Totems Support": {
+    "id": "Multiple Totems Support",
+    "image_url": "https://www.poewiki.net/w/images/c/cd/Multiple_Totems_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Multiple Traps Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/a2/Multiple_Traps_Support_inventory_icon.png",
+  "Multiple Traps Support": {
+    "id": "Multiple Traps Support",
+    "image_url": "https://www.poewiki.net/w/images/a/a2/Multiple_Traps_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Multistrike Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/2e/Multistrike_Support_inventory_icon.png",
+  "Multistrike Support": {
+    "id": "Multistrike Support",
+    "image_url": "https://www.poewiki.net/w/images/2/2e/Multistrike_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Nightblade Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/b9/Nightblade_Support_inventory_icon.png",
+  "Nightblade Support": {
+    "id": "Nightblade Support",
+    "image_url": "https://www.poewiki.net/w/images/b/b9/Nightblade_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Onslaught Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e9/Onslaught_Support_inventory_icon.png",
+  "Onslaught Support": {
+    "id": "Onslaught Support",
+    "image_url": "https://www.poewiki.net/w/images/e/e9/Onslaught_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Orb of Storms",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/84/Orb_of_Storms_inventory_icon.png",
+  "Orb of Storms": {
+    "id": "Orb of Storms",
+    "image_url": "https://www.poewiki.net/w/images/8/84/Orb_of_Storms_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Penance Brand",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/82/Penance_Brand_inventory_icon.png",
+  "Penance Brand": {
+    "id": "Penance Brand",
+    "image_url": "https://www.poewiki.net/w/images/8/82/Penance_Brand_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Perforate",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/0e/Perforate_inventory_icon.png",
+  "Perforate": {
+    "id": "Perforate",
+    "image_url": "https://www.poewiki.net/w/images/0/0e/Perforate_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Pestilent Strike",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/66/Pestilent_Strike_inventory_icon.png",
+  "Pestilent Strike": {
+    "id": "Pestilent Strike",
+    "image_url": "https://www.poewiki.net/w/images/6/66/Pestilent_Strike_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Petrified Blood",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/dd/Petrified_Blood_inventory_icon.png",
+  "Petrified Blood": {
+    "id": "Petrified Blood",
+    "image_url": "https://www.poewiki.net/w/images/d/dd/Petrified_Blood_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Phase Run",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/9b/Phase_Run_inventory_icon.png",
+  "Phase Run": {
+    "id": "Phase Run",
+    "image_url": "https://www.poewiki.net/w/images/9/9b/Phase_Run_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Physical to Lightning Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/89/Physical_to_Lightning_Support_inventory_icon.png",
+  "Physical to Lightning Support": {
+    "id": "Physical to Lightning Support",
+    "image_url": "https://www.poewiki.net/w/images/8/89/Physical_to_Lightning_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Pierce Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/32/Pierce_Support_inventory_icon.png",
+  "Pierce Support": {
+    "id": "Pierce Support",
+    "image_url": "https://www.poewiki.net/w/images/3/32/Pierce_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Pinpoint Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/7b/Pinpoint_Support_inventory_icon.png",
+  "Pinpoint Support": {
+    "id": "Pinpoint Support",
+    "image_url": "https://www.poewiki.net/w/images/7/7b/Pinpoint_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Plague Bearer",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/83/Plague_Bearer_inventory_icon.png",
+  "Plague Bearer": {
+    "id": "Plague Bearer",
+    "image_url": "https://www.poewiki.net/w/images/8/83/Plague_Bearer_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Poacher's Mark",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d6/Poacher%27s_Mark_inventory_icon.png",
+  "Poacher's Mark": {
+    "id": "Poacher's Mark",
+    "image_url": "https://www.poewiki.net/w/images/d/d6/Poacher%27s_Mark_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Point Blank Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/41/Point_Blank_Support_inventory_icon.png",
+  "Point Blank Support": {
+    "id": "Point Blank Support",
+    "image_url": "https://www.poewiki.net/w/images/4/41/Point_Blank_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Poisonous Concoction",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/ee/Poisonous_Concoction_inventory_icon.png",
+  "Poisonous Concoction": {
+    "id": "Poisonous Concoction",
+    "image_url": "https://www.poewiki.net/w/images/e/ee/Poisonous_Concoction_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Portal (gem)",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/31/Portal_inventory_icon.png",
+  "Portal (gem)": {
+    "id": "Portal (gem)",
+    "image_url": "https://www.poewiki.net/w/images/3/31/Portal_inventory_icon.png",
     "primary_attribute": "none"
   },
-  {
-    "page": "Power Charge On Critical Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/53/Power_Charge_On_Critical_Support_inventory_icon.png",
+  "Power Charge On Critical Support": {
+    "id": "Power Charge On Critical Support",
+    "image_url": "https://www.poewiki.net/w/images/5/53/Power_Charge_On_Critical_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Power Siphon",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/52/Power_Siphon_inventory_icon.png",
+  "Power Siphon": {
+    "id": "Power Siphon",
+    "image_url": "https://www.poewiki.net/w/images/5/52/Power_Siphon_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Precision",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/72/Precision_inventory_icon.png",
+  "Precision": {
+    "id": "Precision",
+    "image_url": "https://www.poewiki.net/w/images/7/72/Precision_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Predator Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/0d/Predator_Support_inventory_icon.png",
+  "Predator Support": {
+    "id": "Predator Support",
+    "image_url": "https://www.poewiki.net/w/images/0/0d/Predator_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Pride",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/49/Pride_inventory_icon.png",
+  "Pride": {
+    "id": "Pride",
+    "image_url": "https://www.poewiki.net/w/images/4/49/Pride_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Protective Link",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/bc/Protective_Link_inventory_icon.png",
+  "Protective Link": {
+    "id": "Protective Link",
+    "image_url": "https://www.poewiki.net/w/images/b/bc/Protective_Link_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Pulverise Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/32/Pulverise_Support_inventory_icon.png",
+  "Pulverise Support": {
+    "id": "Pulverise Support",
+    "image_url": "https://www.poewiki.net/w/images/3/32/Pulverise_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Puncture",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/cc/Puncture_inventory_icon.png",
+  "Puncture": {
+    "id": "Puncture",
+    "image_url": "https://www.poewiki.net/w/images/c/cc/Puncture_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Punishment",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/6b/Punishment_inventory_icon.png",
+  "Punishment": {
+    "id": "Punishment",
+    "image_url": "https://www.poewiki.net/w/images/6/6b/Punishment_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Purifying Flame",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/19/Purifying_Flame_inventory_icon.png",
+  "Purifying Flame": {
+    "id": "Purifying Flame",
+    "image_url": "https://www.poewiki.net/w/images/1/19/Purifying_Flame_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Purity of Elements",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/59/Purity_of_Elements_inventory_icon.png",
+  "Purity of Elements": {
+    "id": "Purity of Elements",
+    "image_url": "https://www.poewiki.net/w/images/5/59/Purity_of_Elements_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Purity of Fire",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/78/Purity_of_Fire_inventory_icon.png",
+  "Purity of Fire": {
+    "id": "Purity of Fire",
+    "image_url": "https://www.poewiki.net/w/images/7/78/Purity_of_Fire_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Purity of Ice",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/4c/Purity_of_Ice_inventory_icon.png",
+  "Purity of Ice": {
+    "id": "Purity of Ice",
+    "image_url": "https://www.poewiki.net/w/images/4/4c/Purity_of_Ice_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Purity of Lightning",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e7/Purity_of_Lightning_inventory_icon.png",
+  "Purity of Lightning": {
+    "id": "Purity of Lightning",
+    "image_url": "https://www.poewiki.net/w/images/e/e7/Purity_of_Lightning_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Pyroclast Mine",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/7b/Pyroclast_Mine_inventory_icon.png",
+  "Pyroclast Mine": {
+    "id": "Pyroclast Mine",
+    "image_url": "https://www.poewiki.net/w/images/7/7b/Pyroclast_Mine_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Rage Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/c5/Rage_Support_inventory_icon.png",
+  "Rage Support": {
+    "id": "Rage Support",
+    "image_url": "https://www.poewiki.net/w/images/c/c5/Rage_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Rage Vortex",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/bc/Rage_Vortex_inventory_icon.png",
+  "Rage Vortex": {
+    "id": "Rage Vortex",
+    "image_url": "https://www.poewiki.net/w/images/b/bc/Rage_Vortex_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Rain of Arrows",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/9a/Rain_of_Arrows_inventory_icon.png",
+  "Rain of Arrows": {
+    "id": "Rain of Arrows",
+    "image_url": "https://www.poewiki.net/w/images/9/9a/Rain_of_Arrows_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Raise Spectre",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/0b/Raise_Spectre_inventory_icon.png",
+  "Raise Spectre": {
+    "id": "Raise Spectre",
+    "image_url": "https://www.poewiki.net/w/images/0/0b/Raise_Spectre_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Raise Zombie",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/ff/Raise_Zombie_inventory_icon.png",
+  "Raise Zombie": {
+    "id": "Raise Zombie",
+    "image_url": "https://www.poewiki.net/w/images/f/ff/Raise_Zombie_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Rallying Cry",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/19/Rallying_Cry_inventory_icon.png",
+  "Rallying Cry": {
+    "id": "Rallying Cry",
+    "image_url": "https://www.poewiki.net/w/images/1/19/Rallying_Cry_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Reap",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e2/Reap_inventory_icon.png",
+  "Reap": {
+    "id": "Reap",
+    "image_url": "https://www.poewiki.net/w/images/e/e2/Reap_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Reave",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e1/Reave_inventory_icon.png",
+  "Reave": {
+    "id": "Reave",
+    "image_url": "https://www.poewiki.net/w/images/e/e1/Reave_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Reckoning",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/ed/Reckoning_inventory_icon.png",
+  "Reckoning": {
+    "id": "Reckoning",
+    "image_url": "https://www.poewiki.net/w/images/e/ed/Reckoning_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Rejuvenation Totem",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/f3/Rejuvenation_Totem_inventory_icon.png",
+  "Rejuvenation Totem": {
+    "id": "Rejuvenation Totem",
+    "image_url": "https://www.poewiki.net/w/images/f/f3/Rejuvenation_Totem_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Righteous Fire",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d8/Righteous_Fire_inventory_icon.png",
+  "Righteous Fire": {
+    "id": "Righteous Fire",
+    "image_url": "https://www.poewiki.net/w/images/d/d8/Righteous_Fire_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Riposte",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/00/Riposte_inventory_icon.png",
+  "Riposte": {
+    "id": "Riposte",
+    "image_url": "https://www.poewiki.net/w/images/0/00/Riposte_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Rolling Magma",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/da/Rolling_Magma_inventory_icon.png",
+  "Rolling Magma": {
+    "id": "Rolling Magma",
+    "image_url": "https://www.poewiki.net/w/images/d/da/Rolling_Magma_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Ruthless Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/7b/Ruthless_Support_inventory_icon.png",
+  "Ruthless Support": {
+    "id": "Ruthless Support",
+    "image_url": "https://www.poewiki.net/w/images/7/7b/Ruthless_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Scorching Ray",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/01/Scorching_Ray_inventory_icon.png",
+  "Scorching Ray": {
+    "id": "Scorching Ray",
+    "image_url": "https://www.poewiki.net/w/images/0/01/Scorching_Ray_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Scourge Arrow",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/38/Scourge_Arrow_inventory_icon.png",
+  "Scourge Arrow": {
+    "id": "Scourge Arrow",
+    "image_url": "https://www.poewiki.net/w/images/3/38/Scourge_Arrow_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Searing Bond",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/34/Searing_Bond_inventory_icon.png",
+  "Searing Bond": {
+    "id": "Searing Bond",
+    "image_url": "https://www.poewiki.net/w/images/3/34/Searing_Bond_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Second Wind Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/18/Second_Wind_Support_inventory_icon.png",
+  "Second Wind Support": {
+    "id": "Second Wind Support",
+    "image_url": "https://www.poewiki.net/w/images/1/18/Second_Wind_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Seismic Cry",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/00/Seismic_Cry_inventory_icon.png",
+  "Seismic Cry": {
+    "id": "Seismic Cry",
+    "image_url": "https://www.poewiki.net/w/images/0/00/Seismic_Cry_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Seismic Trap",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/6e/Seismic_Trap_inventory_icon.png",
+  "Seismic Trap": {
+    "id": "Seismic Trap",
+    "image_url": "https://www.poewiki.net/w/images/6/6e/Seismic_Trap_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Shattering Steel",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/57/Shattering_Steel_inventory_icon.png",
+  "Shattering Steel": {
+    "id": "Shattering Steel",
+    "image_url": "https://www.poewiki.net/w/images/5/57/Shattering_Steel_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Shield Charge",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/de/Shield_Charge_inventory_icon.png",
+  "Shield Charge": {
+    "id": "Shield Charge",
+    "image_url": "https://www.poewiki.net/w/images/d/de/Shield_Charge_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Shield Crush",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/81/Shield_Crush_inventory_icon.png",
+  "Shield Crush": {
+    "id": "Shield Crush",
+    "image_url": "https://www.poewiki.net/w/images/8/81/Shield_Crush_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Shock Nova",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/2c/Shock_Nova_inventory_icon.png",
+  "Shock Nova": {
+    "id": "Shock Nova",
+    "image_url": "https://www.poewiki.net/w/images/2/2c/Shock_Nova_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Shockwave Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d8/Shockwave_Support_inventory_icon.png",
+  "Shockwave Support": {
+    "id": "Shockwave Support",
+    "image_url": "https://www.poewiki.net/w/images/d/d8/Shockwave_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Shockwave Totem",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/eb/Shockwave_Totem_inventory_icon.png",
+  "Shockwave Totem": {
+    "id": "Shockwave Totem",
+    "image_url": "https://www.poewiki.net/w/images/e/eb/Shockwave_Totem_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Shrapnel Ballista",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/55/Shrapnel_Ballista_inventory_icon.png",
+  "Shrapnel Ballista": {
+    "id": "Shrapnel Ballista",
+    "image_url": "https://www.poewiki.net/w/images/5/55/Shrapnel_Ballista_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Siege Ballista",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/f2/Siege_Ballista_inventory_icon.png",
+  "Siege Ballista": {
+    "id": "Siege Ballista",
+    "image_url": "https://www.poewiki.net/w/images/f/f2/Siege_Ballista_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Sigil of Power",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/41/Sigil_of_Power_inventory_icon.png",
+  "Sigil of Power": {
+    "id": "Sigil of Power",
+    "image_url": "https://www.poewiki.net/w/images/4/41/Sigil_of_Power_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Siphoning Trap",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/00/Siphoning_Trap_inventory_icon.png",
+  "Siphoning Trap": {
+    "id": "Siphoning Trap",
+    "image_url": "https://www.poewiki.net/w/images/0/00/Siphoning_Trap_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Slower Projectiles Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/71/Slower_Projectiles_Support_inventory_icon.png",
+  "Slower Projectiles Support": {
+    "id": "Slower Projectiles Support",
+    "image_url": "https://www.poewiki.net/w/images/7/71/Slower_Projectiles_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Smite",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/31/Smite_inventory_icon.png",
+  "Smite": {
+    "id": "Smite",
+    "image_url": "https://www.poewiki.net/w/images/3/31/Smite_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Smoke Mine",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/a0/Smoke_Mine_inventory_icon.png",
+  "Smoke Mine": {
+    "id": "Smoke Mine",
+    "image_url": "https://www.poewiki.net/w/images/a/a0/Smoke_Mine_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Sniper's Mark",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/30/Sniper%27s_Mark_inventory_icon.png",
+  "Sniper's Mark": {
+    "id": "Sniper's Mark",
+    "image_url": "https://www.poewiki.net/w/images/3/30/Sniper%27s_Mark_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Soul Link",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/bb/Soul_Link_inventory_icon.png",
+  "Soul Link": {
+    "id": "Soul Link",
+    "image_url": "https://www.poewiki.net/w/images/b/bb/Soul_Link_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Soulrend",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/96/Soulrend_inventory_icon.png",
+  "Soulrend": {
+    "id": "Soulrend",
+    "image_url": "https://www.poewiki.net/w/images/9/96/Soulrend_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Spark",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/4b/Spark_inventory_icon.png",
+  "Spark": {
+    "id": "Spark",
+    "image_url": "https://www.poewiki.net/w/images/4/4b/Spark_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Spectral Helix",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/58/Spectral_Helix_inventory_icon.png",
+  "Spectral Helix": {
+    "id": "Spectral Helix",
+    "image_url": "https://www.poewiki.net/w/images/5/58/Spectral_Helix_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Spectral Shield Throw",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/41/Spectral_Shield_Throw_inventory_icon.png",
+  "Spectral Shield Throw": {
+    "id": "Spectral Shield Throw",
+    "image_url": "https://www.poewiki.net/w/images/4/41/Spectral_Shield_Throw_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Spectral Throw",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/b6/Spectral_Throw_inventory_icon.png",
+  "Spectral Throw": {
+    "id": "Spectral Throw",
+    "image_url": "https://www.poewiki.net/w/images/b/b6/Spectral_Throw_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Spell Cascade Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/51/Spell_Cascade_Support_inventory_icon.png",
+  "Spell Cascade Support": {
+    "id": "Spell Cascade Support",
+    "image_url": "https://www.poewiki.net/w/images/5/51/Spell_Cascade_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Spell Echo Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/07/Spell_Echo_Support_inventory_icon.png",
+  "Spell Echo Support": {
+    "id": "Spell Echo Support",
+    "image_url": "https://www.poewiki.net/w/images/0/07/Spell_Echo_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Spell Totem Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/dd/Spell_Totem_Support_inventory_icon.png",
+  "Spell Totem Support": {
+    "id": "Spell Totem Support",
+    "image_url": "https://www.poewiki.net/w/images/d/dd/Spell_Totem_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Spellslinger",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/52/Spellslinger_inventory_icon.png",
+  "Spellslinger": {
+    "id": "Spellslinger",
+    "image_url": "https://www.poewiki.net/w/images/5/52/Spellslinger_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Spirit Offering",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/ba/Spirit_Offering_inventory_icon.png",
+  "Spirit Offering": {
+    "id": "Spirit Offering",
+    "image_url": "https://www.poewiki.net/w/images/b/ba/Spirit_Offering_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Split Arrow",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/fc/Split_Arrow_inventory_icon.png",
+  "Split Arrow": {
+    "id": "Split Arrow",
+    "image_url": "https://www.poewiki.net/w/images/f/fc/Split_Arrow_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Split Arrow",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/fc/Split_Arrow_inventory_icon.png",
+  "Splitting Steel": {
+    "id": "Splitting Steel",
+    "image_url": "https://www.poewiki.net/w/images/6/61/Splitting_Steel_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Splitting Steel",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/61/Splitting_Steel_inventory_icon.png",
-    "primary_attribute": "dexterity"
-  },
-  {
-    "page": "Static Strike",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/05/Static_Strike_inventory_icon.png",
+  "Static Strike": {
+    "id": "Static Strike",
+    "image_url": "https://www.poewiki.net/w/images/0/05/Static_Strike_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Steelskin",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/dd/Steelskin_inventory_icon.png",
+  "Steelskin": {
+    "id": "Steelskin",
+    "image_url": "https://www.poewiki.net/w/images/d/dd/Steelskin_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Storm Brand",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/7e/Storm_Brand_inventory_icon.png",
+  "Storm Brand": {
+    "id": "Storm Brand",
+    "image_url": "https://www.poewiki.net/w/images/7/7e/Storm_Brand_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Storm Burst",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/0a/Storm_Burst_inventory_icon.png",
+  "Storm Burst": {
+    "id": "Storm Burst",
+    "image_url": "https://www.poewiki.net/w/images/0/0a/Storm_Burst_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Storm Call",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/9b/Storm_Call_inventory_icon.png",
+  "Storm Call": {
+    "id": "Storm Call",
+    "image_url": "https://www.poewiki.net/w/images/9/9b/Storm_Call_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Storm Rain",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/1e/Storm_Rain_inventory_icon.png",
+  "Storm Rain": {
+    "id": "Storm Rain",
+    "image_url": "https://www.poewiki.net/w/images/1/1e/Storm_Rain_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Stormbind",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/ee/Stormbind_inventory_icon.png",
+  "Stormbind": {
+    "id": "Stormbind",
+    "image_url": "https://www.poewiki.net/w/images/e/ee/Stormbind_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Stormblast Mine",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/c1/Stormblast_Mine_inventory_icon.png",
+  "Stormblast Mine": {
+    "id": "Stormblast Mine",
+    "image_url": "https://www.poewiki.net/w/images/c/c1/Stormblast_Mine_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Stun Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d9/Stun_Support_inventory_icon.png",
+  "Stun Support": {
+    "id": "Stun Support",
+    "image_url": "https://www.poewiki.net/w/images/d/d9/Stun_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Summon Carrion Golem",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/13/Summon_Carrion_Golem_inventory_icon.png",
+  "Summon Carrion Golem": {
+    "id": "Summon Carrion Golem",
+    "image_url": "https://www.poewiki.net/w/images/1/13/Summon_Carrion_Golem_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Summon Chaos Golem",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/44/Summon_Chaos_Golem_inventory_icon.png",
+  "Summon Chaos Golem": {
+    "id": "Summon Chaos Golem",
+    "image_url": "https://www.poewiki.net/w/images/4/44/Summon_Chaos_Golem_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Summon Flame Golem",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/42/Summon_Flame_Golem_inventory_icon.png",
+  "Summon Flame Golem": {
+    "id": "Summon Flame Golem",
+    "image_url": "https://www.poewiki.net/w/images/4/42/Summon_Flame_Golem_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Summon Holy Relic",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/8e/Summon_Holy_Relic_inventory_icon.png",
+  "Summon Holy Relic": {
+    "id": "Summon Holy Relic",
+    "image_url": "https://www.poewiki.net/w/images/8/8e/Summon_Holy_Relic_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Summon Ice Golem",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/a1/Summon_Ice_Golem_inventory_icon.png",
+  "Summon Ice Golem": {
+    "id": "Summon Ice Golem",
+    "image_url": "https://www.poewiki.net/w/images/a/a1/Summon_Ice_Golem_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Summon Lightning Golem",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/ad/Summon_Lightning_Golem_inventory_icon.png",
+  "Summon Lightning Golem": {
+    "id": "Summon Lightning Golem",
+    "image_url": "https://www.poewiki.net/w/images/a/ad/Summon_Lightning_Golem_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Summon Phantasm Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/5c/Summon_Phantasm_Support_inventory_icon.png",
+  "Summon Phantasm Support": {
+    "id": "Summon Phantasm Support",
+    "image_url": "https://www.poewiki.net/w/images/5/5c/Summon_Phantasm_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Summon Raging Spirit",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/0a/Summon_Raging_Spirit_inventory_icon.png",
+  "Summon Raging Spirit": {
+    "id": "Summon Raging Spirit",
+    "image_url": "https://www.poewiki.net/w/images/0/0a/Summon_Raging_Spirit_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Summon Reaper",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/cc/Summon_Reaper_inventory_icon.png",
+  "Summon Reaper": {
+    "id": "Summon Reaper",
+    "image_url": "https://www.poewiki.net/w/images/c/cc/Summon_Reaper_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Summon Skeletons",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/0b/Summon_Skeletons_inventory_icon.png",
+  "Summon Skeletons": {
+    "id": "Summon Skeletons",
+    "image_url": "https://www.poewiki.net/w/images/0/0b/Summon_Skeletons_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Summon Skitterbots",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/00/Summon_Skitterbots_inventory_icon.png",
+  "Summon Skitterbots": {
+    "id": "Summon Skitterbots",
+    "image_url": "https://www.poewiki.net/w/images/0/00/Summon_Skitterbots_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Summon Stone Golem",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/9c/Summon_Stone_Golem_inventory_icon.png",
+  "Summon Stone Golem": {
+    "id": "Summon Stone Golem",
+    "image_url": "https://www.poewiki.net/w/images/9/9c/Summon_Stone_Golem_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Sunder",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/2c/Sunder_inventory_icon.png",
+  "Sunder": {
+    "id": "Sunder",
+    "image_url": "https://www.poewiki.net/w/images/2/2c/Sunder_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Sweep",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/ff/Sweep_inventory_icon.png",
+  "Sweep": {
+    "id": "Sweep",
+    "image_url": "https://www.poewiki.net/w/images/f/ff/Sweep_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Swift Affliction Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/16/Swift_Affliction_Support_inventory_icon.png",
+  "Swift Affliction Support": {
+    "id": "Swift Affliction Support",
+    "image_url": "https://www.poewiki.net/w/images/1/16/Swift_Affliction_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Swift Assembly Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/c4/Swift_Assembly_Support_inventory_icon.png",
+  "Swift Assembly Support": {
+    "id": "Swift Assembly Support",
+    "image_url": "https://www.poewiki.net/w/images/c/c4/Swift_Assembly_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Swiftbrand Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d5/Swiftbrand_Support_inventory_icon.png",
+  "Swiftbrand Support": {
+    "id": "Swiftbrand Support",
+    "image_url": "https://www.poewiki.net/w/images/d/d5/Swiftbrand_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Tectonic Slam",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/ad/Tectonic_Slam_inventory_icon.png",
+  "Tectonic Slam": {
+    "id": "Tectonic Slam",
+    "image_url": "https://www.poewiki.net/w/images/a/ad/Tectonic_Slam_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Tempest Shield",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/71/Tempest_Shield_inventory_icon.png",
+  "Tempest Shield": {
+    "id": "Tempest Shield",
+    "image_url": "https://www.poewiki.net/w/images/7/71/Tempest_Shield_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Temporal Chains",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/9c/Temporal_Chains_inventory_icon.png",
+  "Temporal Chains": {
+    "id": "Temporal Chains",
+    "image_url": "https://www.poewiki.net/w/images/9/9c/Temporal_Chains_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Temporal Rift",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d6/Temporal_Rift_inventory_icon.png",
+  "Temporal Rift": {
+    "id": "Temporal Rift",
+    "image_url": "https://www.poewiki.net/w/images/d/d6/Temporal_Rift_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Tornado",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/c7/Tornado_inventory_icon.png",
+  "Tornado": {
+    "id": "Tornado",
+    "image_url": "https://www.poewiki.net/w/images/c/c7/Tornado_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Tornado Shot",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/26/Tornado_Shot_inventory_icon.png",
+  "Tornado Shot": {
+    "id": "Tornado Shot",
+    "image_url": "https://www.poewiki.net/w/images/2/26/Tornado_Shot_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Toxic Rain",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/bb/Toxic_Rain_inventory_icon.png",
+  "Toxic Rain": {
+    "id": "Toxic Rain",
+    "image_url": "https://www.poewiki.net/w/images/b/bb/Toxic_Rain_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Trap and Mine Damage Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/3d/Trap_and_Mine_Damage_Support_inventory_icon.png",
+  "Trap and Mine Damage Support": {
+    "id": "Trap and Mine Damage Support",
+    "image_url": "https://www.poewiki.net/w/images/3/3d/Trap_and_Mine_Damage_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Trap Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/04/Trap_Support_inventory_icon.png",
+  "Trap Support": {
+    "id": "Trap Support",
+    "image_url": "https://www.poewiki.net/w/images/0/04/Trap_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Trinity Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/29/Trinity_Support_inventory_icon.png",
+  "Trinity Support": {
+    "id": "Trinity Support",
+    "image_url": "https://www.poewiki.net/w/images/2/29/Trinity_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Unbound Ailments Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/a3/Unbound_Ailments_Support_inventory_icon.png",
+  "Unbound Ailments Support": {
+    "id": "Unbound Ailments Support",
+    "image_url": "https://www.poewiki.net/w/images/a/a3/Unbound_Ailments_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Unearth",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/a3/Unearth_inventory_icon.png",
+  "Unearth": {
+    "id": "Unearth",
+    "image_url": "https://www.poewiki.net/w/images/a/a3/Unearth_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Unleash Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/51/Unleash_Support_inventory_icon.png",
+  "Unleash Support": {
+    "id": "Unleash Support",
+    "image_url": "https://www.poewiki.net/w/images/5/51/Unleash_Support_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Urgent Orders Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/50/Urgent_Orders_Support_inventory_icon.png",
+  "Urgent Orders Support": {
+    "id": "Urgent Orders Support",
+    "image_url": "https://www.poewiki.net/w/images/5/50/Urgent_Orders_Support_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "User:Vinifera7/test4",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d6/Poacher%27s_Mark_inventory_icon.png",
+  "User:Vinifera7/test4": {
+    "id": "User:Vinifera7/test4",
+    "image_url": "https://www.poewiki.net/w/images/d/d6/Poacher%27s_Mark_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Vaal Ancestral Warchief",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/72/Vaal_Ancestral_Warchief_inventory_icon.png",
+  "Vaal Ancestral Warchief": {
+    "id": "Vaal Ancestral Warchief",
+    "image_url": "https://www.poewiki.net/w/images/7/72/Vaal_Ancestral_Warchief_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Vaal Arc",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/12/Vaal_Arc_inventory_icon.png",
+  "Vaal Arc": {
+    "id": "Vaal Arc",
+    "image_url": "https://www.poewiki.net/w/images/1/12/Vaal_Arc_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Vaal Blade Vortex",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/bc/Vaal_Blade_Vortex_inventory_icon.png",
+  "Vaal Blade Vortex": {
+    "id": "Vaal Blade Vortex",
+    "image_url": "https://www.poewiki.net/w/images/b/bc/Vaal_Blade_Vortex_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Vaal Blight",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/51/Vaal_Blight_inventory_icon.png",
+  "Vaal Blight": {
+    "id": "Vaal Blight",
+    "image_url": "https://www.poewiki.net/w/images/5/51/Vaal_Blight_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Vaal Breach",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/78/Vaal_Breach_inventory_icon.png",
+  "Vaal Breach": {
+    "id": "Vaal Breach",
+    "image_url": "https://www.poewiki.net/w/images/7/78/Vaal_Breach_inventory_icon.png",
     "primary_attribute": "none"
   },
-  {
-    "page": "Vaal Burning Arrow",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/05/Vaal_Burning_Arrow_inventory_icon.png",
+  "Vaal Burning Arrow": {
+    "id": "Vaal Burning Arrow",
+    "image_url": "https://www.poewiki.net/w/images/0/05/Vaal_Burning_Arrow_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Vaal Clarity",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e1/Vaal_Clarity_inventory_icon.png",
+  "Vaal Clarity": {
+    "id": "Vaal Clarity",
+    "image_url": "https://www.poewiki.net/w/images/e/e1/Vaal_Clarity_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Vaal Cold Snap",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/19/Vaal_Cold_Snap_inventory_icon.png",
+  "Vaal Cold Snap": {
+    "id": "Vaal Cold Snap",
+    "image_url": "https://www.poewiki.net/w/images/1/19/Vaal_Cold_Snap_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Vaal Cyclone",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/bc/Vaal_Cyclone_inventory_icon.png",
+  "Vaal Cyclone": {
+    "id": "Vaal Cyclone",
+    "image_url": "https://www.poewiki.net/w/images/b/bc/Vaal_Cyclone_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Vaal Detonate Dead",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/36/Vaal_Detonate_Dead_inventory_icon.png",
+  "Vaal Detonate Dead": {
+    "id": "Vaal Detonate Dead",
+    "image_url": "https://www.poewiki.net/w/images/3/36/Vaal_Detonate_Dead_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Vaal Discipline",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/6b/Vaal_Discipline_inventory_icon.png",
+  "Vaal Discipline": {
+    "id": "Vaal Discipline",
+    "image_url": "https://www.poewiki.net/w/images/6/6b/Vaal_Discipline_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Vaal Double Strike",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/b9/Vaal_Double_Strike_inventory_icon.png",
+  "Vaal Double Strike": {
+    "id": "Vaal Double Strike",
+    "image_url": "https://www.poewiki.net/w/images/b/b9/Vaal_Double_Strike_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Vaal Earthquake",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/60/Vaal_Earthquake_inventory_icon.png",
+  "Vaal Earthquake": {
+    "id": "Vaal Earthquake",
+    "image_url": "https://www.poewiki.net/w/images/6/60/Vaal_Earthquake_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Vaal Fireball",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/92/Vaal_Fireball_inventory_icon.png",
+  "Vaal Fireball": {
+    "id": "Vaal Fireball",
+    "image_url": "https://www.poewiki.net/w/images/9/92/Vaal_Fireball_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Vaal Flameblast",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/df/Vaal_Flameblast_inventory_icon.png",
+  "Vaal Flameblast": {
+    "id": "Vaal Flameblast",
+    "image_url": "https://www.poewiki.net/w/images/d/df/Vaal_Flameblast_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Vaal Glacial Hammer",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/83/Vaal_Glacial_Hammer_inventory_icon.png",
+  "Vaal Glacial Hammer": {
+    "id": "Vaal Glacial Hammer",
+    "image_url": "https://www.poewiki.net/w/images/8/83/Vaal_Glacial_Hammer_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Vaal Grace",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/fc/Vaal_Grace_inventory_icon.png",
+  "Vaal Grace": {
+    "id": "Vaal Grace",
+    "image_url": "https://www.poewiki.net/w/images/f/fc/Vaal_Grace_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Vaal Ground Slam",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/87/Vaal_Ground_Slam_inventory_icon.png",
+  "Vaal Ground Slam": {
+    "id": "Vaal Ground Slam",
+    "image_url": "https://www.poewiki.net/w/images/8/87/Vaal_Ground_Slam_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Vaal Haste",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/60/Vaal_Haste_inventory_icon.png",
+  "Vaal Haste": {
+    "id": "Vaal Haste",
+    "image_url": "https://www.poewiki.net/w/images/6/60/Vaal_Haste_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Vaal Ice Nova",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/b8/Vaal_Ice_Nova_inventory_icon.png",
+  "Vaal Ice Nova": {
+    "id": "Vaal Ice Nova",
+    "image_url": "https://www.poewiki.net/w/images/b/b8/Vaal_Ice_Nova_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Vaal Immortal Call",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/cb/Vaal_Immortal_Call_inventory_icon.png",
+  "Vaal Immortal Call": {
+    "id": "Vaal Immortal Call",
+    "image_url": "https://www.poewiki.net/w/images/c/cb/Vaal_Immortal_Call_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Vaal Impurity of Fire",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/0e/Vaal_Impurity_of_Fire_inventory_icon.png",
+  "Vaal Impurity of Fire": {
+    "id": "Vaal Impurity of Fire",
+    "image_url": "https://www.poewiki.net/w/images/0/0e/Vaal_Impurity_of_Fire_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Vaal Impurity of Ice",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/4e/Vaal_Impurity_of_Ice_inventory_icon.png",
+  "Vaal Impurity of Ice": {
+    "id": "Vaal Impurity of Ice",
+    "image_url": "https://www.poewiki.net/w/images/4/4e/Vaal_Impurity_of_Ice_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Vaal Impurity of Lightning",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/70/Vaal_Impurity_of_Lightning_inventory_icon.png",
+  "Vaal Impurity of Lightning": {
+    "id": "Vaal Impurity of Lightning",
+    "image_url": "https://www.poewiki.net/w/images/7/70/Vaal_Impurity_of_Lightning_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Vaal Lightning Strike",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/98/Vaal_Lightning_Strike_inventory_icon.png",
+  "Vaal Lightning Strike": {
+    "id": "Vaal Lightning Strike",
+    "image_url": "https://www.poewiki.net/w/images/9/98/Vaal_Lightning_Strike_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Vaal Lightning Trap",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/cd/Vaal_Lightning_Trap_inventory_icon.png",
+  "Vaal Lightning Trap": {
+    "id": "Vaal Lightning Trap",
+    "image_url": "https://www.poewiki.net/w/images/c/cd/Vaal_Lightning_Trap_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Vaal Lightning Warp",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d1/Vaal_Lightning_Warp_inventory_icon.png",
+  "Vaal Lightning Warp": {
+    "id": "Vaal Lightning Warp",
+    "image_url": "https://www.poewiki.net/w/images/d/d1/Vaal_Lightning_Warp_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Vaal Molten Shell",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/16/Vaal_Molten_Shell_inventory_icon.png",
+  "Vaal Molten Shell": {
+    "id": "Vaal Molten Shell",
+    "image_url": "https://www.poewiki.net/w/images/1/16/Vaal_Molten_Shell_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Vaal Power Siphon",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/93/Vaal_Power_Siphon_inventory_icon.png",
+  "Vaal Power Siphon": {
+    "id": "Vaal Power Siphon",
+    "image_url": "https://www.poewiki.net/w/images/9/93/Vaal_Power_Siphon_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Vaal Rain of Arrows",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/92/Vaal_Rain_of_Arrows_inventory_icon.png",
+  "Vaal Rain of Arrows": {
+    "id": "Vaal Rain of Arrows",
+    "image_url": "https://www.poewiki.net/w/images/9/92/Vaal_Rain_of_Arrows_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Vaal Reave",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/6c/Vaal_Reave_inventory_icon.png",
+  "Vaal Reave": {
+    "id": "Vaal Reave",
+    "image_url": "https://www.poewiki.net/w/images/6/6c/Vaal_Reave_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Vaal Righteous Fire",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/a7/Vaal_Righteous_Fire_inventory_icon.png",
+  "Vaal Righteous Fire": {
+    "id": "Vaal Righteous Fire",
+    "image_url": "https://www.poewiki.net/w/images/a/a7/Vaal_Righteous_Fire_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Vaal Spark",
-    "inventory_icon": "https://www.poewiki.net/w/images/d/d3/Vaal_Spark_inventory_icon.png",
+  "Vaal Spark": {
+    "id": "Vaal Spark",
+    "image_url": "https://www.poewiki.net/w/images/d/d3/Vaal_Spark_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Vaal Spectral Throw",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/59/Vaal_Spectral_Throw_inventory_icon.png",
+  "Vaal Spectral Throw": {
+    "id": "Vaal Spectral Throw",
+    "image_url": "https://www.poewiki.net/w/images/5/59/Vaal_Spectral_Throw_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Vaal Storm Call",
-    "inventory_icon": "https://www.poewiki.net/w/images/5/50/Vaal_Storm_Call_inventory_icon.png",
+  "Vaal Storm Call": {
+    "id": "Vaal Storm Call",
+    "image_url": "https://www.poewiki.net/w/images/5/50/Vaal_Storm_Call_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Vaal Summon Skeletons",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/f2/Vaal_Summon_Skeletons_inventory_icon.png",
+  "Vaal Summon Skeletons": {
+    "id": "Vaal Summon Skeletons",
+    "image_url": "https://www.poewiki.net/w/images/f/f2/Vaal_Summon_Skeletons_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Vampiric Link",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e6/Vampiric_Link_inventory_icon.png",
+  "Vampiric Link": {
+    "id": "Vampiric Link",
+    "image_url": "https://www.poewiki.net/w/images/e/e6/Vampiric_Link_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Vengeance",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/41/Vengeance_inventory_icon.png",
+  "Vengeance": {
+    "id": "Vengeance",
+    "image_url": "https://www.poewiki.net/w/images/4/41/Vengeance_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Venom Gyre",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/19/Venom_Gyre_inventory_icon.png",
+  "Venom Gyre": {
+    "id": "Venom Gyre",
+    "image_url": "https://www.poewiki.net/w/images/1/19/Venom_Gyre_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Vicious Projectiles Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/42/Vicious_Projectiles_Support_inventory_icon.png",
+  "Vicious Projectiles Support": {
+    "id": "Vicious Projectiles Support",
+    "image_url": "https://www.poewiki.net/w/images/4/42/Vicious_Projectiles_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Vigilant Strike",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/b1/Vigilant_Strike_inventory_icon.png",
+  "Vigilant Strike": {
+    "id": "Vigilant Strike",
+    "image_url": "https://www.poewiki.net/w/images/b/b1/Vigilant_Strike_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Vile Toxins Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/f8/Vile_Toxins_Support_inventory_icon.png",
+  "Vile Toxins Support": {
+    "id": "Vile Toxins Support",
+    "image_url": "https://www.poewiki.net/w/images/f/f8/Vile_Toxins_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Viper Strike",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/4c/Viper_Strike_inventory_icon.png",
+  "Viper Strike": {
+    "id": "Viper Strike",
+    "image_url": "https://www.poewiki.net/w/images/4/4c/Viper_Strike_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Vitality",
-    "inventory_icon": "https://www.poewiki.net/w/images/c/c5/Vitality_inventory_icon.png",
+  "Vitality": {
+    "id": "Vitality",
+    "image_url": "https://www.poewiki.net/w/images/c/c5/Vitality_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Void Manipulation Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/78/Void_Manipulation_Support_inventory_icon.png",
+  "Void Manipulation Support": {
+    "id": "Void Manipulation Support",
+    "image_url": "https://www.poewiki.net/w/images/7/78/Void_Manipulation_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Void Sphere",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/78/Void_Sphere_inventory_icon.png",
+  "Void Sphere": {
+    "id": "Void Sphere",
+    "image_url": "https://www.poewiki.net/w/images/7/78/Void_Sphere_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Volatile Dead",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/1e/Volatile_Dead_inventory_icon.png",
+  "Volatile Dead": {
+    "id": "Volatile Dead",
+    "image_url": "https://www.poewiki.net/w/images/1/1e/Volatile_Dead_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Volley Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/e/e0/Volley_Support_inventory_icon.png",
+  "Volley Support": {
+    "id": "Volley Support",
+    "image_url": "https://www.poewiki.net/w/images/e/e0/Volley_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Voltaxic Burst",
-    "inventory_icon": "https://www.poewiki.net/w/images/0/08/Voltaxic_Burst_inventory_icon.png",
+  "Voltaxic Burst": {
+    "id": "Voltaxic Burst",
+    "image_url": "https://www.poewiki.net/w/images/0/08/Voltaxic_Burst_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Vortex",
-    "inventory_icon": "https://www.poewiki.net/w/images/3/30/Vortex_inventory_icon.png",
+  "Vortex": {
+    "id": "Vortex",
+    "image_url": "https://www.poewiki.net/w/images/3/30/Vortex_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Vulnerability",
-    "inventory_icon": "https://www.poewiki.net/w/images/7/7c/Vulnerability_inventory_icon.png",
+  "Vulnerability": {
+    "id": "Vulnerability",
+    "image_url": "https://www.poewiki.net/w/images/7/7c/Vulnerability_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "War Banner",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/91/War_Banner_inventory_icon.png",
+  "War Banner": {
+    "id": "War Banner",
+    "image_url": "https://www.poewiki.net/w/images/9/91/War_Banner_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Warlord's Mark",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/a1/Warlord%27s_Mark_inventory_icon.png",
+  "Warlord's Mark": {
+    "id": "Warlord's Mark",
+    "image_url": "https://www.poewiki.net/w/images/a/a1/Warlord%27s_Mark_inventory_icon.png",
     "primary_attribute": "strength"
   },
-  {
-    "page": "Wave of Conviction",
-    "inventory_icon": "https://www.poewiki.net/w/images/6/62/Wave_of_Conviction_inventory_icon.png",
+  "Wave of Conviction": {
+    "id": "Wave of Conviction",
+    "image_url": "https://www.poewiki.net/w/images/6/62/Wave_of_Conviction_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Whirling Blades",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/82/Whirling_Blades_inventory_icon.png",
+  "Whirling Blades": {
+    "id": "Whirling Blades",
+    "image_url": "https://www.poewiki.net/w/images/8/82/Whirling_Blades_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Wild Strike",
-    "inventory_icon": "https://www.poewiki.net/w/images/4/4d/Wild_Strike_inventory_icon.png",
+  "Wild Strike": {
+    "id": "Wild Strike",
+    "image_url": "https://www.poewiki.net/w/images/4/4d/Wild_Strike_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Winter Orb",
-    "inventory_icon": "https://www.poewiki.net/w/images/9/91/Winter_Orb_inventory_icon.png",
+  "Winter Orb": {
+    "id": "Winter Orb",
+    "image_url": "https://www.poewiki.net/w/images/9/91/Winter_Orb_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Wintertide Brand",
-    "inventory_icon": "https://www.poewiki.net/w/images/f/f3/Wintertide_Brand_inventory_icon.png",
+  "Wintertide Brand": {
+    "id": "Wintertide Brand",
+    "image_url": "https://www.poewiki.net/w/images/f/f3/Wintertide_Brand_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Wither",
-    "inventory_icon": "https://www.poewiki.net/w/images/b/bb/Wither_inventory_icon.png",
+  "Wither": {
+    "id": "Wither",
+    "image_url": "https://www.poewiki.net/w/images/b/bb/Wither_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Withering Step",
-    "inventory_icon": "https://www.poewiki.net/w/images/2/20/Withering_Step_inventory_icon.png",
+  "Withering Step": {
+    "id": "Withering Step",
+    "image_url": "https://www.poewiki.net/w/images/2/20/Withering_Step_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Withering Touch Support",
-    "inventory_icon": "https://www.poewiki.net/w/images/1/17/Withering_Touch_Support_inventory_icon.png",
+  "Withering Touch Support": {
+    "id": "Withering Touch Support",
+    "image_url": "https://www.poewiki.net/w/images/1/17/Withering_Touch_Support_inventory_icon.png",
     "primary_attribute": "dexterity"
   },
-  {
-    "page": "Wrath",
-    "inventory_icon": "https://www.poewiki.net/w/images/a/a2/Wrath_inventory_icon.png",
+  "Wrath": {
+    "id": "Wrath",
+    "image_url": "https://www.poewiki.net/w/images/a/a2/Wrath_inventory_icon.png",
     "primary_attribute": "intelligence"
   },
-  {
-    "page": "Zealotry",
-    "inventory_icon": "https://www.poewiki.net/w/images/8/8f/Zealotry_inventory_icon.png",
+  "Zealotry": {
+    "id": "Zealotry",
+    "image_url": "https://www.poewiki.net/w/images/8/8f/Zealotry_inventory_icon.png",
     "primary_attribute": "intelligence"
   }
-]
+}

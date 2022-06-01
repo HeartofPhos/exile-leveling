@@ -22,22 +22,13 @@ export async function main() {
   persistData("gems", gems);
 
   const questRewards = await getQuestRewards();
-  persistData(
-    "quest_rewards",
-    questRewards.sort((a, b) => a.act.localeCompare(b.act))
-  );
+  persistData("quest_rewards", questRewards);
 
   const vendorRewards = await getVendorRewards();
-  persistData(
-    "vendor_rewards",
-    vendorRewards.sort((a, b) => a.act.localeCompare(b.act))
-  );
+  persistData("vendor_rewards", vendorRewards);
 
   const areas = await getAreas();
-  persistData(
-    "areas",
-    areas.sort((a, b) => a.act.localeCompare(b.act))
-  );
+  persistData("areas", areas);
 }
 
 main();

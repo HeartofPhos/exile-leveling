@@ -7,6 +7,7 @@ interface QueryBuilder {
   join_on?: string[];
   fields: string[];
   where?: string;
+  order_by?: string[];
 }
 
 export async function cargoQuery(queryBuilder: QueryBuilder) {
@@ -21,6 +22,8 @@ export async function cargoQuery(queryBuilder: QueryBuilder) {
     url.searchParams.append("offset", result.length.toString());
     if (queryBuilder.where)
       url.searchParams.append("where", queryBuilder.where);
+    if (queryBuilder.order_by)
+      url.searchParams.append("order by", queryBuilder.order_by.join(","));
     url.searchParams.append("format", "json");
 
     const queryResult: any = await fetch(url.toString()).then((x) => x.json());
