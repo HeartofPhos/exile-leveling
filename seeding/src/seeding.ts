@@ -22,6 +22,7 @@ export async function getGems() {
     fields: [
       "items._pageName = page",
       "items.inventory_icon = inventory_icon",
+      "items.required_level = required_level",
       "skill_gems.primary_attribute = primary_attribute",
     ],
     where:
@@ -39,6 +40,7 @@ export async function getGems() {
       id: item.page,
       image_url: image_url,
       primary_attribute: item.primary_attribute,
+      required_level: Number(item.required_level),
     };
   }
 
