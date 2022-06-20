@@ -1,0 +1,57 @@
+# Act 1
+{kill|Zombie}
+{kill|Hillock}
+{enter|1_1_town} #Lioneye's Watch
+{quest|a1q1} #Enemy at the Gate
+{vendor}
+{enter|1_1_2} #The Coast
+{get_waypoint}
+{enter|1_1_3} #The Mud Flats
+Get 3x{quest_item|Glyphs}
+{enter|1_1_4_1} #The Submerged Passage
+{get_waypoint}
+{waypoint|1_1_2} #The Coast
+{enter|1_1_2a} #The Tidal Island
+{kill|Hailrake}
+Get {quest_item|Medicine Chest}
+{town} #Lioneye's Watch
+{quest|a1q4} #Breaking Some Eggs
+{quest|a1q5} #Mercy Mission
+{vendor}
+{waypoint|1_1_4_1} #The Submerged Passage
+Find stairs, {set_portal}
+{enter|1_1_5} #The Ledge
+{get_waypoint}
+{waypoint|1_1_town} #Lioneye's Watch
+{use_portal}
+Go right of stairs, {enter|1_1_4_0} #The Flooded Depths
+{kill|The Dweller of the Deep}
+{town} #Lioneye's Watch
+{waypoint|1_1_5} #The Ledge
+{enter|1_1_6} #The Climb
+{enter|1_1_7_1} #The Lower Prison
+{get_waypoint}
+First level, {trial}
+{enter|1_1_7_2} #The Upper Prison
+{town} #Lioneye's Watch
+{quest|a1q2} #The Caged Brute
+{vendor}
+{waypoint|1_1_8} #Prisoner's Gate
+{enter|1_1_9} #The Ship Graveyard
+Find {area|1_1_9a}, {set_portal} #The Ship Graveyard Cave
+{enter|1_1_11_1} #The Cavern of Wrath
+{town} #Lioneye's Watch
+{quest|a1q3} #The Siren's Cadence
+{vendor}
+{use_portal}
+{enter|1_1_9a} #The Ship Graveyard Cave
+Get {quest_item|Allflame}
+{town} #Lioneye's Watch
+{waypoint|1_1_9} #The Ship Graveyard
+{kill|Captain Fairgraves}
+{town} #Lioneye's Watch
+{waypoint|1_1_11_1} #The Cavern of Wrath
+{enter|1_1_11_2} #The Cavern of Anger
+{kill|Merveil, the Siren}
+
+# Act 2
