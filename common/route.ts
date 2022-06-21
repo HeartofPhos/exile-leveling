@@ -1,10 +1,8 @@
-import fs from "fs";
-import readline from "readline";
 import { Area, Monster, Quest } from "./types";
 
-type Action = string[];
-type Step = (string | Action)[];
-type Route = Step[];
+export type Action = string[];
+export type Step = (string | Action)[];
+export type Route = Step[];
 
 export interface RouteState {
   quests: Record<string, Quest>;
@@ -240,16 +238,11 @@ export function validateRoute(
   }
 }
 
-export async function parseRoute(routePath: string) {
-  const fileStream = fs.createReadStream(routePath);
-
-  const rl = readline.createInterface({
-    input: fileStream,
-    crlfDelay: Infinity,
-  });
+export async function parseRoute(routeData: string) {
+  const routeLines = routeData.split(/(\r\n|\r|\n)/);
 
   const route: Route = [];
-  for await (const line of rl) {
+  for await (const line of routeLines) {
     if (!line) continue;
 
     const step = parseStep(line);

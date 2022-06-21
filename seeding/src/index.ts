@@ -33,7 +33,8 @@ export async function main() {
         const areas = loadData("areas");
         const bossWaypoints = loadData("boss-waypoints");
 
-        const route = await parseRoute(`${dataPath}/route.txt`);
+        const routeData = fs.readFileSync(`${dataPath}/route.txt`, "utf-8");
+        const route = await parseRoute(routeData);
         await validateRoute(route, quests, areas, bossWaypoints);
       }
       break;
