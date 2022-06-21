@@ -44,7 +44,7 @@ const ERROR_MISSING_AREA = "area does not exist";
 const ERROR_AREA_NO_WAYPOINT = "area does not have a waypoint";
 
 type ActionEvaluator = (action: Action, state: RouteState) => null | string;
-const actionEvaluators: Record<string, ActionEvaluator> = {
+const ACTION_EVALUATOR_LOOKUP: Record<string, ActionEvaluator> = {
   kill: (action, state) => {
     if (action.length != 2) return ERROR_INVALID_FORMAT;
     const bossName = action[1];
@@ -204,7 +204,7 @@ export function validateStep(step: Step, state: RouteState) {
     if (subStep.length == 0) throw new Error(subStep.toString());
 
     const actionKey = subStep[0];
-    const evaluator = actionEvaluators[actionKey];
+    const evaluator = ACTION_EVALUATOR_LOOKUP[actionKey];
     if (!evaluator) throw new Error(subStep.toString());
 
     const error = evaluator(subStep, state);

@@ -20,7 +20,16 @@ export function StepComponent({ value }: StepProps) {
   }
 
   return (
-    <label className={classNames("step", "checkbox", "box", "mb-1")}>
+    <label
+      className={classNames(
+        "step",
+        "checkbox",
+        "box",
+        "has-background-black",
+        "has-text-light",
+        "mb-1"
+      )}
+    >
       <input type="checkbox" className={classNames("mr-1")} />
       {mapped}
     </label>
