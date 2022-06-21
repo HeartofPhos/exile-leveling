@@ -13,7 +13,7 @@ Find 3x{quest_item|Glyphs}
 {waypoint|1_1_2} #The Coast
 {enter|1_1_2a} #The Tidal Island
 {kill|Hailrake}
-Get {quest_item|Medicine Chest}
+Take {quest_item|Medicine Chest}
 {town} #Lioneye's Watch
 {quest|a1q4} #Breaking Some Eggs
 {quest|a1q5} #Mercy Mission
@@ -76,7 +76,7 @@ Head {dir|315}, {enter|1_2_6_1} #The Chamber of Sins Level 1
 Go same direction as {waypoint}, {enter|1_2_6_2} #The Chamber of Sins Level 2
 {trial}, most likely {dir|0}
 Find long hallway, {kill|Fidelitas, the Mourning}
-{quest_item|Baleful Gem}
+Take {quest_item|Baleful Gem}
 {town}
 {quest|a2q6} #Intruders in Black
 {vendor}
@@ -91,7 +91,7 @@ Head {dir|270}, {enter|1_2_9} #The Western Forest
 Follow the road, {get_waypoint}
 Go to side of road opposite {waypoint}, {enter|1_2_10} #The Weaver's Chambers
 {kill|The Weaver}
-{quest_item|Maligaro's Spike}
+Take {quest_item|Maligaro's Spike}
 {town}
 {quest|a2q4} #Sharp and Cruel
 {vendor}
@@ -106,7 +106,7 @@ Head {dir|0}, {enter|1_2_12} #The Wetlands
 {waypoint|1_2_9} #The Western Forest
 Go to side same of road as waypoint, help or {kill|Alira Darktongue}
 Follow road, {kill|Captain Arteri}
-{quest_item|Thaumetic Emblem}
+Take {quest_item|Thaumetic Emblem}
 {town}
 {waypoint|1_1_town} #Lioneye's Watch
 {quest|a1q9}
