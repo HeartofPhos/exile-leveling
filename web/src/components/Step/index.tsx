@@ -1,22 +1,25 @@
 import classNames from "classnames";
-import { Step } from "../../../../common/route";
+import { RouteState, Step } from "../../../../common/route";
 import { ActionComponent } from "../Action";
 import "./Step.css";
 
 interface StepProps {
-  value: Step;
+  step: Step;
+  state: RouteState;
 }
 
-export function StepComponent({ value }: StepProps) {
+export function StepComponent({ step, state }: StepProps) {
   const mapped = [];
-  for (const subStep of value) {
+  for (const subStep of step) {
     if (typeof subStep == "string") {
       mapped.push(subStep);
       continue;
     }
     if (subStep.length == 0) throw new Error(subStep.toString());
 
-    mapped.push(<ActionComponent key={mapped.length} value={subStep} />);
+    mapped.push(
+      <ActionComponent key={mapped.length} action={subStep} state={state} />
+    );
   }
 
   return (
@@ -26,7 +29,7 @@ export function StepComponent({ value }: StepProps) {
         "checkbox",
         "box",
         "has-background-black",
-        "has-text-light",
+        "has-text-grey-light",
         "mb-1"
       )}
     >

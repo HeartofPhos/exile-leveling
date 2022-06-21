@@ -107,7 +107,7 @@ Head {dir|0}, {enter|1_2_12} #The Wetlands
 Find and {kill|Oak, Skullbreaker}
 {get_waypoint}, likely {dir|0}
 {waypoint|1_2_9} #The Western Forest
-Go to side same of road as waypoint, help or {kill|Alira Darktongue}
+Go to side same of road as {waypoint}, help or {kill|Alira Darktongue}
 Follow road, {kill|Captain Arteri}
 Take {quest_item|Thaumetic Emblem}
 {town}
@@ -255,7 +255,7 @@ Find and {kill|Shavronne of Umbra}
 Activate {quest_text|The Resonator}
 Use {quest_text|Oriath Portal}
 
-//Act 5
+#Act 5
 {enter|1_5_1} #The Slave Pens
 Find and {kill|Overseer Krow}
 {enter|1_5_town} #Overseer's Tower

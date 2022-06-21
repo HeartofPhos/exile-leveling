@@ -198,22 +198,16 @@ const ACTION_EVALUATOR_LOOKUP: Record<string, ActionEvaluator> = {
   },
 };
 
-export function validateStep(step: Step, state: RouteState) {
-  for (const subStep of step) {
-    if (typeof subStep == "string") continue;
-    if (subStep.length == 0) throw new Error(subStep.toString());
+export function validateAction(action: Action, state: RouteState) {
+  const actionKey = action[0];
+  const evaluator = ACTION_EVALUATOR_LOOKUP[actionKey];
+  if (!evaluator) throw new Error(action.toString());
 
-    const actionKey = subStep[0];
-    const evaluator = ACTION_EVALUATOR_LOOKUP[actionKey];
-    if (!evaluator) throw new Error(subStep.toString());
-
-    const error = evaluator(subStep, state);
-    if (error) console.log(`${subStep.toString()}: ${error}`);
-  }
+  const error = evaluator(action, state);
+  if (error) console.log(`${action.toString()}: ${error}`);
 }
 
-export function validateRoute(
-  route: Route,
+export function initializeRouteState(
   quests: Record<string, Quest>,
   areas: Record<string, Area>,
   bossWaypoints: Record<Monster["name"], Area["id"]>
@@ -233,17 +227,23 @@ export function validateRoute(
     if (area.is_town_area) state.towns[area.act] = area.id;
   }
 
+  return state;
+}
+
+export function validateRoute(route: Route, state: RouteState) {
   for (const step of route) {
-    validateStep(step, state);
+    for (const subStep of step) {
+      if (typeof subStep == "string") continue;
+      validateAction(subStep, state);
+    }
   }
 }
 
-export async function parseRoute(routeData: string) {
+export function parseRoute(routeData: string) {
   const routeLines = routeData.split(/(?:\r\n|\r|\n)/g);
-  console.log(routeLines);
 
   const route: Route = [];
-  for await (const line of routeLines) {
+  for (const line of routeLines) {
     if (!line) continue;
 
     const step = parseStep(line);

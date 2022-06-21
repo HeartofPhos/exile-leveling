@@ -1,6 +1,10 @@
 import fs from "fs";
 import { getAreas, getGems, getQuests } from "./seeding";
-import { parseRoute, validateRoute } from "../../common/route";
+import {
+  initializeRouteState,
+  parseRoute,
+  validateRoute,
+} from "../../common/route";
 
 const dataPath = process.argv[2];
 function saveData(name: string, data: any) {
@@ -34,8 +38,9 @@ export async function main() {
         const bossWaypoints = loadData("boss-waypoints");
 
         const routeData = fs.readFileSync(`${dataPath}/route.txt`, "utf-8");
-        const route = await parseRoute(routeData);
-        await validateRoute(route, quests, areas, bossWaypoints);
+        const route = parseRoute(routeData);
+        const routeState = initializeRouteState(quests, areas, bossWaypoints);
+        validateRoute(route, routeState);
       }
       break;
     default:

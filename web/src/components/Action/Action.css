@@ -1,7 +1,58 @@
-.action-text {
+.action_text {
   font-weight: bold;
 }
 
 .enemy {
   color: darkorange;
+  font-weight: bold;
+}
+
+.area {
+  color: white;
+  font-weight: bold;
+}
+
+.quest {
+  color: gold;
+  font-weight: bold;
+}
+
+.quest_item {
+  color: lime;
+  font-weight: bold;
+}
+
+.quest_text {
+  color: lime;
+  font-weight: bold;
+}
+
+.waypoint {
+  color: skyblue;
+  font-weight: bold;
+}
+
+.vendor {
+  color: pink;
+  font-weight: bold;
+}
+
+.trial {
+  color: darkseagreen;
+  font-weight: bold;
+}
+
+.portal {
+  color: skyblue;
+  font-weight: bold;
+}
+
+.talk {
+  color: purple;
+  font-weight: bold;
+}
+
+.crafting {
+  color: burlywood;
+  font-weight: bold;
 }
