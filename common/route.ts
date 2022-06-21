@@ -239,7 +239,8 @@ export function validateRoute(
 }
 
 export async function parseRoute(routeData: string) {
-  const routeLines = routeData.split(/(\r\n|\r|\n)/);
+  const routeLines = routeData.split(/(?:\r\n|\r|\n)/g);
+  console.log(routeLines);
 
   const route: Route = [];
   for await (const line of routeLines) {
