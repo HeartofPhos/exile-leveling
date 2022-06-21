@@ -164,7 +164,7 @@ const actionEvaluators: Record<string, ActionEvaluator> = {
   },
   quest_item: (action, state) => action.length == 2,
   quest_text: (action, state) => action.length == 2,
-  npc: (action, state) => action.length == 2,
+  talk: (action, state) => action.length == 2,
   vendor: (action, state) => action.length == 1,
   trial: (action, state) => action.length == 1,
   crafting: (action, state) => action.length == 1,

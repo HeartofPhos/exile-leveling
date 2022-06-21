@@ -131,7 +131,7 @@ Find and {kill|Vaal Oversoul}
 
 #Act 3
 {waypoint|1_3_1} #The City of Sarn
-Help and talk to {npc|Clarissa}
+Help and {talk|Clarissa}
 {enter|1_3_town} #The Sarn Encampment
 {enter|1_3_2} #The Slums
 {enter|1_3_3_1} #The Crematorium
@@ -139,7 +139,7 @@ Help and talk to {npc|Clarissa}
 Find and {kill|Piety}
 Take {quest_item|Tolman's Bracelet}
 {town}
-Talk to {npc|Clarissa}, take {quest_item|Sewer Keys}
+{talk|Clarissa}, take {quest_item|Sewer Keys}
 {quest|a3q1} #Lost in Love
 {vendor}
 {enter|1_3_2} #The Slums
@@ -164,7 +164,7 @@ Find and take {quest_item|Thaumetic Sulphite}
 {town}
 {quest|a3q11} #Victario's Secrets
 {waypoint|1_3_8_2} #The Solaris Temple Level 2
-Talk to {npc|Lady Dialla}
+{talk|Lady Dialla}
 {quest|a3q4} #The Ribbon Spool
 {quest|a3q5} #Fiery Dust, take {quest_item|Infernal Talc}
 {waypoint|1_3_10_1} #The Sewers
@@ -236,7 +236,7 @@ Take {quest_item|The Eye of Fury}
 Take {quest_item|The Eye of Desire}
 {town}
 {waypoint|1_4_3_3} #The Crystal Veins
-Talk to {npc|Lady Dialla}
+{talk|Lady Dialla}
 {enter|1_4_6_1} #The Belly of the Beast Level 1
 {enter|1_4_6_2} #The Belly of the Beast Level 2
 {kill|Piety, the Abomination}
@@ -288,7 +288,7 @@ Find 3x{quest_item|Kitava's Torments}
 {waypoint|1_5_3b} #The Ruined Square
 {enter|1_5_8} #The Cathedral Rooftop
 {kill|Kitava, the Insatiable}
-Talk to {npc|Lilly Roth}, Sail to Wraeclast
+{talk|Lilly Roth}, Sail to Wraeclast
 
 #Act 6
 {enter|2_6_town} #Lioneye's Watch
