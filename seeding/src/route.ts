@@ -69,7 +69,7 @@ const actionEvaluators: Record<string, ActionEvaluator> = {
     if (action.length != 2) return false;
     const bossName = action[1];
 
-    // TODO: data incomplete
+    // TODO data incomplete
     // const currentArea = state.areas[state.currentAreaId];
     // if (!currentArea.bosses.some((x) => x.name == bossName)) return false;
 
@@ -92,7 +92,7 @@ const actionEvaluators: Record<string, ActionEvaluator> = {
     if (!area.connection_ids.some((x) => x == state.currentAreaId))
       return false;
 
-    if (area.is_town_area) state.waypoints.add(area.id);
+    if (area.is_town_area && area.has_waypoint) state.waypoints.add(area.id);
     state.currentAreaId = area.id;
     return true;
   },
@@ -153,13 +153,28 @@ const actionEvaluators: Record<string, ActionEvaluator> = {
 
     return true;
   },
-  quest: (action, state) =>
-    action.length == 2 && state.quests[action[1]] !== undefined,
+  quest: (action, state) => {
+    if (action.length != 2) return false;
+
+    // TODO data incomplete
+    // const quest = state.quests[action[1]];
+    // if (!quest) return false;
+
+    return true;
+  },
   quest_item: (action, state) => action.length == 2,
   npc: (action, state) => action.length == 2,
   vendor: (action, state) => action.length == 1,
   trial: (action, state) => action.length == 1,
   crafting: (action, state) => action.length == 1,
+  ascend: (action, state) => {
+    if (action.length != 1) return false;
+
+    const currentArea = state.areas[state.currentAreaId];
+    if (currentArea.id != "Labyrinth_Airlock") return false;
+
+    return true;
+  },
   dir: (action, state) => {
     let dir = Number.parseFloat(action[1]) % 360;
     if (dir < 0) dir += 360;

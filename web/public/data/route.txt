@@ -69,7 +69,7 @@ Follow the road, {enter|1_2_3} #The Crossroads
 Follow the road, {get_waypoint}
 {town} #The Forest Encampment
 {use_portal}
-{enter|1_2_2a}
+{enter|1_2_2a} #The Den
 Find and {kill|The Great White Beast}
 {town}
 {quest|a2q10} #The Great White Beast
@@ -200,6 +200,94 @@ Head {dir|0}, {trial}
 {enter|1_3_18_1} #The Sceptre of God
 {enter|1_3_18_2} #The Upper Sceptre of God
 {kill|Dominus, High Templar}
-{enter|1_4_1} #The Aqueduct
 
 #Act 4
+{enter|1_4_1} #The Aqueduct
+{enter|1_4_town} #Highgate
+{enter|1_4_2} #The Dried Lake
+Find and {kill|Voll, Emperor of Purity}
+{town}
+{quest|a4q2} #Breaking the Seal
+{vendor}
+{enter|1_4_3_1} #The Mines Level 1
+{enter|1_4_3_2} #The Mines Level 2
+Free {quest_item|Deshret}
+{enter|1_4_3_3} #The Crystal Veins
+{get_waypoint}
+{crafting}
+{town}
+{quest|a4q6} #An Indomitable Spirit
+{waypoint|1_3_town} #The Sarn Encampment
+{enter|Labyrinth_Airlock} #Aspirants' Plaza
+{get_waypoint}
+{ascend}
+{waypoint|1_4_3_3} #The Crystal Veins
+{enter|1_4_5_1} #Daresso's Dream
+{enter|1_4_5_2} #The Grand Arena
+{get_waypoint}
+{waypoint|1_4_3_3} #The Crystal Veins
+{enter|1_4_4_1} #Kaom's Dream
+{enter|1_4_4_3} #Kaom's Stronghold
+{kill|King Kaom}
+Take {quest_item|The Eye of Fury}
+{town}
+{waypoint|1_4_5_2} #The Grand Arena
+{kill|Daresso, King of Swords}
+Take {quest_item|The Eye of Desire}
+{town}
+{waypoint|1_4_3_3} #The Crystal Veins
+Talk to {npc|Lady Dialla}
+{enter|1_4_6_1} #The Belly of the Beast Level 1
+{enter|1_4_6_2} #The Belly of the Beast Level 2
+{kill|Piety, the Abomination}
+{enter|1_4_6_3} #The Harvest
+{get_waypoint}
+Find and {kill|Doedre Darktongue}
+Find and {kill|Maligaro, The Inquisitor}
+Find and {kill|Shavronne of Umbra}
+{quest|Corpus Malachus} #Corpus Malachus
+{kill|Malachai, The Nightmare}
+{town}
+{quest|a4q1} #The Eternal Nightmare
+{vendor}
+{enter|1_4_7} #The Ascent
+{crafting}
+Activate {quest_item|The Resonator}
+
+//Act 5
+{enter|1_5_1} #The Slave Pens
+Find and {kill|Overseer Krow}
+{enter|1_5_town} #Overseer's Tower
+{quest|a5q1b} #Return to Oriath
+{enter|1_5_2} #The Control Blocks
+Find and take {quest_item|Miasmeter}
+{kill|Justicar Casticus}
+{enter|1_5_3} #Oriath Square
+{enter|1_5_4} #The Templar Courts
+{get_waypoint}
+{enter|1_5_5} #The Chamber of Innocence
+{kill|High Templar Avarius}
+{town}
+{quest|a5q2} #The Key to Freedom
+{quest|a5q3} #In Service to Science
+{quest|a5q4} #Death to Purity
+{waypoint|1_5_5} #The Chamber of Innocence
+{enter|1_5_4b} #The Torched Courts
+{enter|1_5_3b} #The Ruined Square
+{get_waypoint}
+{enter|1_5_6} #The Ossuary
+Take {quest_item|Sign of Purity}
+{crafting}
+{town}
+{waypoint|1_5_3b} #The Ruined Square
+{enter|1_5_7} #The Reliquary
+Find 3x{quest_item|Kitava's Torments}
+{town}
+{quest|a5q7} #Kitava's Torments
+{waypoint|1_5_3b} #The Ruined Square
+{enter|1_5_8} #The Cathedral Rooftop
+{kill|Kitava, the Insatiable}
+Talk to {npc|Lilly Roth}, Sail to Wraeclast
+
+#Act 6
+{enter|2_6_town} #Lioneye's Watch
