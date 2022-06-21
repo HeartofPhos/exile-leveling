@@ -27,6 +27,7 @@ Find stairs, {set_portal}
 Go right of stairs, {enter|1_1_4_0} #The Flooded Depths
 Find and {kill|The Dweller of the Deep}
 {town} #Lioneye's Watch
+{quest|a1q7} #The Dweller of the Deep
 {waypoint|1_1_5} #The Ledge
 {enter|1_1_6} #The Climb
 {enter|1_1_7_1} #The Lower Prison
@@ -52,6 +53,7 @@ Find {quest_item|Allflame}
 {waypoint|1_1_9} #The Ship Graveyard
 Find and {kill|Captain Fairgraves}
 {town} #Lioneye's Watch
+{quest|a1q6} #The Marooned Mariner
 {waypoint|1_1_11_1} #The Cavern of Wrath
 {enter|1_1_11_2} #The Cavern of Anger
 Find and {kill|Merveil, the Siren}
@@ -110,15 +112,17 @@ Follow road, {kill|Captain Arteri}
 Take {quest_item|Thaumetic Emblem}
 {town}
 {waypoint|1_1_town} #Lioneye's Watch
-{quest|a1q9}
-{quest|a2q7}, if you killed all bandits
+{quest|a1q9} #The Way Forward
+If you killed all bandits, {quest|a2q7} #Deal with the Bandits
 {waypoint|1_2_12} #The Wetlands
 {enter|1_2_11} #The Vaal Ruins
 {enter|1_2_8} #The Northern Forest
 {enter|1_2_14_2} #The Caverns
-# {get_waypoint}
-# {town}
-# {waypoint|1_2_14_2} #The Caverns
+{get_waypoint}
+{town}
+{quest|a2q9} #The Root of the Problem
+{vendor}
+{waypoint|1_2_14_2} #The Caverns
 {enter|1_2_14_3} #The Ancient Pyramid
 Find and {kill|Vaal Oversoul}
 {crafting}
@@ -136,6 +140,8 @@ Find and {kill|Piety}
 Take {quest_item|Tolman's Bracelet}
 {town}
 Talk to {npc|Clarissa}, take {quest_item|Sewer Keys}
+{quest|a3q1} #Lost in Love
+{vendor}
 {enter|1_3_2} #The Slums
 {enter|1_3_10_1} #The Sewers
 Find 3x{quest_item|Platinum Bust}, 1 before waypoint, 2 after
@@ -156,9 +162,7 @@ Take {quest_item|Ribbon Spool}
 {enter|1_3_9} #The Docks
 Find and take {quest_item|Thaumetic Sulphite}
 {town}
-{quest|a3q1} #Lost in Love
 {quest|a3q11} #Victario's Secrets
-{vendor}
 {waypoint|1_3_8_2} #The Solaris Temple Level 2
 Talk to {npc|Lady Dialla}
 {quest|a3q4} #The Ribbon Spool
@@ -187,6 +191,7 @@ Find 4x{quest_item|Golden Page}
 {town}
 {waypoint|1_3_17_1} #The Library
 {quest|a3q12} #A Fixture of Fate
+{vendor}
 {waypoint|1_3_15} #The Imperial Gardens
 Head {dir|0}, {trial}
 {crafting}
