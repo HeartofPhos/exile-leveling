@@ -211,7 +211,7 @@ Find and {kill|Voll, Emperor of Purity}
 {vendor}
 {enter|1_4_3_1} #The Mines Level 1
 {enter|1_4_3_2} #The Mines Level 2
-Free {quest_item|Deshret}
+Free {quest_text|Deshret}
 {enter|1_4_3_3} #The Crystal Veins
 {get_waypoint}
 {crafting}
@@ -252,7 +252,8 @@ Find and {kill|Shavronne of Umbra}
 {vendor}
 {enter|1_4_7} #The Ascent
 {crafting}
-Activate {quest_item|The Resonator}
+Activate {quest_text|The Resonator}
+Use {quest_text|Oriath Portal}
 
 //Act 5
 {enter|1_5_1} #The Slave Pens
@@ -264,8 +265,8 @@ Find and take {quest_item|Miasmeter}
 {kill|Justicar Casticus}
 {enter|1_5_3} #Oriath Square
 {enter|1_5_4} #The Templar Courts
-{get_waypoint}
 {enter|1_5_5} #The Chamber of Innocence
+{get_waypoint}
 {kill|High Templar Avarius}
 {town}
 {quest|a5q2} #The Key to Freedom
