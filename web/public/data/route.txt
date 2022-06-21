@@ -1,4 +1,4 @@
-# Act 1
+#Act 1
 {kill|Zombie}
 {kill|Hillock}
 {enter|1_1_town} #Lioneye's Watch
@@ -7,7 +7,7 @@
 {enter|1_1_2} #The Coast
 {get_waypoint}
 {enter|1_1_3} #The Mud Flats
-Get 3x{quest_item|Glyphs}
+Find 3x{quest_item|Glyphs}
 {enter|1_1_4_1} #The Submerged Passage
 {get_waypoint}
 {waypoint|1_1_2} #The Coast
@@ -47,7 +47,7 @@ Find {area|1_1_9a}, {set_portal} #The Ship Graveyard Cave
 {vendor}
 {use_portal}
 {enter|1_1_9a} #The Ship Graveyard Cave
-Get {quest_item|Allflame}
+Find {quest_item|Allflame}
 {town} #Lioneye's Watch
 {waypoint|1_1_9} #The Ship Graveyard
 {kill|Captain Fairgraves}
@@ -55,5 +55,73 @@ Get {quest_item|Allflame}
 {waypoint|1_1_11_1} #The Cavern of Wrath
 {enter|1_1_11_2} #The Cavern of Anger
 {kill|Merveil, the Siren}
+{vendor}
 
-# Act 2
+#Act 2
+{waypoint|1_2_1} #The Southern Forest
+{enter|1_2_town} #The Forest Encampment
+Head {dir|45}, {enter|1_2_2} #The Old Fields
+Find {area|1_2_2a}, {set_portal} #The Den
+Follow the road, {enter|1_2_3} #The Crossroads
+Follow the road, {get_waypoint}
+{town} #The Forest Encampment
+{use_portal}
+{enter|1_2_2a}
+{kill|The Great White Beast}
+{town}
+{quest|a2q10} #The Great White Beast
+{waypoint|1_2_3} #The Crossroads
+Head {dir|315}, {enter|1_2_6_1} #The Chamber of Sins Level 1
+{get_waypoint}
+Go same direction as {waypoint}, {enter|1_2_6_2} #The Chamber of Sins Level 2
+{trial}, most likely {dir|0}
+Find long hallway, {kill|Fidelitas, the Mourning}
+{quest_item|Baleful Gem}
+{town}
+{quest|a2q6} #Intruders in Black
+{vendor}
+{waypoint|1_2_3} #The Crossroads
+Head {dir|180}, {enter|1_2_15} #The Fellshrine Ruins
+Follow the road, {enter|1_2_5_1} #The Crypt Level 1
+{trial}
+{town}
+Head {dir|225}, {enter|1_2_7} #The Riverways
+Follow the road, {get_waypoint}
+Head {dir|270}, {enter|1_2_9} #The Western Forest
+Follow the road, {get_waypoint}
+Go to side of road opposite {waypoint}, {enter|1_2_10} #The Weaver's Chambers
+{kill|The Weaver}
+{quest_item|Maligaro's Spike}
+{town}
+{quest|a2q4} #Sharp and Cruel
+{vendor}
+{waypoint|1_2_3} #The Crossroads
+Head {dir|45}, {enter|1_2_4} #The Broken Bridge
+Follow road, {kill|Kraityn, Scarbearer}
+{town}
+{waypoint|1_2_7}
+Head {dir|0}, {enter|1_2_12} #The Wetlands
+{kill|Oak, Skullbreaker}
+{get_waypoint}, likely {dir|0}
+{waypoint|1_2_9} #The Western Forest
+Go to side same of road as waypoint, help or {kill|Alira Darktongue}
+Follow road, {kill|Captain Arteri}
+{quest_item|Thaumetic Emblem}
+{town}
+{waypoint|1_1_town} #Lioneye's Watch
+{quest|a1q9}
+{quest|a2q7}, if you killed all bandits
+{waypoint|1_2_12} #The Wetlands
+{enter|1_2_11} #The Vaal Ruins
+{enter|1_2_8} #The Northern Forest
+{enter|1_2_14_2} #The Caverns
+# {get_waypoint}
+# {town}
+# {waypoint|1_2_14_2} #The Caverns
+{enter|1_2_14_3} #The Ancient Pyramid
+{kill|Vaal Oversoul}
+{town}
+{vendor}
+
+#Act 3
+{waypoint|1_3_1} #The City of Sarn

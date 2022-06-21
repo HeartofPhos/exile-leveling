@@ -69,8 +69,9 @@ const actionEvaluators: Record<string, ActionEvaluator> = {
     if (action.length != 2) return false;
     const bossName = action[1];
 
-    const currentArea = state.areas[state.currentAreaId];
-    if (!currentArea.bosses.some((x) => x.name == bossName)) return false;
+    // TODO: data incomplete
+    // const currentArea = state.areas[state.currentAreaId];
+    // if (!currentArea.bosses.some((x) => x.name == bossName)) return false;
 
     const waypointUnlocks = state.bossWaypoints[bossName];
     if (waypointUnlocks) {
@@ -105,6 +106,7 @@ const actionEvaluators: Record<string, ActionEvaluator> = {
     return true;
   },
   waypoint: (action, state) => {
+    if (action.length == 1) return true;
     if (action.length != 2) return false;
 
     const area = state.areas[action[1]];
@@ -153,6 +155,12 @@ const actionEvaluators: Record<string, ActionEvaluator> = {
   quest_item: (action, state) => action.length == 2,
   vendor: (action, state) => action.length == 1,
   trial: (action, state) => action.length == 1,
+  dir: (action, state) => {
+    let dir = Number.parseFloat(action[1]) % 360;
+    if (dir < 0) dir += 360;
+
+    return dir % 45 == 0;
+  },
 };
 
 function validateStep(step: Step, state: RouteState) {
