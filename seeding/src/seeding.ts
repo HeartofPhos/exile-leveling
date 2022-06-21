@@ -1,5 +1,5 @@
 import { cargoQuery, getImageUrl } from "./wiki";
-import { Area, Gem, Monster, Quest } from "../../types";
+import { Area, Gem, Monster, Quest } from "../../common/types";
 
 function ensureRecord<K extends keyof any, T>(
   record: Record<K, T>,

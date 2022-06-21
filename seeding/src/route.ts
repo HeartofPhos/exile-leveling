@@ -1,6 +1,6 @@
 import fs from "fs";
 import readline from "readline";
-import { Area, Monster, Quest } from "../../types";
+import { Area, Monster, Quest } from "../../common/types";
 
 type Action = string[];
 type Step = (string | Action)[];

@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "seed_data": "ts-node src/index.ts ../web/public/data seed_data",
-    "parse_route": "ts-node src/index.ts ../web/public/data parse_route"
+    "seed_data": "ts-node src/index.ts ../web/public/data seed-data",
+    "parse_route": "ts-node src/index.ts ../web/public/data parse-route"
   },
   "author": "",
   "license": "ISC",
