@@ -1,6 +1,6 @@
 import fs from "fs";
 import { getAreas, getGems, getQuests } from "./seeding";
-import { InitializeRouteState, parseRoute } from "./route";
+import { InitializeRouteState, parseRoute } from "../../common/route";
 
 const dataPath = process.argv[2];
 function saveData(name: string, data: any) {
@@ -15,7 +15,7 @@ export async function main() {
 
   const command = process.argv[3];
   switch (command) {
-    case "seed_data":
+    case "seed-data":
       {
         const gems = await getGems();
         saveData("gems", gems);
@@ -27,7 +27,7 @@ export async function main() {
         saveData("areas", areas);
       }
       break;
-    case "parse_route":
+    case "validate-route":
       {
         const quests = loadData("quests");
         const areas = loadData("areas");
