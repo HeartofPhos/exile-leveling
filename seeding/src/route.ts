@@ -155,6 +155,7 @@ const actionEvaluators: Record<string, ActionEvaluator> = {
   quest_item: (action, state) => action.length == 2,
   vendor: (action, state) => action.length == 1,
   trial: (action, state) => action.length == 1,
+  crafting: (action, state) => action.length == 1,
   dir: (action, state) => {
     let dir = Number.parseFloat(action[1]) % 360;
     if (dir < 0) dir += 360;

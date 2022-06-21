@@ -120,6 +120,7 @@ Take {quest_item|Thaumetic Emblem}
 # {waypoint|1_2_14_2} #The Caverns
 {enter|1_2_14_3} #The Ancient Pyramid
 {kill|Vaal Oversoul}
+{crafting}
 {town}
 {vendor}
 
