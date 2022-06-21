@@ -1,6 +1,6 @@
 #Act 1
 {kill|Zombie}
-{kill|Hillock}
+Find and {kill|Hillock}
 {enter|1_1_town} #Lioneye's Watch
 {quest|a1q1} #Enemy at the Gate
 {vendor}
@@ -12,7 +12,7 @@ Find 3x{quest_item|Glyphs}
 {get_waypoint}
 {waypoint|1_1_2} #The Coast
 {enter|1_1_2a} #The Tidal Island
-{kill|Hailrake}
+Find and {kill|Hailrake}
 Take {quest_item|Medicine Chest}
 {town} #Lioneye's Watch
 {quest|a1q4} #Breaking Some Eggs
@@ -25,7 +25,7 @@ Find stairs, {set_portal}
 {waypoint|1_1_town} #Lioneye's Watch
 {use_portal}
 Go right of stairs, {enter|1_1_4_0} #The Flooded Depths
-{kill|The Dweller of the Deep}
+Find and {kill|The Dweller of the Deep}
 {town} #Lioneye's Watch
 {waypoint|1_1_5} #The Ledge
 {enter|1_1_6} #The Climb
@@ -50,11 +50,12 @@ Find {area|1_1_9a}, {set_portal} #The Ship Graveyard Cave
 Find {quest_item|Allflame}
 {town} #Lioneye's Watch
 {waypoint|1_1_9} #The Ship Graveyard
-{kill|Captain Fairgraves}
+Find and {kill|Captain Fairgraves}
 {town} #Lioneye's Watch
 {waypoint|1_1_11_1} #The Cavern of Wrath
 {enter|1_1_11_2} #The Cavern of Anger
-{kill|Merveil, the Siren}
+Find and {kill|Merveil, the Siren}
+{town}
 {vendor}
 
 #Act 2
@@ -67,7 +68,7 @@ Follow the road, {get_waypoint}
 {town} #The Forest Encampment
 {use_portal}
 {enter|1_2_2a}
-{kill|The Great White Beast}
+Find and {kill|The Great White Beast}
 {town}
 {quest|a2q10} #The Great White Beast
 {waypoint|1_2_3} #The Crossroads
@@ -90,7 +91,7 @@ Follow the road, {get_waypoint}
 Head {dir|270}, {enter|1_2_9} #The Western Forest
 Follow the road, {get_waypoint}
 Go to side of road opposite {waypoint}, {enter|1_2_10} #The Weaver's Chambers
-{kill|The Weaver}
+Find and {kill|The Weaver}
 Take {quest_item|Maligaro's Spike}
 {town}
 {quest|a2q4} #Sharp and Cruel
@@ -101,7 +102,7 @@ Follow road, {kill|Kraityn, Scarbearer}
 {town}
 {waypoint|1_2_7}
 Head {dir|0}, {enter|1_2_12} #The Wetlands
-{kill|Oak, Skullbreaker}
+Find and {kill|Oak, Skullbreaker}
 {get_waypoint}, likely {dir|0}
 {waypoint|1_2_9} #The Western Forest
 Go to side same of road as waypoint, help or {kill|Alira Darktongue}
@@ -119,10 +120,81 @@ Take {quest_item|Thaumetic Emblem}
 # {town}
 # {waypoint|1_2_14_2} #The Caverns
 {enter|1_2_14_3} #The Ancient Pyramid
-{kill|Vaal Oversoul}
+Find and {kill|Vaal Oversoul}
 {crafting}
 {town}
 {vendor}
 
 #Act 3
 {waypoint|1_3_1} #The City of Sarn
+Help and talk to {npc|Clarissa}
+{enter|1_3_town} #The Sarn Encampment
+{enter|1_3_2} #The Slums
+{enter|1_3_3_1} #The Crematorium
+{trial}
+Find and {kill|Piety}
+Take {quest_item|Tolman's Bracelet}
+{town}
+Talk to {npc|Clarissa}, take {quest_item|Sewer Keys}
+{enter|1_3_2} #The Slums
+{enter|1_3_10_1} #The Sewers
+Find 3x{quest_item|Platinum Bust}, 1 before waypoint, 2 after
+{get_waypoint}
+{enter|1_3_5} #The Marketplace
+{get_waypoint}
+{enter|1_3_6} #The Catacombs
+{trial}
+{town}
+{waypoint|1_3_5} #The Marketplace
+{enter|1_3_7}, normally opposite {area|1_3_6} #The Battlefront
+{get_waypoint}
+Take {quest_item|Ribbon Spool}
+{enter|1_3_8_1} #The Solaris Temple Level 1
+{enter|1_3_8_2} #The Solaris Temple Level 2
+{get_waypoint}
+{waypoint|1_3_7} #The Battlefront
+{enter|1_3_9} #The Docks
+Find and take {quest_item|Thaumetic Sulphite}
+{town}
+{quest|a3q1} #Lost in Love
+{quest|a3q11} #Victario's Secrets
+{vendor}
+{waypoint|1_3_8_2} #The Solaris Temple Level 2
+Talk to {npc|Lady Dialla}
+{quest|a3q4} #The Ribbon Spool
+{quest|a3q5} #Fiery Dust, take {quest_item|Infernal Talc}
+{waypoint|1_3_10_1} #The Sewers
+{crafting}
+{enter|1_3_13} #The Ebony Barracks
+{get_waypoint}
+Head {dir|315}, {kill|General Gravicius}
+{enter|1_3_14_1} #The Lunaris Temple Level 1
+{enter|1_3_14_2} #The Lunaris Temple Level 2
+Find and {kill|Piety}
+{crafting}
+{town}
+{quest|a3q8} #Sever the Right Hand
+{quest|a3q9} #Piety's Pets
+{vendor}
+{waypoint|1_3_13} #The Ebony Barracks
+Head {dir|45}, {enter|1_3_15} #The Imperial Gardens
+{get_waypoint}
+Head {dir|315}, {enter|1_3_17_1} #The Library
+{get_waypoint}
+Find Loose Candle
+{enter|1_3_17_2} #The Archives
+Find 4x{quest_item|Golden Page}
+{town}
+{waypoint|1_3_17_1} #The Library
+{quest|a3q12} #A Fixture of Fate
+{waypoint|1_3_15} #The Imperial Gardens
+Head {dir|0}, {trial}
+{crafting}
+{town}
+{waypoint|1_3_15} #The Imperial Gardens
+{enter|1_3_18_1} #The Sceptre of God
+{enter|1_3_18_2} #The Upper Sceptre of God
+{kill|Dominus, High Templar}
+{enter|1_4_1} #The Aqueduct
+
+#Act 4

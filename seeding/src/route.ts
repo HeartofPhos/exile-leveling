@@ -113,6 +113,9 @@ const actionEvaluators: Record<string, ActionEvaluator> = {
     if (!area) return false;
     if (!state.waypoints.has(area.id)) return false;
 
+    const currentArea = state.areas[state.currentAreaId];
+    if (!currentArea.has_waypoint) return false;
+
     state.currentAreaId = area.id;
     return true;
   },
@@ -121,8 +124,8 @@ const actionEvaluators: Record<string, ActionEvaluator> = {
 
     const area = state.areas[state.currentAreaId];
     if (!area) return false;
-    if (state.waypoints.has(area.id)) return false;
     if (!area.has_waypoint) return false;
+    if (state.waypoints.has(area.id)) return false;
 
     state.waypoints.add(area.id);
     return true;
@@ -153,6 +156,7 @@ const actionEvaluators: Record<string, ActionEvaluator> = {
   quest: (action, state) =>
     action.length == 2 && state.quests[action[1]] !== undefined,
   quest_item: (action, state) => action.length == 2,
+  npc: (action, state) => action.length == 2,
   vendor: (action, state) => action.length == 1,
   trial: (action, state) => action.length == 1,
   crafting: (action, state) => action.length == 1,
