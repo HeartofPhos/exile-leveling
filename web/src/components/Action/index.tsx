@@ -93,10 +93,13 @@ const ACTION_MAPPER_LOOKUP: Record<string, ActionMapper> = {
   crafting: (action, state) => {
     return <span className={classNames("crafting")}>Crafting Recipe</span>;
   },
+  ascend: (action, state) => {
+    return <span className={classNames("trial")}>Ascend</span>;
+  },
 };
 
 export function ActionComponent({ action, state }: ActionProps) {
   const actionMapper = ACTION_MAPPER_LOOKUP[action[0]];
   if (actionMapper) return actionMapper(action, state);
-  else return <>{action.join(" ")}</>;
+  else return <>{`Unmapped: ${action.toString()}`}</>;
 }
