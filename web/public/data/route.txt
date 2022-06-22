@@ -1,294 +1,294 @@
 #Act 1
-{kill|Zombie}
-Find and {kill|Hillock}
-{enter|1_1_town} #Lioneye's Watch
-{quest|a1q1} #Enemy at the Gate
+Kill {kill|Zombie}
+Find and kill {kill|Hillock}
+Enter {enter|1_1_town} #Lioneye's Watch
+Hand in {quest|a1q1} #Enemy at the Gate
 {vendor}
-{enter|1_1_2} #The Coast
-{get_waypoint}
-{enter|1_1_3} #The Mud Flats
+Enter {enter|1_1_2} #The Coast
+Get {get_waypoint}
+Enter {enter|1_1_3} #The Mud Flats
 Find 3x{quest_item|Glyphs}
-{enter|1_1_4_1} #The Submerged Passage
-{get_waypoint}
+Enter {enter|1_1_4_1} #The Submerged Passage
+Get {get_waypoint}
 {waypoint|1_1_2} #The Coast
-{enter|1_1_2a} #The Tidal Island
-Find and {kill|Hailrake}
+Enter {enter|1_1_2a} #The Tidal Island
+Find and kill {kill|Hailrake}
 Take {quest_item|Medicine Chest}
 {town} #Lioneye's Watch
-{quest|a1q4} #Breaking Some Eggs
-{quest|a1q5} #Mercy Mission
+Hand in {quest|a1q4} #Breaking Some Eggs
+Hand in {quest|a1q5} #Mercy Mission
 {vendor}
 {waypoint|1_1_4_1} #The Submerged Passage
-Find stairs, {set_portal}
-{enter|1_1_5} #The Ledge
-{get_waypoint}
+Find stairs, place {set_portal}
+Enter {enter|1_1_5} #The Ledge
+Get {get_waypoint}
 {waypoint|1_1_town} #Lioneye's Watch
-{use_portal}
-Go right of stairs, {enter|1_1_4_0} #The Flooded Depths
-Find and {kill|The Dweller of the Deep}
+Take {use_portal}
+Go right of stairs, enter {enter|1_1_4_0} #The Flooded Depths
+Find and kill {kill|The Dweller of the Deep}
 {town} #Lioneye's Watch
-{quest|a1q7} #The Dweller of the Deep
+Hand in {quest|a1q7} #The Dweller of the Deep
 {waypoint|1_1_5} #The Ledge
-{enter|1_1_6} #The Climb
-{enter|1_1_7_1} #The Lower Prison
-{get_waypoint}
-First level, {trial}
-{enter|1_1_7_2} #The Upper Prison
+Enter {enter|1_1_6} #The Climb
+Enter {enter|1_1_7_1} #The Lower Prison
+Get {get_waypoint}
+First level, complete {trial}
+Enter {enter|1_1_7_2} #The Upper Prison
 {town} #Lioneye's Watch
-{quest|a1q2} #The Caged Brute
+Hand in {quest|a1q2} #The Caged Brute
 {vendor}
 {waypoint|1_1_8} #Prisoner's Gate
-{enter|1_1_9} #The Ship Graveyard
-{get_waypoint}
-Find {area|1_1_9a}, {set_portal} #The Ship Graveyard Cave
-{enter|1_1_11_1} #The Cavern of Wrath
-{get_waypoint}
+Enter {enter|1_1_9} #The Ship Graveyard
+Get {get_waypoint}
+Find {area|1_1_9a}, place {set_portal} #The Ship Graveyard Cave
+Enter {enter|1_1_11_1} #The Cavern of Wrath
+Get {get_waypoint}
 {town} #Lioneye's Watch
-{quest|a1q3} #The Siren's Cadence
+Hand in {quest|a1q3} #The Siren's Cadence
 {vendor}
-{use_portal}
-{enter|1_1_9a} #The Ship Graveyard Cave
+Take {use_portal}
+Enter {enter|1_1_9a} #The Ship Graveyard Cave
 Find {quest_item|Allflame}
 {town} #Lioneye's Watch
 {waypoint|1_1_9} #The Ship Graveyard
-Find and {kill|Captain Fairgraves}
+Find and kill {kill|Captain Fairgraves}
 {town} #Lioneye's Watch
-{quest|a1q6} #The Marooned Mariner
+Hand in {quest|a1q6} #The Marooned Mariner
 {waypoint|1_1_11_1} #The Cavern of Wrath
-{enter|1_1_11_2} #The Cavern of Anger
-Find and {kill|Merveil, the Siren}
+Enter {enter|1_1_11_2} #The Cavern of Anger
+Find and kill {kill|Merveil, the Siren}
 {town}
 {vendor}
 
 #Act 2
 {waypoint|1_2_1} #The Southern Forest
-{enter|1_2_town} #The Forest Encampment
-Head {dir|45}, {enter|1_2_2} #The Old Fields
-Find {area|1_2_2a}, {set_portal} #The Den
-Follow the road, {enter|1_2_3} #The Crossroads
-Follow the road, {get_waypoint}
+Enter {enter|1_2_town} #The Forest Encampment
+Head {dir|45}, enter {enter|1_2_2} #The Old Fields
+Find {area|1_2_2a}, place {set_portal} #The Den
+Follow the road, enter {enter|1_2_3} #The Crossroads
+Follow the road, get {get_waypoint}
 {town} #The Forest Encampment
-{use_portal}
-{enter|1_2_2a} #The Den
-Find and {kill|The Great White Beast}
+Take {use_portal}
+Enter {enter|1_2_2a} #The Den
+Find and kill {kill|The Great White Beast}
 {town}
-{quest|a2q10} #The Great White Beast
+Hand in {quest|a2q10} #The Great White Beast
 {waypoint|1_2_3} #The Crossroads
-Head {dir|315}, {enter|1_2_6_1} #The Chamber of Sins Level 1
-{get_waypoint}
-Go same direction as {waypoint}, {enter|1_2_6_2} #The Chamber of Sins Level 2
-{trial}, most likely {dir|0}
-Find long hallway, {kill|Fidelitas, the Mourning}
+Head {dir|315}, enter {enter|1_2_6_1} #The Chamber of Sins Level 1
+Get {get_waypoint}
+Go same direction as {waypoint}, enter {enter|1_2_6_2} #The Chamber of Sins Level 2
+Complete {trial}, most likely {dir|0}
+Find long hallway, kill {kill|Fidelitas, the Mourning}
 Take {quest_item|Baleful Gem}
 {town}
-{quest|a2q6} #Intruders in Black
+Hand in {quest|a2q6} #Intruders in Black
 {vendor}
 {waypoint|1_2_3} #The Crossroads
-Head {dir|180}, {enter|1_2_15} #The Fellshrine Ruins
-Follow the road, {enter|1_2_5_1} #The Crypt Level 1
-{trial}
+Head {dir|180}, enter {enter|1_2_15} #The Fellshrine Ruins
+Follow the road, enter {enter|1_2_5_1} #The Crypt Level 1
+Complete {trial}
 {town}
-Head {dir|225}, {enter|1_2_7} #The Riverways
-Follow the road, {get_waypoint}
-Head {dir|270}, {enter|1_2_9} #The Western Forest
-Follow the road, {get_waypoint}
-Go to side of road opposite {waypoint}, {enter|1_2_10} #The Weaver's Chambers
-Find and {kill|The Weaver}
+Head {dir|225}, enter {enter|1_2_7} #The Riverways
+Follow the road, get {get_waypoint}
+Head {dir|270}, enter {enter|1_2_9} #The Western Forest
+Follow the road, get {get_waypoint}
+Go to side of road opposite {waypoint}, enter {enter|1_2_10} #The Weaver's Chambers
+Find and kill {kill|The Weaver}
 Take {quest_item|Maligaro's Spike}
 {town}
-{quest|a2q4} #Sharp and Cruel
+Hand in {quest|a2q4} #Sharp and Cruel
 {vendor}
 {waypoint|1_2_3} #The Crossroads
-Head {dir|45}, {enter|1_2_4} #The Broken Bridge
-Follow road, {kill|Kraityn, Scarbearer}
+Head {dir|45}, enter {enter|1_2_4} #The Broken Bridge
+Follow road, kill {kill|Kraityn, Scarbearer}
 {town}
 {waypoint|1_2_7}
-Head {dir|0}, {enter|1_2_12} #The Wetlands
-Find and {kill|Oak, Skullbreaker}
-{get_waypoint}, likely {dir|0}
+Head {dir|0}, enter {enter|1_2_12} #The Wetlands
+Find and kill {kill|Oak, Skullbreaker}
+Get {get_waypoint}, likely {dir|0}
 {waypoint|1_2_9} #The Western Forest
-Go to side same of road as {waypoint}, help or {kill|Alira Darktongue}
-Follow road, {kill|Captain Arteri}
+Go to side same of road as {waypoint}, help or kill {kill|Alira Darktongue}
+Follow road, kill {kill|Captain Arteri}
 Take {quest_item|Thaumetic Emblem}
 {town}
 {waypoint|1_1_town} #Lioneye's Watch
-{quest|a1q9} #The Way Forward
-If you killed all bandits, {quest|a2q7} #Deal with the Bandits
+Hand in {quest|a1q9} #The Way Forward
+If you killed all bandits, hand in {quest|a2q7} #Deal with the Bandits
 {waypoint|1_2_12} #The Wetlands
-{enter|1_2_11} #The Vaal Ruins
-{enter|1_2_8} #The Northern Forest
-{enter|1_2_14_2} #The Caverns
-{get_waypoint}
+Enter {enter|1_2_11} #The Vaal Ruins
+Enter {enter|1_2_8} #The Northern Forest
+Enter {enter|1_2_14_2} #The Caverns
+Get {get_waypoint}
 {town}
-{quest|a2q9} #The Root of the Problem
+Hand in {quest|a2q9} #The Root of the Problem
 {vendor}
 {waypoint|1_2_14_2} #The Caverns
-{enter|1_2_14_3} #The Ancient Pyramid
-Find and {kill|Vaal Oversoul}
-{crafting}
+Enter {enter|1_2_14_3} #The Ancient Pyramid
+Find and kill {kill|Vaal Oversoul}
+Get {crafting}
 {town}
 {vendor}
 
 #Act 3
 {waypoint|1_3_1} #The City of Sarn
-Help and {talk|Clarissa}
-{enter|1_3_town} #The Sarn Encampment
-{enter|1_3_2} #The Slums
-{enter|1_3_3_1} #The Crematorium
-{trial}
-Find and {kill|Piety}
+Help and talk to {npc|Clarissa}
+Enter {enter|1_3_town} #The Sarn Encampment
+Enter {enter|1_3_2} #The Slums
+Enter {enter|1_3_3_1} #The Crematorium
+Complete {trial}
+Find and kill {kill|Piety}
 Take {quest_item|Tolman's Bracelet}
 {town}
-{talk|Clarissa}, take {quest_item|Sewer Keys}
-{quest|a3q1} #Lost in Love
+Talk to {npc|Clarissa}, take {quest_item|Sewer Keys}
+Hand in {quest|a3q1} #Lost in Love
 {vendor}
-{enter|1_3_2} #The Slums
-{enter|1_3_10_1} #The Sewers
+Enter {enter|1_3_2} #The Slums
+Enter {enter|1_3_10_1} #The Sewers
 Find 3x{quest_item|Platinum Bust}, 1 before waypoint, 2 after
-{get_waypoint}
-{enter|1_3_5} #The Marketplace
-{get_waypoint}
-{enter|1_3_6} #The Catacombs
-{trial}
+Get {get_waypoint}
+Enter {enter|1_3_5} #The Marketplace
+Get {get_waypoint}
+Enter {enter|1_3_6} #The Catacombs
+Complete {trial}
 {town}
 {waypoint|1_3_5} #The Marketplace
-{enter|1_3_7}, normally opposite {area|1_3_6} #The Battlefront
-{get_waypoint}
+Enter {enter|1_3_7}, normally opposite {area|1_3_6} #The Battlefront
+Get {get_waypoint}
 Take {quest_item|Ribbon Spool}
-{enter|1_3_8_1} #The Solaris Temple Level 1
-{enter|1_3_8_2} #The Solaris Temple Level 2
-{get_waypoint}
+Enter {enter|1_3_8_1} #The Solaris Temple Level 1
+Enter {enter|1_3_8_2} #The Solaris Temple Level 2
+Get {get_waypoint}
 {waypoint|1_3_7} #The Battlefront
-{enter|1_3_9} #The Docks
+Enter {enter|1_3_9} #The Docks
 Find and take {quest_item|Thaumetic Sulphite}
 {town}
-{quest|a3q11} #Victario's Secrets
+Hand in {quest|a3q11} #Victario's Secrets
 {waypoint|1_3_8_2} #The Solaris Temple Level 2
-{talk|Lady Dialla}
-{quest|a3q4} #The Ribbon Spool
-{quest|a3q5} #Fiery Dust, take {quest_item|Infernal Talc}
+Talk to {npc|Lady Dialla}
+Hand in {quest|a3q4} #The Ribbon Spool
+Hand in {quest|a3q5} #Fiery Dust, take {quest_item|Infernal Talc}
 {waypoint|1_3_10_1} #The Sewers
-{crafting}
-{enter|1_3_13} #The Ebony Barracks
-{get_waypoint}
-Head {dir|315}, {kill|General Gravicius}
-{enter|1_3_14_1} #The Lunaris Temple Level 1
-{enter|1_3_14_2} #The Lunaris Temple Level 2
-Find and {kill|Piety}
-{crafting}
+Get {crafting}
+Enter {enter|1_3_13} #The Ebony Barracks
+Get {get_waypoint}
+Head {dir|315}, kill {kill|General Gravicius}
+Enter {enter|1_3_14_1} #The Lunaris Temple Level 1
+Enter {enter|1_3_14_2} #The Lunaris Temple Level 2
+Find and kill {kill|Piety}
+Get {crafting}
 {town}
-{quest|a3q8} #Sever the Right Hand
-{quest|a3q9} #Piety's Pets
+Hand in {quest|a3q8} #Sever the Right Hand
+Hand in {quest|a3q9} #Piety's Pets
 {vendor}
 {waypoint|1_3_13} #The Ebony Barracks
-Head {dir|45}, {enter|1_3_15} #The Imperial Gardens
-{get_waypoint}
-Head {dir|315}, {enter|1_3_17_1} #The Library
-{get_waypoint}
+Head {dir|45}, enter {enter|1_3_15} #The Imperial Gardens
+Get {get_waypoint}
+Head {dir|315}, enter {enter|1_3_17_1} #The Library
+Get {get_waypoint}
 Find Loose Candle
-{enter|1_3_17_2} #The Archives
+Enter {enter|1_3_17_2} #The Archives
 Find 4x{quest_item|Golden Page}
 {town}
 {waypoint|1_3_17_1} #The Library
-{quest|a3q12} #A Fixture of Fate
+Hand in {quest|a3q12} #A Fixture of Fate
 {vendor}
 {waypoint|1_3_15} #The Imperial Gardens
-Head {dir|0}, {trial}
-{crafting}
+Head {dir|0}, complete {trial}
+Get {crafting}
 {town}
 {waypoint|1_3_15} #The Imperial Gardens
-{enter|1_3_18_1} #The Sceptre of God
-{enter|1_3_18_2} #The Upper Sceptre of God
-{kill|Dominus, High Templar}
+Enter {enter|1_3_18_1} #The Sceptre of God
+Enter {enter|1_3_18_2} #The Upper Sceptre of God
+Find and Kill {kill|Dominus, High Templar}
 
 #Act 4
-{enter|1_4_1} #The Aqueduct
-{enter|1_4_town} #Highgate
-{enter|1_4_2} #The Dried Lake
-Find and {kill|Voll, Emperor of Purity}
+Enter {enter|1_4_1} #The Aqueduct
+Enter {enter|1_4_town} #Highgate
+Enter {enter|1_4_2} #The Dried Lake
+Find and kill {kill|Voll, Emperor of Purity}
 {town}
-{quest|a4q2} #Breaking the Seal
+Hand in {quest|a4q2} #Breaking the Seal
 {vendor}
-{enter|1_4_3_1} #The Mines Level 1
-{enter|1_4_3_2} #The Mines Level 2
+Enter {enter|1_4_3_1} #The Mines Level 1
+Enter {enter|1_4_3_2} #The Mines Level 2
 Free {quest_text|Deshret}
-{enter|1_4_3_3} #The Crystal Veins
-{get_waypoint}
-{crafting}
+Enter {enter|1_4_3_3} #The Crystal Veins
+Get {get_waypoint}
+Get {crafting}
 {town}
-{quest|a4q6} #An Indomitable Spirit
+Hand in {quest|a4q6} #An Indomitable Spirit
 {waypoint|1_3_town} #The Sarn Encampment
-{enter|Labyrinth_Airlock} #Aspirants' Plaza
-{get_waypoint}
+Enter {enter|Labyrinth_Airlock} #Aspirants' Plaza
+Get {get_waypoint}
 {ascend}
 {waypoint|1_4_3_3} #The Crystal Veins
-{enter|1_4_5_1} #Daresso's Dream
-{enter|1_4_5_2} #The Grand Arena
-{get_waypoint}
+Enter {enter|1_4_5_1} #Daresso's Dream
+Enter {enter|1_4_5_2} #The Grand Arena
+Get {get_waypoint}
 {waypoint|1_4_3_3} #The Crystal Veins
-{enter|1_4_4_1} #Kaom's Dream
-{enter|1_4_4_3} #Kaom's Stronghold
-{kill|King Kaom}
+Enter {enter|1_4_4_1} #Kaom's Dream
+Enter {enter|1_4_4_3} #Kaom's Stronghold
+Find and kill {kill|King Kaom}
 Take {quest_item|The Eye of Fury}
 {town}
 {waypoint|1_4_5_2} #The Grand Arena
-{kill|Daresso, King of Swords}
+Find and kill {kill|Daresso, King of Swords}
 Take {quest_item|The Eye of Desire}
 {town}
 {waypoint|1_4_3_3} #The Crystal Veins
-{talk|Lady Dialla}
-{enter|1_4_6_1} #The Belly of the Beast Level 1
-{enter|1_4_6_2} #The Belly of the Beast Level 2
-{kill|Piety, the Abomination}
-{enter|1_4_6_3} #The Harvest
-{get_waypoint}
+Talk to {npc|Lady Dialla}
+Enter {enter|1_4_6_1} #The Belly of the Beast Level 1
+Enter {enter|1_4_6_2} #The Belly of the Beast Level 2
+Find and kill {kill|Piety, the Abomination}
+Enter {enter|1_4_6_3} #The Harvest
+Get {get_waypoint}
 Find and {kill|Doedre Darktongue}
 Find and {kill|Maligaro, The Inquisitor}
 Find and {kill|Shavronne of Umbra}
-{quest|Corpus Malachus} #Corpus Malachus
-{kill|Malachai, The Nightmare}
+Hand in {quest|Corpus Malachus} #Corpus Malachus
+Kill {kill|Malachai, The Nightmare}
 {town}
-{quest|a4q1} #The Eternal Nightmare
+Hand in {quest|a4q1} #The Eternal Nightmare
 {vendor}
-{enter|1_4_7} #The Ascent
-{crafting}
+Enter {enter|1_4_7} #The Ascent
+Get {crafting}
 Activate {quest_text|The Resonator}
 Use {quest_text|Oriath Portal}
 
 #Act 5
-{enter|1_5_1} #The Slave Pens
+Enter {enter|1_5_1} #The Slave Pens
 Find and {kill|Overseer Krow}
-{enter|1_5_town} #Overseer's Tower
-{quest|a5q1b} #Return to Oriath
-{enter|1_5_2} #The Control Blocks
+Enter {enter|1_5_town} #Overseer's Tower
+Hand in {quest|a5q1b} #Return to Oriath
+Enter {enter|1_5_2} #The Control Blocks
 Find and take {quest_item|Miasmeter}
-{kill|Justicar Casticus}
-{enter|1_5_3} #Oriath Square
-{enter|1_5_4} #The Templar Courts
-{enter|1_5_5} #The Chamber of Innocence
-{get_waypoint}
-{kill|High Templar Avarius}
+Find and kill {kill|Justicar Casticus}
+Enter {enter|1_5_3} #Oriath Square
+Enter {enter|1_5_4} #The Templar Courts
+Enter {enter|1_5_5} #The Chamber of Innocence
+Get {get_waypoint}
+Find and kill {kill|High Templar Avarius}
 {town}
-{quest|a5q2} #The Key to Freedom
-{quest|a5q3} #In Service to Science
-{quest|a5q4} #Death to Purity
+Hand in {quest|a5q2} #The Key to Freedom
+Hand in {quest|a5q3} #In Service to Science
+Hand in {quest|a5q4} #Death to Purity
 {waypoint|1_5_5} #The Chamber of Innocence
-{enter|1_5_4b} #The Torched Courts
-{enter|1_5_3b} #The Ruined Square
-{get_waypoint}
-{enter|1_5_6} #The Ossuary
+Enter {enter|1_5_4b} #The Torched Courts
+Enter {enter|1_5_3b} #The Ruined Square
+Get {get_waypoint}
+Enter {enter|1_5_6} #The Ossuary
 Take {quest_item|Sign of Purity}
-{crafting}
+Get {crafting}
 {town}
 {waypoint|1_5_3b} #The Ruined Square
-{enter|1_5_7} #The Reliquary
+Enter {enter|1_5_7} #The Reliquary
 Find 3x{quest_item|Kitava's Torments}
 {town}
-{quest|a5q7} #Kitava's Torments
+Hand in {quest|a5q7} #Kitava's Torments
 {waypoint|1_5_3b} #The Ruined Square
-{enter|1_5_8} #The Cathedral Rooftop
-{kill|Kitava, the Insatiable}
-{talk|Lilly Roth}, Sail to Wraeclast
+Enter {enter|1_5_8} #The Cathedral Rooftop
+Kill {kill|Kitava, the Insatiable}
+Talk to {npc|Lilly Roth}, Sail to Wraeclast
 
 #Act 6
-{enter|2_6_town} #Lioneye's Watch
+Enter {enter|2_6_town} #Lioneye's Watch
