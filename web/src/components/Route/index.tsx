@@ -6,7 +6,6 @@ import {
   Route,
   RouteState,
 } from "../../../../common/route";
-import { Area } from "../../../../common/types";
 import { StepComponent } from "../Step";
 
 interface RouteProps {}
@@ -52,8 +51,9 @@ export function RouteComponent({}: RouteProps) {
 
   const steps: JSX.Element[] = [];
   if (route && state) {
-    for (const step of route) {
-      steps.push(<StepComponent step={step} state={state} />);
+    for (let i = 0; i < route.length; i++) {
+      const step = route[i];
+      steps.push(<StepComponent key={i} step={step} state={state} />);
     }
   }
 

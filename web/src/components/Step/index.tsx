@@ -35,15 +35,10 @@ export function StepComponent({ step, state }: StepProps) {
         "has-text-grey-light",
         "mb-1"
       )}
+      onClick={() => {
+        setIsDone(!isDone);
+      }}
     >
-      <input
-        type="checkbox"
-        className={classNames("mr-1")}
-        checked={isDone}
-        onClick={() => {
-          setIsDone(!isDone);
-        }}
-      />
       {mapped}
     </label>
   );
