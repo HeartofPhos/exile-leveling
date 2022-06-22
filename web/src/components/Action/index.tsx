@@ -1,11 +1,14 @@
 import classNames from "classnames";
-import { Action, RouteState } from "../../../../common/route";
+import {
+  Action,
+  RouteLookup,
+} from "../../../../common/route";
 import { Area } from "../../../../common/types";
 import "./Action.css";
 
 interface ActionProps {
   action: Action;
-  state: RouteState;
+  lookup: RouteLookup;
 }
 
 function EnemyComponent(enemy: string) {
@@ -82,41 +85,41 @@ function AscendComponent() {
   return <span className={classNames("trial")}>Ascend</span>;
 }
 
-type ActionMapper = (action: Action, state: RouteState) => JSX.Element;
+type ActionMapper = (action: Action, lookup: RouteLookup) => JSX.Element;
 const ACTION_MAPPER_LOOKUP: Record<string, ActionMapper> = {
-  kill: (action, state) => EnemyComponent(action[1]),
-  area: (action, state) => AreaComponent(state.areas[action[1]]),
-  enter: (action, state) => AreaComponent(state.areas[action[1]]),
-  quest: (action, state) => {
-    const quest = state.quests[action[1]];
+  kill: (action, lookup) => EnemyComponent(action[1]),
+  area: (action, lookup) => AreaComponent(lookup.areas[action[1]]),
+  enter: (action, lookup) => AreaComponent(lookup.areas[action[1]]),
+  quest: (action, lookup) => {
+    const quest = lookup.quests[action[1]];
     return QuestComponent(quest?.quest || action[1]);
   },
-  quest_item: (action, state) => QuestTextComponent(action[1]),
-  quest_text: (action, state) => QuestTextComponent(action[1]),
-  waypoint: (action, state) => {
+  quest_item: (action, lookup) => QuestTextComponent(action[1]),
+  quest_text: (action, lookup) => QuestTextComponent(action[1]),
+  waypoint: (action, lookup) => {
     if (action.length == 1) return WaypointComponent();
     return (
       <>
         {WaypointComponent()}
         <span> to </span>
-        {AreaComponent(state.areas[action[1]])}
+        {AreaComponent(lookup.areas[action[1]])}
       </>
     );
   },
-  get_waypoint: (action, state) => WaypointComponent(),
-  vendor: (action, state) => VendorComponent(),
-  trial: (action, state) => TrialComponent(),
-  town: (action, state) => TownComponent(),
-  set_portal: (action, state) => PortalComponent(),
-  use_portal: (action, state) => PortalComponent(),
-  dir: (action, state) => DirectionComponent(Number.parseFloat(action[1])),
-  npc: (action, state) => NpcComponent(action[1]),
-  crafting: (action, state) => CraftingComponent(),
-  ascend: (action, state) => AscendComponent(),
+  get_waypoint: (action, lookup) => WaypointComponent(),
+  vendor: (action, lookup) => VendorComponent(),
+  trial: (action, lookup) => TrialComponent(),
+  town: (action, lookup) => TownComponent(),
+  set_portal: (action, lookup) => PortalComponent(),
+  use_portal: (action, lookup) => PortalComponent(),
+  dir: (action, lookup) => DirectionComponent(Number.parseFloat(action[1])),
+  npc: (action, lookup) => NpcComponent(action[1]),
+  crafting: (action, lookup) => CraftingComponent(),
+  ascend: (action, lookup) => AscendComponent(),
 };
 
-export function ActionComponent({ action, state }: ActionProps) {
+export function ActionComponent({ action, lookup }: ActionProps) {
   const actionMapper = ACTION_MAPPER_LOOKUP[action[0]];
-  if (actionMapper) return actionMapper(action, state);
+  if (actionMapper) return actionMapper(action, lookup);
   else return <>{`Unmapped: ${action.toString()}`}</>;
 }

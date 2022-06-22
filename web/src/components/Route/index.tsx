@@ -1,10 +1,10 @@
 import classNames from "classnames";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import {
-  initializeRouteState,
+  initializeRouteLookup,
   parseRoute,
   Route,
-  RouteState,
+  RouteLookup,
 } from "../../../../common/route";
 import { StepComponent } from "../Step";
 
@@ -12,48 +12,32 @@ interface RouteProps {}
 
 export function RouteComponent({}: RouteProps) {
   const [route, setRoute] = useState<Route>();
-  const [quests, setQuests] = useState<RouteState["quests"]>();
-  const [areas, setAreas] = useState<RouteState["areas"]>();
-  const [bossWaypoints, setBossWaypoints] =
-    useState<RouteState["bossWaypoints"]>();
-  const [state, setState] = useState<RouteState>();
+  const [routeLookup, setRouteLookup] = useState<RouteLookup>();
 
   useEffect(() => {
-    fetch("/data/route.txt")
-      .then((x) => x.text())
-      .then((x) => parseRoute(x))
-      .then((x) => setRoute(x));
+    const fn = async () => {
+      const route = await fetch("/data/route.txt")
+        .then((x) => x.text())
+        .then((x) => parseRoute(x));
+
+      const quests = await fetch("/data/quests.json").then((x) => x.json());
+      const areas = await fetch("/data/areas.json").then((x) => x.json());
+      const bossWaypoints = await fetch("/data/boss-waypoints.json").then((x) =>
+        x.json()
+      );
+      const routeLookup = initializeRouteLookup(quests, areas, bossWaypoints);
+
+      setRoute(route);
+      setRouteLookup(routeLookup);
+    };
+    fn();
   }, []);
-
-  useEffect(() => {
-    fetch("/data/quests.json")
-      .then((x) => x.json())
-      .then((x) => setQuests(x));
-  }, []);
-
-  useEffect(() => {
-    fetch("/data/areas.json")
-      .then((x) => x.json())
-      .then((x) => setAreas(x));
-  }, []);
-
-  useEffect(() => {
-    fetch("/data/boss-waypoints.json")
-      .then((x) => x.json())
-      .then((x) => setBossWaypoints(x));
-  }, []);
-
-  useMemo(() => {
-    if (!quests || !areas || !bossWaypoints) return;
-
-    setState(initializeRouteState(quests, areas, bossWaypoints));
-  }, [quests, areas, bossWaypoints]);
 
   const steps: JSX.Element[] = [];
-  if (route && state) {
+  if (route && routeLookup) {
     for (let i = 0; i < route.length; i++) {
       const step = route[i];
-      steps.push(<StepComponent key={i} step={step} state={state} />);
+      steps.push(<StepComponent key={i} step={step} lookup={routeLookup} />);
     }
   }
 

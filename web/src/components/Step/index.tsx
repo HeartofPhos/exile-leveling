@@ -1,15 +1,15 @@
 import classNames from "classnames";
 import { useState } from "react";
-import { RouteState, Step } from "../../../../common/route";
+import { RouteLookup, RouteState, Step } from "../../../../common/route";
 import { ActionComponent } from "../Action";
 import "./Step.css";
 
 interface StepProps {
   step: Step;
-  state: RouteState;
+  lookup: RouteLookup;
 }
 
-export function StepComponent({ step, state }: StepProps) {
+export function StepComponent({ step, lookup }: StepProps) {
   const [isDone, setIsDone] = useState<boolean>(false);
   const mapped = [];
   for (const subStep of step) {
@@ -20,7 +20,7 @@ export function StepComponent({ step, state }: StepProps) {
     if (subStep.length == 0) throw new Error(subStep.toString());
 
     mapped.push(
-      <ActionComponent key={mapped.length} action={subStep} state={state} />
+      <ActionComponent key={mapped.length} action={subStep} lookup={lookup} />
     );
   }
 

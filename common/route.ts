@@ -4,11 +4,14 @@ export type Action = string[];
 export type Step = (string | Action)[];
 export type Route = Step[];
 
-export interface RouteState {
+export interface RouteLookup {
   quests: Record<string, Quest>;
   areas: Record<string, Area>;
   towns: Record<Area["act"], Area["id"]>;
   bossWaypoints: Record<Monster["name"], Area["id"]>;
+}
+
+export interface RouteState {
   waypoints: Set<Area["id"]>;
   currentAreaId: Area["id"];
   portalAreaId: Area["id"] | null;
@@ -43,9 +46,13 @@ const ERROR_INVALID_FORMAT = "invalid format";
 const ERROR_MISSING_AREA = "area does not exist";
 const ERROR_AREA_NO_WAYPOINT = "area does not have a waypoint";
 
-type ActionEvaluator = (action: Action, state: RouteState) => null | string;
+type ActionEvaluator = (
+  action: Action,
+  lookup: RouteLookup,
+  state: RouteState
+) => null | string;
 const ACTION_EVALUATOR_LOOKUP: Record<string, ActionEvaluator> = {
-  kill: (action, state) => {
+  kill: (action, lookup, state) => {
     if (action.length != 2) return ERROR_INVALID_FORMAT;
     const bossName = action[1];
 
@@ -53,7 +60,7 @@ const ACTION_EVALUATOR_LOOKUP: Record<string, ActionEvaluator> = {
     // const currentArea = state.areas[state.currentAreaId];
     // if (!currentArea.bosses.some((x) => x.name == bossName)) return false;
 
-    const waypointUnlocks = state.bossWaypoints[bossName];
+    const waypointUnlocks = lookup.bossWaypoints[bossName];
     if (waypointUnlocks) {
       for (const waypointUnlock of waypointUnlocks) {
         state.waypoints.add(waypointUnlock);
@@ -62,18 +69,18 @@ const ACTION_EVALUATOR_LOOKUP: Record<string, ActionEvaluator> = {
 
     return null;
   },
-  area: (action, state) => {
+  area: (action, lookup, state) => {
     if (action.length != 2) return ERROR_INVALID_FORMAT;
 
-    const area = state.areas[action[1]];
+    const area = lookup.areas[action[1]];
     if (!area) return ERROR_MISSING_AREA;
 
     return null;
   },
-  enter: (action, state) => {
+  enter: (action, lookup, state) => {
     if (action.length != 2) return ERROR_INVALID_FORMAT;
 
-    const area = state.areas[action[1]];
+    const area = lookup.areas[action[1]];
     if (!area) return ERROR_MISSING_AREA;
     if (!area.connection_ids.some((x) => x == state.currentAreaId))
       return "not connected to current area";
@@ -82,31 +89,31 @@ const ACTION_EVALUATOR_LOOKUP: Record<string, ActionEvaluator> = {
     state.currentAreaId = area.id;
     return null;
   },
-  town: (action, state) => {
+  town: (action, lookup, state) => {
     if (action.length != 1) return ERROR_INVALID_FORMAT;
 
-    const area = state.areas[state.currentAreaId];
-    state.currentAreaId = state.towns[area.act];
+    const area = lookup.areas[state.currentAreaId];
+    state.currentAreaId = lookup.towns[area.act];
     return null;
   },
-  waypoint: (action, state) => {
+  waypoint: (action, lookup, state) => {
     if (action.length == 1) return null;
     if (action.length != 2) return ERROR_INVALID_FORMAT;
 
-    const area = state.areas[action[1]];
+    const area = lookup.areas[action[1]];
     if (!area) return ERROR_MISSING_AREA;
     if (!state.waypoints.has(area.id)) return "missing target waypoint";
 
-    const currentArea = state.areas[state.currentAreaId];
+    const currentArea = lookup.areas[state.currentAreaId];
     if (!currentArea.has_waypoint) return ERROR_AREA_NO_WAYPOINT;
 
     state.currentAreaId = area.id;
     return null;
   },
-  get_waypoint: (action, state) => {
+  get_waypoint: (action, lookup, state) => {
     if (action.length != 1) return ERROR_INVALID_FORMAT;
 
-    const area = state.areas[state.currentAreaId];
+    const area = lookup.areas[state.currentAreaId];
     if (!area) return ERROR_MISSING_AREA;
     if (!area.has_waypoint) return ERROR_AREA_NO_WAYPOINT;
     if (state.waypoints.has(area.id)) return "waypoint already acquired";
@@ -114,19 +121,19 @@ const ACTION_EVALUATOR_LOOKUP: Record<string, ActionEvaluator> = {
     state.waypoints.add(area.id);
     return null;
   },
-  set_portal: (action, state) => {
+  set_portal: (action, lookup, state) => {
     if (action.length != 1) return ERROR_INVALID_FORMAT;
 
     state.portalAreaId = state.currentAreaId;
     return null;
   },
-  use_portal: (action, state) => {
+  use_portal: (action, lookup, state) => {
     if (action.length != 1) return ERROR_INVALID_FORMAT;
     if (!state.portalAreaId) return "portal must be set";
 
-    const currentArea = state.areas[state.currentAreaId];
+    const currentArea = lookup.areas[state.currentAreaId];
     if (currentArea.id == state.portalAreaId) {
-      const townId = state.towns[currentArea.act];
+      const townId = lookup.towns[currentArea.act];
       state.portalAreaId = state.currentAreaId;
       state.currentAreaId = townId;
     } else {
@@ -138,7 +145,7 @@ const ACTION_EVALUATOR_LOOKUP: Record<string, ActionEvaluator> = {
 
     return null;
   },
-  quest: (action, state) => {
+  quest: (action, lookup, state) => {
     if (action.length != 2) return ERROR_INVALID_FORMAT;
 
     // TODO data incomplete
@@ -147,43 +154,43 @@ const ACTION_EVALUATOR_LOOKUP: Record<string, ActionEvaluator> = {
 
     return null;
   },
-  quest_item: (action, state) => {
+  quest_item: (action, lookup, state) => {
     if (action.length != 2) return ERROR_INVALID_FORMAT;
     return null;
   },
-  quest_text: (action, state) => {
+  quest_text: (action, lookup, state) => {
     if (action.length != 2) return ERROR_INVALID_FORMAT;
     return null;
   },
-  talk: (action, state) => {
+  npc: (action, lookup, state) => {
     if (action.length != 2) return ERROR_INVALID_FORMAT;
     return null;
   },
-  vendor: (action, state) => {
+  vendor: (action, lookup, state) => {
     if (action.length != 1) return ERROR_INVALID_FORMAT;
     return null;
   },
-  trial: (action, state) => {
+  trial: (action, lookup, state) => {
     if (action.length != 1) return ERROR_INVALID_FORMAT;
     return null;
   },
-  crafting: (action, state) => {
+  crafting: (action, lookup, state) => {
     if (action.length != 1) return ERROR_INVALID_FORMAT;
     return null;
   },
-  ascend: (action, state) => {
+  ascend: (action, lookup, state) => {
     if (action.length != 1) return ERROR_INVALID_FORMAT;
 
     const expectedAreaId = "Labyrinth_Airlock";
-    const currentArea = state.areas[state.currentAreaId];
+    const currentArea = lookup.areas[state.currentAreaId];
     if (currentArea.id != expectedAreaId) {
-      const expectedArea = state.areas[expectedAreaId];
+      const expectedArea = lookup.areas[expectedAreaId];
       return `must be in "${expectedArea.name}"`;
     }
 
     return null;
   },
-  dir: (action, state) => {
+  dir: (action, lookup, state) => {
     if (action.length != 2) return ERROR_INVALID_FORMAT;
 
     const parsed = Number.parseFloat(action[1]);
@@ -198,43 +205,57 @@ const ACTION_EVALUATOR_LOOKUP: Record<string, ActionEvaluator> = {
   },
 };
 
-export function validateAction(action: Action, state: RouteState) {
+export function validateAction(
+  action: Action,
+  lookup: RouteLookup,
+  state: RouteState
+) {
   const actionKey = action[0];
   const evaluator = ACTION_EVALUATOR_LOOKUP[actionKey];
   if (!evaluator) throw new Error(action.toString());
 
-  const error = evaluator(action, state);
+  const error = evaluator(action, lookup, state);
   if (error) console.log(`${action.toString()}: ${error}`);
 }
 
-export function initializeRouteState(
+export function initializeRouteLookup(
   quests: Record<string, Quest>,
   areas: Record<string, Area>,
   bossWaypoints: Record<Monster["name"], Area["id"]>
 ) {
-  const state: RouteState = {
+  const routeLookup: RouteLookup = {
     quests: quests,
     areas: areas,
     towns: {},
     bossWaypoints: bossWaypoints,
+  };
+  for (const id in routeLookup.areas) {
+    const area = routeLookup.areas[id];
+    if (area.is_town_area) routeLookup.towns[area.act] = area.id;
+  }
+
+  return routeLookup;
+}
+
+export function initializeRouteState() {
+  const state: RouteState = {
     waypoints: new Set(),
     currentAreaId: "1_1_1",
     portalAreaId: null,
   };
 
-  for (const id in areas) {
-    const area = areas[id];
-    if (area.is_town_area) state.towns[area.act] = area.id;
-  }
-
   return state;
 }
 
-export function validateRoute(route: Route, state: RouteState) {
+export function validateRoute(
+  route: Route,
+  lookup: RouteLookup,
+  state: RouteState
+) {
   for (const step of route) {
     for (const subStep of step) {
       if (typeof subStep == "string") continue;
-      validateAction(subStep, state);
+      validateAction(subStep, lookup, state);
     }
   }
 }

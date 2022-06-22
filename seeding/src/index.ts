@@ -1,6 +1,7 @@
 import fs from "fs";
 import { getAreas, getGems, getQuests } from "./seeding";
 import {
+  initializeRouteLookup,
   initializeRouteState,
   parseRoute,
   validateRoute,
@@ -39,8 +40,9 @@ export async function main() {
 
         const routeData = fs.readFileSync(`${dataPath}/route.txt`, "utf-8");
         const route = parseRoute(routeData);
-        const routeState = initializeRouteState(quests, areas, bossWaypoints);
-        validateRoute(route, routeState);
+        const routeLookup = initializeRouteLookup(quests, areas, bossWaypoints);
+        const routeState = initializeRouteState();
+        validateRoute(route, routeLookup, routeState);
       }
       break;
     default:
