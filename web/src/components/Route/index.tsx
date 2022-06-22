@@ -30,6 +30,7 @@ export function RouteComponent({}: RouteProps) {
       setRoute(route);
       setRouteLookup(routeLookup);
     };
+
     fn();
   }, []);
 
