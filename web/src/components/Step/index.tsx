@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { useState } from "react";
 import { RouteState, Step } from "../../../../common/route";
 import { ActionComponent } from "../Action";
 import "./Step.css";
@@ -9,6 +10,7 @@ interface StepProps {
 }
 
 export function StepComponent({ step, state }: StepProps) {
+  const [isDone, setIsDone] = useState<boolean>(false);
   const mapped = [];
   for (const subStep of step) {
     if (typeof subStep == "string") {
@@ -26,6 +28,7 @@ export function StepComponent({ step, state }: StepProps) {
     <label
       className={classNames(
         "step",
+        { done: isDone },
         "checkbox",
         "box",
         "has-background-black",
@@ -33,7 +36,14 @@ export function StepComponent({ step, state }: StepProps) {
         "mb-1"
       )}
     >
-      <input type="checkbox" className={classNames("mr-1")} />
+      <input
+        type="checkbox"
+        className={classNames("mr-1")}
+        checked={isDone}
+        onClick={() => {
+          setIsDone(!isDone);
+        }}
+      />
       {mapped}
     </label>
   );
