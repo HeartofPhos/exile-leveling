@@ -17,7 +17,6 @@ export function StepComponent({ step, lookup }: StepProps) {
       mapped.push(subStep);
       continue;
     }
-    if (subStep.length == 0) throw new Error(subStep.toString());
 
     mapped.push(
       <ActionComponent key={mapped.length} action={subStep} lookup={lookup} />
