@@ -42,6 +42,102 @@ function parseStep(text: string) {
   return steps;
 }
 
+interface KillAction {
+  type: "kill";
+  value: string;
+}
+
+interface AreaAction {
+  type: "area";
+  areaId: Area["id"];
+}
+
+interface EnterAction {
+  type: "enter";
+  areaId: Area["id"];
+}
+
+interface TownAction {
+  type: "town";
+}
+
+interface WaypointAction {
+  type: "waypoint";
+  areaId: Area["id"];
+}
+
+interface GetWaypointAction {
+  type: "get_waypoint";
+}
+
+interface SetPortalAction {
+  type: "set_portal";
+}
+
+interface UsePortalAction {
+  type: "use_portal";
+}
+
+interface QuestAction {
+  type: "quest";
+  questId: Quest["quest_id"];
+}
+
+interface QuestItemAction {
+  type: "quest_item";
+  value: string;
+}
+
+interface QuestTextAction {
+  type: "quest_text";
+  value: string;
+}
+
+interface NpcAction {
+  type: "npc";
+  value: string;
+}
+
+interface VendorAction {
+  type: "vendor";
+  gems: string[];
+}
+
+interface TrialAction {
+  type: "trial";
+}
+
+interface AscendAction {
+  type: "ascend";
+}
+
+interface DirectionAction {
+  type: "dir";
+}
+
+interface CraftingAction {
+  type: "crafting";
+}
+
+type AnyAction =
+  | KillAction
+  | AreaAction
+  | EnterAction
+  | TownAction
+  | WaypointAction
+  | GetWaypointAction
+  | SetPortalAction
+  | UsePortalAction
+  | QuestAction
+  | QuestItemAction
+  | QuestTextAction
+  | NpcAction
+  | VendorAction
+  | TrialAction
+  | AscendAction
+  | DirectionAction
+  | CraftingAction;
+
 const ERROR_INVALID_FORMAT = "invalid format";
 const ERROR_MISSING_AREA = "area does not exist";
 const ERROR_AREA_NO_WAYPOINT = "area does not have a waypoint";
@@ -51,7 +147,7 @@ type ActionEvaluator = (
   lookup: RouteLookup,
   state: RouteState
 ) => null | string;
-const ACTION_EVALUATOR_LOOKUP: Record<string, ActionEvaluator> = {
+const ACTION_EVALUATOR_LOOKUP: Record<AnyAction["type"], ActionEvaluator> = {
   kill: (action, lookup, state) => {
     if (action.length != 2) return ERROR_INVALID_FORMAT;
     const bossName = action[1];
