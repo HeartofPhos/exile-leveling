@@ -383,11 +383,6 @@ export function initializeRouteState() {
   return state;
 }
 
-export function evaluateRoute(route: Route) {
-  for (const step of route) {
-  }
-}
-
 export function parseRoute(
   routeData: string,
   lookup: RouteLookup,
