@@ -1,8 +1,5 @@
 import classNames from "classnames";
-import {
-  Action,
-  RouteLookup,
-} from "../../../../common/route";
+import { Action, RouteLookup } from "../../../../common/route";
 import { Area } from "../../../../common/types";
 import "./Action.css";
 
@@ -68,8 +65,7 @@ const directions = [
   "North-West",
 ];
 
-function DirectionComponent(angle: number) {
-  let dirIndex = Math.floor(angle / 45);
+function DirectionComponent(dirIndex: number) {
   return <span>{directions[dirIndex]}</span>;
 }
 
@@ -85,41 +81,53 @@ function AscendComponent() {
   return <span className={classNames("trial")}>Ascend</span>;
 }
 
-type ActionMapper = (action: Action, lookup: RouteLookup) => JSX.Element;
-const ACTION_MAPPER_LOOKUP: Record<string, ActionMapper> = {
-  kill: (action, lookup) => EnemyComponent(action[1]),
-  area: (action, lookup) => AreaComponent(lookup.areas[action[1]]),
-  enter: (action, lookup) => AreaComponent(lookup.areas[action[1]]),
-  quest: (action, lookup) => {
-    const quest = lookup.quests[action[1]];
-    return QuestComponent(quest?.quest || action[1]);
-  },
-  quest_item: (action, lookup) => QuestTextComponent(action[1]),
-  quest_text: (action, lookup) => QuestTextComponent(action[1]),
-  waypoint: (action, lookup) => {
-    if (action.length == 1) return WaypointComponent();
-    return (
-      <>
-        {WaypointComponent()}
-        <span> to </span>
-        {AreaComponent(lookup.areas[action[1]])}
-      </>
-    );
-  },
-  get_waypoint: (action, lookup) => WaypointComponent(),
-  vendor: (action, lookup) => VendorComponent(),
-  trial: (action, lookup) => TrialComponent(),
-  town: (action, lookup) => TownComponent(),
-  set_portal: (action, lookup) => PortalComponent(),
-  use_portal: (action, lookup) => PortalComponent(),
-  dir: (action, lookup) => DirectionComponent(Number.parseFloat(action[1])),
-  npc: (action, lookup) => NpcComponent(action[1]),
-  crafting: (action, lookup) => CraftingComponent(),
-  ascend: (action, lookup) => AscendComponent(),
-};
-
 export function ActionComponent({ action, lookup }: ActionProps) {
-  const actionMapper = ACTION_MAPPER_LOOKUP[action[0]];
-  if (actionMapper) return actionMapper(action, lookup);
-  else return <>{`Unmapped: ${action.toString()}`}</>;
+  switch (action.type) {
+    case "kill":
+      return EnemyComponent(action.value);
+    case "area":
+      return AreaComponent(lookup.areas[action.areaId]);
+    case "enter":
+      return AreaComponent(lookup.areas[action.areaId]);
+    case "quest": {
+      const quest = lookup.quests[action.questId];
+      return QuestComponent(quest?.quest || action.questId);
+    }
+    case "quest_item":
+      return QuestTextComponent(action.value);
+    case "quest_text":
+      return QuestTextComponent(action.value);
+    case "waypoint": {
+      if (action.areaId == null) return WaypointComponent();
+      return (
+        <>
+          {WaypointComponent()}
+          <span> to </span>
+          {AreaComponent(lookup.areas[action.areaId])}
+        </>
+      );
+    }
+    case "get_waypoint":
+      return WaypointComponent();
+    case "vendor":
+      return VendorComponent();
+    case "trial":
+      return TrialComponent();
+    case "town":
+      return TownComponent();
+    case "set_portal":
+      return PortalComponent();
+    case "use_portal":
+      return PortalComponent();
+    case "dir":
+      return DirectionComponent(action.dirIndex);
+    case "npc":
+      return NpcComponent(action.value);
+    case "crafting":
+      return CraftingComponent();
+    case "ascend":
+      return AscendComponent();
+  }
+
+  return <>{`Unmapped: ${JSON.stringify(action)}`}</>;
 }
