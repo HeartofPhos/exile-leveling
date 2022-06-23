@@ -4,7 +4,6 @@ import {
   initializeRouteLookup,
   initializeRouteState,
   parseRoute,
-  validateRoute,
 } from "../../common/route";
 
 const dataPath = process.argv[2];
@@ -39,10 +38,9 @@ export async function main() {
         const bossWaypoints = loadData("boss-waypoints");
 
         const routeData = fs.readFileSync(`${dataPath}/route.txt`, "utf-8");
-        const route = parseRoute(routeData);
         const routeLookup = initializeRouteLookup(quests, areas, bossWaypoints);
         const routeState = initializeRouteState();
-        validateRoute(route, routeLookup, routeState);
+        const route = parseRoute(routeData, routeLookup, routeState);
       }
       break;
     default:

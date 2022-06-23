@@ -144,12 +144,6 @@ const ERROR_INVALID_FORMAT = "invalid format";
 const ERROR_MISSING_AREA = "area does not exist";
 const ERROR_AREA_NO_WAYPOINT = "area does not have a waypoint";
 
-type ActionEvaluator = (
-  action: ParsedAction,
-  lookup: RouteLookup,
-  state: RouteState
-) => Action;
-
 function evaluateAction(
   action: ParsedAction,
   lookup: RouteLookup,
@@ -412,7 +406,7 @@ export function parseRoute(
         step.push(subStep);
       } else {
         const result = evaluateAction(subStep, lookup, state);
-        if (typeof result == "string") console.log(result);
+        if (typeof result == "string") console.log(`${result}: ${subStep}`);
         else step.push(result);
       }
     }
