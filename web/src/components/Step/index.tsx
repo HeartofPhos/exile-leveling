@@ -24,16 +24,15 @@ export function StepComponent({ step, lookup }: StepProps) {
   }
 
   return (
-    <label
+    <div
       className={classNames(
         "step",
         { done: isDone },
-        "checkbox",
         "box",
         "has-background-black",
         "has-text-grey-light",
         "mb-1",
-        "p-3"
+        "p-2"
 
       )}
       onClick={() => {
@@ -41,6 +40,6 @@ export function StepComponent({ step, lookup }: StepProps) {
       }}
     >
       {mapped}
-    </label>
+    </div>
   );
 }
