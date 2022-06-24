@@ -19,6 +19,7 @@ export interface RouteLookup {
   areas: Record<string, Area>;
   towns: Record<Area["act"], Area["id"]>;
   bossWaypoints: Record<Monster["name"], Area["id"]>;
+  gems: Record<string, Gem>;
   class: CharacterClass;
   requiredGems: Gem["id"][];
 }
@@ -99,7 +100,7 @@ interface QuestAction {
 
 interface QuestRewardAction {
   type: "quest_reward";
-  gem: string;
+  gemId: string;
 }
 
 interface QuestItemAction {
@@ -119,7 +120,7 @@ interface NpcAction {
 
 interface VendorRewardAction {
   type: "vendor_reward";
-  gem: string;
+  gemId: string;
 }
 
 interface TrialAction {
@@ -318,11 +319,15 @@ function evaluateAction(
       const quest = lookup.quests[questId];
 
       const additionalSteps: Step[] = [];
+      const rewardLevels: Set<number> = new Set();
       if (quest) {
-        for (const gem of lookup.requiredGems) {
-          if (state.acquiredGems.has(gem)) continue;
+        for (const gemId of lookup.requiredGems) {
+          if (state.acquiredGems.has(gemId)) continue;
 
-          const reward = quest.quest_rewards[gem];
+          const gem = lookup.gems[gemId];
+          if (rewardLevels.has(gem.required_level)) continue;
+
+          const reward = quest.quest_rewards[gemId];
           if (!reward) continue;
 
           const validClass =
@@ -330,9 +335,9 @@ function evaluateAction(
             reward.classes.some((x) => x == lookup.class);
 
           if (validClass) {
-            state.acquiredGems.add(gem);
-            additionalSteps.push([{ type: "quest_reward", gem: gem }]);
-            break;
+            state.acquiredGems.add(gemId);
+            additionalSteps.push([{ type: "quest_reward", gemId: gemId }]);
+            rewardLevels.add(gem.required_level);
           }
         }
       }
@@ -392,7 +397,7 @@ function evaluateAction(
 
           if (validClass) {
             state.acquiredGems.add(gem);
-            steps.push([{ type: "vendor_reward", gem: gem }]);
+            steps.push([{ type: "vendor_reward", gemId: gem }]);
           }
         }
       }
@@ -459,17 +464,30 @@ function evaluateAction(
 }
 
 export function initializeRouteLookup(
-  quests: Record<string, Quest>,
-  areas: Record<string, Area>,
-  bossWaypoints: Record<Monster["name"], Area["id"]>
+  quests: RouteLookup["quests"],
+  areas: RouteLookup["areas"],
+  bossWaypoints: RouteLookup["bossWaypoints"],
+  gems: RouteLookup["gems"]
 ) {
   const routeLookup: RouteLookup = {
     quests: quests,
     areas: areas,
     towns: {},
     bossWaypoints: bossWaypoints,
+    gems: gems,
     class: "Templar",
-    requiredGems: ["Spark", "Vitality", "Shield Crush", "Purifying Flame"],
+    requiredGems: [
+      "Spark",
+      "Vitality",
+      "Shield Crush",
+      "Purifying Flame",
+      "Ancestral Call Support",
+      "Ancestral Protector",
+      "Clarity",
+      "Added Fire Damage Support",
+      "Added Lightning Damage Support",
+      "Leap Slam",
+    ],
   };
   for (const id in routeLookup.areas) {
     const area = routeLookup.areas[id];

@@ -1,20 +1,6 @@
 import { cargoQuery, getImageUrl } from "./wiki";
 import { Area, Gem, Monster, Quest } from "../../common/types";
 
-function ensureRecord<K extends keyof any, T>(
-  record: Record<K, T>,
-  key: K,
-  defaultValue: T
-) {
-  let value = record[key];
-  if (value === undefined) {
-    value = defaultValue;
-    record[key] = value;
-  }
-
-  return value;
-}
-
 export async function getGems() {
   const queryResult = await cargoQuery({
     tables: ["items", "skill_gems"],

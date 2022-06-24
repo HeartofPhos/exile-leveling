@@ -22,7 +22,14 @@ export function RouteComponent({}: RouteProps) {
       const bossWaypoints = await fetch("/data/boss-waypoints.json").then((x) =>
         x.json()
       );
-      const routeLookup = initializeRouteLookup(quests, areas, bossWaypoints);
+      const gems = await fetch("/data/gems.json").then((x) => x.json());
+
+      const routeLookup = initializeRouteLookup(
+        quests,
+        areas,
+        bossWaypoints,
+        gems
+      );
       const routeState = initializeRouteState();
 
       const route = await fetch("/data/route.txt")

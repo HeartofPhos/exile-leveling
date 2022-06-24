@@ -103,7 +103,7 @@ export function ActionComponent({ action, lookup }: ActionProps) {
       return QuestComponent(quest?.name || action.questId);
     }
     case "quest_reward":
-      return QuestRewardComponent(action.gem);
+      return QuestRewardComponent(action.gemId);
     case "quest_item":
       return QuestTextComponent(action.value);
     case "quest_text":
@@ -121,7 +121,7 @@ export function ActionComponent({ action, lookup }: ActionProps) {
     case "get_waypoint":
       return WaypointComponent();
     case "vendor_reward":
-      return VendorRewardComponent(action.gem);
+      return VendorRewardComponent(action.gemId);
     case "trial":
       return TrialComponent();
     case "town":
