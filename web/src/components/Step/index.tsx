@@ -24,21 +24,17 @@ export function StepComponent({ step, lookup }: StepProps) {
   }
 
   return (
-    <div
+    <li
       className={classNames(
         "step",
         { done: isDone },
-        "box",
-        "has-background-black",
-        "has-text-grey-light",
-        "mb-1",
-        "p-2"
+        "mb-1"
       )}
       onClick={() => {
         setIsDone(!isDone);
       }}
     >
       {mapped}
-    </div>
+    </li>
   );
 }

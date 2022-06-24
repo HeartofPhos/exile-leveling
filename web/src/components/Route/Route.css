@@ -1,0 +1,21 @@
+.route {
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color: grey;
+  border-radius: 0.25rem;
+  list-style-type: decimal-leading-zero;
+  list-style-position: inside;
+}
+
+.route li {
+  padding: 0.5em 0;
+  border-bottom: 1px solid #505050;
+}
+
+.route li:last-child {
+  border-bottom: 0;
+}
+
+.route li::marker {
+  font-weight: bold;
+}

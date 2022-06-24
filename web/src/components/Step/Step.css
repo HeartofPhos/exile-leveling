@@ -1,11 +1,7 @@
 .step {
-  width: 100%;
   user-select: none;
 }
 
 .done {
-  width: 100%;
-  user-select: none;
-  text-decoration: line-through;
-  opacity: 0.75;
+  opacity: 0.25;
 }

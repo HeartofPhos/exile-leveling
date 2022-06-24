@@ -8,6 +8,7 @@ import {
   RouteLookup,
 } from "../../../../common/route";
 import { StepComponent } from "../Step";
+import "./Route.css";
 
 interface RouteProps {}
 
@@ -51,5 +52,16 @@ export function RouteComponent({}: RouteProps) {
     }
   }
 
-  return <div className={classNames("container", "px-2")}>{steps}</div>;
+  return (
+    <ol
+      className={classNames(
+        "container",
+        "px-2",
+        "route",
+        "has-text-grey-light"
+      )}
+    >
+      {steps}
+    </ol>
+  );
 }
