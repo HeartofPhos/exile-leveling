@@ -3,19 +3,23 @@
   border-width: 0.1rem;
   border-color: grey;
   border-radius: 0.25rem;
-  list-style-type: decimal-leading-zero;
-  list-style-position: inside;
+  list-style: none;
+  counter-reset: route-counter;
 }
 
 .route li {
+  display: flex;
   padding: 0.5em 0;
   border-bottom: 1px solid #505050;
+  counter-increment: route-counter;
 }
 
 .route li:last-child {
   border-bottom: 0;
 }
 
-.route li::marker {
+.route li:before {
+  content: counters(route-counter, ".", decimal-leading-zero) ".";
+  margin-right: 0.3rem;
   font-weight: bold;
 }

@@ -24,17 +24,13 @@ export function StepComponent({ step, lookup }: StepProps) {
   }
 
   return (
-    <span
-      className={classNames(
-        "step",
-        { done: isDone },
-        "mb-1"
-      )}
+    <div
+      className={classNames("step", { done: isDone })}
       onClick={() => {
         setIsDone(!isDone);
       }}
     >
       {mapped}
-    </span>
+    </div>
   );
 }
