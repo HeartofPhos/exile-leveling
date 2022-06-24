@@ -250,6 +250,7 @@ function evaluateAction(
         const currentArea = lookup.areas[state.currentAreaId];
         if (!currentArea.has_waypoint) return ERROR_AREA_NO_WAYPOINT;
 
+        state.waypoints.add(currentArea.id);
         state.currentAreaId = area.id;
         areaId = area.id;
       }
@@ -487,7 +488,7 @@ export function initializeRouteLookup(
       "Added Lightning Damage Support",
       "Added Fire Damage Support",
       "Leap Slam",
-      "Precision"
+      "Precision",
     ],
   };
   for (const id in routeLookup.areas) {

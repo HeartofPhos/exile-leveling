@@ -8,7 +8,7 @@
 }
 
 .area {
-  color: white;
+  color: #ffcf91;
   font-weight: bold;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .waypoint {
-  color: skyblue;
+  color: #8ab3ff;
   font-weight: bold;
 }
 
@@ -58,16 +58,23 @@
 }
 
 .portal {
-  color: deepskyblue;
+  color: #8ab3ff;
   font-weight: bold;
 }
 
 .npc {
-  color: purple;
+  color: white;
   font-weight: bold;
 }
 
 .crafting {
-  color: burlywood;
+  color: white;
   font-weight: bold;
+}
+
+.icon {
+  vertical-align: middle;
+  object-fit: contain;
+  width: auto;
+  height: 1rem;
 }

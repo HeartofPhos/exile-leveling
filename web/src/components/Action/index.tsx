@@ -17,7 +17,12 @@ function AreaComponent(area: Area) {
 }
 
 function QuestComponent(questName: string) {
-  return <span className={classNames("quest")}>{questName}</span>;
+  return (
+    <>
+      <img src="/images/quest.png" className={classNames("icon")} />
+      <span className={classNames("quest")}> {questName}</span>
+    </>
+  );
 }
 
 function QuestRewardComponent(gem: Gem) {
@@ -35,7 +40,11 @@ function QuestTextComponent(text: string) {
 }
 
 function WaypointComponent() {
-  return <span className={classNames("waypoint")}>Waypoint</span>;
+  return (
+    <>
+      <img src="/images/waypoint.png" className={classNames("icon")} />
+    </>
+  );
 }
 
 function VendorRewardComponent(gem: Gem) {
@@ -49,20 +58,25 @@ function VendorRewardComponent(gem: Gem) {
 }
 
 function TrialComponent() {
-  return <span className={classNames("trial")}>Trial of Ascendancy</span>;
-}
-
-function TownComponent() {
   return (
     <>
-      <span>Return to </span>
-      <span className={classNames("area")}>Town</span>
+      <img src="/images/trial.png" className={classNames("icon")} />
+      <span className={classNames("trial")}>Trial of Ascendancy</span>
     </>
   );
 }
 
+function TownComponent() {
+  return <span className={classNames("npc")}>Logout</span>;
+}
+
 function PortalComponent() {
-  return <span className={classNames("portal")}>Portal</span>;
+  return (
+    <>
+      <img src="/images/portal.png" className={classNames("icon")} />
+      <span className={classNames("portal")}>Portal</span>
+    </>
+  );
 }
 
 const directions = [
@@ -85,11 +99,21 @@ function NpcComponent(npcName: string) {
 }
 
 function CraftingComponent() {
-  return <span className={classNames("crafting")}>Crafting Recipe</span>;
+  return (
+    <>
+      <img src="/images/crafting.png" className={classNames("icon")} />
+      <span className={classNames("crafting")}>Crafting Recipe</span>
+    </>
+  );
 }
 
 function AscendComponent() {
-  return <span className={classNames("trial")}>Ascend</span>;
+  return (
+    <>
+      <img src="/images/trial.png" className={classNames("icon")} />
+      <span className={classNames("trial")}>Ascend</span>
+    </>
+  );
 }
 
 export function ActionComponent({ action, lookup }: ActionProps) {
@@ -115,7 +139,7 @@ export function ActionComponent({ action, lookup }: ActionProps) {
       return (
         <>
           {WaypointComponent()}
-          <span> to </span>
+          <span> ➞ </span>
           {AreaComponent(lookup.areas[action.areaId])}
         </>
       );

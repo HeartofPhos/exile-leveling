@@ -33,7 +33,6 @@ export function StepComponent({ step, lookup }: StepProps) {
         "has-text-grey-light",
         "mb-1",
         "p-2"
-
       )}
       onClick={() => {
         setIsDone(!isDone);
