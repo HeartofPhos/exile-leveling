@@ -6,7 +6,7 @@ export interface Gem {
 }
 
 export interface QuestReward {
-  classes?: string[];
+  classes: string[];
 }
 
 export interface VendorReward {

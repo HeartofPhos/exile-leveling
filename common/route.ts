@@ -97,6 +97,11 @@ interface QuestAction {
   questId: Quest["id"];
 }
 
+interface QuestRewardAction {
+  type: "quest_reward";
+  gem: string;
+}
+
 interface QuestItemAction {
   type: "quest_item";
   value: string;
@@ -112,8 +117,8 @@ interface NpcAction {
   value: string;
 }
 
-interface VendorAction {
-  type: "vendor";
+interface VendorRewardAction {
+  type: "vendor_reward";
   gem: string;
 }
 
@@ -144,10 +149,11 @@ export type Action =
   | SetPortalAction
   | UsePortalAction
   | QuestAction
+  | QuestRewardAction
   | QuestItemAction
   | QuestTextAction
   | NpcAction
-  | VendorAction
+  | VendorRewardAction
   | TrialAction
   | AscendAction
   | DirectionAction
@@ -157,11 +163,16 @@ const ERROR_INVALID_FORMAT = "invalid format";
 const ERROR_MISSING_AREA = "area does not exist";
 const ERROR_AREA_NO_WAYPOINT = "area does not have a waypoint";
 
+interface EvaluateResult {
+  action?: Action;
+  additionalSteps?: Step[];
+}
+
 function evaluateAction(
   action: ParsedAction,
   lookup: RouteLookup,
   state: RouteState
-): string | Action | Step[] {
+): string | EvaluateResult {
   switch (action[0]) {
     case "kill": {
       if (action.length != 2) return ERROR_INVALID_FORMAT;
@@ -179,8 +190,10 @@ function evaluateAction(
       }
 
       return {
-        type: "kill",
-        value: bossName,
+        action: {
+          type: "kill",
+          value: bossName,
+        },
       };
     }
     case "area": {
@@ -190,8 +203,10 @@ function evaluateAction(
       if (!area) return ERROR_MISSING_AREA;
 
       return {
-        type: "area",
-        areaId: area.id,
+        action: {
+          type: "area",
+          areaId: area.id,
+        },
       };
     }
     case "enter": {
@@ -205,8 +220,10 @@ function evaluateAction(
       if (area.is_town_area && area.has_waypoint) state.waypoints.add(area.id);
       state.currentAreaId = area.id;
       return {
-        type: "enter",
-        areaId: area.id,
+        action: {
+          type: "enter",
+          areaId: area.id,
+        },
       };
     }
     case "town": {
@@ -215,7 +232,9 @@ function evaluateAction(
       const area = lookup.areas[state.currentAreaId];
       state.currentAreaId = lookup.towns[area.act];
       return {
-        type: "town",
+        action: {
+          type: "town",
+        },
       };
     }
     case "waypoint": {
@@ -235,8 +254,10 @@ function evaluateAction(
       }
 
       return {
-        type: "waypoint",
-        areaId: areaId,
+        action: {
+          type: "waypoint",
+          areaId: areaId,
+        },
       };
     }
     case "get_waypoint": {
@@ -249,7 +270,9 @@ function evaluateAction(
 
       state.waypoints.add(area.id);
       return {
-        type: "get_waypoint",
+        action: {
+          type: "get_waypoint",
+        },
       };
     }
     case "set_portal": {
@@ -257,7 +280,9 @@ function evaluateAction(
 
       state.portalAreaId = state.currentAreaId;
       return {
-        type: "set_portal",
+        action: {
+          type: "set_portal",
+        },
       };
     }
     case "use_portal": {
@@ -277,7 +302,9 @@ function evaluateAction(
       }
 
       return {
-        type: "use_portal",
+        action: {
+          type: "use_portal",
+        },
       };
     }
     case "quest": {
@@ -286,33 +313,63 @@ function evaluateAction(
       // TODO data incomplete
       // const quest = state.quests[action[1]];
       // if (!quest) return false;
+      const questId = action[1];
+      state.recentQuests.push(questId);
+      const quest = lookup.quests[questId];
 
-      state.recentQuests.push(action[1]);
+      const additionalSteps: Step[] = [];
+      if (quest) {
+        for (const gem of lookup.requiredGems) {
+          if (state.acquiredGems.has(gem)) continue;
+
+          const reward = quest.quest_rewards[gem];
+          if (!reward) continue;
+
+          const validClass =
+            reward.classes.length == 0 ||
+            reward.classes.some((x) => x == lookup.class);
+
+          if (validClass) {
+            state.acquiredGems.add(gem);
+            additionalSteps.push([{ type: "quest_reward", gem: gem }]);
+            break;
+          }
+        }
+      }
 
       return {
-        type: "quest",
-        questId: action[1],
+        action: {
+          type: "quest",
+          questId: action[1],
+        },
+        additionalSteps: additionalSteps,
       };
     }
     case "quest_item": {
       if (action.length != 2) return ERROR_INVALID_FORMAT;
       return {
-        type: "quest_item",
-        value: action[1],
+        action: {
+          type: "quest_item",
+          value: action[1],
+        },
       };
     }
     case "quest_text": {
       if (action.length != 2) return ERROR_INVALID_FORMAT;
       return {
-        type: "quest_text",
-        value: action[1],
+        action: {
+          type: "quest_text",
+          value: action[1],
+        },
       };
     }
     case "npc": {
       if (action.length != 2) return ERROR_INVALID_FORMAT;
       return {
-        type: "npc",
-        value: action[1],
+        action: {
+          type: "npc",
+          value: action[1],
+        },
       };
     }
     case "vendor": {
@@ -335,25 +392,31 @@ function evaluateAction(
 
           if (validClass) {
             state.acquiredGems.add(gem);
-            steps.push([{ type: "vendor", gem: gem }]);
+            steps.push([{ type: "vendor_reward", gem: gem }]);
           }
         }
       }
 
       state.recentQuests.length = 0;
 
-      return steps;
+      return {
+        additionalSteps: steps,
+      };
     }
     case "trial": {
       if (action.length != 1) return ERROR_INVALID_FORMAT;
       return {
-        type: "trial",
+        action: {
+          type: "trial",
+        },
       };
     }
     case "crafting": {
       if (action.length != 1) return ERROR_INVALID_FORMAT;
       return {
-        type: "crafting",
+        action: {
+          type: "crafting",
+        },
       };
     }
     case "ascend": {
@@ -367,7 +430,9 @@ function evaluateAction(
       }
 
       return {
-        type: "ascend",
+        action: {
+          type: "ascend",
+        },
       };
     }
     case "dir": {
@@ -382,8 +447,10 @@ function evaluateAction(
       if (dir % 45 != 0) return "dir value must be in intervals of 45";
 
       return {
-        type: "dir",
-        dirIndex: Math.floor(dir / 45),
+        action: {
+          type: "dir",
+          dirIndex: Math.floor(dir / 45),
+        },
       };
     }
   }
@@ -402,7 +469,7 @@ export function initializeRouteLookup(
     towns: {},
     bossWaypoints: bossWaypoints,
     class: "Templar",
-    requiredGems: ["Spark", "Vitality", "Shield Crush"],
+    requiredGems: ["Spark", "Vitality", "Shield Crush", "Purifying Flame"],
   };
   for (const id in routeLookup.areas) {
     const area = routeLookup.areas[id];
@@ -437,19 +504,22 @@ export function parseRoute(
 
     const parsedStep = parseStep(line);
     const step: Step = [];
-    const postSteps = [];
+    const additionalSteps: Step[] = [];
     for (const subStep of parsedStep) {
       if (typeof subStep == "string") {
         step.push(subStep);
       } else {
         const result = evaluateAction(subStep, lookup, state);
         if (typeof result == "string") console.log(`${result}: ${subStep}`);
-        else if (Array.isArray(result)) postSteps.push(...result);
-        else step.push(result);
+        else {
+          if (result.action) step.push(result.action);
+          if (result.additionalSteps)
+            additionalSteps.push(...result.additionalSteps);
+        }
       }
     }
     if (step.length > 0) route.push(step);
-    route.push(...postSteps);
+    route.push(...additionalSteps);
   }
 
   return route;

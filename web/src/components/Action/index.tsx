@@ -20,6 +20,15 @@ function QuestComponent(questName: string) {
   return <span className={classNames("quest")}>{questName}</span>;
 }
 
+function QuestRewardComponent(gem: string) {
+  return (
+    <>
+      <span>Take </span>
+      <span className={classNames("gem")}>{gem}</span>
+    </>
+  );
+}
+
 function QuestTextComponent(text: string) {
   return <span className={classNames("quest_text")}>{text}</span>;
 }
@@ -28,11 +37,11 @@ function WaypointComponent() {
   return <span className={classNames("waypoint")}>Waypoint</span>;
 }
 
-function VendorComponent(gem: string) {
+function VendorRewardComponent(gem: string) {
   return (
     <>
       <span>Purchase </span>
-      <span className={classNames("vendor")}>{gem}</span>
+      <span className={classNames("gem")}>{gem}</span>
     </>
   );
 }
@@ -93,6 +102,8 @@ export function ActionComponent({ action, lookup }: ActionProps) {
       const quest = lookup.quests[action.questId];
       return QuestComponent(quest?.name || action.questId);
     }
+    case "quest_reward":
+      return QuestRewardComponent(action.gem);
     case "quest_item":
       return QuestTextComponent(action.value);
     case "quest_text":
@@ -109,8 +120,8 @@ export function ActionComponent({ action, lookup }: ActionProps) {
     }
     case "get_waypoint":
       return WaypointComponent();
-    case "vendor":
-      return VendorComponent(action.gem);
+    case "vendor_reward":
+      return VendorRewardComponent(action.gem);
     case "trial":
       return TrialComponent();
     case "town":
