@@ -22,11 +22,11 @@ function QuestComponent(questName: string) {
 
 function QuestRewardComponent(gem: Gem) {
   return (
-    <div >
+    <>
       <span className={classNames(`gem-${gem.primary_attribute}`)}>⏺ </span>
       <span>Take </span>
       <span className={classNames(`gem`)}>{gem.id}</span>
-    </div>
+    </>
   );
 }
 
