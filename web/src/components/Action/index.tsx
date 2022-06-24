@@ -43,6 +43,7 @@ function WaypointComponent() {
   return (
     <>
       <img src="/images/waypoint.png" className={classNames("icon")} />
+      <span className={classNames("waypoint")}>Waypoint</span>
     </>
   );
 }
