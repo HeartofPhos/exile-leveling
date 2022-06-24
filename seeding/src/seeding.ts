@@ -51,44 +51,42 @@ export async function getQuests() {
   const questRewards = await getQuestRewards();
   const vendorRewards = await getVendorRewards();
 
-  const result: Record<Quest["quest_id"], Quest> = {};
+  const result: Record<Quest["id"], Quest> = {};
   for (const item of questRewards) {
     let quest = result[item.quest_id];
     if (!quest) {
       quest = {
-        quest_id: item.quest_id,
-        quest: item.quest,
+        id: item.quest_id,
+        name: item.quest,
         act: item.act,
-        quest_rewards: [],
-        vendor_rewards: [],
+        quest_rewards: {},
+        vendor_rewards: {},
       };
       result[item.quest_id] = quest;
     }
 
-    quest.quest_rewards.push({
-      item_id: item.item_id,
+    quest.quest_rewards[item.item_id] = {
       classes: item.classes?.split(",") || [],
-    });
+    };
   }
 
   for (const item of vendorRewards) {
     let quest = result[item.quest_id];
     if (!quest) {
       quest = {
-        quest_id: item.quest_id,
-        quest: item.quest,
+        id: item.quest_id,
+        name: item.quest,
         act: item.act,
-        quest_rewards: [],
-        vendor_rewards: [],
+        quest_rewards: {},
+        vendor_rewards: {},
       };
       result[item.quest_id] = quest;
     }
 
-    quest.vendor_rewards.push({
-      item_id: item.item_id,
+    quest.vendor_rewards[item.item_id] = {
       classes: item.classes?.split(",") || [],
       npc: item.npc,
-    });
+    };
   }
 
   return result;

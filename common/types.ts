@@ -6,22 +6,20 @@ export interface Gem {
 }
 
 export interface QuestReward {
-  item_id: string;
   classes?: string[];
 }
 
 export interface VendorReward {
-  item_id: string;
-  classes?: string[];
+  classes: string[];
   npc: string;
 }
 
 export interface Quest {
-  quest_id: string;
-  quest: string;
+  id: string;
+  name: string;
   act: string;
-  quest_rewards: QuestReward[];
-  vendor_rewards: VendorReward[];
+  quest_rewards: Record<string, QuestReward>;
+  vendor_rewards: Record<string, VendorReward>;
 }
 
 export interface Area {

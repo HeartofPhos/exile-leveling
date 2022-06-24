@@ -1,21 +1,34 @@
-import { Area, Monster, Quest } from "./types";
+import { Area, Gem, Monster, Quest } from "./types";
 
 export type ParsedAction = string[];
 export type ParsedStep = (string | ParsedAction)[];
 export type Step = (string | Action)[];
 export type Route = Step[];
 
+export type CharacterClass =
+  | "Marauder"
+  | "Duelist"
+  | "Ranger"
+  | "Shadow"
+  | "Witch"
+  | "Templar"
+  | "Scion";
+
 export interface RouteLookup {
   quests: Record<string, Quest>;
   areas: Record<string, Area>;
   towns: Record<Area["act"], Area["id"]>;
   bossWaypoints: Record<Monster["name"], Area["id"]>;
+  class: CharacterClass;
+  requiredGems: Gem["id"][];
 }
 
 export interface RouteState {
   waypoints: Set<Area["id"]>;
   currentAreaId: Area["id"];
   portalAreaId: Area["id"] | null;
+  recentQuests: Quest["id"][];
+  acquiredGems: Set<Gem["id"]>;
 }
 
 function parseStep(text: string) {
@@ -81,7 +94,7 @@ interface UsePortalAction {
 
 interface QuestAction {
   type: "quest";
-  questId: Quest["quest_id"];
+  questId: Quest["id"];
 }
 
 interface QuestItemAction {
@@ -101,7 +114,7 @@ interface NpcAction {
 
 interface VendorAction {
   type: "vendor";
-  gems: string[];
+  gem: string;
 }
 
 interface TrialAction {
@@ -148,7 +161,7 @@ function evaluateAction(
   action: ParsedAction,
   lookup: RouteLookup,
   state: RouteState
-): Action | string {
+): string | Action | Step[] {
   switch (action[0]) {
     case "kill": {
       if (action.length != 2) return ERROR_INVALID_FORMAT;
@@ -274,6 +287,8 @@ function evaluateAction(
       // const quest = state.quests[action[1]];
       // if (!quest) return false;
 
+      state.recentQuests.push(action[1]);
+
       return {
         type: "quest",
         questId: action[1],
@@ -302,10 +317,32 @@ function evaluateAction(
     }
     case "vendor": {
       if (action.length != 1) return ERROR_INVALID_FORMAT;
-      return {
-        type: "vendor",
-        gems: [],
-      };
+
+      const steps: Step[] = [];
+      for (const questId of state.recentQuests) {
+        const quest = lookup.quests[questId];
+        if (!quest) continue;
+
+        for (const gem of lookup.requiredGems) {
+          if (state.acquiredGems.has(gem)) continue;
+
+          const reward = quest.vendor_rewards[gem];
+          if (!reward) continue;
+
+          const validClass =
+            reward.classes.length == 0 ||
+            reward.classes.some((x) => x == lookup.class);
+
+          if (validClass) {
+            state.acquiredGems.add(gem);
+            steps.push([{ type: "vendor", gem: gem }]);
+          }
+        }
+      }
+
+      state.recentQuests.length = 0;
+
+      return steps;
     }
     case "trial": {
       if (action.length != 1) return ERROR_INVALID_FORMAT;
@@ -364,6 +401,8 @@ export function initializeRouteLookup(
     areas: areas,
     towns: {},
     bossWaypoints: bossWaypoints,
+    class: "Templar",
+    requiredGems: ["Spark", "Vitality", "Shield Crush"],
   };
   for (const id in routeLookup.areas) {
     const area = routeLookup.areas[id];
@@ -378,6 +417,8 @@ export function initializeRouteState() {
     waypoints: new Set(),
     currentAreaId: "1_1_1",
     portalAreaId: null,
+    recentQuests: [],
+    acquiredGems: new Set(),
   };
 
   return state;
@@ -396,16 +437,19 @@ export function parseRoute(
 
     const parsedStep = parseStep(line);
     const step: Step = [];
+    const postSteps = [];
     for (const subStep of parsedStep) {
       if (typeof subStep == "string") {
         step.push(subStep);
       } else {
         const result = evaluateAction(subStep, lookup, state);
         if (typeof result == "string") console.log(`${result}: ${subStep}`);
+        else if (Array.isArray(result)) postSteps.push(...result);
         else step.push(result);
       }
     }
     if (step.length > 0) route.push(step);
+    route.push(...postSteps);
   }
 
   return route;
