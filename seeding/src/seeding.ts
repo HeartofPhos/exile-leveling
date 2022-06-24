@@ -19,12 +19,9 @@ export async function getGems() {
   let cnt = 0;
   const result: Record<Gem["id"], Gem> = {};
   for (const item of queryResult) {
-    const image_url = await getImageUrl(item.inventory_icon);
-    console.log(`gem image: ${++cnt}/${queryResult.length}`);
 
     result[item.page] = {
       id: item.page,
-      image_url: image_url,
       primary_attribute: item.primary_attribute,
       required_level: Number(item.required_level),
     };

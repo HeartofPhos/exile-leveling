@@ -484,9 +484,10 @@ export function initializeRouteLookup(
       "Ancestral Call Support",
       "Ancestral Protector",
       "Clarity",
-      "Added Fire Damage Support",
       "Added Lightning Damage Support",
+      "Added Fire Damage Support",
       "Leap Slam",
+      "Precision"
     ],
   };
   for (const id in routeLookup.areas) {

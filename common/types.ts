@@ -1,6 +1,5 @@
 export interface Gem {
   id: string;
-  image_url: string;
   primary_attribute: string;
   required_level: number;
 }

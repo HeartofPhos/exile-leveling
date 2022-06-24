@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { Action, RouteLookup } from "../../../../common/route";
-import { Area } from "../../../../common/types";
+import { Area, Gem } from "../../../../common/types";
 import "./Action.css";
 
 interface ActionProps {
@@ -20,12 +20,13 @@ function QuestComponent(questName: string) {
   return <span className={classNames("quest")}>{questName}</span>;
 }
 
-function QuestRewardComponent(gem: string) {
+function QuestRewardComponent(gem: Gem) {
   return (
-    <>
+    <div >
+      <span className={classNames(`gem-${gem.primary_attribute}`)}>⏺ </span>
       <span>Take </span>
-      <span className={classNames("gem")}>{gem}</span>
-    </>
+      <span className={classNames(`gem`)}>{gem.id}</span>
+    </div>
   );
 }
 
@@ -37,11 +38,12 @@ function WaypointComponent() {
   return <span className={classNames("waypoint")}>Waypoint</span>;
 }
 
-function VendorRewardComponent(gem: string) {
+function VendorRewardComponent(gem: Gem) {
   return (
     <>
-      <span>Purchase </span>
-      <span className={classNames("gem")}>{gem}</span>
+      <span className={classNames(`gem-${gem.primary_attribute}`)}>⏺ </span>
+      <span>Buy </span>
+      <span className={classNames(`gem`)}>{gem.id}</span>
     </>
   );
 }
@@ -103,7 +105,7 @@ export function ActionComponent({ action, lookup }: ActionProps) {
       return QuestComponent(quest?.name || action.questId);
     }
     case "quest_reward":
-      return QuestRewardComponent(action.gemId);
+      return QuestRewardComponent(lookup.gems[action.gemId]);
     case "quest_item":
       return QuestTextComponent(action.value);
     case "quest_text":
@@ -121,7 +123,7 @@ export function ActionComponent({ action, lookup }: ActionProps) {
     case "get_waypoint":
       return WaypointComponent();
     case "vendor_reward":
-      return VendorRewardComponent(action.gemId);
+      return VendorRewardComponent(lookup.gems[action.gemId]);
     case "trial":
       return TrialComponent();
     case "town":
