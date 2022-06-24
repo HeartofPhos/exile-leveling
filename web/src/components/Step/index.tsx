@@ -32,7 +32,9 @@ export function StepComponent({ step, lookup }: StepProps) {
         "box",
         "has-background-black",
         "has-text-grey-light",
-        "mb-1"
+        "mb-1",
+        "p-3"
+
       )}
       onClick={() => {
         setIsDone(!isDone);
