@@ -48,7 +48,11 @@ export function RouteComponent({}: RouteProps) {
   if (route && routeLookup) {
     for (let i = 0; i < route.length; i++) {
       const step = route[i];
-      steps.push(<StepComponent key={i} step={step} lookup={routeLookup} />);
+      steps.push(
+        <li key={i}>
+          <StepComponent step={step} lookup={routeLookup} />
+        </li>
+      );
     }
   }
 

@@ -24,7 +24,7 @@ export function StepComponent({ step, lookup }: StepProps) {
   }
 
   return (
-    <li
+    <span
       className={classNames(
         "step",
         { done: isDone },
@@ -35,6 +35,6 @@ export function StepComponent({ step, lookup }: StepProps) {
       }}
     >
       {mapped}
-    </li>
+    </span>
   );
 }
