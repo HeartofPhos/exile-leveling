@@ -1,0 +1,34 @@
+#Act 5
+➞ {enter|1_5_1} #The Slave Pens
+Find and {kill|Overseer Krow}
+➞ {enter|1_5_town} #Overseer's Tower
+Hand in {quest|a5q1b} #Return to Oriath
+➞ {enter|1_5_2} #The Control Blocks
+Find and take {quest_item|Miasmeter}
+Find and kill {kill|Justicar Casticus}
+➞ {enter|1_5_3} #Oriath Square
+➞ {enter|1_5_4} #The Templar Courts
+➞ {enter|1_5_5} #The Chamber of Innocence
+Get {get_waypoint}
+Find and kill {kill|High Templar Avarius}
+{town}
+Hand in {quest|a5q2} #The Key to Freedom
+Hand in {quest|a5q3} #In Service to Science
+Hand in {quest|a5q4} #Death to Purity
+{waypoint|1_5_5} #The Chamber of Innocence
+➞ {enter|1_5_4b} #The Torched Courts
+➞ {enter|1_5_3b} #The Ruined Square
+Get {get_waypoint}
+➞ {enter|1_5_6} #The Ossuary
+Take {quest_item|Sign of Purity}
+Get {crafting}
+{town}
+{waypoint|1_5_3b} #The Ruined Square
+➞ {enter|1_5_7} #The Reliquary
+Find 3x{quest_item|Kitava's Torments}
+{town}
+Hand in {quest|a5q7} #Kitava's Torments
+{waypoint|1_5_3b} #The Ruined Square
+➞ {enter|1_5_8} #The Cathedral Rooftop
+Kill {kill|Kitava, the Insatiable}
+Talk to {npc|Lilly Roth}, Sail to Wraeclast

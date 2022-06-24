@@ -1,0 +1,50 @@
+#Act 4
+➞ {enter|1_4_1} #The Aqueduct
+➞ {enter|1_4_town} #Highgate
+➞ {enter|1_4_2} #The Dried Lake
+Find and kill {kill|Voll, Emperor of Purity}
+{town}
+Hand in {quest|a4q2} #Breaking the Seal
+{vendor}
+➞ {enter|1_4_3_1} #The Mines Level 1
+➞ {enter|1_4_3_2} #The Mines Level 2
+Free {quest_text|Deshret}
+➞ {enter|1_4_3_3} #The Crystal Veins
+Get {get_waypoint}
+Get {crafting}
+{town}
+Hand in {quest|a4q6} #An Indomitable Spirit
+{waypoint|1_3_town} #The Sarn Encampment
+➞ {enter|Labyrinth_Airlock} #Aspirants' Plaza
+Get {get_waypoint}
+{ascend}
+{waypoint|1_4_3_3} #The Crystal Veins
+➞ {enter|1_4_5_1} #Daresso's Dream
+➞ {enter|1_4_5_2} #The Grand Arena
+Get {get_waypoint}
+{waypoint|1_4_3_3} #The Crystal Veins
+➞ {enter|1_4_4_1} #Kaom's Dream
+➞ {enter|1_4_4_3} #Kaom's Stronghold
+Find and kill {kill|King Kaom}, take {quest_item|The Eye of Fury}
+{town}
+{waypoint|1_4_5_2} #The Grand Arena
+Find and kill {kill|Daresso, King of Swords}, take {quest_item|The Eye of Desire}
+{town}
+{waypoint|1_4_3_3} #The Crystal Veins
+Talk to {npc|Lady Dialla}
+➞ {enter|1_4_6_1} #The Belly of the Beast Level 1
+➞ {enter|1_4_6_2} #The Belly of the Beast Level 2
+Find and kill {kill|Piety, the Abomination}
+➞ {enter|1_4_6_3} #The Harvest
+Get {get_waypoint}
+Find and {kill|Doedre Darktongue}
+Find and {kill|Maligaro, The Inquisitor}
+Find and {kill|Shavronne of Umbra}
+Hand in {quest|Corpus Malachus} #Corpus Malachus
+Kill {kill|Malachai, The Nightmare}
+{town}
+Hand in {quest|a4q1} #The Eternal Nightmare
+{vendor}
+➞ {enter|1_4_7} #The Ascent
+Get {crafting}
+Activate {quest_text|The Resonator}, use {quest_text|Oriath Portal}

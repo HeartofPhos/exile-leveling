@@ -30,7 +30,7 @@ function QuestRewardComponent(gem: Gem) {
     <>
       <span className={classNames(`gem-${gem.primary_attribute}`)}>⏺ </span>
       <span>Take </span>
-      <span className={classNames(`gem`)}>{gem.id}</span>
+      <span className={classNames(`default`)}>{gem.id}</span>
     </>
   );
 }
@@ -48,12 +48,20 @@ function WaypointComponent() {
   );
 }
 
+function VendorComponent() {
+  return (
+    <>
+      <span className={classNames("default")}>Vendor</span>
+    </>
+  );
+}
+
 function VendorRewardComponent(gem: Gem) {
   return (
     <>
       <span className={classNames(`gem-${gem.primary_attribute}`)}>⏺ </span>
       <span>Buy </span>
-      <span className={classNames(`gem`)}>{gem.id}</span>
+      <span className={classNames(`default`)}>{gem.id}</span>
     </>
   );
 }
@@ -68,7 +76,11 @@ function TrialComponent() {
 }
 
 function TownComponent() {
-  return <span className={classNames("npc")}>Logout</span>;
+  return (
+    <>
+      <span className={classNames("default")}>Logout</span>
+    </>
+  );
 }
 
 function PortalComponent() {
@@ -103,7 +115,7 @@ function CraftingComponent() {
   return (
     <>
       <img src="/images/crafting.png" className={classNames("icon")} />
-      <span className={classNames("crafting")}>Crafting Recipe</span>
+      <span className={classNames("default")}>Crafting Recipe</span>
     </>
   );
 }
@@ -147,6 +159,8 @@ export function ActionComponent({ action, lookup }: ActionProps) {
     }
     case "get_waypoint":
       return WaypointComponent();
+    case "vendor":
+      return VendorComponent();
     case "vendor_reward":
       return VendorRewardComponent(lookup.gems[action.gemId]);
     case "trial":

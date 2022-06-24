@@ -31,24 +31,6 @@ export async function main() {
         saveData("areas", areas);
       }
       break;
-    case "validate-route":
-      {
-        const quests = loadData("quests");
-        const areas = loadData("areas");
-        const bossWaypoints = loadData("boss-waypoints");
-        const gems = loadData("gems.json");
-
-        const routeData = fs.readFileSync(`${dataPath}/route.txt`, "utf-8");
-        const routeLookup = initializeRouteLookup(
-          quests,
-          areas,
-          bossWaypoints,
-          gems
-        );
-        const routeState = initializeRouteState();
-        const route = parseRoute(routeData, routeLookup, routeState);
-      }
-      break;
     default:
       {
         console.log(`Unrecognized command ${command}`);

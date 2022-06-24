@@ -32,7 +32,7 @@ export function RouteComponent({}: RouteProps) {
       );
       const routeState = initializeRouteState();
 
-      const route = await fetch("/data/route.txt")
+      const route = await fetch("/routes/act-1.txt")
         .then((x) => x.text())
         .then((x) => parseRoute(x, routeLookup, routeState));
 

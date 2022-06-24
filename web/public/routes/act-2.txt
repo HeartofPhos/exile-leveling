@@ -1,0 +1,66 @@
+#Act 2
+{waypoint|1_2_1} #The Southern Forest
+➞ {enter|1_2_town} #The Forest Encampment
+Head {dir|45}, ➞ {enter|1_2_2} #The Old Fields
+Find {area|1_2_2a}, place {set_portal} #The Den
+Follow the road, ➞ {enter|1_2_3} #The Crossroads
+Follow the road, get {get_waypoint}
+{town} #The Forest Encampment
+Take {use_portal}
+➞ {enter|1_2_2a} #The Den
+Find and kill {kill|The Great White Beast}
+{town}
+Hand in {quest|a2q10} #The Great White Beast
+{waypoint|1_2_3} #The Crossroads
+Head {dir|315}, ➞ {enter|1_2_6_1} #The Chamber of Sins Level 1
+Get {get_waypoint}, go in same direction
+ ➞ {enter|1_2_6_2} #The Chamber of Sins Level 2
+Complete {trial}, most likely {dir|0}
+Find long hallway, kill {kill|Fidelitas, the Mourning}, take {quest_item|Baleful Gem}
+{town}
+Hand in {quest|a2q6} #Intruders in Black
+{vendor}
+{waypoint|1_2_3} #The Crossroads
+Head {dir|180}, ➞ {enter|1_2_15} #The Fellshrine Ruins
+Follow the road, ➞ {enter|1_2_5_1} #The Crypt Level 1
+Complete {trial}
+{town}
+Head {dir|225}, ➞ {enter|1_2_7} #The Riverways
+Follow the road, get {get_waypoint}
+Head {dir|270}, ➞ {enter|1_2_9} #The Western Forest
+Follow the road, get {get_waypoint}
+Go to side of road opposite {waypoint}, ➞ {enter|1_2_10} #The Weaver's Chambers
+Find and kill {kill|The Weaver}, take {quest_item|Maligaro's Spike}
+{town}
+Hand in {quest|a2q4} #Sharp and Cruel
+{vendor}
+{waypoint|1_2_3} #The Crossroads
+Head {dir|45}, ➞ {enter|1_2_4} #The Broken Bridge
+Follow road, kill {kill|Kraityn, Scarbearer}
+{town}
+{waypoint|1_2_7}
+Head {dir|0}, ➞ {enter|1_2_12} #The Wetlands
+Find and kill {kill|Oak, Skullbreaker}
+Get {get_waypoint}, likely {dir|0}
+{waypoint|1_2_9} #The Western Forest
+Go to side same of road as {waypoint}, help or kill {kill|Alira Darktongue}
+Follow road, kill {kill|Captain Arteri}
+Take {quest_item|Thaumetic Emblem}
+{town}
+{waypoint|1_1_town} #Lioneye's Watch
+Hand in {quest|a1q9} #The Way Forward
+If you killed all bandits, hand in {quest|a2q7} #Deal with the Bandits
+{waypoint|1_2_12} #The Wetlands
+➞ {enter|1_2_11} #The Vaal Ruins
+➞ {enter|1_2_8} #The Northern Forest
+➞ {enter|1_2_14_2} #The Caverns
+Get {get_waypoint}
+{town}
+Hand in {quest|a2q9} #The Root of the Problem
+{vendor}
+{waypoint|1_2_14_2} #The Caverns
+➞ {enter|1_2_14_3} #The Ancient Pyramid
+Find and kill {kill|Vaal Oversoul}
+Get {crafting}
+{town}
+{vendor}

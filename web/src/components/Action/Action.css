@@ -1,4 +1,5 @@
-.action_text {
+.default {
+  color: white;
   font-weight: bold;
 }
 
@@ -32,11 +33,6 @@
   font-weight: bold;
 }
 
-.gem {
-  color: white;
-  font-weight: bold;
-}
-
 .gem-strength {
   color: #ff3333;
   font-weight: bold;
@@ -59,16 +55,6 @@
 
 .portal {
   color: #8ab3ff;
-  font-weight: bold;
-}
-
-.npc {
-  color: white;
-  font-weight: bold;
-}
-
-.crafting {
-  color: white;
   font-weight: bold;
 }
 

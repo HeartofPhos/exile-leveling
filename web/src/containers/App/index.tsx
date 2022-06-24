@@ -1,6 +1,5 @@
 import { RouteComponent } from "../../components/Route";
 import "./App.css";
-import "/data/route.txt";
 
 function App() {
   return (

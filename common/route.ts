@@ -113,14 +113,18 @@ interface QuestTextAction {
   value: string;
 }
 
-interface NpcAction {
-  type: "npc";
-  value: string;
+interface VendorAction {
+  type: "vendor";
 }
 
 interface VendorRewardAction {
   type: "vendor_reward";
   gemId: string;
+}
+
+interface NpcAction {
+  type: "npc";
+  value: string;
 }
 
 interface TrialAction {
@@ -153,8 +157,9 @@ export type Action =
   | QuestRewardAction
   | QuestItemAction
   | QuestTextAction
-  | NpcAction
+  | VendorAction
   | VendorRewardAction
+  | NpcAction
   | TrialAction
   | AscendAction
   | DirectionAction
@@ -406,6 +411,7 @@ function evaluateAction(
       state.recentQuests.length = 0;
 
       return {
+        action: { type: "vendor" },
         additionalSteps: steps,
       };
     }
