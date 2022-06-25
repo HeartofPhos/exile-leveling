@@ -1,9 +1,8 @@
 import { Area, Gem, Monster, Quest } from "../types";
 import {
   EvaluateQuest,
-  EvaluateQuestItem,
+  EvaluateQuestText,
   QuestAction,
-  QuestItemAction,
   QuestRewardAction,
   QuestTextAction,
 } from "./quest";
@@ -438,10 +437,8 @@ function evaluateAction(
       return EvaluateUsePortal(action, lookup, state);
     case "quest":
       return EvaluateQuest(action, lookup, state);
-    case "quest_item":
-      return EvaluateQuestItem(action, lookup, state);
     case "quest_text":
-      return EvaluateQuestItem(action, lookup, state);
+      return EvaluateQuestText(action, lookup, state);
     case "npc":
       return EvaluateNpc(action, lookup, state);
     case "vendor":

@@ -3,6 +3,7 @@
 ➞ {enter|1_4_town} #Highgate
 ➞ {enter|1_4_2} #The Dried Lake
 Find and kill {kill|Voll, Emperor of Purity}
+Get {crafting}
 {town}
 Hand in {quest|a4q2} #Breaking the Seal
 {vendor}
@@ -25,10 +26,10 @@ Get {get_waypoint}
 {waypoint|1_4_3_3} #The Crystal Veins
 ➞ {enter|1_4_4_1} #Kaom's Dream
 ➞ {enter|1_4_4_3} #Kaom's Stronghold
-Find and kill {kill|King Kaom}, take {quest_item|The Eye of Fury}
+Find and kill {kill|King Kaom}, take {quest_text|The Eye of Fury}
 {town}
 {waypoint|1_4_5_2} #The Grand Arena
-Find and kill {kill|Daresso, King of Swords}, take {quest_item|The Eye of Desire}
+Find and kill {kill|Daresso, King of Swords}, take {quest_text|The Eye of Desire}
 {town}
 {waypoint|1_4_3_3} #The Crystal Veins
 Talk to {npc|Lady Dialla}

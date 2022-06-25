@@ -38,7 +38,6 @@ function PrepareQuestRewardSet(quest: Quest, lookup: RouteLookup) {
         questRewardSets[index][key] = quest.quest_rewards[key];
       }
     }
-
   } else {
     questRewardSets = [quest.quest_rewards];
   }
@@ -106,31 +105,12 @@ export function EvaluateQuest(
   }
 }
 
-export interface QuestItemAction {
-  type: "quest_item";
-  value: string;
-}
-
-export function EvaluateQuestItem(
-  action: ParsedAction,
-  lookup: RouteLookup,
-  state: RouteState
-): string | EvaluateResult {
-  if (action.length != 2) return ERROR_INVALID_FORMAT;
-  return {
-    action: {
-      type: "quest_item",
-      value: action[1],
-    },
-  };
-}
-
 export interface QuestTextAction {
   type: "quest_text";
   value: string;
 }
 
-function EvaluateQuestText(
+export function EvaluateQuestText(
   action: ParsedAction,
   lookup: RouteLookup,
   state: RouteState

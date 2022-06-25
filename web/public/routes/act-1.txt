@@ -7,11 +7,11 @@ Hand in {quest|a1q1} #Enemy at the Gate
 ➞ {enter|1_1_2} #The Coast
 Get {get_waypoint}
 ➞ {enter|1_1_3} #The Mud Flats
-Find 3x{quest_item|Glyph}
+Find 3x{quest_text|Glyph}
 ➞ {enter|1_1_4_1} #The Submerged Passage
 {waypoint|1_1_2} #The Coast
 ➞ {enter|1_1_2a} #The Tidal Island
-Find and kill {kill|Hailrake}, take {quest_item|Medicine Chest}
+Find and kill {kill|Hailrake}, take {quest_text|Medicine Chest}
 {town} #Lioneye's Watch
 Hand in {quest|a1q4} #Breaking Some Eggs
 Hand in {quest|a1q5} #Mercy Mission
@@ -44,7 +44,7 @@ Hand in {quest|a1q3} #The Siren's Cadence
 {vendor}
 Take {use_portal}
 ➞ {enter|1_1_9a} #The Ship Graveyard Cave
-Find {quest_item|Allflame}
+Find {quest_text|Allflame}
 {town} #Lioneye's Watch
 {waypoint|1_1_9} #The Ship Graveyard
 Find and kill {kill|Captain Fairgraves}
