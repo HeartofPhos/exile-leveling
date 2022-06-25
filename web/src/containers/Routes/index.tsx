@@ -61,6 +61,7 @@ function RoutesContainer() {
       {routeData &&
         routeData.routes.map((route, i) => (
           <ExileRoute
+            key={i}
             header={`--== Act ${i + 1} ==--`}
             route={route}
             lookup={routeData.lookup}
