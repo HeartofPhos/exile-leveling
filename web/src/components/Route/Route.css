@@ -5,17 +5,17 @@
   border-radius: 0.25rem;
 }
 
-.route li {
+.route > li {
   display: flex;
-  padding: 0.5em 0;
+  align-items: center;
   border-bottom: 1px solid #505050;
 }
 
-.route li:last-child {
+.route > li:last-child {
   border-bottom: 0;
 }
 
-.route li:before {
+.route > li:before {
   counter-increment: list-item;
   content: counter(list-item, decimal-leading-zero) ".";
   margin-right: 0.3rem;
