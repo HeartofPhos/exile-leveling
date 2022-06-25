@@ -32,7 +32,6 @@ function RoutesContainer() {
         x.json()
       );
       const gems = await fetch("/data/gems.json").then((x) => x.json());
-
       const routeLookup = initializeRouteLookup(
         quests,
         areas,

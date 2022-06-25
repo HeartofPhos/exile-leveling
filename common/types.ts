@@ -1,5 +1,6 @@
 export interface Gem {
   id: string;
+  name: string;
   primary_attribute: string;
   required_level: number;
 }

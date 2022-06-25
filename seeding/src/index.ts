@@ -4,7 +4,7 @@ import {
   initializeRouteLookup,
   initializeRouteState,
   parseRoute,
-} from "../../common/route";
+} from "../../common/routes";
 
 const dataPath = process.argv[2];
 function saveData(name: string, data: any) {
@@ -27,8 +27,8 @@ export async function main() {
         const quests = await getQuests();
         saveData("quests", quests);
 
-        const areas = await getAreas();
-        saveData("areas", areas);
+        // const areas = await getAreas();
+        // saveData("areas", areas);
       }
       break;
     default:

@@ -1,4 +1,4 @@
-import { cargoQuery, getImageUrl } from "./wiki";
+import { cargoQuery } from "./wiki";
 import { Area, Gem, Monster, Quest } from "../../common/types";
 
 export async function getGems() {
@@ -7,21 +7,21 @@ export async function getGems() {
     join_on: ["items._pageName = skill_gems._pageName"],
     fields: [
       "items._pageName = page",
+      "items.metadata_id = metadata_id",
       "items.inventory_icon = inventory_icon",
       "items.required_level = required_level",
       "skill_gems.primary_attribute = primary_attribute",
     ],
     where:
-      '(items.tags HOLDS "gem") AND (NOT items._pageName LIKE "Template:%")',
+      '(items.tags HOLDS "gem") AND (NOT items._pageName LIKE "Template:%") AND (items.metadata_id IS NOT NULL)',
     order_by: ["items._pageName"],
   });
 
-  let cnt = 0;
   const result: Record<Gem["id"], Gem> = {};
   for (const item of queryResult) {
-
-    result[item.page] = {
-      id: item.page,
+    result[item.metadata_id] = {
+      id: item.metadata_id,
+      name: item.page,
       primary_attribute: item.primary_attribute,
       required_level: Number(item.required_level),
     };
@@ -77,15 +77,22 @@ export async function getQuests() {
 
 export async function getQuestRewards() {
   const queryResult = await cargoQuery({
-    tables: ["quest_rewards"],
+    tables: ["quest_rewards", "items"],
+    join_on: ["items._pageName = quest_rewards._pageName"],
     fields: [
-      "quest_id=quest_id",
-      "quest",
-      "_pageName=item_id",
-      "act",
-      "classes",
+      "quest_rewards.quest_id=quest_id",
+      "quest_rewards.quest",
+      "items.metadata_id=item_id",
+      "quest_rewards.act",
+      "quest_rewards.classes",
     ],
-    order_by: ["act", "quest_id"],
+    where:
+      '(quest_rewards.act IS NOT NULL) AND (items.tags HOLDS "gem") AND (NOT items._pageName LIKE "Template:%") AND (items.metadata_id IS NOT NULL)',
+    order_by: [
+      "quest_rewards.act",
+      "quest_rewards.quest_id",
+      "quest_rewards._pageName",
+    ],
   });
 
   return queryResult;
@@ -93,16 +100,23 @@ export async function getQuestRewards() {
 
 export async function getVendorRewards() {
   const queryResult = await cargoQuery({
-    tables: ["vendor_rewards"],
+    tables: ["vendor_rewards", "items"],
+    join_on: ["items._pageName = vendor_rewards._pageName"],
     fields: [
-      "quest_id=quest_id",
-      "quest",
-      "_pageName=item_id",
-      "act",
-      "classes",
-      "npc",
+      "vendor_rewards.quest_id=quest_id",
+      "vendor_rewards.quest",
+      "items.metadata_id=item_id",
+      "vendor_rewards.act",
+      "vendor_rewards.classes",
+      "vendor_rewards.npc",
     ],
-    order_by: ["act", "quest_id"],
+    where:
+      '(vendor_rewards.act IS NOT NULL) AND (items.tags HOLDS "gem") AND (NOT items._pageName LIKE "Template:%") AND (items.metadata_id IS NOT NULL)',
+    order_by: [
+      "vendor_rewards.act",
+      "vendor_rewards.quest_id",
+      "vendor_rewards._pageName",
+    ],
   });
 
   return queryResult;

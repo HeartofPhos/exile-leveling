@@ -30,7 +30,7 @@ function QuestRewardComponent(gem: Gem) {
     <>
       <span className={classNames(`gem-${gem.primary_attribute}`)}>⏺ </span>
       <span>Take </span>
-      <span className={classNames(`default`)}>{gem.id}</span>
+      <span className={classNames(`default`)}>{gem.name}</span>
     </>
   );
 }
@@ -61,7 +61,7 @@ function VendorRewardComponent(gem: Gem) {
     <>
       <span className={classNames(`gem-${gem.primary_attribute}`)}>⏺ </span>
       <span>Buy </span>
-      <span className={classNames(`default`)}>{gem.id}</span>
+      <span className={classNames(`default`)}>{gem.name}</span>
     </>
   );
 }
