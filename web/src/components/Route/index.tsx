@@ -69,7 +69,8 @@ export function RouteComponent({}: RouteProps) {
               "container",
               "has-text-grey-light",
               "is-flex",
-              "is-flex-direction-column"
+              "is-flex-direction-column",
+              "px-1"
             )}
           >
             <span

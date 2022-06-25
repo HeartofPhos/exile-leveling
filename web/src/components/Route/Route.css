@@ -7,7 +7,6 @@
 
 .route > li {
   display: flex;
-  align-items: center;
   border-bottom: 0.1rem solid #505050;
 }
 
@@ -15,9 +14,14 @@
   border-bottom: 0;
 }
 
+.route > li > * {
+  padding: 0.5em 0;
+}
+
 .route > li:before {
-  counter-increment: list-item;
-  content: counter(list-item, decimal-leading-zero) ".";
+  padding: 0.5em 0;
   margin-right: 0.3rem;
   font-weight: bold;
+  counter-increment: list-item;
+  content: counter(list-item, decimal-leading-zero) ".";
 }

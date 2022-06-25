@@ -25,7 +25,7 @@ export function StepComponent({ step, lookup }: StepProps) {
 
   return (
     <div
-      className={classNames("step", "py-2", { done: isDone })}
+      className={classNames("step", { done: isDone })}
       onClick={() => {
         setIsDone(!isDone);
       }}
