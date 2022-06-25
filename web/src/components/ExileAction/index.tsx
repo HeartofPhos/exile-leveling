@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Action, RouteLookup } from "../../../../common/route";
+import { Action, RouteLookup } from "../../../../common/routes";
 import { Area, Gem } from "../../../../common/types";
 import "./Action.css";
 
@@ -108,7 +108,7 @@ function DirectionComponent(dirIndex: number) {
 }
 
 function NpcComponent(npcName: string) {
-  return <span className={classNames("npc")}>{npcName}</span>;
+  return <span className={classNames("default")}>{npcName}</span>;
 }
 
 function CraftingComponent() {
