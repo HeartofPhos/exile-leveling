@@ -23,19 +23,15 @@ function PrepareQuestRewardSet(quest: Quest, lookup: RouteLookup) {
 
   //Hack for The Caged Brute
   if (quest.id == "a1q2") {
-    questRewardSets = [];
-    const setLookup: Record<Gem["required_level"], number> = {};
+    questRewardSets = [{}, {}];
     for (const key in quest.quest_rewards) {
       const gem = lookup.gems[key];
       if (gem) {
-        let index = setLookup[gem.required_level];
-        if (index === undefined) {
-          index = questRewardSets.length;
-          setLookup[gem.required_level] = index;
-          questRewardSets.push({});
+        if (gem.id.includes("Support")) {
+          questRewardSets[1][key] = quest.quest_rewards[key];
+        } else {
+          questRewardSets[0][key] = quest.quest_rewards[key];
         }
-
-        questRewardSets[index][key] = quest.quest_rewards[key];
       }
     }
   } else {
