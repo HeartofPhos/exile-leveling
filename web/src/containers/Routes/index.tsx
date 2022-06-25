@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import { useEffect, useState } from "react";
 import {
   initializeRouteLookup,
@@ -7,8 +6,7 @@ import {
   Route,
   RouteLookup,
 } from "../../../../common/route";
-import { StepComponent } from "../Step";
-import "./Route.css";
+import { ExileRoute } from "../../components/ExileRoute";
 
 const ROUTE_PATHS = [
   "/routes/act-1.txt",
@@ -18,14 +16,12 @@ const ROUTE_PATHS = [
   "/routes/act-5.txt",
 ];
 
-interface RouteProps {}
-
 interface RouteData {
   routes: Route[];
   lookup: RouteLookup;
 }
 
-export function RouteComponent({}: RouteProps) {
+function RoutesContainer() {
   const [routeData, setRouteData] = useState<RouteData>();
 
   useEffect(() => {
@@ -61,37 +57,17 @@ export function RouteComponent({}: RouteProps) {
   }, []);
 
   return (
-    <>
+    <div className="App">
       {routeData &&
         routeData.routes.map((route, i) => (
-          <div
-            className={classNames(
-              "container",
-              "has-text-grey-light",
-              "is-flex",
-              "is-flex-direction-column",
-              "px-1"
-            )}
-          >
-            <span
-              className={classNames(
-                "has-text-white",
-                "is-size-4",
-                "has-text-weight-bold",
-                "has-text-centered"
-              )}
-            >
-              --== Act {i + 1} ==--
-            </span>
-            <ol className={classNames("route", "px-2", "mb-4")}>
-              {route.map((step, i) => (
-                <li key={i}>
-                  <StepComponent step={step} lookup={routeData.lookup} />
-                </li>
-              ))}
-            </ol>
-          </div>
+          <ExileRoute
+            header={`--== Act ${i + 1} ==--`}
+            route={route}
+            lookup={routeData.lookup}
+          />
         ))}
-    </>
+    </div>
   );
 }
+
+export default RoutesContainer;

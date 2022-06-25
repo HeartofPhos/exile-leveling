@@ -129,7 +129,7 @@ function AscendComponent() {
   );
 }
 
-export function ActionComponent({ action, lookup }: ActionProps) {
+export function ExileAction({ action, lookup }: ActionProps) {
   switch (action.type) {
     case "kill":
       return EnemyComponent(action.value);
