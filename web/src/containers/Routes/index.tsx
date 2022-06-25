@@ -5,7 +5,7 @@ import {
   parseRoute,
   Route,
   RouteLookup,
-} from "../../../../common/route";
+} from "../../../../common/routes";
 import { ExileRoute } from "../../components/ExileRoute";
 
 const ROUTE_PATHS = [
