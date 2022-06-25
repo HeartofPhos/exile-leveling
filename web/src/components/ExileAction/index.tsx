@@ -143,8 +143,6 @@ export function ExileAction({ action, lookup }: ActionProps) {
     }
     case "quest_reward":
       return QuestRewardComponent(lookup.gems[action.gemId]);
-    case "quest_item":
-      return QuestTextComponent(action.value);
     case "quest_text":
       return QuestTextComponent(action.value);
     case "waypoint": {

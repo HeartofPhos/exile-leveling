@@ -394,7 +394,6 @@ export type Action =
   | UsePortalAction
   | QuestAction
   | QuestRewardAction
-  | QuestItemAction
   | QuestTextAction
   | VendorAction
   | VendorRewardAction
