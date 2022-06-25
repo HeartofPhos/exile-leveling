@@ -12,9 +12,13 @@ import "./Route.css";
 
 interface RouteProps {}
 
+interface RouteData {
+  route: Route;
+  lookup: RouteLookup;
+}
+
 export function RouteComponent({}: RouteProps) {
-  const [route, setRoute] = useState<Route>();
-  const [routeLookup, setRouteLookup] = useState<RouteLookup>();
+  const [routeData, setRouteData] = useState<RouteData>();
 
   useEffect(() => {
     const fn = async () => {
@@ -37,24 +41,11 @@ export function RouteComponent({}: RouteProps) {
         .then((x) => x.text())
         .then((x) => parseRoute(x, routeLookup, routeState));
 
-      setRoute(route);
-      setRouteLookup(routeLookup);
+      setRouteData({ route: route, lookup: routeLookup });
     };
 
     fn();
   }, []);
-
-  const steps: JSX.Element[] = [];
-  if (route && routeLookup) {
-    for (let i = 0; i < route.length; i++) {
-      const step = route[i];
-      steps.push(
-        <li key={i}>
-          <StepComponent step={step} lookup={routeLookup} />
-        </li>
-      );
-    }
-  }
 
   return (
     <ol
@@ -65,7 +56,12 @@ export function RouteComponent({}: RouteProps) {
         "has-text-grey-light"
       )}
     >
-      {steps}
+      {routeData &&
+        routeData.route.map((step, i) => (
+          <li key={i}>
+            <StepComponent step={step} lookup={routeData.lookup} />
+          </li>
+        ))}
     </ol>
   );
 }
