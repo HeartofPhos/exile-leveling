@@ -10,10 +10,18 @@ import {
 import { StepComponent } from "../Step";
 import "./Route.css";
 
+const ROUTE_PATHS = [
+  "/routes/act-1.txt",
+  "/routes/act-2.txt",
+  "/routes/act-3.txt",
+  "/routes/act-4.txt",
+  "/routes/act-5.txt",
+];
+
 interface RouteProps {}
 
 interface RouteData {
-  route: Route;
+  routes: Route[];
   lookup: RouteLookup;
 }
 
@@ -37,31 +45,52 @@ export function RouteComponent({}: RouteProps) {
       );
       const routeState = initializeRouteState();
 
-      const route = await fetch("/routes/act-1.txt")
-        .then((x) => x.text())
-        .then((x) => parseRoute(x, routeLookup, routeState));
+      let routes: Route[] = [];
+      for (const path of ROUTE_PATHS) {
+        const route = await fetch(path)
+          .then((x) => x.text())
+          .then((x) => parseRoute(x, routeLookup, routeState));
 
-      setRouteData({ route: route, lookup: routeLookup });
+        routes.push(route);
+      }
+
+      setRouteData({ routes: routes, lookup: routeLookup });
     };
 
     fn();
   }, []);
 
   return (
-    <ol
-      className={classNames(
-        "container",
-        "px-2",
-        "route",
-        "has-text-grey-light"
-      )}
-    >
+    <>
       {routeData &&
-        routeData.route.map((step, i) => (
-          <li key={i}>
-            <StepComponent step={step} lookup={routeData.lookup} />
-          </li>
+        routeData.routes.map((route, i) => (
+          <div
+            className={classNames(
+              "container",
+              "has-text-grey-light",
+              "is-flex",
+              "is-flex-direction-column"
+            )}
+          >
+            <span
+              className={classNames(
+                "has-text-white",
+                "is-size-4",
+                "has-text-weight-bold",
+                "has-text-centered"
+              )}
+            >
+              --== Act {i + 1} ==--
+            </span>
+            <ol className={classNames("route", "px-2", "mb-4")}>
+              {route.map((step, i) => (
+                <li key={i}>
+                  <StepComponent step={step} lookup={routeData.lookup} />
+                </li>
+              ))}
+            </ol>
+          </div>
         ))}
-    </ol>
+    </>
   );
 }

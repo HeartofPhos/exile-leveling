@@ -8,7 +8,7 @@
 .route > li {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #505050;
+  border-bottom: 0.1rem solid #505050;
 }
 
 .route > li:last-child {
