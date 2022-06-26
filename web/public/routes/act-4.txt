@@ -41,7 +41,7 @@ Get {get_waypoint}
 Find and kill {kill|Doedre Darktongue}, take {quest_text|Malachai's Lungs}
 Find and kill {kill|Maligaro, The Inquisitor}, take {quest_text|Malachai's Heart}
 Find and kill {kill|Shavronne of Umbra}, take {quest_text|Malachai's Entrails}
-Hand in {quest|Corpus Malachus} #Corpus Malachus
+Hand in {quest|a4q5} #Corpus Malachus
 Kill {kill|Malachai, The Nightmare}
 {town}
 Hand in {quest|a4q1} #The Eternal Nightmare

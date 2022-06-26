@@ -1,10 +1,6 @@
 import fs from "fs";
 import { getAreas, getGems, getQuests } from "./seeding";
-import {
-  initializeRouteLookup,
-  initializeRouteState,
-  parseRoute,
-} from "../../common/routes";
+import fetch from "cross-fetch";
 
 const dataPath = process.argv[2];
 function saveData(name: string, data: any) {
@@ -21,14 +17,20 @@ export async function main() {
   switch (command) {
     case "seed-data":
       {
+        const poeDatVersion = await fetch(
+          "https://poedat.erosson.org/pypoe/v1/latest.json"
+        )
+          .then((x) => x.json())
+          .then((x) => x.version);
+
         const gems = await getGems();
         saveData("gems", gems);
 
-        const quests = await getQuests();
+        const quests = await getQuests(poeDatVersion);
         saveData("quests", quests);
 
-        // const areas = await getAreas();
-        // saveData("areas", areas);
+        const areas = await getAreas();
+        saveData("areas", areas);
       }
       break;
     default:

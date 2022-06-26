@@ -1,5 +1,6 @@
 import { cargoQuery } from "./wiki";
 import { Area, Gem, Monster, Quest } from "../../common/types";
+import fetch from "cross-fetch";
 
 export async function getGems() {
   const queryResult = await cargoQuery({
@@ -30,24 +31,37 @@ export async function getGems() {
   return result;
 }
 
-export async function getQuests() {
-  const questRewards = await getQuestRewards();
-  const vendorRewards = await getVendorRewards();
+export async function getQuests(poeDatVersion: string) {
+  const questDat = await fetch(
+    `https://poedat.erosson.org/pypoe/v1/tree/${poeDatVersion}/default/Quest.dat.min.json`
+  ).then((x) => x.json());
 
   const result: Record<Quest["id"], Quest> = {};
-  for (const item of questRewards) {
-    let quest = result[item.quest_id];
-    if (!quest) {
-      quest = {
-        id: item.quest_id,
-        name: item.quest,
-        act: item.act,
+
+  const idIndex = questDat.header.find((x: any) => x.name == "Id").rowid;
+  const actIndex = questDat.header.find((x: any) => x.name == "Act").rowid;
+  const nameIndex = questDat.header.find((x: any) => x.name == "Name").rowid;
+  const typeIndex = questDat.header.find((x: any) => x.name == "Type").rowid;
+  for (const row of questDat.data) {
+    const type = row[typeIndex];
+    if (type == 0 || type == 1) {
+      const quest: Quest = {
+        id: row[idIndex],
+        name: row[nameIndex],
+        act: row[actIndex].toString(),
         quest_rewards: {},
         vendor_rewards: {},
       };
-      result[item.quest_id] = quest;
-    }
 
+      result[quest.id] = quest;
+    }
+  }
+
+  const questRewards = await getQuestRewards();
+  const vendorRewards = await getVendorRewards();
+
+  for (const item of questRewards) {
+    let quest = result[item.quest_id];
     quest.quest_rewards[item.item_id] = {
       classes: item.classes?.split(",") || [],
     };
@@ -55,17 +69,6 @@ export async function getQuests() {
 
   for (const item of vendorRewards) {
     let quest = result[item.quest_id];
-    if (!quest) {
-      quest = {
-        id: item.quest_id,
-        name: item.quest,
-        act: item.act,
-        quest_rewards: {},
-        vendor_rewards: {},
-      };
-      result[item.quest_id] = quest;
-    }
-
     quest.vendor_rewards[item.item_id] = {
       classes: item.classes?.split(",") || [],
       npc: item.npc,

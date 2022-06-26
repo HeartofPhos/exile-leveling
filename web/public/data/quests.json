@@ -476,6 +476,618 @@
       }
     }
   },
+  "a1q5": {
+    "id": "a1q5",
+    "name": "Mercy Mission",
+    "act": "1",
+    "quest_rewards": {
+      "Metadata/Items/Gems/SupportGemSpiritStrike": {
+        "classes": [
+          "Templar",
+          "Marauder",
+          "Duelist",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SupportGemArcaneSurge": {
+        "classes": [
+          "Templar",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SupportGemChanceToBleed": {
+        "classes": [
+          "Templar",
+          "Marauder",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SupportGemLesserPoison": {
+        "classes": [
+          "Witch",
+          "Duelist",
+          "Ranger",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SupportGemElementalProliferation": {
+        "classes": [
+          "Witch",
+          "Shadow",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SupportGemStormBarrier": {
+        "classes": [
+          "Witch",
+          "Templar",
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Gems/SupportGemMirageArcher": {
+        "classes": [
+          "Duelist",
+          "Ranger"
+        ]
+      },
+      "Metadata/Items/Gems/SupportGemOnslaught": {
+        "classes": [
+          "Templar",
+          "Marauder",
+          "Duelist",
+          "Ranger",
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Gems/SupportGemPierce": {
+        "classes": [
+          "Duelist",
+          "Shadow",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SupportGemRuthless": {
+        "classes": [
+          "Templar",
+          "Duelist",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SupportGemSpellCascade": {
+        "classes": [
+          "Witch",
+          "Templar",
+          "Shadow",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SupportGemSummonGhostOnKill": {
+        "classes": [
+          "Witch",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SupportGemSwiftAssembly": {
+        "classes": [
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Gems/SupportGemParallelProjectiles": {
+        "classes": [
+          "Duelist",
+          "Ranger",
+          "Shadow",
+          "Scion"
+        ]
+      }
+    },
+    "vendor_rewards": {
+      "Metadata/Items/Gems/SupportGemSpiritStrike": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SupportGemArcaneSurge": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Templar"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SupportGemChanceToBleed": {
+        "classes": [
+          "Marauder",
+          "Ranger",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SupportGemLesserPoison": {
+        "classes": [
+          "Ranger",
+          "Scion"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SupportGemElementalProliferation": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Witch"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SupportGemStormBarrier": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SupportGemMirageArcher": {
+        "classes": [
+          "Duelist",
+          "Ranger",
+          "Scion",
+          "Shadow"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SupportGemOnslaught": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Shadow",
+          "Templar"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SupportGemPierce": {
+        "classes": [
+          "Duelist",
+          "Scion",
+          "Shadow"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SupportGemRuthless": {
+        "classes": [
+          "Duelist",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SupportGemSpellCascade": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SupportGemSummonGhostOnKill": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SupportGemSwiftAssembly": {
+        "classes": [
+          "Duelist",
+          "Ranger",
+          "Scion",
+          "Shadow",
+          "Witch"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SupportGemParallelProjectiles": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Scion",
+          "Shadow",
+          "Witch"
+        ],
+        "npc": "Nessa"
+      }
+    }
+  },
+  "a1q4": {
+    "id": "a1q4",
+    "name": "Breaking Some Eggs",
+    "act": "1",
+    "quest_rewards": {
+      "Metadata/Items/Gems/SkillGemMeleeTotem": {
+        "classes": [
+          "Templar",
+          "Marauder",
+          "Duelist"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemBearTrap": {
+        "classes": [
+          "Ranger",
+          "Shadow",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemBloodAndSand": {
+        "classes": [
+          "Duelist"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemContagion": {
+        "classes": [
+          "Witch",
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemDash": {
+        "classes": [
+          "Duelist",
+          "Ranger",
+          "Shadow",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemDecoyTotem": {
+        "classes": [
+          "Marauder",
+          "Duelist",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemDetonateDead": {
+        "classes": [
+          "Witch",
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemFlameWall": {
+        "classes": [
+          "Witch",
+          "Templar"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemFrostBomb": {
+        "classes": [
+          "Witch",
+          "Templar",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemFrostblink": {
+        "classes": [
+          "Witch",
+          "Templar",
+          "Shadow",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemFlameTotem": {
+        "classes": [
+          "Templar"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemMoltenShell": {
+        "classes": [
+          "Marauder"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemOrbOfStorms": {
+        "classes": [
+          "Witch",
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemPuncture": {
+        "classes": [
+          "Duelist",
+          "Ranger"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemRiposte": {
+        "classes": [
+          "Ranger",
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemShrapnelBallista": {
+        "classes": [
+          "Ranger"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemSteelskin": {
+        "classes": [
+          "Templar",
+          "Marauder",
+          "Duelist",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemSummonRelic": {
+        "classes": [
+          "Templar"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemSummonRagingSpirit": {
+        "classes": [
+          "Witch"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemVigilantStrike": {
+        "classes": [
+          "Templar",
+          "Marauder",
+          "Duelist",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemWarBanner": {
+        "classes": [
+          "Duelist"
+        ]
+      }
+    },
+    "vendor_rewards": {
+      "Metadata/Items/Gems/SkillGemMeleeTotem": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemAnimateWeapon": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Witch"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemBearTrap": {
+        "classes": [
+          "Marauder",
+          "Ranger",
+          "Scion",
+          "Shadow"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemBloodAndSand": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Scion"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemContagion": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemConversionTrap": {
+        "classes": [
+          "Ranger",
+          "Scion",
+          "Shadow",
+          "Witch"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemDash": {
+        "classes": [],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemDecoyTotem": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemDetonateDead": {
+        "classes": [
+          "Ranger",
+          "Shadow",
+          "Witch"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemDevouringTotem": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Scion",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemFlameWall": {
+        "classes": [
+          "Witch",
+          "Templar",
+          "Shadow",
+          "Scion"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemFrostBomb": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemFrostWall": {
+        "classes": [
+          "Duelist",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemFrostblink": {
+        "classes": [],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemFlameTotem": {
+        "classes": [
+          "Marauder",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemMoltenShell": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemOrbOfStorms": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemPuncture": {
+        "classes": [
+          "Duelist",
+          "Ranger",
+          "Shadow"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemReckoning": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Templar"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemRejuvenationTotem": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemRiposte": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Shadow"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemShrapnelBallista": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Scion",
+          "Shadow"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemSteelskin": {
+        "classes": [],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemSummonRelic": {
+        "classes": [
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemSummonRagingSpirit": {
+        "classes": [
+          "Scion",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemVigilantStrike": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Nessa"
+      },
+      "Metadata/Items/Gems/SkillGemWarBanner": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Nessa"
+      }
+    }
+  },
+  "a1q8": {
+    "id": "a1q8",
+    "name": "A Dirty Job",
+    "act": "1",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a1q7": {
+    "id": "a1q7",
+    "name": "The Dweller of the Deep",
+    "act": "1",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
   "a1q2": {
     "id": "a1q2",
     "name": "The Caged Brute",
@@ -1093,6 +1705,13 @@
         "npc": "Nessa"
       }
     }
+  },
+  "a1q6": {
+    "id": "a1q6",
+    "name": "The Marooned Mariner",
+    "act": "1",
+    "quest_rewards": {},
+    "vendor_rewards": {}
   },
   "a1q3": {
     "id": "a1q3",
@@ -1732,603 +2351,381 @@
       }
     }
   },
-  "a1q4": {
-    "id": "a1q4",
-    "name": "Breaking Some Eggs",
+  "a1q9": {
+    "id": "a1q9",
+    "name": "The Way Forward",
     "act": "1",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a2q11": {
+    "id": "a2q11",
+    "name": "The Way Forward",
+    "act": "2",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a2q5": {
+    "id": "a2q5",
+    "name": "Through Sacred Ground",
+    "act": "2",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a2q6": {
+    "id": "a2q6",
+    "name": "Intruders in Black",
+    "act": "2",
     "quest_rewards": {
-      "Metadata/Items/Gems/SkillGemMeleeTotem": {
+      "Metadata/Items/Gems/SkillGemAncestralCry": {
         "classes": [
-          "Templar",
           "Marauder",
           "Duelist"
         ]
       },
-      "Metadata/Items/Gems/SkillGemBearTrap": {
+      "Metadata/Items/Gems/SkillGemArcaneCloak": {
         "classes": [
+          "Witch",
+          "Templar",
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemArcticArmour": {
+        "classes": [
+          "Witch",
           "Ranger",
           "Shadow",
           "Scion"
         ]
       },
-      "Metadata/Items/Gems/SkillGemBloodAndSand": {
+      "Metadata/Items/Gems/SkillGemBladeBlast": {
+        "classes": [
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemBloodRage": {
+        "classes": [
+          "Duelist",
+          "Ranger",
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemRecallBrands": {
+        "classes": [
+          "Templar"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemColdSnap": {
+        "classes": [
+          "Witch",
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemCorruptingFever": {
+        "classes": [
+          "Marauder",
+          "Duelist",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemDefianceBanner": {
         "classes": [
           "Duelist"
         ]
       },
-      "Metadata/Items/Gems/SkillGemContagion": {
-        "classes": [
-          "Witch",
-          "Shadow"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemDash": {
-        "classes": [
-          "Duelist",
-          "Ranger",
-          "Shadow",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemDecoyTotem": {
-        "classes": [
-          "Marauder",
-          "Duelist",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemDetonateDead": {
-        "classes": [
-          "Witch",
-          "Shadow"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemFlameWall": {
-        "classes": [
-          "Witch",
-          "Templar"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemFrostBomb": {
-        "classes": [
-          "Witch",
-          "Templar",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemFrostblink": {
-        "classes": [
-          "Witch",
-          "Templar",
-          "Shadow",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemFlameTotem": {
-        "classes": [
-          "Templar"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemMoltenShell": {
-        "classes": [
-          "Marauder"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemOrbOfStorms": {
-        "classes": [
-          "Witch",
-          "Shadow"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemPuncture": {
-        "classes": [
-          "Duelist",
-          "Ranger"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemRiposte": {
-        "classes": [
-          "Ranger",
-          "Shadow"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemShrapnelBallista": {
-        "classes": [
-          "Ranger"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemSteelskin": {
-        "classes": [
-          "Templar",
-          "Marauder",
-          "Duelist",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemSummonRelic": {
-        "classes": [
-          "Templar"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemSummonRagingSpirit": {
+      "Metadata/Items/Gems/SkillGemDesecrate": {
         "classes": [
           "Witch"
         ]
       },
-      "Metadata/Items/Gems/SkillGemVigilantStrike": {
+      "Metadata/Items/Gems/SkillGemEnsnaringArrow": {
         "classes": [
-          "Templar",
-          "Marauder",
+          "Ranger"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemFleshAndStone": {
+        "classes": [
+          "Duelist"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemFrenzy": {
+        "classes": [
           "Duelist",
+          "Ranger",
           "Scion"
         ]
       },
-      "Metadata/Items/Gems/SkillGemWarBanner": {
+      "Metadata/Items/Gems/SkillGemHeraldOfAgony": {
         "classes": [
+          "Ranger",
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemHeraldOfAsh": {
+        "classes": [
+          "Witch",
+          "Templar",
+          "Marauder",
+          "Duelist",
+          "Ranger",
+          "Shadow",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemHeraldOfIce": {
+        "classes": []
+      },
+      "Metadata/Items/Gems/SkillGemHeraldOfPurity": {
+        "classes": [
+          "Templar"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemHeraldOfThunder": {
+        "classes": [
+          "Witch",
+          "Templar",
+          "Marauder",
+          "Duelist",
+          "Ranger",
+          "Shadow",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemSeismicCry": {
+        "classes": [
+          "Marauder",
           "Duelist"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemSummonSkitterbots": {
+        "classes": [
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemPurge": {
+        "classes": [
+          "Templar"
         ]
       }
     },
     "vendor_rewards": {
-      "Metadata/Items/Gems/SkillGemMeleeTotem": {
+      "Metadata/Items/Gems/SkillGemAncestralCry": {
         "classes": [
           "Duelist",
           "Marauder",
           "Scion",
           "Templar"
         ],
-        "npc": "Nessa"
+        "npc": "Yeena"
       },
-      "Metadata/Items/Gems/SkillGemAnimateWeapon": {
+      "Metadata/Items/Gems/SkillGemArcaneCloak": {
         "classes": [
           "Scion",
           "Shadow",
+          "Templar",
           "Witch"
         ],
-        "npc": "Nessa"
+        "npc": "Yeena"
       },
-      "Metadata/Items/Gems/SkillGemBearTrap": {
+      "Metadata/Items/Gems/SkillGemArcticArmour": {
         "classes": [
+          "Duelist",
+          "Ranger",
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SkillGemBladeBlast": {
+        "classes": [
+          "Ranger",
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SkillGemBloodRage": {
+        "classes": [
+          "Duelist",
           "Marauder",
           "Ranger",
           "Scion",
           "Shadow"
         ],
-        "npc": "Nessa"
+        "npc": "Yeena"
       },
-      "Metadata/Items/Gems/SkillGemBloodAndSand": {
+      "Metadata/Items/Gems/SkillGemRecallBrands": {
         "classes": [
-          "Duelist",
           "Marauder",
-          "Ranger",
-          "Scion"
+          "Scion",
+          "Templar",
+          "Witch"
         ],
-        "npc": "Nessa"
+        "npc": "Yeena"
       },
-      "Metadata/Items/Gems/SkillGemContagion": {
+      "Metadata/Items/Gems/SkillGemColdSnap": {
         "classes": [
+          "Ranger",
           "Scion",
           "Shadow",
           "Templar",
           "Witch"
         ],
-        "npc": "Nessa"
+        "npc": "Yeena"
       },
-      "Metadata/Items/Gems/SkillGemConversionTrap": {
+      "Metadata/Items/Gems/SkillGemCorruptingFever": {
         "classes": [
-          "Ranger",
-          "Scion",
-          "Shadow",
-          "Witch"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SkillGemDash": {
-        "classes": [],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SkillGemDecoyTotem": {
-        "classes": [
-          "Duelist",
           "Marauder",
-          "Ranger",
+          "Duelist",
           "Scion",
           "Templar"
         ],
-        "npc": "Nessa"
+        "npc": "Yeena"
       },
-      "Metadata/Items/Gems/SkillGemDetonateDead": {
-        "classes": [
-          "Ranger",
-          "Shadow",
-          "Witch"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SkillGemDevouringTotem": {
+      "Metadata/Items/Gems/SkillGemDefianceBanner": {
         "classes": [
           "Duelist",
           "Marauder",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SkillGemDesecrate": {
+        "classes": [
           "Ranger",
           "Scion",
+          "Shadow",
           "Templar",
           "Witch"
         ],
-        "npc": "Nessa"
+        "npc": "Yeena"
       },
-      "Metadata/Items/Gems/SkillGemFlameWall": {
+      "Metadata/Items/Gems/SkillGemEnsnaringArrow": {
+        "classes": [
+          "Duelist",
+          "Ranger",
+          "Scion",
+          "Shadow"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SkillGemFleshAndStone": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Scion"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SkillGemForbiddenRite": {
         "classes": [
           "Witch",
-          "Templar",
           "Shadow",
           "Scion"
         ],
-        "npc": "Nessa"
+        "npc": "Yeena"
       },
-      "Metadata/Items/Gems/SkillGemFrostBomb": {
+      "Metadata/Items/Gems/SkillGemFrenzy": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Scion",
+          "Shadow"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SkillGemHeraldOfAgony": {
+        "classes": [
+          "Duelist",
+          "Ranger",
+          "Scion",
+          "Shadow"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SkillGemHeraldOfAsh": {
+        "classes": [],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SkillGemHeraldOfIce": {
+        "classes": [],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SkillGemHeraldOfPurity": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Scion",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SkillGemHeraldOfThunder": {
+        "classes": [],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SkillGemRighteousFire": {
+        "classes": [
+          "Marauder",
+          "Scion",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SkillGemSeismicCry": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SkillGemSummonSkitterbots": {
+        "classes": [
+          "Ranger",
+          "Scion",
+          "Shadow",
+          "Witch"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SkillGemTempestShield": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SkillGemPurge": {
         "classes": [
           "Scion",
           "Shadow",
           "Templar",
           "Witch"
         ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SkillGemFrostWall": {
-        "classes": [
-          "Duelist",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SkillGemFrostblink": {
-        "classes": [],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SkillGemFlameTotem": {
-        "classes": [
-          "Marauder",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SkillGemMoltenShell": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SkillGemOrbOfStorms": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SkillGemPuncture": {
-        "classes": [
-          "Duelist",
-          "Ranger",
-          "Shadow"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SkillGemReckoning": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Templar"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SkillGemRejuvenationTotem": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SkillGemRiposte": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger",
-          "Shadow"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SkillGemShrapnelBallista": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger",
-          "Scion",
-          "Shadow"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SkillGemSteelskin": {
-        "classes": [],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SkillGemSummonRelic": {
-        "classes": [
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SkillGemSummonRagingSpirit": {
-        "classes": [
-          "Scion",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SkillGemVigilantStrike": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SkillGemWarBanner": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Nessa"
+        "npc": "Yeena"
       }
     }
   },
-  "a1q5": {
-    "id": "a1q5",
-    "name": "Mercy Mission",
-    "act": "1",
-    "quest_rewards": {
-      "Metadata/Items/Gems/SupportGemSpiritStrike": {
-        "classes": [
-          "Templar",
-          "Marauder",
-          "Duelist",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SupportGemArcaneSurge": {
-        "classes": [
-          "Templar",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SupportGemChanceToBleed": {
-        "classes": [
-          "Templar",
-          "Marauder",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SupportGemLesserPoison": {
-        "classes": [
-          "Witch",
-          "Duelist",
-          "Ranger",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SupportGemElementalProliferation": {
-        "classes": [
-          "Witch",
-          "Shadow",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SupportGemStormBarrier": {
-        "classes": [
-          "Witch",
-          "Templar",
-          "Shadow"
-        ]
-      },
-      "Metadata/Items/Gems/SupportGemMirageArcher": {
-        "classes": [
-          "Duelist",
-          "Ranger"
-        ]
-      },
-      "Metadata/Items/Gems/SupportGemOnslaught": {
-        "classes": [
-          "Templar",
-          "Marauder",
-          "Duelist",
-          "Ranger",
-          "Shadow"
-        ]
-      },
-      "Metadata/Items/Gems/SupportGemPierce": {
-        "classes": [
-          "Duelist",
-          "Shadow",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SupportGemRuthless": {
-        "classes": [
-          "Templar",
-          "Duelist",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SupportGemSpellCascade": {
-        "classes": [
-          "Witch",
-          "Templar",
-          "Shadow",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SupportGemSummonGhostOnKill": {
-        "classes": [
-          "Witch",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SupportGemSwiftAssembly": {
-        "classes": [
-          "Shadow"
-        ]
-      },
-      "Metadata/Items/Gems/SupportGemParallelProjectiles": {
-        "classes": [
-          "Duelist",
-          "Ranger",
-          "Shadow",
-          "Scion"
-        ]
-      }
-    },
-    "vendor_rewards": {
-      "Metadata/Items/Gems/SupportGemSpiritStrike": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SupportGemArcaneSurge": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Templar"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SupportGemChanceToBleed": {
-        "classes": [
-          "Marauder",
-          "Ranger",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SupportGemLesserPoison": {
-        "classes": [
-          "Ranger",
-          "Scion"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SupportGemElementalProliferation": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Witch"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SupportGemStormBarrier": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SupportGemMirageArcher": {
-        "classes": [
-          "Duelist",
-          "Ranger",
-          "Scion",
-          "Shadow"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SupportGemOnslaught": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger",
-          "Shadow",
-          "Templar"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SupportGemPierce": {
-        "classes": [
-          "Duelist",
-          "Scion",
-          "Shadow"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SupportGemRuthless": {
-        "classes": [
-          "Duelist",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SupportGemSpellCascade": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SupportGemSummonGhostOnKill": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SupportGemSwiftAssembly": {
-        "classes": [
-          "Duelist",
-          "Ranger",
-          "Scion",
-          "Shadow",
-          "Witch"
-        ],
-        "npc": "Nessa"
-      },
-      "Metadata/Items/Gems/SupportGemParallelProjectiles": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger",
-          "Scion",
-          "Shadow",
-          "Witch"
-        ],
-        "npc": "Nessa"
-      }
-    }
+  "a2q10": {
+    "id": "a2q10",
+    "name": "The Great White Beast",
+    "act": "2",
+    "quest_rewards": {},
+    "vendor_rewards": {}
   },
   "a2q4": {
     "id": "a2q4",
@@ -2734,232 +3131,36 @@
       }
     }
   },
-  "a2q6": {
-    "id": "a2q6",
-    "name": "Intruders in Black",
+  "a2q9": {
+    "id": "a2q9",
+    "name": "The Root of the Problem",
     "act": "2",
-    "quest_rewards": {
-      "Metadata/Items/Gems/SkillGemAncestralCry": {
-        "classes": [
-          "Marauder",
-          "Duelist"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemArcaneCloak": {
-        "classes": [
-          "Witch",
-          "Templar",
-          "Shadow"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemArcticArmour": {
-        "classes": [
-          "Witch",
-          "Ranger",
-          "Shadow",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemBladeBlast": {
-        "classes": [
-          "Shadow"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemBloodRage": {
-        "classes": [
-          "Duelist",
-          "Ranger",
-          "Shadow"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemRecallBrands": {
-        "classes": [
-          "Templar"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemColdSnap": {
-        "classes": [
-          "Witch",
-          "Shadow"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemCorruptingFever": {
-        "classes": [
-          "Marauder",
-          "Duelist",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemDefianceBanner": {
-        "classes": [
-          "Duelist"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemDesecrate": {
-        "classes": [
-          "Witch"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemEnsnaringArrow": {
-        "classes": [
-          "Ranger"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemFleshAndStone": {
-        "classes": [
-          "Duelist"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemFrenzy": {
-        "classes": [
-          "Duelist",
-          "Ranger",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemHeraldOfAgony": {
-        "classes": [
-          "Ranger",
-          "Shadow"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemHeraldOfAsh": {
-        "classes": [
-          "Witch",
-          "Templar",
-          "Marauder",
-          "Duelist",
-          "Ranger",
-          "Shadow",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemHeraldOfIce": {
-        "classes": []
-      },
-      "Metadata/Items/Gems/SkillGemHeraldOfPurity": {
-        "classes": [
-          "Templar"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemHeraldOfThunder": {
-        "classes": [
-          "Witch",
-          "Templar",
-          "Marauder",
-          "Duelist",
-          "Ranger",
-          "Shadow",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemSeismicCry": {
-        "classes": [
-          "Marauder",
-          "Duelist"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemSummonSkitterbots": {
-        "classes": [
-          "Shadow"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemPurge": {
-        "classes": [
-          "Templar"
-        ]
-      }
-    },
+    "quest_rewards": {},
     "vendor_rewards": {
-      "Metadata/Items/Gems/SkillGemAncestralCry": {
+      "Metadata/Items/Gems/SupportGemBloodlust": {
         "classes": [
           "Duelist",
           "Marauder",
+          "Ranger",
           "Scion",
+          "Shadow",
           "Templar"
         ],
         "npc": "Yeena"
       },
-      "Metadata/Items/Gems/SkillGemArcaneCloak": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SkillGemArcticArmour": {
-        "classes": [
-          "Duelist",
-          "Ranger",
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SkillGemBladeBlast": {
-        "classes": [
-          "Ranger",
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SkillGemBloodRage": {
+      "Metadata/Items/Gems/SupportGemCloseCombat": {
         "classes": [
           "Duelist",
           "Marauder",
           "Ranger",
           "Scion",
-          "Shadow"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SkillGemRecallBrands": {
-        "classes": [
-          "Marauder",
-          "Scion",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SkillGemColdSnap": {
-        "classes": [
-          "Ranger",
-          "Scion",
           "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SkillGemCorruptingFever": {
-        "classes": [
-          "Marauder",
-          "Duelist",
-          "Scion",
           "Templar"
         ],
         "npc": "Yeena"
       },
-      "Metadata/Items/Gems/SkillGemDefianceBanner": {
+      "Metadata/Items/Gems/SupportGemColdToFire": {
         "classes": [
-          "Duelist",
-          "Marauder",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SkillGemDesecrate": {
-        "classes": [
-          "Ranger",
           "Scion",
           "Shadow",
           "Templar",
@@ -2967,82 +3168,20 @@
         ],
         "npc": "Yeena"
       },
-      "Metadata/Items/Gems/SkillGemEnsnaringArrow": {
+      "Metadata/Items/Gems/SupportGemControlledDestruction": {
         "classes": [
-          "Duelist",
-          "Ranger",
           "Scion",
-          "Shadow"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SkillGemFleshAndStone": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Scion"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SkillGemForbiddenRite": {
-        "classes": [
-          "Witch",
           "Shadow",
-          "Scion"
+          "Templar",
+          "Witch"
         ],
         "npc": "Yeena"
       },
-      "Metadata/Items/Gems/SkillGemFrenzy": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger",
-          "Scion",
-          "Shadow"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SkillGemHeraldOfAgony": {
-        "classes": [
-          "Duelist",
-          "Ranger",
-          "Scion",
-          "Shadow"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SkillGemHeraldOfAsh": {
+      "Metadata/Items/Gems/SupportGemCullingStrike": {
         "classes": [],
         "npc": "Yeena"
       },
-      "Metadata/Items/Gems/SkillGemHeraldOfIce": {
-        "classes": [],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SkillGemHeraldOfPurity": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Scion",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SkillGemHeraldOfThunder": {
-        "classes": [],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SkillGemRighteousFire": {
-        "classes": [
-          "Marauder",
-          "Scion",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SkillGemSeismicCry": {
+      "Metadata/Items/Gems/SupportGemMeleeDamageOnFullLife": {
         "classes": [
           "Duelist",
           "Marauder",
@@ -3051,7 +3190,119 @@
         ],
         "npc": "Yeena"
       },
-      "Metadata/Items/Gems/SkillGemSummonSkitterbots": {
+      "Metadata/Items/Gems/SupportGemDeadlyAilments": {
+        "classes": [
+          "Duelist",
+          "Ranger",
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SupportGemWeaponElementalDamage": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Scion",
+          "Shadow",
+          "Templar"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SupportGemEnduranceChargeOnMeleeStun": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SupportGemFasterAttack": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Scion",
+          "Shadow",
+          "Templar"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SupportGemFasterCast": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SupportGemIronGrip": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SupportGemIronWill": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SupportGemMinionSpeed": {
+        "classes": [
+          "Scion",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SupportGemNightblade": {
+        "classes": [
+          "Ranger",
+          "Scion",
+          "Shadow"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SupportGemPhysicalToLightning": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Scion",
+          "Shadow",
+          "Templar"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SkillGemPlagueBearer": {
+        "classes": [
+          "Duelist"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SupportGemPointBlank": {
+        "classes": [
+          "Duelist",
+          "Ranger",
+          "Scion",
+          "Shadow"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SupportGemPowerChargeOnCrit": {
         "classes": [
           "Ranger",
           "Scion",
@@ -3060,19 +3311,28 @@
         ],
         "npc": "Yeena"
       },
-      "Metadata/Items/Gems/SkillGemTempestShield": {
+      "Metadata/Items/Gems/SupportGemDeathmark": {
         "classes": [
-          "Duelist",
-          "Marauder",
           "Scion",
-          "Shadow",
           "Templar",
           "Witch"
         ],
         "npc": "Yeena"
       },
-      "Metadata/Items/Gems/SkillGemPurge": {
+      "Metadata/Items/Gems/SupportGemRage": {
         "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Scion",
+          "Shadow",
+          "Templar"
+        ],
+        "npc": "Yeena"
+      },
+      "Metadata/Items/Gems/SupportGemTrapAndMineDamage": {
+        "classes": [
+          "Ranger",
           "Scion",
           "Shadow",
           "Templar",
@@ -3081,6 +3341,48 @@
         "npc": "Yeena"
       }
     }
+  },
+  "a2q7": {
+    "id": "a2q7",
+    "name": "Deal with the Bandits",
+    "act": "2",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a2q1": {
+    "id": "a2q1",
+    "name": "The Bandit Lord Kraityn",
+    "act": "2",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a2q2": {
+    "id": "a2q2",
+    "name": "The Bandit Lord Alira",
+    "act": "2",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a2q3": {
+    "id": "a2q3",
+    "name": "The Bandit Lord Oak",
+    "act": "2",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a2q8": {
+    "id": "a2q8",
+    "name": "Shadow of the Vaal",
+    "act": "2",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a2q8a3": {
+    "id": "a2q8a3",
+    "name": "Shadow of the Vaal",
+    "act": "3",
+    "quest_rewards": {},
+    "vendor_rewards": {}
   },
   "a3q1": {
     "id": "a3q1",
@@ -3621,6 +3923,777 @@
         "npc": "Clarissa"
       },
       "Metadata/Items/Gems/SkillGemSpellDamageAura": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      }
+    }
+  },
+  "a3q2": {
+    "id": "a3q2",
+    "name": "Lost in Love",
+    "act": "3",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a3q11": {
+    "id": "a3q11",
+    "name": "Victario's Secrets",
+    "act": "3",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a3q3": {
+    "id": "a3q3",
+    "name": "The Gemling Queen",
+    "act": "3",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a3q4": {
+    "id": "a3q4",
+    "name": "The Ribbon Spool",
+    "act": "3",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a3q5": {
+    "id": "a3q5",
+    "name": "Fiery Dust",
+    "act": "3",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a3q8": {
+    "id": "a3q8",
+    "name": "Sever the Right Hand",
+    "act": "3",
+    "quest_rewards": {
+      "Metadata/Items/Gems/SkillGemAncestralWarchief": {
+        "classes": [
+          "Marauder"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemArmageddonBrand": {
+        "classes": [
+          "Templar"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemArtilleryBallista": {
+        "classes": [
+          "Ranger"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemBallLightning": {
+        "classes": [
+          "Witch",
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemBattlemagesCry": {
+        "classes": [
+          "Templar"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemChargedAttack": {
+        "classes": [
+          "Ranger",
+          "Shadow",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemBladefall": {
+        "classes": [
+          "Shadow",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemBladestorm": {
+        "classes": [
+          "Duelist"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemBlastRain": {
+        "classes": [
+          "Duelist",
+          "Ranger"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemBoneshatter": {
+        "classes": [
+          "Marauder"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemChargedDash": {
+        "classes": [
+          "Duelist",
+          "Ranger",
+          "Shadow",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemConsecratedPath": {
+        "classes": [
+          "Templar"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemCracklingLance": {
+        "classes": [
+          "Witch"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemCorpseEruption": {
+        "classes": [
+          "Witch",
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemCyclone": {
+        "classes": [
+          "Marauder",
+          "Duelist",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemDivineTempest": {
+        "classes": [
+          "Templar",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemDominatingBlow": {
+        "classes": [
+          "Templar"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemEarthquake": {
+        "classes": [
+          "Marauder"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemExplosiveConcoction": {
+        "classes": [
+          "Ranger"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemEyeOfWinter": {
+        "classes": [
+          "Witch"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemFirestorm": {
+        "classes": [
+          "Witch",
+          "Templar"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemFlameblast": {
+        "classes": [
+          "Witch",
+          "Templar",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemFlamethrowerTrap": {
+        "classes": [
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemGlacialCascade": {
+        "classes": [
+          "Witch"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemHexblast": {
+        "classes": [
+          "Shadow",
+          "Witch",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemIceCrash": {
+        "classes": [
+          "Templar",
+          "Marauder",
+          "Duelist"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemKineticBlast": {
+        "classes": [
+          "Witch"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemLancingSteel": {
+        "classes": [
+          "Duelist"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemLightningTowerTrap": {
+        "classes": [
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemPenanceBrand": {
+        "classes": [
+          "Templar"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemPestilentStrike": {
+        "classes": [
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemFireNovaMine": {
+        "classes": [
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemRageVortex": {
+        "classes": [
+          "Marauder"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemRaiseSpectre": {
+        "classes": [
+          "Witch"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemBloodreap": {
+        "classes": [
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemScourgeArrow": {
+        "classes": [
+          "Ranger"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemPhysCascadeTrap": {
+        "classes": [
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemShockNova": {
+        "classes": [
+          "Templar"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemShockwaveTotem": {
+        "classes": [
+          "Templar"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemSoulrend": {
+        "classes": [
+          "Witch",
+          "Shadow",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemThrownShieldProjectile": {
+        "classes": [
+          "Duelist"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemStormRain": {
+        "classes": [
+          "Ranger"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemStormBind": {
+        "classes": [
+          "Witch",
+          "Templar"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemSummonReaper": {
+        "classes": [
+          "Witch"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemTectonicSlam": {
+        "classes": [
+          "Marauder",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemTornadoShot": {
+        "classes": [
+          "Ranger",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Gems/SkillGemWildStrike": {
+        "classes": [
+          "Ranger"
+        ]
+      }
+    },
+    "vendor_rewards": {
+      "Metadata/Items/Gems/SkillGemAncestralWarchief": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemAnimateArmour": {
+        "classes": [],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemArmageddonBrand": {
+        "classes": [
+          "Scion",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemArtilleryBallista": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Scion",
+          "Shadow"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemBallLightning": {
+        "classes": [
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemBattlemagesCry": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemChargedAttack": {
+        "classes": [
+          "Duelist",
+          "Ranger",
+          "Scion",
+          "Shadow"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemBladefall": {
+        "classes": [
+          "Ranger",
+          "Scion",
+          "Shadow",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemBladestorm": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Scion"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemBlastRain": {
+        "classes": [
+          "Duelist",
+          "Ranger",
+          "Scion"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemBoneshatter": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemChargedDash": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Scion",
+          "Shadow",
+          "Templar"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemConsecratedPath": {
+        "classes": [
+          "Marauder",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemCracklingLance": {
+        "classes": [
+          "Shadow",
+          "Templar",
+          "Witch",
+          "Scion"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemCorpseEruption": {
+        "classes": [
+          "Ranger",
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemCyclone": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemDarkPact": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemDischarge": {
+        "classes": [],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemDivineTempest": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemDominatingBlow": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemEarthquake": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemExplosiveArrow": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemExplosiveConcoction": {
+        "classes": [
+          "Duelist",
+          "Shadow",
+          "Scion",
+          "Ranger"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemEyeOfWinter": {
+        "classes": [
+          "Templar",
+          "Shadow",
+          "Scion",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemFirestorm": {
+        "classes": [
+          "Shadow",
+          "Scion",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemFlameblast": {
+        "classes": [
+          "Marauder",
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemFlamethrowerTrap": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemGlacialCascade": {
+        "classes": [
+          "Shadow",
+          "Templar",
+          "Witch",
+          "Scion"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemHexblast": {
+        "classes": [
+          "Shadow",
+          "Templar",
+          "Witch",
+          "Scion"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemIceCrash": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Scion",
+          "Shadow",
+          "Templar"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemIceTrap": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemKineticBlast": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemLancingSteel": {
+        "classes": [
+          "Duelist",
+          "Ranger",
+          "Scion"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemLightningTowerTrap": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemPenanceBrand": {
+        "classes": [
+          "Scion",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemPestilentStrike": {
+        "classes": [
+          "Ranger",
+          "Scion",
+          "Shadow"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemFireNovaMine": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemRageVortex": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemRaiseSpectre": {
+        "classes": [
+          "Scion",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemBloodreap": {
+        "classes": [
+          "Marauder",
+          "Templar",
+          "Witch",
+          "Scion",
+          "Shadow"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemScourgeArrow": {
+        "classes": [
+          "Duelist",
+          "Ranger",
+          "Scion",
+          "Shadow"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemPhysCascadeTrap": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemShockNova": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemShockwaveTotem": {
+        "classes": [
+          "Marauder",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemSoulrend": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemThrownShieldProjectile": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Ranger",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Maramoa"
+      },
+      "Metadata/Items/Gems/SkillGemStormRain": {
+        "classes": [
+          "Duelist",
+          "Shadow",
+          "Scion",
+          "Ranger"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemStormBind": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemSummonReaper": {
+        "classes": [
+          "Witch",
+          "Templar",
+          "Scion"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemTectonicSlam": {
+        "classes": [
+          "Duelist",
+          "Marauder",
+          "Scion",
+          "Templar"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemTornadoShot": {
+        "classes": [
+          "Duelist",
+          "Ranger",
+          "Scion",
+          "Shadow"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemFrostBoltNova": {
+        "classes": [
+          "Scion",
+          "Shadow",
+          "Templar",
+          "Witch"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemWildStrike": {
+        "classes": [
+          "Ranger",
+          "Scion",
+          "Shadow"
+        ],
+        "npc": "Clarissa"
+      },
+      "Metadata/Items/Gems/SkillGemWinterOrb": {
         "classes": [
           "Scion",
           "Shadow",
@@ -5284,741 +6357,40 @@
       }
     }
   },
-  "a3q8": {
-    "id": "a3q8",
-    "name": "Sever the Right Hand",
+  "a3q13": {
+    "id": "a3q13",
+    "name": "A Swig of Hope",
     "act": "3",
-    "quest_rewards": {
-      "Metadata/Items/Gems/SkillGemAncestralWarchief": {
-        "classes": [
-          "Marauder"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemArmageddonBrand": {
-        "classes": [
-          "Templar"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemArtilleryBallista": {
-        "classes": [
-          "Ranger"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemBallLightning": {
-        "classes": [
-          "Witch",
-          "Shadow"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemBattlemagesCry": {
-        "classes": [
-          "Templar"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemChargedAttack": {
-        "classes": [
-          "Ranger",
-          "Shadow",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemBladefall": {
-        "classes": [
-          "Shadow",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemBladestorm": {
-        "classes": [
-          "Duelist"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemBlastRain": {
-        "classes": [
-          "Duelist",
-          "Ranger"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemBoneshatter": {
-        "classes": [
-          "Marauder"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemChargedDash": {
-        "classes": [
-          "Duelist",
-          "Ranger",
-          "Shadow",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemConsecratedPath": {
-        "classes": [
-          "Templar"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemCracklingLance": {
-        "classes": [
-          "Witch"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemCorpseEruption": {
-        "classes": [
-          "Witch",
-          "Shadow"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemCyclone": {
-        "classes": [
-          "Marauder",
-          "Duelist",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemDivineTempest": {
-        "classes": [
-          "Templar",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemDominatingBlow": {
-        "classes": [
-          "Templar"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemEarthquake": {
-        "classes": [
-          "Marauder"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemExplosiveConcoction": {
-        "classes": [
-          "Ranger"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemEyeOfWinter": {
-        "classes": [
-          "Witch"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemFirestorm": {
-        "classes": [
-          "Witch",
-          "Templar"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemFlameblast": {
-        "classes": [
-          "Witch",
-          "Templar",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemFlamethrowerTrap": {
-        "classes": [
-          "Shadow"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemGlacialCascade": {
-        "classes": [
-          "Witch"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemHexblast": {
-        "classes": [
-          "Shadow",
-          "Witch",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemIceCrash": {
-        "classes": [
-          "Templar",
-          "Marauder",
-          "Duelist"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemKineticBlast": {
-        "classes": [
-          "Witch"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemLancingSteel": {
-        "classes": [
-          "Duelist"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemLightningTowerTrap": {
-        "classes": [
-          "Shadow"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemPenanceBrand": {
-        "classes": [
-          "Templar"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemPestilentStrike": {
-        "classes": [
-          "Shadow"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemFireNovaMine": {
-        "classes": [
-          "Shadow"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemRageVortex": {
-        "classes": [
-          "Marauder"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemRaiseSpectre": {
-        "classes": [
-          "Witch"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemBloodreap": {
-        "classes": [
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemScourgeArrow": {
-        "classes": [
-          "Ranger"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemPhysCascadeTrap": {
-        "classes": [
-          "Shadow"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemShockNova": {
-        "classes": [
-          "Templar"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemShockwaveTotem": {
-        "classes": [
-          "Templar"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemSoulrend": {
-        "classes": [
-          "Witch",
-          "Shadow",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemThrownShieldProjectile": {
-        "classes": [
-          "Duelist"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemStormRain": {
-        "classes": [
-          "Ranger"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemStormBind": {
-        "classes": [
-          "Witch",
-          "Templar"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemSummonReaper": {
-        "classes": [
-          "Witch"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemTectonicSlam": {
-        "classes": [
-          "Marauder",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemTornadoShot": {
-        "classes": [
-          "Ranger",
-          "Scion"
-        ]
-      },
-      "Metadata/Items/Gems/SkillGemWildStrike": {
-        "classes": [
-          "Ranger"
-        ]
-      }
-    },
-    "vendor_rewards": {
-      "Metadata/Items/Gems/SkillGemAncestralWarchief": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemAnimateArmour": {
-        "classes": [],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemArmageddonBrand": {
-        "classes": [
-          "Scion",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemArtilleryBallista": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger",
-          "Scion",
-          "Shadow"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemBallLightning": {
-        "classes": [
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemBattlemagesCry": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemChargedAttack": {
-        "classes": [
-          "Duelist",
-          "Ranger",
-          "Scion",
-          "Shadow"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemBladefall": {
-        "classes": [
-          "Ranger",
-          "Scion",
-          "Shadow",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemBladestorm": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Scion"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemBlastRain": {
-        "classes": [
-          "Duelist",
-          "Ranger",
-          "Scion"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemBoneshatter": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemChargedDash": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger",
-          "Scion",
-          "Shadow",
-          "Templar"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemConsecratedPath": {
-        "classes": [
-          "Marauder",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemCracklingLance": {
-        "classes": [
-          "Shadow",
-          "Templar",
-          "Witch",
-          "Scion"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemCorpseEruption": {
-        "classes": [
-          "Ranger",
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemCyclone": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemDarkPact": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemDischarge": {
-        "classes": [],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemDivineTempest": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemDominatingBlow": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemEarthquake": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemExplosiveArrow": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemExplosiveConcoction": {
-        "classes": [
-          "Duelist",
-          "Shadow",
-          "Scion",
-          "Ranger"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemEyeOfWinter": {
-        "classes": [
-          "Templar",
-          "Shadow",
-          "Scion",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemFirestorm": {
-        "classes": [
-          "Shadow",
-          "Scion",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemFlameblast": {
-        "classes": [
-          "Marauder",
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemFlamethrowerTrap": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemGlacialCascade": {
-        "classes": [
-          "Shadow",
-          "Templar",
-          "Witch",
-          "Scion"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemHexblast": {
-        "classes": [
-          "Shadow",
-          "Templar",
-          "Witch",
-          "Scion"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemIceCrash": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger",
-          "Scion",
-          "Shadow",
-          "Templar"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemIceTrap": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemKineticBlast": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemLancingSteel": {
-        "classes": [
-          "Duelist",
-          "Ranger",
-          "Scion"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemLightningTowerTrap": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemPenanceBrand": {
-        "classes": [
-          "Scion",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemPestilentStrike": {
-        "classes": [
-          "Ranger",
-          "Scion",
-          "Shadow"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemFireNovaMine": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemRageVortex": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemRaiseSpectre": {
-        "classes": [
-          "Scion",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemBloodreap": {
-        "classes": [
-          "Marauder",
-          "Templar",
-          "Witch",
-          "Scion",
-          "Shadow"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemScourgeArrow": {
-        "classes": [
-          "Duelist",
-          "Ranger",
-          "Scion",
-          "Shadow"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemPhysCascadeTrap": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemShockNova": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemShockwaveTotem": {
-        "classes": [
-          "Marauder",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemSoulrend": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemThrownShieldProjectile": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Maramoa"
-      },
-      "Metadata/Items/Gems/SkillGemStormRain": {
-        "classes": [
-          "Duelist",
-          "Shadow",
-          "Scion",
-          "Ranger"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemStormBind": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemSummonReaper": {
-        "classes": [
-          "Witch",
-          "Templar",
-          "Scion"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemTectonicSlam": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemTornadoShot": {
-        "classes": [
-          "Duelist",
-          "Ranger",
-          "Scion",
-          "Shadow"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemFrostBoltNova": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemWildStrike": {
-        "classes": [
-          "Ranger",
-          "Scion",
-          "Shadow"
-        ],
-        "npc": "Clarissa"
-      },
-      "Metadata/Items/Gems/SkillGemWinterOrb": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Clarissa"
-      }
-    }
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a3q9": {
+    "id": "a3q9",
+    "name": "Piety's Pets",
+    "act": "3",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a3q10": {
+    "id": "a3q10",
+    "name": "The Sceptre of God",
+    "act": "3",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "d2c1": {
+    "id": "d2c1",
+    "name": "",
+    "act": "0",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "d2c2": {
+    "id": "d2c2",
+    "name": "",
+    "act": "0",
+    "quest_rewards": {},
+    "vendor_rewards": {}
   },
   "a4q1": {
     "id": "a4q1",
@@ -6663,216 +7035,117 @@
       }
     }
   },
-  "a2q9": {
-    "id": "a2q9",
-    "name": "The Root of the Problem",
-    "act": "2",
+  "a4q3": {
+    "id": "a4q3",
+    "name": "The King of Fury",
+    "act": "4",
     "quest_rewards": {},
-    "vendor_rewards": {
-      "Metadata/Items/Gems/SupportGemBloodlust": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger",
-          "Scion",
-          "Shadow",
-          "Templar"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SupportGemCloseCombat": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger",
-          "Scion",
-          "Shadow",
-          "Templar"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SupportGemColdToFire": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SupportGemControlledDestruction": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SupportGemCullingStrike": {
-        "classes": [],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SupportGemMeleeDamageOnFullLife": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SupportGemDeadlyAilments": {
-        "classes": [
-          "Duelist",
-          "Ranger",
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SupportGemWeaponElementalDamage": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger",
-          "Scion",
-          "Shadow",
-          "Templar"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SupportGemEnduranceChargeOnMeleeStun": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SupportGemFasterAttack": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger",
-          "Scion",
-          "Shadow",
-          "Templar"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SupportGemFasterCast": {
-        "classes": [
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SupportGemIronGrip": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SupportGemIronWill": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Scion",
-          "Templar"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SupportGemMinionSpeed": {
-        "classes": [
-          "Scion",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SupportGemNightblade": {
-        "classes": [
-          "Ranger",
-          "Scion",
-          "Shadow"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SupportGemPhysicalToLightning": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger",
-          "Scion",
-          "Shadow",
-          "Templar"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SkillGemPlagueBearer": {
-        "classes": [
-          "Duelist"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SupportGemPointBlank": {
-        "classes": [
-          "Duelist",
-          "Ranger",
-          "Scion",
-          "Shadow"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SupportGemPowerChargeOnCrit": {
-        "classes": [
-          "Ranger",
-          "Scion",
-          "Shadow",
-          "Witch"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SupportGemDeathmark": {
-        "classes": [
-          "Scion",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SupportGemRage": {
-        "classes": [
-          "Duelist",
-          "Marauder",
-          "Ranger",
-          "Scion",
-          "Shadow",
-          "Templar"
-        ],
-        "npc": "Yeena"
-      },
-      "Metadata/Items/Gems/SupportGemTrapAndMineDamage": {
-        "classes": [
-          "Ranger",
-          "Scion",
-          "Shadow",
-          "Templar",
-          "Witch"
-        ],
-        "npc": "Yeena"
-      }
-    }
+    "vendor_rewards": {}
+  },
+  "a4q4": {
+    "id": "a4q4",
+    "name": "The King of Desire",
+    "act": "4",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a4q5": {
+    "id": "a4q5",
+    "name": "Corpus Malachus",
+    "act": "4",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a4q6": {
+    "id": "a4q6",
+    "name": "An Indomitable Spirit",
+    "act": "4",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "bandit_respec": {
+    "id": "bandit_respec",
+    "name": "",
+    "act": "0",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a5q1a": {
+    "id": "a5q1a",
+    "name": "Return to Oriath",
+    "act": "4",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a5q1b": {
+    "id": "a5q1b",
+    "name": "Return to Oriath",
+    "act": "5",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a5q2": {
+    "id": "a5q2",
+    "name": "The Key to Freedom",
+    "act": "5",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a5q3": {
+    "id": "a5q3",
+    "name": "In Service to Science",
+    "act": "5",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a5q4": {
+    "id": "a5q4",
+    "name": "Death to Purity",
+    "act": "5",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a5q5": {
+    "id": "a5q5",
+    "name": "The King's Feast",
+    "act": "5",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a5q6": {
+    "id": "a5q6",
+    "name": "The Ravenous God",
+    "act": "5",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a5q7": {
+    "id": "a5q7",
+    "name": "Kitava's Torments",
+    "act": "5",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a6q1": {
+    "id": "a6q1",
+    "name": "The Brine King",
+    "act": "6",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a6q2": {
+    "id": "a6q2",
+    "name": "Essence of Umbra",
+    "act": "6",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a6q3": {
+    "id": "a6q3",
+    "name": "The Father of War",
+    "act": "6",
+    "quest_rewards": {},
+    "vendor_rewards": {}
   },
   "a6q4": {
     "id": "a6q4",
@@ -8445,5 +8718,362 @@
         "npc": "Lilly Roth"
       }
     }
+  },
+  "a6q5": {
+    "id": "a6q5",
+    "name": "Bestel's Epic",
+    "act": "6",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a6q6": {
+    "id": "a6q6",
+    "name": "The Puppet Mistress",
+    "act": "6",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a6q7": {
+    "id": "a6q7",
+    "name": "The Cloven One",
+    "act": "6",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a7q1": {
+    "id": "a7q1",
+    "name": "The Master of a Million Faces",
+    "act": "7",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a7q2": {
+    "id": "a7q2",
+    "name": "Essence of the Artist",
+    "act": "7",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a7q3": {
+    "id": "a7q3",
+    "name": "Web of Secrets",
+    "act": "7",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a7q4": {
+    "id": "a7q4",
+    "name": "The Mother of Spiders",
+    "act": "7",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a7q5": {
+    "id": "a7q5",
+    "name": "The Silver Locket",
+    "act": "7",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a7q6": {
+    "id": "a7q6",
+    "name": "Kishara's Star",
+    "act": "7",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a7q7": {
+    "id": "a7q7",
+    "name": "Lighting the Way",
+    "act": "7",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a7q8": {
+    "id": "a7q8",
+    "name": "In Memory of Greust",
+    "act": "7",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a7q9": {
+    "id": "a7q9",
+    "name": "Queen of Despair",
+    "act": "7",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a8q1": {
+    "id": "a8q1",
+    "name": "Essence of the Hag",
+    "act": "8",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a8q2": {
+    "id": "a8q2",
+    "name": "Lunar Eclipse",
+    "act": "8",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a8q3": {
+    "id": "a8q3",
+    "name": "Solar Eclipse",
+    "act": "8",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a8q4": {
+    "id": "a8q4",
+    "name": "Reflection of Terror",
+    "act": "8",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a8q5": {
+    "id": "a8q5",
+    "name": "The Wings of Vastiri",
+    "act": "8",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a8q6": {
+    "id": "a8q6",
+    "name": "Love is Dead",
+    "act": "8",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a8q7": {
+    "id": "a8q7",
+    "name": "The Gemling Legion",
+    "act": "8",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a9q1": {
+    "id": "a9q1",
+    "name": "Recurring Nightmare",
+    "act": "9",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a9q2": {
+    "id": "a9q2",
+    "name": "The Ruler of Highgate",
+    "act": "9",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a9q3": {
+    "id": "a9q3",
+    "name": "The Storm Blade",
+    "act": "9",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a9q4": {
+    "id": "a9q4",
+    "name": "Fastis Fortuna",
+    "act": "9",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a9q5": {
+    "id": "a9q5",
+    "name": "Queen of the Sands",
+    "act": "9",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a10q1": {
+    "id": "a10q1",
+    "name": "Safe Passage",
+    "act": "10",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a10q2": {
+    "id": "a10q2",
+    "name": "Death and Rebirth",
+    "act": "10",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a10q3": {
+    "id": "a10q3",
+    "name": "An End to Hunger",
+    "act": "10",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a10q4": {
+    "id": "a10q4",
+    "name": "No Love for Old Ghosts",
+    "act": "10",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a10q5": {
+    "id": "a10q5",
+    "name": "Map to Tsoatha",
+    "act": "10",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a10q6": {
+    "id": "a10q6",
+    "name": "Vilenta's Vengeance",
+    "act": "10",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a10q3a11": {
+    "id": "a10q3a11",
+    "name": "An End to Hunger",
+    "act": "11",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "A11q0": {
+    "id": "A11q0",
+    "name": "Toward the Future",
+    "act": "10",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "a11q1": {
+    "id": "a11q1",
+    "name": "A Call to Arms",
+    "act": "12",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "heist_intro": {
+    "id": "heist_intro",
+    "name": "The Rogue Harbour",
+    "act": "6",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "maven_atlas": {
+    "id": "maven_atlas",
+    "name": "The Maven",
+    "act": "12",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "maven_boss": {
+    "id": "maven_boss",
+    "name": "The Maven's Game",
+    "act": "12",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "uberelder": {
+    "id": "uberelder",
+    "name": "The Elder",
+    "act": "12",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "tangle": {
+    "id": "tangle",
+    "name": "The Eater of Worlds",
+    "act": "12",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "cleansing_fire": {
+    "id": "cleansing_fire",
+    "name": "The Searing Exarch",
+    "act": "12",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "ritual_tutorial": {
+    "id": "ritual_tutorial",
+    "name": "Paying Tribute",
+    "act": "1",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "trialmaster_tutorial": {
+    "id": "trialmaster_tutorial",
+    "name": "A Choice of Futures",
+    "act": "1",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "expedition_tutorial": {
+    "id": "expedition_tutorial",
+    "name": "Unearthing the Past",
+    "act": "6",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "expedition_tutorial2": {
+    "id": "expedition_tutorial2",
+    "name": "Explosive Archaeology",
+    "act": "6",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "expedition_mainquest": {
+    "id": "expedition_mainquest",
+    "name": "The Lost Expedition",
+    "act": "6",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "hellscape_tutorial1": {
+    "id": "hellscape_tutorial1",
+    "name": "A Glimpse Beyond",
+    "act": "1",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "hellscape_tutorial2": {
+    "id": "hellscape_tutorial2",
+    "name": "Thirst for Blood",
+    "act": "1",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "hellscape_tutorial3": {
+    "id": "hellscape_tutorial3",
+    "name": "Twisted Dreams",
+    "act": "11",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "hellscape_tutorial4": {
+    "id": "hellscape_tutorial4",
+    "name": "Altered Flesh",
+    "act": "11",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "kirac_atlas": {
+    "id": "kirac_atlas",
+    "name": "The Atlas of Worlds",
+    "act": "12",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "archnemesis_tutorial": {
+    "id": "archnemesis_tutorial",
+    "name": "Archnemesis",
+    "act": "1",
+    "quest_rewards": {},
+    "vendor_rewards": {}
+  },
+  "sentinel_tutorial": {
+    "id": "sentinel_tutorial",
+    "name": "Sentinel",
+    "act": "1",
+    "quest_rewards": {},
+    "vendor_rewards": {}
   }
 }

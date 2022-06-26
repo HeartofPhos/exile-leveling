@@ -73,12 +73,10 @@ export function EvaluateQuest(
   {
     if (action.length != 2) return ERROR_INVALID_FORMAT;
 
-    // TODO data incomplete
-    // const quest = state.quests[action[1]];
-    // if (!quest) return false;
     const questId = action[1];
     state.recentQuests.push(questId);
     const quest = lookup.quests[questId];
+    if (!quest) return "invalid quest id";
 
     const additionalSteps: Step[] = [];
     if (quest) {

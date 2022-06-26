@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { Action, RouteLookup } from "../../../../common/routes";
-import { Area, Gem } from "../../../../common/types";
+import { Area, Gem, Quest } from "../../../../common/types";
 import "./Action.css";
 
 interface ActionProps {
@@ -16,11 +16,11 @@ function AreaComponent(area: Area) {
   return <span className={classNames("area")}>{area.name}</span>;
 }
 
-function QuestComponent(questName: string) {
+function QuestComponent(quest: Quest) {
   return (
     <>
       <img src="/images/quest.png" className={classNames("icon")} />
-      <span className={classNames("quest")}> {questName}</span>
+      <span className={classNames("quest")}> {quest.name}</span>
     </>
   );
 }
@@ -138,8 +138,7 @@ export function ExileAction({ action, lookup }: ActionProps) {
     case "enter":
       return AreaComponent(lookup.areas[action.areaId]);
     case "quest": {
-      const quest = lookup.quests[action.questId];
-      return QuestComponent(quest?.name || action.questId);
+      return QuestComponent(lookup.quests[action.questId]);
     }
     case "quest_reward":
       return QuestRewardComponent(lookup.gems[action.gemId]);
