@@ -12,7 +12,7 @@ Hand in {quest|a3q1} #Lost in Love
 {vendor}
 ➞ {enter|1_3_2} #The Slums
 ➞ {enter|1_3_10_1} #The Sewers
-Find 3x{quest_text|Platinum Bust}, 1 before waypoint, 2 after
+Find 3x{quest_text|Platinum Bust}, 1 before {waypoint}, 2 after
 Get {get_waypoint}
 ➞ {enter|1_3_5} #The Marketplace
 Get {get_waypoint}
