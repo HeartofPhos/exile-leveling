@@ -59,3 +59,18 @@
   width: auto;
   height: 1rem;
 }
+
+.currency-block {
+  vertical-align: middle;
+  position: relative;
+  display: inline-block;
+  width: 1.75rem;
+}
+
+.currency {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  width: 1.5rem;
+  /* height: auto; */
+}

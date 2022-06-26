@@ -63,7 +63,12 @@ function VendorRewardComponent(gem: Gem) {
       <span>Buy </span>
       <span className={classNames(`default`)}>{gem.name}</span>
       <span> for </span>
-      <img src={`/images/${gem.cost}.png`} className={classNames("icon")} />
+      <div className={classNames("currency-block")}>
+        <img
+          src={`/images/${gem.cost}.png`}
+          className={classNames("currency")}
+        />
+      </div>
     </>
   );
 }

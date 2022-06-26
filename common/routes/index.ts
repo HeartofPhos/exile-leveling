@@ -480,6 +480,10 @@ export function initializeRouteLookup(
       "Metadata/Items/Gems/SupportGemAddedFireDamage",
       "Metadata/Items/Gems/SkillGemLeapSlam",
       "Metadata/Items/Gems/SkillGemPrecision",
+      "Metadata/Items/Gems/SupportGemFortify",
+      "Metadata/Items/Gems/SkillGemFrostShield",
+      "Metadata/Items/Gems/SupportGemGreaterVolley",
+      "Metadata/Items/Gems/SupportGemGreaterMultipleProjectiles",
     ],
   };
   for (const id in routeLookup.areas) {
