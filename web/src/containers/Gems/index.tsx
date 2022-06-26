@@ -68,11 +68,11 @@ export function Gems() {
     <div>
       {gemIds &&
         gems &&
-        gemIds.map((x) => (
-          <>
+        gemIds.map((x, i) => (
+          <span key={i}>
             {getGem(gems, x).name}
             <br />
-          </>
+          </span>
         ))}
     </div>
   );
