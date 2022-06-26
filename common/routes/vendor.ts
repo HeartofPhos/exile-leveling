@@ -11,6 +11,7 @@ import { Gem } from "../types";
 export interface VendorAction {
   type: "vendor";
 }
+
 export interface VendorRewardAction {
   type: "vendor_reward";
   gemId: Gem["id"];
@@ -28,10 +29,10 @@ export function EvaluateVendor(
     const quest = lookup.quests[questId];
     if (!quest) continue;
 
-    for (const gem of lookup.requiredGems) {
-      if (state.acquiredGems.has(gem)) continue;
+    for (const gemId of lookup.requiredGems) {
+      if (state.acquiredGems.has(gemId)) continue;
 
-      const reward = quest.vendor_rewards[gem];
+      const reward = quest.vendor_rewards[gemId];
       if (!reward) continue;
 
       const validClass =
@@ -39,8 +40,13 @@ export function EvaluateVendor(
         reward.classes.some((x) => x == lookup.class);
 
       if (validClass) {
-        state.acquiredGems.add(gem);
-        steps.push([{ type: "vendor_reward", gemId: gem }]);
+        state.acquiredGems.add(gemId);
+        steps.push([
+          {
+            type: "vendor_reward",
+            gemId: gemId,
+          },
+        ]);
       }
     }
   }

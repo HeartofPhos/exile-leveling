@@ -2,6 +2,14 @@ import { cargoQuery } from "./wiki";
 import { Area, Gem, Monster, Quest } from "../../common/types";
 import fetch from "cross-fetch";
 
+function getGemCost(required_level: number) {
+  if (required_level < 8) return "CurrencyIdentification";
+  if (required_level < 16) return "CurrencyUpgradeToMagic";
+  if (required_level < 28) return "CurrencyRerollMagic";
+  if (required_level < 38) return "CurrencyUpgradeRandomly";
+  return "CurrencyUpgradeToRare";
+}
+
 export async function getGems() {
   const queryResult = await cargoQuery({
     tables: ["items", "skill_gems"],
@@ -20,11 +28,14 @@ export async function getGems() {
 
   const result: Record<Gem["id"], Gem> = {};
   for (const item of queryResult) {
+    const required_level = Number(item.required_level);
+
     result[item.metadata_id] = {
       id: item.metadata_id,
       name: item.page,
       primary_attribute: item.primary_attribute,
-      required_level: Number(item.required_level),
+      required_level: required_level,
+      cost: getGemCost(required_level),
     };
   }
 

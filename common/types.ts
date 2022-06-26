@@ -3,6 +3,7 @@ export interface Gem {
   name: string;
   primary_attribute: string;
   required_level: number;
+  cost: string;
 }
 
 export interface QuestReward {
