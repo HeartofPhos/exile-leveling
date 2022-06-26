@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { Action, RouteLookup } from "../../../../common/routes";
 import { Area, Gem, Quest } from "../../../../common/types";
-import "./Action.css";
+import "./ExileAction.css";
 
 interface ActionProps {
   action: Action;
