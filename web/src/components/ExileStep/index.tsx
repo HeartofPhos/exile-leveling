@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { useState } from "react";
-import { RouteLookup, Step } from "../../../../common/route";
+import { RouteLookup, Step } from "../../../../common/routes";
 import { ExileAction } from "../ExileAction";
 import "./ExileStep.css";
 

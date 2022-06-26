@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Route, RouteLookup } from "../../../../common/route";
+import { Route, RouteLookup } from "../../../../common/routes";
 import { ExileStep } from "../ExileStep";
 import "./Route.css";
 
