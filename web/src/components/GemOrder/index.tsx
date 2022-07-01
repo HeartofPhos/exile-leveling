@@ -16,7 +16,7 @@ export function GemOrder({
 }: GemOrderProps) {
   return (
     <div className={classNames("gem-order")}>
-      {text}
+      <span className={classNames("gem-text")}>{text}</span>
       <div className={classNames("order-button-group")}>
         <img
           onClick={onMoveTop}
