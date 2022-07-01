@@ -5,8 +5,8 @@
 }
 
 .order-button-group {
+  flex-shrink: 0;
   margin-left: auto;
-  display: flex;
 }
 
 .order-button {
