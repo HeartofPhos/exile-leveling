@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { Gem } from "../../../../common/types";
-import "./GemOrder.css";
+import styles from "./GemOrder.module.css";
 
 interface GemOrderProps {
   gem: Gem;
@@ -16,23 +16,23 @@ export function GemOrder({
   onMoveDown,
 }: GemOrderProps) {
   return (
-    <div className={classNames("gem-order")}>
+    <div className={classNames(styles.gemOrder)}>
       <span className={classNames(`gem-${gem.primary_attribute}`)}>⏺ </span>
-      <span className={classNames("gem-text")}>{gem.name}</span>
-      <div className={classNames("order-button-group")}>
+      <span>{gem.name}</span>
+      <div className={classNames(styles.orderButtonGroup)}>
         <img
           onClick={onMoveTop}
-          className={classNames("order-button")}
+          className={classNames(styles.orderButton)}
           src="/images/arrow-double.svg"
         />
         <img
           onClick={onMoveUp}
-          className={classNames("order-button")}
+          className={classNames(styles.orderButton)}
           src="/images/arrow.svg"
         />
         <img
           onClick={onMoveDown}
-          className={classNames("order-button", "order-button-flip")}
+          className={classNames(styles.orderButton, styles.orderButtonFlip)}
           src="/images/arrow.svg"
         />
       </div>

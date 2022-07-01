@@ -1,21 +1,21 @@
-.gem-order {
+.gemOrder {
   display: flex;
   white-space: pre-wrap;
   width: 100%;
 }
 
-.order-button-group {
+.orderButtonGroup {
   flex-shrink: 0;
   margin-left: auto;
 }
 
-.order-button {
+.orderButton {
   width: auto;
   height: 1rem;
   align-self: center;
   margin-left: 0.3rem;
 }
 
-.order-button-flip {
+.orderButtonFlip {
   transform: scaleY(-1);
 }

@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { Action, RouteLookup } from "../../../../common/routes";
 import { Area, Gem, Quest } from "../../../../common/types";
-import "./ExileAction.css";
+import styles from "./ExileAction.module.css";
 
 interface ActionProps {
   action: Action;
@@ -9,18 +9,18 @@ interface ActionProps {
 }
 
 function EnemyComponent(enemy: string) {
-  return <span className={classNames("enemy")}>{enemy}</span>;
+  return <span className={classNames(styles.enemy)}>{enemy}</span>;
 }
 
 function AreaComponent(area: Area) {
-  return <span className={classNames("area")}>{area.name}</span>;
+  return <span className={classNames(styles.area)}>{area.name}</span>;
 }
 
 function QuestComponent(quest: Quest) {
   return (
     <>
-      <img src="/images/quest.png" className={classNames("icon")} />
-      <span className={classNames("quest")}> {quest.name}</span>
+      <img src="/images/quest.png" className={classNames(styles.icon)} />
+      <span className={classNames(styles.quest)}> {quest.name}</span>
     </>
   );
 }
@@ -30,20 +30,20 @@ function QuestRewardComponent(gem: Gem) {
     <>
       <span className={classNames(`gem-${gem.primary_attribute}`)}>⏺ </span>
       <span>Take </span>
-      <span className={classNames(`default`)}>{gem.name}</span>
+      <span className={classNames(styles.default)}>{gem.name}</span>
     </>
   );
 }
 
 function QuestTextComponent(text: string) {
-  return <span className={classNames("quest_text")}>{text}</span>;
+  return <span className={classNames(styles.questText)}>{text}</span>;
 }
 
 function WaypointComponent() {
   return (
     <>
-      <img src="/images/waypoint.png" className={classNames("icon")} />
-      <span className={classNames("waypoint")}>Waypoint</span>
+      <img src="/images/waypoint.png" className={classNames(styles.icon)} />
+      <span className={classNames(styles.waypoint)}>Waypoint</span>
     </>
   );
 }
@@ -51,7 +51,7 @@ function WaypointComponent() {
 function VendorComponent() {
   return (
     <>
-      <span className={classNames("default")}>Vendor</span>
+      <span className={classNames(styles.default)}>Vendor</span>
     </>
   );
 }
@@ -61,12 +61,12 @@ function VendorRewardComponent(gem: Gem) {
     <>
       <span className={classNames(`gem-${gem.primary_attribute}`)}>⏺ </span>
       <span>Buy </span>
-      <span className={classNames(`default`)}>{gem.name}</span>
+      <span className={classNames(styles.default)}>{gem.name}</span>
       <span> for </span>
-      <div className={classNames("currency-block")}>
+      <div className={classNames(styles.currencyBlock)}>
         <img
           src={`/images/${gem.cost}.png`}
-          className={classNames("currency")}
+          className={classNames(styles.currency)}
         />
       </div>
     </>
@@ -76,8 +76,8 @@ function VendorRewardComponent(gem: Gem) {
 function TrialComponent() {
   return (
     <>
-      <img src="/images/trial.png" className={classNames("icon")} />
-      <span className={classNames("trial")}>Trial of Ascendancy</span>
+      <img src="/images/trial.png" className={classNames(styles.icon)} />
+      <span className={classNames(styles.trial)}>Trial of Ascendancy</span>
     </>
   );
 }
@@ -85,7 +85,7 @@ function TrialComponent() {
 function TownComponent() {
   return (
     <>
-      <span className={classNames("default")}>Logout</span>
+      <span className={classNames(styles.default)}>Logout</span>
     </>
   );
 }
@@ -93,8 +93,8 @@ function TownComponent() {
 function PortalComponent() {
   return (
     <>
-      <img src="/images/portal.png" className={classNames("icon")} />
-      <span className={classNames("portal")}>Portal</span>
+      <img src="/images/portal.png" className={classNames(styles.icon)} />
+      <span className={classNames(styles.portal)}>Portal</span>
     </>
   );
 }
@@ -115,14 +115,14 @@ function DirectionComponent(dirIndex: number) {
 }
 
 function NpcComponent(npcName: string) {
-  return <span className={classNames("default")}>{npcName}</span>;
+  return <span className={classNames(styles.default)}>{npcName}</span>;
 }
 
 function CraftingComponent() {
   return (
     <>
-      <img src="/images/crafting.png" className={classNames("icon")} />
-      <span className={classNames("default")}>Crafting Recipe</span>
+      <img src="/images/crafting.png" className={classNames(styles.icon)} />
+      <span className={classNames(styles.default)}>Crafting Recipe</span>
     </>
   );
 }
@@ -130,8 +130,8 @@ function CraftingComponent() {
 function AscendComponent() {
   return (
     <>
-      <img src="/images/trial.png" className={classNames("icon")} />
-      <span className={classNames("trial")}>Ascend</span>
+      <img src="/images/trial.png" className={classNames(styles.icon)} />
+      <span className={classNames(styles.trial)}>Ascend</span>
     </>
   );
 }

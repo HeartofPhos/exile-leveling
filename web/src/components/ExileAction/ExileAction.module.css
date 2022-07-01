@@ -18,7 +18,7 @@
   font-weight: bold;
 }
 
-.quest_text {
+.questText {
   color: lime;
   font-weight: bold;
 }
@@ -45,7 +45,7 @@
   height: 1rem;
 }
 
-.currency-block {
+.currencyBlock {
   vertical-align: middle;
   position: relative;
   display: inline-block;

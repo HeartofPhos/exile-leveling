@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { ReactNode } from "react";
-import "./ExileList.css";
+import styles from "./ExileList.module.css";
 
 interface RouteProps {
   header: string;
@@ -28,7 +28,7 @@ export function ExileList({ header, items }: RouteProps) {
       >
         {header}
       </span>
-      <ol className={classNames("route", "px-2", "mb-4")}>
+      <ol className={classNames(styles.list, "px-2", "mb-4")}>
         {items && items.map((item, i) => <li key={i}>{item}</li>)}
       </ol>
     </div>
