@@ -71,12 +71,8 @@ export function Gems() {
     <ExileList
       header="Gems"
       items={
-        gemIds &&
-        gems &&
-        gemIds.map((x) => <GemOrder text={getGem(gems, x).name} />)
+        gemIds && gems && gemIds.map((x) => <GemOrder gem={getGem(gems, x)} />)
       }
     />
   );
-
-  return <div></div>;
 }

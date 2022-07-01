@@ -1,11 +1,27 @@
+.gem-order {
+  display: flex;
+  white-space: pre-wrap;
+  width: 100%;
+}
+
 .gem-text {
   color: white;
   font-weight: bold;
 }
 
-.gem-order {
-  display: flex;
-  width: 100%;
+.gem-strength {
+  color: #ff3333;
+  font-weight: bold;
+}
+
+.gem-dexterity {
+  color: #33ff33;
+  font-weight: bold;
+}
+
+.gem-intelligence {
+  color: #3333ff;
+  font-weight: bold;
 }
 
 .order-button-group {
