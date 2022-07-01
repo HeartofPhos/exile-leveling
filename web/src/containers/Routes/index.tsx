@@ -6,7 +6,8 @@ import {
   Route,
   RouteLookup,
 } from "../../../../common/routes";
-import { ExileRoute } from "../../components/ExileRoute";
+import { ExileList } from "../../components/ExileList";
+import { ExileStep } from "../../components/ExileStep";
 
 const ROUTE_PATHS = [
   "/routes/act-1.txt",
@@ -56,17 +57,17 @@ function RoutesContainer() {
   }, []);
 
   return (
-    <div className="App">
+    <>
       {routeData &&
         routeData.routes.map((route, i) => (
-          <ExileRoute
-            key={i}
+          <ExileList
             header={`--== Act ${i + 1} ==--`}
-            route={route}
-            lookup={routeData.lookup}
+            items={route.map((step, i) => (
+              <ExileStep step={step} lookup={routeData.lookup} />
+            ))}
           />
         ))}
-    </div>
+    </>
   );
 }
 
