@@ -17,9 +17,23 @@ export function GemOrder({
   return (
     <div className={classNames("gem-order")}>
       {text}
-      <div className={classNames("order-button")} onClick={onMoveTop}>Top</div>
-      <div className={classNames("order-button")} onClick={onMoveUp}>Up</div>
-      <div className={classNames("order-button")} onClick={onMoveDown}>Down</div>
+      <div className={classNames("order-button-group")}>
+        <img
+          onClick={onMoveTop}
+          className={classNames("order-button")}
+          src="/images/arrow-double.svg"
+        />
+        <img
+          onClick={onMoveUp}
+          className={classNames("order-button")}
+          src="/images/arrow.svg"
+        />
+        <img
+          onClick={onMoveDown}
+          className={classNames("order-button", "order-button-flip")}
+          src="/images/arrow.svg"
+        />
+      </div>
     </div>
   );
 }

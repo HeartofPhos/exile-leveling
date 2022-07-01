@@ -1,7 +1,20 @@
 .gem-order {
   display: flex;
+  width: 100%;
+}
+
+.order-button-group {
+  margin-left: auto;
+  display: flex;
 }
 
 .order-button {
-  margin-left: 0.1rem;
+  width: auto;
+  height: 1rem;
+  align-self: center;
+  margin-left: 0.3rem;
+}
+
+.order-button-flip {
+  transform: scaleY(-1);
 }
