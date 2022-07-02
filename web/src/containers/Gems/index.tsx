@@ -51,7 +51,10 @@ export function Gems() {
 
   useEffect(() => {
     const fn = async () => {
-      const gems = await fetch("/data/gems.json").then((x) => x.json());
+      const gems = await fetch(
+        `${import.meta.env.BASE_URL}/data/gems.json`
+      ).then((x) => x.json());
+
       setGems(gems);
 
       const doc = decodePathOfBuildingCode(POB_CODE);

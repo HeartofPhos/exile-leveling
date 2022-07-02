@@ -10,11 +10,11 @@ import { ExileList } from "../../components/ExileList";
 import { ExileStep } from "../../components/ExileStep";
 
 const ROUTE_PATHS = [
-  "/routes/act-1.txt",
-  "/routes/act-2.txt",
-  "/routes/act-3.txt",
-  "/routes/act-4.txt",
-  "/routes/act-5.txt",
+  `${import.meta.env.BASE_URL}/routes/act-1.txt`,
+  `${import.meta.env.BASE_URL}/routes/act-2.txt`,
+  `${import.meta.env.BASE_URL}/routes/act-3.txt`,
+  `${import.meta.env.BASE_URL}/routes/act-4.txt`,
+  `${import.meta.env.BASE_URL}/routes/act-5.txt`,
 ];
 
 interface RouteData {
@@ -27,12 +27,22 @@ function RoutesContainer() {
 
   useEffect(() => {
     const fn = async () => {
-      const quests = await fetch("/data/quests.json").then((x) => x.json());
-      const areas = await fetch("/data/areas.json").then((x) => x.json());
-      const bossWaypoints = await fetch("/data/boss-waypoints.json").then((x) =>
-        x.json()
-      );
-      const gems = await fetch("/data/gems.json").then((x) => x.json());
+      const quests = await fetch(
+        `${import.meta.env.BASE_URL}/data/quests.json`
+      ).then((x) => x.json());
+
+      const areas = await fetch(
+        `${import.meta.env.BASE_URL}/data/areas.json`
+      ).then((x) => x.json());
+
+      const bossWaypoints = await fetch(
+        `${import.meta.env.BASE_URL}/data/boss-waypoints.json`
+      ).then((x) => x.json());
+
+      const gems = await fetch(
+        `${import.meta.env.BASE_URL}/data/gems.json`
+      ).then((x) => x.json());
+
       const routeLookup = initializeRouteLookup(
         quests,
         areas,
