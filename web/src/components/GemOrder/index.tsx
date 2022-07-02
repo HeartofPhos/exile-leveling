@@ -24,20 +24,27 @@ export function GemOrder({
       <span className={classNames(`gem-${gem.primary_attribute}`)}>⏺ </span>
       <span>{gem.name}</span>
       <div className={classNames(styles.orderButtonGroup)}>
-        <div className={classNames(styles.orderButton, "px-1")}>
-          <img onClick={onMoveTop} src={getImageUrl("arrow-double.svg")} />
-        </div>
-        <div className={classNames(styles.orderButton, "px-1")}>
-          <img onClick={onMoveUp} src={getImageUrl("arrow.svg")} />
+        <div
+          onClick={onMoveTop}
+          className={classNames(styles.orderButton, "px-1")}
+        >
+          <img src={getImageUrl("arrow-double.svg")} />
         </div>
         <div
+          onClick={onMoveUp}
+          className={classNames(styles.orderButton, "px-1")}
+        >
+          <img src={getImageUrl("arrow.svg")} />
+        </div>
+        <div
+          onClick={onMoveDown}
           className={classNames(
             styles.orderButton,
             styles.orderButtonFlip,
             "px-1"
           )}
         >
-          <img onClick={onMoveDown} src={getImageUrl("arrow.svg")} />
+          <img src={getImageUrl("arrow.svg")} />
         </div>
       </div>
     </div>
