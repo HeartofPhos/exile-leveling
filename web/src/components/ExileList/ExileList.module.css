@@ -25,12 +25,11 @@
   border-bottom: 0;
 }
 
-.list > li > * {
+.list > li {
   padding: 0.5rem 0;
 }
 
 .list > li:before {
-  padding: 0.5rem 0;
   margin-right: 0.3rem;
   font-weight: bold;
   counter-increment: list-item;
