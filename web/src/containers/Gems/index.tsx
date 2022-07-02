@@ -42,9 +42,7 @@ const POB_GEM_ID_REMAP: Record<string, string> = {
 
 function getGem(gemId: string) {
   const remap = POB_GEM_ID_REMAP[gemId];
-  //@ts-expect-error
   if (remap) return gems[remap];
-  //@ts-expect-error
   return gems[gemId];
 }
 
