@@ -39,7 +39,7 @@ function QuestRewardComponent(gem: Gem) {
         color={gemColours[gem.primary_attribute]}
         className={classNames(styles.icon)}
       />
-      <span>Take </span>
+      <span> Take </span>
       <span className={classNames(styles.default)}>{gem.name}</span>
     </>
   );
@@ -76,7 +76,7 @@ function VendorRewardComponent(gem: Gem) {
         color={gemColours[gem.primary_attribute]}
         className={classNames(styles.icon)}
       />
-      <span>Buy </span>
+      <span> Buy </span>
       <span className={classNames(styles.default)}>{gem.name}</span>
       <span> for </span>
       <div className={classNames(styles.currencyBlock)}>
