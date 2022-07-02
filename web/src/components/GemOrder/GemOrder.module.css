@@ -5,17 +5,26 @@
 }
 
 .orderButtonGroup {
+  display: flex;
   flex-shrink: 0;
   margin-left: auto;
 }
 
 .orderButton {
+  border-radius: 0.25rem;
+  padding: 0 0.3rem
+}
+
+.orderButton:hover {
+  background-color: #4e4e4e;
+}
+
+.orderButton > img {
   width: auto;
   height: 1rem;
   align-self: center;
-  margin-left: 0.3rem;
 }
 
-.orderButtonFlip {
+.orderButtonFlip > img {
   transform: scaleY(-1);
 }

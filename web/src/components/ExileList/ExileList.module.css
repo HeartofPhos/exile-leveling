@@ -6,8 +6,19 @@
 }
 
 .list > li {
+  box-sizing: border-box;
   display: flex;
+  border-top: 0.1rem solid #505050;
   border-bottom: 0.1rem solid #505050;
+}
+
+.list > li:hover {
+  border-top: 0.1rem solid #d6d6d6;
+  border-bottom: 0.1rem solid #d6d6d6;
+}
+
+.list > li:first-child {
+  border-top: 0;
 }
 
 .list > li:last-child {
