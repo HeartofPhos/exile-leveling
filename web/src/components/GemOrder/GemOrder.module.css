@@ -5,26 +5,33 @@
   user-select: none;
 }
 
+.icon {
+  vertical-align: sub;
+  object-fit: contain;
+  width: auto;
+  height: 1rem;
+}
+
 .orderButtonGroup {
   display: flex;
+  align-items: center;
   flex-shrink: 0;
   margin-left: auto;
 }
 
 .orderButton {
   border-radius: 0.25rem;
+  position: relative;
+  width: 1.5rem;
 }
 
 .orderButton:hover {
   background-color: #4e4e4e;
 }
 
-.orderButton > img {
-  width: auto;
-  height: 1rem;
-  align-self: center;
-}
-
-.orderButtonFlip > img {
-  transform: scaleY(-1);
+.orderButton > * {
+  position: absolute;
+  transform: translate(0, -50%);
+  width: 100%;
+  height: auto;
 }

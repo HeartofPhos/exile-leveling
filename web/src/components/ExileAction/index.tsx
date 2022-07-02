@@ -1,7 +1,10 @@
 import classNames from "classnames";
 import { Action, RouteLookup } from "../../../../common/routes";
 import { Area, Gem, Quest } from "../../../../common/types";
+import { MdCircle } from "react-icons/md";
 import styles from "./ExileAction.module.css";
+
+import gemColours from "../../data/gem-colours.json";
 
 interface ActionProps {
   action: Action;
@@ -32,7 +35,10 @@ function QuestComponent(quest: Quest) {
 function QuestRewardComponent(gem: Gem) {
   return (
     <>
-      <span className={classNames(`gem-${gem.primary_attribute}`)}>⏺ </span>
+      <MdCircle
+        color={gemColours[gem.primary_attribute]}
+        className={classNames(styles.icon)}
+      />
       <span>Take </span>
       <span className={classNames(styles.default)}>{gem.name}</span>
     </>
@@ -46,7 +52,10 @@ function QuestTextComponent(text: string) {
 function WaypointComponent() {
   return (
     <>
-      <img src={getImageUrl("waypoint.png")} className={classNames(styles.icon)} />
+      <img
+        src={getImageUrl("waypoint.png")}
+        className={classNames(styles.icon)}
+      />
       <span className={classNames(styles.waypoint)}>Waypoint</span>
     </>
   );
@@ -63,15 +72,15 @@ function VendorComponent() {
 function VendorRewardComponent(gem: Gem) {
   return (
     <>
-      <span className={classNames(`gem-${gem.primary_attribute}`)}>⏺ </span>
+      <MdCircle
+        color={gemColours[gem.primary_attribute]}
+        className={classNames(styles.icon)}
+      />
       <span>Buy </span>
       <span className={classNames(styles.default)}>{gem.name}</span>
       <span> for </span>
       <div className={classNames(styles.currencyBlock)}>
-        <img
-          src={getImageUrl(`${gem.cost}.png`)}
-          className={classNames(styles.currency)}
-        />
+        <img src={getImageUrl(`${gem.cost}.png`)} />
       </div>
     </>
   );
@@ -97,7 +106,10 @@ function TownComponent() {
 function PortalComponent() {
   return (
     <>
-      <img src={getImageUrl("portal.png")} className={classNames(styles.icon)} />
+      <img
+        src={getImageUrl("portal.png")}
+        className={classNames(styles.icon)}
+      />
       <span className={classNames(styles.portal)}>Portal</span>
     </>
   );
@@ -125,7 +137,10 @@ function NpcComponent(npcName: string) {
 function CraftingComponent() {
   return (
     <>
-      <img src={getImageUrl("crafting.png")} className={classNames(styles.icon)} />
+      <img
+        src={getImageUrl("crafting.png")}
+        className={classNames(styles.icon)}
+      />
       <span className={classNames(styles.default)}>Crafting Recipe</span>
     </>
   );

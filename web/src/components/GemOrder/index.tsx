@@ -1,10 +1,10 @@
 import classNames from "classnames";
 import { Gem } from "../../../../common/types";
+import { HiChevronDoubleUp, HiChevronDown, HiChevronUp } from "react-icons/hi";
+import { MdCircle } from "react-icons/md";
 import styles from "./GemOrder.module.css";
 
-function getImageUrl(path: string) {
-  return new URL(`./images/${path}`, import.meta.url).href;
-}
+import gemColours from "../../data/gem-colours.json";
 
 interface GemOrderProps {
   gem: Gem;
@@ -21,30 +21,31 @@ export function GemOrder({
 }: GemOrderProps) {
   return (
     <div className={classNames(styles.gemOrder)}>
-      <span className={classNames(`gem-${gem.primary_attribute}`)}>⏺ </span>
-      <span>{gem.name}</span>
+      <div>
+        <MdCircle
+          color={gemColours[gem.primary_attribute]}
+          className={classNames(styles.icon)}
+        />
+        <span>{gem.name}</span>
+      </div>
       <div className={classNames(styles.orderButtonGroup)}>
         <div
           onClick={onMoveTop}
           className={classNames(styles.orderButton, "px-1")}
         >
-          <img src={getImageUrl("arrow-double.svg")} />
+          <HiChevronDoubleUp />
         </div>
         <div
           onClick={onMoveUp}
           className={classNames(styles.orderButton, "px-1")}
         >
-          <img src={getImageUrl("arrow.svg")} />
+          <HiChevronUp />
         </div>
         <div
           onClick={onMoveDown}
-          className={classNames(
-            styles.orderButton,
-            styles.orderButtonFlip,
-            "px-1"
-          )}
+          className={classNames(styles.orderButton, "px-1")}
         >
-          <img src={getImageUrl("arrow.svg")} />
+          <HiChevronDown />
         </div>
       </div>
     </div>

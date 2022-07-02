@@ -39,7 +39,7 @@
 }
 
 .icon {
-  vertical-align: middle;
+  vertical-align: sub;
   object-fit: contain;
   width: auto;
   height: 1rem;
@@ -52,7 +52,7 @@
   width: 1.5rem;
 }
 
-.currency {
+.currencyBlock > * {
   position: absolute;
   transform: translate(0, -50%);
   width: 100%;
