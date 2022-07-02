@@ -26,7 +26,7 @@ export interface RouteLookup {
   quests: Record<string, Quest>;
   areas: Record<string, Area>;
   towns: Record<Area["act"], Area["id"]>;
-  bossWaypoints: Record<Monster["name"], Area["id"]>;
+  bossWaypoints: Record<Monster["name"], Area["id"][]>;
   gems: Record<string, Gem>;
   class: CharacterClass;
   requiredGems: Gem["id"][];
