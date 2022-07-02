@@ -47,7 +47,7 @@ function getGem(gems: Record<Gem["id"], Gem>, gemId: string) {
 
 export function Gems() {
   const [gems, setGems] = useState<Record<Gem["id"], Gem>>();
-  const [gemIds, setGemIds] = useState<Gem["id"][]>();
+  const [buildGemIds, setBuildGemIds] = useState<Gem["id"][]>();
 
   useEffect(() => {
     const fn = async () => {
@@ -61,7 +61,7 @@ export function Gems() {
         .map((x) => x.attributes.getNamedItem("gemId")!.value)
         .filter((v, i, a) => a.indexOf(v) === i);
 
-      setGemIds(distinctGemIds);
+      setBuildGemIds(distinctGemIds);
     };
 
     fn();
@@ -71,7 +71,34 @@ export function Gems() {
     <ExileList
       header="Gems"
       items={
-        gemIds && gems && gemIds.map((x) => <GemOrder gem={getGem(gems, x)} />)
+        buildGemIds &&
+        gems &&
+        buildGemIds.map((x, i) => (
+          <GemOrder
+            onMoveTop={() => {
+              setBuildGemIds([...buildGemIds.splice(i, 1), ...buildGemIds]);
+            }}
+            onMoveUp={() => {
+              if (i == 0) return;
+
+              const swap = buildGemIds[i];
+              buildGemIds[i] = buildGemIds[i - 1];
+              buildGemIds[i - 1] = swap;
+
+              setBuildGemIds([...buildGemIds]);
+            }}
+            onMoveDown={() => {
+              if (i == buildGemIds.length - 1) return;
+
+              const swap = buildGemIds[i];
+              buildGemIds[i] = buildGemIds[i + 1];
+              buildGemIds[i + 1] = swap;
+
+              setBuildGemIds([...buildGemIds]);
+            }}
+            gem={getGem(gems, x)}
+          />
+        ))
       }
     />
   );
