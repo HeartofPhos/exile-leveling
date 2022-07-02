@@ -2,6 +2,10 @@ import classNames from "classnames";
 import { Gem } from "../../../../common/types";
 import styles from "./GemOrder.module.css";
 
+function getImageUrl(path: string) {
+  return new URL(`./images/${path}`, import.meta.url).href;
+}
+
 interface GemOrderProps {
   gem: Gem;
   onMoveTop?: () => void;
@@ -21,10 +25,10 @@ export function GemOrder({
       <span>{gem.name}</span>
       <div className={classNames(styles.orderButtonGroup)}>
         <div className={classNames(styles.orderButton, "px-1")}>
-          <img onClick={onMoveTop} src="/images/arrow-double.svg" />
+          <img onClick={onMoveTop} src={getImageUrl("arrow-double.svg")} />
         </div>
         <div className={classNames(styles.orderButton, "px-1")}>
-          <img onClick={onMoveUp} src="/images/arrow.svg" />
+          <img onClick={onMoveUp} src={getImageUrl("arrow.svg")} />
         </div>
         <div
           className={classNames(
@@ -33,7 +37,7 @@ export function GemOrder({
             "px-1"
           )}
         >
-          <img onClick={onMoveDown} src="/images/arrow.svg" />
+          <img onClick={onMoveDown} src={getImageUrl("arrow.svg")} />
         </div>
       </div>
     </div>

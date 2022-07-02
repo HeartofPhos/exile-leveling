@@ -8,8 +8,8 @@ interface ActionProps {
   lookup: RouteLookup;
 }
 
-function getImageUrl(name: string) {
-  return new URL(`./images/${name}.png`, import.meta.url).href;
+function getImageUrl(path: string) {
+  return new URL(`./images/${path}`, import.meta.url).href;
 }
 
 function EnemyComponent(enemy: string) {
@@ -23,7 +23,7 @@ function AreaComponent(area: Area) {
 function QuestComponent(quest: Quest) {
   return (
     <>
-      <img src={getImageUrl("quest")} className={classNames(styles.icon)} />
+      <img src={getImageUrl("quest.png")} className={classNames(styles.icon)} />
       <span className={classNames(styles.quest)}> {quest.name}</span>
     </>
   );
@@ -46,7 +46,7 @@ function QuestTextComponent(text: string) {
 function WaypointComponent() {
   return (
     <>
-      <img src={getImageUrl("waypoint")} className={classNames(styles.icon)} />
+      <img src={getImageUrl("waypoint.png")} className={classNames(styles.icon)} />
       <span className={classNames(styles.waypoint)}>Waypoint</span>
     </>
   );
@@ -69,7 +69,7 @@ function VendorRewardComponent(gem: Gem) {
       <span> for </span>
       <div className={classNames(styles.currencyBlock)}>
         <img
-          src={getImageUrl(gem.cost)}
+          src={getImageUrl(`${gem.cost}.png`)}
           className={classNames(styles.currency)}
         />
       </div>
@@ -80,7 +80,7 @@ function VendorRewardComponent(gem: Gem) {
 function TrialComponent() {
   return (
     <>
-      <img src={getImageUrl("trial")} className={classNames(styles.icon)} />
+      <img src={getImageUrl("trial.png")} className={classNames(styles.icon)} />
       <span className={classNames(styles.trial)}>Trial of Ascendancy</span>
     </>
   );
@@ -97,7 +97,7 @@ function TownComponent() {
 function PortalComponent() {
   return (
     <>
-      <img src={getImageUrl("portal")} className={classNames(styles.icon)} />
+      <img src={getImageUrl("portal.png")} className={classNames(styles.icon)} />
       <span className={classNames(styles.portal)}>Portal</span>
     </>
   );
@@ -125,7 +125,7 @@ function NpcComponent(npcName: string) {
 function CraftingComponent() {
   return (
     <>
-      <img src={getImageUrl("crafting")} className={classNames(styles.icon)} />
+      <img src={getImageUrl("crafting.png")} className={classNames(styles.icon)} />
       <span className={classNames(styles.default)}>Crafting Recipe</span>
     </>
   );
@@ -134,7 +134,7 @@ function CraftingComponent() {
 function AscendComponent() {
   return (
     <>
-      <img src={getImageUrl("trial")} className={classNames(styles.icon)} />
+      <img src={getImageUrl("trial.png")} className={classNames(styles.icon)} />
       <span className={classNames(styles.trial)}>Ascend</span>
     </>
   );
