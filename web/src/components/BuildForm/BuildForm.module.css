@@ -6,8 +6,12 @@
   padding: var(--size-3);
 }
 
-.formRow {
-  padding: var(--size-2);
+.form > * {
+  margin-bottom: var(--size-3);
+}
+
+.form > *:last-child {
+  margin-bottom: 0;
 }
 
 .formRow > label {
@@ -37,7 +41,6 @@
 }
 
 .buttonRow {
-  padding: var(--size-2);
   text-align: right;
 }
 
