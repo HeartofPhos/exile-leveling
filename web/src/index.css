@@ -22,13 +22,12 @@
 }
 
 html {
-  overflow: scroll;
+  overflow-y: scroll;
   box-sizing: border-box;
   background-color: var(--primary-darker);
   color: var(--primary);
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica,
-    Arial, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
   font-size: 1em;
   font-weight: 400;
   line-height: 1.5;
@@ -42,4 +41,11 @@ html {
   width: auto;
   max-width: 1280px;
   padding: var(--size-2);
+}
+
+.container > * {
+  margin-bottom: var(--size-3);
+}
+.container > *:last-child {
+  margin-bottom: 0;
 }

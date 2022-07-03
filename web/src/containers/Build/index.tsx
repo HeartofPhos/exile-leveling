@@ -96,6 +96,15 @@ export function Gems() {
         >
           Save
         </button>
+        <button
+          className={classNames(styles.input)}
+          onClick={() => {
+            const buildDataJson = localStorage.getItem("build-data");
+            if (buildDataJson) setBuildData(JSON.parse(buildDataJson));
+          }}
+        >
+          Reset
+        </button>
       </div>
       <ExileList
         header="Gems"
