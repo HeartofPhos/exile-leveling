@@ -1,6 +1,6 @@
 .header {
   color: var(--primary-light);
-  font-size: 1.5rem;
+  font-size: var(--size-5);
   font-weight: bold;
   text-align: center;
 }
@@ -17,13 +17,13 @@
 .list > li {
   box-sizing: border-box;
   display: flex;
-  border-top: var(--size-1) solid #505050;
-  border-bottom: var(--size-1) solid #505050;
+  border-style: solid;
+  border-color: var(--primary-dark);
+  border-width: var(--size-1) 0;
 }
 
 .list > li:hover {
-  border-top: var(--size-1) solid #d6d6d6;
-  border-bottom: var(--size-1) solid #d6d6d6;
+  border-color: var(--primary);
 }
 
 .list > li:first-child {
