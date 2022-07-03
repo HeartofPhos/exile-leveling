@@ -1,20 +1,29 @@
+.header {
+  color: var(--primary-light);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
 .list {
   border-style: solid;
-  border-width: 0.1rem;
+  border-width: var(--border-width);
   border-color: grey;
-  border-radius: 0.25rem;
+  border-radius: var(--border-radius);
+  padding: 0 var(--spacing-3);
+  margin-bottom: var(--spacing-4);
 }
 
 .list > li {
   box-sizing: border-box;
   display: flex;
-  border-top: 0.1rem solid #505050;
-  border-bottom: 0.1rem solid #505050;
+  border-top: var(--spacing-1) solid #505050;
+  border-bottom: var(--spacing-1) solid #505050;
 }
 
 .list > li:hover {
-  border-top: 0.1rem solid #d6d6d6;
-  border-bottom: 0.1rem solid #d6d6d6;
+  border-top: var(--spacing-1) solid #d6d6d6;
+  border-bottom: var(--spacing-1) solid #d6d6d6;
 }
 
 .list > li:first-child {
@@ -26,11 +35,11 @@
 }
 
 .list > li {
-  padding: 0.5rem 0;
+  padding: var(--spacing-3) 0;
 }
 
 .list > li:before {
-  margin-right: 0.3rem;
+  margin-right: var(--spacing-2);
   font-weight: bold;
   counter-increment: list-item;
   content: counter(list-item, decimal-leading-zero) ".";

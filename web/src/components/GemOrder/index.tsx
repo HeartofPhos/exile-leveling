@@ -29,22 +29,13 @@ export function GemOrder({
         <span>{gem.name}</span>
       </div>
       <div className={classNames(styles.orderButtonGroup)}>
-        <div
-          onClick={onMoveTop}
-          className={classNames(styles.orderButton, "px-1")}
-        >
+        <div onClick={onMoveTop} className={classNames(styles.orderButton)}>
           <HiChevronDoubleUp />
         </div>
-        <div
-          onClick={onMoveUp}
-          className={classNames(styles.orderButton, "px-1")}
-        >
+        <div onClick={onMoveUp} className={classNames(styles.orderButton)}>
           <HiChevronUp />
         </div>
-        <div
-          onClick={onMoveDown}
-          className={classNames(styles.orderButton, "px-1")}
-        >
+        <div onClick={onMoveDown} className={classNames(styles.orderButton)}>
           <HiChevronDown />
         </div>
       </div>

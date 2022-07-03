@@ -1,14 +1,48 @@
-.gem-strength {
-  color: #ff3333;
-  font-weight: bold;
+:root {
+  --primary: #b5b5b5;
+  --primary-dark: #0a0a0a;
+  --primary-light: #f5f5f5;
+  --gem-strength: #ff3333;
+  --gem-dexterity: #33ff33;
+  --gem-intelligence: #3333ff;
+  --border-width: 0.1rem;
+  --border-radius: 0.25rem;
+  --spacing-1: 0.1rem;
+  --spacing-2: 0.3rem;
+  --spacing-3: 0.5rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.5rem;
 }
 
-.gem-dexterity {
-  color: #33ff33;
-  font-weight: bold;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-.gem-intelligence {
-  color: #3333ff;
-  font-weight: bold;
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  background-color: var(--primary-dark);
+  color: var(--primary);
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Helvetica,
+    Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  position: relative;
+  width: auto;
+  max-width: 1344px;
+  padding: 0 0.25rem;
 }

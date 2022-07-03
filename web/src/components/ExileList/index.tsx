@@ -9,26 +9,9 @@ interface RouteProps {
 
 export function ExileList({ header, items }: RouteProps) {
   return (
-    <div
-      className={classNames(
-        "container",
-        "has-text-grey-light",
-        "is-flex",
-        "is-flex-direction-column",
-        "px-1"
-      )}
-    >
-      <span
-        className={classNames(
-          "has-text-white",
-          "is-size-4",
-          "has-text-weight-bold",
-          "has-text-centered"
-        )}
-      >
-        {header}
-      </span>
-      <ol className={classNames(styles.list, "px-2", "mb-4")}>
+    <div className={classNames("container")}>
+      <span className={classNames(styles.header)}>{header}</span>
+      <ol className={classNames(styles.list)}>
         {items && items.map((item, i) => <li key={i}>{item}</li>)}
       </ol>
     </div>
