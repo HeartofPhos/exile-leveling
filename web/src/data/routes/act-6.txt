@@ -19,10 +19,10 @@ Find and kill {kill|Shavronne the Returned} & {kill|Reassembled Brutus}
 Get {crafting}
 ➞ {enter|2_6_8} #Prisoner's Gate
 Follow the road, ➞ {enter|2_6_9} #The Western Forest
-{get_waypoint}
-➞ {enter|2_6_10} #The Riverways
-{get_waypoint}
-➞ {enter|2_6_11} #The Wetlands
+Get {get_waypoint}
+Follow the road, ➞ {enter|2_6_10} #The Riverways
+Follow the road, get {get_waypoint}
+Head {dir|270}, ➞ {enter|2_6_11} #The Wetlands
 Head {dir|315}, kill {kill|Ryslatha, the Puppet Mistress}
 {town}
 Hand in {quest|a6q3} #The Father of War
@@ -31,11 +31,11 @@ Hand in {quest|a6q6} #The Puppet Mistress
 {vendor}
 {waypoint|2_6_10} #The Riverways
 ➞ {enter|2_6_12} #The Southern Forest
-{get_waypoint}
+Get {get_waypoint}
 ➞ {enter|2_6_13} #The Cavern of Anger
 Take {quest_text|The Black Flag}
 ➞ {enter|2_6_14} #The Beacon
-{get_waypoint}
+Get {get_waypoint}
 Get {crafting}
 Complete {quest_text|Pillar Push}
 Activate {quest_text|Beacon}
