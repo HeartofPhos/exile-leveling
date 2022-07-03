@@ -31,6 +31,7 @@ Hand in {quest|a1q7} #The Dweller of the Deep
 Get {get_waypoint}
 Complete {trial}
 ➞ {enter|1_1_7_2} #The Upper Prison
+Find and kill {kill|Brutus, Lord Incarcerator}
 {town} #Lioneye's Watch
 Hand in {quest|a1q2} #The Caged Brute
 {vendor}
