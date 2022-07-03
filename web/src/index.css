@@ -46,5 +46,5 @@ html {
   position: relative;
   width: auto;
   max-width: 1280px;
-  padding: 0 var(--size-2);
+  padding: var(--size-2);
 }
