@@ -13,23 +13,13 @@ export type ParsedStep = (string | ParsedAction)[];
 export type Step = (string | Action)[];
 export type Route = Step[];
 
-export type CharacterClass =
-  | "Marauder"
-  | "Duelist"
-  | "Ranger"
-  | "Shadow"
-  | "Witch"
-  | "Templar"
-  | "Scion";
-
 export interface RouteLookup {
   quests: Record<string, Quest>;
   areas: Record<string, Area>;
   towns: Record<Area["act"], Area["id"]>;
   bossWaypoints: Record<Monster["name"], Area["id"][]>;
   gems: Record<string, Gem>;
-  class: CharacterClass;
-  requiredGems: Gem["id"][];
+  buildData?: BuildData;
 }
 
 export interface RouteState {
@@ -455,11 +445,17 @@ function evaluateAction(
   return ERROR_INVALID_FORMAT;
 }
 
+export interface BuildData {
+  characterClass: string;
+  requiredGems: string[];
+}
+
 export function initializeRouteLookup(
   quests: RouteLookup["quests"],
   areas: RouteLookup["areas"],
   bossWaypoints: RouteLookup["bossWaypoints"],
-  gems: RouteLookup["gems"]
+  gems: RouteLookup["gems"],
+  buildData?: BuildData
 ) {
   const routeLookup: RouteLookup = {
     quests: quests,
@@ -467,24 +463,7 @@ export function initializeRouteLookup(
     towns: {},
     bossWaypoints: bossWaypoints,
     gems: gems,
-    class: "Templar",
-    requiredGems: [
-      "Metadata/Items/Gems/SkillGemSpark",
-      "Metadata/Items/Gems/SkillGemVitality",
-      "Metadata/Items/Gems/SkillGemShieldCrush",
-      "Metadata/Items/Gems/SkillGemSanctify",
-      "Metadata/Items/Gems/SupportGemSpiritStrike",
-      "Metadata/Items/Gems/SkillGemMeleeTotem",
-      "Metadata/Items/Gems/SkillGemClarity",
-      "Metadata/Items/Gems/SupportGemAddedLightningDamage",
-      "Metadata/Items/Gems/SupportGemAddedFireDamage",
-      "Metadata/Items/Gems/SkillGemLeapSlam",
-      "Metadata/Items/Gems/SkillGemPrecision",
-      "Metadata/Items/Gems/SupportGemFortify",
-      "Metadata/Items/Gems/SkillGemFrostShield",
-      "Metadata/Items/Gems/SupportGemGreaterVolley",
-      "Metadata/Items/Gems/SupportGemGreaterMultipleProjectiles",
-    ],
+    buildData: buildData,
   };
   for (const id in routeLookup.areas) {
     const area = routeLookup.areas[id];

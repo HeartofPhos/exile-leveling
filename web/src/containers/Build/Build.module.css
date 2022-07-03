@@ -1,0 +1,22 @@
+.gemForm {
+  display: flex;
+  border-style: solid;
+  border-width: var(--border-width);
+  border-color: var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--size-3);
+}
+
+.input {
+  color: var(--primary);
+  background-color: var(--primary-darker);
+  border-width: var(--border-width);
+  border-color: var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--size-2);
+  margin-left: var(--size-2);
+}
+
+.pobInput:focus {
+  outline: none;
+}

@@ -25,28 +25,30 @@ export function EvaluateVendor(
   if (action.length != 1) return ERROR_INVALID_FORMAT;
 
   const steps: Step[] = [];
-  for (const questId of state.recentQuests) {
-    const quest = lookup.quests[questId];
-    if (!quest) continue;
+  if (lookup.buildData) {
+    for (const questId of state.recentQuests) {
+      const quest = lookup.quests[questId];
+      if (!quest) continue;
 
-    for (const gemId of lookup.requiredGems) {
-      if (state.acquiredGems.has(gemId)) continue;
+      for (const gemId of lookup.buildData.requiredGems) {
+        if (state.acquiredGems.has(gemId)) continue;
 
-      const reward = quest.vendor_rewards[gemId];
-      if (!reward) continue;
+        const reward = quest.vendor_rewards[gemId];
+        if (!reward) continue;
 
-      const validClass =
-        reward.classes.length == 0 ||
-        reward.classes.some((x) => x == lookup.class);
+        const validClass =
+          reward.classes.length == 0 ||
+          reward.classes.some((x) => x == lookup.buildData?.characterClass);
 
-      if (validClass) {
-        state.acquiredGems.add(gemId);
-        steps.push([
-          {
-            type: "vendor_reward",
-            gemId: gemId,
-          },
-        ]);
+        if (validClass) {
+          state.acquiredGems.add(gemId);
+          steps.push([
+            {
+              type: "vendor_reward",
+              gemId: gemId,
+            },
+          ]);
+        }
       }
     }
   }

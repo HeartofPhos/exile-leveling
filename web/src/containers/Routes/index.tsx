@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import {
+  BuildData,
   initializeRouteLookup,
   initializeRouteState,
   parseRoute,
@@ -30,11 +31,17 @@ function RoutesContainer() {
 
   useEffect(() => {
     const fn = async () => {
+      const buildDataJson = localStorage.getItem("build-data");
+
+      let buildData = undefined;
+      if (buildDataJson) buildData = JSON.parse(buildDataJson);
+
       const routeLookup = initializeRouteLookup(
         quests,
         areas,
         bossWaypoints,
-        gems
+        gems,
+        buildData
       );
       const routeState = initializeRouteState();
 

@@ -1,3 +1,8 @@
+.holder {
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
   color: var(--primary-light);
   font-size: var(--size-5);
