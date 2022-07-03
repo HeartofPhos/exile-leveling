@@ -3,6 +3,7 @@
   white-space: pre-wrap;
   width: 100%;
   user-select: none;
+  margin-right: var(--size-2);
 }
 
 .icon {

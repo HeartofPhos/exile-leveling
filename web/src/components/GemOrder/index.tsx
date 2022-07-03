@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { Gem } from "../../../../common/types";
 import { HiChevronDoubleUp, HiChevronDown, HiChevronUp } from "react-icons/hi";
-import { MdCircle } from "react-icons/md";
+import { MdCircle, MdDeleteOutline } from "react-icons/md";
 import styles from "./GemOrder.module.css";
 
 import gemColours from "../../data/gem-colours.json";
@@ -11,6 +11,7 @@ interface GemOrderProps {
   onMoveTop?: () => void;
   onMoveUp?: () => void;
   onMoveDown?: () => void;
+  onDelete?: () => void;
 }
 
 export function GemOrder({
@@ -18,12 +19,13 @@ export function GemOrder({
   onMoveTop,
   onMoveUp,
   onMoveDown,
+  onDelete,
 }: GemOrderProps) {
   return (
     <div className={classNames(styles.gemOrder)}>
       <div>
         <MdCircle
-        color={gemColours[gem.primary_attribute]}
+          color={gemColours[gem.primary_attribute]}
           className={classNames(styles.icon)}
         />
         <span>{gem.name}</span>
@@ -37,6 +39,9 @@ export function GemOrder({
         </div>
         <div onClick={onMoveDown} className={classNames(styles.orderButton)}>
           <HiChevronDown />
+        </div>
+        <div onClick={onDelete} className={classNames(styles.orderButton)}>
+          <MdDeleteOutline />
         </div>
       </div>
     </div>

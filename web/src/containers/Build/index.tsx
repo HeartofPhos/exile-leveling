@@ -133,6 +133,12 @@ export function Gems() {
                   ...buildData,
                 });
               }}
+              onDelete={() => {
+                buildData.requiredGems.splice(i, 1);
+                setBuildData({
+                  ...buildData,
+                });
+              }}
               gem={getGem(x)}
             />
           ))
