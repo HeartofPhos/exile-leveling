@@ -4,6 +4,8 @@ import { HiChevronDoubleUp, HiChevronDown, HiChevronUp } from "react-icons/hi";
 import { MdCircle } from "react-icons/md";
 import styles from "./GemOrder.module.css";
 
+import gemColours from "../../data/gem-colours.json";
+
 interface GemOrderProps {
   gem: Gem;
   onMoveTop?: () => void;
@@ -21,7 +23,7 @@ export function GemOrder({
     <div className={classNames(styles.gemOrder)}>
       <div>
         <MdCircle
-          color={`var(--gem-${gem.primary_attribute})`}
+        color={gemColours[gem.primary_attribute]}
           className={classNames(styles.icon)}
         />
         <span>{gem.name}</span>

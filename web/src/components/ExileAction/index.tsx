@@ -4,6 +4,8 @@ import { Area, Gem, Quest } from "../../../../common/types";
 import { MdCircle } from "react-icons/md";
 import styles from "./ExileAction.module.css";
 
+import gemColours from "../../data/gem-colours.json";
+
 interface ActionProps {
   action: Action;
   lookup: RouteLookup;
@@ -34,7 +36,7 @@ function QuestRewardComponent(gem: Gem) {
   return (
     <>
       <MdCircle
-        color={`var(--gem-${gem.primary_attribute})`}
+        color={gemColours[gem.primary_attribute]}
         className={classNames(styles.icon)}
       />
       <span>Take </span>
@@ -71,7 +73,7 @@ function VendorRewardComponent(gem: Gem) {
   return (
     <>
       <MdCircle
-        color={`var(--gem-${gem.primary_attribute})`}
+        color={gemColours[gem.primary_attribute]}
         className={classNames(styles.icon)}
       />
       <span>Buy </span>
