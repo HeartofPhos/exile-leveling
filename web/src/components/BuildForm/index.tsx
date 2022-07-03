@@ -37,9 +37,10 @@ function decodePathOfBuildingCode(code: string) {
 
 interface BuildFormProps {
   onSubmit: (buildata: BuildData) => void;
+  onReset: () => void;
 }
 
-export function BuildForm({ onSubmit }: BuildFormProps) {
+export function BuildForm({ onSubmit, onReset }: BuildFormProps) {
   const [pobCode, setPobCode] = useState<string>();
 
   return (
@@ -55,6 +56,9 @@ export function BuildForm({ onSubmit }: BuildFormProps) {
         </div>
       </div>
       <div className={classNames(styles.buttonRow)}>
+        <button className={classNames(styles.formButton)} onClick={onReset}>
+          Reset
+        </button>
         <button
           className={classNames(styles.formButton)}
           onClick={() => {

@@ -33,6 +33,10 @@ export function Gems() {
         onSubmit={(buildData) => {
           setBuildData(buildData);
         }}
+        onReset={() => {
+          localStorage.removeItem("build-data");
+          setBuildData(undefined);
+        }}
       />
       {buildData && (
         <ExileList
