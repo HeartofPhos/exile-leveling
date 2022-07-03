@@ -1,41 +1,41 @@
 .default {
   color: var(--primary-light);
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .enemy {
   color: darkorange;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .area {
   color: #ffcf91;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .quest {
   color: gold;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .questText {
   color: lime;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .waypoint {
   color: #8ab3ff;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .trial {
   color: darkseagreen;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .portal {
   color: #8ab3ff;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .icon {

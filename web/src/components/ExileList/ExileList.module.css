@@ -6,7 +6,7 @@
 .header {
   color: var(--primary-light);
   font-size: var(--size-5);
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
 }
 
@@ -44,7 +44,7 @@
 
 .list > li:before {
   margin-right: var(--size-2);
-  font-weight: bold;
+  font-weight: 600;
   counter-increment: list-item;
   content: counter(list-item, decimal-leading-zero) ".";
 }

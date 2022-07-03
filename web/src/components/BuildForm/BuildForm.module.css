@@ -1,6 +1,4 @@
-.gemForm {
-  display: flex;
-  align-items: flex-end;
+.form {
   border-style: solid;
   border-width: var(--border-width);
   border-color: var(--border-color);
@@ -8,17 +6,50 @@
   padding: var(--size-3);
 }
 
-.input {
-  height: fit-content;
+.formRow {
+  padding: var(--size-2);
+}
+
+.formRow > label {
+  color: var(--primary-light);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.formInput {
+  padding: var(--size-2);
+  border-style: solid;
+  border-width: var(--border-width);
+  border-color: var(--border-color);
+  border-radius: var(--border-radius);
+}
+
+.formInput > * {
+  width: 100%;
+  display: block;
+  height: 5rem;
   color: var(--primary);
+  background-color: var(--primary-darker);
+  border: none;
+  outline: none;
+  resize: none;
+  overflow: hidden;
+}
+
+.buttonRow {
+  padding: var(--size-2);
+  text-align: right;
+}
+
+.formButton {
+  width: 5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-light);
   background-color: var(--primary-darker);
   border-width: var(--border-width);
   border-color: var(--border-color);
   border-radius: var(--border-radius);
   padding: var(--size-2);
   margin-left: var(--size-2);
-}
-
-.pobInput:focus {
-  outline: none;
 }

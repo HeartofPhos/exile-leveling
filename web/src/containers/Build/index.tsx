@@ -16,72 +16,72 @@ export function Gems() {
 
   useEffect(() => {
     const fn = async () => {
-      const buildDataJson = localStorage.getItem("build-data");
-      if (buildDataJson) setBuildData(JSON.parse(buildDataJson));
+      if (buildData) {
+        localStorage.setItem("build-data", JSON.stringify(buildData));
+      } else {
+        const buildDataJson = localStorage.getItem("build-data");
+        if (buildDataJson) setBuildData(JSON.parse(buildDataJson));
+      }
     };
 
     fn();
-  }, []);
+  }, [buildData]);
 
   return (
     <div>
       <BuildForm
         onSubmit={(buildData) => {
           setBuildData(buildData);
-          localStorage.setItem("build-data", JSON.stringify(buildData));
-        }}
-        onReset={() => {
-          const buildDataJson = localStorage.getItem("build-data");
-          if (buildDataJson) setBuildData(JSON.parse(buildDataJson));
         }}
       />
-      <ExileList
-        header="Gems"
-        items={
-          buildData &&
-          gems &&
-          buildData.requiredGems.map((x, i) => (
-            <GemOrder
-              onMoveTop={() => {
-                const splice = buildData.requiredGems.splice(i, 1);
-                buildData.requiredGems.unshift(...splice);
-                setBuildData({
-                  ...buildData,
-                });
-              }}
-              onMoveUp={() => {
-                if (i == 0) return;
+      {buildData && (
+        <ExileList
+          header={buildData.characterClass}
+          items={
+            buildData &&
+            buildData.requiredGems.map((x, i) => (
+              <GemOrder
+                onMoveTop={() => {
+                  const splice = buildData.requiredGems.splice(i, 1);
+                  buildData.requiredGems.unshift(...splice);
+                  setBuildData({
+                    ...buildData,
+                  });
+                }}
+                onMoveUp={() => {
+                  if (i == 0) return;
 
-                const swap = buildData.requiredGems[i];
-                buildData.requiredGems[i] = buildData.requiredGems[i - 1];
-                buildData.requiredGems[i - 1] = swap;
+                  const swap = buildData.requiredGems[i];
+                  buildData.requiredGems[i] = buildData.requiredGems[i - 1];
+                  buildData.requiredGems[i - 1] = swap;
 
-                setBuildData({
-                  ...buildData,
-                });
-              }}
-              onMoveDown={() => {
-                if (i == buildData.requiredGems.length - 1) return;
+                  setBuildData({
+                    ...buildData,
+                  });
+                }}
+                onMoveDown={() => {
+                  if (i == buildData.requiredGems.length - 1) return;
 
-                const swap = buildData.requiredGems[i];
-                buildData.requiredGems[i] = buildData.requiredGems[i + 1];
-                buildData.requiredGems[i + 1] = swap;
+                  const swap = buildData.requiredGems[i];
+                  buildData.requiredGems[i] = buildData.requiredGems[i + 1];
+                  buildData.requiredGems[i + 1] = swap;
 
-                setBuildData({
-                  ...buildData,
-                });
-              }}
-              onDelete={() => {
-                buildData.requiredGems.splice(i, 1);
-                setBuildData({
-                  ...buildData,
-                });
-              }}
-              gem={gems[x]}
-            />
-          ))
-        }
-      />
+                  setBuildData({
+                    ...buildData,
+                  });
+                }}
+                onDelete={() => {
+                  buildData.requiredGems.splice(i, 1);
+                  setBuildData({
+                    ...buildData,
+                  });
+                }}
+                gem={gems[x]}
+              />
+            ))
+          }
+        />
+      )}
     </div>
   );
 }

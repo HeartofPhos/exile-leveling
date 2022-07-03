@@ -37,57 +37,61 @@ function decodePathOfBuildingCode(code: string) {
 
 interface BuildFormProps {
   onSubmit: (buildata: BuildData) => void;
-  onReset: () => void;
 }
 
-export function BuildForm({ onSubmit, onReset }: BuildFormProps) {
+export function BuildForm({ onSubmit }: BuildFormProps) {
   const [pobCode, setPobCode] = useState<string>();
 
   return (
-    <div className={classNames(styles.gemForm)}>
-      Path of Building Code:
-      <input
-        className={classNames(styles.input)}
-        onChange={(e) => setPobCode(e.target.value)}
-        type="text"
-      />
-      <button
-        className={classNames(styles.input)}
-        onClick={() => {
-          if (pobCode) {
-            const doc = decodePathOfBuildingCode(pobCode);
+    <div className={classNames(styles.form)}>
+      <div className={classNames(styles.formRow)}>
+        <label>Path of Building Code</label>
+        <div className={classNames(styles.formInput)}>
+          <textarea
+            spellCheck={false}
+            className={classNames(styles.textarea)}
+            onChange={(e) => setPobCode(e.target.value)}
+          />
+        </div>
+      </div>
+      <div className={classNames(styles.buttonRow)}>
+        <button
+          className={classNames(styles.formButton)}
+          onClick={() => {
+            if (pobCode) {
+              const doc = decodePathOfBuildingCode(pobCode);
 
-            const gemElements = Array.from(doc.getElementsByTagName("Gem"));
-            const gemIds = [];
-            for (const element of gemElements) {
-              const attribute = element.attributes.getNamedItem("gemId");
-              if (attribute) gemIds.push(attribute.value);
-            }
+              const gemElements = Array.from(doc.getElementsByTagName("Gem"));
+              const gemIds = [];
+              for (const element of gemElements) {
+                const attribute = element.attributes.getNamedItem("gemId");
+                if (attribute) gemIds.push(attribute.value);
+              }
 
-            const distinctGemIds = gemIds
-              .filter((v, i, a) => a.indexOf(v) === i)
-              .map((x) => {
-                const remap = POB_GEM_ID_REMAP[x];
-                if (remap) return remap;
-                return x;
+              const distinctGemIds = gemIds
+                .filter((v, i, a) => a.indexOf(v) === i)
+                .map((x) => {
+                  const remap = POB_GEM_ID_REMAP[x];
+                  if (remap) return remap;
+                  return x;
+                });
+
+              const buildElement = Array.from(
+                doc.getElementsByTagName("Build")
+              );
+              const characterClass =
+                buildElement[0].attributes.getNamedItem("className")?.value;
+
+              onSubmit({
+                characterClass: characterClass!,
+                requiredGems: distinctGemIds,
               });
-
-            const buildElement = Array.from(doc.getElementsByTagName("Build"));
-            const characterClass =
-              buildElement[0].attributes.getNamedItem("className")?.value;
-
-            onSubmit({
-              characterClass: characterClass!,
-              requiredGems: distinctGemIds,
-            });
-          }
-        }}
-      >
-        Submit
-      </button>
-      <button className={classNames(styles.input)} onClick={onReset}>
-        Reset
-      </button>
+            }
+          }}
+        >
+          Submit
+        </button>
+      </div>
     </div>
   );
 }
