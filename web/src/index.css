@@ -7,11 +7,11 @@
   --gem-intelligence: #3333ff;
   --border-width: 0.1rem;
   --border-radius: 0.25rem;
-  --spacing-1: 0.1rem;
-  --spacing-2: 0.3rem;
-  --spacing-3: 0.5rem;
-  --spacing-4: 1rem;
-  --spacing-5: 1.5rem;
+  --size-1: 0.1rem;
+  --size-2: 0.3rem;
+  --size-3: 0.5rem;
+  --size-4: 1rem;
+  --size-5: 1.5rem;
 }
 
 * {
@@ -44,5 +44,5 @@ html {
   position: relative;
   width: auto;
   max-width: 1344px;
-  padding: 0 0.25rem;
+  padding: 0 var(--size-2);
 }

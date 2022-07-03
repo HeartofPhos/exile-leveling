@@ -8,8 +8,8 @@
 .icon {
   vertical-align: sub;
   width: auto;
-  height: var(--spacing-4);
-  margin-right: var(--spacing-1);
+  height: var(--size-4);
+  margin-right: var(--size-1);
 }
 
 .orderButtonGroup {
@@ -22,8 +22,8 @@
 .orderButton {
   border-radius: var(--border-radius);
   position: relative;
-  width: var(--spacing-5);
-  padding: 0 var(--spacing-2);
+  width: var(--size-5);
+  padding: 0 var(--size-2);
 }
 
 .orderButton:hover {

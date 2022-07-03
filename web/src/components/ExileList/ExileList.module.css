@@ -10,20 +10,20 @@
   border-width: var(--border-width);
   border-color: grey;
   border-radius: var(--border-radius);
-  padding: 0 var(--spacing-3);
-  margin-bottom: var(--spacing-4);
+  padding: 0 var(--size-3);
+  margin-bottom: var(--size-4);
 }
 
 .list > li {
   box-sizing: border-box;
   display: flex;
-  border-top: var(--spacing-1) solid #505050;
-  border-bottom: var(--spacing-1) solid #505050;
+  border-top: var(--size-1) solid #505050;
+  border-bottom: var(--size-1) solid #505050;
 }
 
 .list > li:hover {
-  border-top: var(--spacing-1) solid #d6d6d6;
-  border-bottom: var(--spacing-1) solid #d6d6d6;
+  border-top: var(--size-1) solid #d6d6d6;
+  border-bottom: var(--size-1) solid #d6d6d6;
 }
 
 .list > li:first-child {
@@ -35,11 +35,11 @@
 }
 
 .list > li {
-  padding: var(--spacing-3) 0;
+  padding: var(--size-3) 0;
 }
 
 .list > li:before {
-  margin-right: var(--spacing-2);
+  margin-right: var(--size-2);
   font-weight: bold;
   counter-increment: list-item;
   content: counter(list-item, decimal-leading-zero) ".";

@@ -41,15 +41,15 @@
 .icon {
   vertical-align: sub;
   width: auto;
-  height: var(--spacing-4);
-  margin-right: var(--spacing-1);
+  height: var(--size-4);
+  margin-right: var(--size-1);
 }
 
 .currencyBlock {
   vertical-align: middle;
   position: relative;
   display: inline-block;
-  width: var(--spacing-5);
+  width: var(--size-5);
 }
 
 .currencyBlock > * {
