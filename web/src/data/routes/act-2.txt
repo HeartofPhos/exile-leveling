@@ -47,9 +47,9 @@ Go to side same of road as {waypoint}, help or kill {kill|Alira Darktongue}
 Follow road, kill {kill|Captain Arteri}
 Take {quest_text|Thaumetic Emblem}
 {town}
+If you killed all bandits, hand in {quest|a2q7} #Deal with the Bandits
 {waypoint|1_1_town} #Lioneye's Watch
 Hand in {quest|a1q9} #The Way Forward
-If you killed all bandits, hand in {quest|a2q7} #Deal with the Bandits
 {waypoint|1_2_12} #The Wetlands
 ➞ {enter|1_2_11} #The Vaal Ruins
 ➞ {enter|1_2_8} #The Northern Forest
