@@ -5,6 +5,7 @@
   --gem-strength: #ff3333;
   --gem-dexterity: #33ff33;
   --gem-intelligence: #3333ff;
+  --border-color: #808080;
   --border-width: 0.1rem;
   --border-radius: 0.25rem;
   --size-1: 0.1rem;
@@ -26,6 +27,7 @@
 }
 
 html {
+  overflow: scroll;
   box-sizing: border-box;
   background-color: #0a0a0a;
   color: var(--primary);
@@ -43,6 +45,6 @@ html {
   margin: 0 auto;
   position: relative;
   width: auto;
-  max-width: 1344px;
+  max-width: 1280px;
   padding: 0 var(--size-2);
 }

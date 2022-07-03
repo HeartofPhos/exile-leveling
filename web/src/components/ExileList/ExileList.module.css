@@ -8,7 +8,7 @@
 .list {
   border-style: solid;
   border-width: var(--border-width);
-  border-color: grey;
+  border-color: var(--border-color);
   border-radius: var(--border-radius);
   padding: 0 var(--size-3);
   margin-bottom: var(--size-4);
