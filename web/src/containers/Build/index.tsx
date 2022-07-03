@@ -1,4 +1,3 @@
-import pako from "pako";
 import { useEffect, useState } from "react";
 import { ExileList } from "../../components/ExileList";
 import { GemOrder } from "../../components/GemOrder";
@@ -7,11 +6,7 @@ import { BuildData } from "../../../../common/routes";
 import gems from "../../data/gems.json";
 import { BuildForm } from "../../components/BuildForm";
 
-function getGem(gemId: string) {
-  return;
-}
-
-export function Gems() {
+export function Build() {
   const [buildData, setBuildData] = useState<BuildData>();
 
   useEffect(() => {

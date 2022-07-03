@@ -51,12 +51,19 @@ export function BuildForm({ onSubmit, onReset }: BuildFormProps) {
           <textarea
             spellCheck={false}
             className={classNames(styles.textarea)}
+            value={pobCode || ""}
             onChange={(e) => setPobCode(e.target.value)}
           />
         </div>
       </div>
       <div className={classNames(styles.buttonRow)}>
-        <button className={classNames(styles.formButton)} onClick={onReset}>
+        <button
+          className={classNames(styles.formButton)}
+          onClick={() => {
+            setPobCode(undefined);
+            onReset();
+          }}
+        >
           Reset
         </button>
         <button

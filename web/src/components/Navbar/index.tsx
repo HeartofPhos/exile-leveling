@@ -14,7 +14,7 @@ export function Navbar({}: NavbarProps) {
       <a onClick={() => navigate("/")} className={classNames(styles.active)}>
         Home
       </a>
-      <a onClick={() => navigate("/gems")}>Gems</a>
+      <a onClick={() => navigate("/build")}>Build</a>
       <a className={classNames(styles.icon)} onClick={() => setExpand(!expand)}>
         <FaBars />
       </a>
