@@ -1,5 +1,6 @@
 .gemForm {
   display: flex;
+  align-items: flex-end;
   border-style: solid;
   border-width: var(--border-width);
   border-color: var(--border-color);
@@ -8,6 +9,7 @@
 }
 
 .input {
+  height: fit-content;
   color: var(--primary);
   background-color: var(--primary-darker);
   border-width: var(--border-width);
