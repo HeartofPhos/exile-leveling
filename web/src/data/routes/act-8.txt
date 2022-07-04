@@ -37,7 +37,8 @@ Hand in {quest|a8q3} #Solar Eclipse
 {waypoint|2_8_6} #The Lunaris Concourse
 Head {dir|135}, ➞ {enter|2_8_13} #The Harbour Bridge
 ➞ {arena|The Sky Shrine}, kill {kill|Lunaris, Eternal Moon} & {kill|Solaris, Eternal Sun}
-➞ {enter|2_9_1}, optionally farm #The Blood Aqueduct
+➞ {enter|2_9_1} #The Blood Aqueduct
+Farm till lvl ~62
 ➞ {enter|2_9_town} #Highgate
 {waypoint|2_8_6} #The Lunaris Concourse
 Head {dir|180}, ➞ {enter|2_8_5} #The Bath House

@@ -31,7 +31,7 @@ export interface RouteState {
 }
 
 function parseStep(text: string) {
-  const regex = /(\s*#.*)|([^{]+)|\{(.+?)\}/g;
+  const regex = /(\s*#.*)|([^{#]+)|\{(.+?)\}/g;
 
   let steps: ParsedStep = [];
 
