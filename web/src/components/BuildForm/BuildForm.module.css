@@ -54,3 +54,7 @@
   padding: var(--size-2);
   margin-left: var(--size-2);
 }
+
+.formButton:hover {
+  background-color: var(--primary-dark);
+}
