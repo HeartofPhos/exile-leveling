@@ -1,10 +1,6 @@
 /* Add a black background color to the top navigation */
 .topnav {
   overflow: hidden;
-  border-style: solid;
-  border-width: var(--border-width);
-  border-color: var(--border-color);
-  border-radius: var(--border-radius);
 }
 
 /* Style the links inside the navigation bar */
@@ -13,7 +9,7 @@
   display: block;
   color: var(--primary-light);
   text-align: center;
-  padding: var(--size-4);
+  padding: var(--size-3);
   text-decoration: none;
   font-size: var(--size-4);
   font-weight: 600;

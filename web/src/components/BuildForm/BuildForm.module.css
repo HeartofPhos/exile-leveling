@@ -1,8 +1,6 @@
 .form {
   border-style: solid;
-  border-width: var(--border-width);
-  border-color: var(--border-color);
-  border-radius: var(--border-radius);
+  border-width: 0;
   padding: var(--size-3);
 }
 

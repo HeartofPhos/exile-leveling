@@ -33,6 +33,7 @@ export function Build() {
           setBuildData(undefined);
         }}
       />
+      <hr />
       {buildData && (
         <ExileList
           header={buildData.characterClass}
