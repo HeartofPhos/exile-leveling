@@ -17,18 +17,17 @@ Hand in {quest|a1q4} #Breaking Some Eggs
 Hand in {quest|a1q5} #Mercy Mission
 {vendor}
 {waypoint|1_1_4_1} #The Submerged Passage
-Find stairs, place {set_portal}
+Find bridge, place {set_portal}
 ➞ {enter|1_1_5} #The Ledge
+➞ {enter|1_1_6} #The Climb
+➞ {enter|1_1_7_1} #The Lower Prison
 {waypoint|1_1_town} #Lioneye's Watch
 Take {use_portal}
-Go right of stairs, ➞ {enter|1_1_4_0} #The Flooded Depths
+Go right of bridge, ➞ {enter|1_1_4_0} #The Flooded Depths
 Find and kill {kill|The Dweller of the Deep}
 {town} #Lioneye's Watch
 Hand in {quest|a1q7} #The Dweller of the Deep
-{waypoint|1_1_5} #The Ledge
-➞ {enter|1_1_6} #The Climb
-➞ {enter|1_1_7_1} #The Lower Prison
-Get {get_waypoint}
+{waypoint|1_1_7_1} #The Lower Prison
 Complete {trial}
 ➞ {enter|1_1_7_2} #The Upper Prison
 Find and kill {kill|Brutus, Lord Incarcerator}
