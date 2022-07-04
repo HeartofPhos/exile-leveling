@@ -16,7 +16,6 @@ export type Route = Step[];
 export interface RouteLookup {
   quests: Record<string, Quest>;
   areas: Record<string, Area>;
-  towns: Record<Area["act"], Area["id"]>;
   bossWaypoints: Record<Monster["name"], Area["id"][]>;
   gems: Record<string, Gem>;
   buildData?: BuildData;
@@ -25,6 +24,7 @@ export interface RouteLookup {
 export interface RouteState {
   waypoints: Set<Area["id"]>;
   currentAreaId: Area["id"];
+  currentTownAreaId: Area["id"];
   portalAreaId: Area["id"] | null;
   recentQuests: Quest["id"][];
   acquiredGems: Set<Gem["id"]>;
@@ -146,7 +146,11 @@ function EvaluateEnter(
   if (!area.connection_ids.some((x) => x == state.currentAreaId))
     return "not connected to current area";
 
-  if (area.is_town_area && area.has_waypoint) state.waypoints.add(area.id);
+  if (area.is_town_area) {
+    state.currentTownAreaId = area.id;
+    if (area.has_waypoint) state.waypoints.add(area.id);
+  }
+
   state.currentAreaId = area.id;
   return {
     action: {
@@ -168,7 +172,7 @@ function EvaluateTown(
   if (action.length != 1) return ERROR_INVALID_FORMAT;
 
   const area = lookup.areas[state.currentAreaId];
-  state.currentAreaId = lookup.towns[area.act];
+  state.currentAreaId = state.currentTownAreaId;
   return {
     action: {
       type: "town",
@@ -269,9 +273,8 @@ function EvaluateUsePortal(
 
   const currentArea = lookup.areas[state.currentAreaId];
   if (currentArea.id == state.portalAreaId) {
-    const townId = lookup.towns[currentArea.act];
     state.portalAreaId = state.currentAreaId;
-    state.currentAreaId = townId;
+    state.currentAreaId = state.currentTownAreaId;
   } else {
     if (!currentArea.is_town_area)
       return "can only use portal from town or portal area";
@@ -340,7 +343,7 @@ function EvaluateAscend(
     return `must be in "${expectedArea.name}"`;
   }
 
-  // TODO Should state.currentAreaId to appropriate town
+  state.currentAreaId = state.currentTownAreaId;
 
   return {
     action: {
@@ -484,15 +487,10 @@ export function initializeRouteLookup(
   const routeLookup: RouteLookup = {
     quests: quests,
     areas: areas,
-    towns: {},
     bossWaypoints: bossWaypoints,
     gems: gems,
     buildData: buildData,
   };
-  for (const id in routeLookup.areas) {
-    const area = routeLookup.areas[id];
-    if (area.is_town_area) routeLookup.towns[area.act] = area.id;
-  }
 
   return routeLookup;
 }
@@ -501,6 +499,7 @@ export function initializeRouteState() {
   const state: RouteState = {
     waypoints: new Set(),
     currentAreaId: "1_1_1",
+    currentTownAreaId: "1_1_town",
     portalAreaId: null,
     recentQuests: [],
     acquiredGems: new Set(),

@@ -46,7 +46,10 @@ function RoutesContainer() {
       const routeState = initializeRouteState();
 
       const routes: Route[] = [];
-      for (const key in routesData) {
+      const keys = Object.keys(routesData).sort((a, b) =>
+        a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" })
+      );
+      for (const key of keys) {
         routes.push(parseRoute(routesData[key], routeLookup, routeState));
       }
 
