@@ -2,7 +2,7 @@
 ➞ {enter|2_6_town} #Lioneye's Watch
 ➞ {enter|2_6_1} #The Twilight Strand
 Kill {kill|Everything}
-{town} #Lioneye's Watch
+{town}
 Hand in {quest|a6q4} #Fallen from Grace
 {vendor}
 ➞ {enter|2_6_2} #The Coast
@@ -24,7 +24,7 @@ Follow the road, ➞ {enter|2_6_10} #The Riverways
 Follow the road, get {get_waypoint}
 Head {dir|270}, ➞ {enter|2_6_11} #The Wetlands
 Head {dir|315}, kill {kill|Ryslatha, the Puppet Mistress}
-{town} #Lioneye's Watch
+{town}
 Hand in {quest|a6q3} #The Father of War
 Hand in {quest|a6q2} #Essence of Umbra
 Hand in {quest|a6q6} #The Puppet Mistress
@@ -42,6 +42,6 @@ Activate {quest_text|Beacon}
 Talk to {npc|Weylam Roth}
 ➞ {enter|2_6_15} #The Brine King's Reef
 Find and kill {kill|Tsoagoth, The Brine King}
-{town} #Lioneye's Watch
+{town}
 Select Pantheons
 {vendor}

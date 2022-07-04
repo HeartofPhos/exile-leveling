@@ -7,7 +7,7 @@ Hand in {quest|a5q1b} #Return to Oriath
 Find and take {quest_text|Miasmeter}
 Find and kill {kill|Justicar Casticus}
 ➞ {enter|1_5_3} #Oriath Square
-➞ {enter|1_5_4} #The Templar Courts
+Head {dir|45}, ➞ {enter|1_5_4} #The Templar Courts
 ➞ {enter|1_5_5} #The Chamber of Innocence
 Get {get_waypoint}
 Find and kill {kill|High Templar Avarius}
@@ -18,17 +18,18 @@ Hand in {quest|a5q4} #Death to Purity
 {waypoint|1_5_5} #The Chamber of Innocence
 ➞ {enter|1_5_4b} #The Torched Courts
 ➞ {enter|1_5_3b} #The Ruined Square
-Get {get_waypoint}
+Head {dir|315}, get {get_waypoint}
 ➞ {enter|1_5_6} #The Ossuary
 Take {quest_text|Sign of Purity}
 Get {crafting}
 {town}
 {waypoint|1_5_3b} #The Ruined Square
-➞ {enter|1_5_7} #The Reliquary
+Head {dir|225}, find the plaza
+Head {dir|180}, ➞ {enter|1_5_7} #The Reliquary
 Find 3x{quest_text|Kitava's Torments}
 {town}
 Hand in {quest|a5q7} #Kitava's Torments
 {waypoint|1_5_3b} #The Ruined Square
-➞ {enter|1_5_8} #The Cathedral Rooftop
+Head {dir|225}, ➞ {enter|1_5_8} #The Cathedral Rooftop
 Kill {kill|Kitava, the Insatiable}
 Talk to {npc|Lilly Roth}, Sail to Wraeclast

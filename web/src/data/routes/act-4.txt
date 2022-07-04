@@ -2,7 +2,7 @@
 ➞ {enter|1_4_1} #The Aqueduct
 ➞ {enter|1_4_town} #Highgate
 ➞ {enter|1_4_2} #The Dried Lake
-Find and kill {kill|Voll, Emperor of Purity}
+Find and kill {kill|Voll, Emperor of Purity}, take {quest_text|Deshret's Banner}
 Get {crafting}
 {town}
 Hand in {quest|a4q2} #Breaking the Seal
@@ -11,9 +11,8 @@ Hand in {quest|a4q2} #Breaking the Seal
 ➞ {enter|1_4_3_2} #The Mines Level 2
 Free {quest_text|Deshret}
 ➞ {enter|1_4_3_3} #The Crystal Veins
-Get {get_waypoint}
 Get {crafting}
-{town}
+{waypoint|1_4_town} #Highgate
 Hand in {quest|a4q6} #An Indomitable Spirit
 {waypoint|1_3_town} #The Sarn Encampment
 ➞ {enter|Labyrinth_Airlock} #Aspirants' Plaza
@@ -22,7 +21,6 @@ Get {get_waypoint}
 {waypoint|1_4_3_3} #The Crystal Veins
 ➞ {enter|1_4_5_1} #Daresso's Dream
 ➞ {enter|1_4_5_2} #The Grand Arena
-Get {get_waypoint}
 {waypoint|1_4_3_3} #The Crystal Veins
 ➞ {enter|1_4_4_1} #Kaom's Dream
 ➞ {enter|1_4_4_3} #Kaom's Stronghold

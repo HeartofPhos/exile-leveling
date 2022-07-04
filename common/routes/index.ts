@@ -321,6 +321,8 @@ function EvaluateAscend(
     return `must be in "${expectedArea.name}"`;
   }
 
+  // TODO Should state.currentAreaId to appropriate town
+
   return {
     action: {
       type: "ascend",

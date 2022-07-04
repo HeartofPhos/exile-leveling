@@ -5,11 +5,11 @@ Head {dir|45}, ➞ {enter|1_2_2} #The Old Fields
 Find {area|1_2_2a}, place {set_portal} #The Den
 Follow the road, ➞ {enter|1_2_3} #The Crossroads
 Follow the road, get {get_waypoint}
-{town} #The Forest Encampment
+{town}
 Take {use_portal}
 ➞ {enter|1_2_2a} #The Den
 Find and kill {kill|The Great White Beast}
-{town} #The Forest Encampment
+{town}
 Hand in {quest|a2q10} #The Great White Beast
 {waypoint|1_2_3} #The Crossroads
 Head {dir|315}, ➞ {enter|1_2_6_1} #The Chamber of Sins Level 1
@@ -17,14 +17,14 @@ Get {get_waypoint}, go in same direction
 ➞ {enter|1_2_6_2} #The Chamber of Sins Level 2
 Complete {trial}, likely {dir|0}
 Find long hallway, kill {kill|Fidelitas, the Mourning}, take {quest_text|Baleful Gem}
-{town} #The Forest Encampment
+{town}
 Hand in {quest|a2q6} #Intruders in Black
 {vendor}
 {waypoint|1_2_3} #The Crossroads
 Head {dir|135}, ➞ {enter|1_2_15} #The Fellshrine Ruins
 Follow the road, ➞ {enter|1_2_5_1} #The Crypt Level 1
 Complete {trial}
-{town} #The Forest Encampment
+{town}
 Head {dir|225}, ➞ {enter|1_2_7} #The Riverways
 Follow the road, get {get_waypoint}
 Follow the road, ➞ {enter|1_2_9} #The Western Forest
@@ -37,7 +37,7 @@ Hand in {quest|a2q4} #Sharp and Cruel
 {waypoint|1_2_3} #The Crossroads
 Head {dir|45}, ➞ {enter|1_2_4} #The Broken Bridge
 Follow road, kill {kill|Kraityn, Scarbearer}
-{town} #The Forest Encampment
+{town}
 {waypoint|1_2_7} #The Riverways
 Look for 2 pillars near waypoint, follow the trail, ➞ {enter|1_2_12} #The Wetlands
 Find and kill {kill|Oak, Skullbreaker}
@@ -47,7 +47,7 @@ Head {dir|180}, look for the torch touching the road
 Follow the trail in the direction of the torch, help or kill {kill|Alira Darktongue}
 Follow the road, kill {kill|Captain Arteri}
 Take {quest_text|Thaumetic Emblem}
-{town} #The Forest Encampment
+{town}
 If you killed all bandits, hand in {quest|a2q7} #Deal with the Bandits
 {waypoint|1_1_town} #Lioneye's Watch
 Hand in {quest|a1q9} #The Way Forward
@@ -64,5 +64,5 @@ First floor exit will be in one of the 3 corners
 Remaining floors will have the exit diagonally across from the entrance
 Kill {kill|Vaal Oversoul}
 Get {crafting}
-{town} #The Forest Encampment
+{town}
 {vendor}
