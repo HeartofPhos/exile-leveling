@@ -1,21 +1,21 @@
 {waypoint|2_10_town} #Oriath Docks
 ➞ {enter|2_10_1} #The Cathedral Rooftop
-Head {dir|0}
-➞ {arena|Cathedral Apex}, kill {kill|Plaguewing}
+Head {dir|0}, ➞ {arena|Cathedral Apex}, kill {kill|Plaguewing}
 ➞ {enter|2_10_2} #The Ravaged Square
+Place {set_portal} immediately
 Head {dir|180}, ➞ {enter|2_10_7} #The Control Blocks
-{get_waypoint}
-➞ {enter|2_10_2} #The Ravaged Square
+{waypoint|2_10_town} #Oriath Docks
+Hand in {quest|a10q1} #Safe Passage
+Take {use_portal}
 Head {dir|45}, get {get_waypoint}
 ➞ {enter|2_10_9} #The Ossuary
-➞ {arena|The Bone pits}
 Loop around clockwise, complete {trial}
 {town}
-{waypoint|Labyrinth_Airlock}, {ascend}
+{waypoint|Labyrinth_Airlock}
+{ascend}
 {waypoint|2_10_7} #The Control Blocks
 Find and kill {kill|Vilenta}
 {town}
-Hand in {quest|a10q1} #Safe Passage
 Hand in {quest|a10q6} #Vilenta's Vengeance
 {waypoint|2_10_2} #The Ravaged Square
 Head {dir|135}, ➞ {enter|2_10_3} #The Torched Courts

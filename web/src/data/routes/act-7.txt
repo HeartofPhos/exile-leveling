@@ -52,7 +52,8 @@ Get {get_waypoint}
 ➞ {enter|2_7_11} #The Vaal City
 {waypoint|2_7_town} #The Bridge Encampment
 Hand in {quest|a7q6} #Kishara's Star
-{waypoint|Labyrinth_Airlock}, {ascend} #Aspirants' Plaza
+{waypoint|Labyrinth_Airlock} #Aspirants' Plaza
+{ascend}
 Get {crafting}
 {waypoint|2_7_11} #The Vaal City
 ➞ {enter|2_7_12_1} #The Temple of Decay Level 1
