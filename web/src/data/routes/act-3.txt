@@ -66,4 +66,4 @@ Get {crafting}
 {waypoint|1_3_15} #The Imperial Gardens
 ➞ {enter|1_3_18_1} #The Sceptre of God
 ➞ {enter|1_3_18_2} #The Upper Sceptre of God
-Find and Kill {kill|Dominus, High Templar}
+➞ {arena|Tower Rooftop}, Kill {kill|Dominus, High Templar}

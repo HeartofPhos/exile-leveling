@@ -9,7 +9,7 @@ Find and kill {kill|Justicar Casticus}
 Head {dir|45}, ➞ {enter|1_5_4} #The Templar Courts
 ➞ {enter|1_5_5} #The Chamber of Innocence
 Get {get_waypoint}
-Find and kill {kill|High Templar Avarius}
+➞ {arena|Sanctum of Innocence}, kill {kill|High Templar Avarius}
 Go out, {waypoint|1_5_town} #Overseer's Tower
 Hand in {quest|a5q2} #The Key to Freedom
 Hand in {quest|a5q3} #In Service to Science
@@ -30,5 +30,5 @@ Find 3x{quest_text|Kitava's Torments}
 Hand in {quest|a5q7} #Kitava's Torments
 {waypoint|1_5_3b} #The Ruined Square
 Head {dir|225}, ➞ {enter|1_5_8} #The Cathedral Rooftop
-Kill {kill|Kitava, the Insatiable}
+➞ {arena|Cathedral Apex}, kill {kill|Kitava, the Insatiable}
 Talk to {generic|Lilly Roth}, Sail to Wraeclast

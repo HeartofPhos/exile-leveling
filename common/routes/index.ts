@@ -87,6 +87,25 @@ function EvaluateKill(
   };
 }
 
+interface ArenaAction {
+  type: "arena";
+  value: string;
+}
+
+function EvaluateArena(
+  action: ParsedAction,
+  lookup: RouteLookup,
+  state: RouteState
+): string | EvaluateResult {
+  if (action.length != 2) return ERROR_INVALID_FORMAT;
+  return {
+    action: {
+      type: "arena",
+      value: action[1],
+    },
+  };
+}
+
 interface AreaAction {
   type: "area";
   areaId: Area["id"];
@@ -377,6 +396,7 @@ function EvaluateDirection(
 
 export type Action =
   | KillAction
+  | ArenaAction
   | AreaAction
   | EnterAction
   | TownAction
@@ -412,6 +432,8 @@ function evaluateAction(
   switch (action[0]) {
     case "kill":
       return EvaluateKill(action, lookup, state);
+    case "arena":
+      return EvaluateArena(action, lookup, state);
     case "area":
       return EvaluateArea(action, lookup, state);
     case "enter":

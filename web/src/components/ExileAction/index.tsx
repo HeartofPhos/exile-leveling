@@ -19,6 +19,10 @@ function EnemyComponent(enemy: string) {
   return <span className={classNames(styles.enemy)}>{enemy}</span>;
 }
 
+function ArenaComponent(arenaName: string) {
+  return <span className={classNames(styles.area)}>{arenaName}</span>;
+}
+
 function AreaComponent(area: Area) {
   return <span className={classNames(styles.area)}>{area.name}</span>;
 }
@@ -130,8 +134,8 @@ function DirectionComponent(dirIndex: number) {
   return <span>{directions[dirIndex]}</span>;
 }
 
-function GenericComponent(npcName: string) {
-  return <span className={classNames(styles.default)}>{npcName}</span>;
+function GenericComponent(text: string) {
+  return <span className={classNames(styles.default)}>{text}</span>;
 }
 
 function CraftingComponent() {
@@ -159,6 +163,8 @@ export function ExileAction({ action, lookup }: ActionProps) {
   switch (action.type) {
     case "kill":
       return EnemyComponent(action.value);
+    case "arena":
+      return ArenaComponent(action.value);
     case "area":
       return AreaComponent(lookup.areas[action.areaId]);
     case "enter":

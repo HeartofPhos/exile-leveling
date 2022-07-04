@@ -24,23 +24,23 @@ Get {crafting}
 {waypoint|1_4_3_3} #The Crystal Veins
 ➞ {enter|1_4_4_1} #Kaom's Dream
 ➞ {enter|1_4_4_3} #Kaom's Stronghold
-Find and kill {kill|King Kaom}, take {quest_text|The Eye of Fury}
+➞ {arena|Caldera of the King}, kill {kill|King Kaom}, take {quest_text|The Eye of Fury}
 {town}
 {waypoint|1_4_5_2} #The Grand Arena
-Find and kill {kill|Daresso, King of Swords}, take {quest_text|The Eye of Desire}
+➞ {arena|The Ring of Blades}, kill {kill|Daresso, King of Swords}, take {quest_text|The Eye of Desire}
 {town}
 {waypoint|1_4_3_3} #The Crystal Veins
 Talk to {generic|Lady Dialla}
 ➞ {enter|1_4_6_1} #The Belly of the Beast Level 1
 ➞ {enter|1_4_6_2} #The Belly of the Beast Level 2
-Find and kill {kill|Piety, the Abomination}
+➞ {arena|The Bowels of the Beast}, kill {kill|Piety, the Abomination}
 ➞ {enter|1_4_6_3} #The Harvest
 Get {get_waypoint}
 Find and kill {kill|Doedre Darktongue}, take {quest_text|Malachai's Lungs}
 Find and kill {kill|Maligaro, The Inquisitor}, take {quest_text|Malachai's Heart}
 Find and kill {kill|Shavronne of Umbra}, take {quest_text|Malachai's Entrails}
 Hand in {quest|a4q5} #Corpus Malachus
-Kill {kill|Malachai, The Nightmare}
+➞ {arena|The Black Core}, kill {kill|Malachai, The Nightmare}
 {town}
 Hand in {quest|a4q1} #The Eternal Nightmare
 {vendor}

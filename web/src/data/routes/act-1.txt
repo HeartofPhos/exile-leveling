@@ -29,7 +29,7 @@ Hand in {quest|a1q7} #The Dweller of the Deep
 {waypoint|1_1_7_1} #The Lower Prison
 Complete {trial}
 ➞ {enter|1_1_7_2} #The Upper Prison
-Find and kill {kill|Brutus, Lord Incarcerator}
+➞ {arena|The Warden's Quarters}, kill {kill|Brutus, Lord Incarcerator}
 {town}
 Hand in {quest|a1q2} #The Caged Brute
 {vendor}
@@ -51,6 +51,6 @@ Find and kill {kill|Captain Fairgraves}
 Hand in {quest|a1q6} #The Marooned Mariner
 {waypoint|1_1_11_1} #The Cavern of Wrath
 ➞ {enter|1_1_11_2} #The Cavern of Anger
-Find and kill {kill|Merveil, the Siren}
+➞ {arena|Merveil's Lair}, kill {kill|Merveil, the Siren}
 {town}
 {vendor}
