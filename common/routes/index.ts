@@ -267,12 +267,12 @@ function EvaluateUsePortal(
   };
 }
 
-interface NpcAction {
-  type: "npc";
+interface GenericAction {
+  type: "generic";
   value: string;
 }
 
-function EvaluateNpc(
+function EvaluateGeneric(
   action: ParsedAction,
   lookup: RouteLookup,
   state: RouteState
@@ -280,7 +280,7 @@ function EvaluateNpc(
   if (action.length != 2) return ERROR_INVALID_FORMAT;
   return {
     action: {
-      type: "npc",
+      type: "generic",
       value: action[1],
     },
   };
@@ -389,7 +389,7 @@ export type Action =
   | QuestTextAction
   | VendorAction
   | VendorRewardAction
-  | NpcAction
+  | GenericAction
   | TrialAction
   | AscendAction
   | DirectionAction
@@ -430,8 +430,8 @@ function evaluateAction(
       return EvaluateQuest(action, lookup, state);
     case "quest_text":
       return EvaluateQuestText(action, lookup, state);
-    case "npc":
-      return EvaluateNpc(action, lookup, state);
+    case "generic":
+      return EvaluateGeneric(action, lookup, state);
     case "vendor":
       return EvaluateVendor(action, lookup, state);
     case "trial":

@@ -130,7 +130,7 @@ function DirectionComponent(dirIndex: number) {
   return <span>{directions[dirIndex]}</span>;
 }
 
-function NpcComponent(npcName: string) {
+function GenericComponent(npcName: string) {
   return <span className={classNames(styles.default)}>{npcName}</span>;
 }
 
@@ -196,8 +196,8 @@ export function ExileAction({ action, lookup }: ActionProps) {
       return PortalComponent();
     case "dir":
       return DirectionComponent(action.dirIndex);
-    case "npc":
-      return NpcComponent(action.value);
+    case "generic":
+      return GenericComponent(action.value);
     case "crafting":
       return CraftingComponent();
     case "ascend":

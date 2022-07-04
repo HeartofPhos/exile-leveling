@@ -1,13 +1,12 @@
-#Act 3
 {waypoint|1_3_1} #The City of Sarn
-Help and talk to {npc|Clarissa}
+Help and talk to {generic|Clarissa}
 ➞ {enter|1_3_town} #The Sarn Encampment
 ➞ {enter|1_3_2} #The Slums
 ➞ {enter|1_3_3_1} #The Crematorium
 Complete {trial}
 Find and kill {kill|Piety}, take {quest_text|Tolman's Bracelet}
 {town}
-Talk to {npc|Clarissa}, take {quest_text|Sewer Keys}
+Talk to {generic|Clarissa}, take {quest_text|Sewer Keys}
 Hand in {quest|a3q1} #Lost in Love
 {vendor}
 ➞ {enter|1_3_2} #The Slums
@@ -32,7 +31,7 @@ Get {get_waypoint}
 Find and take {quest_text|Thaumetic Sulphite}
 {town}
 {waypoint|1_3_8_2} #The Solaris Temple Level 2
-Talk to {npc|Lady Dialla}
+Talk to {generic|Lady Dialla}
 Hand in {quest|a3q4} #The Ribbon Spool
 Hand in {quest|a3q5} #Fiery Dust, take {quest_text|Infernal Talc}
 {waypoint|1_3_10_1} #The Sewers

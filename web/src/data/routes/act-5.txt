@@ -1,4 +1,3 @@
-#Act 5
 ➞ {enter|1_5_1} #The Slave Pens
 Find and {kill|Overseer Krow}
 ➞ {enter|1_5_town} #Overseer's Tower
@@ -11,7 +10,7 @@ Head {dir|45}, ➞ {enter|1_5_4} #The Templar Courts
 ➞ {enter|1_5_5} #The Chamber of Innocence
 Get {get_waypoint}
 Find and kill {kill|High Templar Avarius}
-{town}
+Go out, {waypoint|1_5_town} #Overseer's Tower
 Hand in {quest|a5q2} #The Key to Freedom
 Hand in {quest|a5q3} #In Service to Science
 Hand in {quest|a5q4} #Death to Purity
@@ -32,4 +31,4 @@ Hand in {quest|a5q7} #Kitava's Torments
 {waypoint|1_5_3b} #The Ruined Square
 Head {dir|225}, ➞ {enter|1_5_8} #The Cathedral Rooftop
 Kill {kill|Kitava, the Insatiable}
-Talk to {npc|Lilly Roth}, Sail to Wraeclast
+Talk to {generic|Lilly Roth}, Sail to Wraeclast
