@@ -524,6 +524,12 @@
           "Shadow"
         ]
       },
+      "Metadata/Items/Flasks/FlaskLife2": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskMana2": {
+        "classes": []
+      },
       "Metadata/Items/Gems/SupportGemMirageArcher": {
         "classes": [
           "Duelist",
@@ -545,6 +551,9 @@
           "Shadow",
           "Scion"
         ]
+      },
+      "Metadata/Items/Flasks/FlaskUtility6": {
+        "classes": []
       },
       "Metadata/Items/Gems/SupportGemRuthless": {
         "classes": [
@@ -1078,14 +1087,22 @@
     "id": "a1q8",
     "name": "A Dirty Job",
     "act": "1",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/SkillBooks/Book-a1q8": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a1q7": {
     "id": "a1q7",
     "name": "The Dweller of the Deep",
     "act": "1",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/SkillBooks/Book-a1q7": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a1q2": {
@@ -1710,7 +1727,11 @@
     "id": "a1q6",
     "name": "The Marooned Mariner",
     "act": "1",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/SkillBooks/Book-a1q6": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a1q3": {
@@ -2355,7 +2376,11 @@
     "id": "a1q9",
     "name": "The Way Forward",
     "act": "1",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/SkillBooks/Book-a1q9": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a2q11": {
@@ -2369,7 +2394,11 @@
     "id": "a2q5",
     "name": "Through Sacred Ground",
     "act": "2",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/SkillBooks/Book-a2q5": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a2q6": {
@@ -2724,7 +2753,32 @@
     "id": "a2q10",
     "name": "The Great White Beast",
     "act": "2",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/Flasks/FlaskUtility15": {
+        "classes": []
+      },
+      "Metadata/Items/Belts/Belt2": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskLife4": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskMana4": {
+        "classes": []
+      },
+      "Metadata/Items/Belts/Belt4": {
+        "classes": []
+      },
+      "Metadata/Items/Belts/Belt3": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskUtility6": {
+        "classes": []
+      },
+      "Metadata/Items/Belts/Belt1": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a2q4": {
@@ -3346,7 +3400,11 @@
     "id": "a2q7",
     "name": "Deal with the Bandits",
     "act": "2",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/BanditAmulets/CombinedAmulet": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a2q1": {
@@ -3937,14 +3995,22 @@
     "id": "a3q2",
     "name": "Lost in Love",
     "act": "3",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/SewerKeys": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a3q11": {
     "id": "a3q11",
     "name": "Victario's Secrets",
     "act": "3",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/SkillBooks/Book-a3q11v0": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a3q3": {
@@ -3958,14 +4024,31 @@
     "id": "a3q4",
     "name": "The Ribbon Spool",
     "act": "3",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/Amulets/Amulet3": {
+        "classes": []
+      },
+      "Metadata/Items/Amulets/Amulet6": {
+        "classes": []
+      },
+      "Metadata/Items/Amulets/Amulet4": {
+        "classes": []
+      },
+      "Metadata/Items/Amulets/Amulet5": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a3q5": {
     "id": "a3q5",
     "name": "Fiery Dust",
     "act": "3",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/InfernalTalc": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a3q8": {
@@ -6361,14 +6444,28 @@
     "id": "a3q13",
     "name": "A Swig of Hope",
     "act": "3",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/Rings/Ring2": {
+        "classes": []
+      },
+      "Metadata/Items/Rings/Ring4": {
+        "classes": []
+      },
+      "Metadata/Items/Rings/Ring3": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a3q9": {
     "id": "a3q9",
     "name": "Piety's Pets",
     "act": "3",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/SkillBooks/Book-a3q9": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a3q10": {
@@ -7060,7 +7157,11 @@
     "id": "a4q6",
     "name": "An Indomitable Spirit",
     "act": "4",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/Act4/Book-a4q6": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "bandit_respec": {
@@ -7081,28 +7182,83 @@
     "id": "a5q1b",
     "name": "Return to Oriath",
     "act": "5",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/Rings/Ring7": {
+        "classes": []
+      },
+      "Metadata/Items/Rings/Ring6": {
+        "classes": []
+      },
+      "Metadata/Items/Rings/Ring5": {
+        "classes": []
+      },
+      "Metadata/Items/Rings/Ring14": {
+        "classes": []
+      },
+      "Metadata/Items/Rings/Ring12": {
+        "classes": []
+      },
+      "Metadata/Items/Rings/Ring13": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a5q2": {
     "id": "a5q2",
     "name": "The Key to Freedom",
     "act": "5",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/Flasks/FlaskUtility7": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskUtility1": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskUtility5": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskUtility9": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskUtility2": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskUtility3": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskUtility4": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a5q3": {
     "id": "a5q3",
     "name": "In Service to Science",
     "act": "5",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/Act5/Book-a5q3": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a5q4": {
     "id": "a5q4",
     "name": "Death to Purity",
     "act": "5",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/Jewels/JewelInt": {
+        "classes": []
+      },
+      "Metadata/Items/Jewels/JewelStr": {
+        "classes": []
+      },
+      "Metadata/Items/Jewels/JewelDex": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a5q5": {
@@ -7123,7 +7279,11 @@
     "id": "a5q7",
     "name": "Kitava's Torments",
     "act": "5",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/Act5/Book-a5q7": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a6q1": {
@@ -7137,21 +7297,78 @@
     "id": "a6q2",
     "name": "Essence of Umbra",
     "act": "6",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/Armours/Helmets/HelmetDexInt7": {
+        "classes": [
+          "Witch",
+          "Shadow",
+          "Ranger",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Armours/Helmets/HelmetStrDex6": {
+        "classes": [
+          "Marauder",
+          "Ranger",
+          "Duelist",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Armours/Helmets/HelmetDex6": {
+        "classes": [
+          "Shadow",
+          "Ranger",
+          "Duelist",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Armours/Helmets/HelmetStr7": {
+        "classes": [
+          "Marauder",
+          "Templar",
+          "Duelist",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Armours/Helmets/HelmetInt7": {
+        "classes": [
+          "Templar",
+          "Witch",
+          "Shadow",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Armours/Helmets/HelmetStrInt6": {
+        "classes": [
+          "Marauder",
+          "Templar",
+          "Witch",
+          "Scion"
+        ]
+      }
+    },
     "vendor_rewards": {}
   },
   "a6q3": {
     "id": "a6q3",
     "name": "The Father of War",
     "act": "6",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/Act6/Book-a6q3": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a6q4": {
     "id": "a6q4",
     "name": "Fallen from Grace",
     "act": "6",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/Act6/Book-a6q4": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {
       "Metadata/Items/Gems/SkillGemAbsolution": {
         "classes": [],
@@ -8723,42 +8940,129 @@
     "id": "a6q5",
     "name": "Bestel's Epic",
     "act": "6",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/Amulets/Amulet9": {
+        "classes": []
+      },
+      "Metadata/Items/Belts/Belt2": {
+        "classes": []
+      },
+      "Metadata/Items/Amulets/Amulet10": {
+        "classes": []
+      },
+      "Metadata/Items/Belts/Belt4": {
+        "classes": []
+      },
+      "Metadata/Items/Belts/Belt3": {
+        "classes": []
+      },
+      "Metadata/Items/Belts/Belt1": {
+        "classes": []
+      },
+      "Metadata/Items/Amulets/Amulet8": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a6q6": {
     "id": "a6q6",
     "name": "The Puppet Mistress",
     "act": "6",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/Act6/Book-a6q6": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a6q7": {
     "id": "a6q7",
     "name": "The Cloven One",
     "act": "6",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/Act6/Book-a6q7": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a7q1": {
     "id": "a7q1",
     "name": "The Master of a Million Faces",
     "act": "7",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/Act7/Book-a7q1": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a7q2": {
     "id": "a7q2",
     "name": "Essence of the Artist",
     "act": "7",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/Armours/Boots/BootsDexInt7": {
+        "classes": [
+          "Witch",
+          "Shadow",
+          "Ranger",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Armours/Boots/BootsInt7": {
+        "classes": [
+          "Templar",
+          "Witch",
+          "Shadow",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Armours/Boots/BootsStr7": {
+        "classes": [
+          "Marauder",
+          "Templar",
+          "Duelist",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Armours/Boots/BootsDex7": {
+        "classes": [
+          "Shadow",
+          "Ranger",
+          "Duelist",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Armours/Boots/BootsStrInt6": {
+        "classes": [
+          "Marauder",
+          "Templar",
+          "Witch",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Armours/Boots/BootsStrDex6": {
+        "classes": [
+          "Marauder",
+          "Ranger",
+          "Duelist",
+          "Scion"
+        ]
+      }
+    },
     "vendor_rewards": {}
   },
   "a7q3": {
     "id": "a7q3",
     "name": "Web of Secrets",
     "act": "7",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/Act7/ObsidianKey": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a7q4": {
@@ -8772,14 +9076,40 @@
     "id": "a7q5",
     "name": "The Silver Locket",
     "act": "7",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/Flasks/FlaskUtility11": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskUtility17": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskUtility1": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskUtility5": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskUtility9": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskUtility8": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskUtility13": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a7q6": {
     "id": "a7q6",
     "name": "Kishara's Star",
     "act": "7",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/Act7/Book-a7q6": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a7q7": {
@@ -8793,21 +9123,54 @@
     "id": "a7q8",
     "name": "In Memory of Greust",
     "act": "7",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/Amulets/Amulet9": {
+        "classes": []
+      },
+      "Metadata/Items/Amulets/Amulet10": {
+        "classes": []
+      },
+      "Metadata/Items/Amulets/Amulet6": {
+        "classes": []
+      },
+      "Metadata/Items/Amulets/Amulet7": {
+        "classes": []
+      },
+      "Metadata/Items/Amulets/Amulet8": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a7q9": {
     "id": "a7q9",
     "name": "Queen of Despair",
     "act": "7",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/Act7/Book-a7q9": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a8q1": {
     "id": "a8q1",
     "name": "Essence of the Hag",
     "act": "8",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/Rings/Ring14": {
+        "classes": []
+      },
+      "Metadata/Items/Rings/Ring12": {
+        "classes": []
+      },
+      "Metadata/Items/Rings/Ring13": {
+        "classes": []
+      },
+      "Metadata/Items/Rings/Ring15": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a8q2": {
@@ -8828,7 +9191,11 @@
     "id": "a8q4",
     "name": "Reflection of Terror",
     "act": "8",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/Act8/Book-a8q4": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a8q5": {
@@ -8842,14 +9209,22 @@
     "id": "a8q6",
     "name": "Love is Dead",
     "act": "8",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/Act8/Book-a8q6": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a8q7": {
     "id": "a8q7",
     "name": "The Gemling Legion",
     "act": "8",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/Act8/Book-a8q7": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a9q1": {
@@ -8863,70 +9238,316 @@
     "id": "a9q2",
     "name": "The Ruler of Highgate",
     "act": "9",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/Act9/Book-a9q2": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a9q3": {
     "id": "a9q3",
     "name": "The Storm Blade",
     "act": "9",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/Armours/Shields/ShieldDexInt10": {
+        "classes": [
+          "Shadow"
+        ]
+      },
+      "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger18": {
+        "classes": [
+          "Ranger",
+          "Shadow",
+          "Witch"
+        ]
+      },
+      "Metadata/Items/Armours/Shields/ShieldStrInt10": {
+        "classes": [
+          "Templar"
+        ]
+      },
+      "Metadata/Items/Armours/Shields/ShieldStr14": {
+        "classes": [
+          "Marauder"
+        ]
+      },
+      "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword16": {
+        "classes": [
+          "Duelist",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Armours/Shields/ShieldInt13": {
+        "classes": [
+          "Witch"
+        ]
+      },
+      "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace18": {
+        "classes": [
+          "Marauder",
+          "Duelist",
+          "Templar"
+        ]
+      },
+      "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword18": {
+        "classes": [
+          "Marauder",
+          "Duelist",
+          "Ranger"
+        ]
+      },
+      "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand13": {
+        "classes": [
+          "Shadow",
+          "Witch",
+          "Templar",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Armours/Shields/ShieldDex13": {
+        "classes": [
+          "Ranger"
+        ]
+      },
+      "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff15": {
+        "classes": [
+          "Witch",
+          "Templar",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre18": {
+        "classes": [
+          "Witch",
+          "Templar"
+        ]
+      },
+      "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace16": {
+        "classes": [
+          "Marauder",
+          "Templar"
+        ]
+      },
+      "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow18": {
+        "classes": [
+          "Duelist",
+          "Ranger",
+          "Shadow",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe18": {
+        "classes": [
+          "Marauder",
+          "Duelist",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Quivers/QuiverNew8": {
+        "classes": [
+          "Ranger",
+          "Shadow",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe15": {
+        "classes": [
+          "Marauder"
+        ]
+      },
+      "Metadata/Items/Armours/Shields/ShieldStrDex10": {
+        "classes": [
+          "Duelist"
+        ]
+      },
+      "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier17": {
+        "classes": [
+          "Ranger"
+        ]
+      },
+      "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw17": {
+        "classes": [
+          "Shadow",
+          "Witch"
+        ]
+      }
+    },
     "vendor_rewards": {}
   },
   "a9q4": {
     "id": "a9q4",
     "name": "Fastis Fortuna",
     "act": "9",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/Act9/Book-a9q4": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a9q5": {
     "id": "a9q5",
     "name": "Queen of the Sands",
     "act": "9",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/Act9/Book-a9q5": {
+        "classes": []
+      },
+      "Metadata/Items/QuestItems/Act9/BottledStorm": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a10q1": {
     "id": "a10q1",
     "name": "Safe Passage",
     "act": "10",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/Flasks/FlaskUtility11": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskUtility10": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskUtility17": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskLife11": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskMana11": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskUtility8": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskUtility14": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskUtility12": {
+        "classes": []
+      },
+      "Metadata/Items/Flasks/FlaskUtility13": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a10q2": {
     "id": "a10q2",
     "name": "Death and Rebirth",
     "act": "10",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/Armours/BodyArmours/BodyDexInt15": {
+        "classes": [
+          "Witch",
+          "Shadow",
+          "Ranger",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Armours/BodyArmours/BodyStrInt15": {
+        "classes": [
+          "Marauder",
+          "Templar",
+          "Witch",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Armours/BodyArmours/BodyStrDex16": {
+        "classes": [
+          "Marauder",
+          "Ranger",
+          "Duelist",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Armours/BodyArmours/BodyStr16": {
+        "classes": [
+          "Marauder",
+          "Templar",
+          "Duelist",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Armours/BodyArmours/BodyInt16": {
+        "classes": [
+          "Templar",
+          "Witch",
+          "Shadow",
+          "Scion"
+        ]
+      },
+      "Metadata/Items/Armours/BodyArmours/BodyDex16": {
+        "classes": [
+          "Shadow",
+          "Ranger",
+          "Duelist",
+          "Scion"
+        ]
+      }
+    },
     "vendor_rewards": {}
   },
   "a10q3": {
     "id": "a10q3",
     "name": "An End to Hunger",
     "act": "10",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/Act10/Book-a10q3": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a10q4": {
     "id": "a10q4",
     "name": "No Love for Old Ghosts",
     "act": "10",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/Act10/Book-a10q4": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a10q5": {
     "id": "a10q5",
     "name": "Map to Tsoatha",
     "act": "10",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/Belts/Belt2": {
+        "classes": []
+      },
+      "Metadata/Items/Belts/Belt5": {
+        "classes": []
+      },
+      "Metadata/Items/Belts/Belt4": {
+        "classes": []
+      },
+      "Metadata/Items/Belts/Belt3": {
+        "classes": []
+      },
+      "Metadata/Items/Belts/Belt1": {
+        "classes": []
+      },
+      "Metadata/Items/Belts/Belt6": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a10q6": {
     "id": "a10q6",
     "name": "Vilenta's Vengeance",
     "act": "10",
-    "quest_rewards": {},
+    "quest_rewards": {
+      "Metadata/Items/QuestItems/Act10/Book-a10q6": {
+        "classes": []
+      }
+    },
     "vendor_rewards": {}
   },
   "a10q3a11": {

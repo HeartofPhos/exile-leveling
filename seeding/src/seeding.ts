@@ -72,14 +72,16 @@ export async function getQuests(poeDatVersion: string) {
   const vendorRewards = await getVendorRewards();
 
   for (const item of questRewards) {
-    let quest = result[item.quest_id];
+    const quest = result[item.quest_id];
+    if (!quest) continue;
     quest.quest_rewards[item.item_id] = {
       classes: item.classes?.split(",") || [],
     };
   }
 
   for (const item of vendorRewards) {
-    let quest = result[item.quest_id];
+    const quest = result[item.quest_id];
+    if (!quest) continue;
     quest.vendor_rewards[item.item_id] = {
       classes: item.classes?.split(",") || [],
       npc: item.npc,
@@ -101,7 +103,7 @@ export async function getQuestRewards() {
       "quest_rewards.classes",
     ],
     where:
-      '(quest_rewards.act IS NOT NULL) AND (items.tags HOLDS "gem") AND (NOT items._pageName LIKE "Template:%") AND (items.metadata_id IS NOT NULL)',
+      '(quest_rewards.act IS NOT NULL) AND (NOT items._pageName LIKE "Template:%") AND (items.metadata_id IS NOT NULL)',
     order_by: [
       "quest_rewards.act",
       "quest_rewards.quest_id",
@@ -125,7 +127,7 @@ export async function getVendorRewards() {
       "vendor_rewards.npc",
     ],
     where:
-      '(vendor_rewards.act IS NOT NULL) AND (items.tags HOLDS "gem") AND (NOT items._pageName LIKE "Template:%") AND (items.metadata_id IS NOT NULL)',
+      '(vendor_rewards.act IS NOT NULL) AND (NOT items._pageName LIKE "Template:%") AND (items.metadata_id IS NOT NULL)',
     order_by: [
       "vendor_rewards.act",
       "vendor_rewards.quest_id",
