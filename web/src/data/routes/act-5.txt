@@ -7,7 +7,7 @@ Find and take {quest_text|Miasmeter}
 Find and kill {kill|Justicar Casticus}
 ➞ {enter|1_5_3} #Oriath Square
 Head {dir|45}, ➞ {enter|1_5_4} #The Templar Courts
-➞ {enter|1_5_5} #The Chamber of Innocence
+Loop around clockwise, ➞ {enter|1_5_5} #The Chamber of Innocence
 Get {get_waypoint}
 ➞ {arena|Sanctum of Innocence}, kill {kill|High Templar Avarius}
 Go out, {waypoint|1_5_town} #Overseer's Tower
@@ -16,7 +16,7 @@ Hand in {quest|a5q3} #In Service to Science
 Hand in {quest|a5q4} #Death to Purity
 {waypoint|1_5_5} #The Chamber of Innocence
 ➞ {enter|1_5_4b} #The Torched Courts
-➞ {enter|1_5_3b} #The Ruined Square
+Loop around counter-clockwise, ➞ {enter|1_5_3b} #The Ruined Square
 Head {dir|315}, get {get_waypoint}
 ➞ {enter|1_5_6} #The Ossuary
 Take {quest_text|Sign of Purity}
