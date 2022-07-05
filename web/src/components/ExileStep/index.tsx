@@ -7,10 +7,17 @@ import styles from "./ExileStep.module.css";
 interface StepProps {
   step: Step;
   lookup: RouteLookup;
+  initialIsDone: boolean;
+  onUpdate?: (isDone: boolean) => void;
 }
 
-export function ExileStep({ step, lookup }: StepProps) {
-  const [isDone, setIsDone] = useState<boolean>(false);
+export function ExileStep({
+  step,
+  lookup,
+  initialIsDone,
+  onUpdate,
+}: StepProps) {
+  const [isDone, setIsDone] = useState<boolean>(initialIsDone);
   const mapped = [];
   for (const subStep of step) {
     if (typeof subStep == "string") {
@@ -28,6 +35,7 @@ export function ExileStep({ step, lookup }: StepProps) {
       className={classNames(styles.step, { [styles.done]: isDone })}
       onClick={() => {
         setIsDone(!isDone);
+        if (onUpdate) onUpdate(!isDone);
       }}
     >
       {mapped}
