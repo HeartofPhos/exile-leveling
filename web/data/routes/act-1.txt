@@ -5,7 +5,7 @@ Hand in {quest|a1q1} #Enemy at the Gate
 ➞ {enter|1_1_2} #The Coast
 Get {get_waypoint}
 ➞ {enter|1_1_3} #The Mud Flats
-Find 3x{quest_text|Glyph}
+Find 3x{quest_text|Glyphs}
 ➞ {enter|1_1_4_1} #The Submerged Passage
 {waypoint|1_1_2} #The Coast
 ➞ {enter|1_1_2a} #The Tidal Island

@@ -27,7 +27,8 @@ Head {dir|225} ➞ {enter|1_2_7} #The Riverways
 Follow the road, get {get_waypoint}
 Follow the road ➞ {enter|1_2_9} #The Western Forest
 Follow the road, get {get_waypoint}
-Go to side of road opposite {waypoint} ➞ {enter|1_2_10} #The Weaver's Chambers
+Search the side of road opposite {waypoint}
+➞ {enter|1_2_10} #The Weaver's Chambers
 ➞ {arena|The Weaver's Nest}, kill {kill|The Weaver}, take {quest_text|Maligaro's Spike}
 {town}
 Hand in {quest|a2q4} #Sharp and Cruel

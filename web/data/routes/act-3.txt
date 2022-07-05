@@ -10,7 +10,7 @@ Talk to {generic|Clarissa}, take {quest_text|Sewer Keys}
 Hand in {quest|a3q1} #Lost in Love
 ➞ {enter|1_3_2} #The Slums
 ➞ {enter|1_3_10_1} #The Sewers
-Find 3x{quest_text|Platinum Bust}, 1 before {waypoint}, 2 after
+Find 3x{quest_text|Platinum Busts}, 1 before {waypoint}, 2 after
 Get {get_waypoint}
 ➞ {enter|1_3_5} #The Marketplace
 Get {get_waypoint}
@@ -52,7 +52,7 @@ Get {get_waypoint}
 Head {dir|315} ➞ {enter|1_3_17_1} #The Library
 Get {get_waypoint}
 Find Loose Candle ➞ {enter|1_3_17_2} #The Archives
-Find 4x{quest_text|Golden Page}
+Find 4x{quest_text|Golden Pages}
 {town}
 {waypoint|1_3_17_1} #The Library
 Hand in {quest|a3q12} #A Fixture of Fate
