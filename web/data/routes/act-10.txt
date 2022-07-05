@@ -9,7 +9,7 @@ Hand in {quest|a10q1} #Safe Passage
 Take {use_portal}
 Head {dir|45} get {get_waypoint}
 ➞ {enter|2_10_9} #The Ossuary
-Loop around clockwise, complete {trial}
+Complete {trial}
 {town}
 {waypoint|Labyrinth_Airlock}
 {ascend}
