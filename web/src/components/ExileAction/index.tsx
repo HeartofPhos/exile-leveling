@@ -75,14 +75,6 @@ function WaypointComponent() {
   );
 }
 
-function VendorComponent() {
-  return (
-    <>
-      <span className={classNames(styles.default)}>Vendor</span>
-    </>
-  );
-}
-
 function VendorRewardComponent(gem: Gem) {
   return (
     <>
@@ -214,8 +206,6 @@ export function ExileAction({ action, lookup }: ActionProps) {
     }
     case "get_waypoint":
       return WaypointComponent();
-    case "vendor":
-      return VendorComponent();
     case "vendor_reward":
       return VendorRewardComponent(lookup.gems[action.gemId]);
     case "trial":

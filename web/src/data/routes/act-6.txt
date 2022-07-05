@@ -3,7 +3,6 @@
 Kill {kill|Everything}
 {town}
 Hand in {quest|a6q4} #Fallen from Grace
-{vendor}
 ➞ {enter|2_6_2} #The Coast
 ➞ {enter|2_6_4} #The Mud Flats
 Find and kill {kill|The Dishonoured Queen}, take {quest_text|Eye of Conquest}
@@ -29,7 +28,6 @@ Head {dir|315}
 Hand in {quest|a6q3} #The Father of War
 Hand in {quest|a6q2} #Essence of Umbra
 Hand in {quest|a6q6} #The Puppet Mistress
-{vendor}
 {waypoint|2_6_10} #The Riverways
 ➞ {enter|2_6_12} #The Southern Forest
 Get {get_waypoint}
@@ -45,4 +43,3 @@ Talk to {generic|Weylam Roth}
 ➞ {arena|The Bring King's Throne}, kill {kill|Tsoagoth, The Brine King}
 {town}
 Select Pantheons
-{vendor}

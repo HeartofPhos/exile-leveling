@@ -5,8 +5,8 @@ import {
   QuestAction,
   QuestRewardAction,
   QuestTextAction,
+  VendorRewardAction,
 } from "./quest";
-import { EvaluateVendor, VendorAction, VendorRewardAction } from "./vendor";
 
 export type ParsedAction = string[];
 export type ParsedStep = (string | ParsedAction)[];
@@ -26,7 +26,6 @@ export interface RouteState {
   currentAreaId: Area["id"];
   currentTownAreaId: Area["id"];
   portalAreaId: Area["id"] | null;
-  recentQuests: Quest["id"][];
   acquiredGems: Set<Gem["id"]>;
 }
 
@@ -409,9 +408,8 @@ export type Action =
   | UsePortalAction
   | QuestAction
   | QuestRewardAction
-  | QuestTextAction
-  | VendorAction
   | VendorRewardAction
+  | QuestTextAction
   | GenericAction
   | TrialAction
   | AscendAction
@@ -457,8 +455,6 @@ function evaluateAction(
       return EvaluateQuestText(action, lookup, state);
     case "generic":
       return EvaluateGeneric(action, lookup, state);
-    case "vendor":
-      return EvaluateVendor(action, lookup, state);
     case "trial":
       return EvaluateTrial(action, lookup, state);
     case "crafting":
@@ -501,7 +497,6 @@ export function initializeRouteState() {
     currentAreaId: "1_1_1",
     currentTownAreaId: "1_1_town",
     portalAreaId: null,
-    recentQuests: [],
     acquiredGems: new Set(),
   };
 

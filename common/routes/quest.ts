@@ -18,6 +18,11 @@ export interface QuestRewardAction {
   gemId: string;
 }
 
+export interface VendorRewardAction {
+  type: "vendor_reward";
+  gemId: Gem["id"];
+}
+
 function PrepareQuestRewardSet(quest: Quest, lookup: RouteLookup) {
   let questRewardSets: Quest["quest_rewards"][];
 
@@ -45,7 +50,7 @@ function tryFindQuestReward(
   lookup: RouteLookup,
   state: RouteState,
   quest_rewards: Quest["quest_rewards"]
-): QuestRewardAction | null {
+): Step | null {
   if (lookup.buildData) {
     for (const gemId of lookup.buildData.requiredGems) {
       if (state.acquiredGems.has(gemId)) continue;
@@ -59,12 +64,44 @@ function tryFindQuestReward(
 
       if (validClass) {
         state.acquiredGems.add(gemId);
-        return { type: "quest_reward", gemId: gemId };
+        return [{ type: "quest_reward", gemId: gemId }];
       }
     }
   }
 
   return null;
+}
+
+function tryFindVendorRewards(
+  lookup: RouteLookup,
+  state: RouteState,
+  vendor_rewards: Quest["vendor_rewards"]
+): Step[] {
+  const result: Step[] = [];
+  if (lookup.buildData) {
+    for (const gemId of lookup.buildData.requiredGems) {
+      if (state.acquiredGems.has(gemId)) continue;
+
+      const reward = vendor_rewards[gemId];
+      if (!reward) continue;
+
+      const validClass =
+        reward.classes.length == 0 ||
+        reward.classes.some((x) => x == lookup.buildData?.characterClass);
+
+      if (validClass) {
+        state.acquiredGems.add(gemId);
+        result.push([
+          {
+            type: "vendor_reward",
+            gemId: gemId,
+          },
+        ]);
+      }
+    }
+  }
+
+  return result;
 }
 
 export function EvaluateQuest(
@@ -76,7 +113,6 @@ export function EvaluateQuest(
     if (action.length != 2) return ERROR_INVALID_FORMAT;
 
     const questId = action[1];
-    state.recentQuests.push(questId);
     const quest = lookup.quests[questId];
     if (!quest) return "invalid quest id";
 
@@ -84,11 +120,19 @@ export function EvaluateQuest(
     if (quest) {
       const questRewardSets = PrepareQuestRewardSet(quest, lookup);
       for (const quest_rewards of questRewardSets) {
-        const reward = tryFindQuestReward(lookup, state, quest_rewards);
-        if (reward) {
-          additionalSteps.push([reward]);
+        const questReward = tryFindQuestReward(lookup, state, quest_rewards);
+        if (questReward) {
+          additionalSteps.push(questReward);
         }
       }
+
+      const vendorRewards = tryFindVendorRewards(
+        lookup,
+        state,
+        quest.vendor_rewards
+      ).map((x) => x);
+
+      additionalSteps.push(...vendorRewards);
     }
 
     return {

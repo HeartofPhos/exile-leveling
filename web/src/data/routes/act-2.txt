@@ -1,4 +1,4 @@
-{waypoint|1_2_1} #The Southern Forest
+➞ {enter|1_2_1} #The Southern Forest
 ➞ {enter|1_2_town} #The Forest Encampment
 Head {dir|45} ➞ {enter|1_2_2} #The Old Fields
 Find {area|1_2_2a}, place {set_portal} #The Den
@@ -18,7 +18,6 @@ Complete {trial}, likely {dir|0}
 Find long hallway, kill {kill|Fidelitas, the Mourning}, take {quest_text|Baleful Gem}
 {town}
 Hand in {quest|a2q6} #Intruders in Black
-{vendor}
 {waypoint|1_2_3} #The Crossroads
 Head {dir|135} ➞ {enter|1_2_15} #The Fellshrine Ruins
 Follow the road ➞ {enter|1_2_5_1} #The Crypt Level 1
@@ -32,7 +31,6 @@ Go to side of road opposite {waypoint} ➞ {enter|1_2_10} #The Weaver's Chambers
 ➞ {arena|The Weaver's Nest}, kill {kill|The Weaver}, take {quest_text|Maligaro's Spike}
 {town}
 Hand in {quest|a2q4} #Sharp and Cruel
-{vendor}
 {waypoint|1_2_3} #The Crossroads
 Head {dir|45} ➞ {enter|1_2_4} #The Broken Bridge
 Follow road, kill {kill|Kraityn, Scarbearer}
@@ -62,5 +60,3 @@ First floor exit will be in one of the 3 corners
 Remaining floors will have the exit diagonally across from the entrance
 ➞ {arena|Pyramid Apex}, kill {kill|Vaal Oversoul}
 Get {crafting}
-{town}
-{vendor}

@@ -1,4 +1,4 @@
-{waypoint|1_3_1} #The City of Sarn
+➞ {enter|1_3_1} #The City of Sarn
 Help and talk to {generic|Clarissa}
 ➞ {enter|1_3_town} #The Sarn Encampment
 ➞ {enter|1_3_2} #The Slums
@@ -8,7 +8,6 @@ Find and kill {kill|Piety}, take {quest_text|Tolman's Bracelet}
 {town}
 Talk to {generic|Clarissa}, take {quest_text|Sewer Keys}
 Hand in {quest|a3q1} #Lost in Love
-{vendor}
 ➞ {enter|1_3_2} #The Slums
 ➞ {enter|1_3_10_1} #The Sewers
 Find 3x{quest_text|Platinum Bust}, 1 before {waypoint}, 2 after
@@ -47,7 +46,6 @@ Get {crafting}
 {town}
 Hand in {quest|a3q8} #Sever the Right Hand
 Hand in {quest|a3q9} #Piety's Pets
-{vendor}
 {waypoint|1_3_13} #The Ebony Barracks
 Head {dir|45} ➞ {enter|1_3_15} #The Imperial Gardens
 Get {get_waypoint}
@@ -58,7 +56,6 @@ Find 4x{quest_text|Golden Page}
 {town}
 {waypoint|1_3_17_1} #The Library
 Hand in {quest|a3q12} #A Fixture of Fate
-{vendor}
 {waypoint|1_3_15} #The Imperial Gardens
 Head {dir|0} complete {trial}
 Get {crafting}
