@@ -2,6 +2,16 @@ import classNames from "classnames";
 import { Action, RouteLookup } from "../../../../common/routes";
 import { Area, Gem, Quest } from "../../../../common/types";
 import { MdCircle } from "react-icons/md";
+import {
+  BsArrowDownSquare,
+  BsArrowDownLeftSquare,
+  BsArrowDownRightSquare,
+  BsArrowLeftSquare,
+  BsArrowRightSquare,
+  BsArrowUpSquare,
+  BsArrowUpLeftSquare,
+  BsArrowUpRightSquare,
+} from "react-icons/bs";
 import styles from "./ExileAction.module.css";
 
 import gemColours from "../../data/gem-colours.json";
@@ -83,7 +93,7 @@ function VendorRewardComponent(gem: Gem) {
       <span>Buy </span>
       <span className={classNames(styles.default)}>{gem.name}</span>
       <span> for </span>
-      <div className={classNames(styles.currencyBlock)}>
+      <div className={classNames(styles.iconBlock)}>
         <img src={getImageUrl(`${gem.cost}.png`)} />
       </div>
     </>
@@ -120,14 +130,30 @@ function PortalComponent() {
 }
 
 const directions = [
-  "North",
-  "North-East",
-  "East",
-  "South-East",
-  "South",
-  "South-West",
-  "West",
-  "North-West",
+  <div className={classNames(styles.iconBlock)}>
+    <BsArrowUpSquare className={classNames(styles.icon)} />
+  </div>,
+  <div className={classNames(styles.iconBlock)}>
+    <BsArrowUpRightSquare className={classNames(styles.icon)} />
+  </div>,
+  <div className={classNames(styles.iconBlock)}>
+    <BsArrowRightSquare className={classNames(styles.icon)} />
+  </div>,
+  <div className={classNames(styles.iconBlock)}>
+    <BsArrowDownRightSquare className={classNames(styles.icon)} />
+  </div>,
+  <div className={classNames(styles.iconBlock)}>
+    <BsArrowDownSquare className={classNames(styles.icon)} />
+  </div>,
+  <div className={classNames(styles.iconBlock)}>
+    <BsArrowDownLeftSquare className={classNames(styles.icon)} />
+  </div>,
+  <div className={classNames(styles.iconBlock)}>
+    <BsArrowLeftSquare className={classNames(styles.icon)} />
+  </div>,
+  <div className={classNames(styles.iconBlock)}>
+    <BsArrowUpLeftSquare className={classNames(styles.icon)} />
+  </div>,
 ];
 
 function DirectionComponent(dirIndex: number) {

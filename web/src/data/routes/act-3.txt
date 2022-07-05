@@ -39,7 +39,7 @@ Burn the {quest_text|Undying Blockage}
 Get {crafting}
 ➞ {enter|1_3_13} #The Ebony Barracks
 Get {get_waypoint}
-Head {dir|315}, kill {kill|General Gravicius}
+Head {dir|315} kill {kill|General Gravicius}
 ➞ {enter|1_3_14_1} #The Lunaris Temple Level 1
 ➞ {enter|1_3_14_2} #The Lunaris Temple Level 2
 Find and kill {kill|Piety}, take {quest_text|Tower Key}
@@ -49,9 +49,9 @@ Hand in {quest|a3q8} #Sever the Right Hand
 Hand in {quest|a3q9} #Piety's Pets
 {vendor}
 {waypoint|1_3_13} #The Ebony Barracks
-Head {dir|45}, ➞ {enter|1_3_15} #The Imperial Gardens
+Head {dir|45} ➞ {enter|1_3_15} #The Imperial Gardens
 Get {get_waypoint}
-Head {dir|315}, ➞ {enter|1_3_17_1} #The Library
+Head {dir|315} ➞ {enter|1_3_17_1} #The Library
 Get {get_waypoint}
 Find Loose Candle, ➞ {enter|1_3_17_2} #The Archives
 Find 4x{quest_text|Golden Page}
@@ -60,7 +60,7 @@ Find 4x{quest_text|Golden Page}
 Hand in {quest|a3q12} #A Fixture of Fate
 {vendor}
 {waypoint|1_3_15} #The Imperial Gardens
-Head {dir|0}, complete {trial}
+Head {dir|0} complete {trial}
 Get {crafting}
 {town}
 {waypoint|1_3_15} #The Imperial Gardens

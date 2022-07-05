@@ -3,7 +3,7 @@
 Find and take {quest_text|Silver Locket}
 ➞ {enter|2_7_2} #The Crossroads
 Get {get_waypoint}
-Head {dir|135}, ➞ {enter|2_7_3} #The Fellshrine Ruins
+Head {dir|135} ➞ {enter|2_7_3} #The Fellshrine Ruins
 Follow the road, ➞ {enter|2_7_4} #The Crypt Level 1
 Complete {trial}
 Get {crafting}
@@ -11,7 +11,7 @@ Find {quest_text|Sarcophagus} to level 2
 Find and take {quest_text|Maligaro's Map}
 {town}
 {waypoint|2_7_2} #The Crossroads
-Head {dir|315}, ➞ {enter|2_7_5_1} #The Chamber of Sins Level 1
+Head {dir|315} ➞ {enter|2_7_5_1} #The Chamber of Sins Level 1
 Get {crafting}
 Get {get_waypoint}
 Activate {quest_text|Map Device} with {quest_text|Maligaro's Map}

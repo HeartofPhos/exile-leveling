@@ -45,14 +45,14 @@
   margin-right: var(--size-1);
 }
 
-.currencyBlock {
+.iconBlock {
   vertical-align: middle;
   position: relative;
   display: inline-block;
   width: var(--size-5);
 }
 
-.currencyBlock > * {
+.iconBlock > * {
   position: absolute;
   transform: translate(0, -50%);
   width: 100%;

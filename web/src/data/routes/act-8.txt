@@ -12,7 +12,7 @@ Follow {dir|270} wall, find and take {quest_text|Ankh of Eternity}
 Follow the dead guards by entrances
 Find and kill {kill|Gemling Legionnaires}
 ➞ {enter|2_8_10} #The Imperial Fields
-Follow the road {dir|315}, continue forward once it ends
+Follow the road {dir|315} continue forward once it ends
 ➞ {enter|2_8_12_1} #The Solaris Temple Level 1
 Get {get_waypoint}
 ➞ {enter|2_8_12_2} #The Solaris Temple Level 2
@@ -24,7 +24,7 @@ Hand in {quest|a8q7} #The Gemling Legion
 Hand in {quest|a8q6} #Love is Dead
 {waypoint|2_8_12_1} #The Solaris Temple Level 1
 ➞ {enter|2_8_11} #The Solaris Concourse
-Head {dir|225}, ➞ {enter|2_8_13} #The Harbour Bridge
+Head {dir|225} ➞ {enter|2_8_13} #The Harbour Bridge
 ➞ {enter|2_8_6} #The Lunaris Concourse
 Get {get_waypoint}
 ➞ {enter|2_8_7_1_} #The Lunaris Temple Level 1
@@ -35,16 +35,16 @@ Get {crafting}
 Hand in {quest|a8q2} #Lunar Eclipse
 Hand in {quest|a8q3} #Solar Eclipse
 {waypoint|2_8_6} #The Lunaris Concourse
-Head {dir|135}, ➞ {enter|2_8_13} #The Harbour Bridge
+Head {dir|135} ➞ {enter|2_8_13} #The Harbour Bridge
 ➞ {arena|The Sky Shrine}, kill {kill|Lunaris, Eternal Moon} & {kill|Solaris, Eternal Sun}
 ➞ {enter|2_9_1} #The Blood Aqueduct
 Farm till lvl ~62
 ➞ {enter|2_9_town} #Highgate
 {waypoint|2_8_6} #The Lunaris Concourse
-Head {dir|180}, ➞ {enter|2_8_5} #The Bath House
-Search {dir|315}, Complete {trial}
+Head {dir|180} ➞ {enter|2_8_5} #The Bath House
+Search {dir|315} Complete {trial}
 Get {crafting}
-Search {dir|315}, ➞ {enter|2_8_4} #The High Gardens
+Search {dir|315} ➞ {enter|2_8_4} #The High Gardens
 ➞ {arena|The Pools of Terror}, kill {kill|Yugul, Reflection of Terror}
 {town}
 Hand in {quest|a8q4} #Reflection of Terror
