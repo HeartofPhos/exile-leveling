@@ -17,8 +17,8 @@
 }
 
 .list > li {
-  box-sizing: border-box;
   display: flex;
+  align-items: baseline;
   border-style: solid;
   border-color: var(--primary-dark);
   border-width: var(--size-1) 0;
@@ -36,13 +36,9 @@
   border-bottom: 0;
 }
 
-.list > li {
-  padding: var(--size-3) 0;
-}
-
 .list > li:before {
-  margin-right: var(--size-2);
   font-weight: 600;
   counter-increment: list-item;
   content: counter(list-item, decimal-leading-zero) ".";
+  margin-right: var(--size-2);
 }

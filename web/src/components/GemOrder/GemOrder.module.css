@@ -3,6 +3,7 @@
   white-space: pre-wrap;
   width: 100%;
   margin-right: var(--size-2);
+  padding: var(--size-3) 0;
 }
 
 .icon {
