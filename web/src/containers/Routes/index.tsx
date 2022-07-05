@@ -30,8 +30,11 @@ interface RoutesContainerState {
   routeData: RouteData;
 }
 
+type RouteProgress = boolean[][];
+
 export class RoutesContainer extends React.Component<{}, RoutesContainerState> {
-  private stepsDone: boolean[][];
+  private routeProgress: RouteProgress;
+
   constructor(props: {}) {
     super(props);
 
@@ -49,7 +52,6 @@ export class RoutesContainer extends React.Component<{}, RoutesContainerState> {
     );
     const routeState = initializeRouteState();
 
-    this.stepsDone = [];
     const routes: Route[] = [];
     const keys = Object.keys(routesData).sort((a, b) =>
       a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" })
@@ -57,12 +59,21 @@ export class RoutesContainer extends React.Component<{}, RoutesContainerState> {
     for (const key of keys) {
       const route = parseRoute(routesData[key], routeLookup, routeState);
       routes.push(route);
-      this.stepsDone.push(route.map(() => false));
     }
 
     this.state = {
       routeData: { routes: routes, lookup: routeLookup },
     };
+
+    const routeProgressJson = localStorage.getItem("route-progress");
+    if (routeProgressJson) {
+      this.routeProgress = JSON.parse(routeProgressJson);
+    } else {
+      this.routeProgress = [];
+      for (const route of routes) {
+        this.routeProgress.push(route.map(() => false));
+      }
+    }
   }
 
   render(): ReactNode {
@@ -76,9 +87,13 @@ export class RoutesContainer extends React.Component<{}, RoutesContainerState> {
               <ExileStep
                 step={step}
                 lookup={this.state.routeData.lookup}
-                initialIsDone={this.stepsDone[routeIndex][stepIndex]}
-                onUpdate={(isDone) => {
-                  this.stepsDone[routeIndex][stepIndex] = isDone;
+                initialIsDone={this.routeProgress[routeIndex][stepIndex]}
+                onUpdate={(isCompleted) => {
+                  this.routeProgress[routeIndex][stepIndex] = isCompleted;
+                  localStorage.setItem(
+                    "route-progress",
+                    JSON.stringify(this.routeProgress)
+                  );
                 }}
               />
             ))}

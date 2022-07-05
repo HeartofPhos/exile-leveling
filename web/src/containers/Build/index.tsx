@@ -13,6 +13,7 @@ export function Build() {
     const fn = async () => {
       if (buildData) {
         localStorage.setItem("build-data", JSON.stringify(buildData));
+        localStorage.removeItem("route-progress");
       } else {
         const buildDataJson = localStorage.getItem("build-data");
         if (buildDataJson) setBuildData(JSON.parse(buildDataJson));
@@ -30,6 +31,7 @@ export function Build() {
         }}
         onReset={() => {
           localStorage.removeItem("build-data");
+          localStorage.removeItem("route-progress");
           setBuildData(undefined);
         }}
       />

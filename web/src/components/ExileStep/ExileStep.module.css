@@ -3,6 +3,6 @@
   padding: var(--size-3) 0;
 }
 
-.done {
+.completed {
   opacity: 0.25;
 }

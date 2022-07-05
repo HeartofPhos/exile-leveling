@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { Action, RouteLookup } from "../../../../common/routes";
-import { Area, Gem, Quest } from "../../../../common/types";
+import { Gem, Quest } from "../../../../common/types";
 import { MdCircle } from "react-icons/md";
 import {
   BsArrowDownSquare,
