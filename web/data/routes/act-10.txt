@@ -35,3 +35,5 @@ Talk to {generic|Sin}
 ➞ {arena|Altar of Hunger}, kill {kill|Kitava, the Insatiable}
 Talk to {generic|Sin} ➞ {enter|2_10_town} #Oriath Docks
 Talk to {generic|Lilly Roth}, Set Sail from Oriath
+➞ {enter|2_11_endgame_town} #Karui Shores
+Hand in {quest|a10q3} #An End to Hunger
