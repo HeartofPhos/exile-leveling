@@ -72,11 +72,22 @@ export function BuildForm({ onSubmit, onReset }: BuildFormProps) {
             if (pobCode) {
               const doc = decodePathOfBuildingCode(pobCode);
 
-              const gemElements = Array.from(doc.getElementsByTagName("Gem"));
               const gemIds = [];
-              for (const element of gemElements) {
-                const attribute = element.attributes.getNamedItem("gemId");
-                if (attribute) gemIds.push(attribute.value);
+              const skillElements = Array.from(
+                doc.getElementsByTagName("Skill")
+              );
+              for (const skillElement of skillElements) {
+                const skillEnabled =
+                  skillElement.attributes.getNamedItem("enabled");
+                if (!skillEnabled || skillEnabled.value == "false") continue;
+
+                const gemElements = Array.from(
+                  skillElement.getElementsByTagName("Gem")
+                );
+                for (const gemElement of gemElements) {
+                  const attribute = gemElement.attributes.getNamedItem("gemId");
+                  if (attribute) gemIds.push(attribute.value);
+                }
               }
 
               const distinctGemIds = gemIds
