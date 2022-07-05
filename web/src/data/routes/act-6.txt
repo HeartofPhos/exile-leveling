@@ -18,9 +18,9 @@ Complete {trial}
 ➞ {arena|The Warden's Chambers}
 Get {crafting}
 ➞ {enter|2_6_8} #Prisoner's Gate
-Follow the road, ➞ {enter|2_6_9} #The Western Forest
+Follow the road ➞ {enter|2_6_9} #The Western Forest
 Get {get_waypoint}
-Follow the road, ➞ {enter|2_6_10} #The Riverways
+Follow the road ➞ {enter|2_6_10} #The Riverways
 Follow the road, get {get_waypoint}
 Head {dir|270} ➞ {enter|2_6_11} #The Wetlands
 Head {dir|315}

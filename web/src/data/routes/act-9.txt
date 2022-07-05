@@ -48,5 +48,5 @@ Talk to {generic|Sin}
 ➞ {arena|Doedre's Despair}, kill {kill|Doedre, Darksoul}
 ➞ {arena|Maligaro's Misery}, kill {kill|Maligaro, The Broken}
 ➞ {arena|Shavronne's Sorrow}, kill {kill|Shavronne, Unbound}
-Talk to {generic|Sin}, ➞ {arena|The Black Heart}, kill {kill|The Depraved Trinity}
+Talk to {generic|Sin} ➞ {arena|The Black Heart}, kill {kill|The Depraved Trinity}
 {town}

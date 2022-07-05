@@ -2,7 +2,7 @@
 ➞ {enter|1_2_town} #The Forest Encampment
 Head {dir|45} ➞ {enter|1_2_2} #The Old Fields
 Find {area|1_2_2a}, place {set_portal} #The Den
-Follow the road, ➞ {enter|1_2_3} #The Crossroads
+Follow the road ➞ {enter|1_2_3} #The Crossroads
 Follow the road, get {get_waypoint}
 {town}
 Take {use_portal}
@@ -21,14 +21,14 @@ Hand in {quest|a2q6} #Intruders in Black
 {vendor}
 {waypoint|1_2_3} #The Crossroads
 Head {dir|135} ➞ {enter|1_2_15} #The Fellshrine Ruins
-Follow the road, ➞ {enter|1_2_5_1} #The Crypt Level 1
+Follow the road ➞ {enter|1_2_5_1} #The Crypt Level 1
 Complete {trial}
 {town}
 Head {dir|225} ➞ {enter|1_2_7} #The Riverways
 Follow the road, get {get_waypoint}
-Follow the road, ➞ {enter|1_2_9} #The Western Forest
+Follow the road ➞ {enter|1_2_9} #The Western Forest
 Follow the road, get {get_waypoint}
-Go to side of road opposite {waypoint}, ➞ {enter|1_2_10} #The Weaver's Chambers
+Go to side of road opposite {waypoint} ➞ {enter|1_2_10} #The Weaver's Chambers
 ➞ {arena|The Weaver's Nest}, kill {kill|The Weaver}, take {quest_text|Maligaro's Spike}
 {town}
 Hand in {quest|a2q4} #Sharp and Cruel
@@ -38,7 +38,7 @@ Head {dir|45} ➞ {enter|1_2_4} #The Broken Bridge
 Follow road, kill {kill|Kraityn, Scarbearer}
 {town}
 {waypoint|1_2_7} #The Riverways
-Look for 2 pillars near waypoint, follow the trail, ➞ {enter|1_2_12} #The Wetlands
+Look for 2 pillars near waypoint, follow the trail ➞ {enter|1_2_12} #The Wetlands
 Find and kill {kill|Oak, Skullbreaker}
 Get {get_waypoint}, likely {dir|0}
 {waypoint|1_2_9} #The Western Forest
@@ -56,7 +56,6 @@ Hand in {quest|a1q9} #The Way Forward
 ➞ {enter|1_2_14_2} #The Caverns
 {waypoint|1_2_town} #The Forest Encampment
 Hand in {quest|a2q9} #The Root of the Problem
-{vendor}
 {waypoint|1_2_14_2} #The Caverns
 ➞ {enter|1_2_14_3} #The Ancient Pyramid
 First floor exit will be in one of the 3 corners
