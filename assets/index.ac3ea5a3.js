@@ -145,7 +145,10 @@ Get {crafting}
 Talk to {generic|Sin}
 \u279E {arena|Altar of Hunger}, kill {kill|Kitava, the Insatiable}
 Talk to {generic|Sin} \u279E {enter|2_10_town} #Oriath Docks
-Talk to {generic|Lilly Roth}, Set Sail from Oriath`,"/data/routes/act-2.txt":`\u279E {enter|1_2_1} #The Southern Forest
+Talk to {generic|Lilly Roth}, Set Sail from Oriath
+\u279E {enter|2_11_endgame_town} #Karui Shores
+Hand in {quest|a10q3} #An End to Hunger
+`,"/data/routes/act-2.txt":`\u279E {enter|1_2_1} #The Southern Forest
 \u279E {enter|1_2_town} #The Forest Encampment
 Head {dir|45} \u279E {enter|1_2_2} #The Old Fields
 Find {area|1_2_2a}, place {set_portal} #The Den
