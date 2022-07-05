@@ -29,12 +29,8 @@ function EnemyComponent(enemy: string) {
   return <span className={classNames(styles.enemy)}>{enemy}</span>;
 }
 
-function ArenaComponent(arenaName: string) {
-  return <span className={classNames(styles.area)}>{arenaName}</span>;
-}
-
-function AreaComponent(area: Area) {
-  return <span className={classNames(styles.area)}>{area.name}</span>;
+function AreaComponent(areaName: string) {
+  return <span className={classNames(styles.area)}>{areaName}</span>;
 }
 
 function QuestComponent(quest: Quest) {
@@ -104,7 +100,9 @@ function TrialComponent() {
 function TownComponent() {
   return (
     <>
-      <span className={classNames(styles.default)}>Logout</span>
+      <span className={classNames(styles.default)}>
+        <span>Logout</span>
+      </span>
     </>
   );
 }
@@ -182,11 +180,11 @@ export function ExileAction({ action, lookup }: ActionProps) {
     case "kill":
       return EnemyComponent(action.value);
     case "arena":
-      return ArenaComponent(action.value);
+      return AreaComponent(action.value);
     case "area":
-      return AreaComponent(lookup.areas[action.areaId]);
+      return AreaComponent(lookup.areas[action.areaId].name);
     case "enter":
-      return AreaComponent(lookup.areas[action.areaId]);
+      return AreaComponent(lookup.areas[action.areaId].name);
     case "quest": {
       return QuestComponent(lookup.quests[action.questId]);
     }
@@ -196,11 +194,12 @@ export function ExileAction({ action, lookup }: ActionProps) {
       return QuestTextComponent(action.value);
     case "waypoint": {
       if (action.areaId == null) return WaypointComponent();
+
       return (
         <>
           {WaypointComponent()}
           <span> ➞ </span>
-          {AreaComponent(lookup.areas[action.areaId])}
+          {AreaComponent(lookup.areas[action.areaId].name)}
         </>
       );
     }

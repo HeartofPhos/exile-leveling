@@ -51,7 +51,7 @@ Head {dir|45} ➞ {enter|1_3_15} #The Imperial Gardens
 Get {get_waypoint}
 Head {dir|315} ➞ {enter|1_3_17_1} #The Library
 Get {get_waypoint}
-Find Loose Candle ➞ {enter|1_3_17_2} #The Archives
+Find {generic|Loose Candle} ➞ {enter|1_3_17_2} #The Archives
 Find 4x{quest_text|Golden Pages}
 {town}
 {waypoint|1_3_17_1} #The Library
@@ -60,6 +60,7 @@ Hand in {quest|a3q12} #A Fixture of Fate
 Head {dir|0} complete {trial}
 Get {crafting}
 {town}
+➞ {enter|Labyrinth_Airlock}, get {get_waypoint} #Aspirants' Plaza
 {waypoint|1_3_15} #The Imperial Gardens
 ➞ {enter|1_3_18_1} #The Sceptre of God
 ➞ {enter|1_3_18_2} #The Upper Sceptre of God

@@ -42,4 +42,4 @@ Talk to {generic|Weylam Roth}
 ➞ {enter|2_6_15} #The Brine King's Reef
 ➞ {arena|The Bring King's Throne}, kill {kill|Tsoagoth, The Brine King}
 {town}
-Select Pantheons
+Select {generic|Pantheons}

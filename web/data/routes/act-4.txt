@@ -12,8 +12,7 @@ Free {quest_text|Deshret}
 Get {crafting}
 {waypoint|1_4_town} #Highgate
 Hand in {quest|a4q6} #An Indomitable Spirit
-{waypoint|1_3_town} #The Sarn Encampment
-➞ {enter|Labyrinth_Airlock}, get {get_waypoint} #Aspirants' Plaza
+{waypoint|Labyrinth_Airlock} #Aspirants' Plaza
 {ascend}
 Get {crafting}
 {waypoint|1_4_3_3} #The Crystal Veins

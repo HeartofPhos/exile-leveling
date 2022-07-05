@@ -16,6 +16,7 @@ export type Route = Step[];
 export interface RouteLookup {
   quests: Record<string, Quest>;
   areas: Record<string, Area>;
+  towns: Record<Area["act"], Area["id"]>;
   bossWaypoints: Record<Monster["name"], Area["id"][]>;
   gems: Record<string, Gem>;
   buildData?: BuildData;
@@ -273,7 +274,7 @@ function EvaluateUsePortal(
   const currentArea = lookup.areas[state.currentAreaId];
   if (currentArea.id == state.portalAreaId) {
     state.portalAreaId = state.currentAreaId;
-    state.currentAreaId = state.currentTownAreaId;
+    state.currentAreaId = lookup.towns[currentArea.act];
   } else {
     if (!currentArea.is_town_area)
       return "can only use portal from town or portal area";
@@ -483,10 +484,16 @@ export function initializeRouteLookup(
   const routeLookup: RouteLookup = {
     quests: quests,
     areas: areas,
+    towns: {},
     bossWaypoints: bossWaypoints,
     gems: gems,
     buildData: buildData,
   };
+
+  for (const id in routeLookup.areas) {
+    const area = routeLookup.areas[id];
+    if (area.is_town_area) routeLookup.towns[area.act] = area.id;
+  }
 
   return routeLookup;
 }
