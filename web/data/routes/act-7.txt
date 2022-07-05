@@ -23,7 +23,7 @@ Hand in {quest|a7q3}, take {quest_text|Obsidian Key} #Web of Secrets
 Hand in {quest|a7q5} #The Silver Locket
 {waypoint|2_7_5_1} #The Chamber of Sins Level 1
 Go in same direction as {waypoint}
-➞ {enter|1_2_6_2} #The Chamber of Sins Level 2
+➞ {enter|2_7_5_2} #The Chamber of Sins Level 2
 Complete {trial}
 ➞ {enter|2_7_6} #The Den
 Get {get_waypoint}
