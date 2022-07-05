@@ -20,19 +20,20 @@
 }
 
 .orderButton {
+  color: var(--primary-light);
   border-radius: var(--border-radius);
   position: relative;
   width: var(--size-5);
   padding: 0 var(--size-2);
 }
 
-.orderButton:hover {
-  background-color: #4e4e4e;
-}
-
 .orderButton > * {
   position: absolute;
   transform: translate(0, -50%);
+  border-radius: var(--border-radius);
   width: 100%;
   height: auto;
+}
+.orderButton > *:hover {
+  background-color: #4e4e4e;
 }
