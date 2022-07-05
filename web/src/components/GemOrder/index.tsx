@@ -4,7 +4,7 @@ import { HiChevronDoubleUp, HiChevronDown, HiChevronUp } from "react-icons/hi";
 import { MdCircle, MdDeleteOutline } from "react-icons/md";
 import styles from "./GemOrder.module.css";
 
-import gemColours from "../../data/gem-colours.json";
+import gemColours from "/data/gem-colours.json";
 
 interface GemOrderProps {
   gem: Gem;

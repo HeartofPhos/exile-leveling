@@ -3,7 +3,7 @@ import { ExileList } from "../../components/ExileList";
 import { GemOrder } from "../../components/GemOrder";
 import { BuildData } from "../../../../common/routes";
 
-import gems from "../../data/gems.json";
+import gems from "/data/gems.json";
 import { BuildForm } from "../../components/BuildForm";
 
 export function Build() {

@@ -14,7 +14,7 @@ import {
 } from "react-icons/bs";
 import styles from "./ExileAction.module.css";
 
-import gemColours from "../../data/gem-colours.json";
+import gemColours from "/data/gem-colours.json";
 
 interface ActionProps {
   action: Action;

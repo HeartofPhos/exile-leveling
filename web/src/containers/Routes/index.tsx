@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import {
-  BuildData,
   initializeRouteLookup,
   initializeRouteState,
   parseRoute,
@@ -12,14 +11,14 @@ import { ExileStep } from "../../components/ExileStep";
 
 //@ts-expect-error
 const routesData: Record<string, string> = import.meta.glob(
-  "../../data/routes/*.txt",
+  "/data/routes/*.txt",
   { as: "raw" }
 );
 
-import quests from "../../data/quests.json";
-import areas from "../../data/areas.json";
-import bossWaypoints from "../../data/boss-waypoints.json";
-import gems from "../../data/gems.json";
+import quests from "/data/quests.json";
+import areas from "/data/areas.json";
+import bossWaypoints from "/data/boss-waypoints.json";
+import gems from "/data/gems.json";
 
 interface RouteData {
   routes: Route[];
