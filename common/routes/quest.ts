@@ -6,7 +6,7 @@ import {
   RouteState,
   Step,
 } from ".";
-import { Gem, Quest } from "../types";
+import { Gem, Quest, QuestReward } from "../types";
 
 export interface QuestAction {
   type: "quest";
@@ -23,61 +23,10 @@ export interface VendorRewardAction {
   gemId: Gem["id"];
 }
 
-function PrepareQuestRewardSet(quest: Quest, lookup: RouteLookup) {
-  let questRewardSets: Quest["quest_rewards"][];
-
-  switch (quest.id) {
-    //Hack for The Caged Brute
-    case "a1q2":
-      {
-        questRewardSets = [{}, {}];
-        for (const key in quest.quest_rewards) {
-          const gem = lookup.gems[key];
-          if (gem) {
-            if (gem.id.includes("Support")) {
-              questRewardSets[1][key] = quest.quest_rewards[key];
-            } else {
-              questRewardSets[0][key] = quest.quest_rewards[key];
-            }
-          }
-        }
-      }
-      break;
-    //Hack for Breaking Some Eggs
-    case "a1q4":
-      {
-        questRewardSets = [{}, {}];
-        for (const key in quest.quest_rewards) {
-          const gem = lookup.gems[key];
-          if (gem) {
-            if (
-              [
-                "Metadata/Items/Gems/SkillGemSteelskin",
-                "Metadata/Items/Gems/SkillGemFrostblink",
-                "Metadata/Items/Gems/SkillGemDash",
-              ].some((x) => x == gem.id)
-            ) {
-              questRewardSets[1][key] = quest.quest_rewards[key];
-            } else {
-              questRewardSets[0][key] = quest.quest_rewards[key];
-            }
-          }
-        }
-      }
-      break;
-    default:
-      {
-        questRewardSets = [quest.quest_rewards];
-      }
-      break;
-  }
-  return questRewardSets;
-}
-
 function tryFindQuestReward(
   lookup: RouteLookup,
   state: RouteState,
-  quest_rewards: Quest["quest_rewards"]
+  quest_rewards: Record<string, QuestReward>
 ): Step | null {
   if (lookup.buildData) {
     for (const gemId of lookup.buildData.requiredGems) {
@@ -146,8 +95,7 @@ export function EvaluateQuest(
 
     const additionalSteps: Step[] = [];
     if (quest) {
-      const questRewardSets = PrepareQuestRewardSet(quest, lookup);
-      for (const quest_rewards of questRewardSets) {
+      for (const quest_rewards of quest.quest_rewards) {
         const questReward = tryFindQuestReward(lookup, state, quest_rewards);
         if (questReward) {
           additionalSteps.push(questReward);

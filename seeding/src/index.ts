@@ -1,5 +1,7 @@
 import fs from "fs";
-import { getAreas, getGems, getQuests } from "./seeding";
+import { getGems } from "./seeding/gems";
+import { getQuests } from "./seeding/quests";
+import { getAreas } from "./seeding/areas";
 import fetch from "cross-fetch";
 
 const dataPath = process.argv[2];

@@ -19,7 +19,7 @@ export interface Quest {
   id: string;
   name: string;
   act: string;
-  quest_rewards: Record<string, QuestReward>;
+  quest_rewards: Record<string, QuestReward>[];
   vendor_rewards: Record<string, VendorReward>;
 }
 
