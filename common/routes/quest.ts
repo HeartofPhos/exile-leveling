@@ -26,23 +26,51 @@ export interface VendorRewardAction {
 function PrepareQuestRewardSet(quest: Quest, lookup: RouteLookup) {
   let questRewardSets: Quest["quest_rewards"][];
 
-  //Hack for The Caged Brute
-  if (quest.id == "a1q2") {
-    questRewardSets = [{}, {}];
-    for (const key in quest.quest_rewards) {
-      const gem = lookup.gems[key];
-      if (gem) {
-        if (gem.id.includes("Support")) {
-          questRewardSets[1][key] = quest.quest_rewards[key];
-        } else {
-          questRewardSets[0][key] = quest.quest_rewards[key];
+  switch (quest.id) {
+    //Hack for The Caged Brute
+    case "a1q2":
+      {
+        questRewardSets = [{}, {}];
+        for (const key in quest.quest_rewards) {
+          const gem = lookup.gems[key];
+          if (gem) {
+            if (gem.id.includes("Support")) {
+              questRewardSets[1][key] = quest.quest_rewards[key];
+            } else {
+              questRewardSets[0][key] = quest.quest_rewards[key];
+            }
+          }
         }
       }
-    }
-  } else {
-    questRewardSets = [quest.quest_rewards];
+      break;
+    //Hack for Breaking Some Eggs
+    case "a1q4":
+      {
+        questRewardSets = [{}, {}];
+        for (const key in quest.quest_rewards) {
+          const gem = lookup.gems[key];
+          if (gem) {
+            if (
+              [
+                "Metadata/Items/Gems/SkillGemSteelskin",
+                "Metadata/Items/Gems/SkillGemFrostblink",
+                "Metadata/Items/Gems/SkillGemDash",
+              ].some((x) => x == gem.id)
+            ) {
+              questRewardSets[1][key] = quest.quest_rewards[key];
+            } else {
+              questRewardSets[0][key] = quest.quest_rewards[key];
+            }
+          }
+        }
+      }
+      break;
+    default:
+      {
+        questRewardSets = [quest.quest_rewards];
+      }
+      break;
   }
-
   return questRewardSets;
 }
 
