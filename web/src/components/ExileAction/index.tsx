@@ -42,16 +42,17 @@ function QuestComponent(quest: Quest) {
   );
 }
 
-function QuestRewardComponent(gem: Gem) {
+function QuestRewardComponent(gem: Gem, note: string) {
   return (
-    <>
+    <div className={classNames(styles.rewardHolder)}>
       <MdCircle
         color={gemColours[gem.primary_attribute]}
         className={classNames(styles.icon)}
       />
       <span>Take </span>
       <span className={classNames(styles.default)}>{gem.name}</span>
-    </>
+      <div className={classNames(styles.rewardNote)}>{note}</div>
+    </div>
   );
 }
 
@@ -71,9 +72,9 @@ function WaypointComponent() {
   );
 }
 
-function VendorRewardComponent(gem: Gem) {
+function VendorRewardComponent(gem: Gem, note: string) {
   return (
-    <>
+    <div className={classNames(styles.rewardHolder)}>
       <MdCircle
         color={gemColours[gem.primary_attribute]}
         className={classNames(styles.icon)}
@@ -84,7 +85,8 @@ function VendorRewardComponent(gem: Gem) {
       <div className={classNames(styles.iconBlock)}>
         <img src={getImageUrl(`${gem.cost}.png`)} />
       </div>
-    </>
+      <div className={classNames(styles.rewardNote)}>{note}</div>
+    </div>
   );
 }
 
@@ -189,7 +191,10 @@ export function ExileAction({ action, lookup }: ActionProps) {
       return QuestComponent(lookup.quests[action.questId]);
     }
     case "quest_reward":
-      return QuestRewardComponent(lookup.gems[action.gemId]);
+      return QuestRewardComponent(
+        lookup.gems[action.requiredGem.id],
+        action.requiredGem.note
+      );
     case "quest_text":
       return QuestTextComponent(action.value);
     case "waypoint": {
@@ -206,7 +211,10 @@ export function ExileAction({ action, lookup }: ActionProps) {
     case "get_waypoint":
       return WaypointComponent();
     case "vendor_reward":
-      return VendorRewardComponent(lookup.gems[action.gemId]);
+      return VendorRewardComponent(
+        lookup.gems[action.requiredGem.id],
+        action.requiredGem.note
+      );
     case "trial":
       return TrialComponent();
     case "town":

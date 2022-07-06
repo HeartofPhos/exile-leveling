@@ -35,6 +35,40 @@ function decodePathOfBuildingCode(code: string) {
   return xml;
 }
 
+function processPob(pobCode: string): BuildData {
+  const doc = decodePathOfBuildingCode(pobCode);
+
+  const requiredGems: BuildData["requiredGems"] = [];
+  const skillElements = Array.from(doc.getElementsByTagName("Skill"));
+  for (const skillElement of skillElements) {
+    const skillEnabled = skillElement.attributes.getNamedItem("enabled");
+    if (!skillEnabled || skillEnabled.value == "false") continue;
+    const skillLabel =
+      skillElement.attributes.getNamedItem("label")?.value || "";
+
+    const gemElements = Array.from(skillElement.getElementsByTagName("Gem"));
+    for (const gemElement of gemElements) {
+      const attribute = gemElement.attributes.getNamedItem("gemId");
+      if (attribute) {
+        let gemId = POB_GEM_ID_REMAP[attribute.value];
+        if (!gemId) gemId = attribute.value;
+
+        if (!requiredGems.some((x) => x.id == gemId))
+          requiredGems.push({ id: gemId, note: skillLabel });
+      }
+    }
+  }
+
+  const buildElement = Array.from(doc.getElementsByTagName("Build"));
+  const characterClass =
+    buildElement[0].attributes.getNamedItem("className")?.value;
+
+  return {
+    characterClass: characterClass!,
+    requiredGems: requiredGems,
+  };
+}
+
 interface BuildFormProps {
   onSubmit: (buildata: BuildData) => void;
   onReset: () => void;
@@ -70,44 +104,8 @@ export function BuildForm({ onSubmit, onReset }: BuildFormProps) {
           className={classNames(styles.formButton)}
           onClick={() => {
             if (pobCode) {
-              const doc = decodePathOfBuildingCode(pobCode);
-
-              const gemIds = [];
-              const skillElements = Array.from(
-                doc.getElementsByTagName("Skill")
-              );
-              for (const skillElement of skillElements) {
-                const skillEnabled =
-                  skillElement.attributes.getNamedItem("enabled");
-                if (!skillEnabled || skillEnabled.value == "false") continue;
-
-                const gemElements = Array.from(
-                  skillElement.getElementsByTagName("Gem")
-                );
-                for (const gemElement of gemElements) {
-                  const attribute = gemElement.attributes.getNamedItem("gemId");
-                  if (attribute) gemIds.push(attribute.value);
-                }
-              }
-
-              const distinctGemIds = gemIds
-                .filter((v, i, a) => a.indexOf(v) === i)
-                .map((x) => {
-                  const remap = POB_GEM_ID_REMAP[x];
-                  if (remap) return remap;
-                  return x;
-                });
-
-              const buildElement = Array.from(
-                doc.getElementsByTagName("Build")
-              );
-              const characterClass =
-                buildElement[0].attributes.getNamedItem("className")?.value;
-
-              onSubmit({
-                characterClass: characterClass!,
-                requiredGems: distinctGemIds,
-              });
+              const builData = processPob(pobCode);
+              onSubmit(builData);
             }
           }}
         >

@@ -78,7 +78,7 @@ export function Build() {
                     ...buildData,
                   });
                 }}
-                gem={gems[x]}
+                gem={gems[x.id]}
               />
             ))
           }

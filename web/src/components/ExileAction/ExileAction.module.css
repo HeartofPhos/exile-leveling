@@ -54,7 +54,29 @@
 
 .iconBlock > * {
   position: absolute;
-  transform: translate(0, -50%);
+  /* transform: translate(0, -50%); */
   width: 100%;
   height: auto;
+}
+
+.rewardHolder {
+  display: flex;
+  flex-wrap: wrap;
+  white-space: pre-wrap;
+  align-items: baseline;
+}
+
+.rewardHolder > * {
+  margin-right: var(--size-3);
+}
+
+.rewardHolder > *:last-child {
+  margin-right: 0;
+}
+
+.rewardNote {
+  flex: 1;
+  width: fit-content;
+  text-align: right;
+  min-width: 8rem;
 }

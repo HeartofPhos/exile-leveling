@@ -471,7 +471,12 @@ function evaluateAction(
 
 export interface BuildData {
   characterClass: string;
-  requiredGems: string[];
+  requiredGems: RequiredGem[];
+}
+
+export interface RequiredGem {
+  id: string;
+  note: string;
 }
 
 export function initializeRouteLookup(

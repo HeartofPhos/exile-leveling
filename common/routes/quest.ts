@@ -2,11 +2,12 @@ import {
   ERROR_INVALID_FORMAT,
   EvaluateResult,
   ParsedAction,
+  RequiredGem,
   RouteLookup,
   RouteState,
   Step,
 } from ".";
-import { Gem, Quest, QuestReward } from "../types";
+import { Quest, QuestReward } from "../types";
 
 export interface QuestAction {
   type: "quest";
@@ -15,12 +16,12 @@ export interface QuestAction {
 
 export interface QuestRewardAction {
   type: "quest_reward";
-  gemId: string;
+  requiredGem: RequiredGem;
 }
 
 export interface VendorRewardAction {
   type: "vendor_reward";
-  gemId: Gem["id"];
+  requiredGem: RequiredGem;
 }
 
 function tryFindQuestReward(
@@ -29,10 +30,10 @@ function tryFindQuestReward(
   quest_rewards: Record<string, QuestReward>
 ): Step | null {
   if (lookup.buildData) {
-    for (const gemId of lookup.buildData.requiredGems) {
-      if (state.acquiredGems.has(gemId)) continue;
+    for (const requiredGem of lookup.buildData.requiredGems) {
+      if (state.acquiredGems.has(requiredGem.id)) continue;
 
-      const reward = quest_rewards[gemId];
+      const reward = quest_rewards[requiredGem.id];
       if (!reward) continue;
 
       const validClass =
@@ -40,8 +41,8 @@ function tryFindQuestReward(
         reward.classes.some((x) => x == lookup.buildData?.characterClass);
 
       if (validClass) {
-        state.acquiredGems.add(gemId);
-        return [{ type: "quest_reward", gemId: gemId }];
+        state.acquiredGems.add(requiredGem.id);
+        return [{ type: "quest_reward", requiredGem: requiredGem }];
       }
     }
   }
@@ -56,10 +57,10 @@ function tryFindVendorRewards(
 ): Step[] {
   const result: Step[] = [];
   if (lookup.buildData) {
-    for (const gemId of lookup.buildData.requiredGems) {
-      if (state.acquiredGems.has(gemId)) continue;
+    for (const requiredGem of lookup.buildData.requiredGems) {
+      if (state.acquiredGems.has(requiredGem.id)) continue;
 
-      const reward = vendor_rewards[gemId];
+      const reward = vendor_rewards[requiredGem.id];
       if (!reward) continue;
 
       const validClass =
@@ -67,11 +68,11 @@ function tryFindVendorRewards(
         reward.classes.some((x) => x == lookup.buildData?.characterClass);
 
       if (validClass) {
-        state.acquiredGems.add(gemId);
+        state.acquiredGems.add(requiredGem.id);
         result.push([
           {
             type: "vendor_reward",
-            gemId: gemId,
+            requiredGem: requiredGem,
           },
         ]);
       }
