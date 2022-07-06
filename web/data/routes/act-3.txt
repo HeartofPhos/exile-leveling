@@ -5,6 +5,7 @@ Help and talk to {generic|Clarissa}
 ➞ {enter|1_3_3_1} #The Crematorium
 Complete {trial}
 Find and kill {kill|Piety}, take {quest_text|Tolman's Bracelet}
+Get {crafting}
 {town}
 Talk to {generic|Clarissa}, take {quest_text|Sewer Keys}
 Hand in {quest|a3q1} #Lost in Love
@@ -16,6 +17,7 @@ Get {get_waypoint}
 Get {get_waypoint}
 Look around nearby ➞ {enter|1_3_6} #The Catacombs
 Complete {trial}
+Get {crafting}
 {town}
 Hand in {quest|a3q11} #Victario's Secrets
 {waypoint|1_3_5} #The Marketplace
@@ -24,7 +26,6 @@ Get {get_waypoint}
 Take {quest_text|Ribbon Spool}
 ➞ {enter|1_3_8_1} #The Solaris Temple Level 1
 ➞ {enter|1_3_8_2} #The Solaris Temple Level 2
-Get {get_waypoint}
 {waypoint|1_3_7} #The Battlefront
 ➞ {enter|1_3_9} #The Docks
 Find and take {quest_text|Thaumetic Sulphite}
@@ -60,7 +61,7 @@ Hand in {quest|a3q12} #A Fixture of Fate
 Head {dir|0} complete {trial}
 Get {crafting}
 {town}
-➞ {enter|Labyrinth_Airlock}, get {get_waypoint} #Aspirants' Plaza
+➞ {enter|Labyrinth_Airlock} #Aspirants' Plaza
 {waypoint|1_3_15} #The Imperial Gardens
 ➞ {enter|1_3_18_1} #The Sceptre of God
 ➞ {enter|1_3_18_2} #The Upper Sceptre of God

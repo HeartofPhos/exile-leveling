@@ -13,6 +13,7 @@ Complete {trial}
 {town}
 {waypoint|Labyrinth_Airlock}
 {ascend}
+Get {crafting}
 {waypoint|2_10_7} #The Control Blocks
 Find and kill {kill|Vilenta}
 {town}

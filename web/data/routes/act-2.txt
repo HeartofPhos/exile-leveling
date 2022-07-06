@@ -44,7 +44,7 @@ Get {get_waypoint}, likely {dir|0}
 Head {dir|180} look for the torch touching the road
 Follow the trail in the direction of the torch, help or kill {kill|Alira Darktongue}
 Follow the road, kill {kill|Captain Arteri}
-Take {quest_text|Thaumetic Emblem}
+Take {quest_text|Thaumetic Emblem}, activate {quest_text|Thaumetic Seal}
 {town}
 If you killed all bandits, hand in {quest|a2q7} #Deal with the Bandits
 {waypoint|1_1_town} #Lioneye's Watch
@@ -53,6 +53,7 @@ Hand in {quest|a1q9} #The Way Forward
 ➞ {enter|1_2_11} #The Vaal Ruins
 ➞ {enter|1_2_8} #The Northern Forest
 ➞ {enter|1_2_14_2} #The Caverns
+Get {crafting}
 {waypoint|1_2_town} #The Forest Encampment
 Hand in {quest|a2q9} #The Root of the Problem
 {waypoint|1_2_14_2} #The Caverns
