@@ -83,21 +83,23 @@ export class RoutesContainer extends React.Component<{}, RoutesContainerState> {
           <ExileList
             key={routeIndex}
             header={`--== Act ${routeIndex + 1} ==--`}
-            items={route.map((step, stepIndex) => (
+            initialCompleted={this.routeProgress[routeIndex]}
+            onUpdate={(index, isCompleted) => {
+              this.routeProgress[routeIndex][index] = isCompleted;
+              localStorage.setItem(
+                "route-progress",
+                JSON.stringify(this.routeProgress)
+              );
+            }}
+          >
+            {route.map((step, stepIndex) => (
               <ExileStep
+                key={stepIndex}
                 step={step}
                 lookup={this.state.routeData.lookup}
-                initialIsDone={this.routeProgress[routeIndex][stepIndex]}
-                onUpdate={(isCompleted) => {
-                  this.routeProgress[routeIndex][stepIndex] = isCompleted;
-                  localStorage.setItem(
-                    "route-progress",
-                    JSON.stringify(this.routeProgress)
-                  );
-                }}
               />
             ))}
-          />
+          </ExileList>
         ))}
       </>
     );

@@ -37,12 +37,11 @@ export function Build() {
       />
       <hr />
       {buildData && (
-        <ExileList
-          header={buildData.characterClass}
-          items={
-            buildData &&
+        <ExileList header={buildData.characterClass}>
+          {buildData &&
             buildData.requiredGems.map((x, i) => (
               <GemOrder
+                key={i}
                 onMoveTop={() => {
                   const splice = buildData.requiredGems.splice(i, 1);
                   buildData.requiredGems.unshift(...splice);
@@ -80,9 +79,8 @@ export function Build() {
                 }}
                 gem={gems[x.id]}
               />
-            ))
-          }
-        />
+            ))}
+        </ExileList>
       )}
     </div>
   );

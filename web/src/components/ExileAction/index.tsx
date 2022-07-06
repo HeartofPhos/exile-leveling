@@ -35,23 +35,9 @@ function AreaComponent(areaName: string) {
 
 function QuestComponent(quest: Quest) {
   return (
-    <>
+    <div className={classNames(styles.noWrap)}>
       <img src={getImageUrl("quest.png")} className={classNames(styles.icon)} />
-      <span className={classNames(styles.quest)}> {quest.name}</span>
-    </>
-  );
-}
-
-function QuestRewardComponent(gem: Gem, note: string) {
-  return (
-    <div className={classNames(styles.rewardHolder)}>
-      <MdCircle
-        color={gemColours[gem.primary_attribute]}
-        className={classNames(styles.icon)}
-      />
-      <span>Take </span>
-      <span className={classNames(styles.default)}>{gem.name}</span>
-      <div className={classNames(styles.rewardNote)}>{note}</div>
+      <span className={classNames(styles.quest)}>{quest.name}</span>
     </div>
   );
 }
@@ -62,28 +48,34 @@ function QuestTextComponent(text: string) {
 
 function WaypointComponent() {
   return (
-    <>
+    <div className={classNames(styles.noWrap)}>
       <img
         src={getImageUrl("waypoint.png")}
         className={classNames(styles.icon)}
       />
       <span className={classNames(styles.waypoint)}>Waypoint</span>
-    </>
+    </div>
   );
 }
 
-function VendorRewardComponent(gem: Gem, note: string) {
+function RewardComponent(gem: Gem, note: string, questReward: boolean) {
   return (
     <div className={classNames(styles.rewardHolder)}>
-      <MdCircle
-        color={gemColours[gem.primary_attribute]}
-        className={classNames(styles.icon)}
-      />
-      <span>Buy </span>
-      <span className={classNames(styles.default)}>{gem.name}</span>
-      <span> for </span>
-      <div className={classNames(styles.iconBlock)}>
-        <img src={getImageUrl(`${gem.cost}.png`)} />
+      <div>
+        <MdCircle
+          color={gemColours[gem.primary_attribute]}
+          className={classNames(styles.icon)}
+        />
+        <span>{questReward ? "Take" : "Buy"} </span>
+        <span className={classNames(styles.default)}>{gem.name}</span>
+        {questReward || (
+          <div className={classNames(styles.noWrap)}>
+            <span> for </span>
+            <div className={classNames(styles.iconBlock)}>
+              <img src={getImageUrl(`${gem.cost}.png`)} />
+            </div>
+          </div>
+        )}
       </div>
       <div className={classNames(styles.rewardNote)}>{note}</div>
     </div>
@@ -92,10 +84,10 @@ function VendorRewardComponent(gem: Gem, note: string) {
 
 function TrialComponent() {
   return (
-    <>
+    <div className={classNames(styles.noWrap)}>
       <img src={getImageUrl("trial.png")} className={classNames(styles.icon)} />
       <span className={classNames(styles.trial)}>Trial of Ascendancy</span>
-    </>
+    </div>
   );
 }
 
@@ -111,13 +103,13 @@ function TownComponent() {
 
 function PortalComponent() {
   return (
-    <>
+    <div className={classNames(styles.noWrap)}>
       <img
         src={getImageUrl("portal.png")}
         className={classNames(styles.icon)}
       />
       <span className={classNames(styles.portal)}>Portal</span>
-    </>
+    </div>
   );
 }
 
@@ -158,22 +150,22 @@ function GenericComponent(text: string) {
 
 function CraftingComponent() {
   return (
-    <>
+    <div className={classNames(styles.noWrap)}>
       <img
         src={getImageUrl("crafting.png")}
         className={classNames(styles.icon)}
       />
       <span className={classNames(styles.default)}>Crafting Recipe</span>
-    </>
+    </div>
   );
 }
 
 function AscendComponent() {
   return (
-    <>
+    <div className={classNames(styles.noWrap)}>
       <img src={getImageUrl("trial.png")} className={classNames(styles.icon)} />
       <span className={classNames(styles.trial)}>Ascend</span>
-    </>
+    </div>
   );
 }
 
@@ -191,9 +183,10 @@ export function ExileAction({ action, lookup }: ActionProps) {
       return QuestComponent(lookup.quests[action.questId]);
     }
     case "quest_reward":
-      return QuestRewardComponent(
+      return RewardComponent(
         lookup.gems[action.requiredGem.id],
-        action.requiredGem.note
+        action.requiredGem.note,
+        true
       );
     case "quest_text":
       return QuestTextComponent(action.value);
@@ -211,9 +204,10 @@ export function ExileAction({ action, lookup }: ActionProps) {
     case "get_waypoint":
       return WaypointComponent();
     case "vendor_reward":
-      return VendorRewardComponent(
+      return RewardComponent(
         lookup.gems[action.requiredGem.id],
-        action.requiredGem.note
+        action.requiredGem.note,
+        false
       );
     case "trial":
       return TrialComponent();
