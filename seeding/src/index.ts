@@ -25,14 +25,14 @@ export async function main() {
           .then((x) => x.json())
           .then((x) => x.version);
 
-        // const gems = await getGems();
-        // saveData("gems", gems);
+        const gems = await getGems();
+        saveData("gems", gems);
 
         const quests = await getQuests(poeDatVersion);
         saveData("quests", quests);
 
-        // const areas = await getAreas();
-        // saveData("areas", areas);
+        const areas = await getAreas();
+        saveData("areas", areas);
       }
       break;
     default:

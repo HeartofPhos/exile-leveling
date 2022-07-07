@@ -37,6 +37,8 @@ function decodePathOfBuildingCode(code: string) {
   return xml;
 }
 
+const POB_COLOUR_REGEX = /\^(x[a-zA-Z0-9]{6}|[0-9])/;
+
 function processPob(
   pobCode: string | undefined,
   importType: ImportType
@@ -78,7 +80,10 @@ function processPob(
               break;
           }
 
-          requiredGems.push({ id: gemId, note: note });
+          requiredGems.push({
+            id: gemId,
+            note: note.replace(POB_COLOUR_REGEX, ""),
+          });
         }
       }
     }
