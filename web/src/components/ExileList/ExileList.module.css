@@ -18,7 +18,6 @@
 
 .list > li {
   display: flex;
-  align-items: baseline;
   border-style: solid;
   border-color: var(--primary-dark);
   border-width: var(--size-1) 0;

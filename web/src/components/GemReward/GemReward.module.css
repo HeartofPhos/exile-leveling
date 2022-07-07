@@ -8,7 +8,6 @@
   flex-basis: 100%;
   flex-wrap: wrap;
   white-space: pre-wrap;
-  align-items: baseline;
 }
 
 .rewardHolder > * {
@@ -23,7 +22,6 @@
 .rewardNote {
   text-align: right;
   white-space: pre-wrap;
-  align-items: baseline;
   text-align-last: right;
 }
 .noWrap {
