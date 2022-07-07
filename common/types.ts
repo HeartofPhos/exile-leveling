@@ -26,7 +26,7 @@ export interface Quest {
   name: string;
   act: string;
   quest_rewards: Partial<Record<string, QuestReward>>[];
-  vendor_rewards: Partial<Record<string, VendorReward>>;
+  vendor_rewards: Partial<Record<string, VendorReward>>[];
 }
 
 export interface Area {

@@ -1,4 +1,4 @@
-import { Gem } from "../../../common/types";
+import { Gem, Gems } from "../../../common/types";
 import { cargoQuery } from "../wiki";
 
 function getGemCost(required_level: number) {
@@ -25,7 +25,7 @@ export async function getGems() {
     order_by: ["items._pageName"],
   });
 
-  const result: Record<Gem["id"], Gem> = {};
+  const result: Gems = {};
   for (const item of queryResult) {
     const required_level = Number(item.required_level);
 

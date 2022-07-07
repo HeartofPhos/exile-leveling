@@ -55,7 +55,7 @@ function tryFindQuestReward(
 function tryFindVendorRewards(
   lookup: RouteLookup,
   state: RouteState,
-  vendor_rewards: Quest["vendor_rewards"]
+  vendor_rewards: Quest["vendor_rewards"][0]
 ): Step[] {
   const result: Step[] = [];
   if (lookup.buildData) {
@@ -90,28 +90,42 @@ export function EvaluateQuest(
   state: RouteState
 ): string | EvaluateResult {
   {
-    if (action.length != 2) return ERROR_INVALID_FORMAT;
+    if (action.length < 2) return ERROR_INVALID_FORMAT;
 
     const questId = action[1];
     const quest = quests[questId];
     if (!quest) return "invalid quest id";
 
+    let quest_rewards;
+    let vendor_rewards;
+    if (action.length == 2) {
+      quest_rewards = quest.quest_rewards;
+      vendor_rewards = quest.vendor_rewards;
+    } else {
+      quest_rewards = [];
+      vendor_rewards = [];
+      for (let i = 2; i < action.length; i++) {
+        const questRewardIndex = Number.parseInt(action[i]);
+        quest_rewards.push(quest.quest_rewards[questRewardIndex]);
+        vendor_rewards.push(quest.vendor_rewards[questRewardIndex]);
+      }
+    }
+
     const additionalSteps: Step[] = [];
     if (quest) {
-      for (const quest_rewards of quest.quest_rewards) {
-        const questReward = tryFindQuestReward(lookup, state, quest_rewards);
+      for (const rewards of quest_rewards) {
+        const questReward = tryFindQuestReward(lookup, state, rewards);
         if (questReward) {
           additionalSteps.push(questReward);
         }
       }
+      for (const rewards of vendor_rewards) {
+        const vendorRewards = tryFindVendorRewards(lookup, state, rewards).map(
+          (x) => x
+        );
 
-      const vendorRewards = tryFindVendorRewards(
-        lookup,
-        state,
-        quest.vendor_rewards
-      ).map((x) => x);
-
-      additionalSteps.push(...vendorRewards);
+        additionalSteps.push(...vendorRewards);
+      }
     }
 
     return {

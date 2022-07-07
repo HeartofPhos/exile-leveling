@@ -1,4 +1,4 @@
-import { Quest } from "../../../common/types";
+import { Quest, Quests } from "../../../common/types";
 import { cargoQuery } from "../wiki";
 import fetch from "cross-fetch";
 
@@ -8,36 +8,48 @@ const BREAKING_SOME_EGGS_REWARD_2 = [
   "Metadata/Items/Gems/SkillGemDash",
 ];
 
+function processQuestRewards(quest: Quest, test: (key: string) => boolean) {
+  const quest_rewards: Quest["quest_rewards"] = [{}, {}];
+  for (const key in quest.quest_rewards[0]) {
+    if (test(key)) {
+      quest_rewards[0][key] = quest.quest_rewards[0][key];
+    } else {
+      quest_rewards[1][key] = quest.quest_rewards[0][key];
+    }
+  }
+  quest.quest_rewards = quest_rewards;
+}
+
+function processVendorRewards(quest: Quest, test: (key: string) => boolean) {
+  const vendor_rewards: Quest["vendor_rewards"] = [{}, {}];
+  for (const key in quest.vendor_rewards[0]) {
+    if (test(key)) {
+      vendor_rewards[0][key] = quest.vendor_rewards[0][key];
+    } else {
+      vendor_rewards[1][key] = quest.vendor_rewards[0][key];
+    }
+  }
+  quest.vendor_rewards = vendor_rewards;
+}
+
 function postProcessQuest(quest: Quest) {
   switch (quest.id) {
     //Hack for The Caged Brute
     case "a1q2":
       {
-        const updatedRewards: Quest["quest_rewards"] = [{}, {}];
-        for (const key in quest.quest_rewards[0]) {
-          if (key.includes("Support")) {
-            updatedRewards[0][key] = quest.quest_rewards[0][key];
-          } else {
-            updatedRewards[1][key] = quest.quest_rewards[0][key];
-          }
-        }
-
-        quest.quest_rewards = updatedRewards;
+        processQuestRewards(quest, (key) => key.includes("Support"));
+        processVendorRewards(quest, (key) => key.includes("Support"));
       }
       break;
     //Hack for Breaking Some Eggs
     case "a1q4":
       {
-        const updatedRewards: Quest["quest_rewards"] = [{}, {}];
-        for (const key in quest.quest_rewards[0]) {
-          if (BREAKING_SOME_EGGS_REWARD_2.some((x) => x == key)) {
-            updatedRewards[1][key] = quest.quest_rewards[0][key];
-          } else {
-            updatedRewards[0][key] = quest.quest_rewards[0][key];
-          }
-        }
-
-        quest.quest_rewards = updatedRewards;
+        processQuestRewards(quest, (key) =>
+          BREAKING_SOME_EGGS_REWARD_2.every((x) => x != key)
+        );
+        processVendorRewards(quest, (key) =>
+          BREAKING_SOME_EGGS_REWARD_2.every((x) => x != key)
+        );
       }
       break;
   }
@@ -48,7 +60,7 @@ export async function getQuests(poeDatVersion: string) {
     `https://poedat.erosson.org/pypoe/v1/tree/${poeDatVersion}/default/Quest.dat.min.json`
   ).then((x) => x.json());
 
-  const result: Record<Quest["id"], Quest> = {};
+  const result: Quests = {};
 
   const idIndex = questDat.header.find((x: any) => x.name == "Id").rowid;
   const actIndex = questDat.header.find((x: any) => x.name == "Act").rowid;
@@ -63,7 +75,7 @@ export async function getQuests(poeDatVersion: string) {
       name: row[nameIndex],
       act: row[actIndex].toString(),
       quest_rewards: [{}],
-      vendor_rewards: {},
+      vendor_rewards: [{}],
     };
 
     result[quest.id] = quest;
@@ -82,7 +94,7 @@ export async function getQuests(poeDatVersion: string) {
   for (const item of vendorRewards) {
     const quest = result[item.quest_id];
     if (!quest) continue;
-    quest.vendor_rewards[item.item_id] = {
+    quest.vendor_rewards[0][item.item_id] = {
       classes: item.classes?.split(",") || [],
       npc: item.npc,
     };

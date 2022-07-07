@@ -1,8 +1,8 @@
 import { cargoQuery } from "../wiki";
-import { Area, Monster } from "../../../common/types";
+import { Areas, Monster } from "../../../common/types";
 
 export async function getAreas() {
-  const result: Record<Area["id"], Area> = {};
+  const result: Areas = {};
 
   let done = new Set<string>();
   let todo = ["1_1_1"];
