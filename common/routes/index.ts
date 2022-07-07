@@ -1,4 +1,4 @@
-import { Area, Gem, Monster, Quest } from "../types";
+import { Area, Gem } from "../types";
 import {
   EvaluateQuest,
   EvaluateQuestText,
@@ -8,17 +8,15 @@ import {
   VendorRewardAction,
 } from "./quest";
 
+import { quests, areas, bossWaypoints, gems } from "../../common/data";
+
 export type ParsedAction = string[];
 export type ParsedStep = (string | ParsedAction)[];
 export type Step = (string | Action)[];
 export type Route = Step[];
 
 export interface RouteLookup {
-  quests: Record<string, Quest>;
-  areas: Record<string, Area>;
   towns: Record<Area["act"], Area["id"]>;
-  bossWaypoints: Record<Monster["name"], Area["id"][]>;
-  gems: Record<string, Gem>;
   buildData?: BuildData;
 }
 
@@ -72,7 +70,7 @@ function EvaluateKill(
   // const currentArea = state.areas[state.currentAreaId];
   // if (!currentArea.bosses.some((x) => x.name == bossName)) return false;
 
-  const waypointUnlocks = lookup.bossWaypoints[bossName];
+  const waypointUnlocks = bossWaypoints[bossName];
   if (waypointUnlocks) {
     for (const waypointUnlock of waypointUnlocks) {
       state.waypoints.add(waypointUnlock);
@@ -118,7 +116,7 @@ function EvaluateArea(
 ): string | EvaluateResult {
   if (action.length != 2) return ERROR_INVALID_FORMAT;
 
-  const area = lookup.areas[action[1]];
+  const area = areas[action[1]];
   if (!area) return ERROR_MISSING_AREA;
 
   return {
@@ -141,7 +139,7 @@ function EvaluateEnter(
 ): string | EvaluateResult {
   if (action.length != 2) return ERROR_INVALID_FORMAT;
 
-  const area = lookup.areas[action[1]];
+  const area = areas[action[1]];
   if (!area) return ERROR_MISSING_AREA;
   if (!area.connection_ids.some((x) => x == state.currentAreaId))
     return "not connected to current area";
@@ -171,7 +169,7 @@ function EvaluateTown(
 ): string | EvaluateResult {
   if (action.length != 1) return ERROR_INVALID_FORMAT;
 
-  const area = lookup.areas[state.currentAreaId];
+  const area = areas[state.currentAreaId];
   state.currentAreaId = state.currentTownAreaId;
   return {
     action: {
@@ -195,11 +193,11 @@ function EvaluateWaypoint(
 
     let areaId: Area["id"] | null = null;
     if (action.length == 2) {
-      const area = lookup.areas[action[1]];
+      const area = areas[action[1]];
       if (!area) return ERROR_MISSING_AREA;
       if (!state.waypoints.has(area.id)) return "missing target waypoint";
 
-      const currentArea = lookup.areas[state.currentAreaId];
+      const currentArea = areas[state.currentAreaId];
       if (!currentArea.has_waypoint) return ERROR_AREA_NO_WAYPOINT;
 
       state.waypoints.add(currentArea.id);
@@ -227,7 +225,7 @@ function EvaluateGetWaypoint(
 ): string | EvaluateResult {
   if (action.length != 1) return ERROR_INVALID_FORMAT;
 
-  const area = lookup.areas[state.currentAreaId];
+  const area = areas[state.currentAreaId];
   if (!area) return ERROR_MISSING_AREA;
   if (!area.has_waypoint) return ERROR_AREA_NO_WAYPOINT;
   if (state.waypoints.has(area.id)) return "waypoint already acquired";
@@ -271,7 +269,7 @@ function EvaluateUsePortal(
   if (action.length != 1) return ERROR_INVALID_FORMAT;
   if (!state.portalAreaId) return "portal must be set";
 
-  const currentArea = lookup.areas[state.currentAreaId];
+  const currentArea = areas[state.currentAreaId];
   if (currentArea.id == state.portalAreaId) {
     state.portalAreaId = state.currentAreaId;
     state.currentAreaId = lookup.towns[currentArea.act];
@@ -337,9 +335,9 @@ function EvaluateAscend(
   if (action.length != 1) return ERROR_INVALID_FORMAT;
 
   const expectedAreaId = "Labyrinth_Airlock";
-  const currentArea = lookup.areas[state.currentAreaId];
+  const currentArea = areas[state.currentAreaId];
   if (currentArea.id != expectedAreaId) {
-    const expectedArea = lookup.areas[expectedAreaId];
+    const expectedArea = areas[expectedAreaId];
     return `must be in "${expectedArea.name}"`;
   }
 
@@ -479,24 +477,14 @@ export interface RequiredGem {
   note: string;
 }
 
-export function initializeRouteLookup(
-  quests: RouteLookup["quests"],
-  areas: RouteLookup["areas"],
-  bossWaypoints: RouteLookup["bossWaypoints"],
-  gems: RouteLookup["gems"],
-  buildData?: BuildData
-) {
+export function initializeRouteLookup(buildData?: BuildData) {
   const routeLookup: RouteLookup = {
-    quests: quests,
-    areas: areas,
     towns: {},
-    bossWaypoints: bossWaypoints,
-    gems: gems,
     buildData: buildData,
   };
 
-  for (const id in routeLookup.areas) {
-    const area = routeLookup.areas[id];
+  for (const id in areas) {
+    const area = areas[id];
     if (area.is_town_area) routeLookup.towns[area.act] = area.id;
   }
 

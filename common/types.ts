@@ -1,3 +1,9 @@
+export type Quests = Record<Quest["id"], Quest>;
+export type Areas = Record<Area["id"], Area>;
+export type BossWaypoints = Record<string, Area["id"][]>;
+export type Gems = Record<Gem["id"], Gem>;
+export type GemColours = Record<Gem["primary_attribute"], string>;
+
 export interface Gem {
   id: string;
   name: string;
@@ -19,8 +25,8 @@ export interface Quest {
   id: string;
   name: string;
   act: string;
-  quest_rewards: Record<string, QuestReward>[];
-  vendor_rewards: Record<string, VendorReward>;
+  quest_rewards: Partial<Record<string, QuestReward>>[];
+  vendor_rewards: Partial<Record<string, VendorReward>>;
 }
 
 export interface Area {

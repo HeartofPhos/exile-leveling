@@ -38,50 +38,6 @@
   font-weight: 600;
 }
 
-.icon {
-  vertical-align: sub;
-  width: auto;
-  height: var(--size-4);
-  margin-right: var(--size-1);
-}
-
-.iconBlock {
-  vertical-align: middle;
-  position: relative;
-  display: inline-block;
-  width: var(--size-5);
-}
-
-.iconBlock > * {
-  position: absolute;
-  transform: translate(0, -50%);
-  width: 100%;
-  height: auto;
-}
-
-.rewardHolder {
-  display: flex;
-  flex-wrap: wrap;
-  white-space: pre-wrap;
-  align-items: baseline;
-}
-
-.rewardHolder > * {
-  flex-grow: 1;
-  flex-basis: 8rem;
-}
-
-.rewardHolder > *:last-child {
-  margin-right: 0;
-}
-
-.rewardNote {
-  text-align: right;
-  white-space: pre-wrap;
-  align-items: baseline;
-  text-align-last: right;
-}
-
 .noWrap {
   display: inline-block;
   white-space: pre;

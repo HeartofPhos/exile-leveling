@@ -10,16 +10,7 @@ import { ExileList } from "../../components/ExileList";
 import { ExileStep } from "../../components/ExileStep";
 import React from "react";
 
-import quests from "/data/quests.json";
-import areas from "/data/areas.json";
-import bossWaypoints from "/data/boss-waypoints.json";
-import gems from "/data/gems.json";
-
-//@ts-expect-error
-const routesData: Record<string, string> = import.meta.glob(
-  "/data/routes/*.txt",
-  { as: "raw" }
-);
+import { routeFiles } from "../../../../common/data";
 
 interface RouteData {
   routes: Route[];
@@ -43,21 +34,15 @@ export class RoutesContainer extends React.Component<{}, RoutesContainerState> {
     let buildData = undefined;
     if (buildDataJson) buildData = JSON.parse(buildDataJson);
 
-    const routeLookup = initializeRouteLookup(
-      quests,
-      areas,
-      bossWaypoints,
-      gems,
-      buildData
-    );
+    const routeLookup = initializeRouteLookup(buildData);
     const routeState = initializeRouteState();
 
     const routes: Route[] = [];
-    const keys = Object.keys(routesData).sort((a, b) =>
+    const keys = Object.keys(routeFiles).sort((a, b) =>
       a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" })
     );
     for (const key of keys) {
-      const route = parseRoute(routesData[key], routeLookup, routeState);
+      const route = parseRoute(routeFiles[key], routeLookup, routeState);
       routes.push(route);
     }
 

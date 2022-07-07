@@ -47,3 +47,24 @@ hr {
   max-width: 1280px;
   padding: var(--size-2);
 }
+
+.inlineIcon {
+  vertical-align: sub;
+  width: auto;
+  height: var(--size-4);
+  margin-right: var(--size-1);
+}
+
+.inlineIconBlock {
+  vertical-align: middle;
+  position: relative;
+  display: inline-block;
+  width: var(--size-5);
+}
+
+.inlineIconBlock > * {
+  position: absolute;
+  transform: translate(0, -50%);
+  width: 100%;
+  height: auto;
+}

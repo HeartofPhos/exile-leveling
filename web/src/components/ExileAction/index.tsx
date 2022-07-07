@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import { Action, RouteLookup } from "../../../../common/routes";
-import { Gem, Quest } from "../../../../common/types";
-import { MdCircle } from "react-icons/md";
+import { Quest } from "../../../../common/types";
 import {
   BsArrowDownSquare,
   BsArrowDownLeftSquare,
@@ -13,8 +12,9 @@ import {
   BsArrowUpRightSquare,
 } from "react-icons/bs";
 import styles from "./ExileAction.module.css";
+import { GemReward } from "../GemReward";
 
-import gemColours from "/data/gem-colours.json";
+import { quests, areas, gems } from "../../../../common/data";
 
 interface ActionProps {
   action: Action;
@@ -36,7 +36,10 @@ function AreaComponent(areaName: string) {
 function QuestComponent(quest: Quest) {
   return (
     <div className={classNames(styles.noWrap)}>
-      <img src={getImageUrl("quest.png")} className={classNames(styles.icon)} />
+      <img
+        src={getImageUrl("quest.png")}
+        className={classNames("inlineIcon")}
+      />
       <span className={classNames(styles.quest)}>{quest.name}</span>
     </div>
   );
@@ -51,33 +54,9 @@ function WaypointComponent() {
     <div className={classNames(styles.noWrap)}>
       <img
         src={getImageUrl("waypoint.png")}
-        className={classNames(styles.icon)}
+        className={classNames("inlineIcon")}
       />
       <span className={classNames(styles.waypoint)}>Waypoint</span>
-    </div>
-  );
-}
-
-function RewardComponent(gem: Gem, note: string, questReward: boolean) {
-  return (
-    <div className={classNames(styles.rewardHolder)}>
-      <div>
-        <MdCircle
-          color={gemColours[gem.primary_attribute]}
-          className={classNames(styles.icon)}
-        />
-        <span>{questReward ? "Take" : "Buy"} </span>
-        <span className={classNames(styles.default)}>{gem.name}</span>
-        {questReward || (
-          <div className={classNames(styles.noWrap)}>
-            <span> for </span>
-            <div className={classNames(styles.iconBlock)}>
-              <img src={getImageUrl(`${gem.cost}.png`)} />
-            </div>
-          </div>
-        )}
-      </div>
-      <div className={classNames(styles.rewardNote)}>{note}</div>
     </div>
   );
 }
@@ -85,7 +64,10 @@ function RewardComponent(gem: Gem, note: string, questReward: boolean) {
 function TrialComponent() {
   return (
     <div className={classNames(styles.noWrap)}>
-      <img src={getImageUrl("trial.png")} className={classNames(styles.icon)} />
+      <img
+        src={getImageUrl("trial.png")}
+        className={classNames("inlineIcon")}
+      />
       <span className={classNames(styles.trial)}>Trial of Ascendancy</span>
     </div>
   );
@@ -106,7 +88,7 @@ function PortalComponent() {
     <div className={classNames(styles.noWrap)}>
       <img
         src={getImageUrl("portal.png")}
-        className={classNames(styles.icon)}
+        className={classNames("inlineIcon")}
       />
       <span className={classNames(styles.portal)}>Portal</span>
     </div>
@@ -114,29 +96,29 @@ function PortalComponent() {
 }
 
 const directions = [
-  <div className={classNames(styles.iconBlock)}>
-    <BsArrowUpSquare className={classNames(styles.icon)} />
+  <div className={classNames("inlineIconBlock")}>
+    <BsArrowUpSquare className={classNames("inlineIcon")} />
   </div>,
-  <div className={classNames(styles.iconBlock)}>
-    <BsArrowUpRightSquare className={classNames(styles.icon)} />
+  <div className={classNames("inlineIconBlock")}>
+    <BsArrowUpRightSquare className={classNames("inlineIcon")} />
   </div>,
-  <div className={classNames(styles.iconBlock)}>
-    <BsArrowRightSquare className={classNames(styles.icon)} />
+  <div className={classNames("inlineIconBlock")}>
+    <BsArrowRightSquare className={classNames("inlineIcon")} />
   </div>,
-  <div className={classNames(styles.iconBlock)}>
-    <BsArrowDownRightSquare className={classNames(styles.icon)} />
+  <div className={classNames("inlineIconBlock")}>
+    <BsArrowDownRightSquare className={classNames("inlineIcon")} />
   </div>,
-  <div className={classNames(styles.iconBlock)}>
-    <BsArrowDownSquare className={classNames(styles.icon)} />
+  <div className={classNames("inlineIconBlock")}>
+    <BsArrowDownSquare className={classNames("inlineIcon")} />
   </div>,
-  <div className={classNames(styles.iconBlock)}>
-    <BsArrowDownLeftSquare className={classNames(styles.icon)} />
+  <div className={classNames("inlineIconBlock")}>
+    <BsArrowDownLeftSquare className={classNames("inlineIcon")} />
   </div>,
-  <div className={classNames(styles.iconBlock)}>
-    <BsArrowLeftSquare className={classNames(styles.icon)} />
+  <div className={classNames("inlineIconBlock")}>
+    <BsArrowLeftSquare className={classNames("inlineIcon")} />
   </div>,
-  <div className={classNames(styles.iconBlock)}>
-    <BsArrowUpLeftSquare className={classNames(styles.icon)} />
+  <div className={classNames("inlineIconBlock")}>
+    <BsArrowUpLeftSquare className={classNames("inlineIcon")} />
   </div>,
 ];
 
@@ -153,7 +135,7 @@ function CraftingComponent() {
     <div className={classNames(styles.noWrap)}>
       <img
         src={getImageUrl("crafting.png")}
-        className={classNames(styles.icon)}
+        className={classNames("inlineIcon")}
       />
       <span className={classNames(styles.default)}>Crafting Recipe</span>
     </div>
@@ -163,7 +145,10 @@ function CraftingComponent() {
 function AscendComponent() {
   return (
     <div className={classNames(styles.noWrap)}>
-      <img src={getImageUrl("trial.png")} className={classNames(styles.icon)} />
+      <img
+        src={getImageUrl("trial.png")}
+        className={classNames("inlineIcon")}
+      />
       <span className={classNames(styles.trial)}>Ascend</span>
     </div>
   );
@@ -176,18 +161,14 @@ export function ExileAction({ action, lookup }: ActionProps) {
     case "arena":
       return AreaComponent(action.value);
     case "area":
-      return AreaComponent(lookup.areas[action.areaId].name);
+      return AreaComponent(areas[action.areaId].name);
     case "enter":
-      return AreaComponent(lookup.areas[action.areaId].name);
+      return AreaComponent(areas[action.areaId].name);
     case "quest": {
-      return QuestComponent(lookup.quests[action.questId]);
+      return QuestComponent(quests[action.questId]);
     }
     case "quest_reward":
-      return RewardComponent(
-        lookup.gems[action.requiredGem.id],
-        action.requiredGem.note,
-        true
-      );
+      return GemReward(action.requiredGem, "quest");
     case "quest_text":
       return QuestTextComponent(action.value);
     case "waypoint": {
@@ -197,18 +178,14 @@ export function ExileAction({ action, lookup }: ActionProps) {
         <>
           {WaypointComponent()}
           <span> ➞ </span>
-          {AreaComponent(lookup.areas[action.areaId].name)}
+          {AreaComponent(areas[action.areaId].name)}
         </>
       );
     }
     case "get_waypoint":
       return WaypointComponent();
     case "vendor_reward":
-      return RewardComponent(
-        lookup.gems[action.requiredGem.id],
-        action.requiredGem.note,
-        false
-      );
+      return GemReward(action.requiredGem, "vendor");
     case "trial":
       return TrialComponent();
     case "town":

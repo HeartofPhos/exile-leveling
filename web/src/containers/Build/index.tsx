@@ -3,7 +3,7 @@ import { ExileList } from "../../components/ExileList";
 import { GemOrder } from "../../components/GemOrder";
 import { BuildData } from "../../../../common/routes";
 
-import gems from "/data/gems.json";
+import { gems } from "../../../../common/data";
 import { BuildForm } from "../../components/BuildForm";
 
 export function Build() {
@@ -39,7 +39,7 @@ export function Build() {
       {buildData && (
         <ExileList header={buildData.characterClass}>
           {buildData &&
-            buildData.requiredGems.map((x, i) => (
+            buildData.requiredGems.map((requiredGem, i) => (
               <GemOrder
                 key={i}
                 onMoveTop={() => {
@@ -77,7 +77,7 @@ export function Build() {
                     ...buildData,
                   });
                 }}
-                gem={gems[x.id]}
+                requiredGem={requiredGem}
               />
             ))}
         </ExileList>

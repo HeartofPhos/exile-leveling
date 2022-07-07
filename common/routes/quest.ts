@@ -9,6 +9,8 @@ import {
 } from ".";
 import { Quest, QuestReward } from "../types";
 
+import { quests } from "../data";
+
 export interface QuestAction {
   type: "quest";
   questId: Quest["id"];
@@ -27,7 +29,7 @@ export interface VendorRewardAction {
 function tryFindQuestReward(
   lookup: RouteLookup,
   state: RouteState,
-  quest_rewards: Record<string, QuestReward>
+  quest_rewards: Quest["quest_rewards"][0]
 ): Step | null {
   if (lookup.buildData) {
     for (const requiredGem of lookup.buildData.requiredGems) {
@@ -91,7 +93,7 @@ export function EvaluateQuest(
     if (action.length != 2) return ERROR_INVALID_FORMAT;
 
     const questId = action[1];
-    const quest = lookup.quests[questId];
+    const quest = quests[questId];
     if (!quest) return "invalid quest id";
 
     const additionalSteps: Step[] = [];

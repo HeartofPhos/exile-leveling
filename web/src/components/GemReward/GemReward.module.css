@@ -1,0 +1,32 @@
+.default {
+  color: var(--primary-light);
+  font-weight: 600;
+}
+
+.rewardHolder {
+  display: flex;
+  flex-basis: 100%;
+  flex-wrap: wrap;
+  white-space: pre-wrap;
+  align-items: baseline;
+}
+
+.rewardHolder > * {
+  flex-grow: 1;
+  flex-basis: 8rem;
+}
+
+.rewardHolder > *:last-child {
+  margin-right: 0;
+}
+
+.rewardNote {
+  text-align: right;
+  white-space: pre-wrap;
+  align-items: baseline;
+  text-align-last: right;
+}
+.noWrap {
+  display: inline-block;
+  white-space: pre;
+}
