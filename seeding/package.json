@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "seed-data": "ts-node src/index.ts ../common/data seed-data"
+    "seed-data": "ts-node src/index.ts ../common/data/json seed-data"
   },
   "author": "",
   "license": "ISC",

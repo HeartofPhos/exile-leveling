@@ -1,6 +1,6 @@
 import { Quest, Quests } from "../../../common/types";
 import { cargoQuery } from "../wiki";
-import fetch from "cross-fetch";
+import { QuestDat } from "../../data";
 
 const BREAKING_SOME_EGGS_REWARD_2 = [
   "Metadata/Items/Gems/SkillGemSteelskin",
@@ -55,25 +55,16 @@ function postProcessQuest(quest: Quest) {
   }
 }
 
-export async function getQuests(poeDatVersion: string) {
-  const questDat = await fetch(
-    `https://poedat.erosson.org/pypoe/v1/tree/${poeDatVersion}/default/Quest.dat.min.json`
-  ).then((x) => x.json());
-
+export async function getQuests() {
   const result: Quests = {};
 
-  const idIndex = questDat.header.find((x: any) => x.name == "Id").rowid;
-  const actIndex = questDat.header.find((x: any) => x.name == "Act").rowid;
-  const nameIndex = questDat.header.find((x: any) => x.name == "Name").rowid;
-  const typeIndex = questDat.header.find((x: any) => x.name == "Type").rowid;
-  for (const row of questDat.data) {
-    const type = row[typeIndex];
-    if (type != 0 && type != 1) continue;
+  for (const row of QuestDat.data) {
+    if (row.Type != 0 && row.Type != 1) continue;
 
     const quest: Quest = {
-      id: row[idIndex],
-      name: row[nameIndex],
-      act: row[actIndex].toString(),
+      id: row.Id,
+      name: row.Name,
+      act: row.Act.toString(),
       quest_rewards: [{}],
       vendor_rewards: [{}],
     };
