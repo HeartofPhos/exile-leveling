@@ -8,7 +8,6 @@ export async function getAreas() {
   let todo = [2];
   let done = new Set<number>();
 
-  let cnt = 0;
   while (todo.length > 0) {
     const worldAreas = todo.map((x) => WorldAreasDat.data[x]);
 
@@ -36,11 +35,7 @@ export async function getAreas() {
         is_town_area: worldArea.IsTown,
         connection_ids: connected_area_ids,
       };
-
-      cnt++;
     }
-
-    console.log(`Areas ${cnt}`);
   }
 
   return result;

@@ -18,10 +18,10 @@ export async function main() {
   switch (command) {
     case "seed-data":
       {
-        // console.time("gems")
-        // const gems = await getGems();
-        // saveData("gems", gems);
-        // console.timeEnd("gems")
+        console.time("gems")
+        const gems = await getGems();
+        saveData("gems", gems);
+        console.timeEnd("gems")
 
         // console.time("quests")
         // const quests = await getQuests();

@@ -33,7 +33,7 @@ export async function getGems() {
 
     result[baseItemType.Id] = {
       id: baseItemType.Id,
-      name: skillGem.Name,
+      name: baseItemType.Name,
       primary_attribute: ATTRIBUTE_LOOKUP[grantedEffects.Attribute],
       required_level: grantedEffectsPerLevel.PlayerLevelReq,
       cost: getGemCost(grantedEffectsPerLevel.PlayerLevelReq),
