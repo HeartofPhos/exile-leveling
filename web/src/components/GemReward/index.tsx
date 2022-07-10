@@ -22,10 +22,7 @@ function GemRewardVerb(type: GemRewardType) {
   }
 }
 
-export function GemReward(
-  requiredGem: RequiredGem,
-  type: GemRewardType
-) {
+export function GemReward(requiredGem: RequiredGem, type: GemRewardType) {
   const gem = gems[requiredGem.id];
   return (
     <div className={classNames(styles.rewardHolder)}>
@@ -45,7 +42,9 @@ export function GemReward(
           </div>
         )}
       </div>
-      <div className={classNames(styles.rewardNote)}>{requiredGem.note}</div>
+      <div className={classNames(styles.rewardNote)}>
+        {requiredGem.note}
+      </div>
     </div>
   );
 }

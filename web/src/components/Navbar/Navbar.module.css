@@ -22,7 +22,7 @@
   padding: var(--size-3);
   text-decoration: none;
   font-size: var(--size-4);
-  font-weight: 600;
+  font-weight: var(--font-heavy);
 }
 
 /* Change the color of links on hover */

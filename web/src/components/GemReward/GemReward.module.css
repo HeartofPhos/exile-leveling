@@ -1,6 +1,6 @@
 .default {
   color: var(--primary-light);
-  font-weight: 600;
+  font-weight: var(--font-heavy);
 }
 
 .rewardHolder {
@@ -23,7 +23,9 @@
   text-align: right;
   white-space: pre-wrap;
   text-align-last: right;
+  color: var(--primary-light);
 }
+
 .noWrap {
   display: inline-block;
   white-space: pre;

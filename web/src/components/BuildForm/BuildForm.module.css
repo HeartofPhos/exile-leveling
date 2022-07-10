@@ -15,7 +15,7 @@
 .formRow > label {
   color: var(--primary-light);
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: var(--font-heavy);
 }
 
 .formInput {
@@ -45,7 +45,7 @@
 .formButton {
   width: 5rem;
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: var(--font-heavy);
   color: var(--primary-light);
   background-color: var(--primary-darker);
   border-width: var(--border-width);
