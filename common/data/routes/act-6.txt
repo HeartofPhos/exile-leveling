@@ -8,6 +8,7 @@ Hand in {quest|a6q4} #Fallen from Grace
 Find and kill {kill|The Dishonoured Queen}, take {quest_text|Eye of Conquest}
 ➞ {enter|2_6_5} #The Karui Fortress
 ➞ {arena|Tukohama's Keep}, kill {kill|Tukohama, Karui God of War}
+Get {crafting}
 ➞ {enter|2_6_6} #The Ridge
 ➞ {enter|2_6_7_1} #The Lower Prison
 Get {get_waypoint}

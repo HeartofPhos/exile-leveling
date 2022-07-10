@@ -6,6 +6,7 @@ Get {crafting}
 {town}
 Hand in {quest|a4q2} #Breaking the Seal
 ➞ {enter|1_4_3_1} #The Mines Level 1
+Get {crafting}
 ➞ {enter|1_4_3_2} #The Mines Level 2
 Free {quest_text|Deshret}
 ➞ {enter|1_4_3_3} #The Crystal Veins
@@ -18,9 +19,11 @@ Get {crafting}
 {waypoint|1_4_3_3} #The Crystal Veins
 ➞ {enter|1_4_5_1} #Daresso's Dream
 ➞ {enter|1_4_5_2} #The Grand Arena
+# Get {crafting}
 {waypoint|1_4_3_3} #The Crystal Veins
 ➞ {enter|1_4_4_1} #Kaom's Dream
 ➞ {enter|1_4_4_3} #Kaom's Stronghold
+# Get {crafting}
 ➞ {arena|Caldera of the King}, kill {kill|King Kaom}, take {quest_text|The Eye of Fury}
 {town}
 {waypoint|1_4_5_2} #The Grand Arena
@@ -31,6 +34,8 @@ Talk to {generic|Lady Dialla}
 ➞ {enter|1_4_6_1} #The Belly of the Beast Level 1
 ➞ {enter|1_4_6_2} #The Belly of the Beast Level 2
 ➞ {arena|The Bowels of the Beast}, kill {kill|Piety, the Abomination}
+Talk to {generic|Piety}
+Get {crafting}
 ➞ {enter|1_4_6_3} #The Harvest
 Get {get_waypoint}
 Find and kill {kill|Doedre Darktongue}, take {quest_text|Malachai's Lungs}

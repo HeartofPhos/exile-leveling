@@ -23,7 +23,7 @@ Hand in {quest|a3q11} #Victario's Secrets
 {waypoint|1_3_5} #The Marketplace
 ➞ {enter|1_3_7}, likely opposite {area|1_3_6} #The Battlefront
 Get {get_waypoint}
-Take {quest_text|Ribbon Spool}
+Head {dir|225} take {quest_text|Ribbon Spool}
 ➞ {enter|1_3_8_1} #The Solaris Temple Level 1
 ➞ {enter|1_3_8_2} #The Solaris Temple Level 2
 {waypoint|1_3_7} #The Battlefront
