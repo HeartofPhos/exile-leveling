@@ -25,7 +25,7 @@ export interface RouteState {
   getWaypoints: Set<Area["id"]>;
   useWaypoints: Set<Area["id"]>;
   currentAreaId: Area["id"];
-  currentTownAreaId: Area["id"];
+  lastTownAreaId: Area["id"];
   portalAreaId: Area["id"] | null;
   acquiredGems: Set<Gem["id"]>;
 }
@@ -147,7 +147,7 @@ function EvaluateEnter(
     return "not connected to current area";
 
   if (area.is_town_area) {
-    state.currentTownAreaId = area.id;
+    state.lastTownAreaId = area.id;
     if (area.has_waypoint) state.waypoints.add(area.id);
   }
 
@@ -172,7 +172,7 @@ function EvaluateTown(
   if (action.length != 1) return ERROR_INVALID_FORMAT;
 
   const area = areas[state.currentAreaId];
-  state.currentAreaId = state.currentTownAreaId;
+  state.currentAreaId = state.lastTownAreaId;
   return {
     action: {
       type: "town",
@@ -347,7 +347,7 @@ function EvaluateAscend(
     return `must be in "${expectedArea.name}"`;
   }
 
-  state.currentAreaId = state.currentTownAreaId;
+  state.currentAreaId = state.lastTownAreaId;
 
   return {
     action: {
@@ -503,7 +503,7 @@ export function initializeRouteState() {
     getWaypoints: new Set(),
     useWaypoints: new Set(),
     currentAreaId: "1_1_1",
-    currentTownAreaId: "1_1_town",
+    lastTownAreaId: "1_1_town",
     portalAreaId: null,
     acquiredGems: new Set(),
   };
@@ -516,7 +516,7 @@ export function parseRoute(
   lookup: RouteLookup,
   state: RouteState
 ) {
-  const routes = [];
+  const routes: Route[] = [];
   for (const routeSource of routeSources) {
     const routeLines = routeSource.split(/(?:\r\n|\r|\n)/g);
 
