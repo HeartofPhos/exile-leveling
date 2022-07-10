@@ -15,10 +15,6 @@
   flex-basis: 8rem;
 }
 
-.rewardHolder > *:last-child {
-  margin-right: 0;
-}
-
 .rewardNote {
   text-align: right;
   white-space: pre-wrap;

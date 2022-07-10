@@ -11,7 +11,8 @@
 }
 
 .orderButtonGroup {
-  height: 1.5rem;
+  margin-left: var(--size-3);
+  height: var(--line-height);
   display: flex;
   align-items: center;
 }
@@ -32,5 +33,5 @@
 }
 
 .orderButton > *:hover {
-  background-color: #4e4e4e;
+  background-color: var(--primary-dark);
 }

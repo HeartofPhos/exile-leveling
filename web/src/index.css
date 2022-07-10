@@ -11,6 +11,7 @@
   --size-3: 0.5rem;
   --size-4: 1rem;
   --size-5: 1.5rem;
+  --line-height: 1.5em;
   --font-heavy: 700;
 }
 
@@ -19,6 +20,7 @@
 ::before {
   box-sizing: inherit;
   font-family: inherit;
+  line-height: var(--line-height);
   padding: 0;
   margin: 0;
   user-select: none;
@@ -32,7 +34,6 @@ html {
   font-family: "Source Sans Pro";
   font-size: 1em;
   font-weight: 400;
-  line-height: 1.5;
 }
 
 hr {
