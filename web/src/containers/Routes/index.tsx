@@ -10,7 +10,7 @@ import { ExileList } from "../../components/ExileList";
 import { ExileStep } from "../../components/ExileStep";
 import React from "react";
 
-import { routeFiles } from "../../../../common/data";
+import { routeSources as routeFiles } from "../../../../common/data";
 
 interface RouteData {
   routes: Route[];
@@ -37,14 +37,13 @@ export class RoutesContainer extends React.Component<{}, RoutesContainerState> {
     const routeLookup = initializeRouteLookup(buildData);
     const routeState = initializeRouteState();
 
-    const routes: Route[] = [];
-    const keys = Object.keys(routeFiles).sort((a, b) =>
-      a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" })
-    );
-    for (const key of keys) {
-      const route = parseRoute(routeFiles[key], routeLookup, routeState);
-      routes.push(route);
-    }
+    const routeSources = Object.keys(routeFiles)
+      .sort((a, b) =>
+        a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" })
+      )
+      .map((x) => routeFiles[x]);
+
+    const routes = parseRoute(routeSources, routeLookup, routeState);
 
     this.state = {
       routeData: { routes: routes, lookup: routeLookup },

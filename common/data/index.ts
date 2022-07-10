@@ -13,7 +13,7 @@ export const gems = GEMS_JSON as Gems;
 export const gemColours = GEM_COLOURS_JSON as GemColours;
 
 //@ts-expect-error
-export const routeFiles: Record<string, string> = import.meta.glob(
+export const routeSources: Record<string, string> = import.meta.glob(
   "./routes/*.txt",
   { as: "raw" }
 );
