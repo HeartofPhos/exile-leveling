@@ -1,0 +1,8188 @@
+{
+  "columns": [
+    {
+      "name": "RewardOffer",
+      "type": "foreignrow",
+      "references": "QuestRewardOffers"
+    },
+    {
+      "name": "Unknown_0",
+      "type": "i32",
+      "references": null
+    },
+    {
+      "name": "Character",
+      "type": "foreignrow",
+      "references": "Characters"
+    },
+    {
+      "name": "Reward",
+      "type": "foreignrow",
+      "references": "BaseItemTypes"
+    },
+    {
+      "name": "RewardLevel",
+      "type": "i32",
+      "references": null
+    },
+    {
+      "name": "RewardStack",
+      "type": "i32",
+      "references": null
+    }
+  ],
+  "data": [
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5466,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5681,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5655,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5419,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5701,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5873,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5762,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5709,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5681,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5655,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5633,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5778,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5407,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5633,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5408,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5633,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5685,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5798,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5894,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5428,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5426,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5675,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5685,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5424,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5466,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5750,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5820,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5543,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5701,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5811,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5633,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5428,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5655,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 0,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5894,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5693,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5694,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5600,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5699,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5420,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5896,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5693,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5765,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5546,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5711,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5676,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5896,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5541,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5508,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5711,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5676,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5711,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5541,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5510,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5676,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5772,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5796,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5538,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5510,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5489,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5826,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5538,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5694,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5489,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5699,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5420,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5693,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5538,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5541,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 3,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5676,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 4,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5803,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 4,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5790,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 4,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5803,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 4,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5790,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 4,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5790,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 4,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5792,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 4,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5792,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 4,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5792,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 4,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5803,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 4,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5790,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 4,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5792,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 4,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5803,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5438,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5496,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5703,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5730,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5499,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5869,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5726,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5429,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5438,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5564,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5499,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5913,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5564,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5429,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5913,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5429,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5564,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5432,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5728,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5913,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5432,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5435,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5564,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5703,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5827,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5435,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5438,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5432,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5703,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5573,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5435,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5438,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5429,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5564,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5432,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5730,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 8,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5913,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5525,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5487,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5486,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5674,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5700,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5739,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5674,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5525,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5515,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5402,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5409,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5402,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5515,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5410,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5882,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5660,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5402,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5416,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5804,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5515,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5410,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5882,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5416,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5660,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5576,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5804,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5525,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5804,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5674,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5416,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5576,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5813,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5422,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5751,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5674,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5660,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5402,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 7,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5813,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5401,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5890,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5512,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5604,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5702,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5717,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5421,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5425,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5923,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5427,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5401,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5890,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5593,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5566,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5717,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5771,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5736,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5885,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5920,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5923,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5463,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5427,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5405,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5708,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5799,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5886,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5412,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5405,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5494,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5774,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5886,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5764,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5494,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5511,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5570,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5506,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5688,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5413,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5934,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5570,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5915,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5536,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5575,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5540,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5690,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5702,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5421,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5824,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5427,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5494,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5401,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5690,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5717,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5736,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5907,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 10,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5917,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5649,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5651,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5650,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5603,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5545,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5418,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5872,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5653,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5651,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5649,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5650,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5777,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5783,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5872,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5649,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5651,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5650,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5883,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5672,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5908,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5649,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5650,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5417,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5651,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5805,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5440,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5883,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5672,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5908,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5914,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5652,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5650,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5651,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5649,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5417,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5545,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5440,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5829,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5652,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5651,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5649,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5650,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5874,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5545,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5418,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5821,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5440,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5872,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5649,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5650,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5651,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5417,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5545,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 14,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5908,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5475,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5500,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5495,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5704,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5714,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5816,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5902,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5912,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5475,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5495,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5502,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5472,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5704,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5714,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5802,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5912,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5472,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5430,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5502,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5802,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5801,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5810,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5912,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5472,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5430,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5502,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5599,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5801,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5810,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5912,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5599,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5430,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5502,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5801,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5902,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5475,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5430,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5472,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5682,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5714,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5723,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5818,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5902,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5472,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5430,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5502,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5475,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5495,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5599,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5723,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 16,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5912,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 15,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5165,
+      "RewardLevel": 15,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 15,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5180,
+      "RewardLevel": 15,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 15,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5200,
+      "RewardLevel": 15,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 15,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5209,
+      "RewardLevel": 15,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 15,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4727,
+      "RewardLevel": 15,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 15,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4728,
+      "RewardLevel": 15,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 15,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4729,
+      "RewardLevel": 15,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 15,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4726,
+      "RewardLevel": 15,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5557,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5559,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5558,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5478,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5485,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5482,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5477,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5516,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5514,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5608,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5787,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5785,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5780,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5871,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5557,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5559,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5558,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5478,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5748,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5482,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5480,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5785,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5918,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5519,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5479,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5518,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5490,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5480,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5748,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5808,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5671,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5887,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5911,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5479,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5654,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5484,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5520,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5517,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5773,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5808,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5670,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5911,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5654,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5484,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5483,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5520,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5517,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5485,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5557,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5559,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5558,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5478,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5485,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5482,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5477,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5483,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5521,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5520,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5780,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5787,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5814,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5557,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5559,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5558,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5478,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5748,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5477,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5480,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5519,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5521,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5520,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5780,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5787,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5785,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 19,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5911,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 22,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4674,
+      "RewardLevel": 28,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 22,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4675,
+      "RewardLevel": 28,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 22,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4676,
+      "RewardLevel": 28,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 22,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4677,
+      "RewardLevel": 28,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5607,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5594,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5505,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5596,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5892,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5462,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5661,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5738,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5779,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5781,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5898,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5931,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5933,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5669,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5781,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5594,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5505,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5467,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5534,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5761,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5493,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5776,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5782,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5884,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5561,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5669,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5698,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5713,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5741,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5916,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5561,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5669,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5686,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5403,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5770,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5795,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5399,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5763,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5645,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5686,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5684,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5404,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5403,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5830,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5925,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5932,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5644,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5596,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5752,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5753,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5754,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5687,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5404,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5403,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5738,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5779,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5823,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5898,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5561,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5645,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5594,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5687,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5404,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5403,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5741,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5782,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5779,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5898,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 24,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5910,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 1,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5163,
+      "RewardLevel": 4,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 1,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5178,
+      "RewardLevel": 4,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 1,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5200,
+      "RewardLevel": 4,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5523,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5744,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5742,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5722,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5746,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5734,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5732,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5721,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5733,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5744,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5742,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5745,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5721,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5733,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5745,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5732,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5722,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5460,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5733,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5743,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5747,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5745,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5722,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5733,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5747,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5743,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5825,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5523,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5460,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5733,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5743,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5744,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5742,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5732,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5523,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5734,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5722,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5460,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5721,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5745,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5744,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5743,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 2,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5746,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 18,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5307,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 20,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5315,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 23,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5316,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5549,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5550,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5551,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5567,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5668,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5705,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5784,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5788,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5899,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5815,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5819,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5878,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5897,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5549,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5550,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5551,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5677,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5567,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5668,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5784,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5788,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5809,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5945,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5878,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5888,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5524,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5451,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5677,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5524,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5497,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5809,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5806,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5889,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5909,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5451,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5677,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5524,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5679,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5809,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5806,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5889,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5909,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5451,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5555,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5677,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5679,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5678,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5697,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5806,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5879,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5927,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5879,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5550,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5551,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5434,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5678,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5680,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5697,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5705,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5758,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5822,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5784,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5759,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5878,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5897,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5899,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5549,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5550,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5551,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5451,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5677,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5678,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5680,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5784,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5788,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5897,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5524,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 25,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5909,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 6,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5276,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 26,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4645,
+      "RewardLevel": 30,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 26,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4646,
+      "RewardLevel": 30,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 26,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4647,
+      "RewardLevel": 30,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 9,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5275,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 11,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5278,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 27,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5280,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 21,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5283,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 5,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5277,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 12,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5279,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 13,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 6102,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 13,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 6103,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 13,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 6104,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 28,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 1,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 28,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 1,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 28,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 1,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 28,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 1,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 28,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 1,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 28,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 1,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 28,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 1,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 28,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 1,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 28,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 1,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 29,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 1,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 29,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 1,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 29,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 1,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 29,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 1,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 29,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 1,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 29,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 1,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 29,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 1,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5563,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5562,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5431,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5553,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5437,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5725,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5729,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5767,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5775,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5789,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5563,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5562,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5431,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5553,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5437,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5720,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5775,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5789,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5881,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5880,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5563,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5562,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5431,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5553,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5437,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5731,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5775,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5880,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5928,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5947,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5563,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5562,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5431,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5553,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5437,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5433,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5828,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5880,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5928,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5563,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5562,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5431,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5553,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5437,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5766,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5433,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5828,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5563,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5562,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5431,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5553,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5437,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5727,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5766,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5767,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5707,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5715,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5789,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5433,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5828,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5563,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5562,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5431,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5553,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5437,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5725,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5729,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5789,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5433,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 30,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5828,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5664,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5665,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5666,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5695,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5667,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5812,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5895,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5891,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5893,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5901,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5664,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5665,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5666,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5695,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5667,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5812,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5895,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5891,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5893,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5901,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5664,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5665,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5666,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5695,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5667,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5797,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5664,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5665,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5666,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5695,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5667,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5664,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5665,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5666,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5695,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5667,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5937,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5664,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5665,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5666,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5695,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5667,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5936,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5891,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5893,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5937,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5921,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5664,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5665,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5666,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5695,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5667,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5891,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5893,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5939,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5940,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 31,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5943,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 32,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5333,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 35,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4648,
+      "RewardLevel": 41,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 35,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4649,
+      "RewardLevel": 41,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 35,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4650,
+      "RewardLevel": 41,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 35,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4655,
+      "RewardLevel": 41,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 35,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4656,
+      "RewardLevel": 41,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 35,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4657,
+      "RewardLevel": 41,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 36,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5196,
+      "RewardLevel": 42,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 36,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5197,
+      "RewardLevel": 42,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 36,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5198,
+      "RewardLevel": 42,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 36,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5201,
+      "RewardLevel": 42,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 36,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5199,
+      "RewardLevel": 42,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 36,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5203,
+      "RewardLevel": 42,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 36,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5195,
+      "RewardLevel": 42,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 37,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5340,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 38,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 6102,
+      "RewardLevel": 42,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 38,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 6103,
+      "RewardLevel": 42,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 38,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 6104,
+      "RewardLevel": 42,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 39,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 6102,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 39,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 6103,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 39,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 6104,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 40,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5341,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 4845,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 4889,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 4876,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 4845,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 4889,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 4866,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 4866,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 4903,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 4889,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 4855,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 4866,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 4903,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 4855,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 4876,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 4903,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 4845,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 4855,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 4876,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 4845,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 4855,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 4866,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 4876,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 4889,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 41,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 4903,
+      "RewardLevel": 47,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 42,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5345,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 43,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5346,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 45,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5347,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 46,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5348,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 44,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4726,
+      "RewardLevel": 45,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 44,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4727,
+      "RewardLevel": 45,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 44,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4728,
+      "RewardLevel": 45,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 44,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4729,
+      "RewardLevel": 45,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 44,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4679,
+      "RewardLevel": 45,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 44,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4680,
+      "RewardLevel": 45,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 44,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4681,
+      "RewardLevel": 45,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 47,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5362,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5029,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5073,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5065,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5029,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5073,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5054,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5054,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5082,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5073,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5042,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5082,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5054,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5042,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5082,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5065,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5029,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5065,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 5042,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5029,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5042,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5054,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5065,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5073,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 48,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5082,
+      "RewardLevel": 53,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 49,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5350,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 50,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5195,
+      "RewardLevel": 54,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 50,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5199,
+      "RewardLevel": 54,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 50,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5203,
+      "RewardLevel": 54,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 50,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5207,
+      "RewardLevel": 54,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 50,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5202,
+      "RewardLevel": 54,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 50,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5205,
+      "RewardLevel": 54,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 50,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5211,
+      "RewardLevel": 54,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 51,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5364,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 52,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4677,
+      "RewardLevel": 57,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 52,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4678,
+      "RewardLevel": 57,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 52,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4679,
+      "RewardLevel": 57,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 52,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4680,
+      "RewardLevel": 57,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 52,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4681,
+      "RewardLevel": 57,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 53,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5353,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 54,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5365,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 55,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4655,
+      "RewardLevel": 59,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 55,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4656,
+      "RewardLevel": 59,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 55,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4657,
+      "RewardLevel": 59,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 55,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4658,
+      "RewardLevel": 59,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 57,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 6102,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 57,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 6103,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 57,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 6104,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 56,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5370,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 58,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5371,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 59,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5372,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 60,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5379,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 4390,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 4583,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 4473,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 4634,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 4420,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 4754,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 4529,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 4420,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 4609,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 4473,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 4390,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 4808,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 4529,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5225,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 4447,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 4331,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 4420,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 4773,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 4361,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 4331,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 4302,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 4529,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5225,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 4834,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 4302,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 4555,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 4501,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 4331,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 4361,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 4792,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 4555,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 4501,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 4473,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 4634,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 4302,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 4821,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 4555,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 4302,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 4390,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 4609,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 4529,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 61,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5225,
+      "RewardLevel": 61,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 62,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5380,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 63,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5381,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 64,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5378,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 65,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5172,
+      "RewardLevel": 65,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 65,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5187,
+      "RewardLevel": 65,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 65,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5208,
+      "RewardLevel": 65,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 65,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5207,
+      "RewardLevel": 65,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 65,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5204,
+      "RewardLevel": 65,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 65,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5206,
+      "RewardLevel": 65,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 65,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5202,
+      "RewardLevel": 65,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 65,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5205,
+      "RewardLevel": 65,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 65,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5211,
+      "RewardLevel": 65,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 4932,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 4984,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 0,
+      "Reward": 5000,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 4932,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 4967,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5000,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 4967,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5000,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 1,
+      "Reward": 5017,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 4950,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 4967,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 5,
+      "Reward": 5017,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 4950,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 4984,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 3,
+      "Reward": 5017,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 4932,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 4950,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 4,
+      "Reward": 4984,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 4932,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 4950,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 4967,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 4984,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5000,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 66,
+      "Unknown_0": 0,
+      "Character": 2,
+      "Reward": 5017,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 67,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5385,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 68,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5386,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 69,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4726,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 69,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4727,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 69,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4728,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 69,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4729,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 69,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4730,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 69,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 4731,
+      "RewardLevel": 66,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 70,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5387,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 71,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 6497,
+      "RewardLevel": 68,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 71,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 6448,
+      "RewardLevel": 68,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 71,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 6546,
+      "RewardLevel": 68,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 71,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 6475,
+      "RewardLevel": 68,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 34,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5291,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 34,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5289,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 34,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5290,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 34,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5288,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 17,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5920,
+      "RewardLevel": 15,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 17,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5438,
+      "RewardLevel": 15,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 17,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5734,
+      "RewardLevel": 15,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 17,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5496,
+      "RewardLevel": 15,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 33,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5493,
+      "RewardLevel": 35,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 33,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5564,
+      "RewardLevel": 35,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 33,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5562,
+      "RewardLevel": 35,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 33,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5472,
+      "RewardLevel": 35,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 33,
+      "Unknown_0": 0,
+      "Character": 6,
+      "Reward": 5496,
+      "RewardLevel": 35,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 72,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8710,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 73,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8848,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 74,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8849,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 75,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8851,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 76,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8859,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 77,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8874,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 78,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 10000
+    },
+    {
+      "RewardOffer": 79,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 450
+    },
+    {
+      "RewardOffer": 80,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 600
+    },
+    {
+      "RewardOffer": 81,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 1000
+    },
+    {
+      "RewardOffer": 82,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 450
+    },
+    {
+      "RewardOffer": 83,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 1000
+    },
+    {
+      "RewardOffer": 84,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 600
+    },
+    {
+      "RewardOffer": 85,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 1000
+    },
+    {
+      "RewardOffer": 86,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 750
+    },
+    {
+      "RewardOffer": 87,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 1500
+    },
+    {
+      "RewardOffer": 88,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 1000
+    },
+    {
+      "RewardOffer": 89,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 3000
+    },
+    {
+      "RewardOffer": 90,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 600
+    },
+    {
+      "RewardOffer": 91,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 1000
+    },
+    {
+      "RewardOffer": 92,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 1000
+    },
+    {
+      "RewardOffer": 93,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 1500
+    },
+    {
+      "RewardOffer": 94,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 1000
+    },
+    {
+      "RewardOffer": 95,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 3000
+    },
+    {
+      "RewardOffer": 96,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 450
+    },
+    {
+      "RewardOffer": 97,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 600
+    },
+    {
+      "RewardOffer": 98,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 3000
+    },
+    {
+      "RewardOffer": 99,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 750
+    },
+    {
+      "RewardOffer": 100,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 1500
+    },
+    {
+      "RewardOffer": 101,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 3000
+    },
+    {
+      "RewardOffer": 102,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 750
+    },
+    {
+      "RewardOffer": 103,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 1500
+    },
+    {
+      "RewardOffer": 104,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 3000
+    },
+    {
+      "RewardOffer": 105,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 750
+    },
+    {
+      "RewardOffer": 106,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 1500
+    },
+    {
+      "RewardOffer": 107,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 3000
+    },
+    {
+      "RewardOffer": 108,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 1000
+    },
+    {
+      "RewardOffer": 109,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 1500
+    },
+    {
+      "RewardOffer": 110,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8687,
+      "RewardLevel": 1,
+      "RewardStack": 1500
+    },
+    {
+      "RewardOffer": 111,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5389,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 112,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8672,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 112,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8673,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 112,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8674,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 112,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 8675,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 113,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5294,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 114,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5293,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 115,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5295,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 116,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5296,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 117,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5297,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    },
+    {
+      "RewardOffer": 118,
+      "Unknown_0": 0,
+      "Character": null,
+      "Reward": 5298,
+      "RewardLevel": 1,
+      "RewardStack": 1
+    }
+  ]
+}

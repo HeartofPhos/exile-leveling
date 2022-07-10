@@ -1,9 +1,4 @@
-import QUEST from "./exports/Quest.dat.json";
-import BASE_ITEM_TYPES from "./exports/BaseItemTypes.dat.json";
-import SKILL_GEMS from "./exports/SkillGems.dat.json";
-import GRANTED_EFFECTS from "./exports/GrantedEffects.dat.json";
-import GRANTED_EFFECTS_PER_LEVEL from "./exports/GrantedEffectsPerLevel.dat.json";
-import WORLD_AREAS from "./exports/WorldAreas.dat.json";
+import fs from "fs";
 
 interface DatJson {
   columns: {
@@ -14,9 +9,19 @@ interface DatJson {
   data: any[];
 }
 
-export const QuestDat = QUEST as DatJson;
-export const BaseItemTypesDat = BASE_ITEM_TYPES as DatJson;
-export const SkillGemsDat = SKILL_GEMS as DatJson;
-export const GrantedEffectsDat = GRANTED_EFFECTS as DatJson;
-export const GrantedEffectsPerLevelDat = GRANTED_EFFECTS_PER_LEVEL as DatJson;
-export const WorldAreasDat = WORLD_AREAS as DatJson;
+function parseDat(path: string): DatJson {
+  return JSON.parse(fs.readFileSync(`${__dirname}/${path}`, "utf-8"));
+}
+
+export const BaseItemTypesDat = parseDat("./exports/BaseItemTypes.dat.json");
+export const SkillGemsDat = parseDat("./exports/SkillGems.dat.json");
+export const GrantedEffectsDat = parseDat("./exports/GrantedEffects.dat.json");
+export const GrantedEffectsPerLevelDat = parseDat(
+  "./exports/GrantedEffectsPerLevel.dat.json"
+);
+export const QuestDat = parseDat("./exports/Quest.dat.json");
+export const QuestRewardOffersDat = parseDat(
+  "./exports/QuestRewardOffers.dat.json"
+);
+export const QuestRewardsDat = parseDat("./exports/QuestRewards.dat.json");
+export const WorldAreasDat = parseDat("./exports/WorldAreas.dat.json");
