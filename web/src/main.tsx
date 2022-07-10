@@ -12,7 +12,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <div className={classNames("container")}>
       <HashRouter>
         <Navbar />
-        <hr/>
         <Routes>
           <Route path="/" element={<RoutesContainer />} />
           <Route path="/build" element={<Build />} />

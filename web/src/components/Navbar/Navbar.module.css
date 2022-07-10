@@ -1,5 +1,15 @@
+.navbar {
+  background-color: var(--primary-darker);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  color: var(--border-color);
+}
+
 /* Add a black background color to the top navigation */
 .topnav {
+  padding: var(--size-2);
+  height: 100%;
   overflow: hidden;
 }
 
