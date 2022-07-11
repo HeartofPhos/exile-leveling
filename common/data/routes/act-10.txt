@@ -2,7 +2,7 @@
 ➞ {enter|2_10_1} #The Cathedral Rooftop
 Head {dir|0} ➞ {arena|Cathedral Apex}, kill {kill|Plaguewing}
 ➞ {enter|2_10_2} #The Ravaged Square
-Place {set_portal} immediately
+Place {set_portal} in the plaza
 Head {dir|180} ➞ {enter|2_10_7} #The Control Blocks
 {waypoint|2_10_town} #Oriath Docks
 Hand in {quest|a10q1} #Safe Passage
@@ -38,5 +38,5 @@ Talk to {generic|Sin}
 Talk to {generic|Sin} ➞ {enter|2_10_town} #Oriath Docks
 Talk to {generic|Lilly Roth}, Set Sail from Oriath
 ➞ {enter|2_11_endgame_town} #Karui Shores
-Hand in {quest|a10q3} #An End to Hunger
 Get {crafting}
+Hand in {quest|a10q3} #An End to Hunger
