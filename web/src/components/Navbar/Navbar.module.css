@@ -1,59 +1,61 @@
-/* Add a black background color to the top navigation */
-.topnav {
-  overflow: hidden;
+.navbar {
+  background-color: var(--primary-darker);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  color: var(--border-color);
 }
 
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  display: block;
+.navHolder {
+  display: flex;
+  font-size: var(--size-4);
+}
+
+.navItems {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--size-3);
+}
+
+.navItems > *:not(:last-child) {
+  margin-right: var(--size-3);
+}
+
+.navItem {
   color: var(--primary-light);
   text-align: center;
-  padding: var(--size-3);
   text-decoration: none;
-  font-size: var(--size-4);
-  font-weight: 600;
+  font-weight: var(--font-heavy);
 }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: var(--primary-dark);
-}
-
-/* Add an active class to highlight the current page */
-.topnav a.active {
-  color: var(--primary-light);
-}
-
-/* Hide the link that should open and close the topnav on small screens */
-.topnav .icon {
+.navIcon {
   display: none;
+  box-sizing: content-box;
+  height: var(--line-height);
+  padding: var(--size-3);
+  align-items: center;
+  flex-direction: row-reverse;
+  width: 100%;
 }
 
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {
+  .navIcon {
+    display: inline-flex;
+  }
+
+  .navItems:not(.expand) > *:not(:first-child) {
     display: none;
   }
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
 
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
-  .topnav.responsive {
-    position: relative;
+  .navItems.expand {
+    flex-direction: column;
   }
-  .topnav.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
+
+  .navItems.expand > *:not(:last-child) {
+    margin-bottom: var(--size-3);
   }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
+
+  .navItem.expand {
+    width: 100%;
   }
 }

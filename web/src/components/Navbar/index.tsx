@@ -10,14 +10,34 @@ export function Navbar({}: NavbarProps) {
   const [expand, setExpand] = useState<boolean>(false);
   const navigate = useNavigate();
   return (
-    <div className={classNames(styles.topnav, { [styles.responsive]: expand })}>
-      <a onClick={() => navigate("/")} className={classNames(styles.active)}>
-        Home
-      </a>
-      <a onClick={() => navigate("/build")}>Build</a>
-      <a className={classNames(styles.icon)} onClick={() => setExpand(!expand)}>
-        <FaBars />
-      </a>
+    <div className={classNames(styles.navbar)}>
+      <div className={classNames(styles.navHolder)}>
+        <div
+          className={classNames(styles.navItems, {
+            [styles.expand]: expand,
+          })}
+        >
+          <div
+            onClick={() => navigate("/")}
+            className={classNames(styles.navItem)}
+          >
+            Home
+          </div>
+          <div
+            className={classNames(styles.navItem)}
+            onClick={() => navigate("/build")}
+          >
+            Build
+          </div>
+        </div>
+        <div
+          className={classNames(styles.navIcon)}
+          onClick={() => setExpand(!expand)}
+        >
+          <FaBars />
+        </div>
+      </div>
+      <hr />
     </div>
   );
 }

@@ -8,7 +8,7 @@ import {
   VendorRewardAction,
 } from "./quest";
 
-import { quests, areas, bossWaypoints, gems } from "../../common/data";
+import { areas, bossWaypoints } from "../../common/data";
 
 export type ParsedAction = string[];
 export type ParsedStep = (string | ParsedAction)[];
@@ -22,8 +22,10 @@ export interface RouteLookup {
 
 export interface RouteState {
   waypoints: Set<Area["id"]>;
+  getWaypoints: Set<Area["id"]>;
+  useWaypoints: Set<Area["id"]>;
   currentAreaId: Area["id"];
-  currentTownAreaId: Area["id"];
+  lastTownAreaId: Area["id"];
   portalAreaId: Area["id"] | null;
   acquiredGems: Set<Gem["id"]>;
 }
@@ -145,7 +147,7 @@ function EvaluateEnter(
     return "not connected to current area";
 
   if (area.is_town_area) {
-    state.currentTownAreaId = area.id;
+    state.lastTownAreaId = area.id;
     if (area.has_waypoint) state.waypoints.add(area.id);
   }
 
@@ -170,7 +172,7 @@ function EvaluateTown(
   if (action.length != 1) return ERROR_INVALID_FORMAT;
 
   const area = areas[state.currentAreaId];
-  state.currentAreaId = state.currentTownAreaId;
+  state.currentAreaId = state.lastTownAreaId;
   return {
     action: {
       type: "town",
@@ -201,6 +203,8 @@ function EvaluateWaypoint(
       if (!currentArea.has_waypoint) return ERROR_AREA_NO_WAYPOINT;
 
       state.waypoints.add(currentArea.id);
+      state.useWaypoints.add(area.id);
+
       state.currentAreaId = area.id;
       areaId = area.id;
     }
@@ -231,6 +235,8 @@ function EvaluateGetWaypoint(
   if (state.waypoints.has(area.id)) return "waypoint already acquired";
 
   state.waypoints.add(area.id);
+  state.getWaypoints.add(area.id);
+
   return {
     action: {
       type: "get_waypoint",
@@ -341,7 +347,7 @@ function EvaluateAscend(
     return `must be in "${expectedArea.name}"`;
   }
 
-  state.currentAreaId = state.currentTownAreaId;
+  state.currentAreaId = state.lastTownAreaId;
 
   return {
     action: {
@@ -494,8 +500,10 @@ export function initializeRouteLookup(buildData?: BuildData) {
 export function initializeRouteState() {
   const state: RouteState = {
     waypoints: new Set(),
+    getWaypoints: new Set(),
+    useWaypoints: new Set(),
     currentAreaId: "1_1_1",
-    currentTownAreaId: "1_1_town",
+    lastTownAreaId: "1_1_town",
     portalAreaId: null,
     acquiredGems: new Set(),
   };
@@ -504,35 +512,46 @@ export function initializeRouteState() {
 }
 
 export function parseRoute(
-  routeData: string,
+  routeSources: string[],
   lookup: RouteLookup,
   state: RouteState
 ) {
-  const routeLines = routeData.split(/(?:\r\n|\r|\n)/g);
+  const routes: Route[] = [];
+  for (const routeSource of routeSources) {
+    const routeLines = routeSource.split(/(?:\r\n|\r|\n)/g);
 
-  const route: Route = [];
-  for (const line of routeLines) {
-    if (!line) continue;
+    const route: Route = [];
+    for (const line of routeLines) {
+      if (!line) continue;
 
-    const parsedStep = parseStep(line);
-    const step: Step = [];
-    const additionalSteps: Step[] = [];
-    for (const subStep of parsedStep) {
-      if (typeof subStep == "string") {
-        step.push(subStep);
-      } else {
-        const result = evaluateAction(subStep, lookup, state);
-        if (typeof result == "string") console.log(`${result}: ${subStep}`);
-        else {
-          if (result.action) step.push(result.action);
-          if (result.additionalSteps)
-            additionalSteps.push(...result.additionalSteps);
+      const parsedStep = parseStep(line);
+      const step: Step = [];
+      const additionalSteps: Step[] = [];
+      for (const subStep of parsedStep) {
+        if (typeof subStep == "string") {
+          step.push(subStep);
+        } else {
+          const result = evaluateAction(subStep, lookup, state);
+          if (typeof result == "string") console.log(`${result}: ${subStep}`);
+          else {
+            if (result.action) step.push(result.action);
+            if (result.additionalSteps)
+              additionalSteps.push(...result.additionalSteps);
+          }
         }
       }
+      if (step.length > 0) route.push(step);
+      route.push(...additionalSteps);
     }
-    if (step.length > 0) route.push(step);
-    route.push(...additionalSteps);
+
+    routes.push(route);
   }
 
-  return route;
+  for (const waypoint of state.getWaypoints) {
+    if (!state.useWaypoints.has(waypoint)) {
+      console.log(`unused waypoint ${waypoint}`);
+    }
+  }
+
+  return routes;
 }

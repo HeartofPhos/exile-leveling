@@ -1,41 +1,41 @@
 .default {
   color: var(--primary-light);
-  font-weight: 600;
+  font-weight: var(--font-heavy);
 }
 
 .enemy {
   color: darkorange;
-  font-weight: 600;
+  font-weight: var(--font-heavy);
 }
 
 .area {
   color: #ffcf91;
-  font-weight: 600;
+  font-weight: var(--font-heavy);
 }
 
 .quest {
   color: gold;
-  font-weight: 600;
+  font-weight: var(--font-heavy);
 }
 
 .questText {
   color: lime;
-  font-weight: 600;
+  font-weight: var(--font-heavy);
 }
 
 .waypoint {
   color: #8ab3ff;
-  font-weight: 600;
+  font-weight: var(--font-heavy);
 }
 
 .trial {
   color: darkseagreen;
-  font-weight: 600;
+  font-weight: var(--font-heavy);
 }
 
 .portal {
   color: #8ab3ff;
-  font-weight: 600;
+  font-weight: var(--font-heavy);
 }
 
 .noWrap {
