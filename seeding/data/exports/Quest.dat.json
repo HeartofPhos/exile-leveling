@@ -3,41 +3,49 @@
     {
       "name": "Id",
       "type": "string",
+      "array": false,
       "references": null
     },
     {
       "name": "Act",
       "type": "i32",
+      "array": false,
       "references": null
     },
     {
       "name": "Name",
       "type": "string",
+      "array": false,
       "references": null
     },
     {
       "name": "Icon_DDSFile",
       "type": "string",
+      "array": false,
       "references": null
     },
     {
       "name": "QuestId",
       "type": "i32",
+      "array": false,
       "references": null
     },
     {
       "name": "Unknown_0",
       "type": "i32",
+      "array": false,
       "references": null
     },
     {
       "name": "Type",
       "type": "foreignrow",
+      "array": false,
       "references": "QuestType"
     },
     {
       "name": "TrackerGroup",
       "type": "foreignrow",
+      "array": false,
       "references": "QuestTrackerGroup"
     }
   ],

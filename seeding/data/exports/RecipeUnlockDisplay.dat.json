@@ -1,0 +1,1441 @@
+{
+  "columns": [
+    {
+      "name": "RecipeId",
+      "type": "i32",
+      "array": false,
+      "references": null
+    },
+    {
+      "name": "Description",
+      "type": "string",
+      "array": false,
+      "references": null
+    },
+    {
+      "name": "CraftingItemClassCategoriesKeys",
+      "type": "foreignrow",
+      "array": true,
+      "references": "CraftingItemClassCategories"
+    },
+    {
+      "name": "UnlockDescription",
+      "type": "string",
+      "array": false,
+      "references": null
+    },
+    {
+      "name": "Rank",
+      "type": "i32",
+      "array": false,
+      "references": null
+    },
+    {
+      "name": "UnlockArea",
+      "type": "foreignrow",
+      "array": false,
+      "references": "WorldAreas"
+    }
+  ],
+  "data": [
+    {
+      "RecipeId": 146,
+      "Description": "Movement Speed - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        8
+      ],
+      "UnlockDescription": "",
+      "Rank": 1,
+      "UnlockArea": 35
+    },
+    {
+      "RecipeId": 161,
+      "Description": "Spell Damage - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "UnlockDescription": "",
+      "Rank": 1,
+      "UnlockArea": 36
+    },
+    {
+      "RecipeId": 158,
+      "Description": "Physical Damage - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7,
+        9,
+        10,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 1,
+      "UnlockArea": 48
+    },
+    {
+      "RecipeId": 170,
+      "Description": "Fire Damage - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        9,
+        10,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 1,
+      "UnlockArea": 46
+    },
+    {
+      "RecipeId": 173,
+      "Description": "Cold Damage - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        9,
+        10,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 1,
+      "UnlockArea": 62
+    },
+    {
+      "RecipeId": 176,
+      "Description": "Lightning Damage - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        9,
+        10,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 1,
+      "UnlockArea": 51
+    },
+    {
+      "RecipeId": 133,
+      "Description": "Elemental Resistances - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 68
+    },
+    {
+      "RecipeId": 141,
+      "Description": "Attributes - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 92
+    },
+    {
+      "RecipeId": 168,
+      "Description": "Attack, Cast and Warcry Speed - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7,
+        9,
+        10
+      ],
+      "UnlockDescription": "",
+      "Rank": 1,
+      "UnlockArea": 59
+    },
+    {
+      "RecipeId": 180,
+      "Description": "Chaos Damage - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        9,
+        10,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 1,
+      "UnlockArea": 114
+    },
+    {
+      "RecipeId": 147,
+      "Description": "Movement Speed and Exerted Attacks - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 78
+    },
+    {
+      "RecipeId": 159,
+      "Description": "Physical Damage - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        9,
+        10
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 79
+    },
+    {
+      "RecipeId": 183,
+      "Description": "Accuracy - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        9,
+        10,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 1,
+      "UnlockArea": 80
+    },
+    {
+      "RecipeId": 142,
+      "Description": "Attributes - Rank 3",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 3,
+      "UnlockArea": 1099
+    },
+    {
+      "RecipeId": 149,
+      "Description": "Life and Mana - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 97
+    },
+    {
+      "RecipeId": 162,
+      "Description": "Spell Damage - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 90
+    },
+    {
+      "RecipeId": 187,
+      "Description": "Defences - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "UnlockDescription": "",
+      "Rank": 1,
+      "UnlockArea": 41
+    },
+    {
+      "RecipeId": 171,
+      "Description": "Fire Damage - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        9,
+        10
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 110
+    },
+    {
+      "RecipeId": 174,
+      "Description": "Cold Damage - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        9,
+        10
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 111
+    },
+    {
+      "RecipeId": 178,
+      "Description": "Lightning Damage - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        9,
+        10
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 104
+    },
+    {
+      "RecipeId": 185,
+      "Description": "Accuracy - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        9,
+        10,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 148
+    },
+    {
+      "RecipeId": 135,
+      "Description": "Elemental Resistances - Rank 3",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 3,
+      "UnlockArea": 118
+    },
+    {
+      "RecipeId": 228,
+      "Description": "Minions - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        7,
+        9,
+        10
+      ],
+      "UnlockDescription": "",
+      "Rank": 1,
+      "UnlockArea": 124
+    },
+    {
+      "RecipeId": 230,
+      "Description": "Traps and Mines - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "UnlockDescription": "",
+      "Rank": 1,
+      "UnlockArea": 130
+    },
+    {
+      "RecipeId": 160,
+      "Description": "Physical Damage - Rank 3",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "UnlockDescription": "",
+      "Rank": 3,
+      "UnlockArea": 140
+    },
+    {
+      "RecipeId": 163,
+      "Description": "Spell Damage - Rank 3",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "UnlockDescription": "",
+      "Rank": 3,
+      "UnlockArea": 138
+    },
+    {
+      "RecipeId": 169,
+      "Description": "Attack and Cast Speed - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        10
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 135
+    },
+    {
+      "RecipeId": 150,
+      "Description": "Life and Mana - Rank 3",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 3,
+      "UnlockArea": 150
+    },
+    {
+      "RecipeId": 181,
+      "Description": "Chaos Damage - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        9,
+        10
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 153
+    },
+    {
+      "RecipeId": 188,
+      "Description": "Defences - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 87
+    },
+    {
+      "RecipeId": 148,
+      "Description": "Movement Speed and Flask Enchantments - Rank 3",
+      "CraftingItemClassCategoriesKeys": [
+        8,
+        12
+      ],
+      "UnlockDescription": "Epilogue",
+      "Rank": 3,
+      "UnlockArea": 162
+    },
+    {
+      "RecipeId": 139,
+      "Description": "All Resistances - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13
+      ],
+      "UnlockDescription": "Aspirant's Trial",
+      "Rank": 1,
+      "UnlockArea": 519
+    },
+    {
+      "RecipeId": 137,
+      "Description": "Double Resistances - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13
+      ],
+      "UnlockDescription": "Cruel Aspirant's Trial",
+      "Rank": 2,
+      "UnlockArea": 591
+    },
+    {
+      "RecipeId": 138,
+      "Description": "Double Resistances - Rank 3",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13
+      ],
+      "UnlockDescription": "Merciless Aspirant's Trial",
+      "Rank": 3,
+      "UnlockArea": 663
+    },
+    {
+      "RecipeId": 140,
+      "Description": "All Resistances - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13
+      ],
+      "UnlockDescription": "Eternal Aspirant's Trial",
+      "Rank": 2,
+      "UnlockArea": 735
+    },
+    {
+      "RecipeId": 166,
+      "Description": "Elemental Damage with Attacks - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        9,
+        10,
+        11,
+        13
+      ],
+      "UnlockDescription": "Labyrinth Trial in The Catacombs",
+      "Rank": 1,
+      "UnlockArea": 43
+    },
+    {
+      "RecipeId": 144,
+      "Description": "All Attributes - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13
+      ],
+      "UnlockDescription": "Labyrinth Trial in The Imperial Gardens",
+      "Rank": 1,
+      "UnlockArea": 52
+    },
+    {
+      "RecipeId": 136,
+      "Description": "Double Resistances - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13
+      ],
+      "UnlockDescription": "Labyrinth Trial in The Lower Prison",
+      "Rank": 1,
+      "UnlockArea": 89
+    },
+    {
+      "RecipeId": 164,
+      "Description": "Damage over Time - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "UnlockDescription": "Labyrinth Trial in The Crypt",
+      "Rank": 1,
+      "UnlockArea": 103
+    },
+    {
+      "RecipeId": 156,
+      "Description": "Mana Regen - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        9,
+        10
+      ],
+      "UnlockDescription": "Labyrinth Trial in The Chamber of Sins Level 2",
+      "Rank": 1,
+      "UnlockArea": 105
+    },
+    {
+      "RecipeId": 192,
+      "Description": "Flask Duration - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        11
+      ],
+      "UnlockDescription": "Labyrinth Trial in The Bath House",
+      "Rank": 1,
+      "UnlockArea": 121
+    },
+    {
+      "RecipeId": 145,
+      "Description": "All Attributes - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        13
+      ],
+      "UnlockDescription": "Labyrinth Trial in The Tunnel",
+      "Rank": 2,
+      "UnlockArea": 139
+    },
+    {
+      "RecipeId": 234,
+      "Description": "Socket Numbers - 2 to 4 Sockets",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        5,
+        4
+      ],
+      "UnlockDescription": "",
+      "Rank": 0,
+      "UnlockArea": 66
+    },
+    {
+      "RecipeId": 237,
+      "Description": "Socket Numbers - 5 Sockets",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        5,
+        4
+      ],
+      "UnlockDescription": "",
+      "Rank": 0,
+      "UnlockArea": 1192
+    },
+    {
+      "RecipeId": 238,
+      "Description": "Socket Numbers - 6 Sockets",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        5,
+        4
+      ],
+      "UnlockDescription": "",
+      "Rank": 0,
+      "UnlockArea": 1128
+    },
+    {
+      "RecipeId": 239,
+      "Description": "Socket Links - 2 to 4 Linked Sockets",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        5,
+        4
+      ],
+      "UnlockDescription": "",
+      "Rank": 0,
+      "UnlockArea": 64
+    },
+    {
+      "RecipeId": 242,
+      "Description": "Socket Links - 5 Linked Sockets",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        5,
+        4
+      ],
+      "UnlockDescription": "",
+      "Rank": 0,
+      "UnlockArea": 1199
+    },
+    {
+      "RecipeId": 243,
+      "Description": "Socket Links - 6 Linked Sockets",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        5,
+        4
+      ],
+      "UnlockDescription": "",
+      "Rank": 0,
+      "UnlockArea": 1213
+    },
+    {
+      "RecipeId": 244,
+      "Description": "Socket Colours",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        5,
+        4
+      ],
+      "UnlockDescription": "",
+      "Rank": 0,
+      "UnlockArea": 60
+    },
+    {
+      "RecipeId": 151,
+      "Description": "Life and Mana - Rank 4",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        5,
+        4
+      ],
+      "UnlockDescription": "",
+      "Rank": 4,
+      "UnlockArea": 1252
+    },
+    {
+      "RecipeId": 196,
+      "Description": "Attack and Spell Block - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        4
+      ],
+      "UnlockDescription": "",
+      "Rank": 1,
+      "UnlockArea": 1155
+    },
+    {
+      "RecipeId": 193,
+      "Description": "Flask Duration - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        11
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 1233
+    },
+    {
+      "RecipeId": 195,
+      "Description": "Ailment, Stun and Curse Mitigation - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        5,
+        7,
+        8,
+        9
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 1188
+    },
+    {
+      "RecipeId": 191,
+      "Description": "Criticals - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        10,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 1088
+    },
+    {
+      "RecipeId": 199,
+      "Description": "Special Defences - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        6,
+        4,
+        5,
+        7,
+        8
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 1122
+    },
+    {
+      "RecipeId": 197,
+      "Description": "Attack and Spell Block - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        4
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 1119
+    },
+    {
+      "RecipeId": 253,
+      "Description": "Global Energy Shield - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        10,
+        9
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 1106
+    },
+    {
+      "RecipeId": 172,
+      "Description": "Fire Damage - Rank 3",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "UnlockDescription": "",
+      "Rank": 3,
+      "UnlockArea": 1220
+    },
+    {
+      "RecipeId": 190,
+      "Description": "Criticals - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        10,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 1,
+      "UnlockArea": 1127
+    },
+    {
+      "RecipeId": 175,
+      "Description": "Cold Damage - Rank 3",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "UnlockDescription": "",
+      "Rank": 3,
+      "UnlockArea": 1086
+    },
+    {
+      "RecipeId": 179,
+      "Description": "Lightning Damage - Rank 3",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "UnlockDescription": "",
+      "Rank": 3,
+      "UnlockArea": 1150
+    },
+    {
+      "RecipeId": 198,
+      "Description": "Special Defences - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        6,
+        4,
+        5,
+        7,
+        8
+      ],
+      "UnlockDescription": "",
+      "Rank": 1,
+      "UnlockArea": 1079
+    },
+    {
+      "RecipeId": 157,
+      "Description": "Mana Regen - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        9,
+        10,
+        4
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 1167
+    },
+    {
+      "RecipeId": 165,
+      "Description": "Damage over Time - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 1152
+    },
+    {
+      "RecipeId": 229,
+      "Description": "Minions - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        5,
+        9,
+        10
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 1146
+    },
+    {
+      "RecipeId": 167,
+      "Description": "Elemental Damage with Attacks - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        9,
+        10,
+        11,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 1230
+    },
+    {
+      "RecipeId": 194,
+      "Description": "Ailment, Stun and Curse Mitigation - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        5,
+        7,
+        8,
+        9,
+        4,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 1,
+      "UnlockArea": 70
+    },
+    {
+      "RecipeId": 189,
+      "Description": "Defences - Rank 3",
+      "CraftingItemClassCategoriesKeys": [
+        6,
+        8,
+        7,
+        5,
+        4
+      ],
+      "UnlockDescription": "",
+      "Rank": 3,
+      "UnlockArea": 1140
+    },
+    {
+      "RecipeId": 252,
+      "Description": "Global Energy Shield - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        10,
+        9
+      ],
+      "UnlockDescription": "",
+      "Rank": 1,
+      "UnlockArea": 1108
+    },
+    {
+      "RecipeId": 261,
+      "Description": "Physical Damage - Rank 4",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "UnlockDescription": "",
+      "Rank": 4,
+      "UnlockArea": 1107
+    },
+    {
+      "RecipeId": 262,
+      "Description": "Spell Damage - Rank 4",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "UnlockDescription": "",
+      "Rank": 4,
+      "UnlockArea": 1098
+    },
+    {
+      "RecipeId": 109,
+      "Description": "Attack and Cast Speed - Rank 3",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "UnlockDescription": "",
+      "Rank": 3,
+      "UnlockArea": 1225
+    },
+    {
+      "RecipeId": 153,
+      "Description": "Life - Rank 5",
+      "CraftingItemClassCategoriesKeys": [
+        6
+      ],
+      "UnlockDescription": "",
+      "Rank": 5,
+      "UnlockArea": 1151
+    },
+    {
+      "RecipeId": 154,
+      "Description": "Leech - Rank 1",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        9,
+        10,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 1,
+      "UnlockArea": 1130
+    },
+    {
+      "RecipeId": 155,
+      "Description": "Leech - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        10
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 1110
+    },
+    {
+      "RecipeId": 182,
+      "Description": "Chaos Damage - Rank 3",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "UnlockDescription": "",
+      "Rank": 3,
+      "UnlockArea": 1148
+    },
+    {
+      "RecipeId": 186,
+      "Description": "Accuracy - Rank 3",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7,
+        5,
+        9,
+        10,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 3,
+      "UnlockArea": 1223
+    },
+    {
+      "RecipeId": 226,
+      "Description": "Reduced Damage over Time",
+      "CraftingItemClassCategoriesKeys": [
+        4,
+        11
+      ],
+      "UnlockDescription": "",
+      "Rank": 0,
+      "UnlockArea": 1198
+    },
+    {
+      "RecipeId": 227,
+      "Description": "Animated Guardian and Light Radius",
+      "CraftingItemClassCategoriesKeys": [
+        6
+      ],
+      "UnlockDescription": "",
+      "Rank": 0,
+      "UnlockArea": 1251
+    },
+    {
+      "RecipeId": 231,
+      "Description": "Traps and Mines - Rank 2",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "UnlockDescription": "",
+      "Rank": 2,
+      "UnlockArea": 1129
+    },
+    {
+      "RecipeId": 254,
+      "Description": "Criticals - Rank 3",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "UnlockDescription": "",
+      "Rank": 3,
+      "UnlockArea": 1095
+    },
+    {
+      "RecipeId": 255,
+      "Description": "Minions - Rank 3",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "UnlockDescription": "",
+      "Rank": 3,
+      "UnlockArea": 1189
+    },
+    {
+      "RecipeId": 249,
+      "Description": "Prefixes cannot be Changed",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        5,
+        4,
+        9,
+        10,
+        11,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 0,
+      "UnlockArea": 1187
+    },
+    {
+      "RecipeId": 250,
+      "Description": "Suffixes cannot be Changed",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        5,
+        4,
+        9,
+        10,
+        11,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 0,
+      "UnlockArea": 1209
+    },
+    {
+      "RecipeId": 251,
+      "Description": "Can have up to 3 Crafted Modifiers",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        5,
+        4,
+        9,
+        10,
+        11,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 0,
+      "UnlockArea": 1176
+    },
+    {
+      "RecipeId": 247,
+      "Description": "Cannot roll Attack Mods",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        5,
+        4,
+        9,
+        10,
+        11,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 0,
+      "UnlockArea": 1145
+    },
+    {
+      "RecipeId": 248,
+      "Description": "Cannot roll Caster Mods",
+      "CraftingItemClassCategoriesKeys": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        7,
+        8,
+        5,
+        4,
+        9,
+        10,
+        11,
+        13
+      ],
+      "UnlockDescription": "",
+      "Rank": 0,
+      "UnlockArea": 1103
+    }
+  ]
+}

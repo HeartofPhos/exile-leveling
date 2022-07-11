@@ -55,6 +55,8 @@ function postProcessQuest(quest: Quest) {
   }
 }
 
+// QuestVendorRewards.dat no longer exists, use wiki data
+// Impractical to handle QuestRewards & VendorRewards from different sources
 export async function getQuests() {
   const result: Quests = {};
 

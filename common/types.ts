@@ -36,4 +36,5 @@ export interface Area {
   has_waypoint: boolean;
   is_town_area: boolean;
   connection_ids: string[];
+  crafting_recipes: string[];
 }

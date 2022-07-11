@@ -3,201 +3,241 @@
     {
       "name": "Id",
       "type": "string",
+      "array": false,
       "references": null
     },
     {
       "name": "Name",
       "type": "string",
+      "array": false,
       "references": null
     },
     {
       "name": "Act",
       "type": "i32",
+      "array": false,
       "references": null
     },
     {
       "name": "IsTown",
       "type": "bool",
+      "array": false,
       "references": null
     },
     {
       "name": "HasWaypoint",
       "type": "bool",
+      "array": false,
       "references": null
     },
     {
       "name": "Connections_WorldAreasKeys",
       "type": "row",
+      "array": true,
       "references": "WorldAreas"
     },
     {
       "name": "AreaLevel",
       "type": "i32",
+      "array": false,
       "references": null
     },
     {
       "name": "HASH16",
       "type": "i32",
+      "array": false,
       "references": null
     },
     {
       "name": "Unknown_0",
       "type": "i32",
+      "array": false,
       "references": null
     },
     {
       "name": "LoadingScreen_DDSFile",
       "type": "string",
+      "array": false,
       "references": null
     },
     {
       "name": "TopologiesKeys",
       "type": "foreignrow",
+      "array": true,
       "references": "Topologies"
     },
     {
       "name": "ParentTown_WorldAreasKey",
       "type": "row",
+      "array": false,
       "references": "WorldAreas"
     },
     {
       "name": "Bosses_MonsterVarietiesKeys",
       "type": "foreignrow",
+      "array": true,
       "references": "MonsterVarieties"
     },
     {
       "name": "Monsters_MonsterVarietiesKeys",
       "type": "foreignrow",
+      "array": true,
       "references": "MonsterVarieties"
     },
     {
       "name": "SpawnWeight_TagsKeys",
       "type": "foreignrow",
+      "array": true,
       "references": "Tags"
     },
     {
       "name": "SpawnWeight_Values",
       "type": "i32",
+      "array": true,
       "references": null
     },
     {
       "name": "IsMapArea",
       "type": "bool",
+      "array": false,
       "references": null
     },
     {
       "name": "FullClear_AchievementItemsKeys",
       "type": "foreignrow",
+      "array": true,
       "references": "AchievementItems"
     },
     {
       "name": "AchievementItemsKey",
       "type": "foreignrow",
+      "array": false,
       "references": "AchievementItems"
     },
     {
       "name": "ModsKeys",
       "type": "foreignrow",
+      "array": true,
       "references": "Mods"
     },
     {
       "name": "VaalArea_WorldAreasKeys",
       "type": "row",
+      "array": true,
       "references": "WorldAreas"
     },
     {
       "name": "VaalArea_SpawnChance",
       "type": "i32",
+      "array": false,
       "references": null
     },
     {
       "name": "MaxLevel",
       "type": "i32",
+      "array": false,
       "references": null
     },
     {
       "name": "AreaType_TagsKeys",
       "type": "foreignrow",
+      "array": true,
       "references": "Tags"
     },
     {
       "name": "IsHideout",
       "type": "bool",
+      "array": false,
       "references": null
     },
     {
       "name": "Inflection",
       "type": "string",
+      "array": false,
       "references": null
     },
     {
       "name": "TagsKeys",
       "type": "foreignrow",
+      "array": true,
       "references": "Tags"
     },
     {
       "name": "IsVaalArea",
       "type": "bool",
+      "array": false,
       "references": null
     },
     {
       "name": "IsLabyrinthAirlock",
       "type": "bool",
+      "array": false,
       "references": null
     },
     {
       "name": "IsLabyrinthArea",
       "type": "bool",
+      "array": false,
       "references": null
     },
     {
       "name": "TwinnedFullClear_AchievementItemsKey",
       "type": "foreignrow",
+      "array": false,
       "references": "AchievementItems"
     },
     {
       "name": "Enter_AchievementItemsKey",
       "type": "foreignrow",
+      "array": false,
       "references": "AchievementItems"
     },
     {
       "name": "TSIFile",
       "type": "string",
+      "array": false,
       "references": null
     },
     {
       "name": "WaypointActivation_AchievementItemsKeys",
       "type": "foreignrow",
+      "array": true,
       "references": "AchievementItems"
     },
     {
       "name": "IsUniqueMapArea",
       "type": "bool",
+      "array": false,
       "references": null
     },
     {
       "name": "IsLabyrinthBossArea",
       "type": "bool",
+      "array": false,
       "references": null
     },
     {
       "name": "FirstEntry_NPCTextAudioKey",
       "type": "foreignrow",
+      "array": false,
       "references": "NPCTextAudio"
     },
     {
       "name": "FirstEntry_SoundEffectsKey",
       "type": "foreignrow",
+      "array": false,
       "references": "SoundEffects"
     },
     {
       "name": "FirstEntry_NPCsKey",
       "type": "string",
+      "array": false,
       "references": "NPCs"
     },
     {
       "name": "EnvironmentsKey",
       "type": "foreignrow",
+      "array": false,
       "references": "Environments"
     }
   ],

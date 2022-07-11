@@ -20,8 +20,7 @@ export const GrantedEffectsPerLevelDat = parseDat(
   "./exports/GrantedEffectsPerLevel.dat.json"
 );
 export const QuestDat = parseDat("./exports/Quest.dat.json");
-export const QuestRewardOffersDat = parseDat(
-  "./exports/QuestRewardOffers.dat.json"
-);
-export const QuestRewardsDat = parseDat("./exports/QuestRewards.dat.json");
 export const WorldAreasDat = parseDat("./exports/WorldAreas.dat.json");
+export const RecipeUnlockDisplayDat = parseDat(
+  "./exports/RecipeUnlockDisplay.dat.json"
+);

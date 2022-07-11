@@ -2,7 +2,7 @@ import fs from "fs";
 import { getGems } from "./seeding/gems";
 import { getQuests } from "./seeding/quests";
 import { getAreas } from "./seeding/areas";
-import { BaseItemTypesDat, QuestDat, QuestRewardOffersDat } from "../data";
+import { BaseItemTypesDat } from "../data";
 
 const dataPath = process.argv[2];
 function saveData(name: string, data: any) {
@@ -19,29 +19,18 @@ export async function main() {
     (x: any) => x.Name == "Greater Multiple Projectiles Support"
   );
 
-  console.log(QuestRewardOffersDat.data[30]);
-  console.log(QuestDat.data[QuestRewardOffersDat.data[30].QuestKey]);
-
-  console.log(i);
-
   const command = process.argv[3];
   switch (command) {
     case "seed-data":
       {
-        console.time("gems");
         const gems = await getGems();
         saveData("gems", gems);
-        console.timeEnd("gems");
 
-        // console.time("quests")
-        // const quests = await getQuests();
-        // saveData("quests", quests);
-        // console.timeEnd("quests")
+        const quests = await getQuests();
+        saveData("quests", quests);
 
-        console.time("areas");
         const areas = await getAreas();
         saveData("areas", areas);
-        console.timeEnd("areas");
       }
       break;
     default:

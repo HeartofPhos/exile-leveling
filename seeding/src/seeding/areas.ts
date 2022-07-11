@@ -1,5 +1,5 @@
 import { Areas } from "../../../common/types";
-import { WorldAreasDat } from "../../data";
+import { RecipeUnlockDisplayDat, WorldAreasDat } from "../../data";
 
 export async function getAreas() {
   const result: Areas = {};
@@ -9,33 +9,34 @@ export async function getAreas() {
   let done = new Set<number>();
 
   while (todo.length > 0) {
-    const worldAreas = todo.map((x) => WorldAreasDat.data[x]);
+    const worldAreasKey = todo.pop()!;
+    const worldArea = WorldAreasDat.data[worldAreasKey];
+    done.add(worldAreasKey);
 
-    for (const id of todo) {
-      done.add(id);
-    }
-    todo.length = 0;
-
-    for (const worldArea of worldAreas) {
-      const connected_area_ids = [];
-
-      for (const key of worldArea.Connections_WorldAreasKeys) {
-        if (!done.has(key)) {
-          todo.push(key);
-        }
-        const connectedWorldArea = WorldAreasDat.data[key];
-        connected_area_ids.push(connectedWorldArea.Id);
+    const connected_area_ids = [];
+    for (const key of worldArea.Connections_WorldAreasKeys) {
+      if (!done.has(key)) {
+        todo.push(key);
       }
-
-      result[worldArea.Id] = {
-        id: worldArea.Id,
-        name: worldArea.Name,
-        act: worldArea.Act,
-        has_waypoint: worldArea.HasWaypoint,
-        is_town_area: worldArea.IsTown,
-        connection_ids: connected_area_ids,
-      };
+      const connectedWorldArea = WorldAreasDat.data[key];
+      connected_area_ids.push(connectedWorldArea.Id);
     }
+
+    const crafting_recipes = [];
+    for (const recipeUnlockDisplay of RecipeUnlockDisplayDat.data) {
+      if (recipeUnlockDisplay.UnlockArea == worldAreasKey)
+        crafting_recipes.push(recipeUnlockDisplay.Description);
+    }
+
+    result[worldArea.Id] = {
+      id: worldArea.Id,
+      name: worldArea.Name,
+      act: worldArea.Act,
+      has_waypoint: worldArea.HasWaypoint,
+      is_town_area: worldArea.IsTown,
+      connection_ids: connected_area_ids,
+      crafting_recipes: crafting_recipes,
+    };
   }
 
   return result;

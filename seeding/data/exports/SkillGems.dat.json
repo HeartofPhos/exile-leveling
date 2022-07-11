@@ -3,81 +3,97 @@
     {
       "name": "BaseItemTypesKey",
       "type": "foreignrow",
+      "array": false,
       "references": "BaseItemTypes"
     },
     {
       "name": "GrantedEffectsKey",
       "type": "foreignrow",
+      "array": false,
       "references": "GrantedEffects"
     },
     {
       "name": "Str",
       "type": "i32",
+      "array": false,
       "references": null
     },
     {
       "name": "Dex",
       "type": "i32",
+      "array": false,
       "references": null
     },
     {
       "name": "Int",
       "type": "i32",
+      "array": false,
       "references": null
     },
     {
       "name": "GemTagsKeys",
       "type": "foreignrow",
+      "array": true,
       "references": "GemTags"
     },
     {
       "name": "VaalVariant_BaseItemTypesKey",
       "type": "foreignrow",
+      "array": false,
       "references": "BaseItemTypes"
     },
     {
       "name": "IsVaalVariant",
       "type": "bool",
+      "array": false,
       "references": null
     },
     {
       "name": "Description",
       "type": "string",
+      "array": false,
       "references": null
     },
     {
       "name": "Consumed_ModsKey",
       "type": "foreignrow",
+      "array": false,
       "references": "Mods"
     },
     {
       "name": "GrantedEffectsKey2",
       "type": "foreignrow",
+      "array": false,
       "references": "GrantedEffects"
     },
     {
       "name": "MinionGlobalSkillLevelStat",
       "type": "foreignrow",
+      "array": false,
       "references": "Stats"
     },
     {
       "name": "SupportSkillName",
       "type": "string",
+      "array": false,
       "references": null
     },
     {
       "name": "Unknown_0",
       "type": "bool",
+      "array": false,
       "references": null
     },
     {
       "name": "AwakenedVariant",
       "type": "row",
+      "array": false,
       "references": "SkillGems"
     },
     {
       "name": "RegularVariant",
       "type": "row",
+      "array": false,
       "references": "SkillGems"
     }
   ],
