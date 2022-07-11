@@ -32,6 +32,8 @@
   height: auto;
 }
 
-.orderButton > *:hover {
-  background-color: var(--primary-dark);
+@media (hover: hover) {
+  .orderButton > *:hover {
+    background-color: var(--primary-dark);
+  }
 }

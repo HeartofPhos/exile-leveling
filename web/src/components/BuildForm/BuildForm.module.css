@@ -51,6 +51,8 @@
   margin-left: var(--size-2);
 }
 
-.formButton:hover {
-  background-color: var(--primary-dark);
+@media (hover: hover) {
+  .formButton:hover {
+    background-color: var(--primary-dark);
+  }
 }
