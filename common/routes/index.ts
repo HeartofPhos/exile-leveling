@@ -370,9 +370,14 @@ function EvaluateCrafting(
   lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
-  if (action.length != 1) return ERROR_INVALID_FORMAT;
+  if (action.length > 2) return ERROR_INVALID_FORMAT;
 
-  const area = areas[state.currentAreaId];
+  let area;
+  if (action.length == 1) area = areas[state.currentAreaId];
+  else {
+    area = areas[action[1]];
+    if (!area) return ERROR_MISSING_AREA;
+  }
   state.craftingAreas.add(area.id);
 
   return {

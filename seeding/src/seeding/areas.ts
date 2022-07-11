@@ -5,7 +5,10 @@ export async function getAreas() {
   const result: Areas = {};
 
   // The Twilight Strand
-  let todo = [2];
+  // Aspirant's Trial
+  // Cruel Aspirant's Trial
+  // Merciless Aspirant's Trial
+  let todo = [2, 519, 591, 663];
   let done = new Set<number>();
 
   while (todo.length > 0) {

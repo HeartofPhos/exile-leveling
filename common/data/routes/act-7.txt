@@ -53,7 +53,7 @@ Hand in {quest|a7q9} #Queen of Despair
 Hand in {quest|a7q6} #Kishara's Star
 {waypoint|Labyrinth_Airlock} #Aspirants' Plaza
 {ascend}
-Get {crafting}
+Get {crafting|2_Labyrinth_boss_3}
 {waypoint|2_7_11} #The Vaal City
 Hand in {quest|a7q7} #Lighting the Way
 ➞ {enter|2_7_12_1} #The Temple of Decay Level 1
