@@ -137,9 +137,7 @@ function CraftingComponent(craftingRecipes: string[]) {
         src={getImageUrl("crafting.png")}
         className={classNames("inlineIcon")}
       />
-      <span className={classNames(styles.default)}>
-        {craftingRecipes.join(", ")}
-      </span>
+      <span className={classNames(styles.default)}>Crafting: {craftingRecipes.join(", ")}</span>
     </div>
   );
 }

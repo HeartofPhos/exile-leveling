@@ -57,7 +57,7 @@ hr {
 .inlineIcon {
   vertical-align: sub;
   width: auto;
-  height: var(--size-4);
+  height: 1em;
   margin-right: var(--size-1);
 }
 
@@ -65,7 +65,7 @@ hr {
   vertical-align: middle;
   position: relative;
   display: inline-block;
-  width: var(--size-5);
+  width: var(--line-height);
 }
 
 .inlineIconBlock > * {
