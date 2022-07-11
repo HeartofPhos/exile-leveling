@@ -18,6 +18,7 @@ const ATTRIBUTE_LOOKUP: Record<number, string> = {
   [1]: "strength",
   [2]: "dexterity",
   [3]: "intelligence",
+  [4]: "none",
 };
 
 export async function getGems() {

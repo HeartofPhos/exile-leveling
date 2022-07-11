@@ -310,12 +310,14 @@
   "Metadata/Items/Gems/SkillGemPortal": {
     "id": "Metadata/Items/Gems/SkillGemPortal",
     "name": "Portal",
+    "primary_attribute": "none",
     "required_level": 10,
     "cost": "CurrencyUpgradeToMagic"
   },
   "Metadata/Items/Gems/SkillGemVaalPortal": {
     "id": "Metadata/Items/Gems/SkillGemVaalPortal",
     "name": "Vaal Breach",
+    "primary_attribute": "none",
     "required_level": 10,
     "cost": "CurrencyUpgradeToMagic"
   },
@@ -938,6 +940,7 @@
   "Metadata/Items/Gems/SkillGemDetonateMines": {
     "id": "Metadata/Items/Gems/SkillGemDetonateMines",
     "name": "Detonate Mines",
+    "primary_attribute": "none",
     "required_level": 8,
     "cost": "CurrencyUpgradeToMagic"
   },
