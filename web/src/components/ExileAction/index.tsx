@@ -132,13 +132,18 @@ function GenericComponent(text: string) {
 
 function CraftingComponent(craftingRecipes: string[]) {
   return (
-    <div className={classNames(styles.noWrap)}>
-      <img
-        src={getImageUrl("crafting.png")}
-        className={classNames("inlineIcon")}
-      />
-      <span className={classNames(styles.default)}>Crafting: {craftingRecipes.join(", ")}</span>
-    </div>
+    <span>
+      <div className={classNames(styles.noWrap)}>
+        <img
+          src={getImageUrl("crafting.png")}
+          className={classNames("inlineIcon")}
+        />
+        <span className={classNames(styles.default)}>Crafting: </span>
+      </div>
+      <span className={classNames(styles.default)}>
+        {craftingRecipes.join(", ")}
+      </span>
+    </span>
   );
 }
 

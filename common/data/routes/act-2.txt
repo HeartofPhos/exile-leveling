@@ -37,7 +37,7 @@ Head {dir|45} ➞ {enter|1_2_4} #The Broken Bridge
 Follow road, kill {kill|Kraityn, Scarbearer}
 {town}
 {waypoint|1_2_7} #The Riverways
-Look for 2 pillars near waypoint, follow the trail ➞ {enter|1_2_12} #The Wetlands
+Look for 2 pillars near {waypoint}, follow the trail ➞ {enter|1_2_12} #The Wetlands
 Find and kill {kill|Oak, Skullbreaker}
 Get {get_waypoint}, likely {dir|0}
 {waypoint|1_2_9} #The Western Forest

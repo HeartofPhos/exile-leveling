@@ -10,7 +10,7 @@ import { ExileList } from "../../components/ExileList";
 import { ExileStep } from "../../components/ExileStep";
 import React from "react";
 
-import { routeSources as routeFiles } from "../../../../common/data";
+import { routeFiles } from "../../../../common/data";
 
 interface RouteData {
   routes: Route[];
