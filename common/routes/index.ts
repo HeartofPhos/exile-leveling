@@ -8,7 +8,7 @@ import {
   VendorRewardAction,
 } from "./quest";
 
-import { areas, bossWaypoints } from "../../common/data";
+import { areas, killWaypoints } from "../../common/data";
 
 export type ParsedAction = string[];
 export type ParsedStep = (string | ParsedAction)[];
@@ -21,9 +21,9 @@ export interface RouteLookup {
 }
 
 export interface RouteState {
-  waypoints: Set<Area["id"]>;
-  getWaypoints: Set<Area["id"]>;
-  useWaypoints: Set<Area["id"]>;
+  implicitWaypoints: Set<Area["id"]>;
+  explicitWaypoints: Set<Area["id"]>;
+  usedWaypoints: Set<Area["id"]>;
   currentAreaId: Area["id"];
   lastTownAreaId: Area["id"];
   portalAreaId: Area["id"] | null;
@@ -72,10 +72,10 @@ function EvaluateKill(
   // const currentArea = state.areas[state.currentAreaId];
   // if (!currentArea.bosses.some((x) => x.name == bossName)) return false;
 
-  const waypointUnlocks = bossWaypoints[bossName];
+  const waypointUnlocks = killWaypoints[bossName];
   if (waypointUnlocks) {
     for (const waypointUnlock of waypointUnlocks) {
-      state.waypoints.add(waypointUnlock);
+      state.implicitWaypoints.add(waypointUnlock);
     }
   }
 
@@ -148,7 +148,7 @@ function EvaluateEnter(
 
   if (area.is_town_area) {
     state.lastTownAreaId = area.id;
-    if (area.has_waypoint) state.waypoints.add(area.id);
+    if (area.has_waypoint) state.implicitWaypoints.add(area.id);
   }
 
   state.currentAreaId = area.id;
@@ -197,13 +197,17 @@ function EvaluateWaypoint(
     if (action.length == 2) {
       const area = areas[action[1]];
       if (!area) return ERROR_MISSING_AREA;
-      if (!state.waypoints.has(area.id)) return "missing target waypoint";
+      if (
+        !state.implicitWaypoints.has(area.id) &&
+        !state.explicitWaypoints.has(area.id)
+      )
+        return "missing target waypoint";
 
       const currentArea = areas[state.currentAreaId];
       if (!currentArea.has_waypoint) return ERROR_AREA_NO_WAYPOINT;
 
-      state.waypoints.add(currentArea.id);
-      state.useWaypoints.add(area.id);
+      state.implicitWaypoints.add(currentArea.id);
+      state.usedWaypoints.add(area.id);
 
       state.currentAreaId = area.id;
       areaId = area.id;
@@ -232,10 +236,9 @@ function EvaluateGetWaypoint(
   const area = areas[state.currentAreaId];
   if (!area) return ERROR_MISSING_AREA;
   if (!area.has_waypoint) return ERROR_AREA_NO_WAYPOINT;
-  if (state.waypoints.has(area.id)) return "waypoint already acquired";
+  if (state.implicitWaypoints.has(area.id)) return "waypoint already acquired";
 
-  state.waypoints.add(area.id);
-  state.getWaypoints.add(area.id);
+  state.explicitWaypoints.add(area.id);
 
   return {
     action: {
@@ -358,6 +361,7 @@ function EvaluateAscend(
 
 interface CraftingAction {
   type: "crafting";
+  crafting_recipes: string[];
 }
 
 function EvaluateCrafting(
@@ -366,9 +370,12 @@ function EvaluateCrafting(
   state: RouteState
 ): string | EvaluateResult {
   if (action.length != 1) return ERROR_INVALID_FORMAT;
+
+  const area = areas[state.currentAreaId];
   return {
     action: {
       type: "crafting",
+      crafting_recipes: area.crafting_recipes,
     },
   };
 }
@@ -499,9 +506,9 @@ export function initializeRouteLookup(buildData?: BuildData) {
 
 export function initializeRouteState() {
   const state: RouteState = {
-    waypoints: new Set(),
-    getWaypoints: new Set(),
-    useWaypoints: new Set(),
+    implicitWaypoints: new Set(),
+    explicitWaypoints: new Set(),
+    usedWaypoints: new Set(),
     currentAreaId: "1_1_1",
     lastTownAreaId: "1_1_town",
     portalAreaId: null,
@@ -547,8 +554,8 @@ export function parseRoute(
     routes.push(route);
   }
 
-  for (const waypoint of state.getWaypoints) {
-    if (!state.useWaypoints.has(waypoint)) {
+  for (const waypoint of state.explicitWaypoints) {
+    if (!state.usedWaypoints.has(waypoint)) {
       console.log(`unused waypoint ${waypoint}`);
     }
   }

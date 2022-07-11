@@ -1,6 +1,6 @@
 export type Quests = Record<Quest["id"], Quest>;
 export type Areas = Record<Area["id"], Area>;
-export type BossWaypoints = Record<string, Area["id"][]>;
+export type KillWaypoints = Record<string, Area["id"][]>;
 export type Gems = Record<Gem["id"], Gem>;
 export type GemColours = Record<Gem["primary_attribute"], string>;
 

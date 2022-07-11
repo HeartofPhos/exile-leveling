@@ -130,14 +130,16 @@ function GenericComponent(text: string) {
   return <span className={classNames(styles.default)}>{text}</span>;
 }
 
-function CraftingComponent() {
+function CraftingComponent(craftingRecipes: string[]) {
   return (
     <div className={classNames(styles.noWrap)}>
       <img
         src={getImageUrl("crafting.png")}
         className={classNames("inlineIcon")}
       />
-      <span className={classNames(styles.default)}>Crafting Recipe</span>
+      <span className={classNames(styles.default)}>
+        {craftingRecipes.join(", ")}
+      </span>
     </div>
   );
 }
@@ -199,7 +201,7 @@ export function ExileAction({ action, lookup }: ActionProps) {
     case "generic":
       return GenericComponent(action.value);
     case "crafting":
-      return CraftingComponent();
+      return CraftingComponent(action.crafting_recipes);
     case "ascend":
       return AscendComponent();
   }
