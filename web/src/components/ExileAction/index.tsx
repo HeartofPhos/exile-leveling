@@ -97,30 +97,14 @@ function PortalComponent() {
 }
 
 const directions = [
-  <InlineFakeBlock
-    child={<BsArrowUpSquare className={classNames("inlineIcon")} />}
-  />,
-  <InlineFakeBlock
-    child={<BsArrowUpRightSquare className={classNames("inlineIcon")} />}
-  />,
-  <InlineFakeBlock
-    child={<BsArrowRightSquare className={classNames("inlineIcon")} />}
-  />,
-  <InlineFakeBlock
-    child={<BsArrowDownRightSquare className={classNames("inlineIcon")} />}
-  />,
-  <InlineFakeBlock
-    child={<BsArrowDownSquare className={classNames("inlineIcon")} />}
-  />,
-  <InlineFakeBlock
-    child={<BsArrowDownLeftSquare className={classNames("inlineIcon")} />}
-  />,
-  <InlineFakeBlock
-    child={<BsArrowLeftSquare className={classNames("inlineIcon")} />}
-  />,
-  <InlineFakeBlock
-    child={<BsArrowUpLeftSquare className={classNames("inlineIcon")} />}
-  />,
+  <InlineFakeBlock child={<BsArrowUpSquare />} />,
+  <InlineFakeBlock child={<BsArrowUpRightSquare />} />,
+  <InlineFakeBlock child={<BsArrowRightSquare />} />,
+  <InlineFakeBlock child={<BsArrowDownRightSquare />} />,
+  <InlineFakeBlock child={<BsArrowDownSquare />} />,
+  <InlineFakeBlock child={<BsArrowDownLeftSquare />} />,
+  <InlineFakeBlock child={<BsArrowLeftSquare />} />,
+  <InlineFakeBlock child={<BsArrowUpLeftSquare />} />,
 ];
 
 function DirectionComponent(dirIndex: number) {
