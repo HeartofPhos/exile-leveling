@@ -26,6 +26,7 @@ Get {get_waypoint}
 Head {dir|225} take {quest_text|Ribbon Spool}
 ➞ {enter|1_3_8_1} #The Solaris Temple Level 1
 ➞ {enter|1_3_8_2} #The Solaris Temple Level 2
+➞ {arena|Eternal Laboratory}, get {crafting}
 {waypoint|1_3_7} #The Battlefront
 ➞ {enter|1_3_9} #The Docks
 Find and take {quest_text|Thaumetic Sulphite}

@@ -7,7 +7,7 @@ import {
   RouteState,
   Step,
 } from ".";
-import { Quest, QuestReward } from "../types";
+import { Quest } from "../types";
 
 import { quests } from "../data";
 
@@ -112,20 +112,17 @@ export function EvaluateQuest(
     }
 
     const additionalSteps: Step[] = [];
-    if (quest) {
-      for (const rewards of quest_rewards) {
-        const questReward = tryFindQuestReward(lookup, state, rewards);
-        if (questReward) {
-          additionalSteps.push(questReward);
-        }
+    for (const rewards of quest_rewards) {
+      const questReward = tryFindQuestReward(lookup, state, rewards);
+      if (questReward) {
+        additionalSteps.push(questReward);
       }
-      for (const rewards of vendor_rewards) {
-        const vendorRewards = tryFindVendorRewards(lookup, state, rewards).map(
-          (x) => x
-        );
-
-        additionalSteps.push(...vendorRewards);
-      }
+    }
+    for (const rewards of vendor_rewards) {
+      const vendorRewards = tryFindVendorRewards(lookup, state, rewards).map(
+        (x) => x
+      );
+      additionalSteps.push(...vendorRewards);
     }
 
     return {

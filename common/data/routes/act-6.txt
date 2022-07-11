@@ -19,6 +19,7 @@ Get {crafting}
 Get {crafting}
 ➞ {enter|2_6_8} #Prisoner's Gate
 Follow the road ➞ {enter|2_6_9} #The Western Forest
+Get {crafting}
 Follow the road ➞ {enter|2_6_10} #The Riverways
 Follow the road, get {get_waypoint}
 Look for 2 pillars near waypoint, follow the trail ➞ {enter|2_6_11} #The Wetlands

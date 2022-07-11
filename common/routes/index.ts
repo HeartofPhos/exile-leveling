@@ -24,6 +24,7 @@ export interface RouteState {
   implicitWaypoints: Set<Area["id"]>;
   explicitWaypoints: Set<Area["id"]>;
   usedWaypoints: Set<Area["id"]>;
+  craftingAreas: Set<Area["id"]>;
   currentAreaId: Area["id"];
   lastTownAreaId: Area["id"];
   portalAreaId: Area["id"] | null;
@@ -372,6 +373,8 @@ function EvaluateCrafting(
   if (action.length != 1) return ERROR_INVALID_FORMAT;
 
   const area = areas[state.currentAreaId];
+  state.craftingAreas.add(area.id);
+
   return {
     action: {
       type: "crafting",
@@ -509,6 +512,7 @@ export function initializeRouteState() {
     implicitWaypoints: new Set(),
     explicitWaypoints: new Set(),
     usedWaypoints: new Set(),
+    craftingAreas: new Set(),
     currentAreaId: "1_1_1",
     lastTownAreaId: "1_1_town",
     portalAreaId: null,
@@ -558,6 +562,14 @@ export function parseRoute(
     if (!state.usedWaypoints.has(waypoint)) {
       console.log(`unused waypoint ${waypoint}`);
     }
+  }
+
+  for (const key in areas) {
+    const area = areas[key];
+    if (area.crafting_recipes.length > 0 && !state.craftingAreas.has(area.id))
+      console.log(
+        `missing crafting area ${area.id}, ${area.crafting_recipes.join(", ")}`
+      );
   }
 
   return routes;

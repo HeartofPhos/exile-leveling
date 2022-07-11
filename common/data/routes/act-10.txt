@@ -9,6 +9,7 @@ Hand in {quest|a10q1} #Safe Passage
 Take {use_portal}
 Head {dir|45} get {get_waypoint}
 ➞ {enter|2_10_9} #The Ossuary
+Get {crafting}
 Complete {trial}
 {town}
 {waypoint|Labyrinth_Airlock}
@@ -38,3 +39,4 @@ Talk to {generic|Sin} ➞ {enter|2_10_town} #Oriath Docks
 Talk to {generic|Lilly Roth}, Set Sail from Oriath
 ➞ {enter|2_11_endgame_town} #Karui Shores
 Hand in {quest|a10q3} #An End to Hunger
+Get {crafting}

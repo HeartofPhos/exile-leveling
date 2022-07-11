@@ -19,11 +19,11 @@ Get {crafting}
 {waypoint|1_4_3_3} #The Crystal Veins
 ➞ {enter|1_4_5_1} #Daresso's Dream
 ➞ {enter|1_4_5_2} #The Grand Arena
-# Get {crafting}
+Get {crafting}
 {waypoint|1_4_3_3} #The Crystal Veins
 ➞ {enter|1_4_4_1} #Kaom's Dream
 ➞ {enter|1_4_4_3} #Kaom's Stronghold
-# Get {crafting}
+Get {crafting}
 ➞ {arena|Caldera of the King}, kill {kill|King Kaom}, take {quest_text|The Eye of Fury}
 {town}
 {waypoint|1_4_5_2} #The Grand Arena
