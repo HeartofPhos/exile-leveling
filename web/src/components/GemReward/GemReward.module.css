@@ -10,15 +10,15 @@
   white-space: pre-wrap;
 }
 
-.rewardHolder > * {
+.rewardMain{
   flex-grow: 1;
   flex-basis: 8rem;
+  margin-right: var(--size-4);
 }
 
 .rewardNote {
-  text-align: right;
+  flex-basis: 8rem;
   white-space: pre-wrap;
-  text-align-last: right;
   color: var(--primary-light);
 }
 

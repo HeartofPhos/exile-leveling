@@ -24,7 +24,7 @@ export function GemOrder({
 }: GemOrderProps) {
   return (
     <div className={classNames(styles.gemOrder)}>
-      {GemReward(requiredGem, "gem")}
+      <GemReward requiredGem={requiredGem} type="gem" />
       <div className={classNames(styles.orderButtonGroup)}>
         <InlineFakeBlock
           child={

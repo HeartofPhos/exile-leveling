@@ -23,11 +23,16 @@ function GemRewardVerb(type: GemRewardType) {
   }
 }
 
-export function GemReward(requiredGem: RequiredGem, type: GemRewardType) {
+interface GemRewardProps {
+  requiredGem: RequiredGem;
+  type: GemRewardType;
+}
+
+export function GemReward({ requiredGem, type }: GemRewardProps) {
   const gem = gems[requiredGem.id];
   return (
     <div className={classNames(styles.rewardHolder)}>
-      <div>
+      <div className={classNames(styles.rewardMain)}>
         <MdCircle
           color={gemColours[gem.primary_attribute]}
           className={classNames("inlineIcon")}
