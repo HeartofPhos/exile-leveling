@@ -17,7 +17,7 @@ export type Route = Step[];
 
 export interface RouteLookup {
   towns: Record<Area["act"], Area["id"]>;
-  buildData?: BuildData;
+  buildData: BuildData | null;
 }
 
 export interface RouteState {
@@ -498,7 +498,7 @@ export interface RequiredGem {
   note: string;
 }
 
-export function initializeRouteLookup(buildData?: BuildData) {
+export function initializeRouteLookup(buildData: BuildData | null) {
   const routeLookup: RouteLookup = {
     towns: {},
     buildData: buildData,

@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import {
+  BuildData,
   initializeRouteLookup,
   initializeRouteState,
   parseRoute,
@@ -11,6 +12,7 @@ import { ExileStep } from "../../components/ExileStep";
 import React from "react";
 
 import { routeFiles } from "../../../../common/data";
+import { getPersistent, setPersistent } from "../../utility";
 
 interface RouteData {
   routes: Route[];
@@ -29,11 +31,7 @@ export class RoutesContainer extends React.Component<{}, RoutesContainerState> {
   constructor(props: {}) {
     super(props);
 
-    const buildDataJson = localStorage.getItem("build-data");
-
-    let buildData = undefined;
-    if (buildDataJson) buildData = JSON.parse(buildDataJson);
-
+    const buildData = getPersistent<BuildData>("build-data");
     const routeLookup = initializeRouteLookup(buildData);
     const routeState = initializeRouteState();
 
@@ -49,9 +47,9 @@ export class RoutesContainer extends React.Component<{}, RoutesContainerState> {
       routeData: { routes: routes, lookup: routeLookup },
     };
 
-    const routeProgressJson = localStorage.getItem("route-progress");
-    if (routeProgressJson) {
-      this.routeProgress = JSON.parse(routeProgressJson);
+    const routeProgress = getPersistent<RouteProgress>("route-progress");
+    if (routeProgress) {
+      this.routeProgress = routeProgress;
     } else {
       this.routeProgress = [];
       for (const route of routes) {
@@ -70,10 +68,7 @@ export class RoutesContainer extends React.Component<{}, RoutesContainerState> {
             initialCompleted={this.routeProgress[routeIndex]}
             onUpdate={(index, isCompleted) => {
               this.routeProgress[routeIndex][index] = isCompleted;
-              localStorage.setItem(
-                "route-progress",
-                JSON.stringify(this.routeProgress)
-              );
+              setPersistent("route-progress", this.routeProgress);
             }}
           >
             {route.map((step, stepIndex) => (

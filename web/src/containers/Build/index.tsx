@@ -3,20 +3,20 @@ import { ExileList } from "../../components/ExileList";
 import { GemOrder } from "../../components/GemOrder";
 import { BuildData } from "../../../../common/routes";
 
-import { gems } from "../../../../common/data";
 import { BuildForm } from "../../components/BuildForm";
+import { clearPersistent, getPersistent, setPersistent } from "../../utility";
 
 export function Build() {
-  const [buildData, setBuildData] = useState<BuildData>();
+  const [buildData, setBuildData] = useState<BuildData | null>(null);
 
   useEffect(() => {
     const fn = async () => {
       if (buildData) {
-        localStorage.setItem("build-data", JSON.stringify(buildData));
-        localStorage.removeItem("route-progress");
+        setPersistent("build-data", buildData);
+        clearPersistent("route-progress");
       } else {
-        const buildDataJson = localStorage.getItem("build-data");
-        if (buildDataJson) setBuildData(JSON.parse(buildDataJson));
+        const buildData = getPersistent<BuildData>("build-data");
+        if (buildData) setBuildData(buildData);
       }
     };
 
@@ -30,9 +30,9 @@ export function Build() {
           setBuildData(buildData);
         }}
         onReset={() => {
-          localStorage.removeItem("build-data");
-          localStorage.removeItem("route-progress");
-          setBuildData(undefined);
+          clearPersistent("build-data");
+          clearPersistent("route-progress");
+          setBuildData(null);
         }}
       />
       <hr />

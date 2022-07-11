@@ -12,12 +12,15 @@
 
 .rewardMain{
   flex-grow: 1;
-  flex-basis: 8rem;
+  flex-shrink: 1;
   margin-right: var(--size-4);
 }
 
 .rewardNote {
-  flex-basis: 8rem;
+  flex-grow: 1;
+  flex-shrink: 1;
+  max-width: fit-content;
+  min-width: 8rem;
   white-space: pre-wrap;
   color: var(--primary-light);
 }
