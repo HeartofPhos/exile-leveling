@@ -1,5 +1,10 @@
 import { Gem, Gems } from "../../../common/types";
-import { cargoQuery } from "../wiki";
+import {
+  BaseItemTypesDat,
+  GrantedEffectsDat,
+  GrantedEffectsPerLevelDat,
+  SkillGemsDat,
+} from "../../data";
 
 function getGemCost(required_level: number) {
   if (required_level < 8) return "CurrencyIdentification";
@@ -9,32 +14,29 @@ function getGemCost(required_level: number) {
   return "CurrencyUpgradeToRare";
 }
 
+const ATTRIBUTE_LOOKUP: Record<number, string> = {
+  [1]: "strength",
+  [2]: "dexterity",
+  [3]: "intelligence",
+};
+
 export async function getGems() {
-  const queryResult = await cargoQuery({
-    tables: ["items", "skill_gems"],
-    join_on: ["items._pageName = skill_gems._pageName"],
-    fields: [
-      "items._pageName = page",
-      "items.metadata_id = metadata_id",
-      "items.inventory_icon = inventory_icon",
-      "items.required_level = required_level",
-      "skill_gems.primary_attribute = primary_attribute",
-    ],
-    where:
-      '(items.tags HOLDS "gem") AND (NOT items._pageName LIKE "Template:%") AND (items.metadata_id IS NOT NULL)',
-    order_by: ["items._pageName"],
-  });
-
   const result: Gems = {};
-  for (const item of queryResult) {
-    const required_level = Number(item.required_level);
+  for (const skillGem of SkillGemsDat.data) {
+    const baseItemType = BaseItemTypesDat.data[skillGem.BaseItemTypesKey];
+    if (!baseItemType.SiteVisibility) continue;
 
-    result[item.metadata_id] = {
-      id: item.metadata_id,
-      name: item.page,
-      primary_attribute: item.primary_attribute,
-      required_level: required_level,
-      cost: getGemCost(required_level),
+    const grantedEffects = GrantedEffectsDat.data[skillGem.GrantedEffectsKey];
+    const grantedEffectsPerLevel = GrantedEffectsPerLevelDat.data.find(
+      (x) => x.Level == 1 && x.GrantedEffect == skillGem.GrantedEffectsKey
+    );
+
+    result[baseItemType.Id] = {
+      id: baseItemType.Id,
+      name: baseItemType.Name,
+      primary_attribute: ATTRIBUTE_LOOKUP[grantedEffects.Attribute],
+      required_level: grantedEffectsPerLevel.PlayerLevelReq,
+      cost: getGemCost(grantedEffectsPerLevel.PlayerLevelReq),
     };
   }
 

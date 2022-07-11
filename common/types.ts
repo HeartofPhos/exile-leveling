@@ -32,14 +32,9 @@ export interface Quest {
 export interface Area {
   id: string;
   name: string;
-  act: string;
+  act: number;
   has_waypoint: boolean;
   is_town_area: boolean;
   connection_ids: string[];
-  bosses: Monster[];
-}
-
-export interface Monster {
-  metadata_id: string;
-  name: string;
+  crafting_recipes: string[];
 }

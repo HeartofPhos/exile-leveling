@@ -1,79 +1,42 @@
-import { cargoQuery } from "../wiki";
-import { Areas, Monster } from "../../../common/types";
+import { Areas } from "../../../common/types";
+import { RecipeUnlockDisplayDat, WorldAreasDat } from "../../data";
 
 export async function getAreas() {
   const result: Areas = {};
 
-  let done = new Set<string>();
-  let todo = ["1_1_1"];
+  // The Twilight Strand
+  let todo = [2];
+  let done = new Set<number>();
 
-  let cnt = 0;
   while (todo.length > 0) {
-    const areaQueryResult = await cargoQuery({
-      tables: ["areas"],
-      fields: [
-        "id",
-        "name",
-        "act",
-        "has_waypoint=has_waypoint",
-        "is_town_area=is_town_area",
-        "connection_ids=connection_ids",
-        "boss_monster_ids=boss_monster_ids",
-      ],
-      where: `id IN (${todo.map((x) => `"${x}"`).join(",")})`,
-    });
+    const worldAreasKey = todo.pop()!;
+    const worldArea = WorldAreasDat.data[worldAreasKey];
+    done.add(worldAreasKey);
 
-    for (const id of todo) {
-      done.add(id);
-    }
-    todo.length = 0;
-
-    for (const area of areaQueryResult) {
-      let connection_ids: string[];
-      if (area.connection_ids) {
-        connection_ids = area.connection_ids.split(",");
-        for (const connection_id of connection_ids) {
-          if (!done.has(connection_id)) {
-            todo.push(connection_id);
-          }
-        }
-      } else {
-        connection_ids = [];
+    const connected_area_ids = [];
+    for (const key of worldArea.Connections_WorldAreasKeys) {
+      if (!done.has(key)) {
+        todo.push(key);
       }
-
-      let bosses: Monster[];
-      if (area.boss_monster_ids) {
-        const boss_monster_ids: string[] = area.boss_monster_ids.split(",");
-        const monsterQueryResult = await cargoQuery({
-          tables: ["monsters"],
-          fields: ["metadata_id=metadata_id", "name"],
-          where: `metadata_id IN (${boss_monster_ids
-            .map((x) => `"${x}"`)
-            .join(",")})`,
-        });
-
-        bosses = monsterQueryResult.map((x) => ({
-          metadata_id: x.metadata_id,
-          name: x.name,
-        }));
-      } else {
-        bosses = [];
-      }
-
-      result[area.id] = {
-        id: area.id,
-        name: area.name,
-        act: area.act,
-        has_waypoint: area.has_waypoint == "1",
-        is_town_area: area.is_town_area == "1",
-        connection_ids: connection_ids,
-        bosses: bosses,
-      };
-
-      cnt++;
+      const connectedWorldArea = WorldAreasDat.data[key];
+      connected_area_ids.push(connectedWorldArea.Id);
     }
 
-    console.log(`Areas ${cnt}`);
+    const crafting_recipes = [];
+    for (const recipeUnlockDisplay of RecipeUnlockDisplayDat.data) {
+      if (recipeUnlockDisplay.UnlockArea == worldAreasKey)
+        crafting_recipes.push(recipeUnlockDisplay.Description);
+    }
+
+    result[worldArea.Id] = {
+      id: worldArea.Id,
+      name: worldArea.Name,
+      act: worldArea.Act,
+      has_waypoint: worldArea.HasWaypoint,
+      is_town_area: worldArea.IsTown,
+      connection_ids: connected_area_ids,
+      crafting_recipes: crafting_recipes,
+    };
   }
 
   return result;
