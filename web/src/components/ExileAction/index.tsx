@@ -15,6 +15,7 @@ import styles from "./ExileAction.module.css";
 import { GemReward } from "../GemReward";
 
 import { quests, areas, gems } from "../../../../common/data";
+import { InlineFakeBlock } from "../InlineFakeBlock";
 
 interface ActionProps {
   action: Action;
@@ -96,30 +97,30 @@ function PortalComponent() {
 }
 
 const directions = [
-  <div className={classNames("inlineIconBlock")}>
-    <BsArrowUpSquare className={classNames("inlineIcon")} />
-  </div>,
-  <div className={classNames("inlineIconBlock")}>
-    <BsArrowUpRightSquare className={classNames("inlineIcon")} />
-  </div>,
-  <div className={classNames("inlineIconBlock")}>
-    <BsArrowRightSquare className={classNames("inlineIcon")} />
-  </div>,
-  <div className={classNames("inlineIconBlock")}>
-    <BsArrowDownRightSquare className={classNames("inlineIcon")} />
-  </div>,
-  <div className={classNames("inlineIconBlock")}>
-    <BsArrowDownSquare className={classNames("inlineIcon")} />
-  </div>,
-  <div className={classNames("inlineIconBlock")}>
-    <BsArrowDownLeftSquare className={classNames("inlineIcon")} />
-  </div>,
-  <div className={classNames("inlineIconBlock")}>
-    <BsArrowLeftSquare className={classNames("inlineIcon")} />
-  </div>,
-  <div className={classNames("inlineIconBlock")}>
-    <BsArrowUpLeftSquare className={classNames("inlineIcon")} />
-  </div>,
+  <InlineFakeBlock
+    child={<BsArrowUpSquare className={classNames("inlineIcon")} />}
+  />,
+  <InlineFakeBlock
+    child={<BsArrowUpRightSquare className={classNames("inlineIcon")} />}
+  />,
+  <InlineFakeBlock
+    child={<BsArrowRightSquare className={classNames("inlineIcon")} />}
+  />,
+  <InlineFakeBlock
+    child={<BsArrowDownRightSquare className={classNames("inlineIcon")} />}
+  />,
+  <InlineFakeBlock
+    child={<BsArrowDownSquare className={classNames("inlineIcon")} />}
+  />,
+  <InlineFakeBlock
+    child={<BsArrowDownLeftSquare className={classNames("inlineIcon")} />}
+  />,
+  <InlineFakeBlock
+    child={<BsArrowLeftSquare className={classNames("inlineIcon")} />}
+  />,
+  <InlineFakeBlock
+    child={<BsArrowUpLeftSquare className={classNames("inlineIcon")} />}
+  />,
 ];
 
 function DirectionComponent(dirIndex: number) {

@@ -14,26 +14,14 @@
   margin-left: var(--size-3);
   height: var(--line-height);
   display: flex;
-  align-items: center;
 }
 
 .orderButton {
-  color: var(--primary-light);
   border-radius: var(--border-radius);
-  position: relative;
-  width: var(--size-5);
-}
-
-.orderButton > * {
-  position: absolute;
-  transform: translate(0, -50%);
-  border-radius: var(--border-radius);
-  width: 100%;
-  height: auto;
 }
 
 @media (hover: hover) {
-  .orderButton > *:hover {
+  .orderButton:hover {
     background-color: var(--primary-dark);
   }
 }

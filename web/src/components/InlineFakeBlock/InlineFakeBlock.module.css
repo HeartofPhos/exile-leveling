@@ -1,0 +1,14 @@
+.inlineFakeBlock {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  align-self: center;
+  width: var(--line-height);
+}
+
+.inlineFakeBlock > * {
+  position: absolute;
+  transform: translate(0, -50%);
+  width: 100%;
+  height: auto;
+}

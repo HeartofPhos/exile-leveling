@@ -1,11 +1,11 @@
 import classNames from "classnames";
-import { Gem } from "../../../../common/types";
 import { HiChevronDoubleUp, HiChevronDown, HiChevronUp } from "react-icons/hi";
 import { MdDeleteOutline } from "react-icons/md";
 import styles from "./GemOrder.module.css";
 
 import { GemReward } from "../GemReward";
 import { RequiredGem } from "../../../../common/routes";
+import { InlineFakeBlock } from "../InlineFakeBlock";
 
 interface GemOrderProps {
   requiredGem: RequiredGem;
@@ -26,18 +26,38 @@ export function GemOrder({
     <div className={classNames(styles.gemOrder)}>
       {GemReward(requiredGem, "gem")}
       <div className={classNames(styles.orderButtonGroup)}>
-        <div onClick={onMoveUp} className={classNames(styles.orderButton)}>
-          <HiChevronUp />
-        </div>
-        <div onClick={onMoveDown} className={classNames(styles.orderButton)}>
-          <HiChevronDown />
-        </div>
-        <div onClick={onMoveTop} className={classNames(styles.orderButton)}>
-          <HiChevronDoubleUp />
-        </div>
-        <div onClick={onDelete} className={classNames(styles.orderButton)}>
-          <MdDeleteOutline />
-        </div>
+        <InlineFakeBlock
+          child={
+            <HiChevronUp
+              className={classNames(styles.orderButton)}
+              onClick={onMoveUp}
+            />
+          }
+        />
+        <InlineFakeBlock
+          child={
+            <HiChevronDown
+              className={classNames(styles.orderButton)}
+              onClick={onMoveDown}
+            />
+          }
+        />
+        <InlineFakeBlock
+          child={
+            <HiChevronDoubleUp
+              className={classNames(styles.orderButton)}
+              onClick={onMoveTop}
+            />
+          }
+        />
+        <InlineFakeBlock
+          child={
+            <MdDeleteOutline
+              className={classNames(styles.orderButton)}
+              onClick={onDelete}
+            />
+          }
+        />
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import { RequiredGem } from "../../../../common/routes";
 import styles from "./GemReward.module.css";
 
 import { gems, gemColours } from "../../../../common/data";
+import { InlineFakeBlock } from "../InlineFakeBlock";
 
 function getImageUrl(path: string) {
   return new URL(`./images/${path}`, import.meta.url).href;
@@ -36,15 +37,13 @@ export function GemReward(requiredGem: RequiredGem, type: GemRewardType) {
         {type === "vendor" && (
           <div className={classNames(styles.noWrap)}>
             <span> for </span>
-            <div className={classNames("inlineIconBlock")}>
-              <img src={getImageUrl(`${gem.cost}.png`)} />
-            </div>
+            <InlineFakeBlock
+              child={<img src={getImageUrl(`${gem.cost}.png`)} />}
+            />
           </div>
         )}
       </div>
-      <div className={classNames(styles.rewardNote)}>
-        {requiredGem.note}
-      </div>
+      <div className={classNames(styles.rewardNote)}>{requiredGem.note}</div>
     </div>
   );
 }

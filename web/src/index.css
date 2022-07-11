@@ -60,17 +60,3 @@ hr {
   height: 1em;
   margin-right: var(--size-1);
 }
-
-.inlineIconBlock {
-  vertical-align: middle;
-  position: relative;
-  display: inline-block;
-  width: var(--line-height);
-}
-
-.inlineIconBlock > * {
-  position: absolute;
-  transform: translate(0, -50%);
-  width: 100%;
-  height: auto;
-}
