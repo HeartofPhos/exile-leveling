@@ -3,13 +3,6 @@
   width: 100%;
 }
 
-.icon {
-  vertical-align: sub;
-  width: auto;
-  height: var(--size-4);
-  margin-right: var(--size-1);
-}
-
 .orderButtonGroup {
   margin-left: var(--size-3);
   height: var(--line-height);

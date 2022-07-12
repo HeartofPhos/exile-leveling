@@ -13,7 +13,7 @@
 .rewardMain{
   flex-grow: 1;
   flex-basis: 8rem;
-  margin-right: var(--size-4);
+  margin-right: var(--size-3);
 }
 
 .rewardNote {
