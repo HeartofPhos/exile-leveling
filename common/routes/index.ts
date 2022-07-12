@@ -3,16 +3,21 @@ import {
   EvaluateQuest,
   EvaluateQuestText,
   QuestAction,
-  QuestRewardAction,
   QuestTextAction,
-  VendorRewardAction,
+  RewardStep,
 } from "./quest";
 
 import { areas, killWaypoints } from "../../common/data";
 
 export type ParsedAction = string[];
-export type ParsedStep = (string | ParsedAction)[];
-export type Step = (string | Action)[];
+export type ParsedActionStep = (string | ParsedAction)[];
+
+export interface ActionStep {
+  type: "action_step";
+  parts: (string | Action)[];
+}
+
+export type Step = ActionStep | RewardStep;
 export type Route = Step[];
 
 export interface RouteLookup {
@@ -34,7 +39,7 @@ export interface RouteState {
 function parseStep(text: string) {
   const regex = /(\s*#.*)|([^{#]+)|\{(.+?)\}/g;
 
-  let steps: ParsedStep = [];
+  let parts: ParsedActionStep = [];
 
   const matches = text.matchAll(regex);
   for (const match of matches) {
@@ -43,17 +48,17 @@ function parseStep(text: string) {
 
     const textMatch = match[2];
     if (textMatch) {
-      steps.push(textMatch);
+      parts.push(textMatch);
     }
 
     const actionMatch = match[3];
     if (actionMatch) {
       const split = actionMatch.split("|");
-      steps.push(split);
+      parts.push(split);
     }
   }
 
-  return steps;
+  return parts;
 }
 
 interface KillAction {
@@ -427,8 +432,6 @@ export type Action =
   | SetPortalAction
   | UsePortalAction
   | QuestAction
-  | QuestRewardAction
-  | VendorRewardAction
   | QuestTextAction
   | GenericAction
   | TrialAction
@@ -541,22 +544,27 @@ export function parseRoute(
       if (!line) continue;
 
       const parsedStep = parseStep(line);
-      const step: Step = [];
+      const step: Step = {
+        type: "action_step",
+        parts: [],
+      };
+
       const additionalSteps: Step[] = [];
       for (const subStep of parsedStep) {
         if (typeof subStep == "string") {
-          step.push(subStep);
+          step.parts.push(subStep);
         } else {
           const result = evaluateAction(subStep, lookup, state);
           if (typeof result == "string") console.log(`${result}: ${subStep}`);
           else {
-            if (result.action) step.push(result.action);
+            if (result.action) step.parts.push(result.action);
             if (result.additionalSteps)
               additionalSteps.push(...result.additionalSteps);
           }
         }
       }
-      if (step.length > 0) route.push(step);
+
+      if (step.parts.length > 0) route.push(step);
       route.push(...additionalSteps);
     }
 

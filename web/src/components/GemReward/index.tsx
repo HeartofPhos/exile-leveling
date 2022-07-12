@@ -5,27 +5,26 @@ import styles from "./GemReward.module.css";
 
 import { gems, gemColours } from "../../../../common/data";
 import { InlineFakeBlock } from "../InlineFakeBlock";
+import { RewardStep } from "../../../../common/routes/quest";
 
 function getImageUrl(path: string) {
   return new URL(`./images/${path}`, import.meta.url).href;
 }
 
-type GemRewardType = "gem" | "vendor" | "quest";
-
-function GemRewardVerb(type: GemRewardType) {
+function GemRewardVerb(type: GemRewardProps["type"]) {
   switch (type) {
-    case "gem":
-      return <></>;
     case "quest":
       return <span>Take </span>;
     case "vendor":
       return <span>Buy </span>;
+    default:
+      return <></>;
   }
 }
 
 interface GemRewardProps {
   requiredGem: RequiredGem;
-  type: GemRewardType;
+  type?: RewardStep["reward_type"];
 }
 
 export function GemReward({ requiredGem, type }: GemRewardProps) {

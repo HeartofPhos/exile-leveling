@@ -16,13 +16,9 @@ export interface QuestAction {
   questId: Quest["id"];
 }
 
-export interface QuestRewardAction {
-  type: "quest_reward";
-  requiredGem: RequiredGem;
-}
-
-export interface VendorRewardAction {
-  type: "vendor_reward";
+export interface RewardStep {
+  type: "reward_step";
+  reward_type: "quest" | "vendor";
   requiredGem: RequiredGem;
 }
 
@@ -44,7 +40,11 @@ function tryFindQuestReward(
 
       if (validClass) {
         state.acquiredGems.add(requiredGem.id);
-        return [{ type: "quest_reward", requiredGem: requiredGem }];
+        return {
+          type: "reward_step",
+          reward_type: "quest",
+          requiredGem: requiredGem,
+        };
       }
     }
   }
@@ -71,12 +71,11 @@ function tryFindVendorRewards(
 
       if (validClass) {
         state.acquiredGems.add(requiredGem.id);
-        result.push([
-          {
-            type: "vendor_reward",
-            requiredGem: requiredGem,
-          },
-        ]);
+        result.push({
+          type: "reward_step",
+          reward_type: "vendor",
+          requiredGem: requiredGem,
+        });
       }
     }
   }

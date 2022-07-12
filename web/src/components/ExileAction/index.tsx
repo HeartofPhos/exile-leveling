@@ -157,8 +157,6 @@ export function ExileAction({ action, lookup }: ActionProps) {
     case "quest": {
       return QuestComponent(quests[action.questId]);
     }
-    case "quest_reward":
-      return <GemReward requiredGem={action.requiredGem} type="quest" />;
     case "quest_text":
       return QuestTextComponent(action.value);
     case "waypoint": {
@@ -174,8 +172,6 @@ export function ExileAction({ action, lookup }: ActionProps) {
     }
     case "get_waypoint":
       return WaypointComponent();
-    case "vendor_reward":
-      return <GemReward requiredGem={action.requiredGem} type="vendor" />;
     case "trial":
       return TrialComponent();
     case "town":
@@ -194,5 +190,5 @@ export function ExileAction({ action, lookup }: ActionProps) {
       return AscendComponent();
   }
 
-  return <>{`Unmapped: ${JSON.stringify(action)}`}</>;
+  return <>{`unmapped: ${JSON.stringify(action)}`}</>;
 }
