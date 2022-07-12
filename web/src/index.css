@@ -47,7 +47,6 @@ hr {
   flex-direction: column;
   margin: 0 auto;
   position: relative;
-  width: auto;
   max-width: 1280px;
   padding-left: var(--size-2);
   padding-right: var(--size-2);
