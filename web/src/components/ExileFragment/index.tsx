@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { Action, RouteLookup } from "../../../../common/routes";
+import { Fragment, RouteLookup } from "../../../../common/routes";
 import { Quest } from "../../../../common/types";
 import {
   BsArrowDownSquare,
@@ -11,14 +11,13 @@ import {
   BsArrowUpLeftSquare,
   BsArrowUpRightSquare,
 } from "react-icons/bs";
-import styles from "./ExileAction.module.css";
-import { GemReward } from "../GemReward";
-
-import { quests, areas, gems } from "../../../../common/data";
 import { InlineFakeBlock } from "../InlineFakeBlock";
+import { quests, areas } from "../../../../common/data";
 
-interface ActionProps {
-  action: Action;
+import styles from "./ExileFragment.module.css";
+
+interface FragmentProps {
+  fragment: Fragment;
   lookup: RouteLookup;
 }
 
@@ -144,29 +143,29 @@ function AscendComponent() {
   );
 }
 
-export function ExileAction({ action, lookup }: ActionProps) {
-  switch (action.type) {
+export function ExileFragment({ fragment, lookup }: FragmentProps) {
+  switch (fragment.type) {
     case "kill":
-      return EnemyComponent(action.value);
+      return EnemyComponent(fragment.value);
     case "arena":
-      return AreaComponent(action.value);
+      return AreaComponent(fragment.value);
     case "area":
-      return AreaComponent(areas[action.areaId].name);
+      return AreaComponent(areas[fragment.areaId].name);
     case "enter":
-      return AreaComponent(areas[action.areaId].name);
+      return AreaComponent(areas[fragment.areaId].name);
     case "quest": {
-      return QuestComponent(quests[action.questId]);
+      return QuestComponent(quests[fragment.questId]);
     }
     case "quest_text":
-      return QuestTextComponent(action.value);
+      return QuestTextComponent(fragment.value);
     case "waypoint": {
-      if (action.areaId == null) return WaypointComponent();
+      if (fragment.areaId == null) return WaypointComponent();
 
       return (
         <>
           {WaypointComponent()}
           <span> ➞ </span>
-          {AreaComponent(areas[action.areaId].name)}
+          {AreaComponent(areas[fragment.areaId].name)}
         </>
       );
     }
@@ -181,14 +180,14 @@ export function ExileAction({ action, lookup }: ActionProps) {
     case "use_portal":
       return PortalComponent();
     case "dir":
-      return DirectionComponent(action.dirIndex);
+      return DirectionComponent(fragment.dirIndex);
     case "generic":
-      return GenericComponent(action.value);
+      return GenericComponent(fragment.value);
     case "crafting":
-      return CraftingComponent(action.crafting_recipes);
+      return CraftingComponent(fragment.crafting_recipes);
     case "ascend":
       return AscendComponent();
   }
 
-  return <>{`unmapped: ${JSON.stringify(action)}`}</>;
+  return <>{`unmapped: ${JSON.stringify(fragment)}`}</>;
 }

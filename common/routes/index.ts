@@ -2,22 +2,21 @@ import { Area, Gem } from "../types";
 import {
   EvaluateQuest,
   EvaluateQuestText,
-  QuestAction,
-  QuestTextAction,
+  QuestFragment,
+  QuestTextFragment,
   RewardStep,
 } from "./quest";
-
 import { areas, killWaypoints } from "../../common/data";
 
-export type ParsedAction = string[];
-export type ParsedActionStep = (string | ParsedAction)[];
+export type RawFragment = string[];
+export type RawFragmentStep = (string | RawFragment)[];
 
-export interface ActionStep {
-  type: "action_step";
-  parts: (string | Action)[];
+export interface FragmentStep {
+  type: "fragment_step";
+  parts: (string | Fragment)[];
 }
 
-export type Step = ActionStep | RewardStep;
+export type Step = FragmentStep | RewardStep;
 export type Route = Step[];
 
 export interface RouteLookup {
@@ -39,7 +38,7 @@ export interface RouteState {
 function parseStep(text: string) {
   const regex = /(\s*#.*)|([^{#]+)|\{(.+?)\}/g;
 
-  let parts: ParsedActionStep = [];
+  let rawFragmentStep: RawFragmentStep = [];
 
   const matches = text.matchAll(regex);
   for (const match of matches) {
@@ -48,31 +47,31 @@ function parseStep(text: string) {
 
     const textMatch = match[2];
     if (textMatch) {
-      parts.push(textMatch);
+      rawFragmentStep.push(textMatch);
     }
 
-    const actionMatch = match[3];
-    if (actionMatch) {
-      const split = actionMatch.split("|");
-      parts.push(split);
+    const fragmentMatch = match[3];
+    if (fragmentMatch) {
+      const split = fragmentMatch.split("|");
+      rawFragmentStep.push(split);
     }
   }
 
-  return parts;
+  return rawFragmentStep;
 }
 
-interface KillAction {
+interface KillFragment {
   type: "kill";
   value: string;
 }
 
 function EvaluateKill(
-  action: ParsedAction,
+  rawFragment: RawFragment,
   lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
-  if (action.length != 2) return ERROR_INVALID_FORMAT;
-  const bossName = action[1];
+  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
+  const bossName = rawFragment[1];
 
   // TODO data incomplete
   // const currentArea = state.areas[state.currentAreaId];
@@ -86,68 +85,68 @@ function EvaluateKill(
   }
 
   return {
-    action: {
+    fragment: {
       type: "kill",
       value: bossName,
     },
   };
 }
 
-interface ArenaAction {
+interface ArenaFragment {
   type: "arena";
   value: string;
 }
 
 function EvaluateArena(
-  action: ParsedAction,
+  rawFragment: RawFragment,
   lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
-  if (action.length != 2) return ERROR_INVALID_FORMAT;
+  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
   return {
-    action: {
+    fragment: {
       type: "arena",
-      value: action[1],
+      value: rawFragment[1],
     },
   };
 }
 
-interface AreaAction {
+interface AreaFragment {
   type: "area";
   areaId: Area["id"];
 }
 
 function EvaluateArea(
-  action: ParsedAction,
+  rawFragment: RawFragment,
   lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
-  if (action.length != 2) return ERROR_INVALID_FORMAT;
+  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
-  const area = areas[action[1]];
+  const area = areas[rawFragment[1]];
   if (!area) return ERROR_MISSING_AREA;
 
   return {
-    action: {
+    fragment: {
       type: "area",
       areaId: area.id,
     },
   };
 }
 
-interface EnterAction {
+interface EnterFragment {
   type: "enter";
   areaId: Area["id"];
 }
 
 function EvaluateEnter(
-  action: ParsedAction,
+  rawFragment: RawFragment,
   lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
-  if (action.length != 2) return ERROR_INVALID_FORMAT;
+  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
-  const area = areas[action[1]];
+  const area = areas[rawFragment[1]];
   if (!area) return ERROR_MISSING_AREA;
   if (!area.connection_ids.some((x) => x == state.currentAreaId))
     return "not connected to current area";
@@ -159,49 +158,49 @@ function EvaluateEnter(
 
   state.currentAreaId = area.id;
   return {
-    action: {
+    fragment: {
       type: "enter",
       areaId: area.id,
     },
   };
 }
 
-interface TownAction {
+interface TownFragment {
   type: "town";
 }
 
 function EvaluateTown(
-  action: ParsedAction,
+  rawFragment: RawFragment,
   lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
-  if (action.length != 1) return ERROR_INVALID_FORMAT;
+  if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
 
   const area = areas[state.currentAreaId];
   state.currentAreaId = state.lastTownAreaId;
   return {
-    action: {
+    fragment: {
       type: "town",
     },
   };
 }
 
-interface WaypointAction {
+interface WaypointFragment {
   type: "waypoint";
   areaId: Area["id"] | null;
 }
 
 function EvaluateWaypoint(
-  action: ParsedAction,
+  rawFragment: RawFragment,
   lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
   {
-    if (action.length != 1 && action.length != 2) return ERROR_INVALID_FORMAT;
+    if (rawFragment.length != 1 && rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
     let areaId: Area["id"] | null = null;
-    if (action.length == 2) {
-      const area = areas[action[1]];
+    if (rawFragment.length == 2) {
+      const area = areas[rawFragment[1]];
       if (!area) return ERROR_MISSING_AREA;
       if (
         !state.implicitWaypoints.has(area.id) &&
@@ -220,7 +219,7 @@ function EvaluateWaypoint(
     }
 
     return {
-      action: {
+      fragment: {
         type: "waypoint",
         areaId: areaId,
       },
@@ -228,16 +227,16 @@ function EvaluateWaypoint(
   }
 }
 
-interface GetWaypointAction {
+interface GetWaypointFragment {
   type: "get_waypoint";
 }
 
 function EvaluateGetWaypoint(
-  action: ParsedAction,
+  rawFragment: RawFragment,
   lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
-  if (action.length != 1) return ERROR_INVALID_FORMAT;
+  if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
 
   const area = areas[state.currentAreaId];
   if (!area) return ERROR_MISSING_AREA;
@@ -247,41 +246,41 @@ function EvaluateGetWaypoint(
   state.explicitWaypoints.add(area.id);
 
   return {
-    action: {
+    fragment: {
       type: "get_waypoint",
     },
   };
 }
 
-interface SetPortalAction {
+interface SetPortalFragment {
   type: "set_portal";
 }
 
 function EvaluateSetPortal(
-  action: ParsedAction,
+  rawFragment: RawFragment,
   lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
-  if (action.length != 1) return ERROR_INVALID_FORMAT;
+  if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
 
   state.portalAreaId = state.currentAreaId;
   return {
-    action: {
+    fragment: {
       type: "set_portal",
     },
   };
 }
 
-interface UsePortalAction {
+interface UsePortalFragment {
   type: "use_portal";
 }
 
 function EvaluateUsePortal(
-  action: ParsedAction,
+  rawFragment: RawFragment,
   lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
-  if (action.length != 1) return ERROR_INVALID_FORMAT;
+  if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
   if (!state.portalAreaId) return "portal must be set";
 
   const currentArea = areas[state.currentAreaId];
@@ -296,58 +295,58 @@ function EvaluateUsePortal(
   }
 
   return {
-    action: {
+    fragment: {
       type: "use_portal",
     },
   };
 }
 
-interface GenericAction {
+interface GenericFragment {
   type: "generic";
   value: string;
 }
 
 function EvaluateGeneric(
-  action: ParsedAction,
+  rawFragment: RawFragment,
   lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
-  if (action.length != 2) return ERROR_INVALID_FORMAT;
+  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
   return {
-    action: {
+    fragment: {
       type: "generic",
-      value: action[1],
+      value: rawFragment[1],
     },
   };
 }
 
-interface TrialAction {
+interface TrialFragment {
   type: "trial";
 }
 
 function EvaluateTrial(
-  action: ParsedAction,
+  rawFragment: RawFragment,
   lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
-  if (action.length != 1) return ERROR_INVALID_FORMAT;
+  if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
   return {
-    action: {
+    fragment: {
       type: "trial",
     },
   };
 }
 
-interface AscendAction {
+interface AscendFragment {
   type: "ascend";
 }
 
 function EvaluateAscend(
-  action: ParsedAction,
+  rawFragment: RawFragment,
   lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
-  if (action.length != 1) return ERROR_INVALID_FORMAT;
+  if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
 
   const expectedAreaId = "Labyrinth_Airlock";
   const currentArea = areas[state.currentAreaId];
@@ -359,53 +358,53 @@ function EvaluateAscend(
   state.currentAreaId = state.lastTownAreaId;
 
   return {
-    action: {
+    fragment: {
       type: "ascend",
     },
   };
 }
 
-interface CraftingAction {
+interface CraftingFragment {
   type: "crafting";
   crafting_recipes: string[];
 }
 
 function EvaluateCrafting(
-  action: ParsedAction,
+  rawFragment: RawFragment,
   lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
-  if (action.length > 2) return ERROR_INVALID_FORMAT;
+  if (rawFragment.length > 2) return ERROR_INVALID_FORMAT;
 
   let area;
-  if (action.length == 1) area = areas[state.currentAreaId];
+  if (rawFragment.length == 1) area = areas[state.currentAreaId];
   else {
-    area = areas[action[1]];
+    area = areas[rawFragment[1]];
     if (!area) return ERROR_MISSING_AREA;
   }
   state.craftingAreas.add(area.id);
 
   return {
-    action: {
+    fragment: {
       type: "crafting",
       crafting_recipes: area.crafting_recipes,
     },
   };
 }
 
-interface DirectionAction {
+interface DirectionFragment {
   type: "dir";
   dirIndex: number;
 }
 
 function EvaluateDirection(
-  action: ParsedAction,
+  rawFragment: RawFragment,
   lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
-  if (action.length != 2) return ERROR_INVALID_FORMAT;
+  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
-  const parsed = Number.parseFloat(action[1]);
+  const parsed = Number.parseFloat(rawFragment[1]);
   if (Number.isNaN(parsed)) return "dir value is not a number";
 
   let dir = parsed % 360;
@@ -414,78 +413,78 @@ function EvaluateDirection(
   if (dir % 45 != 0) return "dir value must be in intervals of 45";
 
   return {
-    action: {
+    fragment: {
       type: "dir",
       dirIndex: Math.floor(dir / 45),
     },
   };
 }
 
-export type Action =
-  | KillAction
-  | ArenaAction
-  | AreaAction
-  | EnterAction
-  | TownAction
-  | WaypointAction
-  | GetWaypointAction
-  | SetPortalAction
-  | UsePortalAction
-  | QuestAction
-  | QuestTextAction
-  | GenericAction
-  | TrialAction
-  | AscendAction
-  | DirectionAction
-  | CraftingAction;
+export type Fragment =
+  | KillFragment
+  | ArenaFragment
+  | AreaFragment
+  | EnterFragment
+  | TownFragment
+  | WaypointFragment
+  | GetWaypointFragment
+  | SetPortalFragment
+  | UsePortalFragment
+  | QuestFragment
+  | QuestTextFragment
+  | GenericFragment
+  | TrialFragment
+  | AscendFragment
+  | DirectionFragment
+  | CraftingFragment;
 
 export const ERROR_INVALID_FORMAT = "invalid format";
 export const ERROR_MISSING_AREA = "area does not exist";
 export const ERROR_AREA_NO_WAYPOINT = "area does not have a waypoint";
 
 export interface EvaluateResult {
-  action?: Action;
+  fragment?: Fragment;
   additionalSteps?: Step[];
 }
 
-function evaluateAction(
-  action: ParsedAction,
+function evaluateFragment(
+  rawFragment: RawFragment,
   lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
-  switch (action[0]) {
+  switch (rawFragment[0]) {
     case "kill":
-      return EvaluateKill(action, lookup, state);
+      return EvaluateKill(rawFragment, lookup, state);
     case "arena":
-      return EvaluateArena(action, lookup, state);
+      return EvaluateArena(rawFragment, lookup, state);
     case "area":
-      return EvaluateArea(action, lookup, state);
+      return EvaluateArea(rawFragment, lookup, state);
     case "enter":
-      return EvaluateEnter(action, lookup, state);
+      return EvaluateEnter(rawFragment, lookup, state);
     case "town":
-      return EvaluateTown(action, lookup, state);
+      return EvaluateTown(rawFragment, lookup, state);
     case "waypoint":
-      return EvaluateWaypoint(action, lookup, state);
+      return EvaluateWaypoint(rawFragment, lookup, state);
     case "get_waypoint":
-      return EvaluateGetWaypoint(action, lookup, state);
+      return EvaluateGetWaypoint(rawFragment, lookup, state);
     case "set_portal":
-      return EvaluateSetPortal(action, lookup, state);
+      return EvaluateSetPortal(rawFragment, lookup, state);
     case "use_portal":
-      return EvaluateUsePortal(action, lookup, state);
+      return EvaluateUsePortal(rawFragment, lookup, state);
     case "quest":
-      return EvaluateQuest(action, lookup, state);
+      return EvaluateQuest(rawFragment, lookup, state);
     case "quest_text":
-      return EvaluateQuestText(action, lookup, state);
+      return EvaluateQuestText(rawFragment, lookup, state);
     case "generic":
-      return EvaluateGeneric(action, lookup, state);
+      return EvaluateGeneric(rawFragment, lookup, state);
     case "trial":
-      return EvaluateTrial(action, lookup, state);
+      return EvaluateTrial(rawFragment, lookup, state);
     case "crafting":
-      return EvaluateCrafting(action, lookup, state);
+      return EvaluateCrafting(rawFragment, lookup, state);
     case "ascend":
-      return EvaluateAscend(action, lookup, state);
+      return EvaluateAscend(rawFragment, lookup, state);
     case "dir":
-      return EvaluateDirection(action, lookup, state);
+      return EvaluateDirection(rawFragment, lookup, state);
   }
 
   return ERROR_INVALID_FORMAT;
@@ -545,7 +544,7 @@ export function parseRoute(
 
       const parsedStep = parseStep(line);
       const step: Step = {
-        type: "action_step",
+        type: "fragment_step",
         parts: [],
       };
 
@@ -554,10 +553,10 @@ export function parseRoute(
         if (typeof subStep == "string") {
           step.parts.push(subStep);
         } else {
-          const result = evaluateAction(subStep, lookup, state);
+          const result = evaluateFragment(subStep, lookup, state);
           if (typeof result == "string") console.log(`${result}: ${subStep}`);
           else {
-            if (result.action) step.parts.push(result.action);
+            if (result.fragment) step.parts.push(result.fragment);
             if (result.additionalSteps)
               additionalSteps.push(...result.additionalSteps);
           }

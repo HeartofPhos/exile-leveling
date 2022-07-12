@@ -1,7 +1,7 @@
 import {
   ERROR_INVALID_FORMAT,
   EvaluateResult,
-  ParsedAction,
+  RawFragment,
   RequiredGem,
   RouteLookup,
   RouteState,
@@ -11,7 +11,7 @@ import { Quest } from "../types";
 
 import { quests } from "../data";
 
-export interface QuestAction {
+export interface QuestFragment {
   type: "quest";
   questId: Quest["id"];
 }
@@ -84,27 +84,27 @@ function tryFindVendorRewards(
 }
 
 export function EvaluateQuest(
-  action: ParsedAction,
+  rawFragment: RawFragment,
   lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
   {
-    if (action.length < 2) return ERROR_INVALID_FORMAT;
+    if (rawFragment.length < 2) return ERROR_INVALID_FORMAT;
 
-    const questId = action[1];
+    const questId = rawFragment[1];
     const quest = quests[questId];
     if (!quest) return "invalid quest id";
 
     let quest_rewards;
     let vendor_rewards;
-    if (action.length == 2) {
+    if (rawFragment.length == 2) {
       quest_rewards = quest.quest_rewards;
       vendor_rewards = quest.vendor_rewards;
     } else {
       quest_rewards = [];
       vendor_rewards = [];
-      for (let i = 2; i < action.length; i++) {
-        const questRewardIndex = Number.parseInt(action[i]);
+      for (let i = 2; i < rawFragment.length; i++) {
+        const questRewardIndex = Number.parseInt(rawFragment[i]);
         quest_rewards.push(quest.quest_rewards[questRewardIndex]);
         vendor_rewards.push(quest.vendor_rewards[questRewardIndex]);
       }
@@ -125,30 +125,30 @@ export function EvaluateQuest(
     }
 
     return {
-      action: {
+      fragment: {
         type: "quest",
-        questId: action[1],
+        questId: rawFragment[1],
       },
       additionalSteps: additionalSteps,
     };
   }
 }
 
-export interface QuestTextAction {
+export interface QuestTextFragment {
   type: "quest_text";
   value: string;
 }
 
 export function EvaluateQuestText(
-  action: ParsedAction,
+  rawFragment: RawFragment,
   lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
-  if (action.length != 2) return ERROR_INVALID_FORMAT;
+  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
   return {
-    action: {
+    fragment: {
       type: "quest_text",
-      value: action[1],
+      value: rawFragment[1],
     },
   };
 }

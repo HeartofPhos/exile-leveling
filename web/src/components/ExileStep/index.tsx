@@ -1,18 +1,17 @@
 import classNames from "classnames";
-import React from "react";
 import { RouteLookup, Step } from "../../../../common/routes";
-import { ExileAction } from "../ExileAction";
+import { ExileFragment } from "../ExileFragment";
 import { GemReward } from "../GemReward";
 import styles from "./ExileStep.module.css";
 
 function mapStep(step: Step, lookup: RouteLookup) {
   switch (step.type) {
-    case "action_step": {
+    case "fragment_step": {
       return step.parts.map((part, i) =>
         typeof part == "string" ? (
           part
         ) : (
-          <ExileAction key={i} action={part} lookup={lookup} />
+          <ExileFragment key={i} fragment={part} lookup={lookup} />
         )
       );
     }

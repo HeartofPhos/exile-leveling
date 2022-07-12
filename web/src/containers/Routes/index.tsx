@@ -10,7 +10,6 @@ import {
 import { ExileList } from "../../components/ExileList";
 import { ExileStep } from "../../components/ExileStep";
 import React from "react";
-
 import { routeFiles } from "../../../../common/data";
 import { getPersistent, setPersistent } from "../../utility";
 
