@@ -12,7 +12,7 @@ export async function getAreas() {
   let done = new Set<number>();
 
   while (todo.length > 0) {
-    const worldAreasKey = todo.pop()!;
+    const worldAreasKey = todo.shift()!;
     const worldArea = WorldAreasDat.data[worldAreasKey];
     done.add(worldAreasKey);
 
