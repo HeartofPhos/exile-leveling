@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { Fragment, RouteLookup } from "../../../../common/routes";
-import { Quest } from "../../../../common/types";
+import { Area, Quest } from "../../../../common/types";
 import {
   BsArrowDownSquare,
   BsArrowDownLeftSquare,
@@ -29,8 +29,15 @@ function EnemyComponent(enemy: string) {
   return <span className={classNames(styles.enemy)}>{enemy}</span>;
 }
 
-function AreaComponent(areaName: string) {
-  return <span className={classNames(styles.area)}>{areaName}</span>;
+function AreaComponent(area?: Area, fallback?: string) {
+  return (
+    <div className={classNames(styles.noWrap)}>
+      <span className={classNames(styles.area)}>{area?.name || fallback}</span>
+      {area?.is_town_area && (
+        <InlineFakeBlock child={<img src={getImageUrl("town.png")} />} />
+      )}
+    </div>
+  );
 }
 
 function QuestComponent(quest: Quest) {
@@ -73,12 +80,12 @@ function TrialComponent() {
   );
 }
 
-function TownComponent() {
+function TownComponent(area: Area) {
   return (
     <>
-      <span className={classNames(styles.default)}>
-        <span>Logout</span>
-      </span>
+      <span className={classNames(styles.default)}>Logout</span>
+      <span> ➞ </span>
+      {AreaComponent(area)}
     </>
   );
 }
@@ -148,11 +155,11 @@ export function ExileFragment({ fragment, lookup }: FragmentProps) {
     case "kill":
       return EnemyComponent(fragment.value);
     case "arena":
-      return AreaComponent(fragment.value);
+      return AreaComponent(undefined, fragment.value);
     case "area":
-      return AreaComponent(areas[fragment.areaId].name);
+      return AreaComponent(areas[fragment.areaId]);
     case "enter":
-      return AreaComponent(areas[fragment.areaId].name);
+      return AreaComponent(areas[fragment.areaId]);
     case "quest": {
       return QuestComponent(quests[fragment.questId]);
     }
@@ -165,7 +172,7 @@ export function ExileFragment({ fragment, lookup }: FragmentProps) {
         <>
           {WaypointComponent()}
           <span> ➞ </span>
-          {AreaComponent(areas[fragment.areaId].name)}
+          {AreaComponent(areas[fragment.areaId])}
         </>
       );
     }
@@ -174,7 +181,7 @@ export function ExileFragment({ fragment, lookup }: FragmentProps) {
     case "trial":
       return TrialComponent();
     case "town":
-      return TownComponent();
+      return TownComponent(areas[fragment.areaId]);
     case "set_portal":
       return PortalComponent();
     case "use_portal":

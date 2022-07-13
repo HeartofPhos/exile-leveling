@@ -165,6 +165,7 @@ function EvaluateEnter(
 
 interface TownFragment {
   type: "town";
+  areaId: Area["id"];
 }
 
 function EvaluateTown(
@@ -174,11 +175,11 @@ function EvaluateTown(
 ): string | EvaluateResult {
   if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
 
-  const area = areas[state.currentAreaId];
   state.currentAreaId = state.lastTownAreaId;
   return {
     fragment: {
       type: "town",
+      areaId: state.currentAreaId,
     },
   };
 }
