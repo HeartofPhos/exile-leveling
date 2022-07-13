@@ -13,7 +13,6 @@ export function Build() {
     const fn = async () => {
       if (buildData) {
         setPersistent("build-data", buildData);
-        clearPersistent("route-progress");
       } else {
         const buildData = getPersistent<BuildData>("build-data");
         if (buildData) setBuildData(buildData);
@@ -31,7 +30,6 @@ export function Build() {
         }}
         onReset={() => {
           clearPersistent("build-data");
-          clearPersistent("route-progress");
           setBuildData(null);
         }}
       />
