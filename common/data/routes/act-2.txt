@@ -1,11 +1,11 @@
 ➞ {enter|1_2_1} #The Southern Forest
 ➞ {enter|1_2_town} #The Forest Encampment
 Head {dir|45} ➞ {enter|1_2_2} #The Old Fields
-Find {area|1_2_2a}, place {set_portal} #The Den
+Find {area|1_2_2a}, place {portal|set} #The Den
 Follow the road ➞ {enter|1_2_3} #The Crossroads
 Follow the road, get {get_waypoint}
 {town}
-Take {use_portal}
+Take {portal|use}
 ➞ {enter|1_2_2a} #The Den
 Find and kill {kill|The Great White Beast}
 {town}

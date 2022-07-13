@@ -47,4 +47,4 @@ Talk to {generic|Sin}
 ➞ {arena|Maligaro's Misery}, kill {kill|Maligaro, The Broken}
 ➞ {arena|Shavronne's Sorrow}, kill {kill|Shavronne, Unbound}
 Talk to {generic|Sin} ➞ {arena|The Black Heart}, kill {kill|The Depraved Trinity}
-{town}
+{portal|use}

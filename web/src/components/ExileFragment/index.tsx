@@ -93,7 +93,7 @@ function TownComponent(area: Area) {
   );
 }
 
-function PortalComponent() {
+function PortalComponent(area?: Area) {
   return (
     <div className={classNames(styles.noWrap)}>
       <img
@@ -102,6 +102,12 @@ function PortalComponent() {
         alt=""
       />
       <span className={classNames(styles.portal)}>Portal</span>
+      {area && (
+        <>
+          <span> ➞ </span>
+          {AreaComponent(area)}
+        </>
+      )}
     </div>
   );
 }
@@ -188,10 +194,10 @@ export function ExileFragment({ fragment, lookup }: FragmentProps) {
       return TrialComponent();
     case "town":
       return TownComponent(areas[fragment.areaId]);
-    case "set_portal":
-      return PortalComponent();
-    case "use_portal":
-      return PortalComponent();
+    case "portal":
+      return PortalComponent(
+        fragment.targetAreaId ? areas[fragment.targetAreaId] : undefined
+      );
     case "dir":
       return DirectionComponent(fragment.dirIndex);
     case "generic":

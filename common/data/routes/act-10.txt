@@ -2,11 +2,11 @@
 ➞ {enter|2_10_1} #The Cathedral Rooftop
 Head {dir|0} ➞ {arena|Cathedral Apex}, kill {kill|Plaguewing}
 ➞ {enter|2_10_2} #The Ravaged Square
-Place {set_portal} in the plaza
+Place {portal|set} in the plaza
 Head {dir|180} ➞ {enter|2_10_7} #The Control Blocks
 {waypoint|2_10_town} #Oriath Docks
 Hand in {quest|a10q1} #Safe Passage
-Take {use_portal}
+Take {portal|use}
 Head {dir|45} get {get_waypoint}
 ➞ {enter|2_10_9} #The Ossuary
 Get {crafting}

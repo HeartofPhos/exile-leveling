@@ -214,6 +214,7 @@ function EvaluateWaypoint(
       state.implicitWaypoints.add(currentArea.id);
       state.usedWaypoints.add(area.id);
 
+      if (area.is_town_area) state.lastTownAreaId = area.id;
       state.currentAreaId = area.id;
       areaId = area.id;
     }
@@ -252,53 +253,55 @@ function EvaluateGetWaypoint(
   };
 }
 
-interface SetPortalFragment {
-  type: "set_portal";
+interface PortalFragment {
+  type: "portal";
+  targetAreaId?: Area["id"];
 }
 
-function EvaluateSetPortal(
+function EvaluatePortal(
   rawFragment: RawFragment,
   lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
-  if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
-
-  state.portalAreaId = state.currentAreaId;
-  return {
-    fragment: {
-      type: "set_portal",
-    },
-  };
-}
-
-interface UsePortalFragment {
-  type: "use_portal";
-}
-
-function EvaluateUsePortal(
-  rawFragment: RawFragment,
-  lookup: RouteLookup,
-  state: RouteState
-): string | EvaluateResult {
-  if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
-  if (!state.portalAreaId) return "portal must be set";
+  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
   const currentArea = areas[state.currentAreaId];
-  if (currentArea.id == state.portalAreaId) {
-    state.portalAreaId = state.currentAreaId;
-    state.currentAreaId = lookup.towns[currentArea.act];
-  } else {
-    if (!currentArea.is_town_area)
-      return "can only use portal from town or portal area";
-    state.currentAreaId = state.portalAreaId;
-    state.portalAreaId = null;
+  switch (rawFragment[1]) {
+    case "set": {
+      if (currentArea.is_town_area) return "portal cannot be set";
+
+      state.portalAreaId = state.currentAreaId;
+      return {
+        fragment: {
+          type: "portal",
+        },
+      };
+    }
+    case "use": {
+      if (state.portalAreaId != currentArea.id && !currentArea.is_town_area)
+        state.portalAreaId = currentArea.id;
+
+      if (!state.portalAreaId) return "portal cannot be set";
+      const portalArea = areas[state.portalAreaId];
+
+      if (currentArea.id == portalArea.id) {
+        state.portalAreaId = state.currentAreaId;
+        state.currentAreaId = lookup.towns[currentArea.act];
+      } else if (currentArea.id == lookup.towns[portalArea.act]) {
+        state.currentAreaId = state.portalAreaId;
+        state.portalAreaId = null;
+      } else return "can only use portal from town or portal area";
+
+      return {
+        fragment: {
+          type: "portal",
+          targetAreaId: state.currentAreaId,
+        },
+      };
+    }
   }
 
-  return {
-    fragment: {
-      type: "use_portal",
-    },
-  };
+  return ERROR_INVALID_FORMAT;
 }
 
 interface GenericFragment {
@@ -428,8 +431,7 @@ export type Fragment =
   | TownFragment
   | WaypointFragment
   | GetWaypointFragment
-  | SetPortalFragment
-  | UsePortalFragment
+  | PortalFragment
   | QuestFragment
   | QuestTextFragment
   | GenericFragment
@@ -466,10 +468,8 @@ function evaluateFragment(
       return EvaluateWaypoint(rawFragment, lookup, state);
     case "get_waypoint":
       return EvaluateGetWaypoint(rawFragment, lookup, state);
-    case "set_portal":
-      return EvaluateSetPortal(rawFragment, lookup, state);
-    case "use_portal":
-      return EvaluateUsePortal(rawFragment, lookup, state);
+    case "portal":
+      return EvaluatePortal(rawFragment, lookup, state);
     case "quest":
       return EvaluateQuest(rawFragment, lookup, state);
     case "quest_text":
