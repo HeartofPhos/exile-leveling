@@ -34,7 +34,7 @@ function AreaComponent(area?: Area, fallback?: string) {
     <div className={classNames(styles.noWrap)}>
       <span className={classNames(styles.area)}>{area?.name || fallback}</span>
       {area?.is_town_area && (
-        <InlineFakeBlock child={<img src={getImageUrl("town.png")} />} />
+        <InlineFakeBlock child={<img src={getImageUrl("town.png")} alt="" />} />
       )}
     </div>
   );
@@ -46,6 +46,7 @@ function QuestComponent(quest: Quest) {
       <img
         src={getImageUrl("quest.png")}
         className={classNames("inlineIcon")}
+        alt=""
       />
       <span className={classNames(styles.quest)}>{quest.name}</span>
     </div>
@@ -62,6 +63,7 @@ function WaypointComponent() {
       <img
         src={getImageUrl("waypoint.png")}
         className={classNames("inlineIcon")}
+        alt=""
       />
       <span className={classNames(styles.waypoint)}>Waypoint</span>
     </div>
@@ -74,6 +76,7 @@ function TrialComponent() {
       <img
         src={getImageUrl("trial.png")}
         className={classNames("inlineIcon")}
+        alt=""
       />
       <span className={classNames(styles.trial)}>Trial of Ascendancy</span>
     </div>
@@ -96,6 +99,7 @@ function PortalComponent() {
       <img
         src={getImageUrl("portal.png")}
         className={classNames("inlineIcon")}
+        alt=""
       />
       <span className={classNames(styles.portal)}>Portal</span>
     </div>
@@ -128,6 +132,7 @@ function CraftingComponent(craftingRecipes: string[]) {
         <img
           src={getImageUrl("crafting.png")}
           className={classNames("inlineIcon")}
+          alt=""
         />
         <span className={classNames(styles.default)}>Crafting: </span>
       </div>
@@ -144,6 +149,7 @@ function AscendComponent() {
       <img
         src={getImageUrl("trial.png")}
         className={classNames("inlineIcon")}
+        alt=""
       />
       <span className={classNames(styles.trial)}>Ascend</span>
     </div>

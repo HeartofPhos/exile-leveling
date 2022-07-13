@@ -40,7 +40,7 @@ export function GemReward({ requiredGem, type }: GemRewardProps) {
           <div className={classNames(styles.noWrap)}>
             <span> for </span>
             <InlineFakeBlock
-              child={<img src={getImageUrl(`${gem.cost}.png`)} />}
+              child={<img src={getImageUrl(`${gem.cost}.png`)} alt="" />}
             />
           </div>
         )}
