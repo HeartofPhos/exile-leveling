@@ -4,7 +4,6 @@ import { RequiredGem } from "../../../../common/routes";
 import styles from "./GemReward.module.css";
 import { gems, gemColours } from "../../../../common/data";
 import { InlineFakeBlock } from "../InlineFakeBlock";
-import { RewardStep } from "../../../../common/routes/quest";
 
 function getImageUrl(path: string) {
   return new URL(`./images/${path}`, import.meta.url).href;
@@ -23,7 +22,7 @@ function GemRewardVerb(type: GemRewardProps["type"]) {
 
 interface GemRewardProps {
   requiredGem: RequiredGem;
-  type?: RewardStep["reward_type"];
+  type?: "quest" | "vendor";
 }
 
 export function GemReward({ requiredGem, type }: GemRewardProps) {
