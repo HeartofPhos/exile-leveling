@@ -1,5 +1,5 @@
 const PERSISTENT_VERSION: Partial<Record<string, number>> = {
-  "build-data": 1,
+  "build-data": 2,
   "route-progress": 0,
 };
 

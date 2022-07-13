@@ -7,11 +7,13 @@ import {
   Route,
   RouteLookup,
 } from "../../../../common/routes";
-import { ExileList } from "../../components/ExileList";
+import { ExileList, ListItemContext } from "../../components/ExileList";
 import { ExileStep } from "../../components/ExileStep";
 import React from "react";
 import { routeFiles } from "../../../../common/data";
 import { getPersistent, setPersistent } from "../../utility";
+import { findGems } from "../../../../common/routes/quest";
+import { GemReward } from "../../components/GemReward";
 
 type RouteProgress = boolean[][];
 
@@ -19,12 +21,13 @@ export class RoutesContainer extends React.Component {
   private routes: Route[];
   private routeLookup: RouteLookup;
   private routeProgress: RouteProgress;
+  private buildData: BuildData | null;
 
   constructor(props: {}) {
     super(props);
 
-    const buildData = getPersistent<BuildData>("build-data");
-    this.routeLookup = initializeRouteLookup(buildData);
+    this.buildData = getPersistent<BuildData>("build-data");
+    this.routeLookup = initializeRouteLookup();
     const routeState = initializeRouteState();
     this.routes = parseRoute(routeFiles, this.routeLookup, routeState);
 
@@ -40,8 +43,11 @@ export class RoutesContainer extends React.Component {
   }
 
   render(): ReactNode {
+    const routeGems: Set<number> = new Set();
     const items: ReactNode[] = [];
     for (let routeIndex = 0; routeIndex < this.routes.length; routeIndex++) {
+      let contextLookup: ListItemContext[] = [];
+
       const route = this.routes[routeIndex];
 
       let steps: ReactNode[] = [];
@@ -50,17 +56,74 @@ export class RoutesContainer extends React.Component {
         steps.push(
           <ExileStep key={stepIndex} step={step} lookup={this.routeLookup} />
         );
+        contextLookup.push({
+          initialIsCompleted: this.routeProgress[routeIndex][stepIndex],
+          onUpdate: (isCompleted) => {
+            this.routeProgress[routeIndex][stepIndex] = isCompleted;
+            setPersistent("route-progress", this.routeProgress);
+          },
+        });
+
+        if (this.buildData) {
+          if (step.type == "fragment_step") {
+            for (const part of step.parts) {
+              if (typeof part !== "string" && part.type == "quest") {
+                const { questGems, vendorGems } = findGems(
+                  part,
+                  this.buildData,
+                  routeGems
+                );
+
+                for (const gemIndex of questGems) {
+                  steps.push(
+                    <GemReward
+                      key={steps.length}
+                      requiredGem={this.buildData.requiredGems[gemIndex]}
+                      type="quest"
+                    />
+                  );
+                  contextLookup.push({
+                    initialIsCompleted:
+                      this.buildData.requiredGems[gemIndex].acquired,
+                    onUpdate: (isCompleted) => {
+                      this.buildData!.requiredGems[gemIndex].acquired =
+                        isCompleted;
+
+                      setPersistent("build-data", this.buildData);
+                    },
+                  });
+                }
+
+                for (const gemIndex of vendorGems) {
+                  steps.push(
+                    <GemReward
+                      key={steps.length}
+                      requiredGem={this.buildData.requiredGems[gemIndex]}
+                      type="vendor"
+                    />
+                  );
+                  contextLookup.push({
+                    initialIsCompleted:
+                      this.buildData.requiredGems[gemIndex].acquired,
+                    onUpdate: (isCompleted) => {
+                      this.buildData!.requiredGems[gemIndex].acquired =
+                        isCompleted;
+
+                      setPersistent("build-data", this.buildData);
+                    },
+                  });
+                }
+              }
+            }
+          }
+        }
       }
 
       items.push(
         <ExileList
           key={routeIndex}
           header={`--== Act ${routeIndex + 1} ==--`}
-          initialCompleted={this.routeProgress[routeIndex]}
-          onUpdate={(index, isCompleted) => {
-            this.routeProgress[routeIndex][index] = isCompleted;
-            setPersistent("route-progress", this.routeProgress);
-          }}
+          contextLookup={contextLookup}
         >
           {steps}
         </ExileList>

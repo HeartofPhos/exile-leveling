@@ -13,7 +13,6 @@ export function Build() {
     const fn = async () => {
       if (buildData) {
         setPersistent("build-data", buildData);
-        clearPersistent("route-progress");
       } else {
         const buildData = getPersistent<BuildData>("build-data");
         if (buildData) setBuildData(buildData);
@@ -31,55 +30,53 @@ export function Build() {
         }}
         onReset={() => {
           clearPersistent("build-data");
-          clearPersistent("route-progress");
           setBuildData(null);
         }}
       />
       <hr />
       {buildData && (
         <ExileList header={buildData.characterClass}>
-          {buildData &&
-            buildData.requiredGems.map((requiredGem, i) => (
-              <GemOrder
-                key={i}
-                onMoveTop={() => {
-                  const splice = buildData.requiredGems.splice(i, 1);
-                  buildData.requiredGems.unshift(...splice);
-                  setBuildData({
-                    ...buildData,
-                  });
-                }}
-                onMoveUp={() => {
-                  if (i == 0) return;
+          {buildData.requiredGems.map((requiredGem, i) => (
+            <GemOrder
+              key={i}
+              onMoveTop={() => {
+                const splice = buildData.requiredGems.splice(i, 1);
+                buildData.requiredGems.unshift(...splice);
+                setBuildData({
+                  ...buildData,
+                });
+              }}
+              onMoveUp={() => {
+                if (i == 0) return;
 
-                  const swap = buildData.requiredGems[i];
-                  buildData.requiredGems[i] = buildData.requiredGems[i - 1];
-                  buildData.requiredGems[i - 1] = swap;
+                const swap = buildData.requiredGems[i];
+                buildData.requiredGems[i] = buildData.requiredGems[i - 1];
+                buildData.requiredGems[i - 1] = swap;
 
-                  setBuildData({
-                    ...buildData,
-                  });
-                }}
-                onMoveDown={() => {
-                  if (i == buildData.requiredGems.length - 1) return;
+                setBuildData({
+                  ...buildData,
+                });
+              }}
+              onMoveDown={() => {
+                if (i == buildData.requiredGems.length - 1) return;
 
-                  const swap = buildData.requiredGems[i];
-                  buildData.requiredGems[i] = buildData.requiredGems[i + 1];
-                  buildData.requiredGems[i + 1] = swap;
+                const swap = buildData.requiredGems[i];
+                buildData.requiredGems[i] = buildData.requiredGems[i + 1];
+                buildData.requiredGems[i + 1] = swap;
 
-                  setBuildData({
-                    ...buildData,
-                  });
-                }}
-                onDelete={() => {
-                  buildData.requiredGems.splice(i, 1);
-                  setBuildData({
-                    ...buildData,
-                  });
-                }}
-                requiredGem={requiredGem}
-              />
-            ))}
+                setBuildData({
+                  ...buildData,
+                });
+              }}
+              onDelete={() => {
+                buildData.requiredGems.splice(i, 1);
+                setBuildData({
+                  ...buildData,
+                });
+              }}
+              requiredGem={requiredGem}
+            />
+          ))}
         </ExileList>
       )}
     </div>

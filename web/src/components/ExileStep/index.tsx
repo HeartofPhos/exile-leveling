@@ -15,11 +15,6 @@ function mapStep(step: Step, lookup: RouteLookup) {
         )
       );
     }
-    case "reward_step": {
-      return (
-        <GemReward requiredGem={step.requiredGem} type={step.reward_type} />
-      );
-    }
   }
 
   throw new Error("unexpected type");
