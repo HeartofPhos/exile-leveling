@@ -43,7 +43,7 @@ export class RoutesContainer extends React.Component {
   }
 
   render(): ReactNode {
-    const acquiredGems: Set<number> = new Set();
+    const routeGems: Set<number> = new Set();
     const items: ReactNode[] = [];
     for (let routeIndex = 0; routeIndex < this.routes.length; routeIndex++) {
       let contextLookup: ListItemContext[] = [];
@@ -71,7 +71,7 @@ export class RoutesContainer extends React.Component {
                 const { questGems, vendorGems } = findGems(
                   part,
                   this.buildData,
-                  acquiredGems
+                  routeGems
                 );
 
                 for (const gemIndex of questGems) {

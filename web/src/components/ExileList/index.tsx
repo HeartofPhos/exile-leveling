@@ -52,14 +52,8 @@ export function ExileList({ children, header, contextLookup }: ListProps) {
         {Children.map(children, (child, i) => (
           <ExileListItem
             key={i}
-            initialIsCompleted={
-              contextLookup && contextLookup[i].initialIsCompleted
-            }
-            onUpdate={
-              contextLookup && contextLookup[i].onUpdate
-                ? (isCompleted) => contextLookup[i].onUpdate!(isCompleted)
-                : undefined
-            }
+            initialIsCompleted={contextLookup?.[i].initialIsCompleted}
+            onUpdate={contextLookup?.[i].onUpdate}
           >
             {child}
           </ExileListItem>

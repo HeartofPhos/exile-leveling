@@ -20,7 +20,7 @@ export interface QuestFragment {
 export function findGems(
   questFragment: QuestFragment,
   buildData: BuildData,
-  acquiredGems: Set<number>
+  routeGems: Set<number>
 ) {
   const quest = quests[questFragment.questId];
 
@@ -29,16 +29,12 @@ export function findGems(
   for (const index of questFragment.rewardOffers) {
     const reward_offer = quest.reward_offers[index];
 
-    const questReward = findQuestGem(
-      buildData,
-      acquiredGems,
-      reward_offer.quest
-    );
+    const questReward = findQuestGem(buildData, routeGems, reward_offer.quest);
     if (questReward !== null) questGems.push(questReward);
 
     const vendorRewards = findVendorGems(
       buildData,
-      acquiredGems,
+      routeGems,
       reward_offer.vendor
     );
     for (const vendorReward of vendorRewards) {
@@ -54,12 +50,12 @@ export function findGems(
 
 function findQuestGem(
   buildData: BuildData,
-  acquiredGems: Set<number>,
+  routeGems: Set<number>,
   quest_rewards: Quest["reward_offers"][0]["quest"]
 ): number | null {
   for (let i = 0; i < buildData.requiredGems.length; i++) {
     const requiredGem = buildData.requiredGems[i];
-    if (acquiredGems.has(i)) continue;
+    if (routeGems.has(i)) continue;
 
     const reward = quest_rewards[requiredGem.id];
     if (!reward) continue;
@@ -69,7 +65,7 @@ function findQuestGem(
       reward.classes.some((x) => x == buildData.characterClass);
 
     if (validClass) {
-      acquiredGems.add(i);
+      routeGems.add(i);
       return i;
     }
   }
@@ -79,13 +75,13 @@ function findQuestGem(
 
 function findVendorGems(
   buildData: BuildData,
-  acquiredGems: Set<number>,
+  routeGems: Set<number>,
   vendor_rewards: Quest["reward_offers"][0]["vendor"]
 ): number[] {
   const result: number[] = [];
   for (let i = 0; i < buildData.requiredGems.length; i++) {
     const requiredGem = buildData.requiredGems[i];
-    if (acquiredGems.has(i)) continue;
+    if (routeGems.has(i)) continue;
 
     const reward = vendor_rewards[requiredGem.id];
     if (!reward) continue;
@@ -95,7 +91,7 @@ function findVendorGems(
       reward.classes.some((x) => x == buildData.characterClass);
 
     if (validClass) {
-      acquiredGems.add(i);
+      routeGems.add(i);
       result.push(i);
     }
   }
