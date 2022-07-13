@@ -31,7 +31,7 @@ html {
   box-sizing: border-box;
   background-color: var(--primary-darker);
   color: var(--primary);
-  font-family: "Source Sans Pro";
+  font-family: "Source Sans Pro", "Segoe UI", Tahoma, Verdana, sans-serif;
   font-size: 1em;
   font-weight: 400;
 }
