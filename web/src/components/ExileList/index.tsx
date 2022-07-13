@@ -4,16 +4,16 @@ import styles from "./ExileList.module.css";
 
 interface ListItemProps {
   children?: React.ReactNode;
-  initialIsDone?: boolean;
+  initialIsCompleted?: boolean;
   onUpdate?: (isCompleted: boolean) => void;
 }
 
 export function ExileListItem({
   children,
-  initialIsDone,
+  initialIsCompleted,
   onUpdate,
 }: ListItemProps) {
-  const [isCompleted, setIsCompleted] = useState(initialIsDone);
+  const [isCompleted, setIsCompleted] = useState(initialIsCompleted);
   useEffect(() => {
     if (isCompleted === undefined) return;
     if (onUpdate) onUpdate(isCompleted);
@@ -32,36 +32,38 @@ export function ExileListItem({
   );
 }
 
+export interface ListItemContext {
+  initialIsCompleted?: boolean;
+  onUpdate?: (isCompleted: boolean) => void;
+}
+
 interface ListProps {
   children?: React.ReactNode;
   header: string;
-  initialCompleted?: boolean[];
-  onUpdate?: (index: number, isCompleted: boolean) => void;
+  contextLookup?: ListItemContext[];
 }
 
-export function ExileList({
-  children,
-  header,
-  initialCompleted,
-  onUpdate,
-}: ListProps) {
+export function ExileList({ children, header, contextLookup }: ListProps) {
   return (
     <div className={classNames(styles.holder)}>
       <span className={classNames(styles.header)}>{header}</span>
       <hr />
       <ol className={classNames(styles.list)}>
-        {children &&
-          Children.map(children, (child, i) => (
-            <ExileListItem
-              key={i}
-              initialIsDone={initialCompleted ? initialCompleted[i] : undefined}
-              onUpdate={
-                onUpdate ? (isCompleted) => onUpdate(i, isCompleted) : undefined
-              }
-            >
-              {child}
-            </ExileListItem>
-          ))}
+        {Children.map(children, (child, i) => (
+          <ExileListItem
+            key={i}
+            initialIsCompleted={
+              contextLookup && contextLookup[i].initialIsCompleted
+            }
+            onUpdate={
+              contextLookup && contextLookup[i].onUpdate
+                ? (isCompleted) => contextLookup[i].onUpdate!(isCompleted)
+                : undefined
+            }
+          >
+            {child}
+          </ExileListItem>
+        ))}
       </ol>
       <hr />
     </div>

@@ -496,6 +496,7 @@ export interface BuildData {
 export interface RequiredGem {
   id: string;
   note: string;
+  acquired: boolean;
 }
 
 export function initializeRouteLookup() {

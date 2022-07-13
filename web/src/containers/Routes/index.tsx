@@ -4,11 +4,10 @@ import {
   initializeRouteLookup,
   initializeRouteState,
   parseRoute,
-  RequiredGem,
   Route,
   RouteLookup,
 } from "../../../../common/routes";
-import { ExileList } from "../../components/ExileList";
+import { ExileList, ListItemContext } from "../../components/ExileList";
 import { ExileStep } from "../../components/ExileStep";
 import React from "react";
 import { routeFiles } from "../../../../common/data";
@@ -44,9 +43,11 @@ export class RoutesContainer extends React.Component {
   }
 
   render(): ReactNode {
-    const acquiredGems: Set<RequiredGem["id"]> = new Set();
+    const acquiredGems: Set<number> = new Set();
     const items: ReactNode[] = [];
     for (let routeIndex = 0; routeIndex < this.routes.length; routeIndex++) {
+      let contextLookup: ListItemContext[] = [];
+
       const route = this.routes[routeIndex];
 
       let steps: ReactNode[] = [];
@@ -55,6 +56,13 @@ export class RoutesContainer extends React.Component {
         steps.push(
           <ExileStep key={stepIndex} step={step} lookup={this.routeLookup} />
         );
+        contextLookup.push({
+          initialIsCompleted: this.routeProgress[routeIndex][stepIndex],
+          onUpdate: (isCompleted) => {
+            this.routeProgress[routeIndex][stepIndex] = isCompleted;
+            setPersistent("route-progress", this.routeProgress);
+          },
+        });
 
         if (this.buildData) {
           if (step.type == "fragment_step") {
@@ -66,24 +74,44 @@ export class RoutesContainer extends React.Component {
                   acquiredGems
                 );
 
-                for (const gem of questGems) {
+                for (const gemIndex of questGems) {
                   steps.push(
                     <GemReward
                       key={steps.length}
-                      requiredGem={gem}
+                      requiredGem={this.buildData.requiredGems[gemIndex]}
                       type="quest"
                     />
                   );
+                  contextLookup.push({
+                    initialIsCompleted:
+                      this.buildData.requiredGems[gemIndex].acquired,
+                    onUpdate: (isCompleted) => {
+                      this.buildData!.requiredGems[gemIndex].acquired =
+                        isCompleted;
+
+                      setPersistent("build-data", this.buildData);
+                    },
+                  });
                 }
 
-                for (const gem of vendorGems) {
+                for (const gemIndex of vendorGems) {
                   steps.push(
                     <GemReward
                       key={steps.length}
-                      requiredGem={gem}
-                      type="vendorGems"
+                      requiredGem={this.buildData.requiredGems[gemIndex]}
+                      type="vendor"
                     />
                   );
+                  contextLookup.push({
+                    initialIsCompleted:
+                      this.buildData.requiredGems[gemIndex].acquired,
+                    onUpdate: (isCompleted) => {
+                      this.buildData!.requiredGems[gemIndex].acquired =
+                        isCompleted;
+
+                      setPersistent("build-data", this.buildData);
+                    },
+                  });
                 }
               }
             }
@@ -95,11 +123,7 @@ export class RoutesContainer extends React.Component {
         <ExileList
           key={routeIndex}
           header={`--== Act ${routeIndex + 1} ==--`}
-          initialCompleted={this.routeProgress[routeIndex]}
-          onUpdate={(index, isCompleted) => {
-            this.routeProgress[routeIndex][index] = isCompleted;
-            setPersistent("route-progress", this.routeProgress);
-          }}
+          contextLookup={contextLookup}
         >
           {steps}
         </ExileList>

@@ -83,6 +83,7 @@ function processPob(
           requiredGems.push({
             id: gemId,
             note: note.replace(POB_COLOUR_REGEX, ""),
+            acquired: false,
           });
         }
       }
