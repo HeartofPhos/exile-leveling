@@ -25,7 +25,7 @@ export interface RewardStep {
 function tryFindQuestReward(
   lookup: RouteLookup,
   state: RouteState,
-  quest_rewards: Quest["quest_rewards"][0]
+  quest_rewards: Quest["reward_offers"][0]["quest"]
 ): Step | null {
   if (lookup.buildData) {
     for (const requiredGem of lookup.buildData.requiredGems) {
@@ -55,7 +55,7 @@ function tryFindQuestReward(
 function tryFindVendorRewards(
   lookup: RouteLookup,
   state: RouteState,
-  vendor_rewards: Quest["vendor_rewards"][0]
+  vendor_rewards: Quest["reward_offers"][0]["vendor"]
 ): Step[] {
   const result: Step[] = [];
   if (lookup.buildData) {
@@ -95,32 +95,29 @@ export function EvaluateQuest(
     const quest = quests[questId];
     if (!quest) return "invalid quest id";
 
-    let quest_rewards;
-    let vendor_rewards;
+    let reward_offers;
     if (rawFragment.length == 2) {
-      quest_rewards = quest.quest_rewards;
-      vendor_rewards = quest.vendor_rewards;
+      reward_offers = quest.reward_offers;
     } else {
-      quest_rewards = [];
-      vendor_rewards = [];
+      reward_offers = [];
       for (let i = 2; i < rawFragment.length; i++) {
         const questRewardIndex = Number.parseInt(rawFragment[i]);
-        quest_rewards.push(quest.quest_rewards[questRewardIndex]);
-        vendor_rewards.push(quest.vendor_rewards[questRewardIndex]);
+        reward_offers.push(quest.reward_offers[questRewardIndex]);
       }
     }
 
     const additionalSteps: Step[] = [];
-    for (const rewards of quest_rewards) {
-      const questReward = tryFindQuestReward(lookup, state, rewards);
+    for (const reward_offer of reward_offers) {
+      const questReward = tryFindQuestReward(lookup, state, reward_offer.quest);
       if (questReward) {
         additionalSteps.push(questReward);
       }
-    }
-    for (const rewards of vendor_rewards) {
-      const vendorRewards = tryFindVendorRewards(lookup, state, rewards).map(
-        (x) => x
-      );
+
+      const vendorRewards = tryFindVendorRewards(
+        lookup,
+        state,
+        reward_offer.vendor
+      ).map((x) => x);
       additionalSteps.push(...vendorRewards);
     }
 

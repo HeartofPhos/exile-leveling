@@ -34,13 +34,7 @@ export class RoutesContainer extends React.Component<{}, RoutesContainerState> {
     const routeLookup = initializeRouteLookup(buildData);
     const routeState = initializeRouteState();
 
-    const routeSources = Object.keys(routeFiles)
-      .sort((a, b) =>
-        a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" })
-      )
-      .map((x) => routeFiles[x]);
-
-    const routes = parseRoute(routeSources, routeLookup, routeState);
+    const routes = parseRoute(routeFiles, routeLookup, routeState);
 
     this.state = {
       routeData: { routes: routes, lookup: routeLookup },

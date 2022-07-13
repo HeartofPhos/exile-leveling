@@ -21,12 +21,16 @@ export interface VendorReward {
   npc: string;
 }
 
+export interface RewardOffer {
+  quest: Partial<Record<string, QuestReward>>;
+  vendor: Partial<Record<string, VendorReward>>;
+}
+
 export interface Quest {
   id: string;
   name: string;
   act: string;
-  quest_rewards: Partial<Record<string, QuestReward>>[];
-  vendor_rewards: Partial<Record<string, VendorReward>>[];
+  reward_offers: RewardOffer[];
 }
 
 export interface Area {

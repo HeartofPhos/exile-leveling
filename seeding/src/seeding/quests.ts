@@ -1,4 +1,4 @@
-import { Quest, Quests } from "../../../common/types";
+import { Quest, QuestReward, Quests } from "../../../common/types";
 import { cargoQuery } from "../wiki";
 import { QuestDat } from "../../data";
 
@@ -8,49 +8,42 @@ const BREAKING_SOME_EGGS_REWARD_2 = [
   "Metadata/Items/Gems/SkillGemDash",
 ];
 
-function processQuestRewards(quest: Quest, test: (key: string) => boolean) {
-  const quest_rewards: Quest["quest_rewards"] = [{}, {}];
-  for (const key in quest.quest_rewards[0]) {
-    if (test(key)) {
-      quest_rewards[0][key] = quest.quest_rewards[0][key];
-    } else {
-      quest_rewards[1][key] = quest.quest_rewards[0][key];
-    }
-  }
-  quest.quest_rewards = quest_rewards;
-}
+function processRewards(quest: Quest, test: (key: string) => boolean) {
+  const reward_offers: Quest["reward_offers"] = [
+    { quest: {}, vendor: {} },
+    { quest: {}, vendor: {} },
+  ];
 
-function processVendorRewards(quest: Quest, test: (key: string) => boolean) {
-  const vendor_rewards: Quest["vendor_rewards"] = [{}, {}];
-  for (const key in quest.vendor_rewards[0]) {
+  for (const key in quest.reward_offers[0].quest) {
     if (test(key)) {
-      vendor_rewards[0][key] = quest.vendor_rewards[0][key];
+      reward_offers[0].quest[key] = quest.reward_offers[0].quest[key];
     } else {
-      vendor_rewards[1][key] = quest.vendor_rewards[0][key];
+      reward_offers[1].quest[key] = quest.reward_offers[0].quest[key];
     }
   }
-  quest.vendor_rewards = vendor_rewards;
+
+  for (const key in quest.reward_offers[0].vendor) {
+    if (test(key)) {
+      reward_offers[0].vendor[key] = quest.reward_offers[0].vendor[key];
+    } else {
+      reward_offers[1].vendor[key] = quest.reward_offers[0].vendor[key];
+    }
+  }
+
+  quest.reward_offers = reward_offers;
 }
 
 function postProcessQuest(quest: Quest) {
   switch (quest.id) {
     //Hack for The Caged Brute
     case "a1q2":
-      {
-        processQuestRewards(quest, (key) => key.includes("Support"));
-        processVendorRewards(quest, (key) => key.includes("Support"));
-      }
+      processRewards(quest, (key) => key.includes("Support"));
       break;
     //Hack for Breaking Some Eggs
     case "a1q4":
-      {
-        processQuestRewards(quest, (key) =>
-          BREAKING_SOME_EGGS_REWARD_2.every((x) => x != key)
-        );
-        processVendorRewards(quest, (key) =>
-          BREAKING_SOME_EGGS_REWARD_2.every((x) => x != key)
-        );
-      }
+      processRewards(quest, (key) =>
+        BREAKING_SOME_EGGS_REWARD_2.every((x) => x != key)
+      );
       break;
   }
 }
@@ -67,8 +60,7 @@ export async function getQuests() {
       id: row.Id,
       name: row.Name,
       act: row.Act.toString(),
-      quest_rewards: [{}],
-      vendor_rewards: [{}],
+      reward_offers: [{ quest: {}, vendor: {} }],
     };
 
     result[quest.id] = quest;
@@ -78,7 +70,7 @@ export async function getQuests() {
   for (const item of questRewards) {
     const quest = result[item.quest_id];
     if (!quest) continue;
-    quest.quest_rewards[0][item.item_id] = {
+    quest.reward_offers[0].quest[item.item_id] = {
       classes: item.classes?.split(",") || [],
     };
   }
@@ -87,7 +79,7 @@ export async function getQuests() {
   for (const item of vendorRewards) {
     const quest = result[item.quest_id];
     if (!quest) continue;
-    quest.vendor_rewards[0][item.item_id] = {
+    quest.reward_offers[0].vendor[item.item_id] = {
       classes: item.classes?.split(",") || [],
       npc: item.npc,
     };

@@ -13,7 +13,13 @@ export const gems = GEMS_JSON as Gems;
 export const gemColours = GEM_COLOURS_JSON as GemColours;
 
 //@ts-expect-error
-export const routeFiles: Record<string, string> = import.meta.glob(
+const routeFilesLookup: Record<string, string> = import.meta.glob(
   "./routes/*.txt",
   { as: "raw" }
 );
+
+export const routeFiles = Object.keys(routeFilesLookup)
+  .sort((a, b) =>
+    a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" })
+  )
+  .map((x) => routeFilesLookup[x]);
