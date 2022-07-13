@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { HashRouter, Route, Routes } from "react-router-dom";
@@ -9,14 +8,12 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <div className={classNames("container")}>
-      <HashRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<RoutesContainer />} />
-          <Route path="/build" element={<Build />} />
-        </Routes>
-      </HashRouter>
-    </div>
+    <HashRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<RoutesContainer />} />
+        <Route path="/build" element={<Build />} />
+      </Routes>
+    </HashRouter>
   </React.StrictMode>
 );

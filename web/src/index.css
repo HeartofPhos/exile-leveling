@@ -42,7 +42,7 @@ hr {
   color: var(--border-color);
 }
 
-.container {
+#root {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
