@@ -100,7 +100,7 @@ function processPob(
 }
 
 interface BuildFormProps {
-  onSubmit: (buildata: BuildData) => void;
+  onSubmit: (buildData: BuildData) => void;
   onReset: () => void;
 }
 
@@ -133,8 +133,8 @@ export function BuildForm({ onSubmit, onReset }: BuildFormProps) {
         <button
           className={classNames(styles.formButton)}
           onClick={() => {
-            const builData = processPob(pobCode, "RECENT_EMPTY_SKILL_LABEL");
-            if (builData) onSubmit(builData);
+            const buildData = processPob(pobCode, "RECENT_EMPTY_SKILL_LABEL");
+            if (buildData) onSubmit(buildData);
           }}
         >
           Submit

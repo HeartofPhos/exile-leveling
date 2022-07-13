@@ -4,7 +4,6 @@ import {
   EvaluateQuestText,
   QuestFragment,
   QuestTextFragment,
-  RewardStep,
 } from "./quest";
 import { areas, killWaypoints } from "../../common/data";
 
@@ -16,12 +15,11 @@ export interface FragmentStep {
   parts: (string | Fragment)[];
 }
 
-export type Step = FragmentStep | RewardStep;
+export type Step = FragmentStep;
 export type Route = Step[];
 
 export interface RouteLookup {
   towns: Record<Area["act"], Area["id"]>;
-  buildData: BuildData | null;
 }
 
 export interface RouteState {
@@ -196,7 +194,8 @@ function EvaluateWaypoint(
   state: RouteState
 ): string | EvaluateResult {
   {
-    if (rawFragment.length != 1 && rawFragment.length != 2) return ERROR_INVALID_FORMAT;
+    if (rawFragment.length != 1 && rawFragment.length != 2)
+      return ERROR_INVALID_FORMAT;
 
     let areaId: Area["id"] | null = null;
     if (rawFragment.length == 2) {
@@ -443,8 +442,7 @@ export const ERROR_MISSING_AREA = "area does not exist";
 export const ERROR_AREA_NO_WAYPOINT = "area does not have a waypoint";
 
 export interface EvaluateResult {
-  fragment?: Fragment;
-  additionalSteps?: Step[];
+  fragment: Fragment;
 }
 
 function evaluateFragment(
@@ -500,10 +498,9 @@ export interface RequiredGem {
   note: string;
 }
 
-export function initializeRouteLookup(buildData: BuildData | null) {
+export function initializeRouteLookup() {
   const routeLookup: RouteLookup = {
     towns: {},
-    buildData: buildData,
   };
 
   for (const id in areas) {
@@ -548,23 +545,17 @@ export function parseRoute(
         parts: [],
       };
 
-      const additionalSteps: Step[] = [];
       for (const subStep of parsedStep) {
         if (typeof subStep == "string") {
           step.parts.push(subStep);
         } else {
           const result = evaluateFragment(subStep, lookup, state);
           if (typeof result == "string") console.log(`${result}: ${subStep}`);
-          else {
-            if (result.fragment) step.parts.push(result.fragment);
-            if (result.additionalSteps)
-              additionalSteps.push(...result.additionalSteps);
-          }
+          else step.parts.push(result.fragment);
         }
       }
 
       if (step.parts.length > 0) route.push(step);
-      route.push(...additionalSteps);
     }
 
     routes.push(route);

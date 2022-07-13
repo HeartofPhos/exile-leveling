@@ -1,4 +1,5 @@
 import {
+  BuildData,
   ERROR_INVALID_FORMAT,
   EvaluateResult,
   RawFragment,
@@ -14,69 +15,88 @@ import { quests } from "../data";
 export interface QuestFragment {
   type: "quest";
   questId: Quest["id"];
+  rewardOffers: number[];
 }
 
-export interface RewardStep {
-  type: "reward_step";
-  reward_type: "quest" | "vendor";
-  requiredGem: RequiredGem;
+export function findGems(
+  questFragment: QuestFragment,
+  buildData: BuildData,
+  acquiredGems: Set<RequiredGem["id"]>
+) {
+  const quest = quests[questFragment.questId];
+
+  let questGems = [];
+  let vendorGems = [];
+  for (const index of questFragment.rewardOffers) {
+    const reward_offer = quest.reward_offers[index];
+    const questReward = findQuestGem(
+      buildData,
+      acquiredGems,
+      reward_offer.quest
+    );
+    if (questReward) {
+      questGems.push(questReward);
+    }
+
+    const vendorRewards = findVendorGems(
+      buildData,
+      acquiredGems,
+      reward_offer.vendor
+    );
+    for (const vendorReward of vendorRewards) {
+      vendorGems.push(vendorReward);
+    }
+  }
+
+  return {
+    questGems,
+    vendorGems,
+  };
 }
 
-function tryFindQuestReward(
-  lookup: RouteLookup,
-  state: RouteState,
+function findQuestGem(
+  buildData: BuildData,
+  acquiredGems: Set<RequiredGem["id"]>,
   quest_rewards: Quest["reward_offers"][0]["quest"]
-): Step | null {
-  if (lookup.buildData) {
-    for (const requiredGem of lookup.buildData.requiredGems) {
-      if (state.acquiredGems.has(requiredGem.id)) continue;
+): RequiredGem | null {
+  for (const requiredGem of buildData.requiredGems) {
+    if (acquiredGems.has(requiredGem.id)) continue;
 
-      const reward = quest_rewards[requiredGem.id];
-      if (!reward) continue;
+    const reward = quest_rewards[requiredGem.id];
+    if (!reward) continue;
 
-      const validClass =
-        reward.classes.length == 0 ||
-        reward.classes.some((x) => x == lookup.buildData?.characterClass);
+    const validClass =
+      reward.classes.length == 0 ||
+      reward.classes.some((x) => x == buildData.characterClass);
 
-      if (validClass) {
-        state.acquiredGems.add(requiredGem.id);
-        return {
-          type: "reward_step",
-          reward_type: "quest",
-          requiredGem: requiredGem,
-        };
-      }
+    if (validClass) {
+      acquiredGems.add(requiredGem.id);
+      return requiredGem;
     }
   }
 
   return null;
 }
 
-function tryFindVendorRewards(
-  lookup: RouteLookup,
-  state: RouteState,
+function findVendorGems(
+  buildData: BuildData,
+  acquiredGems: Set<RequiredGem["id"]>,
   vendor_rewards: Quest["reward_offers"][0]["vendor"]
-): Step[] {
-  const result: Step[] = [];
-  if (lookup.buildData) {
-    for (const requiredGem of lookup.buildData.requiredGems) {
-      if (state.acquiredGems.has(requiredGem.id)) continue;
+): RequiredGem[] {
+  const result: RequiredGem[] = [];
+  for (const requiredGem of buildData.requiredGems) {
+    if (acquiredGems.has(requiredGem.id)) continue;
 
-      const reward = vendor_rewards[requiredGem.id];
-      if (!reward) continue;
+    const reward = vendor_rewards[requiredGem.id];
+    if (!reward) continue;
 
-      const validClass =
-        reward.classes.length == 0 ||
-        reward.classes.some((x) => x == lookup.buildData?.characterClass);
+    const validClass =
+      reward.classes.length == 0 ||
+      reward.classes.some((x) => x == buildData.characterClass);
 
-      if (validClass) {
-        state.acquiredGems.add(requiredGem.id);
-        result.push({
-          type: "reward_step",
-          reward_type: "vendor",
-          requiredGem: requiredGem,
-        });
-      }
+    if (validClass) {
+      acquiredGems.add(requiredGem.id);
+      result.push(requiredGem);
     }
   }
 
@@ -95,38 +115,23 @@ export function EvaluateQuest(
     const quest = quests[questId];
     if (!quest) return "invalid quest id";
 
-    let reward_offers;
+    let rewardOfferIds;
     if (rawFragment.length == 2) {
-      reward_offers = quest.reward_offers;
+      rewardOfferIds = quest.reward_offers.map((v, i) => i);
     } else {
-      reward_offers = [];
+      rewardOfferIds = [];
       for (let i = 2; i < rawFragment.length; i++) {
         const questRewardIndex = Number.parseInt(rawFragment[i]);
-        reward_offers.push(quest.reward_offers[questRewardIndex]);
+        rewardOfferIds.push(questRewardIndex);
       }
-    }
-
-    const additionalSteps: Step[] = [];
-    for (const reward_offer of reward_offers) {
-      const questReward = tryFindQuestReward(lookup, state, reward_offer.quest);
-      if (questReward) {
-        additionalSteps.push(questReward);
-      }
-
-      const vendorRewards = tryFindVendorRewards(
-        lookup,
-        state,
-        reward_offer.vendor
-      ).map((x) => x);
-      additionalSteps.push(...vendorRewards);
     }
 
     return {
       fragment: {
         type: "quest",
         questId: rawFragment[1],
+        rewardOffers: rewardOfferIds,
       },
-      additionalSteps: additionalSteps,
     };
   }
 }

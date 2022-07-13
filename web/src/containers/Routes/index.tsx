@@ -4,6 +4,7 @@ import {
   initializeRouteLookup,
   initializeRouteState,
   parseRoute,
+  RequiredGem,
   Route,
   RouteLookup,
 } from "../../../../common/routes";
@@ -12,6 +13,8 @@ import { ExileStep } from "../../components/ExileStep";
 import React from "react";
 import { routeFiles } from "../../../../common/data";
 import { getPersistent, setPersistent } from "../../utility";
+import { findGems } from "../../../../common/routes/quest";
+import { GemReward } from "../../components/GemReward";
 
 type RouteProgress = boolean[][];
 
@@ -19,12 +22,13 @@ export class RoutesContainer extends React.Component {
   private routes: Route[];
   private routeLookup: RouteLookup;
   private routeProgress: RouteProgress;
+  private buildData: BuildData | null;
 
   constructor(props: {}) {
     super(props);
 
-    const buildData = getPersistent<BuildData>("build-data");
-    this.routeLookup = initializeRouteLookup(buildData);
+    this.buildData = getPersistent<BuildData>("build-data");
+    this.routeLookup = initializeRouteLookup();
     const routeState = initializeRouteState();
     this.routes = parseRoute(routeFiles, this.routeLookup, routeState);
 
@@ -40,6 +44,7 @@ export class RoutesContainer extends React.Component {
   }
 
   render(): ReactNode {
+    const acquiredGems: Set<RequiredGem["id"]> = new Set();
     const items: ReactNode[] = [];
     for (let routeIndex = 0; routeIndex < this.routes.length; routeIndex++) {
       const route = this.routes[routeIndex];
@@ -50,6 +55,40 @@ export class RoutesContainer extends React.Component {
         steps.push(
           <ExileStep key={stepIndex} step={step} lookup={this.routeLookup} />
         );
+
+        if (this.buildData) {
+          if (step.type == "fragment_step") {
+            for (const part of step.parts) {
+              if (typeof part !== "string" && part.type == "quest") {
+                const { questGems, vendorGems } = findGems(
+                  part,
+                  this.buildData,
+                  acquiredGems
+                );
+
+                for (const gem of questGems) {
+                  steps.push(
+                    <GemReward
+                      key={steps.length}
+                      requiredGem={gem}
+                      type="quest"
+                    />
+                  );
+                }
+
+                for (const gem of vendorGems) {
+                  steps.push(
+                    <GemReward
+                      key={steps.length}
+                      requiredGem={gem}
+                      type="vendorGems"
+                    />
+                  );
+                }
+              }
+            }
+          }
+        }
       }
 
       items.push(
