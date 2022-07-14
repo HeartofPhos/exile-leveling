@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-import { ExileList } from "../../components/ExileList";
+import { TaskItemProps, TaskList } from "../../components/TaskList";
 import { GemOrder } from "../../components/GemOrder";
 import { BuildData } from "../../../../common/routes";
-
 import { BuildForm } from "../../components/BuildForm";
 import { clearPersistent, getPersistent, setPersistent } from "../../utility";
-import classNames from "classnames";
 
 export function Build() {
   const [buildData, setBuildData] = useState<BuildData | null>(null);
@@ -23,6 +21,62 @@ export function Build() {
     fn();
   }, [buildData]);
 
+  const taskItems: TaskItemProps[] = [];
+
+  if (buildData) {
+    for (let i = 0; i < buildData.requiredGems.length; i++) {
+      const requiredGem = buildData.requiredGems[i];
+      taskItems.push({
+        initialIsCompleted: requiredGem.acquired,
+        onUpdate: (isCompleted) => {
+          buildData.requiredGems[i].acquired = isCompleted;
+          setBuildData({ ...buildData });
+        },
+        children: (
+          <GemOrder
+            key={i}
+            onMoveTop={() => {
+              const splice = buildData.requiredGems.splice(i, 1);
+              buildData.requiredGems.unshift(...splice);
+              setBuildData({
+                ...buildData,
+              });
+            }}
+            onMoveUp={() => {
+              if (i == 0) return;
+
+              const swap = buildData.requiredGems[i];
+              buildData.requiredGems[i] = buildData.requiredGems[i - 1];
+              buildData.requiredGems[i - 1] = swap;
+
+              setBuildData({
+                ...buildData,
+              });
+            }}
+            onMoveDown={() => {
+              if (i == buildData.requiredGems.length - 1) return;
+
+              const swap = buildData.requiredGems[i];
+              buildData.requiredGems[i] = buildData.requiredGems[i + 1];
+              buildData.requiredGems[i + 1] = swap;
+
+              setBuildData({
+                ...buildData,
+              });
+            }}
+            onDelete={() => {
+              buildData.requiredGems.splice(i, 1);
+              setBuildData({
+                ...buildData,
+              });
+            }}
+            requiredGem={requiredGem}
+          />
+        ),
+      });
+    }
+  }
+
   return (
     <div>
       <BuildForm
@@ -39,49 +93,7 @@ export function Build() {
         <>
           <div className="header">{buildData.characterClass}</div>
           <hr />
-          <ExileList>
-            {buildData.requiredGems.map((requiredGem, i) => (
-              <GemOrder
-                key={i}
-                onMoveTop={() => {
-                  const splice = buildData.requiredGems.splice(i, 1);
-                  buildData.requiredGems.unshift(...splice);
-                  setBuildData({
-                    ...buildData,
-                  });
-                }}
-                onMoveUp={() => {
-                  if (i == 0) return;
-
-                  const swap = buildData.requiredGems[i];
-                  buildData.requiredGems[i] = buildData.requiredGems[i - 1];
-                  buildData.requiredGems[i - 1] = swap;
-
-                  setBuildData({
-                    ...buildData,
-                  });
-                }}
-                onMoveDown={() => {
-                  if (i == buildData.requiredGems.length - 1) return;
-
-                  const swap = buildData.requiredGems[i];
-                  buildData.requiredGems[i] = buildData.requiredGems[i + 1];
-                  buildData.requiredGems[i + 1] = swap;
-
-                  setBuildData({
-                    ...buildData,
-                  });
-                }}
-                onDelete={() => {
-                  buildData.requiredGems.splice(i, 1);
-                  setBuildData({
-                    ...buildData,
-                  });
-                }}
-                requiredGem={requiredGem}
-              />
-            ))}
-          </ExileList>
+          <TaskList items={taskItems} />
           <hr />
         </>
       )}

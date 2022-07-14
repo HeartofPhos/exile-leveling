@@ -34,6 +34,6 @@
   margin-right: var(--size-2);
 }
 
-.list > li.completed > * {
+.list > li.completed .task {
   opacity: 0.25;
 }

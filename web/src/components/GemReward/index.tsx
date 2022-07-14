@@ -4,6 +4,7 @@ import { RequiredGem } from "../../../../common/routes";
 import styles from "./GemReward.module.css";
 import { gems, gemColours } from "../../../../common/data";
 import { InlineFakeBlock } from "../InlineFakeBlock";
+import { taskStyle } from "../TaskList";
 
 function getImageUrl(path: string) {
   return new URL(`./images/${path}`, import.meta.url).href;
@@ -28,7 +29,7 @@ interface GemRewardProps {
 export function GemReward({ requiredGem, type }: GemRewardProps) {
   const gem = gems[requiredGem.id];
   return (
-    <div className={classNames(styles.rewardHolder)}>
+    <div className={classNames(styles.rewardHolder, taskStyle)}>
       <div className={classNames(styles.rewardMain)}>
         <MdCircle
           color={gemColours[gem.primary_attribute]}

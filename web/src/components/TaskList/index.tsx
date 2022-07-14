@@ -1,18 +1,20 @@
 import classNames from "classnames";
-import { Children, useEffect, useState } from "react";
-import styles from "./ExileList.module.css";
+import { useEffect, useState } from "react";
+import styles from "./TaskList.module.css";
 
-interface ListItemProps {
+export const taskStyle = styles.task;
+
+export interface TaskItemProps {
   children?: React.ReactNode;
   initialIsCompleted?: boolean;
   onUpdate?: (isCompleted: boolean) => void;
 }
 
-export function ExileListItem({
+function TaskListItem({
   children,
   initialIsCompleted,
   onUpdate,
-}: ListItemProps) {
+}: TaskItemProps) {
   const [isCompleted, setIsCompleted] = useState(initialIsCompleted);
   useEffect(() => {
     if (isCompleted === undefined) return;
@@ -37,23 +39,14 @@ export interface ListItemContext {
   onUpdate?: (isCompleted: boolean) => void;
 }
 
-interface ListProps {
-  children?: React.ReactNode;
-  contextLookup?: ListItemContext[];
+interface TaskListProps {
+  items?: TaskItemProps[];
 }
 
-export function ExileList({ children, contextLookup }: ListProps) {
+export function TaskList({ items }: TaskListProps) {
   return (
     <ol className={classNames(styles.list)}>
-      {Children.map(children, (child, i) => (
-        <ExileListItem
-          key={i}
-          initialIsCompleted={contextLookup?.[i].initialIsCompleted}
-          onUpdate={contextLookup?.[i].onUpdate}
-        >
-          {child}
-        </ExileListItem>
-      ))}
+      {items && items.map((item, i) => <TaskListItem key={i} {...item} />)}
     </ol>
   );
 }
