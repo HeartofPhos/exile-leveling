@@ -118,13 +118,12 @@ class RoutesContainer extends React.Component<RoutesContainerProps> {
       items.push(
         <div key={items.length} className="header">{`--== Act ${
           routeIndex + 1
-        } ==--`}</div>
-      );
-      items.push(<hr key={items.length} />);
-      items.push(
-        <ExileList key={items.length} contextLookup={contextLookup}>
+        } ==--`}</div>,
+        <hr key={items.length + 1} />,
+        <ExileList key={items.length + 2} contextLookup={contextLookup}>
           {steps}
-        </ExileList>
+        </ExileList>,
+        <hr key={items.length + 3} />
       );
     }
     return <>{items}</>;

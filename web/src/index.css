@@ -64,6 +64,7 @@ hr {
   width: 100%;
   color: var(--primary-light);
   font-size: var(--size-5);
+  padding: var(--size-2);
   font-weight: var(--font-heavy);
   text-align: center;
 }
