@@ -7,11 +7,7 @@ import {
   Route,
   RouteLookup,
 } from "../../../../common/routes";
-import {
-  TaskList,
-  ListItemContext,
-  TaskItemProps,
-} from "../../components/TaskList";
+import { TaskList, TaskItemProps } from "../../components/TaskList";
 import { ExileStep } from "../../components/ExileStep";
 import React from "react";
 import { routeFiles } from "../../../../common/data";
@@ -46,14 +42,13 @@ class RoutesContainer extends React.Component<RoutesContainerProps> {
     const routeGems: Set<number> = new Set();
     const items: ReactNode[] = [];
     for (let routeIndex = 0; routeIndex < this.routes.length; routeIndex++) {
-      let contextLookup: ListItemContext[] = [];
-
       const route = this.routes[routeIndex];
 
       let taskItems: TaskItemProps[] = [];
       for (let stepIndex = 0; stepIndex < route.length; stepIndex++) {
         const step = route[stepIndex];
         taskItems.push({
+          key: stepIndex,
           initialIsCompleted: this.routeProgress[routeIndex][stepIndex],
           onUpdate: (isCompleted) => {
             this.routeProgress[routeIndex][stepIndex] = isCompleted;
@@ -75,12 +70,12 @@ class RoutesContainer extends React.Component<RoutesContainerProps> {
                 );
 
                 for (const gemIndex of questGems) {
+                  const requiredGem = this.buildData.requiredGems[gemIndex];
                   taskItems.push({
-                    initialIsCompleted:
-                      this.buildData.requiredGems[gemIndex].acquired,
+                    key: requiredGem.uid,
+                    initialIsCompleted: requiredGem.acquired,
                     onUpdate: (isCompleted) => {
-                      this.buildData!.requiredGems[gemIndex].acquired =
-                        isCompleted;
+                      requiredGem.acquired = isCompleted;
 
                       setPersistent("build-data", this.buildData);
                     },
@@ -92,16 +87,15 @@ class RoutesContainer extends React.Component<RoutesContainerProps> {
                       />
                     ),
                   });
-                  contextLookup.push();
                 }
 
                 for (const gemIndex of vendorGems) {
+                  const requiredGem = this.buildData.requiredGems[gemIndex];
                   taskItems.push({
-                    initialIsCompleted:
-                      this.buildData.requiredGems[gemIndex].acquired,
+                    key: requiredGem.uid,
+                    initialIsCompleted: requiredGem.acquired,
                     onUpdate: (isCompleted) => {
-                      this.buildData!.requiredGems[gemIndex].acquired =
-                        isCompleted;
+                      requiredGem.acquired = isCompleted;
 
                       setPersistent("build-data", this.buildData);
                     },

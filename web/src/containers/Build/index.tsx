@@ -27,10 +27,11 @@ export function Build() {
     for (let i = 0; i < buildData.requiredGems.length; i++) {
       const requiredGem = buildData.requiredGems[i];
       taskItems.push({
+        key: requiredGem.uid,
         initialIsCompleted: requiredGem.acquired,
         onUpdate: (isCompleted) => {
           buildData.requiredGems[i].acquired = isCompleted;
-          setBuildData({ ...buildData });
+          setPersistent("build-data", buildData);
         },
         children: (
           <GemOrder

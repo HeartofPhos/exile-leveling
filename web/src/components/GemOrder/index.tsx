@@ -30,7 +30,10 @@ export function GemOrder({
           child={
             <HiChevronUp
               className={classNames(styles.orderButton)}
-              onClick={onMoveUp}
+              onClick={(e) => {
+                e.stopPropagation();
+                if (onMoveUp) onMoveUp();
+              }}
             />
           }
         />
@@ -38,7 +41,10 @@ export function GemOrder({
           child={
             <HiChevronDown
               className={classNames(styles.orderButton)}
-              onClick={onMoveDown}
+              onClick={(e) => {
+                e.stopPropagation();
+                if (onMoveDown) onMoveDown();
+              }}
             />
           }
         />
@@ -46,7 +52,10 @@ export function GemOrder({
           child={
             <HiChevronDoubleUp
               className={classNames(styles.orderButton)}
-              onClick={onMoveTop}
+              onClick={(e) => {
+                e.stopPropagation();
+                if (onMoveTop) onMoveTop();
+              }}
             />
           }
         />
@@ -54,7 +63,10 @@ export function GemOrder({
           child={
             <MdDeleteOutline
               className={classNames(styles.orderButton)}
-              onClick={onDelete}
+              onClick={(e) => {
+                e.stopPropagation();
+                if (onDelete) onDelete();
+              }}
             />
           }
         />

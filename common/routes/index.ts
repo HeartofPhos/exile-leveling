@@ -496,6 +496,7 @@ export interface BuildData {
 
 export interface RequiredGem {
   id: string;
+  uid: number;
   note: string;
   acquired: boolean;
 }
