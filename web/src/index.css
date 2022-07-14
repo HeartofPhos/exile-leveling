@@ -59,3 +59,11 @@ hr {
   height: 1em;
   margin-right: var(--size-1);
 }
+
+.header {
+  width: 100%;
+  color: var(--primary-light);
+  font-size: var(--size-5);
+  font-weight: var(--font-heavy);
+  text-align: center;
+}

@@ -39,27 +39,21 @@ export interface ListItemContext {
 
 interface ListProps {
   children?: React.ReactNode;
-  header: string;
   contextLookup?: ListItemContext[];
 }
 
-export function ExileList({ children, header, contextLookup }: ListProps) {
+export function ExileList({ children, contextLookup }: ListProps) {
   return (
-    <div className={classNames(styles.holder)}>
-      <span className={classNames(styles.header)}>{header}</span>
-      <hr />
-      <ol className={classNames(styles.list)}>
-        {Children.map(children, (child, i) => (
-          <ExileListItem
-            key={i}
-            initialIsCompleted={contextLookup?.[i].initialIsCompleted}
-            onUpdate={contextLookup?.[i].onUpdate}
-          >
-            {child}
-          </ExileListItem>
-        ))}
-      </ol>
-      <hr />
-    </div>
+    <ol className={classNames(styles.list)}>
+      {Children.map(children, (child, i) => (
+        <ExileListItem
+          key={i}
+          initialIsCompleted={contextLookup?.[i].initialIsCompleted}
+          onUpdate={contextLookup?.[i].onUpdate}
+        >
+          {child}
+        </ExileListItem>
+      ))}
+    </ol>
   );
 }

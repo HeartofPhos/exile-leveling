@@ -17,13 +17,15 @@ import { GemReward } from "../../components/GemReward";
 
 type RouteProgress = boolean[][];
 
-export class RoutesContainer extends React.Component {
+interface RoutesContainerProps {}
+
+class RoutesContainer extends React.Component<RoutesContainerProps> {
   private routes: Route[];
   private routeLookup: RouteLookup;
   private routeProgress: RouteProgress;
   private buildData: BuildData | null;
 
-  constructor(props: {}) {
+  constructor(props: RoutesContainerProps) {
     super(props);
 
     this.buildData = getPersistent<BuildData>("build-data");
@@ -31,15 +33,9 @@ export class RoutesContainer extends React.Component {
     const routeState = initializeRouteState();
     this.routes = parseRoute(routeFiles, this.routeLookup, routeState);
 
-    const routeProgress = getPersistent<RouteProgress>("route-progress");
-    if (routeProgress) {
-      this.routeProgress = routeProgress;
-    } else {
-      this.routeProgress = [];
-      for (const route of this.routes) {
-        this.routeProgress.push(route.map(() => false));
-      }
-    }
+    this.routeProgress =
+      getPersistent<RouteProgress>("route-progress") ||
+      this.routes.map((route) => route.map(() => false));
   }
 
   render(): ReactNode {
@@ -120,11 +116,13 @@ export class RoutesContainer extends React.Component {
       }
 
       items.push(
-        <ExileList
-          key={routeIndex}
-          header={`--== Act ${routeIndex + 1} ==--`}
-          contextLookup={contextLookup}
-        >
+        <div key={items.length} className="header">{`--== Act ${
+          routeIndex + 1
+        } ==--`}</div>
+      );
+      items.push(<hr key={items.length} />);
+      items.push(
+        <ExileList key={items.length} contextLookup={contextLookup}>
           {steps}
         </ExileList>
       );
@@ -132,4 +130,5 @@ export class RoutesContainer extends React.Component {
     return <>{items}</>;
   }
 }
+
 export default RoutesContainer;
