@@ -2,7 +2,7 @@ import classNames from "classnames";
 import pako from "pako";
 import { useState } from "react";
 import { BuildData } from "../../../../common/routes";
-import styles from "./BuildForm.module.css";
+import { Form, formStyles } from "../../components/Form";
 
 // https://github.com/PathOfBuildingCommunity/PathOfBuilding/blob/0d3bdf009c8bc9579eb8cffb5548f03c45e57373/src/Export/Scripts/skills.lua#L504
 const POB_GEM_ID_REMAP: Record<string, string> = {
@@ -103,45 +103,35 @@ function processPob(
 
 interface BuildFormProps {
   onSubmit: (buildData: BuildData) => void;
-  onReset: () => void;
 }
 
-export function BuildForm({ onSubmit, onReset }: BuildFormProps) {
+export function BuildForm({ onSubmit }: BuildFormProps) {
   const [pobCode, setPobCode] = useState<string>();
 
   return (
-    <div className={classNames(styles.form)}>
-      <div className={classNames(styles.formRow)}>
+    <Form>
+      <div className={classNames(formStyles.formRow)}>
         <label>Path of Building Code</label>
-        <div className={classNames(styles.formInput)}>
+        <div className={classNames(formStyles.formInput)}>
           <textarea
             spellCheck={false}
-            className={classNames(styles.textarea)}
+            className={classNames(formStyles.textarea)}
             value={pobCode || ""}
             onChange={(e) => setPobCode(e.target.value)}
           />
         </div>
       </div>
-      <div className={classNames(styles.buttonRow)}>
+      <div className={classNames(formStyles.buttonRow)}>
         <button
-          className={classNames(styles.formButton)}
-          onClick={() => {
-            setPobCode(undefined);
-            onReset();
-          }}
-        >
-          Reset
-        </button>
-        <button
-          className={classNames(styles.formButton)}
+          className={classNames(formStyles.formButton)}
           onClick={() => {
             const buildData = processPob(pobCode, "RECENT_EMPTY_SKILL_LABEL");
             if (buildData) onSubmit(buildData);
           }}
         >
-          Submit
+          Import
         </button>
       </div>
-    </div>
+    </Form>
   );
 }
