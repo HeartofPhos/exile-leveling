@@ -4,6 +4,22 @@ import { useNavigate } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import styles from "./Navbar.module.css";
 
+interface NavbarItem {
+  target: string;
+  label: string;
+}
+
+const navBarItems: NavbarItem[] = [
+  {
+    target: "/",
+    label: "Route",
+  },
+  {
+    target: "/build",
+    label: "Build",
+  },
+];
+
 interface NavbarProps {}
 
 export function Navbar({}: NavbarProps) {
@@ -17,18 +33,16 @@ export function Navbar({}: NavbarProps) {
             [styles.expand]: expand,
           })}
         >
-          <div
-            onClick={() => navigate("/")}
-            className={classNames(styles.navItem)}
-          >
-            Home
-          </div>
-          <div
-            className={classNames(styles.navItem)}
-            onClick={() => navigate("/build")}
-          >
-            Build
-          </div>
+          {navBarItems.map((x) => (
+            <>
+              <div
+                onClick={() => navigate(x.target)}
+                className={classNames(styles.navItem)}
+              >
+                {x.label}
+              </div>
+            </>
+          ))}
         </div>
         <div
           className={classNames(styles.navIcon)}
