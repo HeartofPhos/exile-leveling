@@ -1,8 +1,8 @@
 .navbar {
   background-color: var(--primary-darker);
   position: fixed;
-  top: 0;
-  left: 0;
+  top: var(--size-2);
+  left: var(--size-2);
   z-index: 1;
   width: 15rem;
   height: 100%;
@@ -29,25 +29,25 @@
 }
 
 .navIcon {
-  display: inline-flex;
+  display: block;
   box-sizing: content-box;
-  height: var(--line-height);
+  height: fit-content;
   padding: var(--size-3);
-  align-items: center;
-  margin-left: auto;
 }
 
 @media screen and (max-width: 600px) {
   .navbar {
-    position: sticky;
+    position: fixed;
+    padding: 0;
+    height: fit-content;
     width: fit-content;
   }
 
   .navbar.expand {
-    width: 100%;
+    width: calc(100% - var(--size-2) * 2);
   }
 
-  .navItems:not(.expand) > * {
+  .expandable:not(.expand) {
     display: none;
   }
 }
