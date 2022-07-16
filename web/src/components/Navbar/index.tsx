@@ -43,35 +43,37 @@ export function Navbar({}: NavbarProps) {
         [styles.expand]: expand,
       })}
     >
-      <FaBars
-        className={classNames(styles.navIcon)}
-        onClick={() => setExpand(!expand)}
-        display="block"
-      />
-      <hr
-        className={classNames(styles.expandable, {
-          [styles.expand]: expand,
-        })}
-      />
-      <div
-        className={classNames(styles.navItems, styles.expandable, {
-          [styles.expand]: expand,
-        })}
-      >
-        {navBarItems.map((x) => (
-          <>
-            <div
-              onClick={() => {
-                navigate(x.target);
-                setExpand(false);
-              }}
-              className={classNames(styles.navItem)}
-            >
-              {x.label}
-            </div>
-            <hr />
-          </>
-        ))}
+      <div className={classNames(styles.navHolder)}>
+        <FaBars
+          className={classNames(styles.navIcon)}
+          onClick={() => setExpand(!expand)}
+          display="block"
+        />
+        <hr
+          className={classNames(styles.expandable, {
+            [styles.expand]: expand,
+          })}
+        />
+        <div
+          className={classNames(styles.navItems, styles.expandable, {
+            [styles.expand]: expand,
+          })}
+        >
+          {navBarItems.map((x) => (
+            <>
+              <div
+                onClick={() => {
+                  navigate(x.target);
+                  setExpand(false);
+                }}
+                className={classNames(styles.navItem)}
+              >
+                {x.label}
+              </div>
+              <hr />
+            </>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,13 +1,18 @@
 .navbar {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   background-color: var(--primary-darker);
-  position: fixed;
-  top: var(--size-2);
-  right: var(--size-2);
+  position: sticky;
+  top: 0;
   z-index: 1;
-  width: fit-content;
+  width: 100%;
+  padding: var(--size-3);
+}
+
+.navHolder {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   font-size: var(--size-4);
   border-style: solid;
   border-width: var(--border-width);
@@ -40,14 +45,4 @@
 
 .expandable:not(.expand) {
   display: none;
-}
-
-.navbar.expand {
-  width: 15em;
-}
-
-@media screen and (max-width: 600px) {
-  .navbar.expand {
-    width: calc(100% - var(--size-2) * 2);
-  }
 }
