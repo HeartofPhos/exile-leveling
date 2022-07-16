@@ -41,14 +41,7 @@
   width: 15em;
 }
 
-
 @media screen and (max-width: 600px) {
-  .navbar {
-    position: fixed;
-    padding: 0;
-    height: fit-content;
-  }
-
   .navbar.expand {
     width: calc(100% - var(--size-2) * 2);
   }
