@@ -1,8 +1,11 @@
 .navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
   background-color: var(--primary-darker);
   position: fixed;
   top: var(--size-2);
-  left: var(--size-2);
+  right: var(--size-2);
   z-index: 1;
   width: fit-content;
   font-size: var(--size-4);
@@ -15,15 +18,17 @@
 .navItems {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
+  width: 100%;
 }
 
 .navItem {
   color: var(--primary-light);
-  text-align: center;
+  text-align: right;
   text-decoration: none;
   font-weight: var(--font-heavy);
   padding: var(--size-3);
+  width: 100%;
 }
 
 .navIcon {
