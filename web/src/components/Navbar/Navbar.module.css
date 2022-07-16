@@ -4,9 +4,7 @@
   top: var(--size-2);
   left: var(--size-2);
   z-index: 1;
-  width: 15rem;
-  height: 100%;
-  padding: var(--size-4);
+  width: fit-content;
   font-size: var(--size-4);
   border-style: solid;
   border-width: var(--border-width);
@@ -35,19 +33,23 @@
   padding: var(--size-3);
 }
 
+.expandable:not(.expand) {
+  display: none;
+}
+
+.navbar.expand {
+  width: 15em;
+}
+
+
 @media screen and (max-width: 600px) {
   .navbar {
     position: fixed;
     padding: 0;
     height: fit-content;
-    width: fit-content;
   }
 
   .navbar.expand {
     width: calc(100% - var(--size-2) * 2);
-  }
-
-  .expandable:not(.expand) {
-    display: none;
   }
 }
