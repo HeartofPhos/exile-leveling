@@ -49,11 +49,7 @@ export function Navbar({}: NavbarProps) {
           onClick={() => setExpand(!expand)}
           display="block"
         />
-        <hr
-          className={classNames(styles.expandable, {
-            [styles.expand]: expand,
-          })}
-        />
+        <hr />
         <div
           className={classNames(styles.navItems, styles.expandable, {
             [styles.expand]: expand,
@@ -70,9 +66,10 @@ export function Navbar({}: NavbarProps) {
               >
                 {x.label}
               </div>
-              <hr />
             </>
           ))}
+
+          <hr />
         </div>
       </div>
     </div>
