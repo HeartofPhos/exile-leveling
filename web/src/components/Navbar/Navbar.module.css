@@ -10,26 +10,47 @@
 
 .navHolder {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: flex-end;
   font-size: var(--size-4);
 }
 
+.navHolder.expand {
+  flex-direction: column;
+}
+
 .navItems {
   display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.navItems.expand{
   flex-direction: column;
+}
+
+.navItems {
+  display: flex;
+  flex-direction: row;
   align-items: flex-end;
   width: 100%;
 }
 
 .navItem {
   color: var(--primary-light);
-  text-align: right;
+  text-align: left;
   text-decoration: none;
   font-weight: var(--font-heavy);
   padding: var(--size-3);
   width: 100%;
 }
+
+.navItem.expand{
+  text-align: right;
+}
+
 
 .navIcon {
   display: block;
@@ -38,6 +59,6 @@
   padding: var(--size-3);
 }
 
-.expandable:not(.expand) {
+.navItems:not(.expand) > *:nth-child(n + 3) {
   display: none;
 }
