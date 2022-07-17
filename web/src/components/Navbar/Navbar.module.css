@@ -22,20 +22,13 @@
 
 .navItems {
   display: flex;
+  flex-grow: 1;
   flex-direction: row;
-  align-items: flex-end;
-  width: 100%;
+  align-self: stretch;
 }
 
 .navItems.expand{
   flex-direction: column;
-}
-
-.navItems {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  width: 100%;
 }
 
 .navItem {
@@ -56,6 +49,7 @@
   display: block;
   box-sizing: content-box;
   height: var(--line-height);
+  width: var(--line-height);
   padding: var(--size-3);
 }
 
