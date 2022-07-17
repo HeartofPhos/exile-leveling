@@ -1,9 +1,10 @@
 :root {
   --primary: #d4d4d4;
-  --primary-dark: #505050;
   --primary-light: #f5f5f5;
-  --primary-darker: #151616;
-  --border-color: #808080;
+  --background-primary: #151616;
+  --background-secondary: #212222;
+  --accent-primary: #808080;
+  --accent-secondary: #505050;
   --border-width: 0.1rem;
   --border-radius: 0.25rem;
   --size-1: 0.1rem;
@@ -29,7 +30,7 @@
 html {
   overflow-y: scroll;
   box-sizing: border-box;
-  background-color: var(--primary-darker);
+  background-color: var(--background-primary);
   color: var(--primary);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1em;
@@ -39,7 +40,7 @@ html {
 hr {
   border-style: solid;
   border-width: var(--size-1);
-  color: var(--border-color);
+  color: var(--accent-primary);
   align-self: stretch;
 }
 
