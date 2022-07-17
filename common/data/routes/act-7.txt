@@ -9,7 +9,7 @@ Follow the road ➞ {enter|2_7_4} #The Crypt Level 1
 Complete {trial}
 Get {crafting}
 Find and take {quest_text|Maligaro's Map}
-{town}
+{logout}
 {waypoint|2_7_2} #The Crossroads
 Head {dir|315} ➞ {enter|2_7_5_1} #The Chamber of Sins Level 1
 Get {crafting}
@@ -17,7 +17,7 @@ Get {get_waypoint}
 Activate {quest_text|Map Device} with {quest_text|Maligaro's Map}
 ➞ {enter|2_7_5_map} #Maligaro's Sanctum
 ➞ {arena|Maligaro's Workshop}, kill {kill|Maligaro, the Artist}, take {quest_text|Black Venom}
-{town}
+{logout}
 Hand in {quest|a7q2} #Essence of the Artist
 Hand in {quest|a7q5} #The Silver Locket
 {waypoint|2_7_5_1} #The Chamber of Sins Level 1
@@ -48,7 +48,7 @@ Find {get_waypoint}
 Find and take 7x{quest_text|Fireflies}
 Get {crafting}
 ➞ {arena|Den of Despair}, kill {kill|Gruthkul, Mother of Despair}
-{town}
+{logout}
 Hand in {quest|a7q9} #Queen of Despair
 Hand in {quest|a7q6} #Kishara's Star
 {waypoint|Labyrinth_Airlock} #Aspirants' Plaza

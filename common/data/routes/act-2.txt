@@ -4,11 +4,11 @@ Head {dir|45} ➞ {enter|1_2_2} #The Old Fields
 Find {area|1_2_2a}, place {portal|set} #The Den
 Follow the road ➞ {enter|1_2_3} #The Crossroads
 Follow the road, get {get_waypoint}
-{town}
+{logout}
 Take {portal|use}
 ➞ {enter|1_2_2a} #The Den
 Find and kill {kill|The Great White Beast}
-{town}
+{logout}
 Hand in {quest|a2q10} #The Great White Beast
 {waypoint|1_2_3} #The Crossroads
 Head {dir|315} ➞ {enter|1_2_6_1} #The Chamber of Sins Level 1
@@ -16,13 +16,13 @@ Go in same direction as {waypoint}
 ➞ {enter|1_2_6_2} #The Chamber of Sins Level 2
 Complete {trial}
 Find the long hallway, kill {kill|Fidelitas, the Mourning}, take {quest_text|Baleful Gem}
-{town}
+{logout}
 Hand in {quest|a2q6} #Intruders in Black
 {waypoint|1_2_3} #The Crossroads
 Head {dir|135} ➞ {enter|1_2_15} #The Fellshrine Ruins
 Follow the road ➞ {enter|1_2_5_1} #The Crypt Level 1
 Complete {trial}
-{town}
+{logout}
 Head {dir|225} ➞ {enter|1_2_7} #The Riverways
 Follow the road, get {get_waypoint}
 Follow the road ➞ {enter|1_2_9} #The Western Forest
@@ -30,12 +30,12 @@ Follow the road, get {get_waypoint}
 Search the side of road opposite {waypoint}
 ➞ {enter|1_2_10} #The Weaver's Chambers
 ➞ {arena|The Weaver's Nest}, kill {kill|The Weaver}, take {quest_text|Maligaro's Spike}
-{town}
+{logout}
 Hand in {quest|a2q4} #Sharp and Cruel
 {waypoint|1_2_3} #The Crossroads
 Head {dir|45} ➞ {enter|1_2_4} #The Broken Bridge
 Follow road, kill {kill|Kraityn, Scarbearer}
-{town}
+{logout}
 {waypoint|1_2_7} #The Riverways
 Look for 2 pillars near {waypoint}, follow the trail ➞ {enter|1_2_12} #The Wetlands
 Find and kill {kill|Oak, Skullbreaker}
@@ -45,7 +45,7 @@ Head {dir|180} look for the torch touching the road
 Follow the trail in the direction of the torch, help or kill {kill|Alira Darktongue}
 Follow the road, kill {kill|Captain Arteri}
 Take {quest_text|Thaumetic Emblem}, activate {quest_text|Thaumetic Seal}
-{town}
+{logout}
 If you killed all bandits, hand in {quest|a2q7} #Deal with the Bandits
 {waypoint|1_1_town} #Lioneye's Watch
 Hand in {quest|a1q9} #The Way Forward

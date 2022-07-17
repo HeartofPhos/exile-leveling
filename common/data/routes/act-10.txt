@@ -11,13 +11,13 @@ Head {dir|45} get {get_waypoint}
 ➞ {enter|2_10_9} #The Ossuary
 Get {crafting}
 Complete {trial}
-{town}
+{logout}
 {waypoint|Labyrinth_Airlock}
 {ascend}
 Get {crafting|3_Labyrinth_boss_3}
 {waypoint|2_10_7} #The Control Blocks
 Find and kill {kill|Vilenta}
-{town}
+{logout}
 Hand in {quest|a10q6} #Vilenta's Vengeance
 {waypoint|2_10_2} #The Ravaged Square
 Head {dir|135} ➞ {enter|2_10_3} #The Torched Courts
@@ -25,7 +25,7 @@ Loop around clockwise ➞ {enter|2_10_4} #The Desecrated Chambers
 Head {dir|315} counter-clockwise spiral
 Get {crafting}
 ➞ {arena|Sanctum of Innocence}, kill {kill|Avarius, Reassembled}, take {quest_text|The Staff of Purity}
-{town}
+{logout}
 Talk to {generic|Bannon}
 Hand in {quest|a10q2} #Death and Rebirth
 {waypoint|2_10_2} #The Ravaged Square

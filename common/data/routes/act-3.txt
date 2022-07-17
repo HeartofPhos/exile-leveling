@@ -6,7 +6,7 @@ Help and talk to {generic|Clarissa}
 Complete {trial}
 Find and kill {kill|Piety}, take {quest_text|Tolman's Bracelet}
 Get {crafting}
-{town}
+{logout}
 Talk to {generic|Clarissa}, take {quest_text|Sewer Keys}
 Hand in {quest|a3q1} #Lost in Love
 ➞ {enter|1_3_2} #The Slums
@@ -18,7 +18,7 @@ Get {get_waypoint}
 Look around nearby ➞ {enter|1_3_6} #The Catacombs
 Complete {trial}
 Get {crafting}
-{town}
+{logout}
 Hand in {quest|a3q11} #Victario's Secrets
 {waypoint|1_3_5} #The Marketplace
 ➞ {enter|1_3_7}, likely opposite {area|1_3_6} #The Battlefront
@@ -30,7 +30,7 @@ Head {dir|225} take {quest_text|Ribbon Spool}
 {waypoint|1_3_7} #The Battlefront
 ➞ {enter|1_3_9} #The Docks
 Find and take {quest_text|Thaumetic Sulphite}
-{town}
+{logout}
 {waypoint|1_3_8_2} #The Solaris Temple Level 2
 Talk to {generic|Lady Dialla}
 Hand in {quest|a3q4} #The Ribbon Spool
@@ -45,7 +45,7 @@ Head {dir|315} kill {kill|General Gravicius}
 ➞ {enter|1_3_14_2} #The Lunaris Temple Level 2
 Find and kill {kill|Piety}, take {quest_text|Tower Key}
 Get {crafting}
-{town}
+{logout}
 Hand in {quest|a3q8} #Sever the Right Hand
 Hand in {quest|a3q9} #Piety's Pets
 {waypoint|1_3_13} #The Ebony Barracks
@@ -55,13 +55,13 @@ Head {dir|315} ➞ {enter|1_3_17_1} #The Library
 Get {get_waypoint}
 Find {generic|Loose Candle} ➞ {enter|1_3_17_2} #The Archives
 Find 4x{quest_text|Golden Pages}
-{town}
+{logout}
 {waypoint|1_3_17_1} #The Library
 Hand in {quest|a3q12} #A Fixture of Fate
 {waypoint|1_3_15} #The Imperial Gardens
 Head {dir|0} complete {trial}
 Get {crafting}
-{town}
+{logout}
 ➞ {enter|Labyrinth_Airlock} #Aspirants' Plaza
 {waypoint|1_3_15} #The Imperial Gardens
 ➞ {enter|1_3_18_1} #The Sceptre of God

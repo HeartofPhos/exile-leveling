@@ -163,12 +163,12 @@ function EvaluateEnter(
   };
 }
 
-interface TownFragment {
-  type: "town";
+interface LogoutFragment {
+  type: "logout";
   areaId: Area["id"];
 }
 
-function EvaluateTown(
+function EvaluateLogout(
   rawFragment: RawFragment,
   lookup: RouteLookup,
   state: RouteState
@@ -178,7 +178,7 @@ function EvaluateTown(
   state.currentAreaId = state.lastTownAreaId;
   return {
     fragment: {
-      type: "town",
+      type: "logout",
       areaId: state.currentAreaId,
     },
   };
@@ -428,7 +428,7 @@ export type Fragment =
   | ArenaFragment
   | AreaFragment
   | EnterFragment
-  | TownFragment
+  | LogoutFragment
   | WaypointFragment
   | GetWaypointFragment
   | PortalFragment
@@ -462,8 +462,8 @@ function evaluateFragment(
       return EvaluateArea(rawFragment, lookup, state);
     case "enter":
       return EvaluateEnter(rawFragment, lookup, state);
-    case "town":
-      return EvaluateTown(rawFragment, lookup, state);
+    case "logout":
+      return EvaluateLogout(rawFragment, lookup, state);
     case "waypoint":
       return EvaluateWaypoint(rawFragment, lookup, state);
     case "get_waypoint":

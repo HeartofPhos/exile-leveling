@@ -4,13 +4,13 @@
 Head {dir|90} get {get_waypoint}
 Get {crafting}
 Head {dir|90} find and take {quest_text|The Storm Blade}
-{town}
+{logout}
 Talk to {generic|Sin}
 Hand in {quest|a9q3}, take {quest_text|Bottled Storm}
 {waypoint|2_9_3} #The Vastiri Desert
 Head {dir|45} ➞ {enter|2_9_4} #The Oasis
 ➞ {arena|The Sand Pit}, kill {kill|Shakari, Queen of the Sands}
-{town}
+{logout}
 Hand in {quest|a9q5} #Queen of the Sands
 {waypoint|2_9_3} #The Vastiri Desert
 Head {dir|315} ➞ {enter|2_9_5} #The Foothills
@@ -20,7 +20,7 @@ Head {dir|315} get {get_waypoint}
 Head {dir|45} look for petrified soliders
 Find and Kill {kill|The Basilisk}, take {quest_text|Basilisk Acid}
 Get {crafting}
-{town}
+{logout}
 {waypoint|2_9_5} #The Foothills
 Head {dir|315} ➞ {enter|2_9_7} #The Tunnel
 Before {waypoint}, complete {trial}
@@ -30,13 +30,13 @@ Head {dir|315} get {get_waypoint}
 Get {crafting}
 Points of interest are either {dir|315} {dir|45} {dir|225}
 ➞ {arena|Shrine of the Winds}, kill {kill|Garukhan, Queen of the Winds}, take {quest_text|Sekhema Feather}
-{town}
+{logout}
 Hand in {quest|a9q2} #The Ruler of Highgate
 {waypoint|2_9_8} #The Quarry
 Head {dir|45} ➞ {enter|2_9_9} #The Refinery
 Head {dir|45} follow cart tracks
 Find and kill {kill|General Adus}, take {quest_text|Trarthan Powder}
-{town}
+{logout}
 {waypoint|2_9_8} #The Quarry
 Talk to {generic|Sin}
 ➞ {enter|2_9_10_1} #The Belly of the Beast

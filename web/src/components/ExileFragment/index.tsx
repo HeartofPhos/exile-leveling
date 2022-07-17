@@ -83,7 +83,7 @@ function TrialComponent() {
   );
 }
 
-function TownComponent(area: Area) {
+function LogoutComponent(area: Area) {
   return (
     <>
       <span className={classNames(styles.default)}>Logout</span>
@@ -192,8 +192,8 @@ export function ExileFragment({ fragment, lookup }: FragmentProps) {
       return WaypointComponent();
     case "trial":
       return TrialComponent();
-    case "town":
-      return TownComponent(areas[fragment.areaId]);
+    case "logout":
+      return LogoutComponent(areas[fragment.areaId]);
     case "portal":
       return PortalComponent(
         fragment.targetAreaId ? areas[fragment.targetAreaId] : undefined

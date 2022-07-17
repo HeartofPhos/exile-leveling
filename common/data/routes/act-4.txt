@@ -3,7 +3,7 @@
 ➞ {enter|1_4_2} #The Dried Lake
 Find and kill {kill|Voll, Emperor of Purity}, take {quest_text|Deshret's Banner}
 Get {crafting}
-{town}
+{logout}
 Hand in {quest|a4q2} #Breaking the Seal
 ➞ {enter|1_4_3_1} #The Mines Level 1
 Get {crafting}
@@ -25,10 +25,10 @@ Get {crafting}
 ➞ {enter|1_4_4_3} #Kaom's Stronghold
 Get {crafting}
 ➞ {arena|Caldera of the King}, kill {kill|King Kaom}, take {quest_text|The Eye of Fury}
-{town}
+{logout}
 {waypoint|1_4_5_2} #The Grand Arena
 ➞ {arena|The Ring of Blades}, kill {kill|Daresso, King of Swords}, take {quest_text|The Eye of Desire}
-{town}
+{logout}
 {waypoint|1_4_3_3} #The Crystal Veins
 Talk to {generic|Lady Dialla}
 ➞ {enter|1_4_6_1} #The Belly of the Beast Level 1
@@ -42,7 +42,7 @@ Find and kill {kill|Maligaro, The Inquisitor}, take {quest_text|Malachai's Heart
 Find and kill {kill|Shavronne of Umbra}, take {quest_text|Malachai's Entrails}
 Hand in {quest|a4q5} #Corpus Malachus
 ➞ {arena|The Black Core}, kill {kill|Malachai, The Nightmare}
-{town}
+{logout}
 Hand in {quest|a4q1} #The Eternal Nightmare
 ➞ {enter|1_4_7} #The Ascent
 Get {crafting}

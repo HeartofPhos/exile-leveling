@@ -22,13 +22,13 @@ Head {dir|315} get {get_waypoint}
 ➞ {enter|1_5_6} #The Ossuary
 Take {quest_text|Sign of Purity}
 Get {crafting}
-{town}
+{logout}
 {waypoint|1_5_3b} #The Ruined Square
 Head {dir|225} find the plaza
 Head {dir|180} ➞ {enter|1_5_7} #The Reliquary
 Find 3x{quest_text|Kitava's Torments}
 Get {crafting}
-{town}
+{logout}
 Hand in {quest|a5q7} #Kitava's Torments
 {waypoint|1_5_3b} #The Ruined Square
 Head {dir|225} ➞ {enter|1_5_8} #The Cathedral Rooftop

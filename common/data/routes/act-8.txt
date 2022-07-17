@@ -19,7 +19,7 @@ Get {get_waypoint}
 ➞ {enter|2_8_12_2} #The Solaris Temple Level 2
 Find and kill {kill|Dawn, Harbinger of Solaris}, take {quest_text|Sun Orb}
 Get {crafting}
-{town}
+{logout}
 Hand in {quest|a8q1} #Essence of the Hag
 Hand in {quest|a8q7} #The Gemling Legion
 Hand in {quest|a8q6} #Love is Dead
@@ -32,7 +32,7 @@ Head {dir|315} get {get_waypoint}
 ➞ {enter|2_8_7_2} #The Lunaris Temple Level 2
 Find and kill {kill|Dusk, Harbinger of Lunaris}, take {quest_text|Moon Orb}
 Get {crafting}
-{town}
+{logout}
 {waypoint|2_8_6} #The Lunaris Concourse
 Head {dir|135} ➞ {enter|2_8_13} #The Harbour Bridge
 ➞ {arena|The Sky Shrine}, activate {quest_text|Statue of the Sisters}
@@ -46,5 +46,5 @@ Search {dir|270} side, complete {trial}
 Get {crafting}
 Search {dir|270} side ➞ {enter|2_8_4} #The High Gardens
 ➞ {arena|The Pools of Terror}, kill {kill|Yugul, Reflection of Terror}
-{town}
+{logout}
 Hand in {quest|a8q4} #Reflection of Terror
