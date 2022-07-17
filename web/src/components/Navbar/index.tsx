@@ -18,6 +18,18 @@ const navBarItems: NavbarItem[] = [
     target: "/build",
     label: "Build",
   },
+  {
+    target: "/build",
+    label: "Build",
+  },
+  {
+    target: "/build",
+    label: "Build",
+  },
+  {
+    target: "/build",
+    label: "Build",
+  },
 ];
 
 interface NavbarProps {}
@@ -26,8 +38,26 @@ export function Navbar({}: NavbarProps) {
   const [expand, setExpand] = useState<boolean>(false);
   const navigate = useNavigate();
   return (
-    <div className={classNames(styles.navbar)}>
-      <div className={classNames(styles.navHolder)}>
+    <div
+      className={classNames(styles.navbar, {
+        [styles.expand]: expand,
+      })}
+    >
+      <div
+        className={classNames(styles.navHolder, {
+          [styles.expand]: expand,
+        })}
+      >
+        <FaBars
+          className={classNames(styles.navIcon)}
+          onClick={() => setExpand(!expand)}
+          display="block"
+        />
+        <hr
+          className={classNames(styles.seperator, {
+            [styles.expand]: expand,
+          })}
+        />
         <div
           className={classNames(styles.navItems, {
             [styles.expand]: expand,
@@ -36,19 +66,18 @@ export function Navbar({}: NavbarProps) {
           {navBarItems.map((x) => (
             <>
               <div
-                onClick={() => navigate(x.target)}
-                className={classNames(styles.navItem)}
+                onClick={() => {
+                  navigate(x.target);
+                  setExpand(false);
+                }}
+                className={classNames(styles.navItem, {
+                  [styles.expand]: expand,
+                })}
               >
                 {x.label}
               </div>
             </>
           ))}
-        </div>
-        <div
-          className={classNames(styles.navIcon)}
-          onClick={() => setExpand(!expand)}
-        >
-          <FaBars />
         </div>
       </div>
       <hr />

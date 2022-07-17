@@ -9,11 +9,13 @@ import "./index.css";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <HashRouter>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<RoutesContainer />} />
-        <Route path="/build" element={<Build />} />
-      </Routes>
+      <div className="container">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<RoutesContainer />} />
+          <Route path="/build" element={<Build />} />
+        </Routes>
+      </div>
     </HashRouter>
   </React.StrictMode>
 );
