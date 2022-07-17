@@ -27,7 +27,7 @@
   align-self: stretch;
 }
 
-.navItems.expand{
+.navItems.expand {
   flex-direction: column;
 }
 
@@ -40,10 +40,9 @@
   width: 100%;
 }
 
-.navItem.expand{
+.navItem.expand {
   text-align: right;
 }
-
 
 .navIcon {
   display: block;
@@ -54,5 +53,9 @@
 }
 
 .navItems:not(.expand) > *:nth-child(n + 3) {
+  display: none;
+}
+
+.seperator:not(.expand) {
   display: none;
 }
