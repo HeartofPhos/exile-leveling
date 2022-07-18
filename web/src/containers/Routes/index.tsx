@@ -114,10 +114,13 @@ class RoutesContainer extends React.Component<RoutesContainerProps> {
         }
       }
 
+      const act = routeIndex + 1;
       items.push(
-        <div key={items.length} className="header">{`--== Act ${
-          routeIndex + 1
-        } ==--`}</div>,
+        <div
+          id={`act-${act}`}
+          key={items.length}
+          className="header"
+        >{`--== Act ${act} ==--`}</div>,
         <hr key={items.length + 1} />,
         <TaskList key={items.length + 2} items={taskItems} />,
         <hr key={items.length + 3} />

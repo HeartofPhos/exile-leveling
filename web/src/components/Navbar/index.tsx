@@ -19,43 +19,43 @@ const navBarItems: NavbarItem[] = [
     label: "Build",
   },
   {
-    target: "/act-1",
+    target: "/#act-1",
     label: "Act 1",
   },
   {
-    target: "/act-2",
+    target: "/#act-2",
     label: "Act 2",
   },
   {
-    target: "/act-3",
+    target: "/#act-3",
     label: "Act 3",
   },
   {
-    target: "/act-4",
+    target: "/#act-4",
     label: "Act 4",
   },
   {
-    target: "/act-5",
+    target: "/#act-5",
     label: "Act 5",
   },
   {
-    target: "/act-6",
+    target: "/#act-6",
     label: "Act 6",
   },
   {
-    target: "/act-7",
+    target: "/#act-7",
     label: "Act 7",
   },
   {
-    target: "/act-8",
+    target: "/#act-8",
     label: "Act 8",
   },
   {
-    target: "/act-9",
+    target: "/#act-9",
     label: "Act 9",
   },
   {
-    target: "/act-10",
+    target: "/#act-10",
     label: "Act 10",
   },
 ];

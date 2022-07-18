@@ -25,16 +25,19 @@
   padding: 0;
   margin: 0;
   user-select: none;
+  /* Navbar Height */
+  scroll-margin: var(--line-height);
 }
 
 html {
-  overflow-y: scroll;
   box-sizing: border-box;
   background-color: var(--background-primary);
   color: var(--primary);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1em;
   font-weight: 400;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 hr {
