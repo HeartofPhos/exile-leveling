@@ -22,6 +22,7 @@ export function getPersistent<T>(key: string) {
 
   return data.value;
 }
+
 export function setPersistent<T>(key: string, value: T) {
   const data: PersistentData<T> = {
     value: value,
@@ -30,6 +31,7 @@ export function setPersistent<T>(key: string, value: T) {
 
   localStorage.setItem(key, JSON.stringify(data));
 }
+
 export function clearPersistent(key: string) {
   localStorage.removeItem(key);
 }

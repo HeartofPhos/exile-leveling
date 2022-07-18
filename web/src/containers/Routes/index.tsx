@@ -38,6 +38,15 @@ class RoutesContainer extends React.Component<RoutesContainerProps> {
       this.routes.map((route) => route.map(() => false));
   }
 
+  componentDidMount() {
+    const routeScroll = getPersistent<number>("route-scroll");
+    if (routeScroll !== null) window.scrollTo(0, routeScroll);
+  }
+
+  componentWillUnmount() {
+    if (window.scrollY !== 0) setPersistent("route-scroll", window.scrollY);
+  }
+
   render(): ReactNode {
     const routeGems: Set<number> = new Set();
     const items: ReactNode[] = [];

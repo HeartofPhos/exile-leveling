@@ -37,7 +37,6 @@ html {
   font-size: 1em;
   font-weight: 400;
   overflow-y: scroll;
-  scroll-behavior: smooth;
 }
 
 hr {

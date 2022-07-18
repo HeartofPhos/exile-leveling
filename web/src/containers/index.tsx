@@ -10,9 +10,7 @@ export function App() {
   useEffect(() => {
     if (location.hash) {
       const element = document.getElementById(location.hash.replace("#", ""));
-      if (element) element.scrollIntoView();
-    } else {
-      window.scrollTo(0, 0);
+      if (element) element.scrollIntoView({ behavior: "smooth" });
     }
   }, [location]);
 
