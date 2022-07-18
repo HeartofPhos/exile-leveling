@@ -44,12 +44,8 @@
 }
 
 .navItem {
-  color: var(--primary-light);
   text-align: left;
-  text-decoration: none;
-  font-weight: var(--font-heavy);
   width: 100%;
-  padding: var(--size-3) 0;
 }
 
 .navItem.expand {
@@ -65,6 +61,12 @@
   }
 }
 
+.navElement {
+  color: var(--primary-light);
+  font-weight: var(--font-heavy);
+  padding: var(--size-3) 0;
+}
+
 .navIcon {
   display: block;
   box-sizing: content-box;
@@ -73,10 +75,14 @@
   padding: var(--size-3);
 }
 
-.navItems:not(.expand) > *:nth-child(n + 3) {
+.seperator:not(.expand) {
   display: none;
 }
 
-.seperator:not(.expand) {
+.navMain:not(.expand) > *:nth-child(n + 3) {
+  display: none;
+}
+
+.navAccordion:not(.expand) > * {
   display: none;
 }

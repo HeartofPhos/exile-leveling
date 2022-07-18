@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import styles from "./Navbar.module.css";
@@ -18,6 +18,9 @@ const navBarItems: NavbarItem[] = [
     target: "/build",
     label: "Build",
   },
+];
+
+const acts = [
   {
     target: "/#act-1",
     label: "Act 1",
@@ -63,32 +66,32 @@ const navBarItems: NavbarItem[] = [
 interface NavbarProps {}
 
 export function Navbar({}: NavbarProps) {
-  const [expand, setExpand] = useState<boolean>(false);
+  const [navExpand, setExpand] = useState<boolean>(false);
   const navigate = useNavigate();
   return (
     <div
       className={classNames(styles.navbar, {
-        [styles.expand]: expand,
+        [styles.expand]: navExpand,
       })}
     >
       <div
         className={classNames(styles.navHolder, {
-          [styles.expand]: expand,
+          [styles.expand]: navExpand,
         })}
       >
         <FaBars
           className={classNames(styles.navIcon)}
-          onClick={() => setExpand(!expand)}
+          onClick={() => setExpand(!navExpand)}
           display="block"
         />
         <hr
           className={classNames(styles.seperator, {
-            [styles.expand]: expand,
+            [styles.expand]: navExpand,
           })}
         />
         <div
-          className={classNames(styles.navItems, {
-            [styles.expand]: expand,
+          className={classNames(styles.navMain, styles.navItems, {
+            [styles.expand]: navExpand,
           })}
         >
           {navBarItems.map((x, i) => (
@@ -98,16 +101,81 @@ export function Navbar({}: NavbarProps) {
                 navigate(x.target);
                 setExpand(false);
               }}
-              className={classNames(styles.navItem, {
-                [styles.expand]: expand,
+              className={classNames(styles.navItem, styles.navElement, {
+                [styles.expand]: navExpand,
               })}
             >
               {x.label}
             </div>
           ))}
+          <NavAccordion
+            label="Acts"
+            navExpand={navExpand}
+            className={classNames(styles.navItem, {
+              [styles.expand]: navExpand,
+            })}
+          >
+            {acts.map((x, i) => (
+              <div
+                key={i}
+                onClick={() => {
+                  navigate(x.target);
+                  setExpand(false);
+                }}
+                className={classNames(styles.navItem, styles.navElement, {
+                  [styles.expand]: navExpand,
+                })}
+              >
+                {x.label}
+              </div>
+            ))}
+          </NavAccordion>
         </div>
       </div>
       <hr />
+    </div>
+  );
+}
+
+interface NavAccordionProps {
+  label: string;
+  navExpand: boolean;
+}
+
+function NavAccordion({
+  label,
+  navExpand,
+  children,
+  onClick,
+  ...rest
+}: NavAccordionProps & React.HTMLProps<HTMLDivElement>) {
+  const [accordionExpand, setAccordionExpand] = useState<boolean>(false);
+
+  useEffect(() => {
+    setAccordionExpand(false);
+  }, [navExpand]);
+
+  return (
+    <div
+      onClick={(e) => {
+        setAccordionExpand(!accordionExpand);
+        if (onClick) onClick(e);
+      }}
+      {...rest}
+    >
+      <div className={classNames(styles.navElement)}>{label}</div>
+      <hr
+        className={classNames(styles.seperator, {
+          [styles.expand]: accordionExpand,
+        })}
+      />
+      <div
+        className={classNames(styles.navAccordion, styles.navItems, {
+          [styles.expand]: accordionExpand,
+        })}
+      >
+        {children}
+      </div>
     </div>
   );
 }
