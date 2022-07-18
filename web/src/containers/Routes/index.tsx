@@ -14,6 +14,7 @@ import { routeFiles } from "../../../../common/data";
 import { getPersistent, setPersistent } from "../../utility";
 import { findGems } from "../../../../common/routes/quest";
 import { GemReward } from "../../components/GemReward";
+import { withScrollRestoration } from "../../utility/withScrollRestoration";
 
 type RouteProgress = boolean[][];
 
@@ -36,15 +37,6 @@ class RoutesContainer extends React.Component<RoutesContainerProps> {
     this.routeProgress =
       getPersistent<RouteProgress>("route-progress") ||
       this.routes.map((route) => route.map(() => false));
-  }
-
-  componentDidMount() {
-    const routeScroll = getPersistent<number>("route-scroll");
-    if (routeScroll !== null) window.scrollTo(0, routeScroll);
-  }
-
-  componentWillUnmount() {
-    if (window.scrollY !== 0) setPersistent("route-scroll", window.scrollY);
   }
 
   render(): ReactNode {
@@ -139,4 +131,4 @@ class RoutesContainer extends React.Component<RoutesContainerProps> {
   }
 }
 
-export default RoutesContainer;
+export default withScrollRestoration(RoutesContainer);
