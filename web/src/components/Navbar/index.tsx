@@ -91,20 +91,19 @@ export function Navbar({}: NavbarProps) {
             [styles.expand]: expand,
           })}
         >
-          {navBarItems.map((x) => (
-            <>
-              <div
-                onClick={() => {
-                  navigate(x.target);
-                  setExpand(false);
-                }}
-                className={classNames(styles.navItem, {
-                  [styles.expand]: expand,
-                })}
-              >
-                {x.label}
-              </div>
-            </>
+          {navBarItems.map((x, i) => (
+            <div
+              key={i}
+              onClick={() => {
+                navigate(x.target);
+                setExpand(false);
+              }}
+              className={classNames(styles.navItem, {
+                [styles.expand]: expand,
+              })}
+            >
+              {x.label}
+            </div>
           ))}
         </div>
       </div>
