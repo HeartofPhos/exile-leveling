@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { useEffect, useState } from "react";
+import { RecoilState, useRecoilState } from "recoil";
 import styles from "./TaskList.module.css";
 
 export const taskStyle = styles.task;
@@ -7,26 +7,18 @@ export const taskStyle = styles.task;
 export interface TaskItemProps {
   key?: any;
   children?: React.ReactNode;
-  initialIsCompleted?: boolean;
-  onUpdate?: (isCompleted: boolean) => void;
+  isCompletedState?: RecoilState<boolean>;
 }
 
-function TaskListItem({
-  children,
-  initialIsCompleted,
-  onUpdate,
-}: TaskItemProps) {
-  const [isCompleted, setIsCompleted] = useState(initialIsCompleted);
-  useEffect(() => {
-    if (isCompleted === undefined) return;
-    if (onUpdate) onUpdate(isCompleted);
-  }, [isCompleted]);
+function TaskListItem({ children, isCompletedState }: TaskItemProps) {
+  const [isCompleted, setIsCompleted] = isCompletedState
+    ? useRecoilState(isCompletedState)
+    : [undefined, undefined];
 
   return (
     <li
       onClick={() => {
-        if (isCompleted === undefined) return;
-        setIsCompleted(!isCompleted);
+        if (setIsCompleted) setIsCompleted(!isCompleted);
       }}
       className={classNames({ [styles.completed]: isCompleted })}
     >

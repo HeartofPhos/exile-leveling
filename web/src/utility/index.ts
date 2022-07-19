@@ -1,37 +1,32 @@
-const PERSISTENT_VERSION: Partial<Record<string, number>> = {
-  "build-data": 2,
-  "route-progress": 0,
-};
+import { atom, atomFamily } from "recoil";
+import { routeFiles } from "../../../common/data";
+import {
+  BuildData,
+  initializeRouteLookup,
+  initializeRouteState,
+  parseRoute,
+} from "../../../common/routes";
 
-interface PersistentData<T> {
-  value: T;
-  version: number | undefined;
-}
+const routeLookup = initializeRouteLookup();
+export const routeDataState = atom({
+  key: "routeDataState",
+  default: {
+    routeLookup: routeLookup,
+    routes: parseRoute(routeFiles, routeLookup, initializeRouteState()),
+  },
+});
 
-export function getPersistent<T>(key: string) {
-  const json = localStorage.getItem(key);
-  if (!json) return null;
+export const buildDataState = atom<BuildData | null>({
+  key: "buildDataState",
+  default: null,
+});
 
-  const data = JSON.parse(json) as PersistentData<T>;
+export const routeProgressState = atomFamily<boolean, [number, number]>({
+  key: "routeProgressState", // unique ID (with respect to other atoms/selectors)
+  default: (p) => false, // default value (aka initial value)
+});
 
-  const expectedVersion = PERSISTENT_VERSION[key];
-  if (expectedVersion !== undefined && expectedVersion != data.version) {
-    clearPersistent(key);
-    return null;
-  }
-
-  return data.value;
-}
-
-export function setPersistent<T>(key: string, value: T) {
-  const data: PersistentData<T> = {
-    value: value,
-    version: PERSISTENT_VERSION[key],
-  };
-
-  localStorage.setItem(key, JSON.stringify(data));
-}
-
-export function clearPersistent(key: string) {
-  localStorage.removeItem(key);
-}
+export const gemProgressState = atomFamily<boolean, number>({
+  key: "gemProgressState", // unique ID (with respect to other atoms/selectors)
+  default: (p) => false, // default value (aka initial value)
+});
