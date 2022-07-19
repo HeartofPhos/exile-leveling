@@ -1,17 +1,6 @@
-import {
-  atom,
-  atomFamily,
-  DefaultValue,
-  useRecoilCallback,
-} from "recoil";
+import { atom, atomFamily, DefaultValue, useRecoilCallback } from "recoil";
 import { RecoilSync, syncEffect } from "recoil-sync";
-import { routeFiles } from "../../../common/data";
-import {
-  BuildData,
-  initializeRouteLookup,
-  initializeRouteState,
-  parseRoute,
-} from "../../../common/routes";
+import type { BuildData } from "../../../common/routes";
 
 const ExileSyncStoreKey = "exile-sync-store";
 
@@ -28,13 +17,20 @@ const exileSyncEffect = syncEffect<any>({
   refine: checker,
 });
 
-const routeLookup = initializeRouteLookup();
-export const routeDataAtom = atom({
-  key: "routeDataAtom",
-  default: {
+async function initializeRouteData() {
+  const { initializeRouteLookup, initializeRouteState, parseRoute } =
+    await import("../../../common/routes");
+  const { routeFiles } = await import("../../../common/data");
+  const routeLookup = initializeRouteLookup();
+  return {
     routeLookup: routeLookup,
     routes: parseRoute(routeFiles, routeLookup, initializeRouteState()),
-  },
+  };
+}
+
+export const routeDataAtom = atom({
+  key: "routeDataAtom",
+  default: initializeRouteData(),
 });
 
 export const buildDataAtom = atom<BuildData | null>({
