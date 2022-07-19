@@ -1,4 +1,4 @@
-import { DefaultValue, useRecoilState } from "recoil";
+import { DefaultValue, useRecoilCallback, useRecoilState } from "recoil";
 import { RecoilSync } from "recoil-sync";
 import { gemProgressAtomFamily } from ".";
 import { BuildData } from "../../../common/routes";
@@ -23,6 +23,18 @@ export function ExileSyncStore({ children }: SyncWithStorageProps) {
   const gemProgressJson = localStorage.getItem("gem-progress");
   const gemProgress = new Set<number>(
     gemProgressJson ? JSON.parse(gemProgressJson) : undefined
+  );
+
+  const resetGemProgress = useRecoilCallback(
+    ({ reset }) =>
+      async () => {
+        for (const key of gemProgress.keys()) {
+          reset(gemProgressAtomFamily(key));
+        }
+        gemProgress.clear();
+        localStorage.removeItem("gem-progress");
+      },
+    []
   );
 
   return (
@@ -60,9 +72,7 @@ export function ExileSyncStore({ children }: SyncWithStorageProps) {
                   localStorage.removeItem("build-data");
                 }
 
-                //TODO should reset gemProgressAtomFamily atoms
-                gemProgress.clear();
-                localStorage.removeItem("gem-progress");
+                resetGemProgress();
               }
               break;
             case "routeProgressAtomFamily":
