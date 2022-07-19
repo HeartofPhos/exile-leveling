@@ -1,6 +1,4 @@
-import React from "react";
 import { atom, atomFamily } from "recoil";
-import { syncEffect } from "recoil-sync";
 import { routeFiles } from "../../../common/data";
 import {
   BuildData,
@@ -8,19 +6,7 @@ import {
   initializeRouteState,
   parseRoute,
 } from "../../../common/routes";
-
-const checker = <T>(value: unknown) => {
-  return {
-    type: "success",
-    value: value as T,
-    warnings: [],
-  };
-};
-
-const exileSyncEffect = syncEffect<any>({
-  storeKey: "exile-sync-store",
-  refine: checker,
-});
+import { exileSyncEffect } from "./ExileSyncStore";
 
 const routeLookup = initializeRouteLookup();
 export const routeDataAtom = atom({

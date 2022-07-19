@@ -46,9 +46,9 @@ function GemOrderList(
   onUpdate: (buildData: BuildData) => void
 ) {
   const taskItems: TaskItemProps[] = [];
-
-  for (let i = 0; i < buildData.requiredGems.length; i++) {
-    const requiredGem = buildData.requiredGems[i];
+  const requiredGems = [...buildData.requiredGems];
+  for (let i = 0; i < requiredGems.length; i++) {
+    const requiredGem = requiredGems[i];
     taskItems.push({
       key: requiredGem.uid,
       isCompletedState: gemProgressAtomFamily(requiredGem.uid),
@@ -56,33 +56,33 @@ function GemOrderList(
         <GemOrder
           key={i}
           onMoveTop={() => {
-            const splice = buildData.requiredGems.splice(i, 1);
-            buildData.requiredGems.unshift(...splice);
+            const splice = requiredGems.splice(i, 1);
+            requiredGems.unshift(...splice);
 
-            onUpdate(buildData);
+            onUpdate({ ...buildData, requiredGems });
           }}
           onMoveUp={() => {
             if (i == 0) return;
 
-            const swap = buildData.requiredGems[i];
-            buildData.requiredGems[i] = buildData.requiredGems[i - 1];
-            buildData.requiredGems[i - 1] = swap;
+            const swap = requiredGems[i];
+            requiredGems[i] = requiredGems[i - 1];
+            requiredGems[i - 1] = swap;
 
-            onUpdate(buildData);
+            onUpdate({ ...buildData, requiredGems });
           }}
           onMoveDown={() => {
-            if (i == buildData.requiredGems.length - 1) return;
+            if (i == requiredGems.length - 1) return;
 
-            const swap = buildData.requiredGems[i];
-            buildData.requiredGems[i] = buildData.requiredGems[i + 1];
-            buildData.requiredGems[i + 1] = swap;
+            const swap = requiredGems[i];
+            requiredGems[i] = requiredGems[i + 1];
+            requiredGems[i + 1] = swap;
 
-            onUpdate(buildData);
+            onUpdate({ ...buildData, requiredGems });
           }}
           onDelete={() => {
-            buildData.requiredGems.splice(i, 1);
+            requiredGems.splice(i, 1);
 
-            onUpdate(buildData);
+            onUpdate({ ...buildData, requiredGems });
           }}
           requiredGem={requiredGem}
         />

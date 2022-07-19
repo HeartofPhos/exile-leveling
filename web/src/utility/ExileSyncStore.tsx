@@ -1,13 +1,26 @@
 import { DefaultValue, useRecoilCallback, useRecoilState } from "recoil";
-import { RecoilSync } from "recoil-sync";
+import { RecoilSync, syncEffect } from "recoil-sync";
 import { gemProgressAtomFamily } from ".";
 import { BuildData } from "../../../common/routes";
+
+export const ExileSyncStoreKey = "exile-sync-store";
+
+function checker<T>(value: unknown) {
+  return {
+    type: "success",
+    value: value as T,
+    warnings: [],
+  };
+}
+
+export const exileSyncEffect = syncEffect<any>({
+  storeKey: ExileSyncStoreKey,
+  refine: checker,
+});
 
 interface SyncWithStorageProps {
   children?: React.ReactNode;
 }
-
-export const ExileSyncStoreKey = "exile-sync-store";
 
 export function ExileSyncStore({ children }: SyncWithStorageProps) {
   const buildDataJson = localStorage.getItem("build-data");
@@ -26,13 +39,18 @@ export function ExileSyncStore({ children }: SyncWithStorageProps) {
   );
 
   const resetGemProgress = useRecoilCallback(
-    ({ reset }) =>
+    ({ set }) =>
       async () => {
         for (const key of gemProgress.keys()) {
-          reset(gemProgressAtomFamily(key));
+          const exists = buildData?.requiredGems.find((x) => x.uid == key)
+            ? true
+            : false;
+
+          if (!exists) {
+            gemProgress.delete(key);
+            set(gemProgressAtomFamily(key), false);
+          }
         }
-        gemProgress.clear();
-        localStorage.removeItem("gem-progress");
       },
     []
   );
@@ -81,10 +99,12 @@ export function ExileSyncStore({ children }: SyncWithStorageProps) {
                 if (value) routeProgress.add(key);
                 else routeProgress.delete(key);
 
-                localStorage.setItem(
-                  "route-progress",
-                  JSON.stringify([...routeProgress])
-                );
+                if (routeProgress.size > 0)
+                  localStorage.setItem(
+                    "route-progress",
+                    JSON.stringify([...routeProgress])
+                  );
+                else localStorage.removeItem("route-progress");
               }
               break;
             case "gemProgressAtomFamily":
@@ -93,10 +113,12 @@ export function ExileSyncStore({ children }: SyncWithStorageProps) {
                 if (value) gemProgress.add(key);
                 else gemProgress.delete(key);
 
-                localStorage.setItem(
-                  "gem-progress",
-                  JSON.stringify([...gemProgress])
-                );
+                if (gemProgress.size > 0)
+                  localStorage.setItem(
+                    "gem-progress",
+                    JSON.stringify([...gemProgress])
+                  );
+                else localStorage.removeItem("gem-progress");
               }
               break;
           }
