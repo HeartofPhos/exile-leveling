@@ -3,7 +3,6 @@ import {
   atomFamily,
   DefaultValue,
   useRecoilCallback,
-  useRecoilState,
 } from "recoil";
 import { RecoilSync, syncEffect } from "recoil-sync";
 import { routeFiles } from "../../../common/data";
@@ -60,23 +59,47 @@ interface SyncWithStorageProps {
   children?: React.ReactNode;
 }
 
-function ExileSyncStore({ children }: SyncWithStorageProps) {
-  const buildDataJson = localStorage.getItem("build-data");
-  let buildData: BuildData | null = buildDataJson
-    ? JSON.parse(buildDataJson)
-    : null;
+const buildDataJson = localStorage.getItem("build-data");
+let buildData: BuildData | null = buildDataJson
+  ? JSON.parse(buildDataJson)
+  : null;
 
-  const routeProgressJson = localStorage.getItem("route-progress");
-  const routeProgress = new Set<string>(
-    routeProgressJson ? JSON.parse(routeProgressJson) : undefined
+const routeProgressJson = localStorage.getItem("route-progress");
+const routeProgress = new Set<string>(
+  routeProgressJson ? JSON.parse(routeProgressJson) : undefined
+);
+
+const gemProgressJson = localStorage.getItem("gem-progress");
+const gemProgress = new Set<number>(
+  gemProgressJson ? JSON.parse(gemProgressJson) : undefined
+);
+
+export function clearRouteProgressCallback() {
+  return useRecoilCallback(
+    ({ set }) =>
+      async () => {
+        for (const key of routeProgress.keys()) {
+          set(routeProgressAtomFamily(JSON.parse(key)), false);
+        }
+      },
+    []
   );
+}
 
-  const gemProgressJson = localStorage.getItem("gem-progress");
-  const gemProgress = new Set<number>(
-    gemProgressJson ? JSON.parse(gemProgressJson) : undefined
+export function clearGemProgressCallback() {
+  return useRecoilCallback(
+    ({ set }) =>
+      async () => {
+        for (const key of gemProgress.keys()) {
+          set(gemProgressAtomFamily(key), false);
+        }
+      },
+    []
   );
+}
 
-  const resetGemProgress = useRecoilCallback(
+function resyncGemProgressCallback() {
+  return useRecoilCallback(
     ({ set }) =>
       async () => {
         for (const key of gemProgress.keys()) {
@@ -92,6 +115,10 @@ function ExileSyncStore({ children }: SyncWithStorageProps) {
       },
     []
   );
+}
+
+function ExileSyncStore({ children }: SyncWithStorageProps) {
+  const resyncGemProgress = resyncGemProgressCallback();
 
   return (
     <RecoilSync
@@ -128,7 +155,7 @@ function ExileSyncStore({ children }: SyncWithStorageProps) {
                   localStorage.removeItem("build-data");
                 }
 
-                resetGemProgress();
+                resyncGemProgress();
               }
               break;
             case "routeProgressAtomFamily":

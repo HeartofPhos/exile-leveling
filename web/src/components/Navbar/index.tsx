@@ -3,6 +3,10 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import styles from "./Navbar.module.css";
+import {
+  clearGemProgressCallback,
+  clearRouteProgressCallback,
+} from "../../utility/ExileSyncStore";
 
 interface NavbarItem {
   target: string;
@@ -68,6 +72,9 @@ interface NavbarProps {}
 export function Navbar({}: NavbarProps) {
   const [navExpand, setExpand] = useState<boolean>(false);
   const navigate = useNavigate();
+
+  const clearRouteProgress = clearRouteProgressCallback();
+  const clearGemProgress = clearGemProgressCallback();
   return (
     <div
       className={classNames(styles.navbar, {
@@ -108,6 +115,18 @@ export function Navbar({}: NavbarProps) {
               {x.label}
             </div>
           ))}
+          <div
+            onClick={() => {
+              clearRouteProgress();
+              clearGemProgress();
+              setExpand(false);
+            }}
+            className={classNames(styles.navItem, styles.navElement, {
+              [styles.expand]: navExpand,
+            })}
+          >
+            Reset Progress
+          </div>
           <NavAccordion
             label="Acts"
             navExpand={navExpand}
