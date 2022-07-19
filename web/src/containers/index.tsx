@@ -1,8 +1,9 @@
-import { useEffect } from "react";
+import { lazy, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
-import { Build } from "./Build";
-import RoutesContainer from "./Routes";
+
+const Build = lazy(() => import("./Build"));
+const RoutesContainer = lazy(() => import("./Routes"));
 
 export function App() {
   const location = useLocation();
@@ -15,12 +16,12 @@ export function App() {
   }, [location]);
 
   return (
-    <div className="container">
+    <>
       <Navbar />
       <Routes>
         <Route path="/" element={<RoutesContainer />} />
         <Route path="/build" element={<Build />} />
       </Routes>
-    </div>
+    </>
   );
 }

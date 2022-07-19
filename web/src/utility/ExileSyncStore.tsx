@@ -1,9 +1,20 @@
-import { DefaultValue, useRecoilCallback, useRecoilState } from "recoil";
+import {
+  atom,
+  atomFamily,
+  DefaultValue,
+  useRecoilCallback,
+  useRecoilState,
+} from "recoil";
 import { RecoilSync, syncEffect } from "recoil-sync";
-import { gemProgressAtomFamily } from ".";
-import { BuildData } from "../../../common/routes";
+import { routeFiles } from "../../../common/data";
+import {
+  BuildData,
+  initializeRouteLookup,
+  initializeRouteState,
+  parseRoute,
+} from "../../../common/routes";
 
-export const ExileSyncStoreKey = "exile-sync-store";
+const ExileSyncStoreKey = "exile-sync-store";
 
 function checker<T>(value: unknown) {
   return {
@@ -13,16 +24,43 @@ function checker<T>(value: unknown) {
   };
 }
 
-export const exileSyncEffect = syncEffect<any>({
+const exileSyncEffect = syncEffect<any>({
   storeKey: ExileSyncStoreKey,
   refine: checker,
+});
+
+const routeLookup = initializeRouteLookup();
+export const routeDataAtom = atom({
+  key: "routeDataAtom",
+  default: {
+    routeLookup: routeLookup,
+    routes: parseRoute(routeFiles, routeLookup, initializeRouteState()),
+  },
+});
+
+export const buildDataAtom = atom<BuildData | null>({
+  key: "buildDataAtom",
+  default: null,
+  effects: [exileSyncEffect],
+});
+
+export const routeProgressAtomFamily = atomFamily<boolean, [number, number]>({
+  key: "routeProgressAtomFamily",
+  default: (p) => false,
+  effects: [exileSyncEffect],
+});
+
+export const gemProgressAtomFamily = atomFamily<boolean, number>({
+  key: "gemProgressAtomFamily",
+  default: (p) => false,
+  effects: [exileSyncEffect],
 });
 
 interface SyncWithStorageProps {
   children?: React.ReactNode;
 }
 
-export function ExileSyncStore({ children }: SyncWithStorageProps) {
+function ExileSyncStore({ children }: SyncWithStorageProps) {
   const buildDataJson = localStorage.getItem("build-data");
   let buildData: BuildData | null = buildDataJson
     ? JSON.parse(buildDataJson)
@@ -129,3 +167,5 @@ export function ExileSyncStore({ children }: SyncWithStorageProps) {
     </RecoilSync>
   );
 }
+
+export default ExileSyncStore;

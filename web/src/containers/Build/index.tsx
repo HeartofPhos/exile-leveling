@@ -2,12 +2,15 @@ import { TaskItemProps, TaskList } from "../../components/TaskList";
 import { GemOrder } from "../../components/GemOrder";
 import { BuildData } from "../../../../common/routes";
 import { BuildForm } from "../../components/BuildForm";
-import { gemProgressAtomFamily, buildDataAtom } from "../../utility";
+import {
+  gemProgressAtomFamily,
+  buildDataAtom,
+} from "../../utility/ExileSyncStore";
 import { Form, formStyles } from "../../components/Form";
 import classNames from "classnames";
 import { useRecoilState } from "recoil";
 
-export function Build() {
+function Build() {
   const [buildData, setBuildData] = useRecoilState(buildDataAtom);
 
   return (
@@ -99,3 +102,5 @@ function GemOrderList(
     </>
   );
 }
+
+export default Build;

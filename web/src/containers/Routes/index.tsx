@@ -6,7 +6,7 @@ import {
   routeProgressAtomFamily,
   routeDataAtom,
   buildDataAtom,
-} from "../../utility";
+} from "../../utility/ExileSyncStore";
 import { findGems } from "../../../../common/routes/quest";
 import { GemReward } from "../../components/GemReward";
 import { withScrollRestoration } from "../../utility/withScrollRestoration";
