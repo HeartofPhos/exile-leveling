@@ -2,10 +2,10 @@ import { ReactNode } from "react";
 import { TaskList, TaskItemProps } from "../../components/TaskList";
 import { ExileStep } from "../../components/ExileStep";
 import {
-  gemProgressState,
-  routeProgressState,
-  routeDataState,
-  buildDataState,
+  gemProgressAtomFamily,
+  routeProgressAtomFamily,
+  routeDataAtom,
+  buildDataAtom,
 } from "../../utility";
 import { findGems } from "../../../../common/routes/quest";
 import { GemReward } from "../../components/GemReward";
@@ -13,8 +13,8 @@ import { withScrollRestoration } from "../../utility/withScrollRestoration";
 import { useRecoilValue } from "recoil";
 
 function RoutesContainer() {
-  const { routes, routeLookup } = useRecoilValue(routeDataState);
-  const buildData = useRecoilValue(buildDataState);
+  const { routes, routeLookup } = useRecoilValue(routeDataAtom);
+  const buildData = useRecoilValue(buildDataAtom);
 
   const routeGems: Set<number> = new Set();
   const items: ReactNode[] = [];
@@ -26,7 +26,7 @@ function RoutesContainer() {
       const step = route[stepIndex];
       taskItems.push({
         key: stepIndex,
-        isCompletedState: routeProgressState([routeIndex, stepIndex]),
+        isCompletedState: routeProgressAtomFamily([routeIndex, stepIndex]),
         children: (
           <ExileStep key={stepIndex} step={step} lookup={routeLookup} />
         ),
@@ -46,7 +46,7 @@ function RoutesContainer() {
                 const requiredGem = buildData.requiredGems[gemIndex];
                 taskItems.push({
                   key: requiredGem.uid,
-                  isCompletedState: gemProgressState(requiredGem.uid),
+                  isCompletedState: gemProgressAtomFamily(requiredGem.uid),
                   children: (
                     <GemReward
                       key={taskItems.length}
@@ -61,7 +61,7 @@ function RoutesContainer() {
                 const requiredGem = buildData.requiredGems[gemIndex];
                 taskItems.push({
                   key: requiredGem.uid,
-                  isCompletedState: gemProgressState(requiredGem.uid),
+                  isCompletedState: gemProgressAtomFamily(requiredGem.uid),
                   children: (
                     <GemReward
                       key={taskItems.length}

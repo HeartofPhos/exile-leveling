@@ -2,13 +2,13 @@ import { TaskItemProps, TaskList } from "../../components/TaskList";
 import { GemOrder } from "../../components/GemOrder";
 import { BuildData } from "../../../../common/routes";
 import { BuildForm } from "../../components/BuildForm";
-import { gemProgressState, buildDataState } from "../../utility";
+import { gemProgressAtomFamily, buildDataAtom } from "../../utility";
 import { Form, formStyles } from "../../components/Form";
 import classNames from "classnames";
 import { useRecoilState } from "recoil";
 
 export function Build() {
-  const [buildData, setBuildData] = useRecoilState(buildDataState);
+  const [buildData, setBuildData] = useRecoilState(buildDataAtom);
 
   return (
     <div>
@@ -51,7 +51,7 @@ function GemOrderList(
     const requiredGem = buildData.requiredGems[i];
     taskItems.push({
       key: requiredGem.uid,
-      isCompletedState: gemProgressState(requiredGem.uid),
+      isCompletedState: gemProgressAtomFamily(requiredGem.uid),
       children: (
         <GemOrder
           key={i}

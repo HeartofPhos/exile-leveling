@@ -84,7 +84,6 @@ function processPob(
             id: gemId,
             uid: Math.random(),
             note: note.replace(POB_COLOUR_REGEX, ""),
-            acquired: false,
           });
         }
       }
