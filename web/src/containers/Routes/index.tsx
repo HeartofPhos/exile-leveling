@@ -1,134 +1,95 @@
 import { ReactNode } from "react";
-import {
-  BuildData,
-  initializeRouteLookup,
-  initializeRouteState,
-  parseRoute,
-  Route,
-  RouteLookup,
-} from "../../../../common/routes";
 import { TaskList, TaskItemProps } from "../../components/TaskList";
 import { ExileStep } from "../../components/ExileStep";
-import React from "react";
-import { routeFiles } from "../../../../common/data";
-import { getPersistent, setPersistent } from "../../utility";
+import {
+  gemProgressAtomFamily,
+  routeProgressAtomFamily,
+  routeDataAtom,
+  buildDataAtom,
+} from "../../utility/ExileSyncStore";
 import { findGems } from "../../../../common/routes/quest";
 import { GemReward } from "../../components/GemReward";
 import { withScrollRestoration } from "../../utility/withScrollRestoration";
+import { useRecoilValue } from "recoil";
 
-type RouteProgress = boolean[][];
+function RoutesContainer() {
+  const { routes, routeLookup } = useRecoilValue(routeDataAtom);
+  const buildData = useRecoilValue(buildDataAtom);
 
-interface RoutesContainerProps {}
+  const routeGems: Set<number> = new Set();
+  const items: ReactNode[] = [];
+  for (let routeIndex = 0; routeIndex < routes.length; routeIndex++) {
+    const route = routes[routeIndex];
 
-class RoutesContainer extends React.Component<RoutesContainerProps> {
-  private routes: Route[];
-  private routeLookup: RouteLookup;
-  private routeProgress: RouteProgress;
-  private buildData: BuildData | null;
+    let taskItems: TaskItemProps[] = [];
+    for (let stepIndex = 0; stepIndex < route.length; stepIndex++) {
+      const step = route[stepIndex];
+      taskItems.push({
+        key: stepIndex,
+        isCompletedState: routeProgressAtomFamily([routeIndex, stepIndex]),
+        children: (
+          <ExileStep key={stepIndex} step={step} lookup={routeLookup} />
+        ),
+      });
 
-  constructor(props: RoutesContainerProps) {
-    super(props);
+      if (buildData) {
+        if (step.type == "fragment_step") {
+          for (const part of step.parts) {
+            if (typeof part !== "string" && part.type == "quest") {
+              const { questGems, vendorGems } = findGems(
+                part,
+                buildData,
+                routeGems
+              );
 
-    this.buildData = getPersistent<BuildData>("build-data");
-    this.routeLookup = initializeRouteLookup();
-    const routeState = initializeRouteState();
-    this.routes = parseRoute(routeFiles, this.routeLookup, routeState);
+              for (const gemIndex of questGems) {
+                const requiredGem = buildData.requiredGems[gemIndex];
+                taskItems.push({
+                  key: requiredGem.uid,
+                  isCompletedState: gemProgressAtomFamily(requiredGem.uid),
+                  children: (
+                    <GemReward
+                      key={taskItems.length}
+                      requiredGem={buildData.requiredGems[gemIndex]}
+                      type="quest"
+                    />
+                  ),
+                });
+              }
 
-    this.routeProgress =
-      getPersistent<RouteProgress>("route-progress") ||
-      this.routes.map((route) => route.map(() => false));
-  }
-
-  render(): ReactNode {
-    const routeGems: Set<number> = new Set();
-    const items: ReactNode[] = [];
-    for (let routeIndex = 0; routeIndex < this.routes.length; routeIndex++) {
-      const route = this.routes[routeIndex];
-
-      let taskItems: TaskItemProps[] = [];
-      for (let stepIndex = 0; stepIndex < route.length; stepIndex++) {
-        const step = route[stepIndex];
-        taskItems.push({
-          key: stepIndex,
-          initialIsCompleted: this.routeProgress[routeIndex][stepIndex],
-          onUpdate: (isCompleted) => {
-            this.routeProgress[routeIndex][stepIndex] = isCompleted;
-            setPersistent("route-progress", this.routeProgress);
-          },
-          children: (
-            <ExileStep key={stepIndex} step={step} lookup={this.routeLookup} />
-          ),
-        });
-
-        if (this.buildData) {
-          if (step.type == "fragment_step") {
-            for (const part of step.parts) {
-              if (typeof part !== "string" && part.type == "quest") {
-                const { questGems, vendorGems } = findGems(
-                  part,
-                  this.buildData,
-                  routeGems
-                );
-
-                for (const gemIndex of questGems) {
-                  const requiredGem = this.buildData.requiredGems[gemIndex];
-                  taskItems.push({
-                    key: requiredGem.uid,
-                    initialIsCompleted: requiredGem.acquired,
-                    onUpdate: (isCompleted) => {
-                      requiredGem.acquired = isCompleted;
-
-                      setPersistent("build-data", this.buildData);
-                    },
-                    children: (
-                      <GemReward
-                        key={taskItems.length}
-                        requiredGem={this.buildData.requiredGems[gemIndex]}
-                        type="quest"
-                      />
-                    ),
-                  });
-                }
-
-                for (const gemIndex of vendorGems) {
-                  const requiredGem = this.buildData.requiredGems[gemIndex];
-                  taskItems.push({
-                    key: requiredGem.uid,
-                    initialIsCompleted: requiredGem.acquired,
-                    onUpdate: (isCompleted) => {
-                      requiredGem.acquired = isCompleted;
-
-                      setPersistent("build-data", this.buildData);
-                    },
-                    children: (
-                      <GemReward
-                        key={taskItems.length}
-                        requiredGem={this.buildData.requiredGems[gemIndex]}
-                        type="vendor"
-                      />
-                    ),
-                  });
-                }
+              for (const gemIndex of vendorGems) {
+                const requiredGem = buildData.requiredGems[gemIndex];
+                taskItems.push({
+                  key: requiredGem.uid,
+                  isCompletedState: gemProgressAtomFamily(requiredGem.uid),
+                  children: (
+                    <GemReward
+                      key={taskItems.length}
+                      requiredGem={buildData.requiredGems[gemIndex]}
+                      type="vendor"
+                    />
+                  ),
+                });
               }
             }
           }
         }
       }
-
-      const act = routeIndex + 1;
-      items.push(
-        <div
-          id={`act-${act}`}
-          key={items.length}
-          className="header"
-        >{`--== Act ${act} ==--`}</div>,
-        <hr key={items.length + 1} />,
-        <TaskList key={items.length + 2} items={taskItems} />,
-        <hr key={items.length + 3} />
-      );
     }
-    return <>{items}</>;
+
+    const act = routeIndex + 1;
+    items.push(
+      <div
+        id={`act-${act}`}
+        key={items.length}
+        className="header"
+      >{`--== Act ${act} ==--`}</div>,
+      <hr key={items.length + 1} />,
+      <TaskList key={items.length + 2} items={taskItems} />,
+      <hr key={items.length + 3} />
+    );
   }
+  return <>{items}</>;
 }
 
 export default withScrollRestoration(RoutesContainer);

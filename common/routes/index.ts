@@ -498,7 +498,6 @@ export interface RequiredGem {
   id: string;
   uid: number;
   note: string;
-  acquired: boolean;
 }
 
 export function initializeRouteLookup() {

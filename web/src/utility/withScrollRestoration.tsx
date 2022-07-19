@@ -1,25 +1,24 @@
 import React, { useLayoutEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { getPersistent, setPersistent } from ".";
+import { atomFamily, useRecoilState } from "recoil";
 
-type ScrollLookup = Record<string, number>;
+const scrollOffsetState = atomFamily<number, string>({
+  key: "scrollOffsetState",
+  default: 0,
+});
 
 export function withScrollRestoration<P>(Component: React.ComponentType<P>) {
   function ComponentWithScrollPosition(props: any) {
     const location = useLocation();
+    const [scrollOffset, setScrollLookup] = useRecoilState(
+      scrollOffsetState(location.pathname)
+    );
 
     useLayoutEffect(() => {
-      const scrollLookup = getPersistent<ScrollLookup>("scroll-lookup");
-      const offset = (scrollLookup && scrollLookup[location.pathname]) || 0;
-      window.scrollTo(0, offset);
+      window.scrollTo(0, scrollOffset);
 
       return () => {
-        const newScrollLookup = {
-          ...scrollLookup,
-          [location.pathname]: window.scrollY,
-        };
-
-        setPersistent<ScrollLookup>("scroll-lookup", newScrollLookup);
+        setScrollLookup(window.scrollY);
       };
     }, []);
 

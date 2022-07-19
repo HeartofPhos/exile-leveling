@@ -1,27 +1,17 @@
-import { useEffect, useState } from "react";
 import { TaskItemProps, TaskList } from "../../components/TaskList";
 import { GemOrder } from "../../components/GemOrder";
 import { BuildData } from "../../../../common/routes";
 import { BuildForm } from "../../components/BuildForm";
-import { clearPersistent, getPersistent, setPersistent } from "../../utility";
+import {
+  gemProgressAtomFamily,
+  buildDataAtom,
+} from "../../utility/ExileSyncStore";
 import { Form, formStyles } from "../../components/Form";
 import classNames from "classnames";
+import { useRecoilState } from "recoil";
 
-export function Build() {
-  const [buildData, setBuildData] = useState<BuildData | null>(null);
-
-  useEffect(() => {
-    const fn = async () => {
-      if (buildData) {
-        setPersistent("build-data", buildData);
-      } else {
-        const buildData = getPersistent<BuildData>("build-data");
-        if (buildData) setBuildData(buildData);
-      }
-    };
-
-    fn();
-  }, [buildData]);
+function Build() {
+  const [buildData, setBuildData] = useRecoilState(buildDataAtom);
 
   return (
     <div>
@@ -31,7 +21,6 @@ export function Build() {
             <button
               className={classNames(formStyles.formButton)}
               onClick={() => {
-                clearPersistent("build-data");
                 setBuildData(null);
               }}
             >
@@ -60,47 +49,43 @@ function GemOrderList(
   onUpdate: (buildData: BuildData) => void
 ) {
   const taskItems: TaskItemProps[] = [];
-
-  for (let i = 0; i < buildData.requiredGems.length; i++) {
-    const requiredGem = buildData.requiredGems[i];
+  const requiredGems = [...buildData.requiredGems];
+  for (let i = 0; i < requiredGems.length; i++) {
+    const requiredGem = requiredGems[i];
     taskItems.push({
       key: requiredGem.uid,
-      initialIsCompleted: requiredGem.acquired,
-      onUpdate: (isCompleted) => {
-        buildData.requiredGems[i].acquired = isCompleted;
-        setPersistent("build-data", buildData);
-      },
+      isCompletedState: gemProgressAtomFamily(requiredGem.uid),
       children: (
         <GemOrder
           key={i}
           onMoveTop={() => {
-            const splice = buildData.requiredGems.splice(i, 1);
-            buildData.requiredGems.unshift(...splice);
+            const splice = requiredGems.splice(i, 1);
+            requiredGems.unshift(...splice);
 
-            onUpdate(buildData);
+            onUpdate({ ...buildData, requiredGems });
           }}
           onMoveUp={() => {
             if (i == 0) return;
 
-            const swap = buildData.requiredGems[i];
-            buildData.requiredGems[i] = buildData.requiredGems[i - 1];
-            buildData.requiredGems[i - 1] = swap;
+            const swap = requiredGems[i];
+            requiredGems[i] = requiredGems[i - 1];
+            requiredGems[i - 1] = swap;
 
-            onUpdate(buildData);
+            onUpdate({ ...buildData, requiredGems });
           }}
           onMoveDown={() => {
-            if (i == buildData.requiredGems.length - 1) return;
+            if (i == requiredGems.length - 1) return;
 
-            const swap = buildData.requiredGems[i];
-            buildData.requiredGems[i] = buildData.requiredGems[i + 1];
-            buildData.requiredGems[i + 1] = swap;
+            const swap = requiredGems[i];
+            requiredGems[i] = requiredGems[i + 1];
+            requiredGems[i + 1] = swap;
 
-            onUpdate(buildData);
+            onUpdate({ ...buildData, requiredGems });
           }}
           onDelete={() => {
-            buildData.requiredGems.splice(i, 1);
+            requiredGems.splice(i, 1);
 
-            onUpdate(buildData);
+            onUpdate({ ...buildData, requiredGems });
           }}
           requiredGem={requiredGem}
         />
@@ -117,3 +102,5 @@ function GemOrderList(
     </>
   );
 }
+
+export default Build;
