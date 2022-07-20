@@ -1,7 +1,6 @@
 .list {
   border-style: solid;
   border-width: 0;
-  padding: 0 var(--size-3);
 }
 
 .list > li {
@@ -10,7 +9,7 @@
   border-color: var(--accent-secondary);
   border-width: var(--size-1) 0;
   width: 100%;
-  padding: var(--size-3) 0;
+  padding: var(--size-3);
 }
 
 @media (hover: hover) {

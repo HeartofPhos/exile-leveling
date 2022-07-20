@@ -1,80 +1,57 @@
 import classNames from "classnames";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaGithub, FaMap, FaTools, FaUndoAlt } from "react-icons/fa";
 import styles from "./Navbar.module.css";
 import {
   useClearGemProgress,
   useClearRouteProgress,
 } from "../../utility/ExileSyncStore";
 
-interface NavbarItem {
-  target: string;
+interface NavbarItemProps {
   label: string;
+  icon?: React.ReactNode;
+  expand: boolean;
+  onClick: () => void;
 }
 
-const navBarItems: NavbarItem[] = [
-  {
-    target: "/",
-    label: "Route",
-  },
-  {
-    target: "/build",
-    label: "Build",
-  },
-];
-
-const acts = [
-  {
-    target: "/#act-1",
-    label: "Act 1",
-  },
-  {
-    target: "/#act-2",
-    label: "Act 2",
-  },
-  {
-    target: "/#act-3",
-    label: "Act 3",
-  },
-  {
-    target: "/#act-4",
-    label: "Act 4",
-  },
-  {
-    target: "/#act-5",
-    label: "Act 5",
-  },
-  {
-    target: "/#act-6",
-    label: "Act 6",
-  },
-  {
-    target: "/#act-7",
-    label: "Act 7",
-  },
-  {
-    target: "/#act-8",
-    label: "Act 8",
-  },
-  {
-    target: "/#act-9",
-    label: "Act 9",
-  },
-  {
-    target: "/#act-10",
-    label: "Act 10",
-  },
-];
+function NavbarItem({ label, expand, icon, onClick }: NavbarItemProps) {
+  return (
+    <div
+      onClick={onClick}
+      className={classNames(styles.navItem, styles.navElement, {
+        [styles.expand]: expand,
+      })}
+    >
+      {icon} {label}
+    </div>
+  );
+}
 
 interface NavbarProps {}
 
 export function Navbar({}: NavbarProps) {
-  const [navExpand, setExpand] = useState<boolean>(false);
+  const [navExpand, setNavExpand] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const clearRouteProgress = useClearRouteProgress();
   const clearGemProgress = useClearGemProgress();
+
+  const acts = [];
+  for (let i = 1; i <= 10; i++) {
+    acts.push(
+      <NavbarItem
+        key={i}
+        label={`Act ${i}`}
+        expand={navExpand}
+        onClick={() => {
+          navigate(`/#act-${i}`);
+          setNavExpand(false);
+        }}
+      />
+    );
+  }
+
   return (
     <div
       className={classNames(styles.navbar, {
@@ -88,7 +65,7 @@ export function Navbar({}: NavbarProps) {
       >
         <FaBars
           className={classNames(styles.navIcon)}
-          onClick={() => setExpand(!navExpand)}
+          onClick={() => setNavExpand(!navExpand)}
           display="block"
         />
         <hr
@@ -101,32 +78,34 @@ export function Navbar({}: NavbarProps) {
             [styles.expand]: navExpand,
           })}
         >
-          {navBarItems.map((x, i) => (
-            <div
-              key={i}
-              onClick={() => {
-                navigate(x.target);
-                setExpand(false);
-              }}
-              className={classNames(styles.navItem, styles.navElement, {
-                [styles.expand]: navExpand,
-              })}
-            >
-              {x.label}
-            </div>
-          ))}
-          <div
+          <NavbarItem
+            label="Route"
+            expand={navExpand}
+            icon={<FaMap className={classNames("inlineIcon")} />}
+            onClick={() => {
+              navigate("/");
+              setNavExpand(false);
+            }}
+          />
+          <NavbarItem
+            label="Build"
+            expand={navExpand}
+            icon={<FaTools className={classNames("inlineIcon")} />}
+            onClick={() => {
+              navigate("/build");
+              setNavExpand(false);
+            }}
+          />
+          <NavbarItem
+            label="Reset Progress"
+            expand={navExpand}
+            icon={<FaUndoAlt className={classNames("inlineIcon")} />}
             onClick={() => {
               clearRouteProgress();
               clearGemProgress();
-              setExpand(false);
+              setNavExpand(false);
             }}
-            className={classNames(styles.navItem, styles.navElement, {
-              [styles.expand]: navExpand,
-            })}
-          >
-            Reset Progress
-          </div>
+          />
           <NavAccordion
             label="Acts"
             navExpand={navExpand}
@@ -134,21 +113,19 @@ export function Navbar({}: NavbarProps) {
               [styles.expand]: navExpand,
             })}
           >
-            {acts.map((x, i) => (
-              <div
-                key={i}
-                onClick={() => {
-                  navigate(x.target);
-                  setExpand(false);
-                }}
-                className={classNames(styles.navItem, styles.navElement, {
-                  [styles.expand]: navExpand,
-                })}
-              >
-                {x.label}
-              </div>
-            ))}
+            {acts}
           </NavAccordion>
+          <NavbarItem
+            label="Project on Github"
+            expand={navExpand}
+            icon={<FaGithub className={classNames("inlineIcon")} />}
+            onClick={() => {
+              window
+                .open("https://github.com/HeartofPhos/exile-leveling", "_blank")
+                ?.focus();
+              setNavExpand(false);
+            }}
+          />
         </div>
       </div>
       <hr />

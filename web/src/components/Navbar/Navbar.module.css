@@ -27,7 +27,6 @@
   flex-grow: 1;
   flex-direction: row;
   align-self: stretch;
-  padding: 0 var(--size-3);
 }
 
 .navItems.expand {
@@ -64,7 +63,7 @@
 .navElement {
   color: var(--primary-light);
   font-weight: var(--font-heavy);
-  padding: var(--size-3) 0;
+  padding: var(--size-3);
 }
 
 .navIcon {
