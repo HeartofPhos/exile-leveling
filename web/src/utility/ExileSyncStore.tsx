@@ -1,6 +1,6 @@
 import { atom, atomFamily, DefaultValue, useRecoilCallback } from "recoil";
 import { RecoilSync, syncEffect } from "recoil-sync";
-import { getPersistent } from ".";
+import { clearPersistent, getPersistent, setPersistent } from ".";
 import type { BuildData } from "../../../common/routes";
 
 const ExileSyncStoreKey = "exile-sync-store";
@@ -140,9 +140,9 @@ function ExileSyncStore({ children }: SyncWithStorageProps) {
               {
                 buildData = value as any;
                 if (buildData) {
-                  localStorage.setItem("build-data", JSON.stringify(buildData));
+                  setPersistent("build-data", buildData);
                 } else {
-                  localStorage.removeItem("build-data");
+                  clearPersistent("build-data");
                 }
 
                 resyncGemProgress();
@@ -155,11 +155,8 @@ function ExileSyncStore({ children }: SyncWithStorageProps) {
                 else routeProgress.delete(key);
 
                 if (routeProgress.size > 0)
-                  localStorage.setItem(
-                    "route-progress",
-                    JSON.stringify([...routeProgress])
-                  );
-                else localStorage.removeItem("route-progress");
+                  setPersistent("route-progress", [...routeProgress]);
+                else clearPersistent("route-progress");
               }
               break;
             case "gemProgressAtomFamily":
@@ -169,11 +166,8 @@ function ExileSyncStore({ children }: SyncWithStorageProps) {
                 else gemProgress.delete(key);
 
                 if (gemProgress.size > 0)
-                  localStorage.setItem(
-                    "gem-progress",
-                    JSON.stringify([...gemProgress])
-                  );
-                else localStorage.removeItem("gem-progress");
+                  setPersistent("gem-progress", [...gemProgress]);
+                else clearPersistent("gem-progress");
               }
               break;
           }
