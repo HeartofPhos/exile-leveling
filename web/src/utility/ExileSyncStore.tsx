@@ -1,5 +1,6 @@
 import { atom, atomFamily, DefaultValue, useRecoilCallback } from "recoil";
 import { RecoilSync, syncEffect } from "recoil-sync";
+import { getPersistent } from ".";
 import type { BuildData } from "../../../common/routes";
 
 const ExileSyncStoreKey = "exile-sync-store";
@@ -55,22 +56,15 @@ interface SyncWithStorageProps {
   children?: React.ReactNode;
 }
 
-const buildDataJson = localStorage.getItem("build-data");
-let buildData: BuildData | null = buildDataJson
-  ? JSON.parse(buildDataJson)
-  : null;
+let buildData: BuildData | null = getPersistent<BuildData>("build-data");
 
-const routeProgressJson = localStorage.getItem("route-progress");
 const routeProgress = new Set<string>(
-  routeProgressJson ? JSON.parse(routeProgressJson) : undefined
+  getPersistent<string[]>("route-progress")
 );
 
-const gemProgressJson = localStorage.getItem("gem-progress");
-const gemProgress = new Set<number>(
-  gemProgressJson ? JSON.parse(gemProgressJson) : undefined
-);
+const gemProgress = new Set<number>(getPersistent<number[]>("gem-progress"));
 
-export function clearRouteProgressCallback() {
+export function useClearRouteProgress() {
   return useRecoilCallback(
     ({ set }) =>
       async () => {
@@ -82,7 +76,7 @@ export function clearRouteProgressCallback() {
   );
 }
 
-export function clearGemProgressCallback() {
+export function useClearGemProgress() {
   return useRecoilCallback(
     ({ set }) =>
       async () => {
@@ -94,7 +88,7 @@ export function clearGemProgressCallback() {
   );
 }
 
-function resyncGemProgressCallback() {
+function useResyncGemProgress() {
   return useRecoilCallback(
     ({ set }) =>
       async () => {
@@ -114,7 +108,7 @@ function resyncGemProgressCallback() {
 }
 
 function ExileSyncStore({ children }: SyncWithStorageProps) {
-  const resyncGemProgress = resyncGemProgressCallback();
+  const resyncGemProgress = useResyncGemProgress();
 
   return (
     <RecoilSync

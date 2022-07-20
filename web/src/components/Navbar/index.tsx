@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import styles from "./Navbar.module.css";
 import {
-  clearGemProgressCallback,
-  clearRouteProgressCallback,
+  useClearGemProgress,
+  useClearRouteProgress,
 } from "../../utility/ExileSyncStore";
 
 interface NavbarItem {
@@ -73,8 +73,8 @@ export function Navbar({}: NavbarProps) {
   const [navExpand, setExpand] = useState<boolean>(false);
   const navigate = useNavigate();
 
-  const clearRouteProgress = clearRouteProgressCallback();
-  const clearGemProgress = clearGemProgressCallback();
+  const clearRouteProgress = useClearRouteProgress();
+  const clearGemProgress = useClearGemProgress();
   return (
     <div
       className={classNames(styles.navbar, {
