@@ -37,7 +37,6 @@ Get {get_waypoint}\r
 Find {area|1_1_9a}, place {portal|set} #The Ship Graveyard Cave\r
 \u279E {enter|1_1_11_1} #The Cavern of Wrath\r
 {waypoint|1_1_town} #Lioneye's Watch\r
-Hand in {quest|a1q3} #The Siren's Cadence\r
 Take {portal|use}\r
 \u279E {enter|1_1_9a} #The Ship Graveyard Cave\r
 Find {quest_text|Allflame}\r
@@ -46,6 +45,7 @@ Find {quest_text|Allflame}\r
 Find and kill {kill|Captain Fairgraves}\r
 {logout}\r
 Hand in {quest|a1q6} #The Marooned Mariner\r
+Hand in {quest|a1q3} #The Siren's Cadence\r
 {waypoint|1_1_11_1} #The Cavern of Wrath\r
 \u279E {enter|1_1_11_2} #The Cavern of Anger\r
 \u279E {arena|Merveil's Lair}, kill {kill|Merveil, the Siren}\r
