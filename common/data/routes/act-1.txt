@@ -1,4 +1,3 @@
-Kill {kill|Zombie}
 Find and kill {kill|Hillock}
 ➞ {enter|1_1_town} #Lioneye's Watch
 Hand in {quest|a1q1} #Enemy at the Gate
