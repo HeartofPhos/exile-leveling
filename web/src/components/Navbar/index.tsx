@@ -96,6 +96,15 @@ export function Navbar({}: NavbarProps) {
               setNavExpand(false);
             }}
           />
+          <NavAccordion
+            label="Acts"
+            navExpand={navExpand}
+            className={classNames(styles.navItem, {
+              [styles.expand]: navExpand,
+            })}
+          >
+            {acts}
+          </NavAccordion>
           <NavbarItem
             label="Reset Progress"
             expand={navExpand}
@@ -106,15 +115,6 @@ export function Navbar({}: NavbarProps) {
               setNavExpand(false);
             }}
           />
-          <NavAccordion
-            label="Acts"
-            navExpand={navExpand}
-            className={classNames(styles.navItem, {
-              [styles.expand]: navExpand,
-            })}
-          >
-            {acts}
-          </NavAccordion>
           <NavbarItem
             label="Project on Github"
             expand={navExpand}
