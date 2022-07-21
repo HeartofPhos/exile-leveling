@@ -44,8 +44,8 @@ Find {quest_text|Allflame}\r
 {waypoint|1_1_9} #The Ship Graveyard\r
 Find and kill {kill|Captain Fairgraves}\r
 {logout}\r
-Hand in {quest|a1q6} #The Marooned Mariner\r
 Hand in {quest|a1q3} #The Siren's Cadence\r
+Hand in {quest|a1q6} #The Marooned Mariner\r
 {waypoint|1_1_11_1} #The Cavern of Wrath\r
 \u279E {enter|1_1_11_2} #The Cavern of Anger\r
 \u279E {arena|Merveil's Lair}, kill {kill|Merveil, the Siren}\r
