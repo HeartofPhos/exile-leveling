@@ -31,6 +31,7 @@ Complete {trial}
 {logout}
 Hand in {quest|a1q2|1} #The Caged Brute
 {waypoint|1_1_8} #Prisoner's Gate
+Go down the ledge next to the road
 ➞ {enter|1_1_9} #The Ship Graveyard
 Get {get_waypoint}
 Find {area|1_1_9a}, place {portal|set} #The Ship Graveyard Cave
