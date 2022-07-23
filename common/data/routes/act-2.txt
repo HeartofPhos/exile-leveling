@@ -39,7 +39,7 @@ Follow road, kill {kill|Kraityn, Scarbearer}
 {waypoint|1_2_7} #The Riverways
 Look for 2 pillars near {waypoint}, follow the trail ➞ {enter|1_2_12} #The Wetlands
 Find and kill {kill|Oak, Skullbreaker}
-Get {get_waypoint}, likely {dir|0}
+Find {waypoint}
 {waypoint|1_2_9} #The Western Forest
 Head {dir|180} look for the torch touching the road
 Follow the trail in the direction of the torch, help or kill {kill|Alira Darktongue}
@@ -54,9 +54,6 @@ Hand in {quest|a1q9} #The Way Forward
 ➞ {enter|1_2_8} #The Northern Forest
 ➞ {enter|1_2_14_2} #The Caverns
 Get {crafting}
-{waypoint|1_2_town} #The Forest Encampment
-Hand in {quest|a2q9} #The Root of the Problem
-{waypoint|1_2_14_2} #The Caverns
 ➞ {enter|1_2_14_3} #The Ancient Pyramid
 First floor exit will be in one of the 3 corners
 Remaining floors will have the exit diagonally across from the entrance

@@ -7,9 +7,6 @@ const dataPath = process.argv[2];
 function saveData(name: string, data: any) {
   fs.writeFileSync(`${dataPath}/${name}.json`, JSON.stringify(data, null, 2));
 }
-function loadData(name: string) {
-  return JSON.parse(fs.readFileSync(`${dataPath}/${name}.json`, "utf-8"));
-}
 
 export async function main() {
   if (!fs.existsSync(dataPath)) fs.mkdirSync(dataPath, { recursive: true });
