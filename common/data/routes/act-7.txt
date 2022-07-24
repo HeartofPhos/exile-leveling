@@ -45,7 +45,7 @@ Find and take {quest_text|Kishara's Star}
 Find {get_waypoint}
 {waypoint|2_7_8} #The Northern Forest
 ➞ {enter|2_7_9} #The Dread Thicket
-Find and take 7x{quest_text|Fireflies}
+Find and take 7x{quest_text|Firefly}
 Get {crafting}
 ➞ {arena|Den of Despair}, kill {kill|Gruthkul, Mother of Despair}
 {logout}

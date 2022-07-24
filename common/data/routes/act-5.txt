@@ -26,7 +26,7 @@ Get {crafting}
 {waypoint|1_5_3b} #The Ruined Square
 Head {dir|225} find the plaza
 Head {dir|180} ➞ {enter|1_5_7} #The Reliquary
-Find 3x{quest_text|Kitava's Torments}
+Find 3x{quest_text|Kitava's Torment}
 Get {crafting}
 {logout}
 Hand in {quest|a5q7} #Kitava's Torments
