@@ -22,14 +22,14 @@ Get {crafting}
 {logout}
 Hand in {quest|a3q11} #Victario's Secrets
 {waypoint|1_3_5} #The Marketplace
-➞ {enter|1_3_7}, likely opposite {area|1_3_6} #The Battlefront
-Get {get_waypoint}
+Search {dir|0} ➞ {enter|1_3_7} #The Battlefront
+Head {dir|315} get {get_waypoint}
 Head {dir|225} take {quest_text|Ribbon Spool}
-➞ {enter|1_3_8_1} #The Solaris Temple Level 1
+Head {dir|45} ➞ {enter|1_3_8_1} #The Solaris Temple Level 1
 ➞ {enter|1_3_8_2} #The Solaris Temple Level 2
 ➞ {arena|Eternal Laboratory}, get {crafting}
 {waypoint|1_3_7} #The Battlefront
-➞ {enter|1_3_9} #The Docks
+Head {dir|315} ➞ {enter|1_3_9} #The Docks
 Find and take {quest_text|Thaumetic Sulphite}
 {logout}
 {waypoint|1_3_8_2} #The Solaris Temple Level 2
