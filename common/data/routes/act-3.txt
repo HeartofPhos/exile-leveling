@@ -47,8 +47,8 @@ Head {dir|315} kill {kill|General Gravicius}
 Find and kill {kill|Piety}, take {quest_text|Tower Key}
 Get {crafting}
 {logout}
-Hand in {quest|a3q8} #Sever the Right Hand
 Hand in {quest|a3q9} #Piety's Pets
+Hand in {quest|a3q8} #Sever the Right Hand
 {waypoint|1_3_13} #The Ebony Barracks
 Head {dir|45} ➞ {enter|1_3_15} #The Imperial Gardens
 Get {get_waypoint}
