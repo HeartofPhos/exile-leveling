@@ -11,7 +11,7 @@ Loop around clockwise ➞ {enter|1_5_5} #The Chamber of Innocence
 Head {dir|315} counter-clockwise spiral
 Get {crafting}
 ➞ {arena|Sanctum of Innocence}, kill {kill|High Templar Avarius}
-Go out, {waypoint|1_5_town} #Overseer's Tower
+{logout}
 Hand in {quest|a5q2} #The Key to Freedom
 Hand in {quest|a5q3} #In Service to Science
 Hand in {quest|a5q4} #Death to Purity
@@ -26,7 +26,7 @@ Get {crafting}
 {waypoint|1_5_3b} #The Ruined Square
 Head {dir|225} find the plaza
 Head {dir|180} ➞ {enter|1_5_7} #The Reliquary
-Find 3x{quest_text|Kitava's Torment}
+Find 3x{quest_text|Kitava's Torment}, search in the corners of the map
 Get {crafting}
 {logout}
 Hand in {quest|a5q7} #Kitava's Torments
