@@ -1,5 +1,5 @@
 import fs from "fs";
-import { getGems } from "./seeding/gems";
+import { getGems as seedGems } from "./seeding/gems";
 import { getQuests } from "./seeding/quests";
 import { getAreas } from "./seeding/areas";
 
@@ -15,8 +15,9 @@ export async function main() {
   switch (command) {
     case "seed-data":
       {
-        const gems = await getGems();
+        const { gems, vaalGemLookup } = await seedGems();
         saveData("gems", gems);
+        saveData("vaal-gem-lookup", vaalGemLookup);
         const quests = await getQuests();
         saveData("quests", quests);
         const areas = await getAreas();

@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import pako from "pako";
 import { useState } from "react";
+import { vaalGemLookup } from "../../../../common/data";
 import { BuildData } from "../../../../common/routes";
 import { Form, formStyles } from "../../components/Form";
 
@@ -20,6 +21,16 @@ const POB_GEM_ID_REMAP: Record<string, string> = {
   "Metadata/Items/Gems/RainOfSpores": "Metadata/Items/Gems/SkillGemToxicRain",
   "Metadata/Items/Gems/SummonRelic": "Metadata/Items/Gems/SkillGemSummonRelic",
 };
+
+function MapGemId(gemId: string) {
+  const pobRemapId = POB_GEM_ID_REMAP[gemId];
+  if (pobRemapId) gemId = pobRemapId;
+
+  const vaalToNormalId = vaalGemLookup[gemId];
+  if (vaalToNormalId) gemId = vaalToNormalId;
+
+  return gemId;
+}
 
 type ImportType = "RECENT_EMPTY_SKILL_LABEL" | "FIRST_SKILL_LABEL";
 
@@ -66,9 +77,7 @@ function processPob(
     for (const gemElement of gemElements) {
       const attribute = gemElement.attributes.getNamedItem("gemId");
       if (attribute) {
-        let gemId = POB_GEM_ID_REMAP[attribute.value];
-        if (!gemId) gemId = attribute.value;
-
+        const gemId = MapGemId(attribute.value);
         if (!requiredGems.some((x) => x.id == gemId)) {
           let note;
           switch (importType) {
