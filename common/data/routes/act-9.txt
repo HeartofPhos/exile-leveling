@@ -3,7 +3,7 @@
 ➞ {enter|2_9_3} #The Vastiri Desert
 Head {dir|90} get {get_waypoint}
 Get {crafting}
-Head {dir|90} find and take {quest_text|The Storm Blade}
+Find and take {quest_text|The Storm Blade}
 {logout}
 Talk to {generic|Sin}
 Hand in {quest|a9q3}, take {quest_text|Bottled Storm}

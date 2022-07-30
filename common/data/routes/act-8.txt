@@ -13,8 +13,8 @@ Talk to {generic|Clarissa}, kill {kill|Tolman}
 Follow the dead guards by entrances
 Find and kill {kill|Gemling Legionnaires}
 ➞ {enter|2_8_10} #The Imperial Fields
-Follow the road {dir|315} continue forward once it ends
-➞ {enter|2_8_12_1} #The Solaris Temple Level 1
+Follow the road until {waypoint}
+Head {dir|315} ➞ {enter|2_8_12_1} #The Solaris Temple Level 1
 Get {get_waypoint}
 ➞ {enter|2_8_12_2} #The Solaris Temple Level 2
 Find and kill {kill|Dawn, Harbinger of Solaris}, take {quest_text|Sun Orb}
@@ -35,7 +35,7 @@ Get {crafting}
 {logout}
 {waypoint|2_8_6} #The Lunaris Concourse
 Head {dir|135} ➞ {enter|2_8_13} #The Harbour Bridge
-➞ {arena|The Sky Shrine}, activate {quest_text|Statue of the Sisters}
+➞ {arena|The Sky Shrine}, activate {generic|Statue of the Sisters}
 Kill {kill|Lunaris, Eternal Moon} & {kill|Solaris, Eternal Sun}
 ➞ {enter|2_9_1} #The Blood Aqueduct
 Farm till lvl ~62
@@ -46,5 +46,5 @@ Search {dir|270} side, complete {trial}
 Get {crafting}
 Search {dir|270} side ➞ {enter|2_8_4} #The High Gardens
 ➞ {arena|The Pools of Terror}, kill {kill|Yugul, Reflection of Terror}
-{logout}
+{portal|use}
 Hand in {quest|a8q4} #Reflection of Terror
