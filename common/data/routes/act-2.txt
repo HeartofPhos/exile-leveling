@@ -6,7 +6,7 @@ Follow the road ➞ {enter|1_2_3} #The Crossroads
 Follow the road, get {get_waypoint}
 {logout}
 Take {portal|use}
-➞ {enter|1_2_2a} #The Den
+Open {generic|Secret Passage} ➞ {enter|1_2_2a} #The Den
 Find and kill {kill|The Great White Beast}
 {logout}
 Hand in {quest|a2q10} #The Great White Beast

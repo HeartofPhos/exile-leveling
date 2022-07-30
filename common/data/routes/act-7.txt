@@ -49,11 +49,11 @@ Find {get_waypoint}
 Find and take 7x{quest_text|Firefly}
 Get {crafting}
 ➞ {arena|Den of Despair}, kill {kill|Gruthkul, Mother of Despair}
-{logout}
+{portal|use}
 Hand in {quest|a7q9} #Queen of Despair
 Hand in {quest|a7q6} #Kishara's Star
 {waypoint|Labyrinth_Airlock} #Aspirants' Plaza
-{ascend}
+{ascend|cruel}
 Get {crafting|2_Labyrinth_boss_3}
 {waypoint|2_7_11} #The Vaal City
 Hand in {quest|a7q7} #Lighting the Way

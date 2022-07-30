@@ -15,6 +15,7 @@ import { InlineFakeBlock } from "../InlineFakeBlock";
 import { quests, areas } from "../../../../common/data";
 
 import styles from "./ExileFragment.module.css";
+import { SplitRow } from "../SplitRow";
 
 interface FragmentProps {
   fragment: Fragment;
@@ -149,16 +150,25 @@ function CraftingComponent(craftingRecipes: string[]) {
   );
 }
 
-function AscendComponent() {
+function AscendComponent(guideUrl: string) {
   return (
-    <div className={classNames(styles.noWrap)}>
-      <img
-        src={getImageUrl("trial.png")}
-        className={classNames("inlineIcon")}
-        alt=""
-      />
-      <span className={classNames(styles.trial)}>Ascend</span>
-    </div>
+    <SplitRow
+      left={
+        <div className={classNames(styles.noWrap)}>
+          <img
+            src={getImageUrl("trial.png")}
+            className={classNames("inlineIcon")}
+            alt=""
+          />
+          <span className={classNames(styles.trial)}>Ascend</span>
+        </div>
+      }
+      right={
+        <a href={guideUrl} target="_blank">
+          Map
+        </a>
+      }
+    />
   );
 }
 
@@ -205,7 +215,7 @@ export function ExileFragment({ fragment, lookup }: FragmentProps) {
     case "crafting":
       return CraftingComponent(fragment.crafting_recipes);
     case "ascend":
-      return AscendComponent();
+      return AscendComponent(fragment.guideUrl);
   }
 
   return <>{`unmapped: ${JSON.stringify(fragment)}`}</>;

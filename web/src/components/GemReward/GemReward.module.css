@@ -3,24 +3,7 @@
   font-weight: var(--font-heavy);
 }
 
-.rewardHolder {
-  display: flex;
-  flex-basis: 100%;
-  flex-wrap: wrap;
-  white-space: pre-wrap;
-}
-
-.rewardMain{
-  flex-grow: 1;
-  flex-basis: 8rem;
-  margin-right: var(--size-3);
-}
-
 .rewardNote {
-  flex-grow: 1;
-  flex-basis: 8rem;
-  text-align: right;
-  white-space: pre-wrap;
   color: var(--primary-light);
 }
 

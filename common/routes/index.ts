@@ -6,6 +6,12 @@ import {
   QuestTextFragment,
 } from "./quest";
 import { areas, killWaypoints } from "../../common/data";
+import {
+  AscendFragment,
+  EvaluateAscend,
+  EvaluateTrial,
+  TrialFragment,
+} from "./ascendancy";
 
 export type RawFragment = string[];
 export type RawFragmentStep = (string | RawFragment)[];
@@ -56,6 +62,19 @@ function parseStep(text: string) {
   }
 
   return rawFragmentStep;
+}
+
+export function transitionArea(
+  lookup: RouteLookup,
+  state: RouteState,
+  area: Area
+) {
+  if (area.is_town_area) {
+    state.lastTownAreaId = area.id;
+    if (area.has_waypoint) state.implicitWaypoints.add(area.id);
+  }
+
+  state.currentAreaId = area.id;
 }
 
 interface KillFragment {
@@ -149,12 +168,8 @@ function EvaluateEnter(
   if (!area.connection_ids.some((x) => x == state.currentAreaId))
     return "not connected to current area";
 
-  if (area.is_town_area) {
-    state.lastTownAreaId = area.id;
-    if (area.has_waypoint) state.implicitWaypoints.add(area.id);
-  }
+  transitionArea(lookup, state, area);
 
-  state.currentAreaId = area.id;
   return {
     fragment: {
       type: "enter",
@@ -175,11 +190,13 @@ function EvaluateLogout(
 ): string | EvaluateResult {
   if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
 
-  state.currentAreaId = state.lastTownAreaId;
+  const townArea = areas[state.lastTownAreaId];
+  transitionArea(lookup, state, townArea);
+
   return {
     fragment: {
       type: "logout",
-      areaId: state.currentAreaId,
+      areaId: townArea.id,
     },
   };
 }
@@ -214,9 +231,8 @@ function EvaluateWaypoint(
       state.implicitWaypoints.add(currentArea.id);
       state.usedWaypoints.add(area.id);
 
-      if (area.is_town_area) state.lastTownAreaId = area.id;
-      state.currentAreaId = area.id;
       areaId = area.id;
+      transitionArea(lookup, state, area);
     }
 
     return {
@@ -285,10 +301,12 @@ function EvaluatePortal(
       const portalArea = areas[state.portalAreaId];
 
       if (currentArea.id == portalArea.id) {
+        const townAreaId = lookup.towns[currentArea.act];
+        const townArea = areas[townAreaId];
+        transitionArea(lookup, state, townArea);
         state.portalAreaId = state.currentAreaId;
-        state.currentAreaId = lookup.towns[currentArea.act];
       } else if (currentArea.id == lookup.towns[portalArea.act]) {
-        state.currentAreaId = state.portalAreaId;
+        transitionArea(lookup, state, portalArea);
         state.portalAreaId = null;
       } else return "can only use portal from town or portal area";
 
@@ -319,50 +337,6 @@ function EvaluateGeneric(
     fragment: {
       type: "generic",
       value: rawFragment[1],
-    },
-  };
-}
-
-interface TrialFragment {
-  type: "trial";
-}
-
-function EvaluateTrial(
-  rawFragment: RawFragment,
-  lookup: RouteLookup,
-  state: RouteState
-): string | EvaluateResult {
-  if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
-  return {
-    fragment: {
-      type: "trial",
-    },
-  };
-}
-
-interface AscendFragment {
-  type: "ascend";
-}
-
-function EvaluateAscend(
-  rawFragment: RawFragment,
-  lookup: RouteLookup,
-  state: RouteState
-): string | EvaluateResult {
-  if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
-
-  const expectedAreaId = "Labyrinth_Airlock";
-  const currentArea = areas[state.currentAreaId];
-  if (currentArea.id != expectedAreaId) {
-    const expectedArea = areas[expectedAreaId];
-    return `must be in "${expectedArea.name}"`;
-  }
-
-  state.currentAreaId = state.lastTownAreaId;
-
-  return {
-    fragment: {
-      type: "ascend",
     },
   };
 }
@@ -478,10 +452,10 @@ function evaluateFragment(
       return EvaluateGeneric(rawFragment, lookup, state);
     case "trial":
       return EvaluateTrial(rawFragment, lookup, state);
-    case "crafting":
-      return EvaluateCrafting(rawFragment, lookup, state);
     case "ascend":
       return EvaluateAscend(rawFragment, lookup, state);
+    case "crafting":
+      return EvaluateCrafting(rawFragment, lookup, state);
     case "dir":
       return EvaluateDirection(rawFragment, lookup, state);
   }

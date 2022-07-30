@@ -5,6 +5,7 @@ import styles from "./GemReward.module.css";
 import { gems, gemColours } from "../../../../common/data";
 import { InlineFakeBlock } from "../InlineFakeBlock";
 import { taskStyle } from "../TaskList";
+import { SplitRow } from "../SplitRow";
 
 function getImageUrl(path: string) {
   return new URL(`./images/${path}`, import.meta.url).href;
@@ -29,24 +30,28 @@ interface GemRewardProps {
 export function GemReward({ requiredGem, type }: GemRewardProps) {
   const gem = gems[requiredGem.id];
   return (
-    <div className={classNames(styles.rewardHolder, taskStyle)}>
-      <div className={classNames(styles.rewardMain)}>
-        <MdCircle
-          color={gemColours[gem.primary_attribute]}
-          className={classNames("inlineIcon")}
-        />
-        {GemRewardVerb(type)}
-        <span className={classNames(styles.default)}>{gem.name}</span>
-        {type === "vendor" && (
-          <div className={classNames(styles.noWrap)}>
-            <span> for </span>
-            <InlineFakeBlock
-              child={<img src={getImageUrl(`${gem.cost}.png`)} alt="" />}
-            />
-          </div>
-        )}
-      </div>
-      <div className={classNames(styles.rewardNote)}>{requiredGem.note}</div>
-    </div>
+    <SplitRow
+      left={
+        <>
+          <MdCircle
+            color={gemColours[gem.primary_attribute]}
+            className={classNames("inlineIcon")}
+          />
+          {GemRewardVerb(type)}
+          <span className={classNames(styles.default)}>{gem.name}</span>
+          {type === "vendor" && (
+            <div className={classNames(styles.noWrap)}>
+              <span> for </span>
+              <InlineFakeBlock
+                child={<img src={getImageUrl(`${gem.cost}.png`)} alt="" />}
+              />
+            </div>
+          )}
+        </>
+      }
+      right={
+        <div className={classNames(styles.rewardNote)}>{requiredGem.note}</div>
+      }
+    />
   );
 }

@@ -24,8 +24,8 @@ export function findGems(
 ) {
   const quest = quests[questFragment.questId];
 
-  let questGems = [];
-  let vendorGems = [];
+  let questGems: number[] = [];
+  let vendorGems: number[] = [];
   for (const index of questFragment.rewardOffers) {
     const reward_offer = quest.reward_offers[index];
 
