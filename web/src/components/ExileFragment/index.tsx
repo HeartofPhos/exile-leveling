@@ -164,8 +164,14 @@ function AscendComponent(guideUrl: string) {
         </div>
       }
       right={
-        <a href={guideUrl} target="_blank">
-          Map
+        <a
+          href={guideUrl}
+          target="_blank"
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+        >
+          Daily Layout
         </a>
       }
     />

@@ -72,3 +72,8 @@ hr {
   font-weight: var(--font-heavy);
   text-align: center;
 }
+
+a:link,
+a:visited {
+  color: var(--primary);
+}
