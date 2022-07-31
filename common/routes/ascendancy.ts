@@ -29,6 +29,7 @@ const GUIDE_URL_LOOKUP: Record<string, string> = {
   normal: "https://www.poelab.com/gtgax",
   cruel: "https://www.poelab.com/r8aws",
   merciless: "https://www.poelab.com/riikv",
+  eternal: "https://www.poelab.com/wfbra",
 };
 
 export interface AscendFragment {
