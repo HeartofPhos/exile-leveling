@@ -9,6 +9,7 @@ import {
 import { Form, formStyles } from "../../components/Form";
 import classNames from "classnames";
 import { useRecoilState } from "recoil";
+import { withScrollRestoration } from "../../utility/withScrollRestoration";
 
 function Build() {
   const [buildData, setBuildData] = useRecoilState(buildDataAtom);
@@ -103,4 +104,4 @@ function GemOrderList(
   );
 }
 
-export default Build;
+export default withScrollRestoration(Build);
