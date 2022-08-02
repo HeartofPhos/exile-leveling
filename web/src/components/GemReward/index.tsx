@@ -31,6 +31,7 @@ export function GemReward({ requiredGem, type }: GemRewardProps) {
   const gem = gems[requiredGem.id];
   return (
     <SplitRow
+      className={classNames(taskStyle)}
       left={
         <>
           <MdCircle
