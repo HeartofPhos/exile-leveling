@@ -32,8 +32,6 @@ function MapGemId(gemId: string) {
   return gemId;
 }
 
-type ImportType = "RECENT_EMPTY_SKILL_LABEL" | "FIRST_SKILL_LABEL";
-
 function decodePathOfBuildingCode(code: string) {
   const base64 = code.replace(/_/g, "/").replace(/-/g, "+");
   const base64_bytes = Uint8Array.from(atob(base64), (c) => c.charCodeAt(0));
@@ -50,44 +48,29 @@ function decodePathOfBuildingCode(code: string) {
 
 const POB_COLOUR_REGEX = /\^(x[a-zA-Z0-9]{6}|[0-9])/;
 
-function processPob(
-  pobCode: string | undefined,
-  importType: ImportType
-): BuildData | undefined {
-  let doc;
-  try {
-    if (!pobCode) return undefined;
-    doc = decodePathOfBuildingCode(pobCode);
-  } catch (e) {
-    return undefined;
-  }
+function processSkills(
+  requiredGems: BuildData["requiredGems"],
+  parentElement: Element,
+  parentTitle: string | undefined
+) {
+  const skillElements = Array.from(parentElement.getElementsByTagName("Skill"));
 
-  const requiredGems: BuildData["requiredGems"] = [];
-  const skillElements = Array.from(doc.getElementsByTagName("Skill"));
-
-  let recentEmptySkillLabel = "";
+  let recentEmptySkillLabel: string | undefined;
   for (const skillElement of skillElements) {
     const skillEnabled = skillElement.attributes.getNamedItem("enabled");
     if (!skillEnabled || skillEnabled.value == "false") continue;
-    const skillLabel =
-      skillElement.attributes.getNamedItem("label")?.value || "";
+
+    const skillLabel = skillElement.attributes.getNamedItem("label")?.value;
 
     const gemElements = Array.from(skillElement.getElementsByTagName("Gem"));
     if (gemElements.length == 0) recentEmptySkillLabel = skillLabel;
+
     for (const gemElement of gemElements) {
       const attribute = gemElement.attributes.getNamedItem("gemId");
       if (attribute) {
         const gemId = MapGemId(attribute.value);
         if (!requiredGems.some((x) => x.id == gemId)) {
-          let note;
-          switch (importType) {
-            case "RECENT_EMPTY_SKILL_LABEL":
-              note = recentEmptySkillLabel;
-              break;
-            case "FIRST_SKILL_LABEL":
-              note = skillLabel;
-              break;
-          }
+          const note = recentEmptySkillLabel || parentTitle || skillLabel || "";
 
           requiredGems.push({
             id: gemId,
@@ -97,6 +80,30 @@ function processPob(
         }
       }
     }
+  }
+}
+
+function processPob(pobCode: string | undefined): BuildData | undefined {
+  let doc;
+  try {
+    if (!pobCode) return undefined;
+    doc = decodePathOfBuildingCode(pobCode);
+  } catch (e) {
+    return undefined;
+  }
+  const requiredGems: BuildData["requiredGems"] = [];
+
+  const skillSetElements = Array.from(doc.getElementsByTagName("SkillSet"));
+  if (skillSetElements.length > 0) {
+    for (const skillSetElement of skillSetElements) {
+      processSkills(
+        requiredGems,
+        skillSetElement,
+        skillSetElement.attributes.getNamedItem("title")?.value
+      );
+    }
+  } else {
+    processSkills(requiredGems, doc.documentElement, undefined);
   }
 
   const buildElement = Array.from(doc.getElementsByTagName("Build"));
@@ -133,7 +140,7 @@ export function BuildForm({ onSubmit }: BuildFormProps) {
         <button
           className={classNames(formStyles.formButton)}
           onClick={() => {
-            const buildData = processPob(pobCode, "RECENT_EMPTY_SKILL_LABEL");
+            const buildData = processPob(pobCode);
             if (buildData) onSubmit(buildData);
           }}
         >
