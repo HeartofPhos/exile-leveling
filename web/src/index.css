@@ -71,6 +71,7 @@ hr {
   padding: var(--size-2);
   font-weight: var(--font-heavy);
   text-align: center;
+  cursor: pointer;
 }
 
 a:link,

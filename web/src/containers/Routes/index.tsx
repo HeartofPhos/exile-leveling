@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import { TaskList, TaskItemProps } from "../../components/TaskList";
 import { ExileStep } from "../../components/ExileStep";
 import {
@@ -78,18 +78,35 @@ function RoutesContainer() {
     }
 
     const act = routeIndex + 1;
-    items.push(
-      <div
-        id={`act-${act}`}
-        key={items.length}
-        className="header"
-      >{`--== Act ${act} ==--`}</div>,
-      <hr key={items.length + 1} />,
-      <TaskList key={items.length + 2} items={taskItems} />,
-      <hr key={items.length + 3} />
-    );
+    items.push(<ActHolder key={act} act={act} items={taskItems} />);
   }
   return <>{items}</>;
+}
+
+interface ActHolderProps {
+  act: number;
+  items: TaskItemProps[];
+}
+
+export function ActHolder({ act, items: taskItems }: ActHolderProps) {
+  const [expanded, setExpanded] = useState(true);
+
+  return (
+    <>
+      <div
+        id={`act-${act}`}
+        className="header"
+        onClick={() => setExpanded(!expanded)}
+      >{`--== Act ${act} ==--`}</div>
+      <hr />
+      {expanded && (
+        <>
+          <TaskList items={taskItems} />
+          <hr />
+        </>
+      )}
+    </>
+  );
 }
 
 export default withScrollRestoration(RoutesContainer);

@@ -17,7 +17,12 @@ function TaskListItem({ children, isCompletedState }: TaskItemProps) {
 
   return (
     <li
-      onClick={() => {
+      onMouseDown={(e) => {
+        if ((e.buttons & 1) == 0) return;
+        if (setIsCompleted) setIsCompleted(!isCompleted);
+      }}
+      onMouseEnter={(e) => {
+        if ((e.buttons & 1) == 0) return;
         if (setIsCompleted) setIsCompleted(!isCompleted);
       }}
       className={classNames({ [styles.completed]: isCompleted })}
