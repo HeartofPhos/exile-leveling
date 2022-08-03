@@ -1,5 +1,5 @@
-import { ReactNode, useState } from "react";
-import { TaskList, TaskItemProps } from "../../components/TaskList";
+import { ReactNode } from "react";
+import { TaskItemProps } from "../../components/TaskList";
 import { ExileStep } from "../../components/ExileStep";
 import {
   gemProgressAtomFamily,
@@ -11,6 +11,7 @@ import { findGems } from "../../../../common/routes/quest";
 import { GemReward } from "../../components/GemReward";
 import { withScrollRestoration } from "../../utility/withScrollRestoration";
 import { useRecoilValue } from "recoil";
+import { ActHolder } from "../../components/ActHolder";
 
 function RoutesContainer() {
   const { routes, routeLookup } = useRecoilValue(routeDataAtom);
@@ -81,32 +82,6 @@ function RoutesContainer() {
     items.push(<ActHolder key={act} act={act} items={taskItems} />);
   }
   return <>{items}</>;
-}
-
-interface ActHolderProps {
-  act: number;
-  items: TaskItemProps[];
-}
-
-export function ActHolder({ act, items: taskItems }: ActHolderProps) {
-  const [expanded, setExpanded] = useState(true);
-
-  return (
-    <>
-      <div
-        id={`act-${act}`}
-        className="header"
-        onClick={() => setExpanded(!expanded)}
-      >{`--== Act ${act} ==--`}</div>
-      <hr />
-      {expanded && (
-        <>
-          <TaskList items={taskItems} />
-          <hr />
-        </>
-      )}
-    </>
-  );
 }
 
 export default withScrollRestoration(RoutesContainer);
