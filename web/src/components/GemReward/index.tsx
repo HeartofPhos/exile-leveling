@@ -29,6 +29,14 @@ interface GemRewardProps {
 
 export function GemReward({ requiredGem, type }: GemRewardProps) {
   const gem = gems[requiredGem.id];
+
+  if (!gem)
+    return (
+      <div className={classNames(styles.gemError)}>
+        This is awkward, <b>{requiredGem.id}</b> doesn't seem to exist
+      </div>
+    );
+
   return (
     <SplitRow
       className={classNames(taskStyle)}

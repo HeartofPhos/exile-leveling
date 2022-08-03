@@ -11,3 +11,7 @@
   display: inline-block;
   white-space: pre;
 }
+
+.gemError {
+  width: 100%;
+}

@@ -1,4 +1,4 @@
-import { Gems, VaalGemLookup } from "../../../common/types";
+import { Gems, VariantGemLookup } from "../../../common/types";
 import {
   BaseItemTypesDat,
   GrantedEffectsDat,
@@ -23,7 +23,8 @@ const ATTRIBUTE_LOOKUP: Record<number, string> = {
 
 export async function getGems() {
   const gems: Gems = {};
-  const vaalGemLookup: VaalGemLookup = {};
+  const awakenedGemLookup: VariantGemLookup = {};
+  const vaalGemLookup: VariantGemLookup = {};
   for (const skillGem of SkillGemsDat.data) {
     const baseItemType = BaseItemTypesDat.data[skillGem.BaseItemTypesKey];
     if (!baseItemType.SiteVisibility) continue;
@@ -46,10 +47,19 @@ export async function getGems() {
         BaseItemTypesDat.data[skillGem.VaalVariant_BaseItemTypesKey];
       vaalGemLookup[vaalBaseItemType.Id] = baseItemType.Id;
     }
+
+    if (skillGem.AwakenedVariant !== null) {
+      const awakenedSkillGem = SkillGemsDat.data[skillGem.AwakenedVariant];
+
+      const awakenedBaseItemType =
+        BaseItemTypesDat.data[awakenedSkillGem.BaseItemTypesKey];
+      awakenedGemLookup[awakenedBaseItemType.Id] = baseItemType.Id;
+    }
   }
 
   return {
     gems: gems,
     vaalGemLookup: vaalGemLookup,
+    awakenedGemLookup: awakenedGemLookup,
   };
 }

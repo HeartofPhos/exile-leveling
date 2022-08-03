@@ -15,9 +15,10 @@ export async function main() {
   switch (command) {
     case "seed-data":
       {
-        const { gems, vaalGemLookup } = await seedGems();
+        const { gems, vaalGemLookup, awakenedGemLookup } = await seedGems();
         saveData("gems", gems);
         saveData("vaal-gem-lookup", vaalGemLookup);
+        saveData("awakened-gem-lookup", awakenedGemLookup);
         const quests = await getQuests();
         saveData("quests", quests);
         const areas = await getAreas();

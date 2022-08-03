@@ -1,12 +1,12 @@
 import classNames from "classnames";
 import pako from "pako";
 import { useState } from "react";
-import { vaalGemLookup } from "../../../../common/data";
+import { vaalGemLookup, awakenedGemLookup } from "../../../../common/data";
 import { BuildData } from "../../../../common/routes";
 import { Form, formStyles } from "../../components/Form";
 
-// https://github.com/PathOfBuildingCommunity/PathOfBuilding/blob/0d3bdf009c8bc9579eb8cffb5548f03c45e57373/src/Export/Scripts/skills.lua#L504
-const POB_GEM_ID_REMAP: Record<string, string> = {
+const GEM_ID_REMAP: Record<string, string> = {
+  // POB is weird https://github.com/PathOfBuildingCommunity/PathOfBuilding/blob/0d3bdf009c8bc9579eb8cffb5548f03c45e57373/src/Export/Scripts/skills.lua#L504
   "Metadata/Items/Gems/Smite": "Metadata/Items/Gems/SkillGemSmite",
   "Metadata/Items/Gems/ConsecratedPath":
     "Metadata/Items/Gems/SkillGemConsecratedPath",
@@ -20,14 +20,22 @@ const POB_GEM_ID_REMAP: Record<string, string> = {
     "Metadata/Items/Gems/SkillGemScourgeArrow",
   "Metadata/Items/Gems/RainOfSpores": "Metadata/Items/Gems/SkillGemToxicRain",
   "Metadata/Items/Gems/SummonRelic": "Metadata/Items/Gems/SkillGemSummonRelic",
+  // Outdated wiki data?
+  "Metadata/Items/Gems/SkillGemNewPhaseRun":
+    "Metadata/Items/Gems/SkillGemPhaseRun",
+  "Metadata/Items/Gems/SkillGemNewArcticArmour":
+    "Metadata/Items/Gems/SkillGemArcticArmour",
 };
 
 function MapGemId(gemId: string) {
-  const pobRemapId = POB_GEM_ID_REMAP[gemId];
+  const pobRemapId = GEM_ID_REMAP[gemId];
   if (pobRemapId) gemId = pobRemapId;
 
   const vaalToNormalId = vaalGemLookup[gemId];
   if (vaalToNormalId) gemId = vaalToNormalId;
+
+  const awakenedToNormalId = awakenedGemLookup[gemId];
+  if (awakenedToNormalId) gemId = awakenedToNormalId;
 
   return gemId;
 }
