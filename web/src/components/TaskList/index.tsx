@@ -17,12 +17,12 @@ function TaskListItem({ children, isCompletedState }: TaskItemProps) {
 
   return (
     <li
-      onMouseDown={(e) => {
-        if ((e.buttons & 1) == 0) return;
+      onClick={() => {
         if (setIsCompleted) setIsCompleted(!isCompleted);
       }}
-      onMouseEnter={(e) => {
+      onPointerEnter={(e) => {
         if ((e.buttons & 1) == 0) return;
+        if (e.pointerType !== "mouse") return;
         if (setIsCompleted) setIsCompleted(!isCompleted);
       }}
       className={classNames({ [styles.completed]: isCompleted })}
