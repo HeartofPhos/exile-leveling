@@ -52,39 +52,37 @@ export function TaskList({ items, act }: TaskListProps) {
 	const [mouseDown, setMouseDown] = useState(false);
 	if (items) {
 		return (
-			<>
+			<div
+				onMouseDown={() => setMouseDown(true)}
+				onMouseUp={() => setMouseDown(false)}
+			>
 				<div
-					onMouseDown={() => setMouseDown(true)}
-					onMouseUp={() => setMouseDown(false)}
-				>
-					<div
-						id={`act-${act}`}
-						key={items.length}
-						className='header'
-						onClick={() => collapseSection()}
-					>{`--== Act ${act} ==--`}</div>
-					{!collapsed ? (
-						<>
-							<hr key={items.length + 1} />
-							<ol className={classNames(styles.list)}>
-								{items &&
-									items.map(({ key, ...rest }, i) => (
-										<TaskListItem
-											key={key || i}
-											{...rest}
-											mouseDown={mouseDown}
-											setMouseDown={setMouseDown}
-										/>
-									))}
-							</ol>
-						</>
-					) : (
-						<></>
-					)}
-					<hr key={items.length + 3} />
-					<div />
-				</div>
-			</>
+					id={`act-${act}`}
+					key={items.length}
+					className='header'
+					onClick={() => collapseSection()}
+				>{`--== Act ${act} ==--`}</div>
+				{!collapsed ? (
+					<>
+						<hr key={items.length + 1} />
+						<ol className={classNames(styles.list)}>
+							{items &&
+								items.map(({ key, ...rest }, i) => (
+									<TaskListItem
+										key={key || i}
+										{...rest}
+										mouseDown={mouseDown}
+										setMouseDown={setMouseDown}
+									/>
+								))}
+						</ol>
+					</>
+				) : (
+					<></>
+				)}
+				<hr key={items.length + 3} />
+				<div />
+			</div>
 		);
 	} else return <></>;
 }
