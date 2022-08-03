@@ -1,79 +1,80 @@
 :root {
-  --primary: #d4d4d4;
-  --primary-light: #f5f5f5;
-  --background-primary: #151616;
-  --background-secondary: #212222;
-  --accent-primary: #808080;
-  --accent-secondary: #505050;
-  --border-width: 0.1rem;
-  --border-radius: 0.25rem;
-  --size-1: 0.1rem;
-  --size-2: 0.3rem;
-  --size-3: 0.5rem;
-  --size-4: 1rem;
-  --size-5: 1.5rem;
-  --line-height: 1.5em;
-  --font-heavy: 700;
+	--primary: #d4d4d4;
+	--primary-light: #f5f5f5;
+	--background-primary: #151616;
+	--background-secondary: #212222;
+	--accent-primary: #808080;
+	--accent-secondary: #505050;
+	--border-width: 0.1rem;
+	--border-radius: 0.25rem;
+	--size-1: 0.1rem;
+	--size-2: 0.3rem;
+	--size-3: 0.5rem;
+	--size-4: 1rem;
+	--size-5: 1.5rem;
+	--line-height: 1.5em;
+	--font-heavy: 700;
 }
 
 *,
 ::after,
 ::before {
-  box-sizing: inherit;
-  font-family: inherit;
-  line-height: var(--line-height);
-  padding: 0;
-  margin: 0;
-  user-select: none;
-  /* Navbar Height */
-  scroll-margin: 2.625rem;
+	box-sizing: inherit;
+	font-family: inherit;
+	line-height: var(--line-height);
+	padding: 0;
+	margin: 0;
+	user-select: none;
+	/* Navbar Height */
+	scroll-margin: 2.625rem;
 }
 
 html {
-  box-sizing: border-box;
-  background-color: var(--background-primary);
-  color: var(--primary);
-  font-family: "Source Sans Pro", sans-serif;
-  font-size: 1em;
-  font-weight: 400;
-  overflow-y: scroll;
+	box-sizing: border-box;
+	background-color: var(--background-primary);
+	color: var(--primary);
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 1em;
+	font-weight: 400;
+	overflow-y: scroll;
 }
 
 hr {
-  border-style: solid;
-  border-width: var(--size-1);
-  color: var(--accent-primary);
-  align-self: stretch;
+	border-style: solid;
+	border-width: var(--size-1);
+	color: var(--accent-primary);
+	align-self: stretch;
 }
 
 #root {
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  position: relative;
-  max-width: 1280px;
-  padding-left: var(--size-2);
-  padding-right: var(--size-2);
-  padding-bottom: var(--size-2);
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	position: relative;
+	max-width: 1280px;
+	padding-left: var(--size-2);
+	padding-right: var(--size-2);
+	padding-bottom: var(--size-2);
 }
 
 .inlineIcon {
-  vertical-align: sub;
-  width: auto;
-  height: 1em;
-  margin-right: var(--size-1);
+	vertical-align: sub;
+	width: auto;
+	height: 1em;
+	margin-right: var(--size-1);
 }
 
 .header {
-  width: 100%;
-  color: var(--primary-light);
-  font-size: var(--size-5);
-  padding: var(--size-2);
-  font-weight: var(--font-heavy);
-  text-align: center;
+	width: 100%;
+	color: var(--primary-light);
+	font-size: var(--size-5);
+	padding: var(--size-2);
+	font-weight: var(--font-heavy);
+	text-align: center;
+	cursor: pointer;
 }
 
 a:link,
 a:visited {
-  color: var(--primary);
+	color: var(--primary);
 }
