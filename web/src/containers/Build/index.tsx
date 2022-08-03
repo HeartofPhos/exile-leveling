@@ -50,7 +50,6 @@ function GemOrderList(
   onUpdate: (buildData: BuildData) => void
 ) {
   const taskItems: TaskItemProps[] = [];
-  let act: any;
   const requiredGems = [...buildData.requiredGems];
   for (let i = 0; i < requiredGems.length; i++) {
     const requiredGem = requiredGems[i];
