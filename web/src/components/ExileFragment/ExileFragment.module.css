@@ -42,3 +42,7 @@
   display: inline-block;
   white-space: pre;
 }
+
+.fragmentStep {
+  width: 100%;
+}

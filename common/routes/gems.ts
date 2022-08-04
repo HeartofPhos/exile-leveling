@@ -1,28 +1,32 @@
-import { BuildData } from ".";
+import { BuildData, RequiredGem } from ".";
 import { quests } from "../data";
-import { Gem, Quest } from "../types";
+import { Quest } from "../types";
 import { QuestFragment } from "./fragment/quest";
 
 export interface GemStep {
   type: "gem_step";
-  gem: Gem;
+  requiredGem: RequiredGem;
   rewardType: "quest" | "vendor";
 }
 
-export function findGems(
+export function buildGemSteps(
   questFragment: QuestFragment,
   buildData: BuildData,
   routeGems: Set<number>
 ) {
   const quest = quests[questFragment.questId];
 
-  let questGems: number[] = [];
-  let vendorGems: number[] = [];
+  const gemSteps: GemStep[] = [];
   for (const index of questFragment.rewardOffers) {
     const reward_offer = quest.reward_offers[index];
 
     const questReward = findQuestGem(buildData, routeGems, reward_offer.quest);
-    if (questReward !== null) questGems.push(questReward);
+    if (questReward !== null)
+      gemSteps.push({
+        type: "gem_step",
+        requiredGem: buildData.requiredGems[questReward],
+        rewardType: "quest",
+      });
 
     const vendorRewards = findVendorGems(
       buildData,
@@ -30,14 +34,15 @@ export function findGems(
       reward_offer.vendor
     );
     for (const vendorReward of vendorRewards) {
-      vendorGems.push(vendorReward);
+      gemSteps.push({
+        type: "gem_step",
+        requiredGem: buildData.requiredGems[vendorReward],
+        rewardType: "quest",
+      });
     }
   }
 
-  return {
-    questGems,
-    vendorGems,
-  };
+  return gemSteps;
 }
 
 function findQuestGem(

@@ -1,7 +1,13 @@
-import { atom, atomFamily, DefaultValue, useRecoilCallback } from "recoil";
+import {
+  atom,
+  atomFamily,
+  DefaultValue,
+  selector,
+  useRecoilCallback,
+} from "recoil";
 import { RecoilSync, syncEffect } from "recoil-sync";
 import { clearPersistent, getPersistent, setPersistent } from ".";
-import type { BuildData } from "../../../common/routes";
+import type { BuildData, Route } from "../../../common/routes";
 
 const ExileSyncStoreKey = "exile-sync-store";
 
@@ -29,9 +35,42 @@ async function initializeRouteData() {
   };
 }
 
-export const routeDataAtom = atom({
+export const baseRouteDataAtom = atom({
   key: "routeDataAtom",
   default: initializeRouteData(),
+});
+
+export const buildRouteSelector = selector({
+  key: "buildRouteSelector",
+  get: async ({ get }) => {
+    const { buildGemSteps } = await import("../../../common/routes/gems");
+
+    const routeData = get(baseRouteDataAtom);
+    const buildData = get(buildDataAtom);
+
+    if (!buildData) return routeData.routes;
+
+    const buildRoutes: Route[] = [];
+    const routeGems: Set<number> = new Set();
+    for (const route of routeData.routes) {
+      const buildRoute: Route = [];
+      for (const step of route) {
+        buildRoute.push(step);
+        if (step.type == "fragment_step") {
+          for (const part of step.parts) {
+            if (typeof part !== "string" && part.type == "quest") {
+              const gemSteps = buildGemSteps(part, buildData, routeGems);
+              buildRoute.push(...gemSteps);
+            }
+          }
+        }
+      }
+
+      buildRoutes.push(buildRoute);
+    }
+
+    return buildRoutes;
+  },
 });
 
 export const buildDataAtom = atom<BuildData | null>({

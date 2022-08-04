@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { RouteLookup } from "../../../../common/routes";
-import { Fragment } from "../../../../common/routes/fragment";
+import { Fragment, FragmentStep } from "../../../../common/routes/fragment";
 import { Area, Quest } from "../../../../common/types";
 import {
   BsArrowDownSquare,
@@ -17,6 +17,7 @@ import { quests, areas } from "../../../../common/data";
 
 import styles from "./ExileFragment.module.css";
 import { SplitRow } from "../SplitRow";
+import { taskStyle } from "../TaskList";
 
 interface FragmentProps {
   fragment: Fragment;
@@ -226,4 +227,23 @@ export function ExileFragment({ fragment, lookup }: FragmentProps) {
   }
 
   return <>{`unmapped: ${JSON.stringify(fragment)}`}</>;
+}
+
+interface StepProps {
+  step: FragmentStep;
+  lookup: RouteLookup;
+}
+
+export function ExileFragmentStep({ step, lookup }: StepProps) {
+  return (
+    <div className={classNames(styles.fragmentStep, taskStyle)}>
+      {step.parts.map((part, i) =>
+        typeof part == "string" ? (
+          part
+        ) : (
+          <ExileFragment key={i} fragment={part} lookup={lookup} />
+        )
+      )}
+    </div>
+  );
 }
