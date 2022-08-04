@@ -34,9 +34,6 @@ export function GemOrder({
                 e.stopPropagation();
                 if (onMoveUp) onMoveUp();
               }}
-              onPointerDown={(e) => {
-                e.stopPropagation();
-              }}
             />
           }
         />
@@ -47,9 +44,6 @@ export function GemOrder({
               onClick={(e) => {
                 e.stopPropagation();
                 if (onMoveDown) onMoveDown();
-              }}
-              onPointerDown={(e) => {
-                e.stopPropagation();
               }}
             />
           }
@@ -62,9 +56,6 @@ export function GemOrder({
                 e.stopPropagation();
                 if (onMoveTop) onMoveTop();
               }}
-              onPointerDown={(e) => {
-                e.stopPropagation();
-              }}
             />
           }
         />
@@ -75,9 +66,6 @@ export function GemOrder({
               onClick={(e) => {
                 e.stopPropagation();
                 if (onDelete) onDelete();
-              }}
-              onPointerDown={(e) => {
-                e.stopPropagation();
               }}
             />
           }

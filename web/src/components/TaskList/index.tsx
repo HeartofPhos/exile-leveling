@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import { useState } from "react";
 import { RecoilState, useRecoilState } from "recoil";
 import styles from "./TaskList.module.css";
 
@@ -11,26 +10,14 @@ export interface TaskItemProps {
   isCompletedState?: RecoilState<boolean>;
 }
 
-interface TaskListItemProps {
-  pointerDown: boolean;
-}
-
-function TaskListItem({
-  children,
-  isCompletedState,
-  pointerDown,
-}: TaskItemProps & TaskListItemProps) {
+function TaskListItem({ children, isCompletedState }: TaskItemProps) {
   const [isCompleted, setIsCompleted] = isCompletedState
     ? useRecoilState(isCompletedState)
     : [undefined, undefined];
 
   return (
     <li
-      onPointerDown={() => {
-        if (setIsCompleted) setIsCompleted(!isCompleted);
-      }}
-      onPointerEnter={() => {
-        if (!pointerDown) return;
+      onClick={() => {
         if (setIsCompleted) setIsCompleted(!isCompleted);
       }}
       className={classNames({ [styles.completed]: isCompleted })}
@@ -45,23 +32,11 @@ interface TaskListProps {
 }
 
 export function TaskList({ items }: TaskListProps) {
-  const [pointerDown, setPointerDown] = useState(false);
   return (
-    <ol
-      className={classNames(styles.list)}
-      onPointerDown={() => {
-        setPointerDown(true);
-      }}
-      onPointerUp={() => {
-        setPointerDown(false);
-      }}
-      onPointerLeave={() => {
-        setPointerDown(false);
-      }}
-    >
+    <ol className={classNames(styles.list)}>
       {items &&
         items.map(({ key, ...rest }, i) => (
-          <TaskListItem key={key || i} {...rest} pointerDown={pointerDown} />
+          <TaskListItem key={key || i} {...rest} />
         ))}
     </ol>
   );
