@@ -1,12 +1,21 @@
 import classNames from "classnames";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaBars, FaGithub, FaMap, FaTools, FaUndoAlt } from "react-icons/fa";
+import {
+  FaBars,
+  FaGithub,
+  FaMap,
+  FaRegClipboard,
+  FaTools,
+  FaUndoAlt,
+} from "react-icons/fa";
 import styles from "./Navbar.module.css";
 import {
+  buildRouteSelector,
   useClearGemProgress,
   useClearRouteProgress,
 } from "../../utility/ExileSyncStore";
+import { useRecoilCallback } from "recoil";
 
 interface NavbarItemProps {
   label: string;
@@ -34,6 +43,14 @@ export function Navbar({}: NavbarProps) {
   const [navExpand, setNavExpand] = useState<boolean>(false);
   const navigate = useNavigate();
 
+  const clipboardRoute = useRecoilCallback(
+    ({ snapshot }) =>
+      async () => {
+        const route = await snapshot.getPromise(buildRouteSelector);
+        navigator.clipboard.writeText(JSON.stringify(route));
+      },
+    []
+  );
   const clearRouteProgress = useClearRouteProgress();
   const clearGemProgress = useClearGemProgress();
 
@@ -112,6 +129,15 @@ export function Navbar({}: NavbarProps) {
             onClick={() => {
               clearRouteProgress();
               clearGemProgress();
+              setNavExpand(false);
+            }}
+          />
+          <NavbarItem
+            label="Export Route"
+            expand={navExpand}
+            icon={<FaRegClipboard className={classNames("inlineIcon")} />}
+            onClick={() => {
+              clipboardRoute();
               setNavExpand(false);
             }}
           />
