@@ -10,6 +10,11 @@ export interface QuestFragment {
   rewardOffers: number[];
 }
 
+export interface QuestTextFragment {
+  type: "quest_text";
+  value: string;
+}
+
 export function EvaluateQuest(
   rawFragment: RawFragment,
   lookup: RouteLookup,
@@ -41,11 +46,6 @@ export function EvaluateQuest(
       },
     };
   }
-}
-
-export interface QuestTextFragment {
-  type: "quest_text";
-  value: string;
 }
 
 export function EvaluateQuestText(

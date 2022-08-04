@@ -11,6 +11,11 @@ export interface TrialFragment {
   type: "trial";
 }
 
+export interface AscendFragment {
+  type: "ascend";
+  version: "normal" | "cruel" | "merciless" | "eternal";
+}
+
 export function EvaluateTrial(
   rawFragment: RawFragment,
   lookup: RouteLookup,
@@ -22,18 +27,6 @@ export function EvaluateTrial(
       type: "trial",
     },
   };
-}
-
-const GUIDE_URL_LOOKUP: Record<string, string> = {
-  normal: "https://www.poelab.com/gtgax",
-  cruel: "https://www.poelab.com/r8aws",
-  merciless: "https://www.poelab.com/riikv",
-  eternal: "https://www.poelab.com/wfbra",
-};
-
-export interface AscendFragment {
-  type: "ascend";
-  guideUrl: string;
 }
 
 export function EvaluateAscend(
@@ -56,7 +49,8 @@ export function EvaluateAscend(
   return {
     fragment: {
       type: "ascend",
-      guideUrl: GUIDE_URL_LOOKUP[rawFragment[1]],
+      //@ts-ignore
+      version: rawFragment[1],
     },
   };
 }

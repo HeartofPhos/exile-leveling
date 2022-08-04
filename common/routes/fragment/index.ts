@@ -60,12 +60,6 @@ export function parseFragmentStep(
 
   return step;
 }
-
-export interface FragmentStep {
-  type: "fragment_step";
-  parts: (string | Fragment)[];
-}
-
 export function transitionArea(
   lookup: RouteLookup,
   state: RouteState,
@@ -79,9 +73,80 @@ export function transitionArea(
   state.currentAreaId = area.id;
 }
 
+export interface FragmentStep {
+  type: "fragment_step";
+  parts: (string | Fragment)[];
+}
+
+export type Fragment =
+  | KillFragment
+  | ArenaFragment
+  | AreaFragment
+  | EnterFragment
+  | LogoutFragment
+  | WaypointFragment
+  | GetWaypointFragment
+  | PortalFragment
+  | QuestFragment
+  | QuestTextFragment
+  | GenericFragment
+  | TrialFragment
+  | AscendFragment
+  | DirectionFragment
+  | CraftingFragment;
+
 interface KillFragment {
   type: "kill";
   value: string;
+}
+
+interface ArenaFragment {
+  type: "arena";
+  value: string;
+}
+
+interface AreaFragment {
+  type: "area";
+  areaId: Area["id"];
+}
+
+interface LogoutFragment {
+  type: "logout";
+  areaId: Area["id"];
+}
+
+interface EnterFragment {
+  type: "enter";
+  areaId: Area["id"];
+}
+
+interface WaypointFragment {
+  type: "waypoint";
+  areaId: Area["id"] | null;
+}
+
+interface GetWaypointFragment {
+  type: "get_waypoint";
+}
+
+interface GenericFragment {
+  type: "generic";
+  value: string;
+}
+
+interface PortalFragment {
+  type: "portal";
+  targetAreaId?: Area["id"];
+}
+
+interface CraftingFragment {
+  type: "crafting";
+  crafting_recipes: string[];
+}
+
+interface DirectionFragment {
+  type: "dir";
+  dirIndex: number;
 }
 
 function EvaluateKill(
@@ -111,11 +176,6 @@ function EvaluateKill(
   };
 }
 
-interface ArenaFragment {
-  type: "arena";
-  value: string;
-}
-
 function EvaluateArena(
   rawFragment: RawFragment,
   lookup: RouteLookup,
@@ -128,11 +188,6 @@ function EvaluateArena(
       value: rawFragment[1],
     },
   };
-}
-
-interface AreaFragment {
-  type: "area";
-  areaId: Area["id"];
 }
 
 function EvaluateArea(
@@ -151,11 +206,6 @@ function EvaluateArea(
       areaId: area.id,
     },
   };
-}
-
-interface EnterFragment {
-  type: "enter";
-  areaId: Area["id"];
 }
 
 function EvaluateEnter(
@@ -180,11 +230,6 @@ function EvaluateEnter(
   };
 }
 
-interface LogoutFragment {
-  type: "logout";
-  areaId: Area["id"];
-}
-
 function EvaluateLogout(
   rawFragment: RawFragment,
   lookup: RouteLookup,
@@ -201,11 +246,6 @@ function EvaluateLogout(
       areaId: townArea.id,
     },
   };
-}
-
-interface WaypointFragment {
-  type: "waypoint";
-  areaId: Area["id"] | null;
 }
 
 function EvaluateWaypoint(
@@ -246,10 +286,6 @@ function EvaluateWaypoint(
   }
 }
 
-interface GetWaypointFragment {
-  type: "get_waypoint";
-}
-
 function EvaluateGetWaypoint(
   rawFragment: RawFragment,
   lookup: RouteLookup,
@@ -269,11 +305,6 @@ function EvaluateGetWaypoint(
       type: "get_waypoint",
     },
   };
-}
-
-interface PortalFragment {
-  type: "portal";
-  targetAreaId?: Area["id"];
 }
 
 function EvaluatePortal(
@@ -324,11 +355,6 @@ function EvaluatePortal(
   return ERROR_INVALID_FORMAT;
 }
 
-interface GenericFragment {
-  type: "generic";
-  value: string;
-}
-
 function EvaluateGeneric(
   rawFragment: RawFragment,
   lookup: RouteLookup,
@@ -341,11 +367,6 @@ function EvaluateGeneric(
       value: rawFragment[1],
     },
   };
-}
-
-interface CraftingFragment {
-  type: "crafting";
-  crafting_recipes: string[];
 }
 
 function EvaluateCrafting(
@@ -371,11 +392,6 @@ function EvaluateCrafting(
   };
 }
 
-interface DirectionFragment {
-  type: "dir";
-  dirIndex: number;
-}
-
 function EvaluateDirection(
   rawFragment: RawFragment,
   lookup: RouteLookup,
@@ -398,23 +414,6 @@ function EvaluateDirection(
     },
   };
 }
-
-export type Fragment =
-  | KillFragment
-  | ArenaFragment
-  | AreaFragment
-  | EnterFragment
-  | LogoutFragment
-  | WaypointFragment
-  | GetWaypointFragment
-  | PortalFragment
-  | QuestFragment
-  | QuestTextFragment
-  | GenericFragment
-  | TrialFragment
-  | AscendFragment
-  | DirectionFragment
-  | CraftingFragment;
 
 export const ERROR_INVALID_FORMAT = "invalid format";
 export const ERROR_MISSING_AREA = "area does not exist";

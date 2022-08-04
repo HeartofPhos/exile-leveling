@@ -152,7 +152,14 @@ function CraftingComponent(craftingRecipes: string[]) {
   );
 }
 
-function AscendComponent(guideUrl: string) {
+const GUIDE_URL_LOOKUP: Record<string, string> = {
+  normal: "https://www.poelab.com/gtgax",
+  cruel: "https://www.poelab.com/r8aws",
+  merciless: "https://www.poelab.com/riikv",
+  eternal: "https://www.poelab.com/wfbra",
+};
+
+function AscendComponent(version: string) {
   return (
     <SplitRow
       left={
@@ -167,7 +174,7 @@ function AscendComponent(guideUrl: string) {
       }
       right={
         <a
-          href={guideUrl}
+          href={GUIDE_URL_LOOKUP[version]}
           target="_blank"
           onClick={(e) => {
             e.stopPropagation();
@@ -223,7 +230,7 @@ export function ExileFragment({ fragment, lookup }: FragmentProps) {
     case "crafting":
       return CraftingComponent(fragment.crafting_recipes);
     case "ascend":
-      return AscendComponent(fragment.guideUrl);
+      return AscendComponent(fragment.version);
   }
 
   return <>{`unmapped: ${JSON.stringify(fragment)}`}</>;
