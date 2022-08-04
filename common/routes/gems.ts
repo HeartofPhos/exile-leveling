@@ -1,20 +1,12 @@
-import {
-  BuildData,
-  ERROR_INVALID_FORMAT,
-  EvaluateResult,
-  RawFragment,
-  RequiredGem,
-  RouteLookup,
-  RouteState,
-} from ".";
-import { Quest } from "../types";
-
+import { BuildData } from ".";
 import { quests } from "../data";
+import { Gem, Quest } from "../types";
+import { QuestFragment } from "./fragment/quest";
 
-export interface QuestFragment {
-  type: "quest";
-  questId: Quest["id"];
-  rewardOffers: number[];
+export interface GemStep {
+  type: "gem_step";
+  gem: Gem;
+  rewardType: "quest" | "vendor";
 }
 
 export function findGems(
@@ -97,56 +89,4 @@ function findVendorGems(
   }
 
   return result;
-}
-
-export function EvaluateQuest(
-  rawFragment: RawFragment,
-  lookup: RouteLookup,
-  state: RouteState
-): string | EvaluateResult {
-  {
-    if (rawFragment.length < 2) return ERROR_INVALID_FORMAT;
-
-    const questId = rawFragment[1];
-    const quest = quests[questId];
-    if (!quest) return "invalid quest id";
-
-    let rewardOfferIds;
-    if (rawFragment.length == 2) {
-      rewardOfferIds = quest.reward_offers.map((v, i) => i);
-    } else {
-      rewardOfferIds = [];
-      for (let i = 2; i < rawFragment.length; i++) {
-        const questRewardIndex = Number.parseInt(rawFragment[i]);
-        rewardOfferIds.push(questRewardIndex);
-      }
-    }
-
-    return {
-      fragment: {
-        type: "quest",
-        questId: rawFragment[1],
-        rewardOffers: rewardOfferIds,
-      },
-    };
-  }
-}
-
-export interface QuestTextFragment {
-  type: "quest_text";
-  value: string;
-}
-
-export function EvaluateQuestText(
-  rawFragment: RawFragment,
-  lookup: RouteLookup,
-  state: RouteState
-): string | EvaluateResult {
-  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
-  return {
-    fragment: {
-      type: "quest_text",
-      value: rawFragment[1],
-    },
-  };
 }

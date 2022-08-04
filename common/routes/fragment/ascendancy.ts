@@ -1,12 +1,11 @@
+import { RouteLookup, RouteState } from "..";
 import {
   ERROR_INVALID_FORMAT,
   EvaluateResult,
   RawFragment,
-  RouteLookup,
-  RouteState,
   transitionArea,
 } from ".";
-import { areas } from "../data";
+import { areas } from "../../data";
 
 export interface TrialFragment {
   type: "trial";

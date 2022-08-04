@@ -1,5 +1,6 @@
 import classNames from "classnames";
-import { Fragment, RouteLookup } from "../../../../common/routes";
+import { RouteLookup } from "../../../../common/routes";
+import { Fragment } from "../../../../common/routes/fragment";
 import { Area, Quest } from "../../../../common/types";
 import {
   BsArrowDownSquare,

@@ -7,7 +7,7 @@ import {
   routeDataAtom,
   buildDataAtom,
 } from "../../utility/ExileSyncStore";
-import { findGems } from "../../../../common/routes/quest";
+import { findGems } from "../../../../common/routes/gems";
 import { GemReward } from "../../components/GemReward";
 import { withScrollRestoration } from "../../utility/withScrollRestoration";
 import { useRecoilValue } from "recoil";
