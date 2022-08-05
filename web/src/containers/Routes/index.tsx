@@ -45,7 +45,7 @@ function RoutesContainer() {
             <GemReward
               key={taskItems.length}
               requiredGem={step.requiredGem}
-              type="quest"
+              type={step.rewardType}
             />
           ),
         });

@@ -37,7 +37,7 @@ export function buildGemSteps(
       gemSteps.push({
         type: "gem_step",
         requiredGem: buildData.requiredGems[vendorReward],
-        rewardType: "quest",
+        rewardType: "vendor",
       });
     }
   }
