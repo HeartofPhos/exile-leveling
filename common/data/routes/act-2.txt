@@ -3,10 +3,9 @@
 Head {dir|45} ➞ {enter|1_2_2} #The Old Fields
 Find {area|1_2_2a}, place {portal|set} #The Den
 Follow the road ➞ {enter|1_2_3} #The Crossroads
-Follow the road, get {get_waypoint}
-{logout}
+Follow the road, {waypoint|1_2_town} #The Forest Encampment
 Take {portal|use}
-Open {generic|Secret Passage} ➞ {enter|1_2_2a} #The Den
+➞ {enter|1_2_2a} #The Den
 Find and kill {kill|The Great White Beast}
 {logout}
 Hand in {quest|a2q10} #The Great White Beast

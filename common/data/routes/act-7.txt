@@ -27,7 +27,7 @@ Go in same direction as {waypoint}
 ➞ {enter|2_7_5_2} #The Chamber of Sins Level 2
 Complete {trial}
 Get {crafting}
-➞ {enter|2_7_6} #The Den
+Open {generic|Secret Passage} ➞ {enter|2_7_6} #The Den
 ➞ {enter|2_7_7} #The Ashen Fields
 Head {dir|225} ➞ {arena|The Forest Encampment}, kill {kill|Greust, Lord of the Forest}
 ➞ {enter|2_7_8} #The Northern Forest
