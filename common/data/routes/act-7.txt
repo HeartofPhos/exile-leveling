@@ -8,7 +8,7 @@ Head {dir|135} ➞ {enter|2_7_3} #The Fellshrine Ruins
 Follow the road ➞ {enter|2_7_4} #The Crypt
 Complete {trial}
 Get {crafting}
-Find Sarcophagus to next floor
+Find {generic|Sarcophagus} to next floor
 Find and take {quest_text|Maligaro's Map}
 {logout}
 {waypoint|2_7_2} #The Crossroads
