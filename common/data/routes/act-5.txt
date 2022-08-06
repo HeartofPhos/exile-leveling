@@ -20,7 +20,7 @@ Hand in {quest|a5q4} #Death to Purity
 Loop around counter-clockwise ➞ {enter|1_5_3b} #The Ruined Square
 Head {dir|315} get {get_waypoint}
 ➞ {enter|1_5_6} #The Ossuary
-Take {quest_text|Sign of Purity}
+Find and take {quest_text|Sign of Purity}
 Get {crafting}
 {logout}
 {waypoint|1_5_3b} #The Ruined Square
