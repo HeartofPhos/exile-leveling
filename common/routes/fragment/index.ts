@@ -239,6 +239,7 @@ function EvaluateLogout(
 
   const townArea = areas[state.lastTownAreaId];
   transitionArea(lookup, state, townArea);
+  state.portalAreaId = null;
 
   return {
     fragment: {
@@ -330,7 +331,7 @@ function EvaluatePortal(
       if (state.portalAreaId != currentArea.id && !currentArea.is_town_area)
         state.portalAreaId = currentArea.id;
 
-      if (!state.portalAreaId) return "portal cannot be set";
+      if (!state.portalAreaId) return "portal not set";
       const portalArea = areas[state.portalAreaId];
 
       if (currentArea.id == portalArea.id) {
