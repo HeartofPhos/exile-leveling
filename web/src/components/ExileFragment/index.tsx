@@ -14,10 +14,11 @@ import {
 } from "react-icons/bs";
 import { InlineFakeBlock } from "../InlineFakeBlock";
 import { quests, areas } from "../../../../common/data";
-
-import styles from "./ExileFragment.module.css";
 import { SplitRow } from "../SplitRow";
 import { taskStyle } from "../TaskList";
+import { QuestFragment } from "../../../../common/routes/fragment/quest";
+
+import styles from "./ExileFragment.module.css";
 
 interface FragmentProps {
   fragment: Fragment;
@@ -43,7 +44,16 @@ function AreaComponent(area?: Area, fallback?: string) {
   );
 }
 
-function QuestComponent(quest: Quest) {
+function QuestComponent(fragment: QuestFragment) {
+  const quest = quests[fragment.questId];
+
+  let partPostfix;
+  if (fragment.rewardOffers.length != quest.reward_offers.length)
+    partPostfix = (
+      <> Part {fragment.rewardOffers.map((x) => x + 1).join(", ")}</>
+    );
+  else partPostfix = <></>;
+
   return (
     <div className={classNames(styles.noWrap)}>
       <img
@@ -51,7 +61,10 @@ function QuestComponent(quest: Quest) {
         className={classNames("inlineIcon")}
         alt=""
       />
-      <span className={classNames(styles.quest)}>{quest.name}</span>
+      <span className={classNames(styles.quest)}>
+        {quest.name}
+        {partPostfix}
+      </span>
     </div>
   );
 }
@@ -198,7 +211,7 @@ export function ExileFragment({ fragment, lookup }: FragmentProps) {
     case "enter":
       return AreaComponent(areas[fragment.areaId]);
     case "quest": {
-      return QuestComponent(quests[fragment.questId]);
+      return QuestComponent(fragment);
     }
     case "quest_text":
       return QuestTextComponent(fragment.value);
