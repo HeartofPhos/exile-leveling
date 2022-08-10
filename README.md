@@ -1,14 +1,11 @@
 ## Getting Started
-- `cd web`
-- `npm run dev`
+- `npm run dev -w web`
 
 ## Seeding
-- `cd seeding`
 - Find the list of required `dat` files in `seeding/data/index.ts`
 - Use https://github.com/HeartofPhos/exile-export to get required `.dat.json` files
-- `npm run seed-data`
+- `npm run seed-data -w seeding`
 
 ## Deploying to GitHub Pages
-- `cd web`
-- `npm run build`
-- `npm run deploy`
+- `npm run build -w web`
+- `npm run deploy -w web`
