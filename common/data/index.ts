@@ -28,9 +28,3 @@ export const routeFilesLookup: Record<string, string> = import.meta.glob(
   "./routes/*.txt",
   { as: "raw" }
 );
-
-export const routeFiles = Object.keys(routeFilesLookup)
-  .sort((a, b) =>
-    a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" })
-  )
-  .map((x) => routeFilesLookup[x]);
