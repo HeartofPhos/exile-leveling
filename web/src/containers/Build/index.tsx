@@ -10,6 +10,9 @@ import { Form, formStyles } from "../../components/Form";
 import classNames from "classnames";
 import { useRecoilState } from "recoil";
 import { withScrollRestoration } from "../../utility/withScrollRestoration";
+import { SplitRow } from "../../components/SplitRow";
+
+import styles from "./Build.module.css";
 
 function Build() {
   const [buildData, setBuildData] = useRecoilState(buildDataAtom);
@@ -96,7 +99,26 @@ function GemOrderList(
 
   return (
     <>
-      <div className="header">{buildData.characterClass}</div>
+      <div className={classNames(styles.buildInfo)}>
+        <SplitRow
+          left={<div className={classNames(styles.buildInfoLabel)}>Class</div>}
+          right={
+            <div className={classNames(styles.buildInfoValue)}>
+              {buildData.characterClass}
+            </div>
+          }
+        />
+        <SplitRow
+          left={
+            <div className={classNames(styles.buildInfoLabel)}>Bandits</div>
+          }
+          right={
+            <div className={classNames(styles.buildInfoValue)}>
+              {buildData.bandit == "None" ? "Kill All" : buildData.bandit}
+            </div>
+          }
+        />
+      </div>
       <hr />
       <TaskList items={taskItems} />
       <hr />

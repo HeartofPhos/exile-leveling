@@ -53,8 +53,6 @@ export const baseRouteSelector = selector({
       case "Alira":
         act2RoutePath = "./routes/act-2-alira.txt";
         break;
-      default:
-        throw new Error("unreachable");
     }
 
     const routeFiles = [
@@ -144,7 +142,7 @@ const gemProgress = new Set<number>(getPersistent<number[]>("gem-progress"));
 export function useClearRouteProgress() {
   return useRecoilCallback(
     ({ set }) =>
-      async () => {
+      () => {
         for (const key of routeProgress.keys()) {
           set(routeProgressAtomFamily(JSON.parse(key)), false);
         }
@@ -156,7 +154,7 @@ export function useClearRouteProgress() {
 export function useClearGemProgress() {
   return useRecoilCallback(
     ({ set }) =>
-      async () => {
+      () => {
         for (const key of gemProgress.keys()) {
           set(gemProgressAtomFamily(key), false);
         }
@@ -168,7 +166,7 @@ export function useClearGemProgress() {
 function useResyncGemProgress() {
   return useRecoilCallback(
     ({ set }) =>
-      async () => {
+      () => {
         for (const key of gemProgress.keys()) {
           const exists = buildData?.requiredGems.find((x) => x.uid == key)
             ? true

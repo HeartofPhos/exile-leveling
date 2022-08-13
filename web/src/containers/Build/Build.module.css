@@ -1,0 +1,15 @@
+.buildInfo {
+  padding: var(--size-2);
+}
+
+.buildInfoLabel {
+  width: 100%;
+  text-align: right;
+  color: var(--primary-light);
+  font-weight: var(--font-heavy);
+}
+
+.buildInfoValue {
+  width: 100%;
+  text-align: left;
+}
