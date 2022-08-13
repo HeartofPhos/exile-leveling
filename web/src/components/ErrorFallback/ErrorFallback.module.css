@@ -1,0 +1,5 @@
+.reset {
+  color: var(--primary-light);
+  font-weight: var(--font-heavy);
+  cursor: pointer;
+}

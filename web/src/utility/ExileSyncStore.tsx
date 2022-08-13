@@ -27,7 +27,7 @@ const exileSyncEffect = syncEffect<any>({
 export const banditSelector = selector<BuildData["bandit"]>({
   key: "banditSelector", get: ({ get }) => {
     const buildData = get(buildDataAtom);
-    if (!buildData) return "None";
+    if (!buildData?.bandit) return "None";
     return buildData.bandit;
   }
 })
