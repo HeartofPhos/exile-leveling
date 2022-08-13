@@ -1,0 +1,58 @@
+➞ {enter|1_2_1} #The Southern Forest
+➞ {enter|1_2_town} #The Forest Encampment
+Head {dir|45} ➞ {enter|1_2_2} #The Old Fields
+Find {area|1_2_2a}, place {portal|set} #The Den
+Follow the road ➞ {enter|1_2_3} #The Crossroads
+Follow the road, {waypoint|1_2_town} #The Forest Encampment
+Take {portal|use}
+➞ {enter|1_2_2a} #The Den
+Find and kill {kill|The Great White Beast}
+{logout}
+Hand in {quest|a2q10} #The Great White Beast
+{waypoint|1_2_3} #The Crossroads
+Head {dir|315} ➞ {enter|1_2_6_1} #The Chamber of Sins Level 1
+Go in same direction as {waypoint}
+➞ {enter|1_2_6_2} #The Chamber of Sins Level 2
+Complete {trial}
+Find the long hallway, kill {kill|Fidelitas, the Mourning}, take {quest_text|Baleful Gem}
+{logout}
+Hand in {quest|a2q6} #Intruders in Black
+{waypoint|1_2_3} #The Crossroads
+Head {dir|135} ➞ {enter|1_2_15} #The Fellshrine Ruins
+Follow the road ➞ {enter|1_2_5_1} #The Crypt Level 1
+Complete {trial}
+{logout}
+Head {dir|225} ➞ {enter|1_2_7} #The Riverways
+Follow the road, get {get_waypoint}
+Follow the road ➞ {enter|1_2_9} #The Western Forest
+Follow the road, get {get_waypoint}
+Search the side of road opposite {waypoint}
+➞ {enter|1_2_10} #The Weaver's Chambers
+➞ {arena|The Weaver's Nest}, kill {kill|The Weaver}, take {quest_text|Maligaro's Spike}
+{logout}
+Hand in {quest|a2q4} #Sharp and Cruel
+{waypoint|1_2_3} #The Crossroads
+Head {dir|45} ➞ {enter|1_2_4} #The Broken Bridge
+Follow road, kill {kill|Kraityn, Scarbearer}, take {quest_text|Kraityn's Amulet}
+{logout}
+{waypoint|1_2_9} #The Western Forest
+Head {dir|180} look for the torch touching the road
+Follow the trail in the direction of the torch, kill {kill|Alira Darktongue}, take {quest_text|Alira's Amulet}
+Follow the road, kill {kill|Captain Arteri}
+Take {quest_text|Thaumetic Emblem}, activate {quest_text|Thaumetic Seal}
+{logout}
+{waypoint|1_1_town} #Lioneye's Watch
+Hand in {quest|a1q9} #The Way Forward
+{waypoint|1_2_7} #The Riverways
+Look for 2 pillars near {waypoint}, follow the trail ➞ {enter|1_2_12} #The Wetlands
+Find and help {kill|Oak, Skullbreaker}, take {quest_text|The Apex}
+Search opposite direction of the encampment entrance
+Poison the {quest_text|Tree Roots} ➞ {enter|1_2_11} #The Vaal Ruins
+➞ {enter|1_2_8} #The Northern Forest
+➞ {enter|1_2_14_2} #The Caverns
+Get {crafting}
+➞ {enter|1_2_14_3} #The Ancient Pyramid
+First floor exit will be in one of the 3 corners
+Remaining floors will have the exit diagonally across from the entrance
+➞ {arena|Pyramid Apex}, kill {kill|Vaal Oversoul}
+Get {crafting}

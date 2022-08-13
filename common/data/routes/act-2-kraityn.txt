@@ -31,23 +31,22 @@ Search the side of road opposite {waypoint}
 ➞ {arena|The Weaver's Nest}, kill {kill|The Weaver}, take {quest_text|Maligaro's Spike}
 {logout}
 Hand in {quest|a2q4} #Sharp and Cruel
-{waypoint|1_2_3} #The Crossroads
-Head {dir|45} ➞ {enter|1_2_4} #The Broken Bridge
-Follow road, kill {kill|Kraityn, Scarbearer}
-{logout}
 {waypoint|1_2_7} #The Riverways
 Look for 2 pillars near {waypoint}, follow the trail ➞ {enter|1_2_12} #The Wetlands
-Find and kill {kill|Oak, Skullbreaker}
-Find {waypoint}
+Find and kill {kill|Oak, Skullbreaker}, take {quest_text|Oak's Amulet}
+Search opposite direction of the encampment entrance
 {waypoint|1_2_9} #The Western Forest
 Head {dir|180} look for the torch touching the road
-Follow the trail in the direction of the torch, help or kill {kill|Alira Darktongue}
+Follow the trail in the direction of the torch, kill {kill|Alira Darktongue}, take {quest_text|Alira's Amulet}
 Follow the road, kill {kill|Captain Arteri}
 Take {quest_text|Thaumetic Emblem}, activate {quest_text|Thaumetic Seal}
 {logout}
-If you killed all bandits, hand in {quest|a2q7} #Deal with the Bandits
 {waypoint|1_1_town} #Lioneye's Watch
 Hand in {quest|a1q9} #The Way Forward
+{waypoint|1_2_3} #The Crossroads
+Head {dir|45} ➞ {enter|1_2_4} #The Broken Bridge
+Follow road, help {kill|Kraityn, Scarbearer}, take {quest_text|The Apex}
+{logout}
 {waypoint|1_2_12} #The Wetlands
 Poison the {quest_text|Tree Roots} ➞ {enter|1_2_11} #The Vaal Ruins
 ➞ {enter|1_2_8} #The Northern Forest
