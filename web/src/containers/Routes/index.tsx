@@ -3,7 +3,7 @@ import { TaskItemProps } from "../../components/TaskList";
 import {
   gemProgressAtomFamily,
   routeProgressAtomFamily,
-  baseRouteDataAtom,
+  baseRouteSelector,
   buildRouteSelector,
 } from "../../utility/ExileSyncStore";
 import { GemReward } from "../../components/GemReward";
@@ -13,7 +13,7 @@ import { ActHolder } from "../../components/ActHolder";
 import { ExileFragmentStep } from "../../components/ExileFragment";
 
 function RoutesContainer() {
-  const { routeLookup } = useRecoilValue(baseRouteDataAtom);
+  const { routeLookup } = useRecoilValue(baseRouteSelector);
   const routes = useRecoilValue(buildRouteSelector);
 
   const items: ReactNode[] = [];

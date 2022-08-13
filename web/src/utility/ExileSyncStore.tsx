@@ -24,28 +24,66 @@ const exileSyncEffect = syncEffect<any>({
   refine: checker,
 });
 
-async function initializeRouteData() {
-  const { initializeRouteLookup, initializeRouteState, parseRoute } =
-    await import("../../../common/routes");
-  const { routeFiles } = await import("../../../common/data");
-  const routeLookup = initializeRouteLookup();
-  return {
-    routeLookup: routeLookup,
-    routes: parseRoute(routeFiles, routeLookup, initializeRouteState()),
-  };
-}
+export const banditSelector = selector<BuildData["bandit"]>({
+  key: "banditSelector", get: ({ get }) => {
+    const buildData = get(buildDataAtom);
+    if (!buildData) return "None";
+    return buildData.bandit;
+  }
+})
 
-export const baseRouteDataAtom = atom({
-  key: "routeDataAtom",
-  default: initializeRouteData(),
-});
+export const baseRouteSelector = selector({
+  key: "baseRouteSelector", get: async ({ get }) => {
+    const { initializeRouteLookup, initializeRouteState, parseRoute } =
+      await import("../../../common/routes");
+    const { routeFilesLookup } = await import("../../../common/data");
+
+    const bandit = get(banditSelector);
+    let act2RoutePath;
+    switch (bandit) {
+      case "None":
+        act2RoutePath = "./routes/act-2-kill.txt";
+        break;
+      case "Oak":
+        act2RoutePath = "./routes/act-2-oak.txt";
+        break;
+      case "Kraityn":
+        act2RoutePath = "./routes/act-2-kraityn.txt";
+        break;
+      case "Alira":
+        act2RoutePath = "./routes/act-2-alira.txt";
+        break;
+      default:
+        throw new Error("unreachable");
+    }
+
+    const routeFiles = [
+      routeFilesLookup["./routes/act-1.txt"],
+      routeFilesLookup[act2RoutePath],
+      routeFilesLookup["./routes/act-3.txt"],
+      routeFilesLookup["./routes/act-4.txt"],
+      routeFilesLookup["./routes/act-5.txt"],
+      routeFilesLookup["./routes/act-6.txt"],
+      routeFilesLookup["./routes/act-7.txt"],
+      routeFilesLookup["./routes/act-8.txt"],
+      routeFilesLookup["./routes/act-9.txt"],
+      routeFilesLookup["./routes/act-10.txt"],
+    ];
+    const routeLookup = initializeRouteLookup();
+
+    return {
+      routeLookup: routeLookup,
+      routes: parseRoute(routeFiles, routeLookup, initializeRouteState()),
+    };
+  }
+})
 
 export const buildRouteSelector = selector({
   key: "buildRouteSelector",
   get: async ({ get }) => {
     const { buildGemSteps } = await import("../../../common/routes/gems");
 
-    const routeData = get(baseRouteDataAtom);
+    const routeData = get(baseRouteSelector);
     const buildData = get(buildDataAtom);
 
     if (!buildData) return routeData.routes;

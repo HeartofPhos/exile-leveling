@@ -117,10 +117,13 @@ function processPob(pobCode: string | undefined): BuildData | undefined {
   const buildElement = Array.from(doc.getElementsByTagName("Build"));
   const characterClass =
     buildElement[0].attributes.getNamedItem("className")?.value;
+  const bandit =
+    buildElement[0].attributes.getNamedItem("bandit")?.value || "None";
 
   return {
     characterClass: characterClass!,
     requiredGems: requiredGems,
+    bandit: bandit,
   };
 }
 

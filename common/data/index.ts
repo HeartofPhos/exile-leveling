@@ -24,13 +24,7 @@ export const awakenedGemLookup = AWAKENED_GEM_LOOKUP_JSON as VariantGemLookup;
 export const gemColours = GEM_COLOURS_JSON as GemColours;
 
 //@ts-expect-error
-const routeFilesLookup: Record<string, string> = import.meta.glob(
+export const routeFilesLookup: Record<string, string> = import.meta.glob(
   "./routes/*.txt",
   { as: "raw" }
 );
-
-export const routeFiles = Object.keys(routeFilesLookup)
-  .sort((a, b) =>
-    a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" })
-  )
-  .map((x) => routeFilesLookup[x]);
