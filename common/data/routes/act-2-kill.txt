@@ -45,7 +45,7 @@ Follow the trail in the direction of the torch, kill {kill|Alira Darktongue}, ta
 Follow the road, kill {kill|Captain Arteri}
 Take {quest_text|Thaumetic Emblem}, activate {quest_text|Thaumetic Seal}
 {logout}
-Hand in {quest|a2q7} #Deal with the Bandits
+Hand in {quest|a2q7}, take {quest_text|The Apex} #Deal with the Bandits
 {waypoint|1_1_town} #Lioneye's Watch
 Hand in {quest|a1q9} #The Way Forward
 {waypoint|1_2_12} #The Wetlands

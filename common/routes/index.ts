@@ -61,6 +61,7 @@ export function parseRoute(
 export interface BuildData {
   characterClass: string;
   requiredGems: RequiredGem[];
+  bandit: string;
 }
 
 export interface RequiredGem {
