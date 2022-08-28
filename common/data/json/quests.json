@@ -2542,6 +2542,11 @@
               "Scion"
             ]
           },
+          "Metadata/Items/Gems/SkillGemGalvanicField": {
+            "classes": [
+              "Witch"
+            ]
+          },
           "Metadata/Items/Gems/SkillGemHeraldOfAgony": {
             "classes": [
               "Ranger",
@@ -2724,6 +2729,14 @@
               "Ranger",
               "Scion",
               "Shadow"
+            ],
+            "npc": "Yeena"
+          },
+          "Metadata/Items/Gems/SkillGemGalvanicField": {
+            "classes": [
+              "Shadow",
+              "Templar",
+              "Witch"
             ],
             "npc": "Yeena"
           },
@@ -2936,6 +2949,11 @@
           "Metadata/Items/Gems/SupportGemNightblade": {
             "classes": [
               "Shadow"
+            ]
+          },
+          "Metadata/Items/Gems/SupportGemOvercharge": {
+            "classes": [
+              "Witch"
             ]
           },
           "Metadata/Items/Gems/SupportGemDeathmark": {
@@ -3161,6 +3179,15 @@
               "Ranger",
               "Scion",
               "Shadow"
+            ],
+            "npc": "Yeena"
+          },
+          "Metadata/Items/Gems/SupportGemOvercharge": {
+            "classes": [
+              "Ranger",
+              "Shadow",
+              "Templar",
+              "Witch"
             ],
             "npc": "Yeena"
           },
@@ -3545,6 +3572,11 @@
     "reward_offers": [
       {
         "quest": {
+          "Metadata/Items/Gems/SkillGemAlchemistsMark": {
+            "classes": [
+              "Ranger"
+            ]
+          },
           "Metadata/Items/Gems/SkillGemAnger": {
             "classes": [
               "Marauder",
@@ -3753,6 +3785,14 @@
           }
         },
         "vendor": {
+          "Metadata/Items/Gems/SkillGemAlchemistsMark": {
+            "classes": [
+              "Ranger",
+              "Scion",
+              "Shadow"
+            ],
+            "npc": "Clarissa"
+          },
           "Metadata/Items/Gems/SkillGemAnger": {
             "classes": [
               "Duelist",
@@ -4337,6 +4377,11 @@
               "Duelist"
             ]
           },
+          "Metadata/Items/Gems/SkillGemLightningConduit": {
+            "classes": [
+              "Witch"
+            ]
+          },
           "Metadata/Items/Gems/SkillGemLightningTowerTrap": {
             "classes": [
               "Shadow"
@@ -4721,6 +4766,14 @@
               "Duelist",
               "Ranger",
               "Scion"
+            ],
+            "npc": "Clarissa"
+          },
+          "Metadata/Items/Gems/SkillGemLightningConduit": {
+            "classes": [
+              "Shadow",
+              "Witch",
+              "Templar"
             ],
             "npc": "Clarissa"
           },
@@ -6675,15 +6728,7 @@
             ]
           },
           "Metadata/Items/Gems/SupportGemChain": {
-            "classes": [
-              "Witch",
-              "Templar",
-              "Marauder",
-              "Duelist",
-              "Ranger",
-              "Shadow",
-              "Scion"
-            ]
+            "classes": []
           },
           "Metadata/Items/Gems/SupportGemClusterTrap": {
             "classes": [
@@ -6709,15 +6754,7 @@
             ]
           },
           "Metadata/Items/Gems/SupportGemGreaterMultipleProjectiles": {
-            "classes": [
-              "Witch",
-              "Templar",
-              "Marauder",
-              "Duelist",
-              "Ranger",
-              "Shadow",
-              "Scion"
-            ]
+            "classes": []
           },
           "Metadata/Items/Gems/SupportGemGreaterVolley": {
             "classes": [
@@ -6754,26 +6791,10 @@
             ]
           },
           "Metadata/Items/Gems/SupportGemMultistrike": {
-            "classes": [
-              "Witch",
-              "Templar",
-              "Marauder",
-              "Duelist",
-              "Ranger",
-              "Shadow",
-              "Scion"
-            ]
+            "classes": []
           },
           "Metadata/Items/Gems/SupportGemMulticast": {
-            "classes": [
-              "Witch",
-              "Templar",
-              "Marauder",
-              "Duelist",
-              "Ranger",
-              "Shadow",
-              "Scion"
-            ]
+            "classes": []
           },
           "Metadata/Items/Gems/SupportGemHandcastAnticipation": {
             "classes": [
@@ -10117,6 +10138,17 @@
   "sentinel_tutorial": {
     "id": "sentinel_tutorial",
     "name": "Sentinel",
+    "act": "1",
+    "reward_offers": [
+      {
+        "quest": {},
+        "vendor": {}
+      }
+    ]
+  },
+  "lake_tutorial": {
+    "id": "lake_tutorial",
+    "name": "Lake of Kalandra",
     "act": "1",
     "reward_offers": [
       {
