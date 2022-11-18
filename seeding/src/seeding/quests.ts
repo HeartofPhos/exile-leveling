@@ -1,4 +1,4 @@
-import { Quest, QuestReward, Quests } from "../../../common/types";
+import { Quest, Quests } from "../../../common/types";
 import { cargoQuery } from "../wiki";
 import { QuestDat } from "../../data";
 

@@ -335,8 +335,10 @@ function EvaluatePortal(
       const portalArea = areas[state.portalAreaId];
 
       if (currentArea.id == portalArea.id) {
-        const townAreaId = lookup.towns[currentArea.act];
-        const townArea = areas[townAreaId];
+        if (!currentArea.parent_town_area_id)
+          return 'cannot use portal in this area'
+
+        const townArea = areas[currentArea.parent_town_area_id];
         transitionArea(lookup, state, townArea);
         state.portalAreaId = state.currentAreaId;
       } else if (currentArea.id == lookup.towns[portalArea.act]) {

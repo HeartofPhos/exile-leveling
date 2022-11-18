@@ -47,6 +47,7 @@ export async function getAreas() {
       act: worldArea.Act,
       has_waypoint: worldArea.HasWaypoint,
       is_town_area: worldArea.IsTown,
+      parent_town_area_id: worldArea.ParentTown_WorldAreasKey ? WorldAreasDat.data[worldArea.ParentTown_WorldAreasKey].Id : null,
       connection_ids: connected_area_ids,
       crafting_recipes: crafting_recipes,
     };

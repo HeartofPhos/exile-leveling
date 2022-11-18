@@ -110,14 +110,6 @@
               "Templar"
             ]
           },
-          "Metadata/Items/Gems/SkillGemShieldCrush": {
-            "classes": [
-              "Templar",
-              "Marauder",
-              "Duelist",
-              "Scion"
-            ]
-          },
           "Metadata/Items/Gems/SkillGemSmite": {
             "classes": [
               "Templar"
@@ -1541,7 +1533,8 @@
           "Metadata/Items/Gems/SkillGemPrecision": {
             "classes": [
               "Duelist",
-              "Ranger"
+              "Ranger",
+              "Shadow"
             ]
           },
           "Metadata/Items/Gems/SkillGemShieldCharge": {
@@ -2565,7 +2558,15 @@
             ]
           },
           "Metadata/Items/Gems/SkillGemHeraldOfIce": {
-            "classes": []
+            "classes": [
+              "Witch",
+              "Templar",
+              "Marauder",
+              "Duelist",
+              "Ranger",
+              "Shadow",
+              "Scion"
+            ]
           },
           "Metadata/Items/Gems/SkillGemHeraldOfPurity": {
             "classes": [
@@ -3501,11 +3502,7 @@
     "act": "2",
     "reward_offers": [
       {
-        "quest": {
-          "Metadata/Items/QuestItems/BanditAmulets/CombinedAmulet": {
-            "classes": []
-          }
-        },
+        "quest": {},
         "vendor": {}
       }
     ]
@@ -3594,6 +3591,11 @@
               "Witch",
               "Shadow",
               "Scion"
+            ]
+          },
+          "Metadata/Items/Gems/SkillGemBattlemagesCry": {
+            "classes": [
+              "Templar"
             ]
           },
           "Metadata/Items/Gems/SkillGemConductivity": {
@@ -3818,6 +3820,15 @@
               "Shadow",
               "Templar",
               "Witch"
+            ],
+            "npc": "Clarissa"
+          },
+          "Metadata/Items/Gems/SkillGemBattlemagesCry": {
+            "classes": [
+              "Duelist",
+              "Marauder",
+              "Scion",
+              "Templar"
             ],
             "npc": "Clarissa"
           },
@@ -4239,11 +4250,6 @@
               "Shadow"
             ]
           },
-          "Metadata/Items/Gems/SkillGemBattlemagesCry": {
-            "classes": [
-              "Templar"
-            ]
-          },
           "Metadata/Items/Gems/SkillGemChargedAttack": {
             "classes": [
               "Ranger",
@@ -4266,11 +4272,6 @@
             "classes": [
               "Duelist",
               "Ranger"
-            ]
-          },
-          "Metadata/Items/Gems/SkillGemBoneshatter": {
-            "classes": [
-              "Marauder"
             ]
           },
           "Metadata/Items/Gems/SkillGemChargedDash": {
@@ -4520,15 +4521,6 @@
               "Shadow",
               "Templar",
               "Witch"
-            ],
-            "npc": "Clarissa"
-          },
-          "Metadata/Items/Gems/SkillGemBattlemagesCry": {
-            "classes": [
-              "Duelist",
-              "Marauder",
-              "Scion",
-              "Templar"
             ],
             "npc": "Clarissa"
           },
@@ -5882,8 +5874,15 @@
             "npc": "Siosa"
           },
           "Metadata/Items/Gems/SupportGemDamageAgainstChilled": {
-            "classes": [],
-            "npc": "Siosa"
+            "classes": [
+              "Duelist",
+              "Ranger",
+              "Scion",
+              "Shadow",
+              "Templar",
+              "Witch"
+            ],
+            "npc": "Clarissa"
           },
           "Metadata/Items/Gems/SupportGemFrenzyChargeOnSlayingFrozenEnemy": {
             "classes": [],
@@ -6728,7 +6727,15 @@
             ]
           },
           "Metadata/Items/Gems/SupportGemChain": {
-            "classes": []
+            "classes": [
+              "Witch",
+              "Templar",
+              "Marauder",
+              "Duelist",
+              "Ranger",
+              "Shadow",
+              "Scion"
+            ]
           },
           "Metadata/Items/Gems/SupportGemClusterTrap": {
             "classes": [
@@ -6754,7 +6761,15 @@
             ]
           },
           "Metadata/Items/Gems/SupportGemGreaterMultipleProjectiles": {
-            "classes": []
+            "classes": [
+              "Witch",
+              "Templar",
+              "Marauder",
+              "Duelist",
+              "Ranger",
+              "Shadow",
+              "Scion"
+            ]
           },
           "Metadata/Items/Gems/SupportGemGreaterVolley": {
             "classes": [
@@ -6776,7 +6791,15 @@
             ]
           },
           "Metadata/Items/Gems/SupportGemIncreasedAreaOfEffect": {
-            "classes": []
+            "classes": [
+              "Witch",
+              "Templar",
+              "Marauder",
+              "Duelist",
+              "Ranger",
+              "Shadow",
+              "Scion"
+            ]
           },
           "Metadata/Items/Gems/SupportGemMinefield": {
             "classes": [
@@ -6791,10 +6814,26 @@
             ]
           },
           "Metadata/Items/Gems/SupportGemMultistrike": {
-            "classes": []
+            "classes": [
+              "Witch",
+              "Templar",
+              "Marauder",
+              "Duelist",
+              "Ranger",
+              "Shadow",
+              "Scion"
+            ]
           },
           "Metadata/Items/Gems/SupportGemMulticast": {
-            "classes": []
+            "classes": [
+              "Witch",
+              "Templar",
+              "Marauder",
+              "Duelist",
+              "Ranger",
+              "Shadow",
+              "Scion"
+            ]
           },
           "Metadata/Items/Gems/SupportGemHandcastAnticipation": {
             "classes": [
@@ -9593,6 +9632,9 @@
               "Witch"
             ]
           },
+          "Metadata/Items/QuestItems/Act9/BottledStorm": {
+            "classes": []
+          },
           "Metadata/Items/Armours/Shields/ShieldStrInt10": {
             "classes": [
               "Templar"
@@ -9731,9 +9773,6 @@
       {
         "quest": {
           "Metadata/Items/QuestItems/Act9/Book-a9q5": {
-            "classes": []
-          },
-          "Metadata/Items/QuestItems/Act9/BottledStorm": {
             "classes": []
           }
         },

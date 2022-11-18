@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { useState } from "react";
-import { BuildData } from "../../../../common/routes";
+import { BuildData } from "../../../../common/route-processing";
 import { Form, formStyles } from "../../components/Form";
 import { processPob } from "./pob";
 

@@ -5,6 +5,7 @@
     "act": 1,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_1_town",
     "connection_ids": [
       "1_1_town"
     ],
@@ -16,6 +17,7 @@
     "act": 3,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [],
     "crafting_recipes": [
       "All Resistances - Rank 1"
@@ -27,6 +29,7 @@
     "act": 3,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [],
     "crafting_recipes": [
       "Double Resistances - Rank 2"
@@ -38,6 +41,7 @@
     "act": 3,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [],
     "crafting_recipes": [
       "Double Resistances - Rank 3"
@@ -49,6 +53,7 @@
     "act": 1,
     "has_waypoint": true,
     "is_town_area": true,
+    "parent_town_area_id": null,
     "connection_ids": [
       "1_1_1",
       "1_1_2"
@@ -61,6 +66,7 @@
     "act": 1,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_1_town",
     "connection_ids": [
       "1_1_town",
       "1_1_3",
@@ -74,6 +80,7 @@
     "act": 1,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_1_town",
     "connection_ids": [
       "1_1_2",
       "1_1_4_1",
@@ -87,6 +94,7 @@
     "act": 1,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_1_town",
     "connection_ids": [
       "1_1_2"
     ],
@@ -98,6 +106,7 @@
     "act": 1,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_1_town",
     "connection_ids": [
       "1_1_3",
       "1_1_5",
@@ -111,6 +120,7 @@
     "act": 1,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_1_town",
     "connection_ids": [
       "1_1_3"
     ],
@@ -122,6 +132,7 @@
     "act": 1,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_1_town",
     "connection_ids": [
       "1_1_4_1",
       "1_1_6"
@@ -134,6 +145,7 @@
     "act": 1,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_1_town",
     "connection_ids": [
       "1_1_4_1"
     ],
@@ -145,6 +157,7 @@
     "act": 1,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_1_town",
     "connection_ids": [
       "1_1_5",
       "1_1_7_1"
@@ -157,6 +170,7 @@
     "act": 1,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_1_town",
     "connection_ids": [
       "1_1_6",
       "1_1_7_2"
@@ -169,6 +183,7 @@
     "act": 1,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_1_town",
     "connection_ids": [
       "1_1_7_1",
       "1_1_8"
@@ -181,6 +196,7 @@
     "act": 1,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_1_town",
     "connection_ids": [
       "1_1_7_2",
       "1_1_9",
@@ -194,6 +210,7 @@
     "act": 1,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_1_town",
     "connection_ids": [
       "1_1_8",
       "1_1_9a",
@@ -208,6 +225,7 @@
     "act": 2,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_2_town",
     "connection_ids": [
       "1_2_7",
       "1_2_10",
@@ -221,6 +239,7 @@
     "act": 1,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_1_town",
     "connection_ids": [
       "1_1_9",
       "1_1_9"
@@ -233,6 +252,7 @@
     "act": 1,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_1_town",
     "connection_ids": [
       "1_1_9",
       "1_1_11_2"
@@ -245,6 +265,7 @@
     "act": 2,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_2_town",
     "connection_ids": [
       "1_2_town",
       "1_2_9",
@@ -258,6 +279,7 @@
     "act": 2,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_2_town",
     "connection_ids": [
       "1_2_9"
     ],
@@ -269,6 +291,7 @@
     "act": 1,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_1_town",
     "connection_ids": [
       "1_1_11_1",
       "1_2_1"
@@ -281,6 +304,7 @@
     "act": 2,
     "has_waypoint": true,
     "is_town_area": true,
+    "parent_town_area_id": null,
     "connection_ids": [
       "1_2_1",
       "1_2_2",
@@ -294,6 +318,7 @@
     "act": 2,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_2_town",
     "connection_ids": [
       "1_2_7",
       "1_2_11"
@@ -306,6 +331,7 @@
     "act": 2,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_1_town",
     "connection_ids": [
       "1_1_11_2",
       "1_2_town"
@@ -318,6 +344,7 @@
     "act": 2,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_2_town",
     "connection_ids": [
       "1_2_town",
       "1_2_2a",
@@ -332,6 +359,7 @@
     "act": 2,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_2_town",
     "connection_ids": [
       "1_2_12",
       "1_2_8"
@@ -344,6 +372,7 @@
     "act": 2,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_2_town",
     "connection_ids": [
       "1_2_2",
       "1_2_2"
@@ -356,6 +385,7 @@
     "act": 2,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_2_town",
     "connection_ids": [
       "1_2_2",
       "1_2_4",
@@ -370,6 +400,7 @@
     "act": 2,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_2_town",
     "connection_ids": [
       "1_2_11",
       "1_2_13",
@@ -383,6 +414,7 @@
     "act": 2,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_2_town",
     "connection_ids": [
       "1_2_3"
     ],
@@ -394,6 +426,7 @@
     "act": 2,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_2_town",
     "connection_ids": [
       "1_2_3",
       "1_2_5_1"
@@ -406,6 +439,7 @@
     "act": 2,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_2_town",
     "connection_ids": [
       "1_2_3",
       "1_2_6_2"
@@ -418,6 +452,7 @@
     "act": 2,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_2_town",
     "connection_ids": [
       "1_2_8"
     ],
@@ -429,6 +464,7 @@
     "act": 2,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_2_town",
     "connection_ids": [
       "1_2_8",
       "1_2_14_3"
@@ -443,6 +479,7 @@
     "act": 2,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_2_town",
     "connection_ids": [
       "1_2_15",
       "1_2_5_2"
@@ -455,6 +492,7 @@
     "act": 2,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_2_town",
     "connection_ids": [
       "1_2_6_1"
     ],
@@ -466,6 +504,7 @@
     "act": 2,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_2_town",
     "connection_ids": [
       "1_2_14_2",
       "1_3_1"
@@ -480,6 +519,7 @@
     "act": 2,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_2_town",
     "connection_ids": [
       "1_2_5_1"
     ],
@@ -491,6 +531,7 @@
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_2_town",
     "connection_ids": [
       "1_2_14_3",
       "1_3_town"
@@ -503,6 +544,7 @@
     "act": 3,
     "has_waypoint": true,
     "is_town_area": true,
+    "parent_town_area_id": null,
     "connection_ids": [
       "1_3_1",
       "1_3_2",
@@ -517,6 +559,7 @@
     "act": 3,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [
       "1_3_town",
       "1_3_3_1",
@@ -530,6 +573,7 @@
     "act": 3,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": null,
     "connection_ids": [],
     "crafting_recipes": []
   },
@@ -539,6 +583,7 @@
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [
       "1_3_town",
       "2_8_town"
@@ -551,6 +596,7 @@
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [
       "1_3_2"
     ],
@@ -564,6 +610,7 @@
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [
       "1_3_2",
       "1_3_5",
@@ -579,6 +626,7 @@
     "act": 8,
     "has_waypoint": true,
     "is_town_area": true,
+    "parent_town_area_id": null,
     "connection_ids": [
       "2_8_1",
       "2_8_2_1",
@@ -593,6 +641,7 @@
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [
       "1_3_10_1",
       "1_3_6",
@@ -606,6 +655,7 @@
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [
       "1_3_10_1",
       "1_3_14_1",
@@ -619,6 +669,7 @@
     "act": 8,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_7_town",
     "connection_ids": [
       "2_7_12_2",
       "2_8_town"
@@ -631,6 +682,7 @@
     "act": 8,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_8_town",
     "connection_ids": [
       "2_8_town",
       "2_8_2_2"
@@ -643,6 +695,7 @@
     "act": 3,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": null,
     "connection_ids": [],
     "crafting_recipes": []
   },
@@ -652,6 +705,7 @@
     "act": 3,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [
       "1_3_5"
     ],
@@ -665,6 +719,7 @@
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [
       "1_3_5",
       "1_3_8_1",
@@ -678,6 +733,7 @@
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [
       "1_3_13",
       "1_3_14_2"
@@ -690,6 +746,7 @@
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [
       "1_3_13",
       "1_3_17_1",
@@ -705,6 +762,7 @@
     "act": 7,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_7_town",
     "connection_ids": [
       "2_7_12_1",
       "2_8_1"
@@ -719,6 +777,7 @@
     "act": 8,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_8_town",
     "connection_ids": [
       "2_8_2_1",
       "2_8_3",
@@ -734,6 +793,7 @@
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [
       "1_3_7",
       "1_3_8_2"
@@ -746,6 +806,7 @@
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [
       "1_3_7"
     ],
@@ -757,6 +818,7 @@
     "act": 3,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [
       "1_3_14_1"
     ],
@@ -770,6 +832,7 @@
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [
       "1_3_15",
       "1_3_17_2"
@@ -782,6 +845,7 @@
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [
       "1_3_15",
       "1_3_18_2"
@@ -794,6 +858,7 @@
     "act": 7,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_7_town",
     "connection_ids": [
       "2_7_11",
       "2_7_12_2"
@@ -806,6 +871,7 @@
     "act": 8,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_8_town",
     "connection_ids": [
       "2_8_2_2",
       "2_8_5"
@@ -818,6 +884,7 @@
     "act": 8,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_8_town",
     "connection_ids": [
       "2_8_2_2",
       "2_8_9"
@@ -830,6 +897,7 @@
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [
       "1_3_8_1"
     ],
@@ -843,6 +911,7 @@
     "act": 3,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [
       "1_3_17_1"
     ],
@@ -854,6 +923,7 @@
     "act": 3,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [
       "1_3_18_1",
       "1_4_1"
@@ -866,6 +936,7 @@
     "act": 7,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_7_town",
     "connection_ids": [
       "2_7_10",
       "2_7_12_1"
@@ -878,6 +949,7 @@
     "act": 8,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_8_town",
     "connection_ids": [
       "2_8_3",
       "2_8_6",
@@ -893,6 +965,7 @@
     "act": 8,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_8_town",
     "connection_ids": [
       "2_8_8",
       "2_8_10"
@@ -905,6 +978,7 @@
     "act": 4,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
     "connection_ids": [
       "1_3_18_2",
       "1_4_town"
@@ -917,6 +991,7 @@
     "act": 7,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_7_town",
     "connection_ids": [
       "2_7_8",
       "2_7_11"
@@ -931,6 +1006,7 @@
     "act": 8,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_8_town",
     "connection_ids": [
       "2_8_5",
       "2_8_7_1_",
@@ -944,6 +1020,7 @@
     "act": 8,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_8_town",
     "connection_ids": [
       "2_8_5"
     ],
@@ -955,6 +1032,7 @@
     "act": 8,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_8_town",
     "connection_ids": [
       "2_8_9",
       "2_8_12_1"
@@ -967,6 +1045,7 @@
     "act": 4,
     "has_waypoint": true,
     "is_town_area": true,
+    "parent_town_area_id": null,
     "connection_ids": [
       "1_4_1",
       "1_4_2",
@@ -981,6 +1060,7 @@
     "act": 7,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_7_town",
     "connection_ids": [
       "2_7_7",
       "2_7_9",
@@ -994,6 +1074,7 @@
     "act": 8,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_8_town",
     "connection_ids": [
       "2_8_6",
       "2_8_7_2"
@@ -1006,6 +1087,7 @@
     "act": 8,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_8_town",
     "connection_ids": [
       "2_8_6",
       "2_8_11",
@@ -1020,6 +1102,7 @@
     "act": 8,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_8_town",
     "connection_ids": [
       "2_8_10",
       "2_8_11",
@@ -1033,6 +1116,7 @@
     "act": 4,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_4_town",
     "connection_ids": [
       "1_4_town"
     ],
@@ -1046,6 +1130,7 @@
     "act": 4,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_4_town",
     "connection_ids": [
       "1_4_town",
       "1_4_3_2"
@@ -1060,6 +1145,7 @@
     "act": 4,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_4_town",
     "connection_ids": [
       "1_4_town",
       "1_5_1"
@@ -1074,6 +1160,7 @@
     "act": 7,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_7_town",
     "connection_ids": [
       "2_7_6",
       "2_7_8"
@@ -1086,6 +1173,7 @@
     "act": 7,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_7_town",
     "connection_ids": [
       "2_7_8"
     ],
@@ -1099,6 +1187,7 @@
     "act": 8,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_8_town",
     "connection_ids": [
       "2_8_7_1_"
     ],
@@ -1112,6 +1201,7 @@
     "act": 8,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_8_town",
     "connection_ids": [
       "2_8_12_1",
       "2_8_13",
@@ -1125,6 +1215,7 @@
     "act": 9,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_8_town",
     "connection_ids": [
       "2_8_13",
       "2_9_town"
@@ -1137,6 +1228,7 @@
     "act": 8,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_8_town",
     "connection_ids": [
       "2_8_12_1"
     ],
@@ -1150,6 +1242,7 @@
     "act": 4,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_4_town",
     "connection_ids": [
       "1_4_3_1",
       "1_4_3_3"
@@ -1162,6 +1255,7 @@
     "act": 5,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_4_town",
     "connection_ids": [
       "1_4_7",
       "1_5_town"
@@ -1174,6 +1268,7 @@
     "act": 7,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_7_town",
     "connection_ids": [
       "2_7_5_2",
       "2_7_7"
@@ -1186,6 +1281,7 @@
     "act": 9,
     "has_waypoint": true,
     "is_town_area": true,
+    "parent_town_area_id": null,
     "connection_ids": [
       "2_9_1",
       "2_9_2"
@@ -1198,6 +1294,7 @@
     "act": 4,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_4_town",
     "connection_ids": [
       "1_4_3_2",
       "1_4_4_1",
@@ -1214,6 +1311,7 @@
     "act": 5,
     "has_waypoint": true,
     "is_town_area": true,
+    "parent_town_area_id": null,
     "connection_ids": [
       "1_5_1",
       "1_5_2"
@@ -1226,6 +1324,7 @@
     "act": 7,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_7_town",
     "connection_ids": [
       "2_7_5_1",
       "2_7_6"
@@ -1240,6 +1339,7 @@
     "act": 9,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_9_town",
     "connection_ids": [
       "2_9_town",
       "2_9_3"
@@ -1252,6 +1352,7 @@
     "act": 4,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_4_town",
     "connection_ids": [
       "1_4_3_3",
       "1_4_4_3"
@@ -1264,6 +1365,7 @@
     "act": 4,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_4_town",
     "connection_ids": [
       "1_4_3_3",
       "1_4_5_2"
@@ -1276,6 +1378,7 @@
     "act": 4,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_4_town",
     "connection_ids": [
       "1_4_3_3",
       "1_4_6_2"
@@ -1288,6 +1391,7 @@
     "act": 5,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_5_town",
     "connection_ids": [
       "1_5_town",
       "1_5_town",
@@ -1301,6 +1405,7 @@
     "act": 7,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_7_town",
     "connection_ids": [
       "2_7_2",
       "2_7_5_2",
@@ -1316,6 +1421,7 @@
     "act": 9,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_9_town",
     "connection_ids": [
       "2_9_2",
       "2_9_4",
@@ -1331,6 +1437,7 @@
     "act": 4,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_4_town",
     "connection_ids": [
       "1_4_4_1"
     ],
@@ -1344,6 +1451,7 @@
     "act": 4,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_4_town",
     "connection_ids": [
       "1_4_5_1"
     ],
@@ -1357,6 +1465,7 @@
     "act": 4,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_4_town",
     "connection_ids": [
       "1_4_6_1",
       "1_4_6_3"
@@ -1371,6 +1480,7 @@
     "act": 5,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_5_town",
     "connection_ids": [
       "1_5_2",
       "1_5_4"
@@ -1383,6 +1493,7 @@
     "act": 7,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_7_town",
     "connection_ids": [
       "2_7_1",
       "2_7_3",
@@ -1396,6 +1507,7 @@
     "act": 7,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_7_town",
     "connection_ids": [
       "2_7_5_1"
     ],
@@ -1407,6 +1519,7 @@
     "act": 9,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_9_town",
     "connection_ids": [
       "2_9_3"
     ],
@@ -1418,6 +1531,7 @@
     "act": 9,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_9_town",
     "connection_ids": [
       "2_9_3",
       "2_9_6",
@@ -1431,6 +1545,7 @@
     "act": 4,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_4_town",
     "connection_ids": [
       "1_4_6_2",
       "1_4_town"
@@ -1443,6 +1558,7 @@
     "act": 5,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_5_town",
     "connection_ids": [
       "1_5_3",
       "1_5_5"
@@ -1455,6 +1571,7 @@
     "act": 7,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_7_town",
     "connection_ids": [
       "2_7_town",
       "2_7_2"
@@ -1467,6 +1584,7 @@
     "act": 7,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_7_town",
     "connection_ids": [
       "2_7_2",
       "2_7_4"
@@ -1479,6 +1597,7 @@
     "act": 9,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_9_town",
     "connection_ids": [
       "2_9_5"
     ],
@@ -1492,6 +1611,7 @@
     "act": 9,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_9_town",
     "connection_ids": [
       "2_9_5",
       "2_9_8"
@@ -1506,6 +1626,7 @@
     "act": 5,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_5_town",
     "connection_ids": [
       "1_5_4",
       "1_5_4b"
@@ -1520,6 +1641,7 @@
     "act": 7,
     "has_waypoint": true,
     "is_town_area": true,
+    "parent_town_area_id": null,
     "connection_ids": [
       "2_6_15",
       "2_7_1"
@@ -1532,6 +1654,7 @@
     "act": 7,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_7_town",
     "connection_ids": [
       "2_7_3"
     ],
@@ -1545,6 +1668,7 @@
     "act": 9,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_9_town",
     "connection_ids": [
       "2_9_7",
       "2_9_9",
@@ -1560,6 +1684,7 @@
     "act": 5,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_5_town",
     "connection_ids": [
       "1_5_5",
       "1_5_3b"
@@ -1572,6 +1697,7 @@
     "act": 6,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_6_town",
     "connection_ids": [
       "2_6_14",
       "2_7_town"
@@ -1584,6 +1710,7 @@
     "act": 9,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_9_town",
     "connection_ids": [
       "2_9_8"
     ],
@@ -1595,6 +1722,7 @@
     "act": 9,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_9_town",
     "connection_ids": [
       "2_9_8",
       "2_9_10_2"
@@ -1607,6 +1735,7 @@
     "act": 5,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_5_town",
     "connection_ids": [
       "1_5_4b",
       "1_5_6",
@@ -1621,6 +1750,7 @@
     "act": 6,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_6_town",
     "connection_ids": [
       "2_6_13",
       "2_6_15"
@@ -1635,6 +1765,7 @@
     "act": 9,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_9_town",
     "connection_ids": [
       "2_9_10_1",
       "2_10_town"
@@ -1647,6 +1778,7 @@
     "act": 5,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "1_5_town",
     "connection_ids": [
       "1_5_3b"
     ],
@@ -1660,6 +1792,7 @@
     "act": 5,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_5_town",
     "connection_ids": [
       "1_5_3b",
       "2_6_town"
@@ -1672,6 +1805,7 @@
     "act": 5,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "1_5_town",
     "connection_ids": [
       "1_5_3b"
     ],
@@ -1685,6 +1819,7 @@
     "act": 6,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_6_town",
     "connection_ids": [
       "2_6_12",
       "2_6_14"
@@ -1697,6 +1832,7 @@
     "act": 10,
     "has_waypoint": true,
     "is_town_area": true,
+    "parent_town_area_id": null,
     "connection_ids": [
       "2_9_10_2",
       "2_10_1",
@@ -1711,6 +1847,7 @@
     "act": 6,
     "has_waypoint": true,
     "is_town_area": true,
+    "parent_town_area_id": null,
     "connection_ids": [
       "2_6_2",
       "2_6_1",
@@ -1724,6 +1861,7 @@
     "act": 6,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_6_town",
     "connection_ids": [
       "2_6_10",
       "2_6_13"
@@ -1736,6 +1874,7 @@
     "act": 10,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_10_town",
     "connection_ids": [
       "2_10_town",
       "2_10_2"
@@ -1748,6 +1887,7 @@
     "act": 10,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_10_town",
     "connection_ids": [
       "2_10_5",
       "2_10_town"
@@ -1762,6 +1902,7 @@
     "act": 11,
     "has_waypoint": true,
     "is_town_area": true,
+    "parent_town_area_id": null,
     "connection_ids": [
       "2_10_town"
     ],
@@ -1775,6 +1916,7 @@
     "act": 6,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_6_town",
     "connection_ids": [
       "2_6_town",
       "2_6_4",
@@ -1788,6 +1930,7 @@
     "act": 6,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_6_town",
     "connection_ids": [
       "2_6_town"
     ],
@@ -1799,6 +1942,7 @@
     "act": 6,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_6_town",
     "connection_ids": [
       "2_6_9",
       "2_6_11",
@@ -1812,6 +1956,7 @@
     "act": 10,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_10_town",
     "connection_ids": [
       "2_10_1",
       "2_10_3",
@@ -1828,6 +1973,7 @@
     "act": 10,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_10_town",
     "connection_ids": [
       "2_10_2",
       "2_10_6"
@@ -1840,6 +1986,7 @@
     "act": 6,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_6_town",
     "connection_ids": [
       "2_6_2",
       "2_6_5"
@@ -1852,6 +1999,7 @@
     "act": 6,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_6_town",
     "connection_ids": [
       "2_6_2"
     ],
@@ -1863,6 +2011,7 @@
     "act": 6,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_6_town",
     "connection_ids": [
       "2_6_8",
       "2_6_10"
@@ -1877,6 +2026,7 @@
     "act": 6,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_6_town",
     "connection_ids": [
       "2_6_10"
     ],
@@ -1888,6 +2038,7 @@
     "act": 10,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_10_town",
     "connection_ids": [
       "2_10_2",
       "2_10_4"
@@ -1900,6 +2051,7 @@
     "act": 10,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_10_town",
     "connection_ids": [
       "2_10_2"
     ],
@@ -1913,6 +2065,7 @@
     "act": 10,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_10_town",
     "connection_ids": [
       "2_10_2"
     ],
@@ -1924,6 +2077,7 @@
     "act": 10,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_10_town",
     "connection_ids": [
       "2_10_2"
     ],
@@ -1935,6 +2089,7 @@
     "act": 6,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_6_town",
     "connection_ids": [
       "2_6_4",
       "2_6_6"
@@ -1949,6 +2104,7 @@
     "act": 6,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_6_town",
     "connection_ids": [
       "2_6_7_2",
       "2_6_9"
@@ -1961,6 +2117,7 @@
     "act": 10,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_10_town",
     "connection_ids": [
       "2_10_3"
     ],
@@ -1974,6 +2131,7 @@
     "act": 6,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_6_town",
     "connection_ids": [
       "2_6_5",
       "2_6_7_1"
@@ -1986,6 +2144,7 @@
     "act": 6,
     "has_waypoint": false,
     "is_town_area": false,
+    "parent_town_area_id": "2_6_town",
     "connection_ids": [
       "2_6_7_1",
       "2_6_8"
@@ -2000,6 +2159,7 @@
     "act": 6,
     "has_waypoint": true,
     "is_town_area": false,
+    "parent_town_area_id": "2_6_town",
     "connection_ids": [
       "2_6_6",
       "2_6_7_2"

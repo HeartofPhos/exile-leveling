@@ -4,7 +4,7 @@ import { MdDeleteOutline } from "react-icons/md";
 import styles from "./GemOrder.module.css";
 
 import { GemReward } from "../GemReward";
-import { RequiredGem } from "../../../../common/routes";
+import { RequiredGem } from "../../../../common/route-processing";
 import { InlineFakeBlock } from "../InlineFakeBlock";
 
 interface GemOrderProps {

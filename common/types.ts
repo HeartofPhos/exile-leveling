@@ -40,6 +40,7 @@ export interface Area {
   act: number;
   has_waypoint: boolean;
   is_town_area: boolean;
+  parent_town_area_id: string | null;
   connection_ids: string[];
   crafting_recipes: string[];
 }

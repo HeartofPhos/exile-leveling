@@ -7,7 +7,7 @@ import {
 } from "recoil";
 import { RecoilSync, syncEffect } from "recoil-sync";
 import { clearPersistent, getPersistent, setPersistent } from ".";
-import type { BuildData, Route } from "../../../common/routes";
+import type { BuildData, Route } from "../../../common/route-processing";
 
 const ExileSyncStoreKey = "exile-sync-store";
 
@@ -35,7 +35,7 @@ export const banditSelector = selector<BuildData["bandit"]>({
 export const baseRouteSelector = selector({
   key: "baseRouteSelector", get: async ({ get }) => {
     const { initializeRouteLookup, initializeRouteState, parseRoute } =
-      await import("../../../common/routes");
+      await import("../../../common/route-processing");
     const { routeFilesLookup } = await import("../../../common/data");
 
     const bandit = get(banditSelector);
@@ -79,7 +79,7 @@ export const baseRouteSelector = selector({
 export const buildRouteSelector = selector({
   key: "buildRouteSelector",
   get: async ({ get }) => {
-    const { buildGemSteps } = await import("../../../common/routes/gems");
+    const { buildGemSteps } = await import("../../../common/route-processing/gems");
 
     const routeData = get(baseRouteSelector);
     const buildData = get(buildDataAtom);

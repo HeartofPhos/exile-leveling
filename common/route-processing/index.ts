@@ -1,5 +1,5 @@
 import { Area, Gem } from "../types";
-import { areas } from "../../common/data";
+import { areas } from "../data";
 import { FragmentStep, parseFragmentStep } from "./fragment";
 import { GemStep } from "./gems";
 

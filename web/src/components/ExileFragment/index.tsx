@@ -1,6 +1,6 @@
 import classNames from "classnames";
-import { RouteLookup } from "../../../../common/routes";
-import { Fragment, FragmentStep } from "../../../../common/routes/fragment";
+import { RouteLookup } from "../../../../common/route-processing";
+import { Fragment, FragmentStep } from "../../../../common/route-processing/fragment";
 import { Area, Quest } from "../../../../common/types";
 import {
   BsArrowDownSquare,
@@ -16,7 +16,7 @@ import { InlineFakeBlock } from "../InlineFakeBlock";
 import { quests, areas } from "../../../../common/data";
 import { SplitRow } from "../SplitRow";
 import { taskStyle } from "../TaskList";
-import { QuestFragment } from "../../../../common/routes/fragment/quest";
+import { QuestFragment } from "../../../../common/route-processing/fragment/quest";
 
 import styles from "./ExileFragment.module.css";
 
