@@ -38,26 +38,28 @@ export const baseRouteSelector = selector({
       await import("../../../common/route-processing");
     const { routeFilesLookup } = await import("../../../common/data");
 
+    const routeLookup = initializeRouteLookup();
+    const routeState = initializeRouteState();
+
     const bandit = get(banditSelector);
-    let act2RoutePath;
     switch (bandit) {
       case "None":
-        act2RoutePath = "./routes/act-2-kill.txt";
+        routeState.preprocessorDefinitions.add("BANDIT_KILL");
         break;
       case "Oak":
-        act2RoutePath = "./routes/act-2-oak.txt";
+        routeState.preprocessorDefinitions.add("BANDIT_OAK");
         break;
       case "Kraityn":
-        act2RoutePath = "./routes/act-2-kraityn.txt";
+        routeState.preprocessorDefinitions.add("BANDIT_KRAITYN");
         break;
       case "Alira":
-        act2RoutePath = "./routes/act-2-alira.txt";
+        routeState.preprocessorDefinitions.add("BANDIT_ALIRA");
         break;
     }
 
     const routeFiles = [
       routeFilesLookup["./routes/act-1.txt"],
-      routeFilesLookup[act2RoutePath],
+      routeFilesLookup["./routes/act-2.txt"],
       routeFilesLookup["./routes/act-3.txt"],
       routeFilesLookup["./routes/act-4.txt"],
       routeFilesLookup["./routes/act-5.txt"],
@@ -67,11 +69,10 @@ export const baseRouteSelector = selector({
       routeFilesLookup["./routes/act-9.txt"],
       routeFilesLookup["./routes/act-10.txt"],
     ];
-    const routeLookup = initializeRouteLookup();
 
     return {
       routeLookup: routeLookup,
-      routes: parseRoute(routeFiles, routeLookup, initializeRouteState()),
+      routes: parseRoute(routeFiles, routeLookup, routeState),
     };
   }
 })

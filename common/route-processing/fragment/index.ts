@@ -22,10 +22,10 @@ export function parseFragmentStep(
   lookup: RouteLookup,
   state: RouteState
 ) {
+  text = text.trim();
+  const rawFragmentStep: RawFragmentStep = [];
+
   const regex = /(\s*#.*)|([^{#]+)|\{(.+?)\}/g;
-
-  let rawFragmentStep: RawFragmentStep = [];
-
   const matches = text.matchAll(regex);
   for (const match of matches) {
     const commentMatch = match[1];
