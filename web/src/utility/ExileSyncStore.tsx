@@ -24,24 +24,20 @@ const exileSyncEffect = syncEffect<any>({
   refine: checker,
 });
 
-export const banditSelector = selector<BuildData["bandit"]>({
-  key: "banditSelector", get: ({ get }) => {
-    const buildData = get(buildDataAtom);
-    if (!buildData?.bandit) return "None";
-    return buildData.bandit;
-  }
-})
-
 export const baseRouteSelector = selector({
   key: "baseRouteSelector", get: async ({ get }) => {
     const { initializeRouteLookup, initializeRouteState, parseRoute } =
       await import("../../../common/route-processing");
     const { routeFilesLookup } = await import("../../../common/data");
+    const buildData = get(buildDataAtom);
 
     const routeLookup = initializeRouteLookup();
     const routeState = initializeRouteState();
 
-    const bandit = get(banditSelector);
+    if (buildData == null || buildData.leagueStart)
+      routeState.preprocessorDefinitions.add("LEAGUE_START");
+
+    const bandit = buildData?.bandit || "None";
     switch (bandit) {
       case "None":
         routeState.preprocessorDefinitions.add("BANDIT_KILL");

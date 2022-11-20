@@ -8,9 +8,11 @@ Head {dir|180} ➞ {enter|2_10_7} #The Control Blocks
 Hand in {quest|a10q1} #Safe Passage
 Take {portal|use}
 Head {dir|45} get {get_waypoint}
-➞ {enter|2_10_9} #The Ossuary
-Get {crafting}
-Complete {trial}
+#ifdef LEAGUE_START
+    ➞ {enter|2_10_9} #The Ossuary
+    Get {crafting}
+    Complete {trial}
+#endif
 {logout}
 {waypoint|Labyrinth_Airlock}
 {ascend|merciless}

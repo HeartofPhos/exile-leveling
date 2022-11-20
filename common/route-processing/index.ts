@@ -89,6 +89,7 @@ export interface BuildData {
   characterClass: string;
   requiredGems: RequiredGem[];
   bandit: "None" | "Oak" | "Kraityn" | "Alira";
+  leagueStart: boolean;
 }
 
 export interface RequiredGem {

@@ -6,8 +6,10 @@ Find and take {quest_text|Silver Locket}
 Get {get_waypoint}
 Head {dir|135} ➞ {enter|2_7_3} #The Fellshrine Ruins
 Follow the road ➞ {enter|2_7_4} #The Crypt
-Complete {trial}
-Get {crafting}
+#ifdef LEAGUE_START
+    Complete {trial}
+    Get {crafting}
+#endif
 Find {generic|Sarcophagus} to next floor
 Find and take {quest_text|Maligaro's Map}
 {logout}
@@ -25,8 +27,10 @@ Hand in {quest|a7q5} #The Silver Locket
 Hand in {quest|a7q3}, take {quest_text|Obsidian Key} #Web of Secrets
 Go in same direction as {waypoint}
 ➞ {enter|2_7_5_2} #The Chamber of Sins Level 2
-Complete {trial}
-Get {crafting}
+#ifdef LEAGUE_START
+    Complete {trial}
+    Get {crafting}
+#endif
 Open {generic|Secret Passage} ➞ {enter|2_7_6} #The Den
 ➞ {enter|2_7_7} #The Ashen Fields
 Head {dir|225} ➞ {arena|The Forest Encampment}, kill {kill|Greust, Lord of the Forest}

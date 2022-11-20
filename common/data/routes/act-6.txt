@@ -11,7 +11,9 @@ Find and kill {kill|The Dishonoured Queen}, take {quest_text|Eye of Conquest}
 Get {crafting}
 Head {dir|0} ➞ {enter|2_6_6} #The Ridge
 ➞ {enter|2_6_7_1} #The Lower Prison
-Complete {trial}
+#ifdef LEAGUE_START
+    Complete {trial}
+#endif
 Get {crafting}
 ➞ {enter|2_6_7_2} #Shavronne's Tower
 ➞ {arena|Prison Rooftop}, kill {kill|Shavronne the Returned} & {kill|Reassembled Brutus}

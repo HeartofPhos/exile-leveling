@@ -13,15 +13,19 @@ Hand in {quest|a2q10} #The Great White Beast
 Head {dir|315} ➞ {enter|1_2_6_1} #The Chamber of Sins Level 1
 Go in same direction as {waypoint}
 ➞ {enter|1_2_6_2} #The Chamber of Sins Level 2
-Complete {trial}
+#ifdef LEAGUE_START
+    Complete {trial}
+#endif
 Find the long hallway, kill {kill|Fidelitas, the Mourning}, take {quest_text|Baleful Gem}
 {logout}
 Hand in {quest|a2q6} #Intruders in Black
-{waypoint|1_2_3} #The Crossroads
-Head {dir|135} ➞ {enter|1_2_15} #The Fellshrine Ruins
-Follow the road ➞ {enter|1_2_5_1} #The Crypt Level 1
-Complete {trial}
-{logout}
+#ifdef LEAGUE_START
+    {waypoint|1_2_3} #The Crossroads
+    Head {dir|135} ➞ {enter|1_2_15} #The Fellshrine Ruins
+    Follow the road ➞ {enter|1_2_5_1} #The Crypt Level 1
+    Complete {trial}
+    {logout}
+#endif
 Head {dir|225} ➞ {enter|1_2_7} #The Riverways
 Follow the road, get {get_waypoint}
 Follow the road ➞ {enter|1_2_9} #The Western Forest

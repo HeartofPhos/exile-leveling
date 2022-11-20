@@ -42,8 +42,10 @@ Farm till lvl ~62
 ➞ {enter|2_9_town} #Highgate
 {waypoint|2_8_6} #The Lunaris Concourse
 Head {dir|180} ➞ {enter|2_8_5} #The Bath House
-Search {dir|270} side, complete {trial}
-Get {crafting}
+#ifdef LEAGUE_START
+    Search {dir|270} side, complete {trial}
+    Get {crafting}
+#endif
 Search {dir|270} side ➞ {enter|2_8_4} #The High Gardens
 ➞ {arena|The Pools of Terror}, kill {kill|Yugul, Reflection of Terror}
 {portal|use}
