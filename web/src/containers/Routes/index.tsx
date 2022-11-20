@@ -1,16 +1,13 @@
 import { ReactNode } from "react";
 import { TaskItemProps } from "../../components/TaskList";
-import {
-  gemProgressAtomFamily,
-  routeProgressAtomFamily,
-  baseRouteSelector,
-  buildRouteSelector,
-} from "../../utility/ExileSyncStore";
 import { GemReward } from "../../components/GemReward";
 import { withScrollRestoration } from "../../utility/withScrollRestoration";
 import { useRecoilValue } from "recoil";
 import { ActHolder } from "../../components/ActHolder";
 import { ExileFragmentStep } from "../../components/ExileFragment";
+import { baseRouteSelector, buildRouteSelector } from "../../utility/state";
+import { gemProgressSelectorFamily } from "../../utility/state/gem-progress-state";
+import { routeProgressSelectorFamily } from "../../utility/state/route-progress-state";
 
 function RoutesContainer() {
   const { routeLookup } = useRecoilValue(baseRouteSelector);
@@ -27,7 +24,7 @@ function RoutesContainer() {
       if (step.type == "fragment_step")
         taskItems.push({
           key: stepIndex,
-          isCompletedState: routeProgressAtomFamily([routeIndex, stepIndex]),
+          isCompletedState: routeProgressSelectorFamily([routeIndex, stepIndex].toString()),
           children: (
             <ExileFragmentStep
               key={stepIndex}
@@ -40,7 +37,7 @@ function RoutesContainer() {
       if (step.type == "gem_step")
         taskItems.push({
           key: step.requiredGem.uid,
-          isCompletedState: gemProgressAtomFamily(step.requiredGem.uid),
+          isCompletedState: gemProgressSelectorFamily(step.requiredGem.uid),
           children: (
             <GemReward
               key={taskItems.length}

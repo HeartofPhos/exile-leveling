@@ -10,12 +10,10 @@ import {
   FaUndoAlt,
 } from "react-icons/fa";
 import styles from "./Navbar.module.css";
-import {
-  buildRouteSelector,
-  useClearGemProgress,
-  useClearRouteProgress,
-} from "../../utility/ExileSyncStore";
 import { useRecoilCallback } from "recoil";
+import { buildRouteSelector } from "../../utility/state";
+import { useClearRouteProgress } from "../../utility/state/route-progress-state";
+import { useClearGemProgress } from "../../utility/state/gem-progress-state";
 
 interface NavbarItemProps {
   label: string;
@@ -37,9 +35,9 @@ function NavbarItem({ label, expand, icon, onClick }: NavbarItemProps) {
   );
 }
 
-interface NavbarProps {}
+interface NavbarProps { }
 
-export function Navbar({}: NavbarProps) {
+export function Navbar({ }: NavbarProps) {
   const [navExpand, setNavExpand] = useState<boolean>(false);
   const navigate = useNavigate();
 

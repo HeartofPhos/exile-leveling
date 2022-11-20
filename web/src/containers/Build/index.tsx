@@ -2,10 +2,6 @@ import { TaskItemProps, TaskList } from "../../components/TaskList";
 import { GemOrder } from "../../components/GemOrder";
 import { BuildData } from "../../../../common/route-processing";
 import { BuildForm } from "../../components/BuildForm";
-import {
-  gemProgressAtomFamily,
-  buildDataAtom,
-} from "../../utility/ExileSyncStore";
 import { Form, formStyles } from "../../components/Form";
 import classNames from "classnames";
 import { useRecoilState } from "recoil";
@@ -13,9 +9,11 @@ import { withScrollRestoration } from "../../utility/withScrollRestoration";
 import { SplitRow } from "../../components/SplitRow";
 
 import styles from "./Build.module.css";
+import { buildDataSelector } from "../../utility/state/build-data-state";
+import { gemProgressSelectorFamily } from "../../utility/state/gem-progress-state";
 
 function Build() {
-  const [buildData, setBuildData] = useRecoilState(buildDataAtom);
+  const [buildData, setBuildData] = useRecoilState(buildDataSelector);
 
   return (
     <div>
@@ -58,7 +56,7 @@ function GemOrderList(
     const requiredGem = requiredGems[i];
     taskItems.push({
       key: requiredGem.uid,
-      isCompletedState: gemProgressAtomFamily(requiredGem.uid),
+      isCompletedState: gemProgressSelectorFamily(requiredGem.uid),
       children: (
         <GemOrder
           key={i}
