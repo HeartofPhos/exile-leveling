@@ -83,11 +83,6 @@ export function Navbar({ }: NavbarProps) {
           onClick={() => setNavExpand(!navExpand)}
           display="block"
         />
-        <hr
-          className={classNames(styles.seperator, {
-            [styles.expand]: navExpand,
-          })}
-        />
         <div
           className={classNames(styles.navMain, styles.navItems, {
             [styles.expand]: navExpand,
@@ -150,6 +145,7 @@ export function Navbar({ }: NavbarProps) {
               setNavExpand(false);
             }}
           />
+          <hr />
         </div>
       </div>
       <hr />

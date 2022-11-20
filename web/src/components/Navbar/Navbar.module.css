@@ -7,7 +7,6 @@
   z-index: 1;
   width: 100%;
   max-height: 100vh;
-  overflow: auto;
 }
 
 .navHolder {
@@ -34,11 +33,11 @@
   background-color: var(--background-primary);
 }
 
-.navItems > .navItem:first-child {
+.navItems>.navItem:first-child {
   border-top: 0;
 }
 
-.navItems > .navItem:last-child {
+.navItems>.navItem:last-child {
   border-bottom: 0;
 }
 
@@ -78,10 +77,16 @@
   display: none;
 }
 
-.navMain:not(.expand) > *:nth-child(n + 3) {
+.navMain.expand {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+}
+
+.navMain:not(.expand)>*:nth-child(n + 3) {
   display: none;
 }
 
-.navAccordion:not(.expand) > * {
+.navAccordion:not(.expand)>* {
   display: none;
 }
