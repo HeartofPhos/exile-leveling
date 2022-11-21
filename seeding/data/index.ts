@@ -13,9 +13,13 @@ function parseDat(path: string): DatJson {
   return JSON.parse(fs.readFileSync(`${__dirname}/${path}`, "utf-8"));
 }
 
-export const BaseItemTypesDat = parseDat("./exports/Data/BaseItemTypes.dat.json");
+export const BaseItemTypesDat = parseDat(
+  "./exports/Data/BaseItemTypes.dat.json"
+);
 export const SkillGemsDat = parseDat("./exports/Data/SkillGems.dat.json");
-export const GrantedEffectsDat = parseDat("./exports/Data/GrantedEffects.dat.json");
+export const GrantedEffectsDat = parseDat(
+  "./exports/Data/GrantedEffects.dat.json"
+);
 export const GrantedEffectsPerLevelDat = parseDat(
   "./exports/Data/GrantedEffectsPerLevel.dat.json"
 );

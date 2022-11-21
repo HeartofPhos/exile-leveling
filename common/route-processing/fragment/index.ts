@@ -336,7 +336,7 @@ function EvaluatePortal(
 
       if (currentArea.id == portalArea.id) {
         if (!currentArea.parent_town_area_id)
-          return 'cannot use portal in this area'
+          return "cannot use portal in this area";
 
         const townArea = areas[currentArea.parent_town_area_id];
         transitionArea(lookup, state, townArea);

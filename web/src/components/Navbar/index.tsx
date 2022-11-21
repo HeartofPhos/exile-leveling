@@ -35,9 +35,9 @@ function NavbarItem({ label, expand, icon, onClick }: NavbarItemProps) {
   );
 }
 
-interface NavbarProps { }
+interface NavbarProps {}
 
-export function Navbar({ }: NavbarProps) {
+export function Navbar({}: NavbarProps) {
   const [navExpand, setNavExpand] = useState<boolean>(false);
   const navigate = useNavigate();
 

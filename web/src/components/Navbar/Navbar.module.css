@@ -33,11 +33,11 @@
   background-color: var(--background-primary);
 }
 
-.navItems>.navItem:first-child {
+.navItems > .navItem:first-child {
   border-top: 0;
 }
 
-.navItems>.navItem:last-child {
+.navItems > .navItem:last-child {
   border-bottom: 0;
 }
 
@@ -83,10 +83,10 @@
   top: 100%;
 }
 
-.navMain:not(.expand)>*:nth-child(n + 3) {
+.navMain:not(.expand) > *:nth-child(n + 3) {
   display: none;
 }
 
-.navAccordion:not(.expand)>* {
+.navAccordion:not(.expand) > * {
   display: none;
 }

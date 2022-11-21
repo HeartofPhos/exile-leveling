@@ -1,6 +1,9 @@
 import classNames from "classnames";
 import { RouteLookup } from "../../../../common/route-processing";
-import { Fragment, FragmentStep } from "../../../../common/route-processing/fragment";
+import {
+  Fragment,
+  FragmentStep,
+} from "../../../../common/route-processing/fragment";
 import { Area, Quest } from "../../../../common/types";
 import {
   BsArrowDownSquare,

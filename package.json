@@ -3,5 +3,8 @@
   "workspaces": [
     "seeding",
     "web"
-  ]
+  ],
+  "devDependencies": {
+    "prettier": "^2.7.1"
+  }
 }

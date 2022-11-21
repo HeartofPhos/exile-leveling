@@ -24,7 +24,9 @@ function RoutesContainer() {
       if (step.type == "fragment_step")
         taskItems.push({
           key: stepIndex,
-          isCompletedState: routeProgressSelectorFamily([routeIndex, stepIndex].toString()),
+          isCompletedState: routeProgressSelectorFamily(
+            [routeIndex, stepIndex].toString()
+          ),
           children: (
             <ExileFragmentStep
               key={stepIndex}

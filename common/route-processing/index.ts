@@ -19,7 +19,7 @@ export interface RouteState {
   lastTownAreaId: Area["id"];
   portalAreaId: Area["id"] | null;
   acquiredGems: Set<Gem["id"]>;
-  preprocessorDefinitions: Set<string>
+  preprocessorDefinitions: Set<string>;
 }
 
 export function parseRoute(
@@ -41,11 +41,12 @@ export function parseRoute(
 
       if (endifMatch) {
         const value = conditionalStack.pop();
-        if (value === undefined)
-          console.log("unexpected #endif")
+        if (value === undefined) console.log("unexpected #endif");
       }
 
-      const evaluateLine = conditionalStack.length == 0 || conditionalStack[conditionalStack.length - 1]
+      const evaluateLine =
+        conditionalStack.length == 0 ||
+        conditionalStack[conditionalStack.length - 1];
       if (!evaluateLine) continue;
 
       const ifdefRegex = /^\s*#ifdef\s+(\w+)/g;
@@ -58,15 +59,12 @@ export function parseRoute(
         const step: Step = parseFragmentStep(line, lookup, state);
         if (step.parts.length > 0) route.push(step);
       }
-
     }
 
-    if (conditionalStack.length != 0)
-      console.log("expected #endif")
+    if (conditionalStack.length != 0) console.log("expected #endif");
 
     routes.push(route);
   }
-
 
   for (const waypoint of state.explicitWaypoints) {
     if (!state.usedWaypoints.has(waypoint)) {

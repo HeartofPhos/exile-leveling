@@ -1,29 +1,23 @@
-import {
-  AtomEffect,
-  selector,
-} from "recoil";
+import { AtomEffect, selector } from "recoil";
 import { clearPersistent, getPersistent, setPersistent } from "..";
 import { Route } from "../../../../common/route-processing";
 import { buildDataSelector } from "./build-data-state";
 
-export function persistentStorageEffect<T>(
-  key: string): AtomEffect<T | null> {
+export function persistentStorageEffect<T>(key: string): AtomEffect<T | null> {
   return ({ setSelf, onSet }) => {
     const value = getPersistent<T>(key);
-    if (value)
-      setSelf(value);
+    if (value) setSelf(value);
 
     onSet((newValue, _, isReset) => {
-      if (isReset || newValue == null)
-        clearPersistent(key)
-      else
-        setPersistent(key, newValue);
+      if (isReset || newValue == null) clearPersistent(key);
+      else setPersistent(key, newValue);
     });
-  }
-};
+  };
+}
 
 export const baseRouteSelector = selector({
-  key: "baseRouteSelector", get: async ({ get }) => {
+  key: "baseRouteSelector",
+  get: async ({ get }) => {
     const { initializeRouteLookup, initializeRouteState, parseRoute } =
       await import("../../../../common/route-processing");
     const { routeFilesLookup } = await import("../../../../common/data");
@@ -68,13 +62,15 @@ export const baseRouteSelector = selector({
       routeLookup: routeLookup,
       routes: parseRoute(routeFiles, routeLookup, routeState),
     };
-  }
-})
+  },
+});
 
 export const buildRouteSelector = selector({
   key: "buildRouteSelector",
   get: async ({ get }) => {
-    const { buildGemSteps } = await import("../../../../common/route-processing/gems");
+    const { buildGemSteps } = await import(
+      "../../../../common/route-processing/gems"
+    );
 
     const routeData = get(baseRouteSelector);
     const buildData = get(buildDataSelector);

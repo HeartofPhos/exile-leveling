@@ -1,11 +1,9 @@
-import {
-  atomFamily,
-  selectorFamily,
-  useRecoilCallback,
-} from "recoil";
+import { atomFamily, selectorFamily, useRecoilCallback } from "recoil";
 import { clearPersistent, getPersistent, setPersistent } from "..";
 
-const routeProgress = new Set<string>(getPersistent<string[]>("route-progress"));
+const routeProgress = new Set<string>(
+  getPersistent<string[]>("route-progress")
+);
 
 const routeProgressAtomFamily = atomFamily<boolean, string>({
   key: "routeProgressAtomFamily",
@@ -14,22 +12,24 @@ const routeProgressAtomFamily = atomFamily<boolean, string>({
 
 export const routeProgressSelectorFamily = selectorFamily<boolean, string>({
   key: "routeProgressSelectorFamily",
-  get: (param) => ({ get }) => {
-    const routeProgressAtom = get(routeProgressAtomFamily(param));
-    return routeProgressAtom;
-  },
-  set: (param) => ({ set }, newValue) => {
-    set(routeProgressAtomFamily(param), newValue);
+  get:
+    (param) =>
+    ({ get }) => {
+      const routeProgressAtom = get(routeProgressAtomFamily(param));
+      return routeProgressAtom;
+    },
+  set:
+    (param) =>
+    ({ set }, newValue) => {
+      set(routeProgressAtomFamily(param), newValue);
 
-    if (newValue)
-      routeProgress.add(param);
-    else
-      routeProgress.delete(param);
+      if (newValue) routeProgress.add(param);
+      else routeProgress.delete(param);
 
-    if (routeProgress.size > 0)
-      setPersistent("route-progress", [...routeProgress]);
-    else clearPersistent("route-progress");
-  }
+      if (routeProgress.size > 0)
+        setPersistent("route-progress", [...routeProgress]);
+      else clearPersistent("route-progress");
+    },
 });
 
 export const routeProgressKeys = () => routeProgress.keys();

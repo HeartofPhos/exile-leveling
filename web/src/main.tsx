@@ -10,7 +10,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <HashRouter>
       <RecoilRoot>
         <Suspense>
-            <App />
+          <App />
         </Suspense>
       </RecoilRoot>
     </HashRouter>
