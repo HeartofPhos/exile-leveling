@@ -34,9 +34,14 @@
   overflow: hidden;
 }
 
-.buttonRow {
+.groupLeft {
   display: flex;
-  flex-direction: row-reverse;
+  justify-content: start;
+}
+
+.groupRight {
+  display: flex;
+  justify-content: end;
 }
 
 .formButton {

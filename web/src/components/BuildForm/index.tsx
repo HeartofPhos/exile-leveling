@@ -24,7 +24,7 @@ export function BuildForm({ onSubmit }: BuildFormProps) {
           />
         </div>
       </div>
-      <div className={classNames(formStyles.buttonRow)}>
+      <div className={classNames(formStyles.groupRight)}>
         <button
           className={classNames(formStyles.formButton)}
           onClick={() => {

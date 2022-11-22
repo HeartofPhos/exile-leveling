@@ -19,7 +19,7 @@ function Build() {
     <div>
       {buildData ? (
         <Form>
-          <div className={classNames(formStyles.buttonRow)}>
+          <div className={classNames(formStyles.groupRight)}>
             <button
               className={classNames(formStyles.formButton)}
               onClick={() => {

@@ -78,11 +78,6 @@ export function Navbar({}: NavbarProps) {
           [styles.expand]: navExpand,
         })}
       >
-        <FaBars
-          className={classNames(styles.navIcon)}
-          onClick={() => setNavExpand(!navExpand)}
-          display="block"
-        />
         <div
           className={classNames(styles.navMain, styles.navItems, {
             [styles.expand]: navExpand,
@@ -147,6 +142,11 @@ export function Navbar({}: NavbarProps) {
           />
           <hr />
         </div>
+        <FaBars
+          className={classNames(styles.navIcon)}
+          onClick={() => setNavExpand(!navExpand)}
+          display="block"
+        />
       </div>
       <hr />
     </div>
