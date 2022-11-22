@@ -1,10 +1,9 @@
 import classNames from "classnames";
-import { RouteLookup } from "../../../../common/route-processing";
 import {
   Fragment,
   FragmentStep,
 } from "../../../../common/route-processing/fragment";
-import { Area, Quest } from "../../../../common/types";
+import { Area } from "../../../../common/types";
 import {
   BsArrowDownSquare,
   BsArrowDownLeftSquare,
@@ -25,7 +24,6 @@ import styles from "./ExileFragment.module.css";
 
 interface FragmentProps {
   fragment: Fragment;
-  lookup: RouteLookup;
 }
 
 function getImageUrl(path: string) {
@@ -203,7 +201,7 @@ function AscendComponent(version: string) {
   );
 }
 
-export function ExileFragment({ fragment, lookup }: FragmentProps) {
+export function ExileFragment({ fragment }: FragmentProps) {
   switch (fragment.type) {
     case "kill":
       return EnemyComponent(fragment.value);
@@ -254,17 +252,16 @@ export function ExileFragment({ fragment, lookup }: FragmentProps) {
 
 interface StepProps {
   step: FragmentStep;
-  lookup: RouteLookup;
 }
 
-export function ExileFragmentStep({ step, lookup }: StepProps) {
+export function ExileFragmentStep({ step }: StepProps) {
   return (
     <div className={classNames(styles.fragmentStep, taskStyle)}>
       {step.parts.map((part, i) =>
         typeof part == "string" ? (
           part
         ) : (
-          <ExileFragment key={i} fragment={part} lookup={lookup} />
+          <ExileFragment key={i} fragment={part} />
         )
       )}
     </div>

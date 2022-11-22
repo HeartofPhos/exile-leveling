@@ -1,4 +1,4 @@
-import { RouteLookup, RouteState } from "..";
+import { RouteState } from "..";
 import { areas, killWaypoints } from "../../data";
 import { Area } from "../../types";
 import {
@@ -17,11 +17,7 @@ import {
 export type RawFragment = string[];
 export type RawFragmentStep = (string | RawFragment)[];
 
-export function parseFragmentStep(
-  text: string,
-  lookup: RouteLookup,
-  state: RouteState
-) {
+export function parseFragmentStep(text: string, state: RouteState) {
   text = text.trim();
   const rawFragmentStep: RawFragmentStep = [];
 
@@ -52,7 +48,7 @@ export function parseFragmentStep(
     if (typeof subStep == "string") {
       step.parts.push(subStep);
     } else {
-      const result = evaluateFragment(subStep, lookup, state);
+      const result = evaluateFragment(subStep, state);
       if (typeof result == "string") console.log(`${result}: ${subStep}`);
       else step.parts.push(result.fragment);
     }
@@ -60,11 +56,7 @@ export function parseFragmentStep(
 
   return step;
 }
-export function transitionArea(
-  lookup: RouteLookup,
-  state: RouteState,
-  area: Area
-) {
+export function transitionArea(state: RouteState, area: Area) {
   if (area.is_town_area) {
     state.lastTownAreaId = area.id;
     if (area.has_waypoint) state.implicitWaypoints.add(area.id);
@@ -151,7 +143,6 @@ interface DirectionFragment {
 
 function EvaluateKill(
   rawFragment: RawFragment,
-  lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
@@ -178,7 +169,6 @@ function EvaluateKill(
 
 function EvaluateArena(
   rawFragment: RawFragment,
-  lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
@@ -192,7 +182,6 @@ function EvaluateArena(
 
 function EvaluateArea(
   rawFragment: RawFragment,
-  lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
@@ -210,7 +199,6 @@ function EvaluateArea(
 
 function EvaluateEnter(
   rawFragment: RawFragment,
-  lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
@@ -220,7 +208,7 @@ function EvaluateEnter(
   if (!area.connection_ids.some((x) => x == state.currentAreaId))
     return "not connected to current area";
 
-  transitionArea(lookup, state, area);
+  transitionArea(state, area);
 
   return {
     fragment: {
@@ -232,13 +220,12 @@ function EvaluateEnter(
 
 function EvaluateLogout(
   rawFragment: RawFragment,
-  lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
   if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
 
   const townArea = areas[state.lastTownAreaId];
-  transitionArea(lookup, state, townArea);
+  transitionArea(state, townArea);
   state.portalAreaId = null;
 
   return {
@@ -251,7 +238,6 @@ function EvaluateLogout(
 
 function EvaluateWaypoint(
   rawFragment: RawFragment,
-  lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
   {
@@ -275,7 +261,7 @@ function EvaluateWaypoint(
       state.usedWaypoints.add(area.id);
 
       areaId = area.id;
-      transitionArea(lookup, state, area);
+      transitionArea(state, area);
     }
 
     return {
@@ -289,7 +275,6 @@ function EvaluateWaypoint(
 
 function EvaluateGetWaypoint(
   rawFragment: RawFragment,
-  lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
   if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
@@ -310,7 +295,6 @@ function EvaluateGetWaypoint(
 
 function EvaluatePortal(
   rawFragment: RawFragment,
-  lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
@@ -339,10 +323,10 @@ function EvaluatePortal(
           return "cannot use portal in this area";
 
         const townArea = areas[currentArea.parent_town_area_id];
-        transitionArea(lookup, state, townArea);
+        transitionArea(state, townArea);
         state.portalAreaId = state.currentAreaId;
-      } else if (currentArea.id == lookup.towns[portalArea.act]) {
-        transitionArea(lookup, state, portalArea);
+      } else if (currentArea.id == portalArea.parent_town_area_id) {
+        transitionArea(state, portalArea);
         state.portalAreaId = null;
       } else return "can only use portal from town or portal area";
 
@@ -360,7 +344,6 @@ function EvaluatePortal(
 
 function EvaluateGeneric(
   rawFragment: RawFragment,
-  lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
@@ -374,7 +357,6 @@ function EvaluateGeneric(
 
 function EvaluateCrafting(
   rawFragment: RawFragment,
-  lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
   if (rawFragment.length > 2) return ERROR_INVALID_FORMAT;
@@ -397,7 +379,6 @@ function EvaluateCrafting(
 
 function EvaluateDirection(
   rawFragment: RawFragment,
-  lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
@@ -428,40 +409,39 @@ export interface EvaluateResult {
 
 export function evaluateFragment(
   rawFragment: RawFragment,
-  lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
   switch (rawFragment[0]) {
     case "kill":
-      return EvaluateKill(rawFragment, lookup, state);
+      return EvaluateKill(rawFragment, state);
     case "arena":
-      return EvaluateArena(rawFragment, lookup, state);
+      return EvaluateArena(rawFragment, state);
     case "area":
-      return EvaluateArea(rawFragment, lookup, state);
+      return EvaluateArea(rawFragment, state);
     case "enter":
-      return EvaluateEnter(rawFragment, lookup, state);
+      return EvaluateEnter(rawFragment, state);
     case "logout":
-      return EvaluateLogout(rawFragment, lookup, state);
+      return EvaluateLogout(rawFragment, state);
     case "waypoint":
-      return EvaluateWaypoint(rawFragment, lookup, state);
+      return EvaluateWaypoint(rawFragment, state);
     case "get_waypoint":
-      return EvaluateGetWaypoint(rawFragment, lookup, state);
+      return EvaluateGetWaypoint(rawFragment, state);
     case "portal":
-      return EvaluatePortal(rawFragment, lookup, state);
+      return EvaluatePortal(rawFragment, state);
     case "quest":
-      return EvaluateQuest(rawFragment, lookup, state);
+      return EvaluateQuest(rawFragment, state);
     case "quest_text":
-      return EvaluateQuestText(rawFragment, lookup, state);
+      return EvaluateQuestText(rawFragment, state);
     case "generic":
-      return EvaluateGeneric(rawFragment, lookup, state);
+      return EvaluateGeneric(rawFragment, state);
     case "trial":
-      return EvaluateTrial(rawFragment, lookup, state);
+      return EvaluateTrial(rawFragment, state);
     case "ascend":
-      return EvaluateAscend(rawFragment, lookup, state);
+      return EvaluateAscend(rawFragment, state);
     case "crafting":
-      return EvaluateCrafting(rawFragment, lookup, state);
+      return EvaluateCrafting(rawFragment, state);
     case "dir":
-      return EvaluateDirection(rawFragment, lookup, state);
+      return EvaluateDirection(rawFragment, state);
   }
 
   return ERROR_INVALID_FORMAT;

@@ -1,4 +1,4 @@
-import { RouteLookup, RouteState } from "..";
+import { RouteState } from "..";
 import { ERROR_INVALID_FORMAT, EvaluateResult, RawFragment } from ".";
 import { Quest } from "../../types";
 
@@ -17,7 +17,6 @@ export interface QuestTextFragment {
 
 export function EvaluateQuest(
   rawFragment: RawFragment,
-  lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
   {
@@ -50,7 +49,6 @@ export function EvaluateQuest(
 
 export function EvaluateQuestText(
   rawFragment: RawFragment,
-  lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;

@@ -15,15 +15,15 @@ export function persistentStorageEffect<T>(key: string): AtomEffect<T | null> {
   };
 }
 
-export const baseRouteSelector = selector({
+const baseRouteSelector = selector({
   key: "baseRouteSelector",
   get: async ({ get }) => {
-    const { initializeRouteLookup, initializeRouteState, parseRoute } =
-      await import("../../../../common/route-processing");
+    const { initializeRouteState, parseRoute } = await import(
+      "../../../../common/route-processing"
+    );
     const { routeFilesLookup } = await import("../../../../common/data");
     const buildData = get(buildDataSelector);
 
-    const routeLookup = initializeRouteLookup();
     const routeState = initializeRouteState();
 
     if (buildData == null || buildData.leagueStart)
@@ -59,8 +59,7 @@ export const baseRouteSelector = selector({
     ];
 
     return {
-      routeLookup: routeLookup,
-      routes: parseRoute(routeFiles, routeLookup, routeState),
+      routes: parseRoute(routeFiles, routeState),
     };
   },
 });

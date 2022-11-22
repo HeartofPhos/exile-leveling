@@ -5,12 +5,11 @@ import { withScrollRestoration } from "../../utility/withScrollRestoration";
 import { useRecoilValue } from "recoil";
 import { ActHolder } from "../../components/ActHolder";
 import { ExileFragmentStep } from "../../components/ExileFragment";
-import { baseRouteSelector, buildRouteSelector } from "../../utility/state";
+import { buildRouteSelector } from "../../utility/state";
 import { gemProgressSelectorFamily } from "../../utility/state/gem-progress-state";
 import { routeProgressSelectorFamily } from "../../utility/state/route-progress-state";
 
 function RoutesContainer() {
-  const { routeLookup } = useRecoilValue(baseRouteSelector);
   const routes = useRecoilValue(buildRouteSelector);
 
   const items: ReactNode[] = [];
@@ -27,13 +26,7 @@ function RoutesContainer() {
           isCompletedState: routeProgressSelectorFamily(
             [routeIndex, stepIndex].toString()
           ),
-          children: (
-            <ExileFragmentStep
-              key={stepIndex}
-              step={step}
-              lookup={routeLookup}
-            />
-          ),
+          children: <ExileFragmentStep key={stepIndex} step={step} />,
         });
 
       if (step.type == "gem_step")

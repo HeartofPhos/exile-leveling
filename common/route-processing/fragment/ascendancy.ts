@@ -1,4 +1,4 @@
-import { RouteLookup, RouteState } from "..";
+import { RouteState } from "..";
 import {
   ERROR_INVALID_FORMAT,
   EvaluateResult,
@@ -18,7 +18,6 @@ export interface AscendFragment {
 
 export function EvaluateTrial(
   rawFragment: RawFragment,
-  lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
   if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
@@ -31,7 +30,6 @@ export function EvaluateTrial(
 
 export function EvaluateAscend(
   rawFragment: RawFragment,
-  lookup: RouteLookup,
   state: RouteState
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
@@ -44,7 +42,7 @@ export function EvaluateAscend(
   }
 
   const townArea = areas[state.lastTownAreaId];
-  transitionArea(lookup, state, townArea);
+  transitionArea(state, townArea);
 
   return {
     fragment: {

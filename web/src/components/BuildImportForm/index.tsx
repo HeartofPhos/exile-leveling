@@ -1,14 +1,14 @@
 import classNames from "classnames";
 import { useState } from "react";
 import { BuildData } from "../../../../common/route-processing";
-import { Form, formStyles } from "../../components/Form";
+import { Form, formStyles } from "../Form";
 import { processPob } from "./pob";
 
 interface BuildFormProps {
   onSubmit: (buildData: BuildData) => void;
 }
 
-export function BuildForm({ onSubmit }: BuildFormProps) {
+export function BuildImportForm({ onSubmit }: BuildFormProps) {
   const [pobCode, setPobCode] = useState<string>();
 
   return (

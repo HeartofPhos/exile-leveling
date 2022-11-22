@@ -6,10 +6,6 @@ import { GemStep } from "./gems";
 export type Step = FragmentStep | GemStep;
 export type Route = Step[];
 
-export interface RouteLookup {
-  towns: Record<Area["act"], Area["id"]>;
-}
-
 export interface RouteState {
   implicitWaypoints: Set<Area["id"]>;
   explicitWaypoints: Set<Area["id"]>;
@@ -22,11 +18,7 @@ export interface RouteState {
   preprocessorDefinitions: Set<string>;
 }
 
-export function parseRoute(
-  routeSources: string[],
-  lookup: RouteLookup,
-  state: RouteState
-) {
+export function parseRoute(routeSources: string[], state: RouteState) {
   const routes: Route[] = [];
   for (const routeSource of routeSources) {
     const routeLines = routeSource.split(/(?:\r\n|\r|\n)/g);
@@ -56,7 +48,7 @@ export function parseRoute(
         const value = ifdefMatch[1];
         conditionalStack.push(state.preprocessorDefinitions.has(value));
       } else {
-        const step: Step = parseFragmentStep(line, lookup, state);
+        const step: Step = parseFragmentStep(line, state);
         if (step.parts.length > 0) route.push(step);
       }
     }
@@ -94,19 +86,6 @@ export interface RequiredGem {
   id: string;
   uid: number;
   note: string;
-}
-
-export function initializeRouteLookup() {
-  const routeLookup: RouteLookup = {
-    towns: {},
-  };
-
-  for (const id in areas) {
-    const area = areas[id];
-    if (area.is_town_area) routeLookup.towns[area.act] = area.id;
-  }
-
-  return routeLookup;
 }
 
 export function initializeRouteState() {
