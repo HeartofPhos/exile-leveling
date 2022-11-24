@@ -74,6 +74,25 @@ export function BuildEditForm({ buildData, onSubmit }: BuildEditFormProps) {
             />
           </div>
           <hr />
+          <Form>
+            <span className={classNames(styles.buildInfoLabel)}>
+              Vendor Search Strings
+            </span>
+            <textarea
+              spellCheck={false}
+              className={classNames(formStyles.formInput, styles.vendorStringsInput)}
+              value={buildData.vendorStrings.join("\n")}
+              onChange={(e) =>
+                onSubmit({
+                  ...buildData,
+                  vendorStrings: e.target.value
+                    .split(/\r\n|\r|\n/)
+                    .map((x) => x.trim()),
+                })
+              }
+            />
+          </Form>
+          <hr />
           <GemOrderList
             buildData={buildData}
             onUpdate={(newBuildData) => {
