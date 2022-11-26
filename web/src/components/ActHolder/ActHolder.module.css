@@ -1,4 +1,10 @@
-.row {
+.actHolder {
+  position: sticky;
+  background-color: var(--background-primary);
+  top: var(--navbar-height);
+}
+
+.actHolderHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;

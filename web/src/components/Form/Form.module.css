@@ -15,23 +15,15 @@
 }
 
 .formInput {
+  display: block;
   padding: var(--size-2);
+  color: var(--primary);
+  background-color: var(--background-primary);
   border-style: solid;
   border-width: var(--border-width);
   border-color: var(--accent-primary);
   border-radius: var(--border-radius);
-}
-
-.formInput > * {
-  width: 100%;
-  display: block;
-  height: 5rem;
-  color: var(--primary);
-  background-color: var(--background-primary);
-  border: none;
   outline: none;
-  resize: none;
-  overflow: hidden;
 }
 
 .groupLeft {

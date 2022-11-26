@@ -4,6 +4,8 @@ import { BuildData } from "../../../../common/route-processing";
 import { Form, formStyles } from "../Form";
 import { processPob } from "./pob";
 
+import styles from "./BuildImportForm.module.css";
+
 interface BuildFormProps {
   onSubmit: (buildData: BuildData) => void;
 }
@@ -15,14 +17,12 @@ export function BuildImportForm({ onSubmit }: BuildFormProps) {
     <Form>
       <div className={classNames(formStyles.formRow)}>
         <label>Path of Building Code</label>
-        <div className={classNames(formStyles.formInput)}>
-          <textarea
-            spellCheck={false}
-            className={classNames(formStyles.textarea)}
-            value={pobCode || ""}
-            onChange={(e) => setPobCode(e.target.value)}
-          />
-        </div>
+        <textarea
+          spellCheck={false}
+          className={classNames(formStyles.formInput, styles.pobInput)}
+          value={pobCode || ""}
+          onChange={(e) => setPobCode(e.target.value)}
+        />
       </div>
       <div className={classNames(formStyles.groupRight)}>
         <button

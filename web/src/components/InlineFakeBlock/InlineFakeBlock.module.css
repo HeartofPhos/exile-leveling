@@ -4,6 +4,7 @@
   vertical-align: middle;
   align-self: center;
   width: var(--line-height);
+  z-index: -1;
 }
 
 .inlineFakeBlock > * {
