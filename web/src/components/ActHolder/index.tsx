@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { atomFamily, useRecoilState } from "recoil";
 import { TaskItemProps, TaskList } from "../TaskList";
@@ -19,21 +19,27 @@ export function ActHolder({ act, items: taskItems }: ActHolderProps) {
   const [expanded, setExpanded] = useRecoilState(actHolderState(act));
 
   const id = `act-${act}`;
-  useEffect(() => {
-    if (expanded) return;
+  const scrollToAct = () => {
     const element = document.getElementById(id);
     if (element) element.scrollIntoView({ behavior: "auto", block: "nearest" });
+  };
+
+  useLayoutEffect(() => {
+    if (!expanded) scrollToAct();
   }, [expanded]);
 
   const expandIcon = expanded ? <FiChevronUp /> : <FiChevronDown />;
   return (
-    <div>
+    <div id={id}>
       <div className={classNames(styles.actHolder)}>
         <div
-          id={id}
           className={classNames("header", styles.actHolderHeader)}
           onClick={() => {
-            setExpanded(!expanded);
+            const updatedExpanded = !expanded;
+            setExpanded(updatedExpanded);
+
+            // scrollToAct before sticky positioning is applied
+            if (updatedExpanded) scrollToAct();
           }}
         >
           {expandIcon}
