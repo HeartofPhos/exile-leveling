@@ -80,7 +80,6 @@ export interface BuildData {
   requiredGems: RequiredGem[];
   bandit: "None" | "Oak" | "Kraityn" | "Alira";
   leagueStart: boolean;
-  vendorStrings: string[];
 }
 
 export interface RequiredGem {
