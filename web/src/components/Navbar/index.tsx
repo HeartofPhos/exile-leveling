@@ -86,7 +86,7 @@ export function Navbar({}: NavbarProps) {
           })}
         >
           <div
-            className={classNames("borderList", styles.navItems, {
+            className={classNames(styles.navItems, {
               [styles.expand]: navExpand,
             })}
           >
