@@ -14,7 +14,7 @@ type UrlImporter = (url: string) => string | null;
 
 const urlImporters: UrlImporter[] = [
   (url) => {
-    const match = /pastebin\.com\/(\w+)\s*$/.exec(url);
+    const match = /pastebin\.com\/(\w+)/.exec(url);
     if (!match) return null;
 
     return `https://pastebin.com/raw/${match[1]}`;
