@@ -88,10 +88,9 @@ function processSkills(
   }
 }
 
-export function processPob(pobCode: string | undefined): BuildData | undefined {
+export function processPob(pobCode: string): BuildData | undefined {
   let doc;
   try {
-    if (!pobCode) return undefined;
     doc = decodePathOfBuildingCode(pobCode);
   } catch (e) {
     return undefined;
