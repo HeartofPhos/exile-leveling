@@ -59,12 +59,10 @@ export function BuildImportForm({ onSubmit }: BuildFormProps) {
               console.log(downloadUrl);
               if (downloadUrl) {
                 pobCode = await fetch(
-                  `https://api.allorigins.win/get?url=${encodeURIComponent(
+                  `https://api.allorigins.win/raw?url=${encodeURIComponent(
                     downloadUrl
                   )}`
-                )
-                  .then((x) => x.json())
-                  .then((x) => x.contents);
+                ).then((x) => x.text());
                 break;
               }
             }
