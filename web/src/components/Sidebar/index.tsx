@@ -31,11 +31,14 @@ export function Sidebar() {
         {expandIcon}
       </div>
       {expanded && (
-        <div className={classNames(styles.sidebarItems)}>
-          {buildData.vendorStrings.map((x) => (
-            <VendorString value={x} />
-          ))}
-        </div>
+        <>
+          <hr />
+          <div className={classNames("borderList", styles.sidebarItems)}>
+            {buildData.vendorStrings.map((x) => (
+              <VendorString value={x} />
+            ))}
+          </div>
+        </>
       )}
     </div>
   );
@@ -47,7 +50,7 @@ interface VendorStringProps {
 function VendorString({ value }: VendorStringProps) {
   return (
     <div
-      className={classNames(styles.vendorString)}
+      className={classNames("borderListItem", styles.vendorString)}
       onClick={() => {
         navigator.clipboard.writeText(value);
       }}
