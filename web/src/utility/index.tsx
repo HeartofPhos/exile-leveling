@@ -2,7 +2,7 @@ const PERSISTENT_VERSION: Partial<Record<string, number>> = {
   "build-data": 1,
   "route-progress": 0,
   "gem-progress": 0,
-  "vendor-strings": 0,
+  "search-strings": 0,
 };
 
 interface PersistentData<T> {
