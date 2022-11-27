@@ -1,8 +1,8 @@
 import { atom } from "recoil";
 import { persistentStorageEffect } from ".";
 
-export const vendorStringsAtom = atom<string[] | null>({
-  key: "vendorStringsAtom",
+export const searchStringsAtom = atom<string[] | null>({
+  key: "searchStringsAtom",
   default: null,
   effects: [persistentStorageEffect("vendor-strings")],
 });

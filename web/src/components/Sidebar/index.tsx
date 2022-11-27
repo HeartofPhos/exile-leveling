@@ -3,15 +3,15 @@ import { useState } from "react";
 import { FaRegClipboard } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useRecoilValue } from "recoil";
-import { vendorStringsAtom } from "../../utility/state/vendor-strings";
+import { searchStringsAtom } from "../../utility/state/search-strings";
 
 import styles from "./Sidebar.module.css";
 
 export function Sidebar() {
-  const vendorStrings = useRecoilValue(vendorStringsAtom);
+  const searchStrings = useRecoilValue(searchStringsAtom);
   const [expanded, setExpanded] = useState(true);
 
-  if (vendorStrings == null || vendorStrings.length == 0) return <></>;
+  if (searchStrings == null || searchStrings.length == 0) return <></>;
 
   const expandIcon = expanded ? <FiChevronRight /> : <FiChevronLeft />;
 
@@ -27,15 +27,15 @@ export function Sidebar() {
           setExpanded(!expanded);
         }}
       >
-        {expanded && <span>Vendor Strings</span>}
+        {expanded && <span>Search Strings</span>}
         {expandIcon}
       </div>
       {expanded && (
         <>
           <hr />
           <div className={classNames(styles.sidebarItems)}>
-            {vendorStrings.map((x, i) => (
-              <VendorString key={i} value={x} />
+            {searchStrings.map((x, i) => (
+              <SearchString key={i} value={x} />
             ))}
           </div>
         </>
@@ -44,13 +44,14 @@ export function Sidebar() {
   );
 }
 
-interface VendorStringProps {
+interface SearchStringProps {
   value: string;
 }
-function VendorString({ value }: VendorStringProps) {
+
+function SearchString({ value }: SearchStringProps) {
   return (
     <div
-      className={classNames("borderListItem", styles.vendorString)}
+      className={classNames("borderListItem", styles.searchString)}
       onClick={() => {
         navigator.clipboard.writeText(value);
       }}

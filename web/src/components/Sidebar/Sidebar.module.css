@@ -34,12 +34,12 @@
   width: 100%;
 }
 
-.vendorString {
+.searchString {
   display: flex;
 }
 
 @media (hover: hover) {
-  .vendorString:hover {
+  .searchString:hover {
     border-color: var(--primary);
   }
 }

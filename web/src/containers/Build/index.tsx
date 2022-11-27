@@ -8,13 +8,11 @@ import { Form, formStyles } from "../../components/Form";
 import classNames from "classnames";
 
 import styles from "./Build.module.css";
-import { vendorStringsAtom } from "../../utility/state/vendor-strings";
+import { searchStringsAtom } from "../../utility/state/search-strings";
 
 function Build() {
   const [buildData, setBuildData] = useRecoilState(buildDataSelector);
-
-  const [vendorStrings, setVendorStringsAtom] =
-    useRecoilState(vendorStringsAtom);
+  const [searchStrings, setSearchStrings] = useRecoilState(searchStringsAtom);
 
   return (
     <div>
@@ -36,18 +34,24 @@ function Build() {
 
       <Form>
         <div className={classNames(formStyles.formRow)}>
-          <label>Vendor Search Strings</label>
+          <label>
+            Search Strings {"("}
+            <a href="https://poe.re/" target="_blank">
+              poe.re
+            </a>
+            {")"}
+          </label>
           <textarea
             spellCheck={false}
             className={classNames(
               formStyles.formInput,
-              styles.vendorStringsInput
+              styles.searchStringsInput
             )}
-            value={vendorStrings?.join("\n")}
+            value={searchStrings?.join("\n")}
             onChange={(e) => {
-              if (e.target.value.length == 0) setVendorStringsAtom(null);
+              if (e.target.value.length == 0) setSearchStrings(null);
               else
-                setVendorStringsAtom(
+                setSearchStrings(
                   e.target.value.split(/\r\n|\r|\n/).map((x) => x.trim())
                 );
             }}

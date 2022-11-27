@@ -66,6 +66,7 @@ export function BuildImportForm({ onSubmit }: BuildFormProps) {
                 break;
               }
             }
+
             const buildData = processPob(pobCode);
             if (buildData) onSubmit(buildData);
           }}
