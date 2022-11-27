@@ -80,16 +80,24 @@ export function BuildEditForm({ buildData, onSubmit }: BuildEditFormProps) {
             </span>
             <textarea
               spellCheck={false}
-              className={classNames(formStyles.formInput, styles.vendorStringsInput)}
+              className={classNames(
+                formStyles.formInput,
+                styles.vendorStringsInput
+              )}
               value={buildData.vendorStrings.join("\n")}
-              onChange={(e) =>
+              onChange={(e) => {
+                let vendorStrings: BuildData["vendorStrings"];
+                if (e.target.value.length == 0) vendorStrings = [];
+                else
+                  vendorStrings = e.target.value
+                    .split(/\r\n|\r|\n/)
+                    .map((x) => x.trim());
+
                 onSubmit({
                   ...buildData,
-                  vendorStrings: e.target.value
-                    .split(/\r\n|\r|\n/)
-                    .map((x) => x.trim()),
-                })
-              }
+                  vendorStrings: vendorStrings,
+                });
+              }}
             />
           </Form>
           <hr />

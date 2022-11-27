@@ -8,9 +8,11 @@ import styles from "./Sidebar.module.css";
 export function Sidebar() {
   const buildData = useRecoilValue(buildDataSelector);
 
+  if (buildData == null || buildData.vendorStrings.length == 0) return <></>;
+
   return (
     <div className={classNames(styles.sidebar)}>
-      {buildData?.vendorStrings.map((x) => (
+      {buildData.vendorStrings.map((x) => (
         <>
           <span
             onClick={() => {
