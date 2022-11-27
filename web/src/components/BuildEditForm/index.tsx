@@ -1,9 +1,6 @@
 import classNames from "classnames";
-import { useRecoilState } from "recoil";
 import { BuildData } from "../../../../common/route-processing";
-import { buildDataSelector } from "../../utility/state/build-data-state";
 import { gemProgressSelectorFamily } from "../../utility/state/gem-progress-state";
-import { vendorStringsAtom } from "../../utility/state/vendor-strings";
 import { Form, formStyles } from "../Form";
 import { GemOrder } from "../GemOrder";
 import { SplitRow } from "../SplitRow";
@@ -11,11 +8,11 @@ import { TaskItemProps, TaskList } from "../TaskList";
 
 import styles from "./BuildEditForm.module.css";
 
-export function BuildEditForm() {
-  const [buildData, setBuildData] = useRecoilState(buildDataSelector);
-  const [vendorStrings, setVendorStringsAtom] =
-    useRecoilState(vendorStringsAtom);
-
+export interface BuildEditFormProps {
+  buildData: BuildData;
+  onSubmit: (buildData: BuildData | null) => void;
+}
+export function BuildEditForm({ buildData, onSubmit }: BuildEditFormProps) {
   return (
     <div>
       {buildData && (
@@ -25,10 +22,10 @@ export function BuildEditForm() {
               <button
                 className={classNames(formStyles.formButton)}
                 onClick={() => {
-                  setBuildData(null);
+                  onSubmit(null);
                 }}
               >
-                Reset
+                Reset Build
               </button>
             </div>
           </Form>
@@ -66,7 +63,7 @@ export function BuildEditForm() {
                     type="checkbox"
                     checked={buildData.leagueStart}
                     onChange={(evt) => {
-                      setBuildData({
+                      onSubmit({
                         ...buildData,
                         leagueStart: evt.target.checked,
                       });
@@ -77,31 +74,10 @@ export function BuildEditForm() {
             />
           </div>
           <hr />
-          <Form>
-            <span className={classNames(styles.buildInfoLabel)}>
-              Vendor Search Strings
-            </span>
-            <textarea
-              spellCheck={false}
-              className={classNames(
-                formStyles.formInput,
-                styles.vendorStringsInput
-              )}
-              value={vendorStrings?.join("\n")}
-              onChange={(e) => {
-                if (e.target.value.length == 0) setVendorStringsAtom(null);
-                else
-                  setVendorStringsAtom(
-                    e.target.value.split(/\r\n|\r|\n/).map((x) => x.trim())
-                  );
-              }}
-            />
-          </Form>
-          <hr />
           <GemOrderList
             requiredGems={buildData.requiredGems}
             onUpdate={(requiredGems) => {
-              setBuildData({ ...buildData, requiredGems });
+              onSubmit({ ...buildData, requiredGems });
             }}
           />
         </>

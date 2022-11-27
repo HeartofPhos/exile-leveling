@@ -1,0 +1,12 @@
+.vendorStringsInput {
+  width: 100%;
+  height: 5rem;
+  resize: none;
+}
+
+.buildInfoLabel {
+  width: 100%;
+  text-align: right;
+  color: var(--primary-light);
+  font-weight: var(--font-heavy);
+}
