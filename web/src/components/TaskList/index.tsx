@@ -35,7 +35,7 @@ interface TaskListProps {
 
 export function TaskList({ items }: TaskListProps) {
   return (
-    <ol className={classNames("borderList", styles.list)}>
+    <ol className={classNames(styles.list)}>
       {items &&
         items.map(({ key, ...rest }, i) => (
           <TaskListItem key={key || i} {...rest} />

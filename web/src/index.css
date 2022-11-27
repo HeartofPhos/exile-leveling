@@ -80,11 +80,11 @@ a:visited {
   color: var(--primary);
 }
 
-.borderList > .borderListItem:first-child {
+.borderListItem:first-child {
   border-top: 0;
 }
 
-.borderList > .borderListItem:last-child {
+.borderListItem:last-child {
   border-bottom: 0;
 }
 
