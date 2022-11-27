@@ -20,7 +20,9 @@ function TaskListItem({ children, isCompletedState }: TaskItemProps) {
       onClick={() => {
         if (setIsCompleted) setIsCompleted(!isCompleted);
       }}
-      className={classNames({ [styles.completed]: isCompleted })}
+      className={classNames("borderListItem", {
+        [styles.completed]: isCompleted,
+      })}
     >
       {children}
     </li>
@@ -33,7 +35,7 @@ interface TaskListProps {
 
 export function TaskList({ items }: TaskListProps) {
   return (
-    <ol className={classNames(styles.list)}>
+    <ol className={classNames("borderList", styles.list)}>
       {items &&
         items.map(({ key, ...rest }, i) => (
           <TaskListItem key={key || i} {...rest} />

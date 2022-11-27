@@ -79,3 +79,17 @@ a:link,
 a:visited {
   color: var(--primary);
 }
+
+.borderList > .borderListItem:first-child {
+  border-top: 0;
+}
+
+.borderList > .borderListItem:last-child {
+  border-bottom: 0;
+}
+
+.borderListItem {
+  border-style: solid;
+  border-color: var(--accent-secondary);
+  border-width: var(--size-1) 0;
+}
