@@ -28,9 +28,11 @@ function NavbarItem({ label, expand, icon, onClick }: NavbarItemProps) {
       onClick={onClick}
       className={classNames(styles.navItem, styles.navElement, {
         [styles.expand]: expand,
+        ["borderListItem"]: expand,
       })}
     >
-      {icon} {label}
+      {icon}
+      {label}
     </div>
   );
 }
@@ -79,68 +81,77 @@ export function Navbar({}: NavbarProps) {
         })}
       >
         <div
-          className={classNames(styles.navMain, styles.navItems, {
+          className={classNames(styles.navMain, {
             [styles.expand]: navExpand,
           })}
         >
-          <NavbarItem
-            label="Route"
-            expand={navExpand}
-            icon={<FaMap className={classNames("inlineIcon")} />}
-            onClick={() => {
-              navigate("/");
-              setNavExpand(false);
-            }}
-          />
-          <NavbarItem
-            label="Build"
-            expand={navExpand}
-            icon={<FaTools className={classNames("inlineIcon")} />}
-            onClick={() => {
-              navigate("/build");
-              setNavExpand(false);
-            }}
-          />
-          <NavAccordion
-            label="Acts"
-            navExpand={navExpand}
-            className={classNames(styles.navItem, {
+          <div
+            className={classNames("borderList", styles.navItems, {
               [styles.expand]: navExpand,
             })}
           >
-            {acts}
-          </NavAccordion>
-          <NavbarItem
-            label="Reset Progress"
-            expand={navExpand}
-            icon={<FaUndoAlt className={classNames("inlineIcon")} />}
-            onClick={() => {
-              clearRouteProgress();
-              clearGemProgress();
-              setNavExpand(false);
-            }}
-          />
-          <NavbarItem
-            label="Export Route"
-            expand={navExpand}
-            icon={<FaRegClipboard className={classNames("inlineIcon")} />}
-            onClick={() => {
-              clipboardRoute();
-              setNavExpand(false);
-            }}
-          />
-          <NavbarItem
-            label="Project on Github"
-            expand={navExpand}
-            icon={<FaGithub className={classNames("inlineIcon")} />}
-            onClick={() => {
-              window
-                .open("https://github.com/HeartofPhos/exile-leveling", "_blank")
-                ?.focus();
-              setNavExpand(false);
-            }}
-          />
-          <hr />
+            <NavbarItem
+              label="Route"
+              expand={navExpand}
+              icon={<FaMap className={classNames("inlineIcon")} />}
+              onClick={() => {
+                navigate("/");
+                setNavExpand(false);
+              }}
+            />
+            <NavbarItem
+              label="Build"
+              expand={navExpand}
+              icon={<FaTools className={classNames("inlineIcon")} />}
+              onClick={() => {
+                navigate("/build");
+                setNavExpand(false);
+              }}
+            />
+            <NavAccordion
+              label="Acts"
+              navExpand={navExpand}
+              className={classNames(styles.navItem, {
+                [styles.expand]: navExpand,
+              })}
+            >
+              {acts}
+            </NavAccordion>
+            <NavbarItem
+              label="Reset Progress"
+              expand={navExpand}
+              icon={<FaUndoAlt className={classNames("inlineIcon")} />}
+              onClick={() => {
+                clearRouteProgress();
+                clearGemProgress();
+                setNavExpand(false);
+              }}
+            />
+            <NavbarItem
+              label="Export Route"
+              expand={navExpand}
+              icon={<FaRegClipboard className={classNames("inlineIcon")} />}
+              onClick={() => {
+                clipboardRoute();
+                setNavExpand(false);
+              }}
+            />
+            <NavbarItem
+              label="Project on Github"
+              expand={navExpand}
+              icon={<FaGithub className={classNames("inlineIcon")} />}
+              onClick={() => {
+                window
+                  .open(
+                    "https://github.com/HeartofPhos/exile-leveling",
+                    "_blank"
+                  )
+                  ?.focus();
+                setNavExpand(false);
+              }}
+            />
+          </div>
+          {navExpand && <hr />}
         </div>
         <FaBars
           className={classNames(styles.navIcon)}
@@ -180,11 +191,7 @@ function NavAccordion({
       {...rest}
     >
       <div className={classNames(styles.navElement)}>{label}</div>
-      <hr
-        className={classNames(styles.seperator, {
-          [styles.expand]: accordionExpand,
-        })}
-      />
+      {accordionExpand && <hr />}
       <div
         className={classNames(styles.navAccordion, styles.navItems, {
           [styles.expand]: accordionExpand,

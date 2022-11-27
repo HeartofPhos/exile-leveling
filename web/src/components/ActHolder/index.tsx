@@ -1,14 +1,8 @@
 import classNames from "classnames";
-import { useLayoutEffect } from "react";
+import { useLayoutEffect, useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-import { atomFamily, useRecoilState } from "recoil";
 import { TaskItemProps, TaskList } from "../TaskList";
 import styles from "./ActHolder.module.css";
-
-const actHolderState = atomFamily<boolean, number>({
-  key: "actHolderState",
-  default: true,
-});
 
 interface ActHolderProps {
   act: number;
@@ -16,7 +10,7 @@ interface ActHolderProps {
 }
 
 export function ActHolder({ act, items: taskItems }: ActHolderProps) {
-  const [expanded, setExpanded] = useRecoilState(actHolderState(act));
+  const [expanded, setExpanded] = useState(true);
 
   const id = `act-${act}`;
   const scrollToAct = () => {
@@ -25,6 +19,7 @@ export function ActHolder({ act, items: taskItems }: ActHolderProps) {
   };
 
   useLayoutEffect(() => {
+    // scrollToAct after sticky positioning is applied
     if (!expanded) scrollToAct();
   }, [expanded]);
 

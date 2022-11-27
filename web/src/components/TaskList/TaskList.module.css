@@ -5,9 +5,6 @@
 
 .list > li {
   display: flex;
-  border-style: solid;
-  border-color: var(--accent-secondary);
-  border-width: var(--size-1) 0;
   width: 100%;
   padding: var(--size-3);
 }
@@ -16,14 +13,6 @@
   .list > li:hover {
     border-color: var(--primary);
   }
-}
-
-.list > li:first-child {
-  border-top: 0;
-}
-
-.list > li:last-child {
-  border-bottom: 0;
 }
 
 .list > li:before {
