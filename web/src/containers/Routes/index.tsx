@@ -8,6 +8,7 @@ import { ExileFragmentStep } from "../../components/ExileFragment";
 import { buildRouteSelector } from "../../utility/state";
 import { gemProgressSelectorFamily } from "../../utility/state/gem-progress-state";
 import { routeProgressSelectorFamily } from "../../utility/state/route-progress-state";
+import { Sidebar } from "../../components/Sidebar";
 
 function RoutesContainer() {
   const routes = useRecoilValue(buildRouteSelector);
@@ -46,7 +47,13 @@ function RoutesContainer() {
     const act = routeIndex + 1;
     items.push(<ActHolder key={act} act={act} items={taskItems} />);
   }
-  return <>{items}</>;
+
+  return (
+    <>
+      <Sidebar />
+      {items}
+    </>
+  );
 }
 
 export default withScrollRestoration(RoutesContainer);
