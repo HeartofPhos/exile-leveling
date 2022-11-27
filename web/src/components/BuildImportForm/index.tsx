@@ -5,13 +5,12 @@ import { Form, formStyles } from "../Form";
 import { processPob } from "./pob";
 
 import styles from "./BuildImportForm.module.css";
+import { useRecoilState } from "recoil";
+import { buildDataSelector } from "../../utility/state/build-data-state";
 
-interface BuildFormProps {
-  onSubmit: (buildData: BuildData) => void;
-}
-
-export function BuildImportForm({ onSubmit }: BuildFormProps) {
+export function BuildImportForm() {
   const [pobCode, setPobCode] = useState<string>();
+  const [buildData, setBuildData] = useRecoilState(buildDataSelector);
 
   return (
     <Form>
@@ -29,7 +28,7 @@ export function BuildImportForm({ onSubmit }: BuildFormProps) {
           className={classNames(formStyles.formButton)}
           onClick={() => {
             const buildData = processPob(pobCode);
-            if (buildData) onSubmit(buildData);
+            if (buildData) setBuildData(buildData);
           }}
         >
           Import

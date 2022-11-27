@@ -10,20 +10,7 @@ function Build() {
 
   return (
     <div>
-      {buildData ? (
-        <BuildEditForm
-          buildData={buildData}
-          onSubmit={(buildData) => {
-            setBuildData(buildData);
-          }}
-        />
-      ) : (
-        <BuildImportForm
-          onSubmit={(buildData) => {
-            setBuildData(buildData);
-          }}
-        />
-      )}
+      {buildData ? <BuildEditForm /> : <BuildImportForm />}
       <hr />
     </div>
   );

@@ -3,15 +3,15 @@ import { useState } from "react";
 import { FaRegClipboard } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useRecoilValue } from "recoil";
-import { buildDataSelector } from "../../utility/state/build-data-state";
+import { vendorStringsAtom } from "../../utility/state/vendor-strings";
 
 import styles from "./Sidebar.module.css";
 
 export function Sidebar() {
-  const buildData = useRecoilValue(buildDataSelector);
+  const vendorStrings = useRecoilValue(vendorStringsAtom);
   const [expanded, setExpanded] = useState(true);
 
-  if (buildData == null || buildData.vendorStrings.length == 0) return <></>;
+  if (vendorStrings == null || vendorStrings.length == 0) return <></>;
 
   const expandIcon = expanded ? <FiChevronRight /> : <FiChevronLeft />;
 
@@ -33,9 +33,9 @@ export function Sidebar() {
       {expanded && (
         <>
           <hr />
-          <div className={classNames("borderList", styles.sidebarItems)}>
-            {buildData.vendorStrings.map((x) => (
-              <VendorString value={x} />
+          <div className={classNames(styles.sidebarItems)}>
+            {vendorStrings.map((x, i) => (
+              <VendorString key={i} value={x} />
             ))}
           </div>
         </>

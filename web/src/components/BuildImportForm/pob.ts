@@ -122,6 +122,5 @@ export function processPob(pobCode: string | undefined): BuildData | undefined {
     requiredGems: requiredGems,
     bandit: bandit as BuildData["bandit"],
     leagueStart: true,
-    vendorStrings: [],
   };
 }

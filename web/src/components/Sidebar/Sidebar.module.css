@@ -37,3 +37,9 @@
 .vendorString {
   display: flex;
 }
+
+@media (hover: hover) {
+  .vendorString:hover {
+    border-color: var(--primary);
+  }
+}
