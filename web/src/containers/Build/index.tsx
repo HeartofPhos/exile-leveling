@@ -37,7 +37,7 @@ function Build() {
           <label>
             Search Strings {"("}
             <a href="https://poe.re/" target="_blank">
-              poe.re
+              Path of Exile Regex
             </a>
             {")"}
           </label>
