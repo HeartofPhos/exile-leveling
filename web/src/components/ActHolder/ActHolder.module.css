@@ -2,6 +2,7 @@
   position: sticky;
   background-color: var(--background-primary);
   top: var(--navbar-height);
+  z-index: 1;
 }
 
 .actHolderHeader {
