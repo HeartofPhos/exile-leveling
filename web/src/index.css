@@ -14,7 +14,8 @@
   --size-5: 1.5rem;
   --line-height: 1.5em;
   --font-heavy: 700;
-  --navbar-height: 2.7rem;
+  /* Fractional pixel rounding varies between browsers, lower-bound picked based on Firefox */
+  --navbar-height: 2.625rem;
 }
 
 *,
