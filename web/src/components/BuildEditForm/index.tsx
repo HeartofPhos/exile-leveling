@@ -25,7 +25,7 @@ export function BuildEditForm({ buildData, onSubmit }: BuildEditFormProps) {
                   onSubmit(null);
                 }}
               >
-                Reset
+                Reset Build
               </button>
             </div>
           </Form>
@@ -75,9 +75,9 @@ export function BuildEditForm({ buildData, onSubmit }: BuildEditFormProps) {
           </div>
           <hr />
           <GemOrderList
-            buildData={buildData}
-            onUpdate={(newBuildData) => {
-              onSubmit(newBuildData);
+            requiredGems={buildData.requiredGems}
+            onUpdate={(requiredGems) => {
+              onSubmit({ ...buildData, requiredGems });
             }}
           />
         </>
@@ -87,13 +87,12 @@ export function BuildEditForm({ buildData, onSubmit }: BuildEditFormProps) {
 }
 
 interface GemOrderList {
-  buildData: BuildData;
-  onUpdate: (buildData: BuildData) => void;
+  requiredGems: BuildData["requiredGems"];
+  onUpdate: (requiredGems: BuildData["requiredGems"]) => void;
 }
 
-function GemOrderList({ buildData, onUpdate }: GemOrderList) {
+function GemOrderList({ requiredGems, onUpdate }: GemOrderList) {
   const taskItems: TaskItemProps[] = [];
-  const requiredGems = [...buildData.requiredGems];
   for (let i = 0; i < requiredGems.length; i++) {
     const requiredGem = requiredGems[i];
     taskItems.push({
@@ -106,7 +105,7 @@ function GemOrderList({ buildData, onUpdate }: GemOrderList) {
             const splice = requiredGems.splice(i, 1);
             requiredGems.unshift(...splice);
 
-            onUpdate({ ...buildData, requiredGems });
+            onUpdate(requiredGems);
           }}
           onMoveUp={() => {
             if (i == 0) return;
@@ -115,7 +114,7 @@ function GemOrderList({ buildData, onUpdate }: GemOrderList) {
             requiredGems[i] = requiredGems[i - 1];
             requiredGems[i - 1] = swap;
 
-            onUpdate({ ...buildData, requiredGems });
+            onUpdate(requiredGems);
           }}
           onMoveDown={() => {
             if (i == requiredGems.length - 1) return;
@@ -124,12 +123,12 @@ function GemOrderList({ buildData, onUpdate }: GemOrderList) {
             requiredGems[i] = requiredGems[i + 1];
             requiredGems[i + 1] = swap;
 
-            onUpdate({ ...buildData, requiredGems });
+            onUpdate(requiredGems);
           }}
           onDelete={() => {
             requiredGems.splice(i, 1);
 
-            onUpdate({ ...buildData, requiredGems });
+            onUpdate(requiredGems);
           }}
           requiredGem={requiredGem}
         />

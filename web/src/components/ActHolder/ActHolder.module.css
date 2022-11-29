@@ -1,11 +1,11 @@
-.actHolder {
+.actbar {
   position: sticky;
   background-color: var(--background-primary);
   top: var(--navbar-height);
   z-index: 1;
 }
 
-.actHolderHeader {
+.actbarHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;

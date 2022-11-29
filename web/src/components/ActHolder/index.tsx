@@ -26,9 +26,9 @@ export function ActHolder({ act, items: taskItems }: ActHolderProps) {
   const expandIcon = expanded ? <FiChevronUp /> : <FiChevronDown />;
   return (
     <div id={id}>
-      <div className={classNames(styles.actHolder)}>
+      <div className={classNames(styles.actbar)}>
         <div
-          className={classNames("header", styles.actHolderHeader)}
+          className={classNames("header", styles.actbarHeader)}
           onClick={() => {
             const updatedExpanded = !expanded;
             setExpanded(updatedExpanded);

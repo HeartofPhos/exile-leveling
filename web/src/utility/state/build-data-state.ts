@@ -6,7 +6,6 @@ import {
   gemProgressKeys,
   gemProgressSelectorFamily,
 } from "./gem-progress-state";
-
 const buildDataAtom = atom<BuildData | null>({
   key: "buildDataAtom",
   default: null,

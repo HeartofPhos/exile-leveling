@@ -37,7 +37,6 @@
 }
 
 .formButton {
-  width: 5rem;
   font-size: 1rem;
   font-weight: var(--font-heavy);
   color: var(--primary-light);
