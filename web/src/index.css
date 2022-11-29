@@ -17,7 +17,7 @@
   --font-heavy: 700;
   /* Fractional pixel rounding varies between browsers, lower-bound picked based on Firefox */
   --navbar-height: 2.625rem;
-  --actbar-height: 2.975rem;
+  --actbar-height: 2.75rem;
 }
 
 *,
