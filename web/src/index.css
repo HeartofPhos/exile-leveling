@@ -14,7 +14,7 @@
   --size-5: 1.5rem;
   --line-height: 1.5em;
   --font-heavy: 700;
-  --navbar-height: 2.625rem;
+  --navbar-height: 2.7rem;
   --actbar-height: 2.975rem;
 }
 
@@ -27,8 +27,7 @@
   padding: 0;
   margin: 0;
   user-select: none;
-  /* Navbar Height */
-  scroll-margin: 2.625rem;
+  scroll-margin: var(--navbar-height);
 }
 
 html {
@@ -45,6 +44,7 @@ hr {
   border-style: solid;
   border-width: var(--size-1);
   color: var(--accent-primary);
+  background-color: var(--accent-primary);
   align-self: stretch;
 }
 
