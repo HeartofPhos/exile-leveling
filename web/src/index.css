@@ -6,10 +6,10 @@
   --background-secondary: #212222;
   --accent-primary: #808080;
   --accent-secondary: #505050;
-  --border-width: 0.1rem;
+  --border-width: 0.0625rem;
   --border-radius: 0.25rem;
-  --size-1: 0.1rem;
-  --size-2: 0.3rem;
+  --size-1: 0.125rem;
+  --size-2: 0.25rem;
   --size-3: 0.5rem;
   --size-4: 1rem;
   --size-5: 1.5rem;
@@ -43,7 +43,7 @@ html {
 
 hr {
   border-style: solid;
-  border-width: var(--size-1);
+  border-width: var(--border-width);
   color: var(--accent-primary);
   background-color: var(--accent-primary);
   align-self: stretch;
@@ -93,5 +93,5 @@ a:visited {
 .borderListItem {
   border-style: solid;
   border-color: var(--accent-secondary);
-  border-width: var(--size-1) 0;
+  border-width: var(--border-width) 0;
 }
