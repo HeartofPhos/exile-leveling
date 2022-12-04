@@ -66,11 +66,9 @@ export function GemOrderList({ requiredGems, onUpdate }: GemOrderList) {
   for (let i = 0; i < workingGems.length; i++) {
     const requiredGem = workingGems[i];
     taskItems.push({
-      key: requiredGem.uid,
       isCompletedState: gemProgressSelectorFamily(requiredGem.uid),
       children: (
         <GemOrder
-          key={i}
           onMoveTop={() => {
             const splice = workingGems.splice(i, 1);
             workingGems.unshift(...splice);
