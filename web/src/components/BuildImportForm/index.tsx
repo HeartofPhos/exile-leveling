@@ -66,7 +66,6 @@ export function BuildImportForm({ onSubmit, onReset }: BuildFormProps) {
             let pobCode = pobCodeOrUrl;
             for (const urlImporter of urlImporters) {
               const downloadUrl = urlImporter(pobCodeOrUrl);
-              console.log(downloadUrl);
               if (downloadUrl) {
                 pobCode = await fetch(
                   `https://api.allorigins.win/raw?url=${encodeURIComponent(

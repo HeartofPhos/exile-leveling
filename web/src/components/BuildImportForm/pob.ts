@@ -121,5 +121,6 @@ export function processPob(pobCode: string): BuildData | undefined {
     requiredGems: requiredGems,
     bandit: bandit as BuildData["bandit"],
     leagueStart: true,
+    library: true,
   };
 }

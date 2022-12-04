@@ -50,6 +50,23 @@ export function BuildInfoForm({ buildData, onSubmit }: BuildInfoFormProps) {
           </div>
         }
       />
+      <SplitRow
+        left={<div className={classNames(styles.buildInfoLabel)}>Library</div>}
+        right={
+          <div className={classNames(styles.buildInfoValue)}>
+            <input
+              type="checkbox"
+              checked={buildData.library}
+              onChange={(evt) => {
+                onSubmit({
+                  ...buildData,
+                  library: evt.target.checked,
+                });
+              }}
+            />
+          </div>
+        }
+      />
     </div>
   );
 }

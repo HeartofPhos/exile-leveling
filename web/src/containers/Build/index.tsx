@@ -58,15 +58,17 @@ function Build() {
         }}
       />
       <hr />
-      <>
-        <GemOrderList
-          requiredGems={buildData.requiredGems}
-          onUpdate={(requiredGems) => {
-            setBuildData({ ...buildData, requiredGems });
-          }}
-        />
-        <hr />
-      </>
+      {buildData.requiredGems.length > 0 && (
+        <>
+          <GemOrderList
+            requiredGems={buildData.requiredGems}
+            onUpdate={(requiredGems) => {
+              setBuildData({ ...buildData, requiredGems });
+            }}
+          />
+          <hr />
+        </>
+      )}
     </div>
   );
 }

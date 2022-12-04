@@ -29,6 +29,9 @@ const baseRouteSelector = selector({
     if (buildData == null || buildData.leagueStart)
       routeState.preprocessorDefinitions.add("LEAGUE_START");
 
+    if (buildData == null || buildData.library)
+      routeState.preprocessorDefinitions.add("LIBRARY");
+
     const bandit = buildData?.bandit || "None";
     switch (bandit) {
       case "None":

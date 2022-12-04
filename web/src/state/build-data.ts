@@ -16,9 +16,10 @@ export const buildDataSelector = selector<BuildData>({
     if (buildData === null)
       buildData = {
         characterClass: "None",
+        requiredGems: [],
         bandit: "None",
         leagueStart: true,
-        requiredGems: [],
+        library: true,
       };
 
     return buildData;

@@ -13,7 +13,8 @@ Free {quest_text|Deshret}
 Get {crafting}
 {waypoint|1_4_town} #Highgate
 Hand in {quest|a4q6} #An Indomitable Spirit
-{waypoint|Labyrinth_Airlock} #Aspirants' Plaza
+{waypoint|1_3_town} #The Sarn Encampment
+➞ {enter|Labyrinth_Airlock}, get {get_waypoint} #Aspirants' Plaza
 {ascend|normal}
 Get {crafting|1_Labyrinth_boss_3}
 {waypoint|1_4_3_3} #The Crystal Veins
@@ -42,7 +43,7 @@ Find and kill {kill|Maligaro, The Inquisitor}, take {quest_text|Malachai's Heart
 Find and kill {kill|Shavronne of Umbra}, take {quest_text|Malachai's Entrails}
 Hand in {quest|a4q5} #Corpus Malachus
 ➞ {arena|The Black Core}, kill {kill|Malachai, The Nightmare}
-{logout}
+{portal|use}
 Hand in {quest|a4q1} #The Eternal Nightmare
 ➞ {enter|1_4_7} #The Ascent
 Get {crafting}

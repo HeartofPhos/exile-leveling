@@ -56,21 +56,22 @@ Hand in {quest|a3q8} #Sever the Right Hand
 {waypoint|1_3_13} #The Ebony Barracks
 Head {dir|45} ➞ {enter|1_3_15} #The Imperial Gardens
 Follow the road, get {get_waypoint}
-Head {dir|315} ➞ {enter|1_3_17_1} #The Library
-Get {get_waypoint}
-Find {generic|Loose Candle} ➞ {enter|1_3_17_2} #The Archives
-Find 4x{quest_text|Golden Page}
-{logout}
-{waypoint|1_3_17_1} #The Library
-Hand in {quest|a3q12} #A Fixture of Fate
 #ifdef LEAGUE_START
-    {waypoint|1_3_15} #The Imperial Gardens
     Head {dir|0} complete {trial}
     Get {crafting}
+    {logout}
+    {waypoint|1_3_15} #The Imperial Gardens
 #endif
-{logout}
-➞ {enter|Labyrinth_Airlock} #Aspirants' Plaza
-{waypoint|1_3_15} #The Imperial Gardens
+#ifdef LIBRARY
+    Head {dir|315} ➞ {enter|1_3_17_1} #The Library
+    Get {get_waypoint}
+    Find {generic|Loose Candle} ➞ {enter|1_3_17_2} #The Archives
+    Find 4x{quest_text|Golden Page}
+    {logout}
+    {waypoint|1_3_17_1} #The Library
+    Hand in {quest|a3q12} #A Fixture of Fate
+    {waypoint|1_3_15} #The Imperial Gardens
+#endif
 ➞ {enter|1_3_18_1} #The Sceptre of God
 ➞ {enter|1_3_18_2} #The Upper Sceptre of God
 ➞ {arena|Tower Rooftop}, Kill {kill|Dominus, High Templar}
