@@ -1,5 +1,5 @@
 import { atomFamily, selectorFamily, useRecoilCallback } from "recoil";
-import { clearPersistent, getPersistent, setPersistent } from "..";
+import { clearPersistent, getPersistent, setPersistent } from "../utility";
 
 const routeProgress = new Set<string>(
   getPersistent<string[]>("route-progress")

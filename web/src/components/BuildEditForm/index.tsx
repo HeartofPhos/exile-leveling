@@ -1,87 +1,55 @@
 import classNames from "classnames";
 import { BuildData } from "../../../../common/route-processing";
-import { gemProgressSelectorFamily } from "../../utility/state/gem-progress-state";
-import { Form, formStyles } from "../Form";
+import { gemProgressSelectorFamily } from "../../state/gem-progress";
 import { GemOrder } from "../GemOrder";
 import { SplitRow } from "../SplitRow";
 import { TaskItemProps, TaskList } from "../TaskList";
 
 import styles from "./BuildEditForm.module.css";
 
-export interface BuildEditFormProps {
+interface BuildInfoFormProps {
   buildData: BuildData;
-  onSubmit: (buildData: BuildData | null) => void;
+  onSubmit: (buildData: BuildData) => void;
 }
-export function BuildEditForm({ buildData, onSubmit }: BuildEditFormProps) {
+
+export function BuildInfoForm({ buildData, onSubmit }: BuildInfoFormProps) {
   return (
-    <div>
-      {buildData && (
-        <>
-          <Form>
-            <div className={classNames(formStyles.groupRight)}>
-              <button
-                className={classNames(formStyles.formButton)}
-                onClick={() => {
-                  onSubmit(null);
-                }}
-              >
-                Reset Build
-              </button>
-            </div>
-          </Form>
-          <hr />
-          <div className={classNames(styles.buildInfo)}>
-            <SplitRow
-              left={
-                <div className={classNames(styles.buildInfoLabel)}>Class</div>
-              }
-              right={
-                <div className={classNames(styles.buildInfoValue)}>
-                  {buildData.characterClass}
-                </div>
-              }
-            />
-            <SplitRow
-              left={
-                <div className={classNames(styles.buildInfoLabel)}>Bandits</div>
-              }
-              right={
-                <div className={classNames(styles.buildInfoValue)}>
-                  {buildData.bandit == "None" ? "Kill All" : buildData.bandit}
-                </div>
-              }
-            />
-            <SplitRow
-              left={
-                <div className={classNames(styles.buildInfoLabel)}>
-                  League Start
-                </div>
-              }
-              right={
-                <div className={classNames(styles.buildInfoValue)}>
-                  <input
-                    type="checkbox"
-                    checked={buildData.leagueStart}
-                    onChange={(evt) => {
-                      onSubmit({
-                        ...buildData,
-                        leagueStart: evt.target.checked,
-                      });
-                    }}
-                  />
-                </div>
-              }
+    <div className={classNames(styles.buildInfo)}>
+      <SplitRow
+        left={<div className={classNames(styles.buildInfoLabel)}>Class</div>}
+        right={
+          <div className={classNames(styles.buildInfoValue)}>
+            {buildData.characterClass}
+          </div>
+        }
+      />
+      <SplitRow
+        left={<div className={classNames(styles.buildInfoLabel)}>Bandits</div>}
+        right={
+          <div className={classNames(styles.buildInfoValue)}>
+            {buildData.bandit == "None" ? "Kill All" : buildData.bandit}
+          </div>
+        }
+      />
+      <SplitRow
+        left={
+          <div className={classNames(styles.buildInfoLabel)}>League Start</div>
+        }
+        right={
+          <div className={classNames(styles.buildInfoValue)}>
+            <input
+              type="checkbox"
+              checked={buildData.leagueStart}
+              onChange={(evt) => {
+                onSubmit({
+                  ...buildData,
+                  leagueStart: evt.target.checked,
+                });
+              }}
             />
           </div>
-          <hr />
-          <GemOrderList
-            requiredGems={buildData.requiredGems}
-            onUpdate={(requiredGems) => {
-              onSubmit({ ...buildData, requiredGems });
-            }}
-          />
-        </>
-      )}
+        }
+      />
     </div>
   );
 }
@@ -91,10 +59,12 @@ interface GemOrderList {
   onUpdate: (requiredGems: BuildData["requiredGems"]) => void;
 }
 
-function GemOrderList({ requiredGems, onUpdate }: GemOrderList) {
+export function GemOrderList({ requiredGems, onUpdate }: GemOrderList) {
+  const workingGems = [...requiredGems];
+
   const taskItems: TaskItemProps[] = [];
-  for (let i = 0; i < requiredGems.length; i++) {
-    const requiredGem = requiredGems[i];
+  for (let i = 0; i < workingGems.length; i++) {
+    const requiredGem = workingGems[i];
     taskItems.push({
       key: requiredGem.uid,
       isCompletedState: gemProgressSelectorFamily(requiredGem.uid),
@@ -102,33 +72,33 @@ function GemOrderList({ requiredGems, onUpdate }: GemOrderList) {
         <GemOrder
           key={i}
           onMoveTop={() => {
-            const splice = requiredGems.splice(i, 1);
-            requiredGems.unshift(...splice);
+            const splice = workingGems.splice(i, 1);
+            workingGems.unshift(...splice);
 
-            onUpdate(requiredGems);
+            onUpdate(workingGems);
           }}
           onMoveUp={() => {
             if (i == 0) return;
 
-            const swap = requiredGems[i];
-            requiredGems[i] = requiredGems[i - 1];
-            requiredGems[i - 1] = swap;
+            const swap = workingGems[i];
+            workingGems[i] = workingGems[i - 1];
+            workingGems[i - 1] = swap;
 
-            onUpdate(requiredGems);
+            onUpdate(workingGems);
           }}
           onMoveDown={() => {
-            if (i == requiredGems.length - 1) return;
+            if (i == workingGems.length - 1) return;
 
-            const swap = requiredGems[i];
-            requiredGems[i] = requiredGems[i + 1];
-            requiredGems[i + 1] = swap;
+            const swap = workingGems[i];
+            workingGems[i] = workingGems[i + 1];
+            workingGems[i + 1] = swap;
 
-            onUpdate(requiredGems);
+            onUpdate(workingGems);
           }}
           onDelete={() => {
-            requiredGems.splice(i, 1);
+            workingGems.splice(i, 1);
 
-            onUpdate(requiredGems);
+            onUpdate(workingGems);
           }}
           requiredGem={requiredGem}
         />

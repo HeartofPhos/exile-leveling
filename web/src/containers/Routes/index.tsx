@@ -5,9 +5,9 @@ import { withScrollRestoration } from "../../utility/withScrollRestoration";
 import { useRecoilValue } from "recoil";
 import { ActHolder } from "../../components/ActHolder";
 import { ExileFragmentStep } from "../../components/ExileFragment";
-import { buildRouteSelector } from "../../utility/state";
-import { gemProgressSelectorFamily } from "../../utility/state/gem-progress-state";
-import { routeProgressSelectorFamily } from "../../utility/state/route-progress-state";
+import { buildRouteSelector } from "../../state";
+import { gemProgressSelectorFamily } from "../../state/gem-progress";
+import { routeProgressSelectorFamily } from "../../state/route-progress";
 import { Sidebar } from "../../components/Sidebar";
 
 function RoutesContainer() {
