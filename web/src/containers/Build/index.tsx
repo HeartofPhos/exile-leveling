@@ -1,35 +1,27 @@
 import { BuildImportForm } from "../../components/BuildImportForm";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useResetRecoilState } from "recoil";
 import { withScrollRestoration } from "../../utility/withScrollRestoration";
-
-import { buildDataSelector } from "../../utility/state/build-data-state";
-import { BuildEditForm } from "../../components/BuildEditForm";
+import { buildDataSelector } from "../../state/build-data";
+import { searchStringsAtom } from "../../state/search-strings";
+import { BuildInfoForm, GemOrderList } from "../../components/BuildEditForm";
 import { Form, formStyles } from "../../components/Form";
 import classNames from "classnames";
 
 import styles from "./Build.module.css";
-import { searchStringsAtom } from "../../utility/state/search-strings";
 
 function Build() {
   const [buildData, setBuildData] = useRecoilState(buildDataSelector);
+  const resetBuildData = useResetRecoilState(buildDataSelector);
   const [searchStrings, setSearchStrings] = useRecoilState(searchStringsAtom);
 
   return (
     <div>
-      {buildData ? (
-        <BuildEditForm
-          buildData={buildData}
-          onSubmit={(buildData) => {
-            setBuildData(buildData);
-          }}
-        />
-      ) : (
-        <BuildImportForm
-          onSubmit={(buildData) => {
-            setBuildData(buildData);
-          }}
-        />
-      )}
+      <BuildInfoForm
+        buildData={buildData}
+        onSubmit={(buildData) => {
+          setBuildData(buildData);
+        }}
+      />
       <hr />
       <Form>
         <div className={classNames(formStyles.formRow)}>
@@ -57,7 +49,24 @@ function Build() {
           />
         </div>
       </Form>
+      <BuildImportForm
+        onSubmit={(buildData) => {
+          setBuildData(buildData);
+        }}
+        onReset={() => {
+          resetBuildData();
+        }}
+      />
       <hr />
+      <>
+        <GemOrderList
+          requiredGems={buildData.requiredGems}
+          onUpdate={(requiredGems) => {
+            setBuildData({ ...buildData, requiredGems });
+          }}
+        />
+        <hr />
+      </>
     </div>
   );
 }

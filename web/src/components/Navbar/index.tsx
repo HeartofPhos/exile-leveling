@@ -9,11 +9,12 @@ import {
   FaTools,
   FaUndoAlt,
 } from "react-icons/fa";
-import styles from "./Navbar.module.css";
 import { useRecoilCallback } from "recoil";
-import { buildRouteSelector } from "../../utility/state";
-import { useClearRouteProgress } from "../../utility/state/route-progress-state";
-import { useClearGemProgress } from "../../utility/state/gem-progress-state";
+import { buildRouteSelector } from "../../state";
+import { useClearRouteProgress } from "../../state/route-progress";
+import { useClearGemProgress } from "../../state/gem-progress";
+
+import styles from "./Navbar.module.css";
 
 interface NavbarItemProps {
   label: string;

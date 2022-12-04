@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FaRegClipboard } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useRecoilValue } from "recoil";
-import { searchStringsAtom } from "../../utility/state/search-strings";
+import { searchStringsAtom } from "../../state/search-strings";
 
 import styles from "./Sidebar.module.css";
 

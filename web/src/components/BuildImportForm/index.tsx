@@ -8,6 +8,7 @@ import styles from "./BuildImportForm.module.css";
 
 interface BuildFormProps {
   onSubmit: (buildData: BuildData) => void;
+  onReset: () => void;
 }
 
 type UrlImporter = (url: string) => string | null;
@@ -33,7 +34,7 @@ const urlImporters: UrlImporter[] = [
   },
 ];
 
-export function BuildImportForm({ onSubmit }: BuildFormProps) {
+export function BuildImportForm({ onSubmit, onReset }: BuildFormProps) {
   const [pobCodeOrUrl, setPobCodeOrUrl] = useState<string>();
 
   return (
@@ -48,6 +49,15 @@ export function BuildImportForm({ onSubmit }: BuildFormProps) {
         />
       </div>
       <div className={classNames(formStyles.groupRight)}>
+        <button
+          className={classNames(formStyles.formButton)}
+          onClick={async () => {
+            onReset();
+            setPobCodeOrUrl("");
+          }}
+        >
+          Reset Build
+        </button>
         <button
           className={classNames(formStyles.formButton)}
           onClick={async () => {
@@ -69,6 +79,7 @@ export function BuildImportForm({ onSubmit }: BuildFormProps) {
 
             const buildData = processPob(pobCode);
             if (buildData) onSubmit(buildData);
+            setPobCodeOrUrl("");
           }}
         >
           Import Build
