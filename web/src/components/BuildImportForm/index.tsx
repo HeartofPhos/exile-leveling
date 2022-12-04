@@ -15,19 +15,19 @@ type UrlImporter = (url: string) => string | null;
 
 const urlImporters: UrlImporter[] = [
   (url) => {
-    const match = /pastebin\.com\/(\w+)/.exec(url);
+    const match = /pastebin\.com\/(.+)$/.exec(url);
     if (!match) return null;
 
     return `https://pastebin.com/raw/${match[1]}`;
   },
   (url) => {
-    const match = /poe\.ninja\/pob\/(\w+)/.exec(url);
+    const match = /poe\.ninja\/pob\/(.+)$/.exec(url);
     if (!match) return null;
 
     return `https://poe.ninja/pob/raw/${match[1]}`;
   },
   (url) => {
-    const match = /pobb\.in\/(\w+)/.exec(url);
+    const match = /pobb\.in\/(.+)$/.exec(url);
     if (!match) return null;
 
     return `https://pobb.in/pob/${match[1]}`;
