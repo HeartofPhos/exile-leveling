@@ -13,6 +13,15 @@ interface BuildFormProps {
 
 type UrlImporter = (url: string) => string | null;
 
+function getPobCodeUrl(pobCodeOrUrl: string) {
+  for (const urlImporter of urlImporters) {
+    const downloadUrl = urlImporter(pobCodeOrUrl);
+    if (downloadUrl) return downloadUrl;
+  }
+
+  return null;
+}
+
 const urlImporters: UrlImporter[] = [
   (url) => {
     const match = /pastebin\.com\/(.+)$/.exec(url);
@@ -31,6 +40,13 @@ const urlImporters: UrlImporter[] = [
     if (!match) return null;
 
     return `https://pobb.in/pob/${match[1]}`;
+  },
+  (url) => {
+    const match = /youtube.com\/redirect\?.+?q=(.+?)(?:&|$)/.exec(url);
+    if (!match) return null;
+    const redirectUrl = decodeURIComponent(match[1]);
+
+    return getPobCodeUrl(redirectUrl);
   },
 ];
 
@@ -64,15 +80,16 @@ export function BuildImportForm({ onSubmit, onReset }: BuildFormProps) {
             if (!pobCodeOrUrl) return;
 
             let pobCode = pobCodeOrUrl;
-            for (const urlImporter of urlImporters) {
-              const downloadUrl = urlImporter(pobCodeOrUrl);
-              if (downloadUrl) {
+            const downloadUrl = getPobCodeUrl(pobCodeOrUrl);
+            if (downloadUrl) {
+              try {
                 pobCode = await fetch(
                   `https://api.allorigins.win/raw?url=${encodeURIComponent(
                     downloadUrl
                   )}`
                 ).then((x) => x.text());
-                break;
+              } catch {
+                console.log(`Failed to download: ${downloadUrl}`);
               }
             }
 
