@@ -36,6 +36,8 @@
 
 .searchString {
   display: flex;
+  text-overflow: clip;
+  word-break: break-all;
 }
 
 @media (hover: hover) {
