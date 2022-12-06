@@ -25,9 +25,9 @@ export const buildDataSelector = selector<BuildData>({
 
     return buildData;
   },
-  set: ({ set, reset }, newValue) => {
+  set: ({ set }, newValue) => {
     if (newValue instanceof DefaultValue) {
-      reset(buildDataAtom);
+      set(buildDataAtom, null);
       return;
     }
 
