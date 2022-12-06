@@ -2,11 +2,12 @@ import { DefaultValue } from "recoil";
 import { atom, selector } from "recoil";
 import { persistentStorageEffect } from ".";
 import type { BuildData } from "../../../common/route-processing";
+import { getPersistent } from "../utility";
 import { gemProgressKeys, gemProgressSelectorFamily } from "./gem-progress";
 
 const buildDataAtom = atom<BuildData | null>({
   key: "buildDataAtom",
-  default: null,
+  default: getPersistent("build-data"),
   effects: [persistentStorageEffect("build-data")],
 });
 export const buildDataSelector = selector<BuildData>({

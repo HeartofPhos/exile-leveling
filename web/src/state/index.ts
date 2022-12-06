@@ -1,13 +1,10 @@
 import { AtomEffect, selector } from "recoil";
-import { clearPersistent, getPersistent, setPersistent } from "../utility";
+import { clearPersistent, setPersistent } from "../utility";
 import { Route } from "../../../common/route-processing";
 import { buildDataSelector } from "./build-data";
 
 export function persistentStorageEffect<T>(key: string): AtomEffect<T | null> {
-  return ({ setSelf, onSet }) => {
-    const value = getPersistent<T>(key);
-    if (value) setSelf(value);
-
+  return ({ onSet }) => {
     onSet((newValue, _, isReset) => {
       if (isReset || newValue == null) clearPersistent(key);
       else setPersistent(key, newValue);
