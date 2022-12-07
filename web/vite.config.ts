@@ -15,6 +15,7 @@ export default defineConfig({
         description:
           "Exile Leveling is a Path of Exile leveling guide with Path of Building integration",
         theme_color: "#000000",
+        background_color: "#000000",
         icons: [
           {
             src: "android-chrome-192x192.png",
