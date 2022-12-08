@@ -27,19 +27,19 @@ const urlImporters: UrlImporter[] = [
     const match = /pastebin\.com\/(.+)$/.exec(url);
     if (!match) return null;
 
-    return `https://pastebin.com/raw/${match[1]}`;
+    return `pastebin.com/raw/${match[1]}`;
   },
   (url) => {
     const match = /poe\.ninja\/pob\/(.+)$/.exec(url);
     if (!match) return null;
 
-    return `https://poe.ninja/pob/raw/${match[1]}`;
+    return `poe.ninja/pob/raw/${match[1]}`;
   },
   (url) => {
     const match = /pobb\.in\/(.+)$/.exec(url);
     if (!match) return null;
 
-    return `https://pobb.in/pob/${match[1]}`;
+    return `pobb.in/pob/${match[1]}`;
   },
   (url) => {
     const match = /youtube.com\/redirect\?.+?q=(.+?)(?:&|$)/.exec(url);
@@ -84,9 +84,7 @@ export function BuildImportForm({ onSubmit, onReset }: BuildFormProps) {
             if (downloadUrl) {
               try {
                 pobCode = await fetch(
-                  `https://api.allorigins.win/raw?url=${encodeURIComponent(
-                    downloadUrl
-                  )}`
+                  `https://phos-cors-proxy.azurewebsites.net/${downloadUrl}`
                 ).then((x) => x.text());
               } catch {
                 console.log(`Failed to download: ${downloadUrl}`);
