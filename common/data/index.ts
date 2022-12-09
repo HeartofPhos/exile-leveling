@@ -28,3 +28,9 @@ export const routeFilesLookup: Record<string, string> = import.meta.glob(
   "./routes/*.txt",
   { as: "raw" }
 );
+
+//@ts-expect-error
+export const compactRouteFilesLookup: Record<string, string> = import.meta.glob(
+  "./compact-routes/*.txt",
+  { as: "raw" }
+);

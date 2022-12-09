@@ -205,7 +205,7 @@ function EvaluateEnter(
 
   const area = areas[rawFragment[1]];
   if (!area) return ERROR_MISSING_AREA;
-  if (!area.connection_ids.some((x) => x == state.currentAreaId))
+  if (!state.isCompact && !area.connection_ids.some((x) => x == state.currentAreaId))
     return "not connected to current area";
 
   transitionArea(state, area);
@@ -249,13 +249,14 @@ function EvaluateWaypoint(
       const area = areas[rawFragment[1]];
       if (!area) return ERROR_MISSING_AREA;
       if (
+        !state.isCompact &&
         !state.implicitWaypoints.has(area.id) &&
         !state.explicitWaypoints.has(area.id)
       )
         return "missing target waypoint";
 
       const currentArea = areas[state.currentAreaId];
-      if (!currentArea.has_waypoint) return ERROR_AREA_NO_WAYPOINT;
+      if (!state.isCompact && !currentArea.has_waypoint) return ERROR_AREA_NO_WAYPOINT;
 
       state.implicitWaypoints.add(currentArea.id);
       state.usedWaypoints.add(area.id);
@@ -282,8 +283,7 @@ function EvaluateGetWaypoint(
   const area = areas[state.currentAreaId];
   if (!area) return ERROR_MISSING_AREA;
   if (!area.has_waypoint) return ERROR_AREA_NO_WAYPOINT;
-  if (state.implicitWaypoints.has(area.id)) return "waypoint already acquired";
-
+  if (!state.isCompact && state.implicitWaypoints.has(area.id)) return "waypoint already acquired";
   state.explicitWaypoints.add(area.id);
 
   return {

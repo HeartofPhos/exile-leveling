@@ -6,6 +6,7 @@ import {
   FaGithub,
   FaMap,
   FaRegClipboard,
+  FaTable,
   FaTools,
   FaUndoAlt,
 } from "react-icons/fa";
@@ -106,6 +107,15 @@ export function Navbar({}: NavbarProps) {
               icon={<FaTools className={classNames("inlineIcon")} />}
               onClick={() => {
                 navigate("/build");
+                setNavExpand(false);
+              }}
+            />
+            <NavbarItem
+              label="Compact View"
+              expand={navExpand}
+              icon={<FaTable className={classNames("inlineIcon")} />}
+              onClick={() => {
+                navigate("/quick-view");
                 setNavExpand(false);
               }}
             />

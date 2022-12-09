@@ -16,6 +16,7 @@ export interface RouteState {
   portalAreaId: Area["id"] | null;
   acquiredGems: Set<Gem["id"]>;
   preprocessorDefinitions: Set<string>;
+  isCompact: boolean;
 }
 
 export function parseRoute(routeSources: string[], state: RouteState) {
@@ -27,6 +28,7 @@ export function parseRoute(routeSources: string[], state: RouteState) {
     const route: Route = [];
     for (let line of routeLines) {
       if (!line) continue;
+      // console.log("parsing line", line);
 
       const endifRegex = /^\s*#endif/g;
       const endifMatch = endifRegex.exec(line);
@@ -58,18 +60,21 @@ export function parseRoute(routeSources: string[], state: RouteState) {
     routes.push(route);
   }
 
-  for (const waypoint of state.explicitWaypoints) {
-    if (!state.usedWaypoints.has(waypoint)) {
-      console.log(`unused waypoint ${waypoint}`);
-    }
-  }
+  if(!state.isCompact) {
 
-  for (const key in areas) {
-    const area = areas[key];
-    if (area.crafting_recipes.length > 0 && !state.craftingAreas.has(area.id))
-      console.log(
-        `missing crafting area ${area.id}, ${area.crafting_recipes.join(", ")}`
-      );
+    for (const waypoint of state.explicitWaypoints) {
+      if (!state.usedWaypoints.has(waypoint)) {
+        console.log(`unused waypoint ${waypoint}`);
+      }
+    }
+
+    for (const key in areas) {
+      const area = areas[key];
+      if (area.crafting_recipes.length > 0 && !state.craftingAreas.has(area.id))
+        console.log(
+          `missing crafting area ${area.id}, ${area.crafting_recipes.join(", ")}`
+        );
+    }
   }
 
   return routes;
@@ -100,6 +105,7 @@ export function initializeRouteState() {
     portalAreaId: null,
     acquiredGems: new Set(),
     preprocessorDefinitions: new Set(),
+    isCompact: false,
   };
 
   return state;

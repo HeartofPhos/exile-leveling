@@ -1,12 +1,42 @@
 .actbar {
-  position: sticky;
+  flex: left;
   background-color: var(--background-primary);
   top: var(--navbar-height);
   z-index: 1;
+}
+
+.actHolder {
+  width: 100%;
+  text-align: center;
+  grid-template-areas: 
+   'route actMapImage'
+   'route customImageContainer'
+   'route customImage';
+}
+
+.customImage {
+  padding: 1em;
+  display: block;
+  margin: auto;
+  width: auto;
+  max-width: 100%;
+  max-height: 50vw;
+}
+
+.input {
+  text-align:center
 }
 
 .actbarHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.actMapImage {
+  padding: 1em;
+  margin: auto;
+  min-width: 100%;
+  max-height: 50vw;
+  grid-area: actMapImage;
 }

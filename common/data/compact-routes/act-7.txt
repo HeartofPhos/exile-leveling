@@ -1,0 +1,22 @@
+➞ {enter|2_7_2} #The Crossroads
+Head {dir|135} ➞ {enter|2_7_3} #The Fellshrine Ruins
+Follow the road ➞ {enter|2_7_4} #The Crypt
+#ifdef LEAGUE_START
+    Complete {trial}
+#endif
+Find and take {quest_text|Maligaro's Map}
+➞ {enter|2_7_5_1} #The Chamber of Sins Level 1
+Activate {quest_text|Map Device} with {quest_text|Maligaro's Map}
+➞ {enter|2_7_5_2} #The Chamber of Sins Level 2
+#ifdef LEAGUE_START
+    Complete {trial}
+#endif
+➞ {enter|2_7_7} #The Ashen Fields
+Head {dir|225} ➞ {arena|The Forest Encampment}, kill {kill|Greust, Lord of the Forest}
+➞ {enter|2_7_10} #The Causeway
+Find and take {quest_text|Kishara's Star}
+➞ {enter|2_7_9} #The Dread Thicket
+Find and take 7x{quest_text|Firefly}
+➞ {arena|Den of Despair}, kill {kill|Gruthkul, Mother of Despair}
+{ascend|cruel}
+➞ {arena|Arakaali's Web}, kill {kill|Arakaali, Spinner of Shadows}

@@ -1,0 +1,23 @@
+➞ {enter|1_1_town} #Lioneye's Watch
+Hand in {quest|a1q1} #Enemy at the Gate
+➞ {enter|1_1_4_1} #The Submerged Passage
+Find and kill {kill|Hailrake}, take {quest_text|Medicine Chest}
+{waypoint|1_1_4_1} #The Submerged Passage 
+Hand in {quest|a1q4} #Breaking Some Eggs
+Hand in {quest|a1q5} #Mercy Mission
+Find bridge, place {portal|set}
+{quest|a1q7} Passive Point
+Hand in {quest|a1q2|0} #The Caged Brute
+{waypoint|1_1_7_1} #The Lower Prison
+#ifdef LEAGUE_START
+    Complete {trial}
+#endif
+➞ {arena|The Warden's Quarters}, kill {kill|Brutus, Lord Incarcerator}
+{waypoint|1_1_8} #Prisoner's Gate
+Find The Ship Graveyard Cave and Place {portal|set}
+{waypoint|1_1_11_1} #The Cavern of Wrath
+Take {portal|use}
+➞ {enter|1_1_9a} #The Ship Graveyard Cave
+{quest|a1q6} Passive Point
+Hand in {quest|a1q3} #The Siren's Cadence
+➞ {arena|Merveil's Lair}, kill {kill|Merveil, the Siren}

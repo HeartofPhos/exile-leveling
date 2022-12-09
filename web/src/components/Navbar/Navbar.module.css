@@ -29,6 +29,7 @@
   flex-grow: 1;
   flex-direction: row;
   align-self: stretch;
+  justify-content: space-around;
 }
 
 .navItems.expand {
@@ -38,7 +39,6 @@
 
 .navItem {
   text-align: left;
-  width: 100%;
 }
 
 .navItem.expand {
@@ -52,6 +52,7 @@
 }
 
 .navElement {
+  cursor: pointer;
   color: var(--primary-light);
   font-weight: var(--font-heavy);
   padding: var(--size-3);
@@ -71,7 +72,7 @@
   top: 100%;
 }
 
-.navItems:not(.expand) > *:nth-child(n + 3) {
+.navItems:not(.expand) > *:nth-child(n + 4) {
   display: none;
 }
 

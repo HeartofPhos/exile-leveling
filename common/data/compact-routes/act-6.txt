@@ -1,0 +1,18 @@
+Hand in {quest|a6q4} #Fallen from Grace
+➞ {enter|2_6_4} #The Mud Flats
+Find and kill {kill|The Dishonoured Queen}, take {quest_text|Eye of Conquest}
+➞ {arena|Tukohama's Keep}, kill {kill|Tukohama, Karui God of War}
+➞ {enter|2_6_7_1} #The Lower Prison
+#ifdef LEAGUE_START
+    Complete {trial}
+#endif
+➞ {arena|Prison Rooftop}, kill {kill|Abberath, the Cloven One} & {kill|Reassembled Brutus}
+➞ {enter|2_6_8} #Prisoner's Gate
+➞ {arena|Valley of the Fire Drinker}, kill {kill|Abberath, the Cloven One}
+Follow the road ➞ {enter|2_6_10} #The Riverways
+➞ {enter|2_6_11} #The Wetlands
+Head {dir|315} ➞ {arena|The Spawning Ground}, kill {kill|Ryslatha, the Puppet Mistress}
+{waypoint|2_6_10} #The Riverways
+➞ {enter|2_6_14} #The Beacon
+Light the {quest_text|Beacon}, throw in {quest_text|The Black Flag}
+➞ {arena|The Bring King's Throne}, kill {kill|Tsoagoth, The Brine King}

@@ -1,0 +1,19 @@
+➞ {arena|The Cauldron}, kill {kill|Doedre the Vile}
+Head {dir|45} ➞ {enter|2_8_8} #The Quay
+Follow {dir|270} wall, find and take {quest_text|Ankh of Eternity}
+Head {dir|135} ➞ {arena|Resurrection Site}
+Talk to {generic|Clarissa}, kill {kill|Tolman}
+➞ {enter|2_8_9} #The Grain Gate
+Follow the dead guards by entrances
+Find and kill {kill|Gemling Legionnaires}
+➞ {enter|2_8_12_2} #The Solaris Temple Level 2
+Find and kill {kill|Dawn, Harbinger of Solaris}, take {quest_text|Sun Orb}
+➞ {enter|2_8_7_2} #The Lunaris Temple Level 2
+Find and kill {kill|Dusk, Harbinger of Lunaris}, take {quest_text|Moon Orb}
+➞ {arena|The Sky Shrine}, Kill {kill|Lunaris, Eternal Moon} & {kill|Solaris, Eternal Sun}
+➞ {enter|2_8_5} #The Bath House
+#ifdef LEAGUE_START
+    Search {dir|270} side, complete {trial}
+#endif
+Search {dir|270} side ➞ {enter|2_8_4} #The High Gardens
+➞ {arena|The Pools of Terror}, kill {kill|Yugul, Reflection of Terror}

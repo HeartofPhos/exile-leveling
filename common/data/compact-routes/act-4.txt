@@ -1,0 +1,14 @@
+Find and kill {kill|Voll, Emperor of Purity}, take {quest_text|Deshret's Banner}
+Hand in {quest|a4q2} #Breaking the Seal
+➞ {enter|1_4_3_2} #The Mines Level 2
+Free {quest_text|Deshret} Passive Point
+{ascend|normal}
+{waypoint|1_4_3_3} #The Crystal Veins
+➞ {arena|Caldera of the King}, kill {kill|King Kaom}, take {quest_text|The Eye of Fury}
+➞ {arena|The Ring of Blades}, kill {kill|Daresso, King of Swords}, take {quest_text|The Eye of Desire}
+➞ {enter|1_4_6_1} #The Belly of the Beast Level 1
+➞ {arena|The Bowels of the Beast}, kill {kill|Piety, the Abomination}
+➞ {enter|1_4_6_3} #The Harvest
+➞ {arena|The Black Core}, kill {kill|Malachai, The Nightmare}
+Hand in {quest|a4q1} #The Eternal Nightmare
+➞ {enter|1_4_7} #The Ascent
