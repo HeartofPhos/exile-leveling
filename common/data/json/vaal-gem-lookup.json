@@ -1,11 +1,15 @@
 {
   "Metadata/Items/Gems/SkillGemVaalFireball": "Metadata/Items/Gems/SkillGemFireball",
   "Metadata/Items/Gems/SkillGemVaalIceNova": "Metadata/Items/Gems/SkillGemIceNova",
+  "Metadata/Items/Gems/SkillGemVaalChargedAttack": "Metadata/Items/Gems/SkillGemChargedAttack",
   "Metadata/Items/Gems/SkillGemVaalGroundSlam": "Metadata/Items/Gems/SkillGemGroundSlam",
+  "Metadata/Items/Gems/SkillGemVaalCleave": "Metadata/Items/Gems/SkillGemCleave",
   "Metadata/Items/Gems/SkillGemVaalDoubleStrike": "Metadata/Items/Gems/SkillGemDoubleStrike",
   "Metadata/Items/Gems/SkillGemVaalDetonateDead": "Metadata/Items/Gems/SkillGemDetonateDead",
   "Metadata/Items/Gems/SkillGemVaalColdSnap": "Metadata/Items/Gems/SkillGemColdSnap",
+  "Metadata/Items/Gems/SkillGemVaalCausticArrow": "Metadata/Items/Gems/SkillGemPoisonArrow",
   "Metadata/Items/Gems/SkillGemVaalRighteousFire": "Metadata/Items/Gems/SkillGemRighteousFire",
+  "Metadata/Items/Gems/SkillGemVaalFlickerStrike": "Metadata/Items/Gems/SkillGemFlickerStrike",
   "Metadata/Items/Gems/SkillGemVaalSpark": "Metadata/Items/Gems/SkillGemSpark",
   "Metadata/Items/Gems/SkillGemVaalGlacialHammer": "Metadata/Items/Gems/SkillGemGlacialHammer",
   "Metadata/Items/Gems/SkillGemVaalSummonSkeletons": "Metadata/Items/Gems/SkillGemSummonSkeletons",
@@ -28,8 +32,12 @@
   "Metadata/Items/Gems/SkillGemVaalLightningResistAura": "Metadata/Items/Gems/SkillGemLightningResistAura",
   "Metadata/Items/Gems/SkillGemVaalStormCall": "Metadata/Items/Gems/SkillGemStormCall",
   "Metadata/Items/Gems/SkillGemVaalFlameblast": "Metadata/Items/Gems/SkillGemFlameblast",
+  "Metadata/Items/Gems/SkillGemVaalMoltenStrike": "Metadata/Items/Gems/SkillGemMoltenStrike",
   "Metadata/Items/Gems/SkillGemVaalBladeVortex": "Metadata/Items/Gems/SkillGemBladeVortex",
   "Metadata/Items/Gems/SkillGemVaalEarthquake": "Metadata/Items/Gems/SkillGemEarthquake",
   "Metadata/Items/Gems/SkillGemVaalBlight": "Metadata/Items/Gems/SkillGemBlight",
-  "Metadata/Items/Gems/SkillGemVaalAncestralWarchief": "Metadata/Items/Gems/SkillGemAncestralWarchief"
+  "Metadata/Items/Gems/SkillGemVaalAncestralWarchief": "Metadata/Items/Gems/SkillGemAncestralWarchief",
+  "Metadata/Items/Gems/SkillGemVaalSmite": "Metadata/Items/Gems/SkillGemSmite",
+  "Metadata/Items/Gems/SkillGemVaalVenomGyre": "Metadata/Items/Gems/SkillGemVenomGyre",
+  "Metadata/Items/Gems/SkillGemVaalVolcanicFissure": "Metadata/Items/Gems/SkillGemVolcanicFissure"
 }
