@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "seed-data": "ts-node src/index.ts ../common/data/json seed-data"
+    "seed-data": "ts-node src/index.ts ../common/data/json seed-data",
+    "generate-route-ids": "ts-node src/index.ts ../common/data/json generate-route-ids"
   },
   "author": "",
   "license": "ISC",
