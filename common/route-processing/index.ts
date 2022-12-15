@@ -15,7 +15,6 @@ export interface RouteState {
   currentAreaId: Area["id"];
   lastTownAreaId: Area["id"];
   portalAreaId: Area["id"] | null;
-  acquiredGems: Set<Gem["id"]>;
   preprocessorDefinitions: Set<string>;
   logger: ScopedLogger;
 }
@@ -111,7 +110,6 @@ export function initializeRouteState() {
     currentAreaId: "1_1_1",
     lastTownAreaId: "1_1_town",
     portalAreaId: null,
-    acquiredGems: new Set(),
     preprocessorDefinitions: new Set(),
     logger: new ScopedLogger(),
   };
