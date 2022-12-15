@@ -49,8 +49,7 @@ export function parseFragmentStep(text: string, state: RouteState) {
       step.parts.push(subStep);
     } else {
       const result = evaluateFragment(subStep, state);
-      if (typeof result == "string") console.log(`${result}: ${subStep}`);
-      else step.parts.push(result.fragment);
+      step.parts.push(result.fragment);
     }
   }
 
@@ -144,8 +143,8 @@ interface DirectionFragment {
 function EvaluateKill(
   rawFragment: RawFragment,
   state: RouteState
-): string | EvaluateResult {
-  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
+): EvaluateResult {
+  if (rawFragment.length != 2) throw ERROR_INVALID_FORMAT;
   const bossName = rawFragment[1];
 
   // TODO data incomplete
@@ -170,8 +169,8 @@ function EvaluateKill(
 function EvaluateArena(
   rawFragment: RawFragment,
   state: RouteState
-): string | EvaluateResult {
-  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
+): EvaluateResult {
+  if (rawFragment.length != 2) throw ERROR_INVALID_FORMAT;
   return {
     fragment: {
       type: "arena",
@@ -183,11 +182,11 @@ function EvaluateArena(
 function EvaluateArea(
   rawFragment: RawFragment,
   state: RouteState
-): string | EvaluateResult {
-  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
+): EvaluateResult {
+  if (rawFragment.length != 2) throw ERROR_INVALID_FORMAT;
 
   const area = areas[rawFragment[1]];
-  if (!area) return ERROR_MISSING_AREA;
+  if (!area) throw ERROR_MISSING_AREA;
 
   return {
     fragment: {
@@ -200,13 +199,14 @@ function EvaluateArea(
 function EvaluateEnter(
   rawFragment: RawFragment,
   state: RouteState
-): string | EvaluateResult {
-  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
+): EvaluateResult {
+  if (rawFragment.length != 2) throw ERROR_INVALID_FORMAT;
 
   const area = areas[rawFragment[1]];
-  if (!area) return ERROR_MISSING_AREA;
+  if (!area) throw ERROR_MISSING_AREA;
+
   if (!area.connection_ids.some((x) => x == state.currentAreaId))
-    return "not connected to current area";
+    state.logger.warn("not connected to current area");
 
   transitionArea(state, area);
 
@@ -221,8 +221,8 @@ function EvaluateEnter(
 function EvaluateLogout(
   rawFragment: RawFragment,
   state: RouteState
-): string | EvaluateResult {
-  if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
+): EvaluateResult {
+  if (rawFragment.length != 1) throw ERROR_INVALID_FORMAT;
 
   const townArea = areas[state.lastTownAreaId];
   transitionArea(state, townArea);
@@ -239,23 +239,23 @@ function EvaluateLogout(
 function EvaluateWaypoint(
   rawFragment: RawFragment,
   state: RouteState
-): string | EvaluateResult {
+): EvaluateResult {
   {
     if (rawFragment.length != 1 && rawFragment.length != 2)
-      return ERROR_INVALID_FORMAT;
+      throw ERROR_INVALID_FORMAT;
 
     let areaId: Area["id"] | null = null;
     if (rawFragment.length == 2) {
       const area = areas[rawFragment[1]];
-      if (!area) return ERROR_MISSING_AREA;
+      if (!area) throw ERROR_MISSING_AREA;
       if (
         !state.implicitWaypoints.has(area.id) &&
         !state.explicitWaypoints.has(area.id)
       )
-        return "missing target waypoint";
+        state.logger.warn("missing target waypoint");
 
       const currentArea = areas[state.currentAreaId];
-      if (!currentArea.has_waypoint) return ERROR_AREA_NO_WAYPOINT;
+      if (!currentArea.has_waypoint) state.logger.warn(ERROR_AREA_NO_WAYPOINT);
 
       state.implicitWaypoints.add(currentArea.id);
       state.usedWaypoints.add(area.id);
@@ -276,13 +276,14 @@ function EvaluateWaypoint(
 function EvaluateGetWaypoint(
   rawFragment: RawFragment,
   state: RouteState
-): string | EvaluateResult {
-  if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
+): EvaluateResult {
+  if (rawFragment.length != 1) throw ERROR_INVALID_FORMAT;
 
   const area = areas[state.currentAreaId];
-  if (!area) return ERROR_MISSING_AREA;
-  if (!area.has_waypoint) return ERROR_AREA_NO_WAYPOINT;
-  if (state.implicitWaypoints.has(area.id)) return "waypoint already acquired";
+  if (!area) throw ERROR_MISSING_AREA;
+  if (!area.has_waypoint) state.logger.warn(ERROR_AREA_NO_WAYPOINT);
+  if (state.implicitWaypoints.has(area.id))
+    state.logger.warn("waypoint already acquired");
 
   state.explicitWaypoints.add(area.id);
 
@@ -296,13 +297,13 @@ function EvaluateGetWaypoint(
 function EvaluatePortal(
   rawFragment: RawFragment,
   state: RouteState
-): string | EvaluateResult {
-  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
+): EvaluateResult {
+  if (rawFragment.length != 2) throw ERROR_INVALID_FORMAT;
 
   const currentArea = areas[state.currentAreaId];
   switch (rawFragment[1]) {
     case "set": {
-      if (currentArea.is_town_area) return "portal cannot be set";
+      if (currentArea.is_town_area) throw "portal cannot be set";
 
       state.portalAreaId = state.currentAreaId;
       return {
@@ -315,12 +316,12 @@ function EvaluatePortal(
       if (state.portalAreaId != currentArea.id && !currentArea.is_town_area)
         state.portalAreaId = currentArea.id;
 
-      if (!state.portalAreaId) return "portal not set";
+      if (!state.portalAreaId) throw "portal not set";
       const portalArea = areas[state.portalAreaId];
 
       if (currentArea.id == portalArea.id) {
         if (!currentArea.parent_town_area_id)
-          return "cannot use portal in this area";
+          throw "cannot use portal in this area";
 
         const townArea = areas[currentArea.parent_town_area_id];
         transitionArea(state, townArea);
@@ -328,7 +329,7 @@ function EvaluatePortal(
       } else if (currentArea.id == portalArea.parent_town_area_id) {
         transitionArea(state, portalArea);
         state.portalAreaId = null;
-      } else return "can only use portal from town or portal area";
+      } else throw "can only use portal from town or portal area";
 
       return {
         fragment: {
@@ -339,14 +340,14 @@ function EvaluatePortal(
     }
   }
 
-  return ERROR_INVALID_FORMAT;
+  throw ERROR_INVALID_FORMAT;
 }
 
 function EvaluateGeneric(
   rawFragment: RawFragment,
   state: RouteState
-): string | EvaluateResult {
-  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
+): EvaluateResult {
+  if (rawFragment.length != 2) throw ERROR_INVALID_FORMAT;
   return {
     fragment: {
       type: "generic",
@@ -358,14 +359,14 @@ function EvaluateGeneric(
 function EvaluateCrafting(
   rawFragment: RawFragment,
   state: RouteState
-): string | EvaluateResult {
-  if (rawFragment.length > 2) return ERROR_INVALID_FORMAT;
+): EvaluateResult {
+  if (rawFragment.length > 2) throw ERROR_INVALID_FORMAT;
 
   let area;
   if (rawFragment.length == 1) area = areas[state.currentAreaId];
   else {
     area = areas[rawFragment[1]];
-    if (!area) return ERROR_MISSING_AREA;
+    if (!area) throw ERROR_MISSING_AREA;
   }
   state.craftingAreas.add(area.id);
 
@@ -380,16 +381,16 @@ function EvaluateCrafting(
 function EvaluateDirection(
   rawFragment: RawFragment,
   state: RouteState
-): string | EvaluateResult {
-  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
+): EvaluateResult {
+  if (rawFragment.length != 2) throw ERROR_INVALID_FORMAT;
 
   const parsed = Number.parseFloat(rawFragment[1]);
-  if (Number.isNaN(parsed)) return "dir value is not a number";
+  if (Number.isNaN(parsed)) throw "dir value is not a number";
 
   let dir = parsed % 360;
   if (dir < 0) dir += 360;
 
-  if (dir % 45 != 0) return "dir value must be in intervals of 45";
+  if (dir % 45 != 0) throw "dir value must be in intervals of 45";
 
   return {
     fragment: {
@@ -410,7 +411,7 @@ export interface EvaluateResult {
 export function evaluateFragment(
   rawFragment: RawFragment,
   state: RouteState
-): string | EvaluateResult {
+): EvaluateResult {
   switch (rawFragment[0]) {
     case "kill":
       return EvaluateKill(rawFragment, state);
@@ -444,5 +445,5 @@ export function evaluateFragment(
       return EvaluateDirection(rawFragment, state);
   }
 
-  return ERROR_INVALID_FORMAT;
+  throw ERROR_INVALID_FORMAT;
 }

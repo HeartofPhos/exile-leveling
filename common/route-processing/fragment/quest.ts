@@ -18,13 +18,13 @@ export interface QuestTextFragment {
 export function EvaluateQuest(
   rawFragment: RawFragment,
   state: RouteState
-): string | EvaluateResult {
+): EvaluateResult {
   {
-    if (rawFragment.length < 2) return ERROR_INVALID_FORMAT;
+    if (rawFragment.length < 2) throw ERROR_INVALID_FORMAT;
 
     const questId = rawFragment[1];
     const quest = quests[questId];
-    if (!quest) return "invalid quest id";
+    if (!quest) throw "invalid quest id";
 
     let rewardOfferIds;
     if (rawFragment.length == 2) {
@@ -50,8 +50,8 @@ export function EvaluateQuest(
 export function EvaluateQuestText(
   rawFragment: RawFragment,
   state: RouteState
-): string | EvaluateResult {
-  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
+): EvaluateResult {
+  if (rawFragment.length != 2) throw ERROR_INVALID_FORMAT;
   return {
     fragment: {
       type: "quest_text",
