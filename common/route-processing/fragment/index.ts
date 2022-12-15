@@ -144,7 +144,7 @@ interface DirectionFragment {
 function EvaluateKill(
   rawFragment: RawFragment,
   state: RouteState
-): EvaluateResult | string {
+): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
   const bossName = rawFragment[1];
 
@@ -170,7 +170,7 @@ function EvaluateKill(
 function EvaluateArena(
   rawFragment: RawFragment,
   state: RouteState
-): EvaluateResult | string {
+): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
   return {
     fragment: {
@@ -183,7 +183,7 @@ function EvaluateArena(
 function EvaluateArea(
   rawFragment: RawFragment,
   state: RouteState
-): EvaluateResult | string {
+): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
   const area = areas[rawFragment[1]];
@@ -200,7 +200,7 @@ function EvaluateArea(
 function EvaluateEnter(
   rawFragment: RawFragment,
   state: RouteState
-): EvaluateResult | string {
+): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
   const area = areas[rawFragment[1]];
@@ -222,7 +222,7 @@ function EvaluateEnter(
 function EvaluateLogout(
   rawFragment: RawFragment,
   state: RouteState
-): EvaluateResult | string {
+): string | EvaluateResult {
   if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
 
   const townArea = areas[state.lastTownAreaId];
@@ -240,7 +240,7 @@ function EvaluateLogout(
 function EvaluateWaypoint(
   rawFragment: RawFragment,
   state: RouteState
-): EvaluateResult | string {
+): string | EvaluateResult {
   {
     if (rawFragment.length != 1 && rawFragment.length != 2)
       return ERROR_INVALID_FORMAT;
@@ -277,7 +277,7 @@ function EvaluateWaypoint(
 function EvaluateGetWaypoint(
   rawFragment: RawFragment,
   state: RouteState
-): EvaluateResult | string {
+): string | EvaluateResult {
   if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
 
   const area = areas[state.currentAreaId];
@@ -298,7 +298,7 @@ function EvaluateGetWaypoint(
 function EvaluatePortal(
   rawFragment: RawFragment,
   state: RouteState
-): EvaluateResult | string {
+): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
   const currentArea = areas[state.currentAreaId];
@@ -347,7 +347,7 @@ function EvaluatePortal(
 function EvaluateGeneric(
   rawFragment: RawFragment,
   state: RouteState
-): EvaluateResult | string {
+): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
   return {
     fragment: {
@@ -360,7 +360,7 @@ function EvaluateGeneric(
 function EvaluateCrafting(
   rawFragment: RawFragment,
   state: RouteState
-): EvaluateResult | string {
+): string | EvaluateResult {
   if (rawFragment.length > 2) return ERROR_INVALID_FORMAT;
 
   let area;
@@ -382,7 +382,7 @@ function EvaluateCrafting(
 function EvaluateDirection(
   rawFragment: RawFragment,
   state: RouteState
-): EvaluateResult | string {
+): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
   const parsed = Number.parseFloat(rawFragment[1]);
@@ -412,7 +412,7 @@ export interface EvaluateResult {
 export function evaluateFragment(
   rawFragment: RawFragment,
   state: RouteState
-): EvaluateResult | string {
+): string | EvaluateResult {
   switch (rawFragment[0]) {
     case "kill":
       return EvaluateKill(rawFragment, state);

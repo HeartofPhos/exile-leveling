@@ -18,7 +18,7 @@ export interface QuestTextFragment {
 export function EvaluateQuest(
   rawFragment: RawFragment,
   state: RouteState
-): EvaluateResult | string {
+): string | EvaluateResult {
   {
     if (rawFragment.length < 2) return ERROR_INVALID_FORMAT;
 
@@ -50,7 +50,7 @@ export function EvaluateQuest(
 export function EvaluateQuestText(
   rawFragment: RawFragment,
   state: RouteState
-): EvaluateResult | string {
+): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
   return {
     fragment: {
