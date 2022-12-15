@@ -22,55 +22,51 @@ export interface RouteState {
 
 export function parseRoute(routeSources: string[], state: RouteState) {
   const routes: Route[] = [];
-  try {
-    for (let routeIndex = 0; routeIndex < routeSources.length; routeIndex++) {
-      const routeSource = routeSources[routeIndex];
-      state.logger.pushScope(`act ${routeIndex + 1}`);
+  for (let routeIndex = 0; routeIndex < routeSources.length; routeIndex++) {
+    const routeSource = routeSources[routeIndex];
+    state.logger.pushScope(`act ${routeIndex + 1}`);
 
-      const routeLines = routeSource.split(/(?:\r\n|\r|\n)/g);
+    const routeLines = routeSource.split(/(?:\r\n|\r|\n)/g);
 
-      const conditionalStack: boolean[] = [];
-      const route: Route = [];
-      for (let lineIndex = 0; lineIndex < routeLines.length; lineIndex++) {
-        const line = routeLines[lineIndex];
+    const conditionalStack: boolean[] = [];
+    const route: Route = [];
+    for (let lineIndex = 0; lineIndex < routeLines.length; lineIndex++) {
+      const line = routeLines[lineIndex];
 
-        if (!line) continue;
+      if (!line) continue;
 
-        const endifRegex = /^\s*#endif/g;
-        const endifMatch = endifRegex.exec(line);
+      const endifRegex = /^\s*#endif/g;
+      const endifMatch = endifRegex.exec(line);
 
-        if (endifMatch) {
-          const value = conditionalStack.pop();
-          if (value === undefined) state.logger.warn("unexpected #endif");
-        }
-
-        const evaluateLine =
-          conditionalStack.length == 0 ||
-          conditionalStack[conditionalStack.length - 1];
-        if (!evaluateLine) continue;
-
-        const ifdefRegex = /^\s*#ifdef\s+(\w+)/g;
-        const ifdefMatch = ifdefRegex.exec(line);
-
-        if (ifdefMatch) {
-          const value = ifdefMatch[1];
-          conditionalStack.push(state.preprocessorDefinitions.has(value));
-        } else {
-          state.logger.pushScope(`line ${lineIndex + 1}`);
-          const step = parseFragmentStep(line, state);
-          if (step.parts.length > 0) route.push(step);
-          state.logger.popScope();
-        }
+      if (endifMatch) {
+        const value = conditionalStack.pop();
+        if (value === undefined) state.logger.warn("unexpected #endif");
       }
 
-      if (conditionalStack.length != 0) state.logger.warn("expected #endif");
+      const evaluateLine =
+        conditionalStack.length == 0 ||
+        conditionalStack[conditionalStack.length - 1];
+      if (!evaluateLine) continue;
 
-      routes.push(route);
+      const ifdefRegex = /^\s*#ifdef\s+(\w+)/g;
+      const ifdefMatch = ifdefRegex.exec(line);
 
-      state.logger.popScope();
+      if (ifdefMatch) {
+        const value = ifdefMatch[1];
+        conditionalStack.push(state.preprocessorDefinitions.has(value));
+      } else {
+        state.logger.pushScope(`line ${lineIndex + 1}`);
+        const step = parseFragmentStep(line, state);
+        if (step.parts.length > 0) route.push(step);
+        state.logger.popScope();
+      }
     }
-  } catch (e) {
-    console.error(e);
+
+    if (conditionalStack.length != 0) state.logger.warn("expected #endif");
+
+    routes.push(route);
+
+    state.logger.popScope();
   }
 
   for (const waypoint of state.explicitWaypoints) {

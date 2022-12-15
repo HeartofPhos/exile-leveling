@@ -19,8 +19,8 @@ export interface AscendFragment {
 export function EvaluateTrial(
   rawFragment: RawFragment,
   state: RouteState
-): EvaluateResult {
-  if (rawFragment.length != 1) throw ERROR_INVALID_FORMAT;
+): EvaluateResult | string {
+  if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
   return {
     fragment: {
       type: "trial",
@@ -31,8 +31,8 @@ export function EvaluateTrial(
 export function EvaluateAscend(
   rawFragment: RawFragment,
   state: RouteState
-): EvaluateResult {
-  if (rawFragment.length != 2) throw ERROR_INVALID_FORMAT;
+): EvaluateResult | string {
+  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
   const expectedAreaId = "Labyrinth_Airlock";
   const currentArea = areas[state.currentAreaId];

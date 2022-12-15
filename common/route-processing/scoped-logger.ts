@@ -1,10 +1,21 @@
+interface Log {
+  type: "warning" | "error";
+  msg: string;
+}
+
+interface Sink {
+  warn: (msg: string) => void;
+  error: (msg: string) => void;
+  log: (msg: string) => void;
+}
+
 export class ScopedLogger {
   scopes: string[];
-  warnings: string[];
+  logs: Log[];
 
   constructor() {
-    this.warnings = [];
     this.scopes = [];
+    this.logs = [];
   }
 
   pushScope(scope: string) {
@@ -15,19 +26,40 @@ export class ScopedLogger {
     this.scopes.pop();
   }
 
-  warn(message: string) {
-    this.warnings.push(`${this.scopes.join(", ")}: ${message}`);
+  private scopesToString() {
+    return this.scopes.join(", ");
   }
 
-  drain(target: { warn: (msg: string) => void }) {
-    for (const msg of this.warnings) {
-      target.warn(msg);
+  warn(msg: string) {
+    this.logs.push({
+      type: "warning",
+      msg: `${this.scopesToString()}: ${msg}`,
+    });
+  }
+
+  error(msg: string) {
+    this.logs.push({ type: "error", msg: `${this.scopesToString()}: ${msg}` });
+  }
+
+  drain(sink: Sink) {
+    for (const log of this.logs) {
+      switch (log.type) {
+        case "warning":
+          sink.warn(log.msg);
+          break;
+        case "error":
+          sink.error(log.msg);
+          break;
+        default:
+          sink.log(log.msg);
+          break;
+      }
     }
-    this.warnings.length = 0;
+    this.logs.length = 0;
 
     if (this.scopes.length !== 0)
-      target.warn(
-        `expected 0 scopes got ${this.scopes.length}, ${this.scopes.join(", ")}`
+      sink.warn(
+        `expected 0 scopes got ${this.scopes.length}, ${this.scopesToString()}`
       );
   }
 }
