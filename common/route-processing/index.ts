@@ -31,8 +31,9 @@ export function parseRoute(routeSources: string[], state: RouteState) {
     const route: Route = [];
     for (let lineIndex = 0; lineIndex < routeLines.length; lineIndex++) {
       const line = routeLines[lineIndex];
-
       if (!line) continue;
+
+      state.logger.pushScope(`line ${lineIndex + 1}`);
 
       const endifRegex = /^\s*#endif/g;
       const endifMatch = endifRegex.exec(line);
@@ -45,20 +46,20 @@ export function parseRoute(routeSources: string[], state: RouteState) {
       const evaluateLine =
         conditionalStack.length == 0 ||
         conditionalStack[conditionalStack.length - 1];
-      if (!evaluateLine) continue;
+      if (evaluateLine) {
+        const ifdefRegex = /^\s*#ifdef\s+(\w+)/g;
+        const ifdefMatch = ifdefRegex.exec(line);
 
-      const ifdefRegex = /^\s*#ifdef\s+(\w+)/g;
-      const ifdefMatch = ifdefRegex.exec(line);
-
-      if (ifdefMatch) {
-        const value = ifdefMatch[1];
-        conditionalStack.push(state.preprocessorDefinitions.has(value));
-      } else {
-        state.logger.pushScope(`line ${lineIndex + 1}`);
-        const step = parseFragmentStep(line, state);
-        if (step.parts.length > 0) route.push(step);
-        state.logger.popScope();
+        if (ifdefMatch) {
+          const value = ifdefMatch[1];
+          conditionalStack.push(state.preprocessorDefinitions.has(value));
+        } else {
+          const step = parseFragmentStep(line, state);
+          if (step.parts.length > 0) route.push(step);
+        }
       }
+
+      state.logger.popScope();
     }
 
     if (conditionalStack.length != 0) state.logger.warn("expected #endif");

@@ -26,19 +26,23 @@ export class ScopedLogger {
     this.scopes.pop();
   }
 
-  private scopesToString() {
-    return this.scopes.join(", ");
+  private buildPrefix() {
+    if (this.scopes.length > 0) return `${this.scopes.join(", ")}: `;
+    return "";
   }
 
   warn(msg: string) {
     this.logs.push({
       type: "warning",
-      msg: `${this.scopesToString()}: ${msg}`,
+      msg: `${this.buildPrefix()}${msg}`,
     });
   }
 
   error(msg: string) {
-    this.logs.push({ type: "error", msg: `${this.scopesToString()}: ${msg}` });
+    this.logs.push({
+      type: "error",
+      msg: `${this.buildPrefix()}${msg}`,
+    });
   }
 
   drain(sink: Sink) {
@@ -59,7 +63,7 @@ export class ScopedLogger {
 
     if (this.scopes.length !== 0)
       sink.warn(
-        `expected 0 scopes got ${this.scopes.length}, ${this.scopesToString()}`
+        `expected 0 scopes got ${this.scopes.length}, ${this.scopes.join(", ")}`
       );
   }
 }
