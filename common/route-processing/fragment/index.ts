@@ -49,7 +49,7 @@ export function parseFragmentStep(text: string, state: RouteState) {
       step.parts.push(subStep);
     } else {
       const result = evaluateFragment(subStep, state);
-      if (typeof result == "string") console.log(`${result}: ${subStep}`);
+      if (typeof result === "string") state.logger.error(result);
       else step.parts.push(result.fragment);
     }
   }
@@ -205,8 +205,9 @@ function EvaluateEnter(
 
   const area = areas[rawFragment[1]];
   if (!area) return ERROR_MISSING_AREA;
+
   if (!area.connection_ids.some((x) => x == state.currentAreaId))
-    return "not connected to current area";
+    state.logger.warn("not connected to current area");
 
   transitionArea(state, area);
 
@@ -252,10 +253,10 @@ function EvaluateWaypoint(
         !state.implicitWaypoints.has(area.id) &&
         !state.explicitWaypoints.has(area.id)
       )
-        return "missing target waypoint";
+        state.logger.warn("missing target waypoint");
 
       const currentArea = areas[state.currentAreaId];
-      if (!currentArea.has_waypoint) return ERROR_AREA_NO_WAYPOINT;
+      if (!currentArea.has_waypoint) state.logger.warn(ERROR_AREA_NO_WAYPOINT);
 
       state.implicitWaypoints.add(currentArea.id);
       state.usedWaypoints.add(area.id);
@@ -281,8 +282,9 @@ function EvaluateGetWaypoint(
 
   const area = areas[state.currentAreaId];
   if (!area) return ERROR_MISSING_AREA;
-  if (!area.has_waypoint) return ERROR_AREA_NO_WAYPOINT;
-  if (state.implicitWaypoints.has(area.id)) return "waypoint already acquired";
+  if (!area.has_waypoint) state.logger.warn(ERROR_AREA_NO_WAYPOINT);
+  if (state.implicitWaypoints.has(area.id))
+    state.logger.warn("waypoint already acquired");
 
   state.explicitWaypoints.add(area.id);
 

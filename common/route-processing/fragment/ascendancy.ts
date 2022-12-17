@@ -38,7 +38,7 @@ export function EvaluateAscend(
   const currentArea = areas[state.currentAreaId];
   if (currentArea.id != expectedAreaId) {
     const expectedArea = areas[expectedAreaId];
-    return `must be in "${expectedArea.name}"`;
+    state.logger.warn(`must be in "${expectedArea.name}"`);
   }
 
   const townArea = areas[state.lastTownAreaId];
@@ -47,7 +47,7 @@ export function EvaluateAscend(
   return {
     fragment: {
       type: "ascend",
-      //@ts-ignore
+      //@ts-expect-error
       version: rawFragment[1],
     },
   };
