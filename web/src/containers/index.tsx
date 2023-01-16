@@ -4,8 +4,8 @@ import { Route, Routes } from "react-router-dom";
 import { ErrorFallback } from "../components/ErrorFallback";
 import { Navbar } from "../components/Navbar";
 
-const BuildContainer = lazy(() => import("./Build"));
 const RoutesContainer = lazy(() => import("./Routes"));
+const BuildContainer = lazy(() => import("./Build"));
 const EditRouteContainer = lazy(() => import("./EditRoute"));
 
 export function App() {
