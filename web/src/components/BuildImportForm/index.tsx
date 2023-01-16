@@ -67,7 +67,7 @@ export function BuildImportForm({ onSubmit, onReset }: BuildFormProps) {
       <div className={classNames(formStyles.groupRight)}>
         <button
           className={classNames(formStyles.formButton)}
-          onClick={async () => {
+          onClick={() => {
             onReset();
             setPobCodeOrUrl("");
           }}

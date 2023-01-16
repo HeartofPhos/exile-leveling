@@ -7,7 +7,7 @@ import { ActHolder } from "../../components/ActHolder";
 import { ExileFragmentStep } from "../../components/ExileFragment";
 import { buildRouteSelector } from "../../state";
 import { gemProgressSelectorFamily } from "../../state/gem-progress";
-import { routeProgressSelectorFamily } from "../../state/route-progress";
+import { routeProgressSelectorFamily } from "../../state/route";
 import { Sidebar } from "../../components/Sidebar";
 
 function RoutesContainer() {

@@ -9,7 +9,7 @@ import classNames from "classnames";
 
 import styles from "./Build.module.css";
 
-function Build() {
+function BuildContainer() {
   const [buildData, setBuildData] = useRecoilState(buildDataSelector);
   const resetBuildData = useResetRecoilState(buildDataSelector);
   const [searchStrings, setSearchStrings] = useRecoilState(searchStringsAtom);
@@ -73,4 +73,4 @@ function Build() {
   );
 }
 
-export default withScrollRestoration(Build);
+export default withScrollRestoration(BuildContainer);

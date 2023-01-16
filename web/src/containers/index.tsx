@@ -4,8 +4,9 @@ import { Route, Routes } from "react-router-dom";
 import { ErrorFallback } from "../components/ErrorFallback";
 import { Navbar } from "../components/Navbar";
 
-const Build = lazy(() => import("./Build"));
+const BuildContainer = lazy(() => import("./Build"));
 const RoutesContainer = lazy(() => import("./Routes"));
+const EditRouteContainer = lazy(() => import("./EditRoute"));
 
 export function App() {
   return (
@@ -14,7 +15,8 @@ export function App() {
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <Routes>
           <Route path="/" element={<RoutesContainer />} />
-          <Route path="/build" element={<Build />} />
+          <Route path="/build" element={<BuildContainer />} />
+          <Route path="/edit-route" element={<EditRouteContainer />} />
         </Routes>
       </ErrorBoundary>
     </>
