@@ -1,5 +1,31 @@
-import { atomFamily, selectorFamily, useRecoilCallback } from "recoil";
+import { atom, atomFamily, selectorFamily, useRecoilCallback } from "recoil";
+import { persistentStorageEffect } from ".";
 import { clearPersistent, getPersistent, setPersistent } from "../utility";
+
+async function loadDefaultRouteFiles() {
+  const { routeFilesLookup } = await import("../../../common/data");
+
+  const routeFiles = [
+    routeFilesLookup["./routes/act-1.txt"],
+    routeFilesLookup["./routes/act-2.txt"],
+    routeFilesLookup["./routes/act-3.txt"],
+    routeFilesLookup["./routes/act-4.txt"],
+    routeFilesLookup["./routes/act-5.txt"],
+    routeFilesLookup["./routes/act-6.txt"],
+    routeFilesLookup["./routes/act-7.txt"],
+    routeFilesLookup["./routes/act-8.txt"],
+    routeFilesLookup["./routes/act-9.txt"],
+    routeFilesLookup["./routes/act-10.txt"],
+  ];
+
+  return routeFiles;
+}
+
+export const routeFilesAtom = atom<string[]>({
+  key: "routeFilesAtom",
+  default: getPersistent("route-files") || loadDefaultRouteFiles(),
+  effects: [persistentStorageEffect("route-files")],
+});
 
 const routeProgress = new Set<string>(
   getPersistent<string[]>("route-progress")

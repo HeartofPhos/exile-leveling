@@ -2,8 +2,9 @@ import { AtomEffect, selector } from "recoil";
 import { clearPersistent, setPersistent } from "../utility";
 import { Route } from "../../../common/route-processing";
 import { buildDataSelector } from "./build-data";
+import { routeFilesAtom } from "./route";
 
-export function persistentStorageEffect<T>(key: string): AtomEffect<T | null> {
+export function persistentStorageEffect<T>(key: string): AtomEffect<T> {
   return ({ onSet }) => {
     onSet((newValue, _, isReset) => {
       if (isReset || newValue == null) clearPersistent(key);
@@ -18,7 +19,7 @@ const baseRouteSelector = selector({
     const { initializeRouteState, parseRoute } = await import(
       "../../../common/route-processing"
     );
-    const { routeFilesLookup } = await import("../../../common/data");
+
     const buildData = get(buildDataSelector);
 
     const routeState = initializeRouteState();
@@ -45,18 +46,7 @@ const baseRouteSelector = selector({
         break;
     }
 
-    const routeFiles = [
-      routeFilesLookup["./routes/act-1.txt"],
-      routeFilesLookup["./routes/act-2.txt"],
-      routeFilesLookup["./routes/act-3.txt"],
-      routeFilesLookup["./routes/act-4.txt"],
-      routeFilesLookup["./routes/act-5.txt"],
-      routeFilesLookup["./routes/act-6.txt"],
-      routeFilesLookup["./routes/act-7.txt"],
-      routeFilesLookup["./routes/act-8.txt"],
-      routeFilesLookup["./routes/act-9.txt"],
-      routeFilesLookup["./routes/act-10.txt"],
-    ];
+    const routeFiles = get(routeFilesAtom);
 
     return {
       routes: parseRoute(routeFiles, routeState),

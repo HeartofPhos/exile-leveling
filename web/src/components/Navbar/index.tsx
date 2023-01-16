@@ -11,7 +11,7 @@ import {
 } from "react-icons/fa";
 import { useRecoilCallback } from "recoil";
 import { buildRouteSelector } from "../../state";
-import { useClearRouteProgress } from "../../state/route-progress";
+import { useClearRouteProgress } from "../../state/route";
 import { useClearGemProgress } from "../../state/gem-progress";
 
 import styles from "./Navbar.module.css";
@@ -118,6 +118,15 @@ export function Navbar({}: NavbarProps) {
             >
               {acts}
             </NavAccordion>
+            <NavbarItem
+              label={`Edit Route`}
+              expand={navExpand}
+              icon={<FaTools className={classNames("inlineIcon")} />}
+              onClick={() => {
+                navigate(`/edit-route`);
+                setNavExpand(false);
+              }}
+            />
             <NavbarItem
               label="Reset Progress"
               expand={navExpand}
