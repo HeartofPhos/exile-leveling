@@ -110,6 +110,11 @@
               "Templar"
             ]
           },
+          "Metadata/Items/Gems/SkillGemShieldCrush": {
+            "classes": [
+              "Marauder"
+            ]
+          },
           "Metadata/Items/Gems/SkillGemSmite": {
             "classes": [
               "Templar"
@@ -1974,6 +1979,12 @@
             "classes": [
               "Witch",
               "Shadow"
+            ]
+          },
+          "Metadata/Items/Gems/SkillGemVolcanicFissure": {
+            "classes": [
+              "Marauder",
+              "Duelist"
             ]
           },
           "Metadata/Items/Gems/SkillGemVoltaxicBurst": {
@@ -5513,6 +5524,10 @@
             "classes": [],
             "npc": "Siosa"
           },
+          "Metadata/Items/Gems/SupportGemCursedGround": {
+            "classes": [],
+            "npc": "Siosa"
+          },
           "Metadata/Items/Gems/SkillGemCyclone": {
             "classes": [],
             "npc": "Siosa"
@@ -5874,15 +5889,8 @@
             "npc": "Siosa"
           },
           "Metadata/Items/Gems/SupportGemDamageAgainstChilled": {
-            "classes": [
-              "Duelist",
-              "Ranger",
-              "Scion",
-              "Shadow",
-              "Templar",
-              "Witch"
-            ],
-            "npc": "Clarissa"
+            "classes": [],
+            "npc": "Siosa"
           },
           "Metadata/Items/Gems/SupportGemFrenzyChargeOnSlayingFrozenEnemy": {
             "classes": [],
@@ -6779,6 +6787,11 @@
               "Scion"
             ]
           },
+          "Metadata/Items/Gems/SupportGemHexBloom": {
+            "classes": [
+              "Witch"
+            ]
+          },
           "Metadata/Items/Gems/SupportGemIgniteProliferation": {
             "classes": [
               "Templar"
@@ -6808,7 +6821,6 @@
           },
           "Metadata/Items/Gems/SupportGemMultiTotem": {
             "classes": [
-              "Witch",
               "Templar",
               "Marauder"
             ]
@@ -6961,6 +6973,14 @@
             "classes": [],
             "npc": "Petarus and Vanja"
           },
+          "Metadata/Items/Gems/SupportGemHexBloom": {
+            "classes": [
+              "Witch",
+              "Shadow",
+              "Scion"
+            ],
+            "npc": "Petarus and Vanja"
+          },
           "Metadata/Items/Gems/SupportGemCurseOnHit": {
             "classes": [],
             "npc": "Petarus and Vanja"
@@ -7068,6 +7088,11 @@
               "Templar",
               "Shadow",
               "Scion"
+            ]
+          },
+          "Metadata/Items/Gems/SkillGemFrozenLegion": {
+            "classes": [
+              "Templar"
             ]
           },
           "Metadata/Items/Gems/SkillGemHydrosphere": {
@@ -7214,6 +7239,15 @@
               "Witch",
               "Templar",
               "Shadow",
+              "Scion"
+            ],
+            "npc": "Petarus and Vanja"
+          },
+          "Metadata/Items/Gems/SkillGemFrozenLegion": {
+            "classes": [
+              "Duelist",
+              "Marauder",
+              "Templar",
               "Scion"
             ],
             "npc": "Petarus and Vanja"
@@ -7523,7 +7557,130 @@
     "act": "5",
     "reward_offers": [
       {
-        "quest": {},
+        "quest": {
+          "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/OneHandMace10": {
+            "classes": [
+              "Duelist",
+              "Marauder",
+              "Templar"
+            ]
+          },
+          "Metadata/Items/Quivers/QuiverNew6": {
+            "classes": [
+              "Ranger",
+              "Shadow",
+              "Scion"
+            ]
+          },
+          "Metadata/Items/Weapons/OneHandWeapons/OneHandThrustingSwords/Rapier10": {
+            "classes": [
+              "Ranger"
+            ]
+          },
+          "Metadata/Items/Weapons/OneHandWeapons/Daggers/Dagger10": {
+            "classes": [
+              "Ranger",
+              "Shadow",
+              "Witch"
+            ]
+          },
+          "Metadata/Items/Weapons/OneHandWeapons/OneHandSwords/OneHandSword10": {
+            "classes": [
+              "Duelist",
+              "Marauder",
+              "Ranger"
+            ]
+          },
+          "Metadata/Items/Weapons/TwoHandWeapons/Bows/Bow10": {
+            "classes": [
+              "Duelist",
+              "Ranger",
+              "Shadow",
+              "Scion"
+            ]
+          },
+          "Metadata/Items/Armours/Shields/ShieldStrInt6": {
+            "classes": [
+              "Templar"
+            ]
+          },
+          "Metadata/Items/Weapons/OneHandWeapons/Claws/Claw10": {
+            "classes": [
+              "Shadow",
+              "Witch"
+            ]
+          },
+          "Metadata/Items/Weapons/TwoHandWeapons/TwoHandAxes/TwoHandAxe10": {
+            "classes": [
+              "Marauder"
+            ]
+          },
+          "Metadata/Items/Weapons/TwoHandWeapons/TwoHandSwords/TwoHandSword10": {
+            "classes": [
+              "Duelist",
+              "Scion"
+            ]
+          },
+          "Metadata/Items/Armours/Shields/ShieldStrDex6": {
+            "classes": [
+              "Duelist"
+            ]
+          },
+          "Metadata/Items/Weapons/TwoHandWeapons/Staves/Staff10": {
+            "classes": [
+              "Templar",
+              "Witch",
+              "Scion"
+            ]
+          },
+          "Metadata/Items/Armours/Shields/ShieldDex7": {
+            "classes": [
+              "Ranger"
+            ]
+          },
+          "Metadata/Items/Armours/Shields/ShieldStr7": {
+            "classes": [
+              "Marauder"
+            ]
+          },
+          "Metadata/Items/Armours/Shields/ShieldDexInt6": {
+            "classes": [
+              "Shadow"
+            ]
+          },
+          "Metadata/Items/Weapons/OneHandWeapons/OneHandMaces/Sceptre10": {
+            "classes": [
+              "Templar",
+              "Witch"
+            ]
+          },
+          "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand10": {
+            "classes": [
+              "Shadow",
+              "Templar",
+              "Witch",
+              "Scion"
+            ]
+          },
+          "Metadata/Items/Weapons/TwoHandWeapons/TwoHandMaces/TwoHandMace10": {
+            "classes": [
+              "Marauder",
+              "Templar"
+            ]
+          },
+          "Metadata/Items/Weapons/OneHandWeapons/OneHandAxes/OneHandAxe10": {
+            "classes": [
+              "Duelist",
+              "Marauder",
+              "Scion"
+            ]
+          },
+          "Metadata/Items/Armours/Shields/ShieldInt7": {
+            "classes": [
+              "Witch"
+            ]
+          }
+        },
         "vendor": {}
       }
     ]
@@ -8024,6 +8181,10 @@
             "classes": [],
             "npc": "Lilly Roth"
           },
+          "Metadata/Items/Gems/SupportGemCursedGround": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
           "Metadata/Items/Gems/SkillGemCyclone": {
             "classes": [],
             "npc": "Lilly Roth"
@@ -8320,6 +8481,10 @@
             "classes": [],
             "npc": "Lilly Roth"
           },
+          "Metadata/Items/Gems/SkillGemFrozenLegion": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
           "Metadata/Items/Gems/SkillGemShrapnelShot": {
             "classes": [],
             "npc": "Lilly Roth"
@@ -8385,6 +8550,10 @@
             "npc": "Lilly Roth"
           },
           "Metadata/Items/Gems/SkillGemHeraldOfThunder": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
+          "Metadata/Items/Gems/SupportGemHexBloom": {
             "classes": [],
             "npc": "Lilly Roth"
           },
