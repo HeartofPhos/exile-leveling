@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { TaskItemProps } from "../../components/TaskList";
-import { GemReward } from "../../components/GemReward";
+import { GemReward } from "../../components/ItemReward";
 import { withScrollRestoration } from "../../utility/withScrollRestoration";
 import { useRecoilValue } from "recoil";
 import { ActHolder } from "../../components/ActHolder";
@@ -38,7 +38,7 @@ function RoutesContainer() {
             <GemReward
               key={taskItems.length}
               requiredGem={step.requiredGem}
-              type={step.rewardType}
+              rewardType={step.rewardType}
             />
           ),
         });

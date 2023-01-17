@@ -1,17 +1,18 @@
 import classNames from "classnames";
 import { MdCircle } from "react-icons/md";
 import { RequiredGem } from "../../../../common/route-processing";
-import styles from "./GemReward.module.css";
 import { gems, gemColours } from "../../../../common/data";
 import { InlineFakeBlock } from "../InlineFakeBlock";
 import { taskStyle } from "../TaskList";
 import { SplitRow } from "../SplitRow";
 
+import styles from "./ItemReward.module.css";
+
 function getImageUrl(path: string) {
   return new URL(`./images/${path}`, import.meta.url).href;
 }
 
-function GemRewardVerb(type: GemRewardProps["type"]) {
+function ItemRewardVerb(type: ItemRewardProps["rewardType"]) {
   switch (type) {
     case "quest":
       return <span>Take </span>;
@@ -22,12 +23,35 @@ function GemRewardVerb(type: GemRewardProps["type"]) {
   }
 }
 
-interface GemRewardProps {
-  requiredGem: RequiredGem;
-  type?: "quest" | "vendor";
+interface ItemRewardProps {
+  item: string;
+  rewardType?: "quest" | "vendor";
+  cost?: string;
 }
 
-export function GemReward({ requiredGem, type }: GemRewardProps) {
+export function ItemReward({ item, cost, rewardType }: ItemRewardProps) {
+  return (
+    <>
+      {ItemRewardVerb(rewardType)}
+      <span className={classNames(styles.default)}>{item}</span>
+      {rewardType === "vendor" && cost !== undefined && (
+        <div className={classNames(styles.noWrap)}>
+          <span> for </span>
+          <InlineFakeBlock
+            child={<img src={getImageUrl(`${cost}.png`)} alt="" />}
+          />
+        </div>
+      )}
+    </>
+  );
+}
+
+interface GemRewardProps {
+  requiredGem: RequiredGem;
+  rewardType?: ItemRewardProps["rewardType"];
+}
+
+export function GemReward({ requiredGem, rewardType }: GemRewardProps) {
   const gem = gems[requiredGem.id];
 
   if (!gem)
@@ -46,16 +70,7 @@ export function GemReward({ requiredGem, type }: GemRewardProps) {
             color={gemColours[gem.primary_attribute]}
             className={classNames("inlineIcon")}
           />
-          {GemRewardVerb(type)}
-          <span className={classNames(styles.default)}>{gem.name}</span>
-          {type === "vendor" && (
-            <div className={classNames(styles.noWrap)}>
-              <span> for </span>
-              <InlineFakeBlock
-                child={<img src={getImageUrl(`${gem.cost}.png`)} alt="" />}
-              />
-            </div>
-          )}
+          <ItemReward item={gem.name} cost={gem.cost} rewardType={rewardType} />
         </>
       }
       right={

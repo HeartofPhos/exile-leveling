@@ -19,6 +19,7 @@ import { quests, areas } from "../../../../common/data";
 import { SplitRow } from "../SplitRow";
 import { taskStyle } from "../TaskList";
 import { QuestFragment } from "../../../../common/route-processing/fragment/quest";
+import { ItemReward } from "../ItemReward";
 
 import styles from "./ExileFragment.module.css";
 
@@ -241,6 +242,16 @@ export function ExileFragment({ fragment }: FragmentProps) {
       return DirectionComponent(fragment.dirIndex);
     case "generic":
       return GenericComponent(fragment.value);
+    case "quest_reward":
+      return <ItemReward item={fragment.item} rewardType="quest" />;
+    case "vendor_reward":
+      return (
+        <ItemReward
+          item={fragment.item}
+          cost={fragment.cost}
+          rewardType="vendor"
+        />
+      );
     case "crafting":
       return CraftingComponent(fragment.crafting_recipes);
     case "ascend":

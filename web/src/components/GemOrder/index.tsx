@@ -3,7 +3,7 @@ import { HiChevronDoubleUp, HiChevronDown, HiChevronUp } from "react-icons/hi";
 import { MdDeleteOutline } from "react-icons/md";
 import styles from "./GemOrder.module.css";
 
-import { GemReward } from "../GemReward";
+import { GemReward } from "../ItemReward";
 import { RequiredGem } from "../../../../common/route-processing";
 import { InlineFakeBlock } from "../InlineFakeBlock";
 

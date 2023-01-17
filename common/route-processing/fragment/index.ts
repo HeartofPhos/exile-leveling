@@ -82,6 +82,8 @@ export type Fragment =
   | QuestFragment
   | QuestTextFragment
   | GenericFragment
+  | QuestRewardFragment
+  | VendorRewardFragment
   | TrialFragment
   | AscendFragment
   | DirectionFragment
@@ -124,6 +126,17 @@ interface GetWaypointFragment {
 interface GenericFragment {
   type: "generic";
   value: string;
+}
+
+interface QuestRewardFragment {
+  type: "quest_reward";
+  item: string;
+}
+
+interface VendorRewardFragment {
+  type: "vendor_reward";
+  item: string;
+  cost: string;
 }
 
 interface PortalFragment {
@@ -344,6 +357,35 @@ function EvaluatePortal(
   return ERROR_INVALID_FORMAT;
 }
 
+function EvaluateQuestReward(
+  rawFragment: RawFragment,
+  state: RouteState
+): string | EvaluateResult {
+  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
+
+  return {
+    fragment: {
+      type: "quest_reward",
+      item: rawFragment[1],
+    },
+  };
+}
+
+function EvaluateVendorReward(
+  rawFragment: RawFragment,
+  state: RouteState
+): string | EvaluateResult {
+  if (rawFragment.length != 3) return ERROR_INVALID_FORMAT;
+
+  return {
+    fragment: {
+      type: "vendor_reward",
+      item: rawFragment[1],
+      cost: rawFragment[2],
+    },
+  };
+}
+
 function EvaluateGeneric(
   rawFragment: RawFragment,
   state: RouteState
@@ -436,6 +478,10 @@ export function evaluateFragment(
       return EvaluateQuestText(rawFragment, state);
     case "generic":
       return EvaluateGeneric(rawFragment, state);
+    case "quest_reward":
+      return EvaluateQuestReward(rawFragment, state);
+    case "vendor_reward":
+      return EvaluateVendorReward(rawFragment, state);
     case "trial":
       return EvaluateTrial(rawFragment, state);
     case "ascend":
