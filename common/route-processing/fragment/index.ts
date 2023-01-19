@@ -7,6 +7,7 @@ import {
   EvaluateTrial,
   TrialFragment,
 } from "./ascendancy";
+import { matchPatterns, Pattern } from "./patterns";
 import {
   EvaluateQuest,
   EvaluateQuestText,
@@ -14,30 +15,49 @@ import {
   QuestTextFragment,
 } from "./quest";
 
-export type RawFragment = string[];
-export type RawFragmentStep = (string | RawFragment)[];
+export type RawFragment = string | string[];
+export type RawFragmentStep = RawFragment[];
+
+const PATTERNS: Pattern[] = [
+  // Comment
+  {
+    regex: /(\s*#.*)/g,
+    processor: () => null,
+  },
+  // Text
+  {
+    regex: /[^{#]+/g,
+    processor: (match: RegExpExecArray) => {
+      return match[0];
+    },
+  },
+  // Fragment
+  {
+    regex: /\{(.+?)\}/g,
+    processor: (match: RegExpExecArray) => {
+      const split = match[1].split("|");
+      return split;
+    },
+  },
+];
 
 export function parseFragmentStep(text: string, state: RouteState) {
   text = text.trim();
   const rawFragmentStep: RawFragmentStep = [];
 
-  const regex = /(\s*#.*)|([^{#]+)|\{(.+?)\}/g;
-  const matches = text.matchAll(regex);
-  for (const match of matches) {
-    const commentMatch = match[1];
-    if (commentMatch) continue;
+  let currentIndex = 0;
+  do {
+    const matchResult = matchPatterns(text, currentIndex, PATTERNS);
 
-    const textMatch = match[2];
-    if (textMatch) {
-      rawFragmentStep.push(textMatch);
+    if (matchResult) {
+      currentIndex = matchResult.lastIndex;
+      if (matchResult.rawFragment)
+        rawFragmentStep.push(matchResult.rawFragment);
+    } else {
+      state.logger.warn("incomplete match");
+      break;
     }
-
-    const fragmentMatch = match[3];
-    if (fragmentMatch) {
-      const split = fragmentMatch.split("|");
-      rawFragmentStep.push(split);
-    }
-  }
+  } while (currentIndex < text.length);
 
   const step: FragmentStep = {
     type: "fragment_step",
