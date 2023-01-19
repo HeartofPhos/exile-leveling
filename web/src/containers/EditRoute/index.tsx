@@ -2,13 +2,13 @@ import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { useRecoilState, useResetRecoilState } from "recoil";
 import { Form, formStyles } from "../../components/Form";
-import { routeFilesAtom } from "../../state/route";
+import { routeFilesSelector } from "../../state/route";
 
 import styles from "./EditRoute.module.css";
 
 export default function EditRouteContainer() {
-  const [routeFiles, setRouteFiles] = useRecoilState(routeFilesAtom);
-  const resetRouteFiles = useResetRecoilState(routeFilesAtom);
+  const [routeFiles, setRouteFiles] = useRecoilState(routeFilesSelector);
+  const resetRouteFiles = useResetRecoilState(routeFilesSelector);
 
   return (
     <RouteEditor
