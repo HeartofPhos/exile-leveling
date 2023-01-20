@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { useRecoilState, useResetRecoilState } from "recoil";
-import { Form, formStyles } from "../../components/Form";
+import { formStyles } from "../../components/Form";
 import { routeFilesSelector } from "../../state/route";
 import Editor from "react-simple-code-editor";
 import { highlight, Grammar } from "prismjs";
@@ -75,7 +75,7 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
 
   return (
     <>
-      <Form>
+      <div className={classNames(formStyles.form, styles.workspaceForm)}>
         <div className={classNames(styles.workspace)}>
           <div className={classNames(styles.fileList)}>{fileListItems}</div>
           <div className={classNames(formStyles.formInput, styles.editor)}>
@@ -113,7 +113,7 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
             Save
           </button>
         </div>
-      </Form>
+      </div>
       <hr />
     </>
   );

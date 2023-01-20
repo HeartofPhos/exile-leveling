@@ -4,7 +4,7 @@ import { withScrollRestoration } from "../../utility/withScrollRestoration";
 import { buildDataSelector } from "../../state/build-data";
 import { searchStringsAtom } from "../../state/search-strings";
 import { BuildInfoForm, GemOrderList } from "../../components/BuildEditForm";
-import { Form, formStyles } from "../../components/Form";
+import { formStyles } from "../../components/Form";
 import classNames from "classnames";
 
 import styles from "./Build.module.css";
@@ -23,7 +23,7 @@ function BuildContainer() {
         }}
       />
       <hr />
-      <Form>
+      <div className={classNames(formStyles.form)}>
         <div className={classNames(formStyles.formRow)}>
           <label>
             Search Strings {"("}
@@ -48,7 +48,7 @@ function BuildContainer() {
             }}
           />
         </div>
-      </Form>
+      </div>
       <BuildImportForm
         onSubmit={(buildData) => {
           setBuildData(buildData);

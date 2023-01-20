@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { useState } from "react";
 import { BuildData } from "../../../../common/route-processing";
-import { Form, formStyles } from "../Form";
+import { formStyles } from "../Form";
 import { processPob } from "./pob";
 
 import styles from "./BuildImportForm.module.css";
@@ -54,7 +54,7 @@ export function BuildImportForm({ onSubmit, onReset }: BuildFormProps) {
   const [pobCodeOrUrl, setPobCodeOrUrl] = useState<string>();
 
   return (
-    <Form>
+    <div className={classNames(formStyles.form)}>
       <div className={classNames(formStyles.formRow)}>
         <label>Path of Building Code</label>
         <textarea
@@ -99,6 +99,6 @@ export function BuildImportForm({ onSubmit, onReset }: BuildFormProps) {
           Import Build
         </button>
       </div>
-    </Form>
+    </div>
   );
 }

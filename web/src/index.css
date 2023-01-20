@@ -57,6 +57,7 @@ hr {
   margin: 0 auto;
   position: relative;
   max-width: 1280px;
+  min-height: 100vh;
   padding-left: var(--size-2);
   padding-right: var(--size-2);
   padding-bottom: var(--size-2);

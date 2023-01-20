@@ -1,6 +1,11 @@
+.workspaceForm {
+  flex-grow: 1;
+}
+
 .workspace {
   display: flex;
-  height: 30rem;
+  height: 15rem;
+  flex-grow: 1;
 }
 
 .editor {
