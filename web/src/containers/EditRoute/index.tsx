@@ -22,7 +22,7 @@ const RouteGrammar: Grammar = {
     pattern: /\{(.+?)\}/,
     inside: {
       keyword: { pattern: /(\{)\w+/, lookbehind: true },
-      punctuation: /[\|{}]/,
+      "keyword control-flow": /[\|{}]/,
       property: /.+/,
     },
   },
@@ -88,7 +88,7 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
                 if (value) return highlight(value, RouteGrammar, "");
                 return value;
               }}
-              style={{ fontFamily: "Consolas", height: "100%" }}
+              style={{ fontFamily: "Consolas", minHeight: "100%" }}
             />
           </div>
         </div>
