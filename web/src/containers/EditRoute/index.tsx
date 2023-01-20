@@ -57,25 +57,29 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
 
   console.log(routeFiles[0].split("\n")[0]);
 
+  const fileListItems = [];
+  for (let i = 0; i < workingRouteFiles.length; i++) {
+    fileListItems.push(
+      <div
+        key={i}
+        className={classNames("borderListItem", styles.fileListItem, {
+          [styles.selected]: selectedIndex === i,
+        })}
+        onClick={() => {
+          setSelectedIndex(i);
+        }}
+      >
+        Act {i + 1}
+        {workingRouteFiles[i] !== routeFiles[i] && "*"}
+      </div>
+    );
+  }
+
   return (
     <>
       <Form>
         <div className={classNames(styles.workspace)}>
-          <div className={classNames(styles.fileList)}>
-            {workingRouteFiles.map((x, i) => (
-              <div
-                key={i}
-                className={classNames("borderListItem", styles.fileListItem, {
-                  [styles.selected]: selectedIndex === i,
-                })}
-                onClick={() => {
-                  setSelectedIndex(i);
-                }}
-              >
-                Act {i + 1}
-              </div>
-            ))}
-          </div>
+          <div className={classNames(styles.fileList)}>{fileListItems}</div>
           <div className={classNames(formStyles.formInput, styles.editor)}>
             <Editor
               value={workingRouteFiles[selectedIndex]}
