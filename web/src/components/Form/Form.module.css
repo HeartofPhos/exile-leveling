@@ -50,6 +50,6 @@
 
 @media (hover: hover) {
   .formButton:hover {
-    background-color: var(--accent-secondary);
+    background-color: var(--highlight);
   }
 }

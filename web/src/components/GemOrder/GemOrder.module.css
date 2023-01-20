@@ -15,6 +15,6 @@
 
 @media (hover: hover) {
   .orderButton:hover {
-    background-color: var(--accent-secondary);
+    background-color: var(--highlight);
   }
 }
