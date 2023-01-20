@@ -55,8 +55,6 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
     setWorkingRouteFiles(routeFiles);
   }, [routeFiles]);
 
-  console.log(routeFiles[0].split("\n")[0]);
-
   const fileListItems = [];
   for (let i = 0; i < workingRouteFiles.length; i++) {
     fileListItems.push(
