@@ -55,6 +55,8 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
     setWorkingRouteFiles(routeFiles);
   }, [routeFiles]);
 
+  console.log(routeFiles[0].split("\n")[0]);
+
   return (
     <>
       <Form>
@@ -86,7 +88,7 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
                 if (value) return highlight(value, RouteGrammar, "");
                 return value;
               }}
-              style={{ fontFamily: "Consolas" }}
+              style={{ fontFamily: "Consolas", height: "100%" }}
             />
           </div>
         </div>
@@ -94,6 +96,7 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
           <button
             className={classNames(formStyles.formButton)}
             onClick={() => {
+              setWorkingRouteFiles([...routeFiles]);
               onReset();
             }}
           >
