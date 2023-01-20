@@ -90,7 +90,7 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
                 if (value) return highlight(value, RouteGrammar, "");
                 return value;
               }}
-              style={{ fontFamily: "Consolas", minHeight: "100%" }}
+              style={{ fontFamily: "'Consolas', monospace", minHeight: "100%" }}
             />
           </div>
         </div>
