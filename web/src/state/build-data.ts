@@ -28,16 +28,15 @@ export const buildDataSelector = selector<BuildData>({
   set: ({ set }, newValue) => {
     if (newValue instanceof DefaultValue) {
       set(buildDataAtom, null);
-      return;
-    }
+    } else {
+      set(buildDataAtom, newValue);
 
-    set(buildDataAtom, newValue);
+      for (const key of gemProgressKeys()) {
+        const exists =
+          newValue?.requiredGems.find((x) => x.uid == key) !== undefined;
 
-    for (const key of gemProgressKeys()) {
-      const exists =
-        newValue?.requiredGems.find((x) => x.uid == key) !== undefined;
-
-      if (!exists) set(gemProgressSelectorFamily(key), false);
+        if (!exists) set(gemProgressSelectorFamily(key), false);
+      }
     }
   },
 });
