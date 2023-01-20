@@ -19,9 +19,9 @@ const RouteGrammar: Grammar = {
   variable: { pattern: /#ifdef \w+/, lookbehind: true },
   comment: /#.*/,
   fragment: {
-    pattern: /\{(.+?)\}/,
+    pattern: /\{(.*)\}?/,
     inside: {
-      keyword: { pattern: /(\{)\w+/, lookbehind: true },
+      keyword: { pattern: /(\{)(\w|\s)+/, lookbehind: true },
       "keyword control-flow": /[\|{}]/,
       property: /.+/,
     },
@@ -86,10 +86,10 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
                 updatedRouteFiles[selectedIndex] = value;
                 setWorkingRouteFiles(updatedRouteFiles);
               }}
-              highlight={(value) => {
-                if (value) return highlight(value, RouteGrammar, "");
-                return value;
-              }}
+              highlight={(value) =>
+                value !== undefined ? highlight(value, RouteGrammar, "") : value
+              }
+              tabSize={4}
               style={{ fontFamily: "'Consolas', monospace", minHeight: "100%" }}
             />
           </div>
