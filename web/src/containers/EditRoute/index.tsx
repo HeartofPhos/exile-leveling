@@ -90,7 +90,11 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
                 value !== undefined ? highlight(value, RouteGrammar, "") : value
               }
               tabSize={4}
-              style={{ fontFamily: "'Consolas', monospace", minHeight: "100%" }}
+              style={{
+                fontFamily: "'Consolas', monospace",
+                minHeight: "100%",
+              }}
+              textareaClassName={classNames(styles.editorTextArea)}
             />
           </div>
         </div>

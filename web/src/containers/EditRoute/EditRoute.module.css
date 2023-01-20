@@ -13,6 +13,10 @@
   overflow-y: scroll;
 }
 
+.editorTextArea {
+  outline: inherit;
+}
+
 .fileList {
   min-width: 4rem;
   display: flex;
