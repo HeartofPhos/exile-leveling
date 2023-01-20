@@ -4,8 +4,29 @@ import { useRecoilState, useResetRecoilState } from "recoil";
 import { Form, formStyles } from "../../components/Form";
 import { routeFilesSelector } from "../../state/route";
 import Editor from "react-simple-code-editor";
+import { highlight, Grammar } from "prismjs";
 
 import styles from "./EditRoute.module.css";
+
+const RouteGrammar: Grammar = {
+  keyword: {
+    pattern: /#ifdef\s+\w+|#endif/,
+    inside: {
+      keyword: /#ifdef|#endif/,
+      variable: /\w+/,
+    },
+  },
+  variable: { pattern: /#ifdef \w+/, lookbehind: true },
+  comment: /#.*/,
+  fragment: {
+    pattern: /\{(.+?)\}/,
+    inside: {
+      keyword: { pattern: /(\{)\w+/, lookbehind: true },
+      punctuation: /[\|{}]/,
+      property: /.+/,
+    },
+  },
+};
 
 export default function EditRouteContainer() {
   const [routeFiles, setRouteFiles] = useRecoilState(routeFilesSelector);
@@ -41,6 +62,7 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
           <div className={classNames(styles.fileList)}>
             {workingRouteFiles.map((x, i) => (
               <div
+                key={i}
                 className={classNames("borderListItem", styles.fileListItem, {
                   [styles.selected]: selectedIndex === i,
                 })}
@@ -60,7 +82,10 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
                 updatedRouteFiles[selectedIndex] = value;
                 setWorkingRouteFiles(updatedRouteFiles);
               }}
-              highlight={(value) => value}
+              highlight={(value) => {
+                if (value) return highlight(value, RouteGrammar, "");
+                return value;
+              }}
               style={{ fontFamily: "Consolas" }}
             />
           </div>

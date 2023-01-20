@@ -5,9 +5,11 @@
     "web"
   ],
   "devDependencies": {
+    "@types/prismjs": "^1.26.0",
     "prettier": "^2.7.1"
   },
   "dependencies": {
+    "prismjs": "^1.29.0",
     "react-simple-code-editor": "^0.13.1"
   }
 }
