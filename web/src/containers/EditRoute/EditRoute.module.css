@@ -11,6 +11,7 @@
 .editor {
   flex-grow: 1;
   overflow-y: scroll;
+  font-family: "Consolas", monospace;
 }
 
 .editorTextArea {

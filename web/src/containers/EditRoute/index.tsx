@@ -10,13 +10,12 @@ import styles from "./EditRoute.module.css";
 
 const RouteGrammar: Grammar = {
   keyword: {
-    pattern: /#ifdef\s+\w+|#endif/,
+    pattern: /#ifdef(\s+\w+)?|#endif/,
     inside: {
       keyword: /#ifdef|#endif/,
       variable: /\w+/,
     },
   },
-  variable: { pattern: /#ifdef \w+/, lookbehind: true },
   comment: /#.*/,
   fragment: {
     pattern: /\{(.*)\}?/,
@@ -90,10 +89,6 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
                 value !== undefined ? highlight(value, RouteGrammar, "") : value
               }
               tabSize={4}
-              style={{
-                fontFamily: "'Consolas', monospace",
-                minHeight: "100%",
-              }}
               textareaClassName={classNames(styles.editorTextArea)}
             />
           </div>
