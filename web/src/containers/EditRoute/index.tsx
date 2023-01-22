@@ -18,7 +18,7 @@ const RouteGrammar: Grammar = {
   },
   comment: /#.*/,
   fragment: {
-    pattern: /\{(.*)\}?/,
+    pattern: /\{.*?\}|\{.*\}?/,
     inside: {
       keyword: { pattern: /(\{)(\w|\s)+/, lookbehind: true },
       "keyword control-flow": /[\|{}]/,
