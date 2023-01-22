@@ -54,7 +54,7 @@ export function parseFragmentStep(text: string, state: RouteState) {
       if (matchResult.rawFragment)
         rawFragmentStep.push(matchResult.rawFragment);
     } else {
-      state.logger.warn("incomplete match");
+      state.logger.error("invalid syntax");
       break;
     }
   } while (currentIndex < text.length);
@@ -383,6 +383,10 @@ function EvaluateQuestReward(
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
+  const currentArea = areas[state.currentAreaId];
+  if (!currentArea.is_town_area)
+    state.logger.warn("quest_reward used outside of town");
+
   return {
     fragment: {
       type: "quest_reward",
@@ -396,6 +400,10 @@ function EvaluateVendorReward(
   state: RouteState
 ): string | EvaluateResult {
   if (rawFragment.length != 3) return ERROR_INVALID_FORMAT;
+
+  const currentArea = areas[state.currentAreaId];
+  if (!currentArea.is_town_area)
+    state.logger.warn("vendor_reward used outside of town");
 
   return {
     fragment: {

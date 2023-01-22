@@ -20,6 +20,7 @@ const baseRouteSelector = selector({
       "../../../common/route-processing"
     );
 
+    const routeFiles = get(routeFilesSelector);
     const buildData = get(buildDataSelector);
 
     const routeState = initializeRouteState();
@@ -45,8 +46,6 @@ const baseRouteSelector = selector({
         routeState.preprocessorDefinitions.add("BANDIT_ALIRA");
         break;
     }
-
-    const routeFiles = get(routeFilesSelector);
 
     return {
       routes: parseRoute(routeFiles, routeState),
