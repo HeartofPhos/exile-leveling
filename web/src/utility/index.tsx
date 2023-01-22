@@ -3,6 +3,7 @@ const PERSISTENT_VERSION: Partial<Record<string, number>> = {
   "route-progress": 0,
   "gem-progress": 0,
   "search-strings": 0,
+  "route-files": 0,
 };
 
 interface PersistentData<T> {
