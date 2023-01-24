@@ -27,7 +27,7 @@ Get {crafting}
 ➞ {enter|1_4_4_3} #Kaom's Stronghold
 Get {crafting}
 ➞ {arena|Caldera of the King}, kill {kill|King Kaom}, take {quest_text|The Eye of Fury}
-{logout}
+{portal|use}
 {waypoint|1_4_5_2} #The Grand Arena
 ➞ {arena|The Ring of Blades}, kill {kill|Daresso, King of Swords}, take {quest_text|The Eye of Desire}
 {logout}
@@ -44,7 +44,7 @@ Find and kill {kill|Maligaro, The Inquisitor}, take {quest_text|Malachai's Heart
 Find and kill {kill|Shavronne of Umbra}, take {quest_text|Malachai's Entrails}
 Hand in {quest|a4q5} #Corpus Malachus
 ➞ {arena|The Black Core}, kill {kill|Malachai, The Nightmare}
-{portal|use}
+{logout}
 Hand in {quest|a4q1} #The Eternal Nightmare
 ➞ {enter|1_4_7} #The Ascent
 Get {crafting}
