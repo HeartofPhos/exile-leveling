@@ -7,11 +7,12 @@ import {
   useRecoilCallback,
 } from "recoil";
 import { persistentStorageEffect } from ".";
-import { getRouteFiles, RouteFile } from "../../../common/route-processing";
+import { RouteFile } from "../../../common/route-processing";
 import { clearPersistent, getPersistent, setPersistent } from "../utility";
 
 async function loadDefaultRouteFiles() {
   const { routeSourceLookup } = await import("../../../common/data");
+  const { getRouteFiles } = await import("../../../common/route-processing");
 
   const routeSources = [
     routeSourceLookup["./routes/act-1.txt"],
