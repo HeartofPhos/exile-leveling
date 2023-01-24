@@ -181,16 +181,14 @@ function NavAccordion({
     setAccordionExpand(false);
   }, [navExpand]);
   return (
-    <div
-      onClick={() => {
-        setAccordionExpand(!accordionExpand);
-      }}
-      className={classNames(styles.navItem, {
-        [styles.expand]: navExpand,
-        ["borderListItem"]: navExpand,
-      })}
-    >
-      <div className={classNames(styles.navElement)}>{label}</div>
+    <>
+      <NavbarItem
+        label={label}
+        expand={navExpand}
+        onClick={() => {
+          setAccordionExpand(!accordionExpand);
+        }}
+      />
       {accordionExpand && <hr />}
       <div
         className={classNames(styles.navAccordion, styles.navItems, {
@@ -199,6 +197,7 @@ function NavAccordion({
       >
         {children}
       </div>
-    </div>
+      {accordionExpand && <hr />}
+    </>
   );
 }
