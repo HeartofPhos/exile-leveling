@@ -7,6 +7,7 @@ import Editor from "react-simple-code-editor";
 import { highlight, Grammar } from "prismjs";
 
 import styles from "./EditRoute.module.css";
+import { RouteFile } from "../../../../common/route-processing";
 
 const RouteGrammar: Grammar = {
   keyword: {
@@ -27,6 +28,10 @@ const RouteGrammar: Grammar = {
   },
 };
 
+function cloneRouteFiles(routeFiles: RouteFile[]) {
+  return routeFiles.map((x) => ({ ...x }));
+}
+
 export default function EditRouteContainer() {
   const [routeFiles, setRouteFiles] = useRecoilState(routeFilesSelector);
   const resetRouteFiles = useResetRecoilState(routeFilesSelector);
@@ -41,21 +46,22 @@ export default function EditRouteContainer() {
 }
 
 interface RouteEditorProps {
-  routeFiles: string[];
-  onUpdate: (updatedRouteFiles: string[]) => void;
+  routeFiles: RouteFile[];
+  onUpdate: (updatedRouteFiles: RouteFile[]) => void;
   onReset: () => void;
 }
 
 function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
-  const [workingRouteFiles, setWorkingRouteFiles] = useState<string[]>([]);
-  const [selectedIndex, setSelectedIndex] = useState<number>(0);
+  const [workingFiles, setWorkingFiles] = useState<RouteFile[]>([]);
+  const [selectedIndex, setSelectedIndex] = useState<number | undefined>();
 
   useEffect(() => {
-    setWorkingRouteFiles(routeFiles);
+    setWorkingFiles(cloneRouteFiles(routeFiles));
+    if (selectedIndex === undefined) setSelectedIndex(0);
   }, [routeFiles]);
 
   const fileListItems = [];
-  for (let i = 0; i < workingRouteFiles.length; i++) {
+  for (let i = 0; i < workingFiles.length; i++) {
     fileListItems.push(
       <div
         key={i}
@@ -66,8 +72,8 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
           setSelectedIndex(i);
         }}
       >
-        Act {i + 1}
-        {workingRouteFiles[i] !== routeFiles[i] && "*"}
+        {workingFiles[i].name}
+        {workingFiles[i].contents !== routeFiles[i].contents && "*"}
       </div>
     );
   }
@@ -78,26 +84,30 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
         <div className={classNames(styles.workspace)}>
           <div className={classNames(styles.fileList)}>{fileListItems}</div>
           <div className={classNames(formStyles.formInput, styles.editor)}>
-            <Editor
-              value={workingRouteFiles[selectedIndex]}
-              onValueChange={(value) => {
-                const updatedRouteFiles = [...workingRouteFiles];
-                updatedRouteFiles[selectedIndex] = value;
-                setWorkingRouteFiles(updatedRouteFiles);
-              }}
-              highlight={(value) =>
-                value !== undefined ? highlight(value, RouteGrammar, "") : value
-              }
-              tabSize={4}
-              textareaClassName={classNames(styles.editorTextArea)}
-            />
+            {selectedIndex !== undefined && (
+              <Editor
+                value={workingFiles[selectedIndex].contents}
+                onValueChange={(value) => {
+                  const updatedRouteFiles = [...workingFiles];
+                  updatedRouteFiles[selectedIndex].contents = value;
+                  setWorkingFiles(updatedRouteFiles);
+                }}
+                highlight={(value) =>
+                  value !== undefined
+                    ? highlight(value, RouteGrammar, "")
+                    : value
+                }
+                tabSize={4}
+                textareaClassName={classNames(styles.editorTextArea)}
+              />
+            )}
           </div>
         </div>
         <div className={classNames(formStyles.groupRight)}>
           <button
             className={classNames(formStyles.formButton)}
             onClick={() => {
-              setWorkingRouteFiles([...routeFiles]);
+              setWorkingFiles(routeFiles);
               onReset();
             }}
           >
@@ -106,7 +116,7 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
           <button
             className={classNames(formStyles.formButton)}
             onClick={() => {
-              onUpdate(workingRouteFiles);
+              onUpdate(workingFiles);
             }}
           >
             Save

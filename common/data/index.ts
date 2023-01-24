@@ -24,7 +24,7 @@ export const awakenedGemLookup = AWAKENED_GEM_LOOKUP_JSON as VariantGemLookup;
 export const gemColours = GEM_COLOURS_JSON as GemColours;
 
 //@ts-expect-error
-export const routeFilesLookup: Record<string, string> = import.meta.glob(
+export const routeSourceLookup: Record<string, string> = import.meta.glob(
   "./routes/*.txt",
   { as: "raw" }
 );

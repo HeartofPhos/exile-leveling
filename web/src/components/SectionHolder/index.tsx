@@ -2,19 +2,19 @@ import classNames from "classnames";
 import { useLayoutEffect, useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { TaskItemProps, TaskList } from "../TaskList";
-import styles from "./ActHolder.module.css";
+import styles from "./SectionHolder.module.css";
 
-interface ActHolderProps {
-  act: number;
+interface SectionHolderProps {
+  name: string;
   items: TaskItemProps[];
 }
 
-export function ActHolder({ act, items: taskItems }: ActHolderProps) {
+export function SectionHolder({ name, items: taskItems }: SectionHolderProps) {
   const [expanded, setExpanded] = useState(true);
 
-  const id = `act-${act}`;
+  const sectionId = `section-${name.replace(/\s+/g, "_")}`;
   const scrollToAct = () => {
-    const element = document.getElementById(id);
+    const element = document.getElementById(sectionId);
     if (element) element.scrollIntoView({ behavior: "auto", block: "nearest" });
   };
 
@@ -25,7 +25,7 @@ export function ActHolder({ act, items: taskItems }: ActHolderProps) {
 
   const expandIcon = expanded ? <FiChevronUp /> : <FiChevronDown />;
   return (
-    <div id={id}>
+    <div id={sectionId}>
       <div className={classNames(styles.actbar)}>
         <div
           className={classNames("header", styles.actbarHeader)}
@@ -38,7 +38,7 @@ export function ActHolder({ act, items: taskItems }: ActHolderProps) {
           }}
         >
           {expandIcon}
-          <div>{`--== Act ${act} ==--`}</div>
+          <div>{`--== ${name} ==--`}</div>
           {expandIcon}
         </div>
         <hr />

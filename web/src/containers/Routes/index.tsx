@@ -3,7 +3,7 @@ import { TaskItemProps } from "../../components/TaskList";
 import { GemReward } from "../../components/ItemReward";
 import { withScrollRestoration } from "../../utility/withScrollRestoration";
 import { useRecoilValue } from "recoil";
-import { ActHolder } from "../../components/ActHolder";
+import { SectionHolder } from "../../components/SectionHolder";
 import { ExileFragmentStep } from "../../components/ExileFragment";
 import { buildRouteSelector } from "../../state";
 import { gemProgressSelectorFamily } from "../../state/gem-progress";
@@ -11,21 +11,21 @@ import { routeProgressSelectorFamily } from "../../state/route";
 import { Sidebar } from "../../components/Sidebar";
 
 function RoutesContainer() {
-  const routes = useRecoilValue(buildRouteSelector);
+  const route = useRecoilValue(buildRouteSelector);
 
   const items: ReactNode[] = [];
-  for (let routeIndex = 0; routeIndex < routes.length; routeIndex++) {
-    const route = routes[routeIndex];
+  for (let sectionIndex = 0; sectionIndex < route.length; sectionIndex++) {
+    const section = route[sectionIndex];
 
     let taskItems: TaskItemProps[] = [];
-    for (let stepIndex = 0; stepIndex < route.length; stepIndex++) {
-      const step = route[stepIndex];
+    for (let stepIndex = 0; stepIndex < section.steps.length; stepIndex++) {
+      const step = section.steps[stepIndex];
 
       if (step.type == "fragment_step")
         taskItems.push({
           key: stepIndex,
           isCompletedState: routeProgressSelectorFamily(
-            [routeIndex, stepIndex].toString()
+            [sectionIndex, stepIndex].toString()
           ),
           children: <ExileFragmentStep key={stepIndex} step={step} />,
         });
@@ -44,8 +44,9 @@ function RoutesContainer() {
         });
     }
 
-    const act = routeIndex + 1;
-    items.push(<ActHolder key={act} act={act} items={taskItems} />);
+    items.push(
+      <SectionHolder key={sectionIndex} name={section.name} items={taskItems} />
+    );
   }
 
   return (

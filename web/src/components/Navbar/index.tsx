@@ -9,9 +9,9 @@ import {
   FaTools,
   FaUndoAlt,
 } from "react-icons/fa";
-import { useRecoilCallback } from "recoil";
+import { useRecoilCallback, useRecoilValue } from "recoil";
 import { buildRouteSelector } from "../../state";
-import { useClearRouteProgress } from "../../state/route";
+import { routeFilesSelector, useClearRouteProgress } from "../../state/route";
 import { useClearGemProgress } from "../../state/gem-progress";
 
 import styles from "./Navbar.module.css";
@@ -55,20 +55,7 @@ export function Navbar({}: NavbarProps) {
   const clearRouteProgress = useClearRouteProgress();
   const clearGemProgress = useClearGemProgress();
 
-  const acts = [];
-  for (let i = 1; i <= 10; i++) {
-    acts.push(
-      <NavbarItem
-        key={i}
-        label={`Act ${i}`}
-        expand={navExpand}
-        onClick={() => {
-          navigate(`/#act-${i}`);
-          setNavExpand(false);
-        }}
-      />
-    );
-  }
+  const routeFiles = useRecoilValue(routeFilesSelector);
 
   return (
     <div
@@ -109,14 +96,18 @@ export function Navbar({}: NavbarProps) {
                 setNavExpand(false);
               }}
             />
-            <NavAccordion
-              label="Acts"
-              navExpand={navExpand}
-              className={classNames(styles.navItem, {
-                [styles.expand]: navExpand,
-              })}
-            >
-              {acts}
+            <NavAccordion label="Sections" navExpand={navExpand}>
+              {routeFiles.map((x, i) => (
+                <NavbarItem
+                  key={i}
+                  label={x.name}
+                  expand={navExpand}
+                  onClick={() => {
+                    navigate(`/#section-${x.name.replace(/\s+/g, "_")}`);
+                    setNavExpand(false);
+                  }}
+                />
+              ))}
             </NavAccordion>
             <NavbarItem
               label={`Edit Route`}
@@ -183,24 +174,21 @@ function NavAccordion({
   label,
   navExpand,
   children,
-  onClick,
-  ...rest
-}: NavAccordionProps & React.HTMLProps<HTMLDivElement>) {
+}: React.PropsWithChildren<NavAccordionProps>) {
   const [accordionExpand, setAccordionExpand] = useState<boolean>(false);
 
   useEffect(() => {
     setAccordionExpand(false);
   }, [navExpand]);
-
   return (
-    <div
-      onClick={(e) => {
-        setAccordionExpand(!accordionExpand);
-        if (onClick) onClick(e);
-      }}
-      {...rest}
-    >
-      <div className={classNames(styles.navElement)}>{label}</div>
+    <>
+      <NavbarItem
+        label={label}
+        expand={navExpand}
+        onClick={() => {
+          setAccordionExpand(!accordionExpand);
+        }}
+      />
       {accordionExpand && <hr />}
       <div
         className={classNames(styles.navAccordion, styles.navItems, {
@@ -209,6 +197,7 @@ function NavAccordion({
       >
         {children}
       </div>
-    </div>
+      {accordionExpand && <hr />}
+    </>
   );
 }

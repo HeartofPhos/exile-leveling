@@ -26,6 +26,12 @@ export class ScopedLogger {
     this.scopes.pop();
   }
 
+  withScope(scope: string, func: () => void) {
+    this.pushScope(scope);
+    func();
+    this.popScope();
+  }
+
   private buildPrefix() {
     if (this.scopes.length > 0) return `${this.scopes.join(", ")}: `;
     return "";

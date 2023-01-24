@@ -1,3 +1,4 @@
+#section Act 7
 {waypoint|2_7_town} #The Bridge Encampment
 ➞ {enter|2_7_1} #The Broken Bridge
 Follow the road, look for the broken {waypoint}

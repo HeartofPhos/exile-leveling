@@ -156,7 +156,7 @@ interface QuestRewardFragment {
 interface VendorRewardFragment {
   type: "vendor_reward";
   item: string;
-  cost: string;
+  cost?: string;
 }
 
 interface PortalFragment {
@@ -399,7 +399,8 @@ function EvaluateVendorReward(
   rawFragment: RawFragment,
   state: RouteState
 ): string | EvaluateResult {
-  if (rawFragment.length != 3) return ERROR_INVALID_FORMAT;
+  if (rawFragment.length != 2 && rawFragment.length != 3)
+    return ERROR_INVALID_FORMAT;
 
   const currentArea = areas[state.currentAreaId];
   if (!currentArea.is_town_area)
@@ -409,7 +410,7 @@ function EvaluateVendorReward(
     fragment: {
       type: "vendor_reward",
       item: rawFragment[1],
-      cost: rawFragment[2],
+      cost: rawFragment.length == 3 ? rawFragment[2] : undefined,
     },
   };
 }

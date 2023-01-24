@@ -1,3 +1,4 @@
+#section Act 9
 {waypoint|2_9_town} #Highgate
 ➞ {enter|2_9_2} #The Descent
 ➞ {enter|2_9_3} #The Vastiri Desert

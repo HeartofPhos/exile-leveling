@@ -1,3 +1,4 @@
+#section Act 5
 ➞ {enter|1_5_1} #The Slave Pens
 Find and kill {kill|Overseer Krow}
 ➞ {enter|1_5_town} #Overseer's Tower

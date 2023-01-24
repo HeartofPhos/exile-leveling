@@ -7,34 +7,36 @@ import {
   useRecoilCallback,
 } from "recoil";
 import { persistentStorageEffect } from ".";
+import { RouteFile } from "../../../common/route-processing";
 import { clearPersistent, getPersistent, setPersistent } from "../utility";
 
 async function loadDefaultRouteFiles() {
-  const { routeFilesLookup } = await import("../../../common/data");
+  const { routeSourceLookup } = await import("../../../common/data");
+  const { getRouteFiles } = await import("../../../common/route-processing");
 
-  const routeFiles = [
-    routeFilesLookup["./routes/act-1.txt"],
-    routeFilesLookup["./routes/act-2.txt"],
-    routeFilesLookup["./routes/act-3.txt"],
-    routeFilesLookup["./routes/act-4.txt"],
-    routeFilesLookup["./routes/act-5.txt"],
-    routeFilesLookup["./routes/act-6.txt"],
-    routeFilesLookup["./routes/act-7.txt"],
-    routeFilesLookup["./routes/act-8.txt"],
-    routeFilesLookup["./routes/act-9.txt"],
-    routeFilesLookup["./routes/act-10.txt"],
+  const routeSources = [
+    routeSourceLookup["./routes/act-1.txt"],
+    routeSourceLookup["./routes/act-2.txt"],
+    routeSourceLookup["./routes/act-3.txt"],
+    routeSourceLookup["./routes/act-4.txt"],
+    routeSourceLookup["./routes/act-5.txt"],
+    routeSourceLookup["./routes/act-6.txt"],
+    routeSourceLookup["./routes/act-7.txt"],
+    routeSourceLookup["./routes/act-8.txt"],
+    routeSourceLookup["./routes/act-9.txt"],
+    routeSourceLookup["./routes/act-10.txt"],
   ];
 
-  return routeFiles;
+  return getRouteFiles(routeSources);
 }
 
-const routeFilesAtom = atom<string[] | null>({
+const routeFilesAtom = atom<RouteFile[] | null>({
   key: "routeFilesAtom",
   default: getPersistent("route-files"),
   effects: [persistentStorageEffect("route-files")],
 });
 
-export const routeFilesSelector = selector<string[]>({
+export const routeFilesSelector = selector<RouteFile[]>({
   key: "routeFilesSelector",
   get: ({ get }) => {
     return get(routeFilesAtom) || loadDefaultRouteFiles();
