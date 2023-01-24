@@ -55,21 +55,6 @@ export function Navbar({}: NavbarProps) {
   const clearRouteProgress = useClearRouteProgress();
   const clearGemProgress = useClearGemProgress();
 
-  const acts = [];
-  for (let i = 1; i <= 10; i++) {
-    acts.push(
-      <NavbarItem
-        key={i}
-        label={`Act ${i}`}
-        expand={navExpand}
-        onClick={() => {
-          navigate(`/#act-${i}`);
-          setNavExpand(false);
-        }}
-      />
-    );
-  }
-
   return (
     <div
       className={classNames(styles.navbar, {
@@ -109,15 +94,6 @@ export function Navbar({}: NavbarProps) {
                 setNavExpand(false);
               }}
             />
-            <NavAccordion
-              label="Acts"
-              navExpand={navExpand}
-              className={classNames(styles.navItem, {
-                [styles.expand]: navExpand,
-              })}
-            >
-              {acts}
-            </NavAccordion>
             <NavbarItem
               label={`Edit Route`}
               expand={navExpand}

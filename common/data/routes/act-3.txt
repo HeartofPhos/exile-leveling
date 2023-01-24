@@ -1,3 +1,4 @@
+#section Act 3
 ➞ {enter|1_3_1} #The City of Sarn
 Help and talk to {generic|Clarissa}
 ➞ {enter|1_3_town} #The Sarn Encampment

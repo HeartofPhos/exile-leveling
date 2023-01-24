@@ -1,3 +1,4 @@
+#section Act 10
 {waypoint|2_10_town} #Oriath Docks
 ➞ {enter|2_10_1} #The Cathedral Rooftop
 Head {dir|0} ➞ {arena|Cathedral Apex}, kill {kill|Plaguewing}

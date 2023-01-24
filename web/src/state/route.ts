@@ -25,23 +25,23 @@ async function loadDefaultRouteFiles() {
     routeFilesLookup["./routes/act-10.txt"],
   ];
 
-  return routeFiles;
+  return routeFiles.join("\n");
 }
 
-const routeFilesAtom = atom<string[] | null>({
-  key: "routeFilesAtom",
+const routeFileAtom = atom<string | null>({
+  key: "routeFileAtom",
   default: getPersistent("route-files"),
   effects: [persistentStorageEffect("route-files")],
 });
 
-export const routeFilesSelector = selector<string[]>({
-  key: "routeFilesSelector",
+export const routeFileSelector = selector<string>({
+  key: "routeFileSelector",
   get: ({ get }) => {
-    return get(routeFilesAtom) || loadDefaultRouteFiles();
+    return get(routeFileAtom) || loadDefaultRouteFiles();
   },
   set: ({ set }, newValue) => {
-    if (newValue instanceof DefaultValue) set(routeFilesAtom, null);
-    else set(routeFilesAtom, newValue);
+    if (newValue instanceof DefaultValue) set(routeFileAtom, null);
+    else set(routeFileAtom, newValue);
   },
 });
 

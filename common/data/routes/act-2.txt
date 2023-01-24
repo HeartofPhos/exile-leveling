@@ -1,3 +1,4 @@
+#section Act 2
 ➞ {enter|1_2_1} #The Southern Forest
 ➞ {enter|1_2_town} #The Forest Encampment
 Head {dir|45} ➞ {enter|1_2_2} #The Old Fields

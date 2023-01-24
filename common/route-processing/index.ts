@@ -1,11 +1,15 @@
-import { Area, Gem } from "../types";
+import { Area } from "../types";
 import { areas } from "../data";
 import { FragmentStep, parseFragmentStep } from "./fragment";
 import { GemStep } from "./gems";
 import { ScopedLogger } from "./scoped-logger";
 
 export type Step = FragmentStep | GemStep;
-export type Route = Step[];
+export interface Section {
+  name: string;
+  steps: Step[];
+}
+export type Route = Section[];
 
 export interface RouteState {
   implicitWaypoints: Set<Area["id"]>;
@@ -19,55 +23,65 @@ export interface RouteState {
   logger: ScopedLogger;
 }
 
-export function parseRoute(routeSources: string[], state: RouteState) {
-  const routes: Route[] = [];
-  for (let routeIndex = 0; routeIndex < routeSources.length; routeIndex++) {
-    const routeSource = routeSources[routeIndex];
-    state.logger.pushScope(`act ${routeIndex + 1}`);
+export function parseRoute(routeFile: string, state: RouteState) {
+  const routeLines = routeFile.split(/(?:\r\n|\r|\n)/g);
 
-    const routeLines = routeSource.split(/(?:\r\n|\r|\n)/g);
+  const conditionalStack: boolean[] = [];
+  const route: Route = [];
+  for (let lineIndex = 0; lineIndex < routeLines.length; lineIndex++) {
+    const line = routeLines[lineIndex];
+    if (!line) continue;
 
-    const conditionalStack: boolean[] = [];
-    const route: Route = [];
-    for (let lineIndex = 0; lineIndex < routeLines.length; lineIndex++) {
-      const line = routeLines[lineIndex];
-      if (!line) continue;
+    const sectionRegex = /^#section\s*(.*)/g;
+    const sectionMatch = sectionRegex.exec(line);
+    if (sectionMatch) {
+      const sectionName = sectionMatch[1];
+      route.push({
+        name: sectionName,
+        steps: [],
+      });
 
-      state.logger.pushScope(`line ${lineIndex + 1}`);
+      state.logger.pushScope(sectionName);
+    } else if (route.length == 0) {
+      route.push({ name: "Missing Section Name", steps: [] });
+      state.logger.error("expected #section");
+    } else state.logger.popScope();
 
-      const endifRegex = /^\s*#endif/g;
-      const endifMatch = endifRegex.exec(line);
+    const section = route[route.length - 1];
 
-      if (endifMatch) {
-        const value = conditionalStack.pop();
-        if (value === undefined) state.logger.warn("unexpected #endif");
-      }
+    state.logger.pushScope(`line ${lineIndex + 1}`);
 
-      const evaluateLine =
-        conditionalStack.length == 0 ||
-        conditionalStack[conditionalStack.length - 1];
-      if (evaluateLine) {
-        const ifdefRegex = /^\s*#ifdef\s+(\w+)/g;
-        const ifdefMatch = ifdefRegex.exec(line);
+    const endifRegex = /^\s*#endif/g;
+    const endifMatch = endifRegex.exec(line);
 
-        if (ifdefMatch) {
-          const value = ifdefMatch[1];
-          conditionalStack.push(state.preprocessorDefinitions.has(value));
-        } else {
-          const step = parseFragmentStep(line, state);
-          if (step.parts.length > 0) route.push(step);
-        }
+    if (endifMatch) {
+      const value = conditionalStack.pop();
+      if (value === undefined) state.logger.warn("unexpected #endif");
+    }
+
+    const evaluateLine =
+      conditionalStack.length == 0 ||
+      conditionalStack[conditionalStack.length - 1];
+    if (evaluateLine) {
+      const ifdefRegex = /^\s*#ifdef\s+(\w+)/g;
+      const ifdefMatch = ifdefRegex.exec(line);
+
+      if (ifdefMatch) {
+        const value = ifdefMatch[1];
+        conditionalStack.push(state.preprocessorDefinitions.has(value));
+      } else {
+        const step = parseFragmentStep(line, state);
+        if (step.parts.length > 0) section.steps.push(step);
       }
 
       state.logger.popScope();
     }
 
-    if (conditionalStack.length != 0) state.logger.warn("expected #endif");
-
-    routes.push(route);
-
+    // Pop last section
     state.logger.popScope();
   }
+
+  if (conditionalStack.length != 0) state.logger.warn("expected #endif");
 
   for (const waypoint of state.explicitWaypoints) {
     if (!state.usedWaypoints.has(waypoint)) {
@@ -85,7 +99,7 @@ export function parseRoute(routeSources: string[], state: RouteState) {
 
   state.logger.drain(console);
 
-  return routes;
+  return route;
 }
 
 export interface BuildData {

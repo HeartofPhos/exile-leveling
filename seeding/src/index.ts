@@ -47,12 +47,12 @@ export async function main() {
 
         const idSet = new Set<string>();
         for (const routeFilePath of routeFilePaths) {
-          const routeSource = await fs.promises.readFile(
+          const routeFile = await fs.promises.readFile(
             `${base}/${routeFilePath}`,
             "utf-8"
           );
 
-          const updateSource = rebuildRouteWithIds(routeSource, idSet, 6);
+          const updateSource = rebuildRouteWithIds(routeFile, idSet, 6);
 
           await fs.promises.writeFile(`${base}/${routeFilePath}`, updateSource);
         }

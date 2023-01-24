@@ -1,8 +1,8 @@
 import { AtomEffect, selector } from "recoil";
 import { clearPersistent, setPersistent } from "../utility";
-import { Route } from "../../../common/route-processing";
+import { Route, Section } from "../../../common/route-processing";
 import { buildDataSelector } from "./build-data";
-import { routeFilesSelector } from "./route";
+import { routeFileSelector } from "./route";
 
 export function persistentStorageEffect<T>(key: string): AtomEffect<T | null> {
   return ({ onSet }) => {
@@ -20,7 +20,7 @@ const baseRouteSelector = selector({
       "../../../common/route-processing"
     );
 
-    const routeFiles = get(routeFilesSelector);
+    const routeFile = get(routeFileSelector);
     const buildData = get(buildDataSelector);
 
     const routeState = initializeRouteState();
@@ -47,9 +47,7 @@ const baseRouteSelector = selector({
         break;
     }
 
-    return {
-      routes: parseRoute(routeFiles, routeState),
-    };
+    return parseRoute(routeFile, routeState);
   },
 });
 
@@ -60,30 +58,30 @@ export const buildRouteSelector = selector({
       "../../../common/route-processing/gems"
     );
 
-    const routeData = get(baseRouteSelector);
+    const baseRoute = get(baseRouteSelector);
     const buildData = get(buildDataSelector);
 
-    if (!buildData) return routeData.routes;
+    if (!buildData) return baseRoute;
 
-    const buildRoutes: Route[] = [];
+    const buildRoute: Route = [];
     const routeGems: Set<number> = new Set();
-    for (const route of routeData.routes) {
-      const buildRoute: Route = [];
-      for (const step of route) {
-        buildRoute.push(step);
+    for (const section of baseRoute) {
+      const buildSection: Section = { name: section.name, steps: [] };
+      for (const step of section.steps) {
+        buildSection.steps.push(step);
         if (step.type == "fragment_step") {
           for (const part of step.parts) {
             if (typeof part !== "string" && part.type == "quest") {
               const gemSteps = buildGemSteps(part, buildData, routeGems);
-              buildRoute.push(...gemSteps);
+              buildSection.steps.push(...gemSteps);
             }
           }
         }
       }
 
-      buildRoutes.push(buildRoute);
+      buildRoute.push(buildSection);
     }
 
-    return buildRoutes;
+    return buildRoute;
   },
 });

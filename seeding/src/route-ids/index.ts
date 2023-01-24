@@ -12,11 +12,11 @@ function generateId(length: number) {
 }
 
 export function rebuildRouteWithIds(
-  routeSource: string,
+  routeFile: string,
   idSet: Set<string>,
   idLength: number
 ) {
-  const routeLines = routeSource.split(/(?:\r\n|\r|\n)/g);
+  const routeLines = routeFile.split(/(?:\r\n|\r|\n)/g);
 
   const updatedLines = [];
   for (let line of routeLines) {
