@@ -28,6 +28,7 @@ export function parseRoute(routeFile: string, state: RouteState) {
 
   const conditionalStack: boolean[] = [];
   const route: Route = [];
+
   for (let lineIndex = 0; lineIndex < routeLines.length; lineIndex++) {
     const line = routeLines[lineIndex];
     if (!line) continue;
@@ -41,45 +42,47 @@ export function parseRoute(routeFile: string, state: RouteState) {
         steps: [],
       });
 
+      if (route.length !== 0) state.logger.popScope();
       state.logger.pushScope(sectionName);
+      continue;
     } else if (route.length == 0) {
       route.push({ name: "Missing Section Name", steps: [] });
       state.logger.error("expected #section");
-    } else state.logger.popScope();
-
-    const section = route[route.length - 1];
-
-    state.logger.pushScope(`line ${lineIndex + 1}`);
-
-    const endifRegex = /^\s*#endif/g;
-    const endifMatch = endifRegex.exec(line);
-
-    if (endifMatch) {
-      const value = conditionalStack.pop();
-      if (value === undefined) state.logger.warn("unexpected #endif");
+      continue;
     }
 
-    const evaluateLine =
-      conditionalStack.length == 0 ||
-      conditionalStack[conditionalStack.length - 1];
-    if (evaluateLine) {
+    state.logger.withScope(`line ${lineIndex + 1}`, () => {
+      const section = route[route.length - 1];
+
+      const endifRegex = /^\s*#endif/g;
+      const endifMatch = endifRegex.exec(line);
+
+      if (endifMatch) {
+        const value = conditionalStack.pop();
+        if (value === undefined) state.logger.warn("unexpected #endif");
+        return;
+      }
+
+      const evaluateLine =
+        conditionalStack.length == 0 ||
+        conditionalStack[conditionalStack.length - 1];
+      if (!evaluateLine) return;
+
       const ifdefRegex = /^\s*#ifdef\s+(\w+)/g;
       const ifdefMatch = ifdefRegex.exec(line);
-
       if (ifdefMatch) {
         const value = ifdefMatch[1];
         conditionalStack.push(state.preprocessorDefinitions.has(value));
-      } else {
-        const step = parseFragmentStep(line, state);
-        if (step.parts.length > 0) section.steps.push(step);
+        return;
       }
 
-      state.logger.popScope();
-    }
-
-    // Pop last section
-    state.logger.popScope();
+      const step = parseFragmentStep(line, state);
+      if (step.parts.length > 0) section.steps.push(step);
+    });
   }
+
+  // Pop last section
+  state.logger.popScope();
 
   if (conditionalStack.length != 0) state.logger.warn("expected #endif");
 
