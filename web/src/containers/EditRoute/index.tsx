@@ -2,11 +2,12 @@ import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { useRecoilState, useResetRecoilState } from "recoil";
 import { formStyles } from "../../components/Form";
-import { routeFileSelector } from "../../state/route";
+import { routeFilesSelector } from "../../state/route";
 import Editor from "react-simple-code-editor";
 import { highlight, Grammar } from "prismjs";
 
 import styles from "./EditRoute.module.css";
+import { RouteFile } from "../../../../common/route-processing";
 
 const RouteGrammar: Grammar = {
   keyword: {
@@ -27,68 +28,37 @@ const RouteGrammar: Grammar = {
   },
 };
 
+function cloneRouteFiles(routeFiles: RouteFile[]) {
+  return routeFiles.map((x) => ({ ...x }));
+}
+
 export default function EditRouteContainer() {
-  const [routeFile, setRouteFile] = useRecoilState(routeFileSelector);
-  const resetRouteFiles = useResetRecoilState(routeFileSelector);
+  const [routeFiles, setRouteFiles] = useRecoilState(routeFilesSelector);
+  const resetRouteFiles = useResetRecoilState(routeFilesSelector);
 
   return (
     <RouteEditor
-      routeFile={routeFile}
-      onUpdate={(updatedRouteFile) => setRouteFile(updatedRouteFile)}
+      routeFiles={routeFiles}
+      onUpdate={(updatedRouteFiles) => setRouteFiles(updatedRouteFiles)}
       onReset={() => resetRouteFiles()}
     />
   );
 }
 
 interface RouteEditorProps {
-  routeFile: string;
-  onUpdate: (updatedRouteFiles: string) => void;
+  routeFiles: RouteFile[];
+  onUpdate: (updatedRouteFiles: RouteFile[]) => void;
   onReset: () => void;
 }
 
-interface RouteFile {
-  name: string;
-  contents: string;
-}
-
-function splitRouteFile(routeFile: string) {
-  const routeLines = routeFile.split(/(?:\r\n|\r|\n)/g);
-
-  const workingFiles: RouteFile[] = [];
-  for (let lineIndex = 0; lineIndex < routeLines.length; lineIndex++) {
-    const line = routeLines[lineIndex];
-
-    const sectionRegex = /^#section\s*(.*)/g;
-    const sectionMatch = sectionRegex.exec(line);
-    if (sectionMatch) {
-      const sectionName = sectionMatch[1];
-      workingFiles.push({
-        name: sectionName,
-        contents: "",
-      });
-    } else if (workingFiles.length == 0) {
-      workingFiles.push({ name: "Missing Section Name", contents: "" });
-    } else {
-      const workingFile = workingFiles[workingFiles.length - 1];
-      if (workingFile.contents !== "") workingFile.contents += "\n";
-      workingFile.contents += line;
-    }
-  }
-
-  return workingFiles;
-}
-
-function RouteEditor({ routeFile, onUpdate, onReset }: RouteEditorProps) {
-  const [originalFiles, setOriginalFiles] = useState<RouteFile[]>([]);
+function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
   const [workingFiles, setWorkingFiles] = useState<RouteFile[]>([]);
   const [selectedIndex, setSelectedIndex] = useState<number | undefined>();
 
   useEffect(() => {
-    const routeFiles = splitRouteFile(routeFile);
-    setOriginalFiles(routeFiles);
-    setWorkingFiles(structuredClone(routeFiles));
+    setWorkingFiles(cloneRouteFiles(routeFiles));
     if (selectedIndex === undefined) setSelectedIndex(0);
-  }, [routeFile]);
+  }, [routeFiles]);
 
   const fileListItems = [];
   for (let i = 0; i < workingFiles.length; i++) {
@@ -103,7 +73,7 @@ function RouteEditor({ routeFile, onUpdate, onReset }: RouteEditorProps) {
         }}
       >
         {workingFiles[i].name}
-        {workingFiles[i].contents !== originalFiles[i].contents && "*"}
+        {workingFiles[i].contents !== routeFiles[i].contents && "*"}
       </div>
     );
   }
@@ -137,7 +107,7 @@ function RouteEditor({ routeFile, onUpdate, onReset }: RouteEditorProps) {
           <button
             className={classNames(formStyles.formButton)}
             onClick={() => {
-              setWorkingFiles(structuredClone(workingFiles));
+              setWorkingFiles(routeFiles);
               onReset();
             }}
           >
@@ -146,11 +116,7 @@ function RouteEditor({ routeFile, onUpdate, onReset }: RouteEditorProps) {
           <button
             className={classNames(formStyles.formButton)}
             onClick={() => {
-              onUpdate(
-                workingFiles
-                  .map((x) => `#section ${x.name}\n${x.contents}`)
-                  .join("\n")
-              );
+              onUpdate(workingFiles);
             }}
           >
             Save

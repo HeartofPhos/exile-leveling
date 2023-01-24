@@ -2,7 +2,7 @@ import { AtomEffect, selector } from "recoil";
 import { clearPersistent, setPersistent } from "../utility";
 import { Route, Section } from "../../../common/route-processing";
 import { buildDataSelector } from "./build-data";
-import { routeFileSelector } from "./route";
+import { routeFilesSelector } from "./route";
 
 export function persistentStorageEffect<T>(key: string): AtomEffect<T | null> {
   return ({ onSet }) => {
@@ -20,7 +20,7 @@ const baseRouteSelector = selector({
       "../../../common/route-processing"
     );
 
-    const routeFile = get(routeFileSelector);
+    const routeFile = get(routeFilesSelector);
     const buildData = get(buildDataSelector);
 
     const routeState = initializeRouteState();

@@ -7,41 +7,42 @@ import {
   useRecoilCallback,
 } from "recoil";
 import { persistentStorageEffect } from ".";
+import { getRouteFiles, RouteFile } from "../../../common/route-processing";
 import { clearPersistent, getPersistent, setPersistent } from "../utility";
 
 async function loadDefaultRouteFiles() {
-  const { routeFilesLookup } = await import("../../../common/data");
+  const { routeSourceLookup } = await import("../../../common/data");
 
-  const routeFiles = [
-    routeFilesLookup["./routes/act-1.txt"],
-    routeFilesLookup["./routes/act-2.txt"],
-    routeFilesLookup["./routes/act-3.txt"],
-    routeFilesLookup["./routes/act-4.txt"],
-    routeFilesLookup["./routes/act-5.txt"],
-    routeFilesLookup["./routes/act-6.txt"],
-    routeFilesLookup["./routes/act-7.txt"],
-    routeFilesLookup["./routes/act-8.txt"],
-    routeFilesLookup["./routes/act-9.txt"],
-    routeFilesLookup["./routes/act-10.txt"],
+  const routeSources = [
+    routeSourceLookup["./routes/act-1.txt"],
+    routeSourceLookup["./routes/act-2.txt"],
+    routeSourceLookup["./routes/act-3.txt"],
+    routeSourceLookup["./routes/act-4.txt"],
+    routeSourceLookup["./routes/act-5.txt"],
+    routeSourceLookup["./routes/act-6.txt"],
+    routeSourceLookup["./routes/act-7.txt"],
+    routeSourceLookup["./routes/act-8.txt"],
+    routeSourceLookup["./routes/act-9.txt"],
+    routeSourceLookup["./routes/act-10.txt"],
   ];
 
-  return routeFiles.join("\n");
+  return getRouteFiles(routeSources);
 }
 
-const routeFileAtom = atom<string | null>({
-  key: "routeFileAtom",
+const routeFilesAtom = atom<RouteFile[] | null>({
+  key: "routeFilesAtom",
   default: getPersistent("route-files"),
   effects: [persistentStorageEffect("route-files")],
 });
 
-export const routeFileSelector = selector<string>({
-  key: "routeFileSelector",
+export const routeFilesSelector = selector<RouteFile[]>({
+  key: "routeFilesSelector",
   get: ({ get }) => {
-    return get(routeFileAtom) || loadDefaultRouteFiles();
+    return get(routeFilesAtom) || loadDefaultRouteFiles();
   },
   set: ({ set }, newValue) => {
-    if (newValue instanceof DefaultValue) set(routeFileAtom, null);
-    else set(routeFileAtom, newValue);
+    if (newValue instanceof DefaultValue) set(routeFilesAtom, null);
+    else set(routeFilesAtom, newValue);
   },
 });
 
