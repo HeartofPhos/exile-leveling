@@ -16,7 +16,7 @@ Find and kill {kill|Gemling Legionnaires}
 ➞ {enter|2_8_10} #The Imperial Fields
 Follow the road until {waypoint}
 Head {dir|315} ➞ {enter|2_8_12_1} #The Solaris Temple Level 1
-Get {get_waypoint}
+Get {waypoint_get}
 ➞ {enter|2_8_12_2} #The Solaris Temple Level 2
 Find and kill {kill|Dawn, Harbinger of Solaris}, take {quest_text|Sun Orb}
 Get {crafting}
@@ -28,7 +28,7 @@ Hand in {quest|a8q6} #Love is Dead
 ➞ {enter|2_8_11} #The Solaris Concourse
 Head {dir|225} ➞ {enter|2_8_13} #The Harbour Bridge
 ➞ {enter|2_8_6} #The Lunaris Concourse
-Head {dir|315} get {get_waypoint}
+Head {dir|315} get {waypoint_get}
 ➞ {enter|2_8_7_1_} #The Lunaris Temple Level 1
 ➞ {enter|2_8_7_2} #The Lunaris Temple Level 2
 Find and kill {kill|Dusk, Harbinger of Lunaris}, take {quest_text|Moon Orb}

@@ -19,7 +19,7 @@ Hand in {quest|a5q4} #Death to Purity
 {waypoint|1_5_5} #The Chamber of Innocence
 ➞ {enter|1_5_4b} #The Torched Courts
 Loop around counter-clockwise ➞ {enter|1_5_3b} #The Ruined Square
-Head {dir|315} get {get_waypoint}
+Head {dir|315} get {waypoint_get}
 ➞ {enter|1_5_6} #The Ossuary
 Find and take {quest_text|Sign of Purity}
 Get {crafting}

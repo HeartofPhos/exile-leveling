@@ -3,7 +3,7 @@ Find and kill {kill|Hillock}
 ➞ {enter|1_1_town} #Lioneye's Watch
 Hand in {quest|a1q1} #Enemy at the Gate
 ➞ {enter|1_1_2} #The Coast
-Get {get_waypoint}
+Get {waypoint_get}
 ➞ {enter|1_1_3} #The Mud Flats
 Find 3x{quest_text|Glyph}
 ➞ {enter|1_1_4_1} #The Submerged Passage
@@ -36,7 +36,7 @@ Hand in {quest|a1q2|1} #The Caged Brute
 {waypoint|1_1_8} #Prisoner's Gate
 Go down the ledge next to the road
 ➞ {enter|1_1_9} #The Ship Graveyard
-Get {get_waypoint}
+Get {waypoint_get}
 Find {area|1_1_9a}, place {portal|set} #The Ship Graveyard Cave
 ➞ {enter|1_1_11_1} #The Cavern of Wrath
 {waypoint|1_1_town} #Lioneye's Watch

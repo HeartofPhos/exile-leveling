@@ -24,7 +24,7 @@ Get {crafting}
 Follow the road ➞ {enter|2_6_9} #The Western Forest
 Get {crafting}
 Follow the road ➞ {enter|2_6_10} #The Riverways
-Follow the road, get {get_waypoint}
+Follow the road, get {waypoint_get}
 Look for 2 pillars near {waypoint}, follow the trail ➞ {enter|2_6_11} #The Wetlands
 Head {dir|315} ➞ {arena|The Spawning Ground}, kill {kill|Ryslatha, the Puppet Mistress}
 {logout}

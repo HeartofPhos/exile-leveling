@@ -37,6 +37,7 @@ export interface Quest {
 export interface Area {
   id: string;
   name: string;
+  map_name: string | null;
   act: number;
   has_waypoint: boolean;
   is_town_area: boolean;
