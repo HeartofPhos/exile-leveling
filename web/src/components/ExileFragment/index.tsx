@@ -35,11 +35,11 @@ function EnemyComponent(enemy: string) {
   return <span className={classNames(styles.enemy)}>{enemy}</span>;
 }
 
-function AreaComponent(area?: Area, fallback?: string) {
+function AreaComponent(name: string, isTownArea: boolean) {
   return (
     <div className={classNames(styles.noWrap)}>
-      <span className={classNames(styles.area)}>{area?.name || fallback}</span>
-      {area?.is_town_area && (
+      <span className={classNames(styles.area)}>{name}</span>
+      {isTownArea && (
         <InlineFakeBlock child={<img src={getImageUrl("town.png")} alt="" />} />
       )}
     </div>
@@ -106,7 +106,7 @@ function LogoutComponent(area: Area) {
     <>
       <span className={classNames(styles.default)}>Logout</span>
       <span> ➞ </span>
-      {AreaComponent(area)}
+      {AreaComponent(area.name, area.is_town_area)}
     </>
   );
 }
@@ -123,7 +123,7 @@ function PortalComponent(area?: Area) {
       {area && (
         <>
           <span> ➞ </span>
-          {AreaComponent(area)}
+          {AreaComponent(area.name, area.is_town_area)}
         </>
       )}
     </div>
@@ -207,28 +207,41 @@ export function ExileFragment({ fragment }: FragmentProps) {
     case "kill":
       return EnemyComponent(fragment.value);
     case "arena":
-      return AreaComponent(undefined, fragment.value);
-    case "area":
-      return AreaComponent(areas[fragment.areaId]);
-    case "enter":
-      return AreaComponent(areas[fragment.areaId]);
+      return AreaComponent(fragment.value, false);
+    case "area": {
+      const area = areas[fragment.areaId];
+      return AreaComponent(area.name, area.is_town_area);
+    }
+    case "enter": {
+      const area = areas[fragment.areaId];
+      return AreaComponent(area.name, area.is_town_area);
+    }
     case "quest": {
       return QuestComponent(fragment);
     }
     case "quest_text":
       return QuestTextComponent(fragment.value);
-    case "waypoint": {
-      if (fragment.areaId == null) return WaypointComponent();
-
+    case "waypoint":
+      return WaypointComponent();
+    case "waypoint_use": {
+      const dstArea = areas[fragment.dstAreaId];
+      const srcArea = areas[fragment.srcAreaId];
       return (
         <>
           {WaypointComponent()}
           <span> ➞ </span>
-          {AreaComponent(areas[fragment.areaId])}
+          {AreaComponent(
+            dstArea.map_name || dstArea.name,
+            dstArea.is_town_area
+          )}
+          {dstArea.act !== srcArea.act &&
+            dstArea.id !== "Labyrinth_Airlock" && (
+              <> - {GenericComponent(`Act ${dstArea.act}`)}</>
+            )}
         </>
       );
     }
-    case "get_waypoint":
+    case "waypoint_get":
       return WaypointComponent();
     case "trial":
       return TrialComponent();
@@ -236,15 +249,15 @@ export function ExileFragment({ fragment }: FragmentProps) {
       return LogoutComponent(areas[fragment.areaId]);
     case "portal":
       return PortalComponent(
-        fragment.targetAreaId ? areas[fragment.targetAreaId] : undefined
+        fragment.dstAreaId ? areas[fragment.dstAreaId] : undefined
       );
     case "dir":
       return DirectionComponent(fragment.dirIndex);
     case "generic":
       return GenericComponent(fragment.value);
-    case "quest_reward":
+    case "reward_quest":
       return <ItemReward item={fragment.item} rewardType="quest" />;
-    case "vendor_reward":
+    case "reward_vendor":
       return (
         <ItemReward
           item={fragment.item}

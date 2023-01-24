@@ -97,13 +97,14 @@ export type Fragment =
   | EnterFragment
   | LogoutFragment
   | WaypointFragment
+  | UseWaypointFragment
   | GetWaypointFragment
   | PortalFragment
   | QuestFragment
   | QuestTextFragment
   | GenericFragment
-  | QuestRewardFragment
-  | VendorRewardFragment
+  | RewardQuestFragment
+  | RewardVendorFragment
   | TrialFragment
   | AscendFragment
   | DirectionFragment
@@ -136,11 +137,16 @@ interface EnterFragment {
 
 interface WaypointFragment {
   type: "waypoint";
-  areaId: Area["id"] | null;
+}
+
+interface UseWaypointFragment {
+  type: "waypoint_use";
+  dstAreaId: Area["id"];
+  srcAreaId: Area["id"];
 }
 
 interface GetWaypointFragment {
-  type: "get_waypoint";
+  type: "waypoint_get";
 }
 
 interface GenericFragment {
@@ -148,20 +154,20 @@ interface GenericFragment {
   value: string;
 }
 
-interface QuestRewardFragment {
-  type: "quest_reward";
+interface RewardQuestFragment {
+  type: "reward_quest";
   item: string;
 }
 
-interface VendorRewardFragment {
-  type: "vendor_reward";
+interface RewardVendorFragment {
+  type: "reward_vendor";
   item: string;
   cost?: string;
 }
 
 interface PortalFragment {
   type: "portal";
-  targetAreaId?: Area["id"];
+  dstAreaId?: Area["id"];
 }
 
 interface CraftingFragment {
@@ -278,7 +284,6 @@ function EvaluateWaypoint(
     if (rawFragment.length != 1 && rawFragment.length != 2)
       return ERROR_INVALID_FORMAT;
 
-    let areaId: Area["id"] | null = null;
     if (rawFragment.length == 2) {
       const area = areas[rawFragment[1]];
       if (!area) return ERROR_MISSING_AREA;
@@ -286,7 +291,7 @@ function EvaluateWaypoint(
         !state.implicitWaypoints.has(area.id) &&
         !state.explicitWaypoints.has(area.id)
       )
-        state.logger.warn("missing target waypoint");
+        state.logger.warn("missing waypoint");
 
       const currentArea = areas[state.currentAreaId];
       if (!currentArea.has_waypoint) state.logger.warn(ERROR_AREA_NO_WAYPOINT);
@@ -294,14 +299,20 @@ function EvaluateWaypoint(
       state.implicitWaypoints.add(currentArea.id);
       state.usedWaypoints.add(area.id);
 
-      areaId = area.id;
       transitionArea(state, area);
+
+      return {
+        fragment: {
+          type: "waypoint_use",
+          dstAreaId: area.id,
+          srcAreaId: currentArea.id,
+        },
+      };
     }
 
     return {
       fragment: {
         type: "waypoint",
-        areaId: areaId,
       },
     };
   }
@@ -323,7 +334,7 @@ function EvaluateGetWaypoint(
 
   return {
     fragment: {
-      type: "get_waypoint",
+      type: "waypoint_get",
     },
   };
 }
@@ -368,7 +379,7 @@ function EvaluatePortal(
       return {
         fragment: {
           type: "portal",
-          targetAreaId: state.currentAreaId,
+          dstAreaId: state.currentAreaId,
         },
       };
     }
@@ -389,7 +400,7 @@ function EvaluateQuestReward(
 
   return {
     fragment: {
-      type: "quest_reward",
+      type: "reward_quest",
       item: rawFragment[1],
     },
   };
@@ -404,11 +415,11 @@ function EvaluateVendorReward(
 
   const currentArea = areas[state.currentAreaId];
   if (!currentArea.is_town_area)
-    state.logger.warn("vendor_reward used outside of town");
+    state.logger.warn("reward_vendor used outside of town");
 
   return {
     fragment: {
-      type: "vendor_reward",
+      type: "reward_vendor",
       item: rawFragment[1],
       cost: rawFragment.length == 3 ? rawFragment[2] : undefined,
     },
@@ -497,7 +508,7 @@ export function evaluateFragment(
       return EvaluateLogout(rawFragment, state);
     case "waypoint":
       return EvaluateWaypoint(rawFragment, state);
-    case "get_waypoint":
+    case "waypoint_get":
       return EvaluateGetWaypoint(rawFragment, state);
     case "portal":
       return EvaluatePortal(rawFragment, state);
@@ -507,9 +518,9 @@ export function evaluateFragment(
       return EvaluateQuestText(rawFragment, state);
     case "generic":
       return EvaluateGeneric(rawFragment, state);
-    case "quest_reward":
+    case "reward_quest":
       return EvaluateQuestReward(rawFragment, state);
-    case "vendor_reward":
+    case "reward_vendor":
       return EvaluateVendorReward(rawFragment, state);
     case "trial":
       return EvaluateTrial(rawFragment, state);

@@ -1,5 +1,5 @@
 import { Areas } from "../../../common/types";
-import { RecipeUnlockDisplayDat, WorldAreasDat } from "../../data";
+import { MapPinsDat, RecipeUnlockDisplayDat, WorldAreasDat } from "../../data";
 
 const seedAreaIds = [
   // The Twilight Strand
@@ -44,6 +44,7 @@ export async function getAreas() {
     result[worldArea.Id] = {
       id: worldArea.Id,
       name: worldArea.Name,
+      map_name: null,
       act: worldArea.Act,
       has_waypoint: worldArea.HasWaypoint,
       is_town_area: worldArea.IsTown,
@@ -53,6 +54,16 @@ export async function getAreas() {
       connection_ids: connected_area_ids,
       crafting_recipes: crafting_recipes,
     };
+  }
+
+  for (const mapPin of MapPinsDat.data) {
+    if (mapPin.Waypoint_WorldAreasKey) {
+      const worldArea = WorldAreasDat.data[mapPin.Waypoint_WorldAreasKey];
+      const resultArea = result[worldArea.Id];
+      if (!resultArea) continue;
+
+      resultArea.map_name = mapPin.Name;
+    }
   }
 
   return result;

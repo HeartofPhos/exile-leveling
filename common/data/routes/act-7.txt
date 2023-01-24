@@ -4,7 +4,7 @@
 Follow the road, look for the broken {waypoint}
 Find and take {quest_text|Silver Locket}
 ➞ {enter|2_7_2} #The Crossroads
-Get {get_waypoint}
+Get {waypoint_get}
 Head {dir|135} ➞ {enter|2_7_3} #The Fellshrine Ruins
 Follow the road ➞ {enter|2_7_4} #The Crypt
 #ifdef LEAGUE_START
@@ -17,7 +17,7 @@ Find and take {quest_text|Maligaro's Map}
 {waypoint|2_7_2} #The Crossroads
 Head {dir|315} ➞ {enter|2_7_5_1} #The Chamber of Sins Level 1
 Get {crafting}
-Get {get_waypoint}
+Get {waypoint_get}
 Activate {quest_text|Map Device} with {quest_text|Maligaro's Map}
 ➞ {enter|2_7_5_map} #Maligaro's Sanctum
 ➞ {arena|Maligaro's Workshop}, kill {kill|Maligaro, the Artist}, take {quest_text|Black Venom}
@@ -48,7 +48,7 @@ Hand in {quest|a6q7} #The Cloven One
 Get {crafting}
 Find and take {quest_text|Kishara's Star}
 ➞ {enter|2_7_11} #The Vaal City
-Find {get_waypoint}
+Find {waypoint_get}
 {waypoint|2_7_8} #The Northern Forest
 ➞ {enter|2_7_9} #The Dread Thicket
 Find and take 7x{quest_text|Firefly}

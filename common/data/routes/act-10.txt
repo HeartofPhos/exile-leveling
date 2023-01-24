@@ -8,7 +8,7 @@ Head {dir|180} ➞ {enter|2_10_7} #The Control Blocks
 {waypoint|2_10_town} #Oriath Docks
 Hand in {quest|a10q1} #Safe Passage
 Take {portal|use}
-Head {dir|45} get {get_waypoint}
+Head {dir|45} get {waypoint_get}
 #ifdef LEAGUE_START
     ➞ {enter|2_10_9} #The Ossuary
     Get {crafting}

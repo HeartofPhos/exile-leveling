@@ -2,6 +2,7 @@
   "1_1_1": {
     "id": "1_1_1",
     "name": "The Twilight Strand",
+    "map_name": null,
     "act": 1,
     "has_waypoint": false,
     "is_town_area": false,
@@ -14,6 +15,7 @@
   "1_Labyrinth_boss_3": {
     "id": "1_Labyrinth_boss_3",
     "name": "Aspirant's Trial",
+    "map_name": null,
     "act": 3,
     "has_waypoint": false,
     "is_town_area": false,
@@ -26,6 +28,7 @@
   "2_Labyrinth_boss_3": {
     "id": "2_Labyrinth_boss_3",
     "name": "Aspirant's Trial",
+    "map_name": null,
     "act": 3,
     "has_waypoint": false,
     "is_town_area": false,
@@ -38,6 +41,7 @@
   "3_Labyrinth_boss_3": {
     "id": "3_Labyrinth_boss_3",
     "name": "Aspirant's Trial",
+    "map_name": null,
     "act": 3,
     "has_waypoint": false,
     "is_town_area": false,
@@ -50,6 +54,7 @@
   "1_1_town": {
     "id": "1_1_town",
     "name": "Lioneye's Watch",
+    "map_name": "Lioneye's Watch",
     "act": 1,
     "has_waypoint": true,
     "is_town_area": true,
@@ -63,6 +68,7 @@
   "1_1_2": {
     "id": "1_1_2",
     "name": "The Coast",
+    "map_name": "The Coast",
     "act": 1,
     "has_waypoint": true,
     "is_town_area": false,
@@ -77,6 +83,7 @@
   "1_1_3": {
     "id": "1_1_3",
     "name": "The Mud Flats",
+    "map_name": null,
     "act": 1,
     "has_waypoint": false,
     "is_town_area": false,
@@ -91,6 +98,7 @@
   "1_1_2a": {
     "id": "1_1_2a",
     "name": "The Tidal Island",
+    "map_name": null,
     "act": 1,
     "has_waypoint": false,
     "is_town_area": false,
@@ -103,6 +111,7 @@
   "1_1_4_1": {
     "id": "1_1_4_1",
     "name": "The Submerged Passage",
+    "map_name": "The Submerged Passage",
     "act": 1,
     "has_waypoint": true,
     "is_town_area": false,
@@ -117,6 +126,7 @@
   "1_1_3a": {
     "id": "1_1_3a",
     "name": "The Fetid Pool",
+    "map_name": null,
     "act": 1,
     "has_waypoint": false,
     "is_town_area": false,
@@ -129,6 +139,7 @@
   "1_1_5": {
     "id": "1_1_5",
     "name": "The Ledge",
+    "map_name": "The Ledge",
     "act": 1,
     "has_waypoint": true,
     "is_town_area": false,
@@ -142,6 +153,7 @@
   "1_1_4_0": {
     "id": "1_1_4_0",
     "name": "The Flooded Depths",
+    "map_name": null,
     "act": 1,
     "has_waypoint": false,
     "is_town_area": false,
@@ -154,6 +166,7 @@
   "1_1_6": {
     "id": "1_1_6",
     "name": "The Climb",
+    "map_name": "The Climb",
     "act": 1,
     "has_waypoint": true,
     "is_town_area": false,
@@ -167,6 +180,7 @@
   "1_1_7_1": {
     "id": "1_1_7_1",
     "name": "The Lower Prison",
+    "map_name": "The Prison",
     "act": 1,
     "has_waypoint": true,
     "is_town_area": false,
@@ -180,6 +194,7 @@
   "1_1_7_2": {
     "id": "1_1_7_2",
     "name": "The Upper Prison",
+    "map_name": null,
     "act": 1,
     "has_waypoint": false,
     "is_town_area": false,
@@ -193,6 +208,7 @@
   "1_1_8": {
     "id": "1_1_8",
     "name": "Prisoner's Gate",
+    "map_name": "Prisoner's Gate",
     "act": 1,
     "has_waypoint": true,
     "is_town_area": false,
@@ -207,6 +223,7 @@
   "1_1_9": {
     "id": "1_1_9",
     "name": "The Ship Graveyard",
+    "map_name": "The Ship Graveyard",
     "act": 1,
     "has_waypoint": true,
     "is_town_area": false,
@@ -222,6 +239,7 @@
   "1_2_9": {
     "id": "1_2_9",
     "name": "The Western Forest",
+    "map_name": "The Western Forest",
     "act": 2,
     "has_waypoint": true,
     "is_town_area": false,
@@ -236,6 +254,7 @@
   "1_1_9a": {
     "id": "1_1_9a",
     "name": "The Ship Graveyard Cave",
+    "map_name": null,
     "act": 1,
     "has_waypoint": false,
     "is_town_area": false,
@@ -249,6 +268,7 @@
   "1_1_11_1": {
     "id": "1_1_11_1",
     "name": "The Cavern of Wrath",
+    "map_name": "Merveil's Caverns",
     "act": 1,
     "has_waypoint": true,
     "is_town_area": false,
@@ -262,6 +282,7 @@
   "1_2_7": {
     "id": "1_2_7",
     "name": "The Riverways",
+    "map_name": "The Riverways",
     "act": 2,
     "has_waypoint": true,
     "is_town_area": false,
@@ -276,6 +297,7 @@
   "1_2_10": {
     "id": "1_2_10",
     "name": "The Weaver's Chambers",
+    "map_name": null,
     "act": 2,
     "has_waypoint": false,
     "is_town_area": false,
@@ -288,6 +310,7 @@
   "1_1_11_2": {
     "id": "1_1_11_2",
     "name": "The Cavern of Anger",
+    "map_name": null,
     "act": 1,
     "has_waypoint": false,
     "is_town_area": false,
@@ -301,6 +324,7 @@
   "1_2_town": {
     "id": "1_2_town",
     "name": "The Forest Encampment",
+    "map_name": "The Forest Encampment",
     "act": 2,
     "has_waypoint": true,
     "is_town_area": true,
@@ -315,6 +339,7 @@
   "1_2_12": {
     "id": "1_2_12",
     "name": "The Wetlands",
+    "map_name": "The Wetlands",
     "act": 2,
     "has_waypoint": true,
     "is_town_area": false,
@@ -328,6 +353,7 @@
   "1_2_1": {
     "id": "1_2_1",
     "name": "The Southern Forest",
+    "map_name": "The Southern Forest",
     "act": 2,
     "has_waypoint": true,
     "is_town_area": false,
@@ -341,6 +367,7 @@
   "1_2_2": {
     "id": "1_2_2",
     "name": "The Old Fields",
+    "map_name": null,
     "act": 2,
     "has_waypoint": false,
     "is_town_area": false,
@@ -356,6 +383,7 @@
   "1_2_11": {
     "id": "1_2_11",
     "name": "The Vaal Ruins",
+    "map_name": null,
     "act": 2,
     "has_waypoint": false,
     "is_town_area": false,
@@ -369,6 +397,7 @@
   "1_2_2a": {
     "id": "1_2_2a",
     "name": "The Den",
+    "map_name": null,
     "act": 2,
     "has_waypoint": false,
     "is_town_area": false,
@@ -382,6 +411,7 @@
   "1_2_3": {
     "id": "1_2_3",
     "name": "The Crossroads",
+    "map_name": "The Crossroads",
     "act": 2,
     "has_waypoint": true,
     "is_town_area": false,
@@ -397,6 +427,7 @@
   "1_2_8": {
     "id": "1_2_8",
     "name": "The Northern Forest",
+    "map_name": "The Northern Forest",
     "act": 2,
     "has_waypoint": true,
     "is_town_area": false,
@@ -411,6 +442,7 @@
   "1_2_4": {
     "id": "1_2_4",
     "name": "The Broken Bridge",
+    "map_name": "The Broken Bridge",
     "act": 2,
     "has_waypoint": true,
     "is_town_area": false,
@@ -423,6 +455,7 @@
   "1_2_15": {
     "id": "1_2_15",
     "name": "The Fellshrine Ruins",
+    "map_name": null,
     "act": 2,
     "has_waypoint": false,
     "is_town_area": false,
@@ -436,6 +469,7 @@
   "1_2_6_1": {
     "id": "1_2_6_1",
     "name": "The Chamber of Sins Level 1",
+    "map_name": "The Chamber of Sins",
     "act": 2,
     "has_waypoint": true,
     "is_town_area": false,
@@ -449,6 +483,7 @@
   "1_2_13": {
     "id": "1_2_13",
     "name": "The Dread Thicket",
+    "map_name": null,
     "act": 2,
     "has_waypoint": false,
     "is_town_area": false,
@@ -461,6 +496,7 @@
   "1_2_14_2": {
     "id": "1_2_14_2",
     "name": "The Caverns",
+    "map_name": "The Caverns",
     "act": 2,
     "has_waypoint": true,
     "is_town_area": false,
@@ -476,6 +512,7 @@
   "1_2_5_1": {
     "id": "1_2_5_1",
     "name": "The Crypt Level 1",
+    "map_name": "The Crypt",
     "act": 2,
     "has_waypoint": true,
     "is_town_area": false,
@@ -489,6 +526,7 @@
   "1_2_6_2": {
     "id": "1_2_6_2",
     "name": "The Chamber of Sins Level 2",
+    "map_name": null,
     "act": 2,
     "has_waypoint": false,
     "is_town_area": false,
@@ -501,6 +539,7 @@
   "1_2_14_3": {
     "id": "1_2_14_3",
     "name": "The Ancient Pyramid",
+    "map_name": null,
     "act": 2,
     "has_waypoint": false,
     "is_town_area": false,
@@ -516,6 +555,7 @@
   "1_2_5_2": {
     "id": "1_2_5_2",
     "name": "The Crypt Level 2",
+    "map_name": null,
     "act": 2,
     "has_waypoint": false,
     "is_town_area": false,
@@ -528,6 +568,7 @@
   "1_3_1": {
     "id": "1_3_1",
     "name": "The City of Sarn",
+    "map_name": "The City of Sarn",
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
@@ -541,6 +582,7 @@
   "1_3_town": {
     "id": "1_3_town",
     "name": "The Sarn Encampment",
+    "map_name": "The Sarn Encampment",
     "act": 3,
     "has_waypoint": true,
     "is_town_area": true,
@@ -556,6 +598,7 @@
   "1_3_2": {
     "id": "1_3_2",
     "name": "The Slums",
+    "map_name": null,
     "act": 3,
     "has_waypoint": false,
     "is_town_area": false,
@@ -570,6 +613,7 @@
   "ffa1_1": {
     "id": "ffa1_1",
     "name": "Sarn Arena",
+    "map_name": null,
     "act": 3,
     "has_waypoint": false,
     "is_town_area": false,
@@ -580,6 +624,7 @@
   "Labyrinth_Airlock": {
     "id": "Labyrinth_Airlock",
     "name": "Aspirants' Plaza",
+    "map_name": null,
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
@@ -593,6 +638,7 @@
   "1_3_3_1": {
     "id": "1_3_3_1",
     "name": "The Crematorium",
+    "map_name": "The Crematorium",
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
@@ -607,6 +653,7 @@
   "1_3_10_1": {
     "id": "1_3_10_1",
     "name": "The Sewers",
+    "map_name": "The Sewers",
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
@@ -623,6 +670,7 @@
   "2_8_town": {
     "id": "2_8_town",
     "name": "The Sarn Encampment",
+    "map_name": "The Sarn Encampment",
     "act": 8,
     "has_waypoint": true,
     "is_town_area": true,
@@ -638,6 +686,7 @@
   "1_3_5": {
     "id": "1_3_5",
     "name": "The Marketplace",
+    "map_name": "The Marketplace",
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
@@ -652,6 +701,7 @@
   "1_3_13": {
     "id": "1_3_13",
     "name": "The Ebony Barracks",
+    "map_name": "The Ebony Barracks",
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
@@ -666,6 +716,7 @@
   "2_8_1": {
     "id": "2_8_1",
     "name": "The Sarn Ramparts",
+    "map_name": "The Sarn Ramparts",
     "act": 8,
     "has_waypoint": true,
     "is_town_area": false,
@@ -679,6 +730,7 @@
   "2_8_2_1": {
     "id": "2_8_2_1",
     "name": "The Toxic Conduits",
+    "map_name": null,
     "act": 8,
     "has_waypoint": false,
     "is_town_area": false,
@@ -692,6 +744,7 @@
   "ffa3_1": {
     "id": "ffa3_1",
     "name": "Sarn Arena",
+    "map_name": null,
     "act": 3,
     "has_waypoint": false,
     "is_town_area": false,
@@ -702,6 +755,7 @@
   "1_3_6": {
     "id": "1_3_6",
     "name": "The Catacombs",
+    "map_name": null,
     "act": 3,
     "has_waypoint": false,
     "is_town_area": false,
@@ -716,6 +770,7 @@
   "1_3_7": {
     "id": "1_3_7",
     "name": "The Battlefront",
+    "map_name": "The Battlefront",
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
@@ -730,6 +785,7 @@
   "1_3_14_1": {
     "id": "1_3_14_1",
     "name": "The Lunaris Temple Level 1",
+    "map_name": "The Lunaris Temple",
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
@@ -743,6 +799,7 @@
   "1_3_15": {
     "id": "1_3_15",
     "name": "The Imperial Gardens",
+    "map_name": "The Imperial Gardens",
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
@@ -759,6 +816,7 @@
   "2_7_12_2": {
     "id": "2_7_12_2",
     "name": "The Temple of Decay Level 2",
+    "map_name": null,
     "act": 7,
     "has_waypoint": false,
     "is_town_area": false,
@@ -774,6 +832,7 @@
   "2_8_2_2": {
     "id": "2_8_2_2",
     "name": "Doedre's Cesspool",
+    "map_name": "The Toxic Conduits",
     "act": 8,
     "has_waypoint": true,
     "is_town_area": false,
@@ -790,6 +849,7 @@
   "1_3_8_1": {
     "id": "1_3_8_1",
     "name": "The Solaris Temple Level 1",
+    "map_name": "The Solaris Temple Level 1",
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
@@ -803,6 +863,7 @@
   "1_3_9": {
     "id": "1_3_9",
     "name": "The Docks",
+    "map_name": "The Docks",
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
@@ -815,6 +876,7 @@
   "1_3_14_2": {
     "id": "1_3_14_2",
     "name": "The Lunaris Temple Level 2",
+    "map_name": null,
     "act": 3,
     "has_waypoint": false,
     "is_town_area": false,
@@ -829,6 +891,7 @@
   "1_3_17_1": {
     "id": "1_3_17_1",
     "name": "The Library",
+    "map_name": "The Library",
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
@@ -842,6 +905,7 @@
   "1_3_18_1": {
     "id": "1_3_18_1",
     "name": "The Sceptre of God",
+    "map_name": "The Sceptre of God",
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
@@ -855,6 +919,7 @@
   "2_7_12_1": {
     "id": "2_7_12_1",
     "name": "The Temple of Decay Level 1",
+    "map_name": null,
     "act": 7,
     "has_waypoint": false,
     "is_town_area": false,
@@ -868,6 +933,7 @@
   "2_8_3": {
     "id": "2_8_3",
     "name": "The Grand Promenade",
+    "map_name": null,
     "act": 8,
     "has_waypoint": false,
     "is_town_area": false,
@@ -881,6 +947,7 @@
   "2_8_8": {
     "id": "2_8_8",
     "name": "The Quay",
+    "map_name": null,
     "act": 8,
     "has_waypoint": false,
     "is_town_area": false,
@@ -894,6 +961,7 @@
   "1_3_8_2": {
     "id": "1_3_8_2",
     "name": "The Solaris Temple Level 2",
+    "map_name": "The Solaris Temple Level 2",
     "act": 3,
     "has_waypoint": true,
     "is_town_area": false,
@@ -908,6 +976,7 @@
   "1_3_17_2": {
     "id": "1_3_17_2",
     "name": "The Archives",
+    "map_name": null,
     "act": 3,
     "has_waypoint": false,
     "is_town_area": false,
@@ -920,6 +989,7 @@
   "1_3_18_2": {
     "id": "1_3_18_2",
     "name": "The Upper Sceptre of God",
+    "map_name": null,
     "act": 3,
     "has_waypoint": false,
     "is_town_area": false,
@@ -933,6 +1003,7 @@
   "2_7_11": {
     "id": "2_7_11",
     "name": "The Vaal City",
+    "map_name": "The Vaal City",
     "act": 7,
     "has_waypoint": true,
     "is_town_area": false,
@@ -946,6 +1017,7 @@
   "2_8_5": {
     "id": "2_8_5",
     "name": "The Bath House",
+    "map_name": "The Bath House",
     "act": 8,
     "has_waypoint": true,
     "is_town_area": false,
@@ -962,6 +1034,7 @@
   "2_8_9": {
     "id": "2_8_9",
     "name": "The Grain Gate",
+    "map_name": "The Grain Gate",
     "act": 8,
     "has_waypoint": true,
     "is_town_area": false,
@@ -975,6 +1048,7 @@
   "1_4_1": {
     "id": "1_4_1",
     "name": "The Aqueduct",
+    "map_name": "The Aqueduct",
     "act": 4,
     "has_waypoint": true,
     "is_town_area": false,
@@ -988,6 +1062,7 @@
   "2_7_10": {
     "id": "2_7_10",
     "name": "The Causeway",
+    "map_name": "The Causeway",
     "act": 7,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1003,6 +1078,7 @@
   "2_8_6": {
     "id": "2_8_6",
     "name": "The Lunaris Concourse",
+    "map_name": "The Lunaris Concourse",
     "act": 8,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1017,6 +1093,7 @@
   "2_8_4": {
     "id": "2_8_4",
     "name": "The High Gardens",
+    "map_name": null,
     "act": 8,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1029,6 +1106,7 @@
   "2_8_10": {
     "id": "2_8_10",
     "name": "The Imperial Fields",
+    "map_name": "The Imperial Fields",
     "act": 8,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1042,6 +1120,7 @@
   "1_4_town": {
     "id": "1_4_town",
     "name": "Highgate",
+    "map_name": "Highgate",
     "act": 4,
     "has_waypoint": true,
     "is_town_area": true,
@@ -1057,6 +1136,7 @@
   "2_7_8": {
     "id": "2_7_8",
     "name": "The Northern Forest",
+    "map_name": "The Northern Forest",
     "act": 7,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1071,6 +1151,7 @@
   "2_8_7_1_": {
     "id": "2_8_7_1_",
     "name": "The Lunaris Temple Level 1",
+    "map_name": "The Lunaris Temple",
     "act": 8,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1084,6 +1165,7 @@
   "2_8_13": {
     "id": "2_8_13",
     "name": "The Harbour Bridge",
+    "map_name": null,
     "act": 8,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1099,6 +1181,7 @@
   "2_8_12_1": {
     "id": "2_8_12_1",
     "name": "The Solaris Temple Level 1",
+    "map_name": "The Solaris Temple",
     "act": 8,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1113,6 +1196,7 @@
   "1_4_2": {
     "id": "1_4_2",
     "name": "The Dried Lake",
+    "map_name": null,
     "act": 4,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1127,6 +1211,7 @@
   "1_4_3_1": {
     "id": "1_4_3_1",
     "name": "The Mines Level 1",
+    "map_name": null,
     "act": 4,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1142,6 +1227,7 @@
   "1_4_7": {
     "id": "1_4_7",
     "name": "The Ascent",
+    "map_name": null,
     "act": 4,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1157,6 +1243,7 @@
   "2_7_7": {
     "id": "2_7_7",
     "name": "The Ashen Fields",
+    "map_name": "The Ashen Fields",
     "act": 7,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1170,6 +1257,7 @@
   "2_7_9": {
     "id": "2_7_9",
     "name": "The Dread Thicket",
+    "map_name": null,
     "act": 7,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1184,6 +1272,7 @@
   "2_8_7_2": {
     "id": "2_8_7_2",
     "name": "The Lunaris Temple Level 2",
+    "map_name": null,
     "act": 8,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1198,6 +1287,7 @@
   "2_8_11": {
     "id": "2_8_11",
     "name": "The Solaris Concourse",
+    "map_name": "The Solaris Concourse",
     "act": 8,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1212,6 +1302,7 @@
   "2_9_1": {
     "id": "2_9_1",
     "name": "The Blood Aqueduct",
+    "map_name": "The Blood Aqueduct",
     "act": 9,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1225,6 +1316,7 @@
   "2_8_12_2": {
     "id": "2_8_12_2",
     "name": "The Solaris Temple Level 2",
+    "map_name": null,
     "act": 8,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1239,6 +1331,7 @@
   "1_4_3_2": {
     "id": "1_4_3_2",
     "name": "The Mines Level 2",
+    "map_name": null,
     "act": 4,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1252,6 +1345,7 @@
   "1_5_1": {
     "id": "1_5_1",
     "name": "The Slave Pens",
+    "map_name": "The Slave Pens",
     "act": 5,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1265,6 +1359,7 @@
   "2_7_6": {
     "id": "2_7_6",
     "name": "The Den",
+    "map_name": "The Den",
     "act": 7,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1278,6 +1373,7 @@
   "2_9_town": {
     "id": "2_9_town",
     "name": "Highgate",
+    "map_name": "Highgate",
     "act": 9,
     "has_waypoint": true,
     "is_town_area": true,
@@ -1291,6 +1387,7 @@
   "1_4_3_3": {
     "id": "1_4_3_3",
     "name": "The Crystal Veins",
+    "map_name": "The Crystal Veins",
     "act": 4,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1308,6 +1405,7 @@
   "1_5_town": {
     "id": "1_5_town",
     "name": "Overseer's Tower",
+    "map_name": "Overseer's Tower",
     "act": 5,
     "has_waypoint": true,
     "is_town_area": true,
@@ -1321,6 +1419,7 @@
   "2_7_5_2": {
     "id": "2_7_5_2",
     "name": "The Chamber of Sins Level 2",
+    "map_name": null,
     "act": 7,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1336,6 +1435,7 @@
   "2_9_2": {
     "id": "2_9_2",
     "name": "The Descent",
+    "map_name": null,
     "act": 9,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1349,6 +1449,7 @@
   "1_4_4_1": {
     "id": "1_4_4_1",
     "name": "Kaom's Dream",
+    "map_name": null,
     "act": 4,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1362,6 +1463,7 @@
   "1_4_5_1": {
     "id": "1_4_5_1",
     "name": "Daresso's Dream",
+    "map_name": null,
     "act": 4,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1375,6 +1477,7 @@
   "1_4_6_1": {
     "id": "1_4_6_1",
     "name": "The Belly of the Beast Level 1",
+    "map_name": null,
     "act": 4,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1388,6 +1491,7 @@
   "1_5_2": {
     "id": "1_5_2",
     "name": "The Control Blocks",
+    "map_name": null,
     "act": 5,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1402,6 +1506,7 @@
   "2_7_5_1": {
     "id": "2_7_5_1",
     "name": "The Chamber of Sins Level 1",
+    "map_name": "The Chamber of Sins",
     "act": 7,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1418,6 +1523,7 @@
   "2_9_3": {
     "id": "2_9_3",
     "name": "The Vastiri Desert",
+    "map_name": "The Vastiri Desert",
     "act": 9,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1434,6 +1540,7 @@
   "1_4_4_3": {
     "id": "1_4_4_3",
     "name": "Kaom's Stronghold",
+    "map_name": "Kaom's Stronghold",
     "act": 4,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1448,6 +1555,7 @@
   "1_4_5_2": {
     "id": "1_4_5_2",
     "name": "The Grand Arena",
+    "map_name": "The Grand Arena",
     "act": 4,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1462,6 +1570,7 @@
   "1_4_6_2": {
     "id": "1_4_6_2",
     "name": "The Belly of the Beast Level 2",
+    "map_name": null,
     "act": 4,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1477,6 +1586,7 @@
   "1_5_3": {
     "id": "1_5_3",
     "name": "Oriath Square",
+    "map_name": "Oriath Square",
     "act": 5,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1490,6 +1600,7 @@
   "2_7_2": {
     "id": "2_7_2",
     "name": "The Crossroads",
+    "map_name": "The Crossroads",
     "act": 7,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1504,6 +1615,7 @@
   "2_7_5_map": {
     "id": "2_7_5_map",
     "name": "Maligaro's Sanctum",
+    "map_name": null,
     "act": 7,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1516,6 +1628,7 @@
   "2_9_4": {
     "id": "2_9_4",
     "name": "The Oasis",
+    "map_name": null,
     "act": 9,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1528,6 +1641,7 @@
   "2_9_5": {
     "id": "2_9_5",
     "name": "The Foothills",
+    "map_name": "The Foothills",
     "act": 9,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1542,6 +1656,7 @@
   "1_4_6_3": {
     "id": "1_4_6_3",
     "name": "The Harvest",
+    "map_name": "The Harvest",
     "act": 4,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1555,6 +1670,7 @@
   "1_5_4": {
     "id": "1_5_4",
     "name": "The Templar Courts",
+    "map_name": "The Templar Courts",
     "act": 5,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1568,6 +1684,7 @@
   "2_7_1": {
     "id": "2_7_1",
     "name": "The Broken Bridge",
+    "map_name": null,
     "act": 7,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1581,6 +1698,7 @@
   "2_7_3": {
     "id": "2_7_3",
     "name": "The Fellshrine Ruins",
+    "map_name": null,
     "act": 7,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1594,6 +1712,7 @@
   "2_9_6": {
     "id": "2_9_6",
     "name": "The Boiling Lake",
+    "map_name": null,
     "act": 9,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1608,6 +1727,7 @@
   "2_9_7": {
     "id": "2_9_7",
     "name": "The Tunnel",
+    "map_name": "The Tunnel",
     "act": 9,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1623,6 +1743,7 @@
   "1_5_5": {
     "id": "1_5_5",
     "name": "The Chamber of Innocence",
+    "map_name": "The Chamber of Innocence",
     "act": 5,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1638,6 +1759,7 @@
   "2_7_town": {
     "id": "2_7_town",
     "name": "The Bridge Encampment",
+    "map_name": "The Bridge Encampment",
     "act": 7,
     "has_waypoint": true,
     "is_town_area": true,
@@ -1651,6 +1773,7 @@
   "2_7_4": {
     "id": "2_7_4",
     "name": "The Crypt",
+    "map_name": "The Crypt",
     "act": 7,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1665,6 +1788,7 @@
   "2_9_8": {
     "id": "2_9_8",
     "name": "The Quarry",
+    "map_name": "The Quarry",
     "act": 9,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1681,6 +1805,7 @@
   "1_5_4b": {
     "id": "1_5_4b",
     "name": "The Torched Courts",
+    "map_name": null,
     "act": 5,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1694,6 +1819,7 @@
   "2_6_15": {
     "id": "2_6_15",
     "name": "The Brine King's Reef",
+    "map_name": "The Brine King's Reef",
     "act": 6,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1707,6 +1833,7 @@
   "2_9_9": {
     "id": "2_9_9",
     "name": "The Refinery",
+    "map_name": null,
     "act": 9,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1719,6 +1846,7 @@
   "2_9_10_1": {
     "id": "2_9_10_1",
     "name": "The Belly of the Beast",
+    "map_name": null,
     "act": 9,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1732,6 +1860,7 @@
   "1_5_3b": {
     "id": "1_5_3b",
     "name": "The Ruined Square",
+    "map_name": "The Ruined Square",
     "act": 5,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1747,6 +1876,7 @@
   "2_6_14": {
     "id": "2_6_14",
     "name": "The Beacon",
+    "map_name": "The Beacon",
     "act": 6,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1762,6 +1892,7 @@
   "2_9_10_2": {
     "id": "2_9_10_2",
     "name": "The Rotting Core",
+    "map_name": null,
     "act": 9,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1775,6 +1906,7 @@
   "1_5_6": {
     "id": "1_5_6",
     "name": "The Ossuary",
+    "map_name": null,
     "act": 5,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1789,6 +1921,7 @@
   "1_5_8": {
     "id": "1_5_8",
     "name": "The Cathedral Rooftop",
+    "map_name": "The Cathedral Rooftop",
     "act": 5,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1802,6 +1935,7 @@
   "1_5_7": {
     "id": "1_5_7",
     "name": "The Reliquary",
+    "map_name": "The Reliquary",
     "act": 5,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1816,6 +1950,7 @@
   "2_6_13": {
     "id": "2_6_13",
     "name": "The Cavern of Anger",
+    "map_name": null,
     "act": 6,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1829,6 +1964,7 @@
   "2_10_town": {
     "id": "2_10_town",
     "name": "Oriath Docks",
+    "map_name": "Oriath Docks",
     "act": 10,
     "has_waypoint": true,
     "is_town_area": true,
@@ -1844,6 +1980,7 @@
   "2_6_town": {
     "id": "2_6_town",
     "name": "Lioneye's Watch",
+    "map_name": "Lioneye's Watch",
     "act": 6,
     "has_waypoint": true,
     "is_town_area": true,
@@ -1858,6 +1995,7 @@
   "2_6_12": {
     "id": "2_6_12",
     "name": "The Southern Forest",
+    "map_name": "The Southern Forest",
     "act": 6,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1871,6 +2009,7 @@
   "2_10_1": {
     "id": "2_10_1",
     "name": "The Cathedral Rooftop",
+    "map_name": null,
     "act": 10,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1884,6 +2023,7 @@
   "2_10_6": {
     "id": "2_10_6",
     "name": "The Feeding Trough",
+    "map_name": null,
     "act": 10,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1899,6 +2039,7 @@
   "2_11_endgame_town": {
     "id": "2_11_endgame_town",
     "name": "Karui Shores",
+    "map_name": "Karui Shores",
     "act": 11,
     "has_waypoint": true,
     "is_town_area": true,
@@ -1913,6 +2054,7 @@
   "2_6_2": {
     "id": "2_6_2",
     "name": "The Coast",
+    "map_name": "The Coast",
     "act": 6,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1927,6 +2069,7 @@
   "2_6_1": {
     "id": "2_6_1",
     "name": "The Twilight Strand",
+    "map_name": null,
     "act": 6,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1939,6 +2082,7 @@
   "2_6_10": {
     "id": "2_6_10",
     "name": "The Riverways",
+    "map_name": "The Riverways",
     "act": 6,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1953,6 +2097,7 @@
   "2_10_2": {
     "id": "2_10_2",
     "name": "The Ravaged Square",
+    "map_name": "The Ravaged Square",
     "act": 10,
     "has_waypoint": true,
     "is_town_area": false,
@@ -1970,6 +2115,7 @@
   "2_10_5": {
     "id": "2_10_5",
     "name": "The Canals",
+    "map_name": null,
     "act": 10,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1983,6 +2129,7 @@
   "2_6_4": {
     "id": "2_6_4",
     "name": "The Mud Flats",
+    "map_name": null,
     "act": 6,
     "has_waypoint": false,
     "is_town_area": false,
@@ -1996,6 +2143,7 @@
   "2_6_3": {
     "id": "2_6_3",
     "name": "The Tidal Island",
+    "map_name": null,
     "act": 6,
     "has_waypoint": false,
     "is_town_area": false,
@@ -2008,6 +2156,7 @@
   "2_6_9": {
     "id": "2_6_9",
     "name": "The Western Forest",
+    "map_name": "The Western Forest",
     "act": 6,
     "has_waypoint": true,
     "is_town_area": false,
@@ -2023,6 +2172,7 @@
   "2_6_11": {
     "id": "2_6_11",
     "name": "The Wetlands",
+    "map_name": null,
     "act": 6,
     "has_waypoint": false,
     "is_town_area": false,
@@ -2035,6 +2185,7 @@
   "2_10_3": {
     "id": "2_10_3",
     "name": "The Torched Courts",
+    "map_name": null,
     "act": 10,
     "has_waypoint": false,
     "is_town_area": false,
@@ -2048,6 +2199,7 @@
   "2_10_9": {
     "id": "2_10_9",
     "name": "The Ossuary",
+    "map_name": null,
     "act": 10,
     "has_waypoint": false,
     "is_town_area": false,
@@ -2062,6 +2214,7 @@
   "2_10_8": {
     "id": "2_10_8",
     "name": "The Reliquary",
+    "map_name": "The Reliquary",
     "act": 10,
     "has_waypoint": true,
     "is_town_area": false,
@@ -2074,6 +2227,7 @@
   "2_10_7": {
     "id": "2_10_7",
     "name": "The Control Blocks",
+    "map_name": "The Control Blocks",
     "act": 10,
     "has_waypoint": true,
     "is_town_area": false,
@@ -2086,6 +2240,7 @@
   "2_6_5": {
     "id": "2_6_5",
     "name": "The Karui Fortress",
+    "map_name": null,
     "act": 6,
     "has_waypoint": false,
     "is_town_area": false,
@@ -2101,6 +2256,7 @@
   "2_6_8": {
     "id": "2_6_8",
     "name": "Prisoner's Gate",
+    "map_name": "Prisoner's Gate",
     "act": 6,
     "has_waypoint": true,
     "is_town_area": false,
@@ -2114,6 +2270,7 @@
   "2_10_4": {
     "id": "2_10_4",
     "name": "The Desecrated Chambers",
+    "map_name": "The Desecrated Chambers",
     "act": 10,
     "has_waypoint": true,
     "is_town_area": false,
@@ -2128,6 +2285,7 @@
   "2_6_6": {
     "id": "2_6_6",
     "name": "The Ridge",
+    "map_name": "The Ridge",
     "act": 6,
     "has_waypoint": true,
     "is_town_area": false,
@@ -2141,6 +2299,7 @@
   "2_6_7_2": {
     "id": "2_6_7_2",
     "name": "Shavronne's Tower",
+    "map_name": null,
     "act": 6,
     "has_waypoint": false,
     "is_town_area": false,
@@ -2156,6 +2315,7 @@
   "2_6_7_1": {
     "id": "2_6_7_1",
     "name": "The Lower Prison",
+    "map_name": "The Prison",
     "act": 6,
     "has_waypoint": true,
     "is_town_area": false,
