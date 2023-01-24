@@ -130,7 +130,7 @@ export function Navbar({}: NavbarProps) {
               }}
             />
             <NavbarItem
-              label="Export Route"
+              label="3rd-Party Export"
               expand={navExpand}
               icon={<FaRegClipboard className={classNames("inlineIcon")} />}
               onClick={() => {
