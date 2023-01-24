@@ -13,6 +13,7 @@ import { useRecoilCallback, useRecoilValue } from "recoil";
 import { buildRouteSelector } from "../../state";
 import { routeFilesSelector, useClearRouteProgress } from "../../state/route";
 import { useClearGemProgress } from "../../state/gem-progress";
+import { toast } from "react-toastify";
 
 import styles from "./Navbar.module.css";
 
@@ -133,6 +134,7 @@ export function Navbar({}: NavbarProps) {
               expand={navExpand}
               icon={<FaRegClipboard className={classNames("inlineIcon")} />}
               onClick={() => {
+                toast.success("Exported to Clipboard");
                 clipboardRoute();
                 setNavExpand(false);
               }}

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { BuildData } from "../../../../common/route-processing";
 import { formStyles } from "../Form";
 import { processPob } from "./pob";
+import { toast } from "react-toastify";
 
 import styles from "./BuildImportForm.module.css";
 
@@ -76,25 +77,35 @@ export function BuildImportForm({ onSubmit, onReset }: BuildFormProps) {
         </button>
         <button
           className={classNames(formStyles.formButton)}
-          onClick={async () => {
-            if (!pobCodeOrUrl) return;
+          onClick={() =>
+            toast.promise(
+              async () => {
+                setPobCodeOrUrl(undefined);
 
-            let pobCode = pobCodeOrUrl;
-            const downloadUrl = getPobCodeUrl(pobCodeOrUrl);
-            if (downloadUrl) {
-              try {
-                pobCode = await fetch(
-                  `https://phos-cors-proxy.azurewebsites.net/${downloadUrl}`
-                ).then((x) => x.text());
-              } catch {
-                console.log(`Failed to download: ${downloadUrl}`);
+                if (!pobCodeOrUrl)
+                  return Promise.reject("invalid pobCodeOrUrl");
+
+                let pobCode: string = pobCodeOrUrl;
+                const downloadUrl = getPobCodeUrl(pobCodeOrUrl);
+                if (downloadUrl) {
+                  pobCode = await fetch(
+                    `https://phos-cors-proxy.azurewebsites.net/${downloadUrl}`
+                  ).then((x) => {
+                    if (x.status >= 200 && x.status <= 299) return x.text();
+                    return Promise.reject("download failed");
+                  });
+                }
+                const buildData = processPob(pobCode);
+                if (buildData) onSubmit(buildData);
+                else return Promise.reject("parsing failed");
+              },
+              {
+                pending: "Importing Build",
+                success: "Import Success",
+                error: "Import Failed",
               }
-            }
-
-            const buildData = processPob(pobCode);
-            if (buildData) onSubmit(buildData);
-            setPobCodeOrUrl("");
-          }}
+            )
+          }
         >
           Import Build
         </button>
