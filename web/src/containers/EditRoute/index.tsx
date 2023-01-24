@@ -46,15 +46,15 @@ interface RouteEditorProps {
   onReset: () => void;
 }
 
-interface WorkingFile {
+interface RouteFile {
   name: string;
   contents: string;
 }
 
-function routeFileToWorkingFiles(routeFile: string) {
+function splitRouteFile(routeFile: string) {
   const routeLines = routeFile.split(/(?:\r\n|\r|\n)/g);
 
-  const workingFiles: WorkingFile[] = [];
+  const workingFiles: RouteFile[] = [];
   for (let lineIndex = 0; lineIndex < routeLines.length; lineIndex++) {
     const line = routeLines[lineIndex];
 
@@ -70,7 +70,8 @@ function routeFileToWorkingFiles(routeFile: string) {
       workingFiles.push({ name: "Missing Section Name", contents: "" });
     } else {
       const workingFile = workingFiles[workingFiles.length - 1];
-      workingFile.contents += `${line}\n`;
+      if (workingFile.contents !== "") workingFile.contents += "\n";
+      workingFile.contents += line;
     }
   }
 
@@ -78,16 +79,19 @@ function routeFileToWorkingFiles(routeFile: string) {
 }
 
 function RouteEditor({ routeFile, onUpdate, onReset }: RouteEditorProps) {
-  const [workingRouteFiles, setWorkingRouteFiles] = useState<WorkingFile[]>([]);
+  const [originalFiles, setOriginalFiles] = useState<RouteFile[]>([]);
+  const [workingFiles, setWorkingFiles] = useState<RouteFile[]>([]);
   const [selectedIndex, setSelectedIndex] = useState<number | undefined>();
 
   useEffect(() => {
-    setWorkingRouteFiles(routeFileToWorkingFiles(routeFile));
-    setSelectedIndex(0);
+    const routeFiles = splitRouteFile(routeFile);
+    setOriginalFiles(routeFiles);
+    setWorkingFiles(structuredClone(routeFiles));
+    if (selectedIndex === undefined) setSelectedIndex(0);
   }, [routeFile]);
 
   const fileListItems = [];
-  for (let i = 0; i < workingRouteFiles.length; i++) {
+  for (let i = 0; i < workingFiles.length; i++) {
     fileListItems.push(
       <div
         key={i}
@@ -98,8 +102,8 @@ function RouteEditor({ routeFile, onUpdate, onReset }: RouteEditorProps) {
           setSelectedIndex(i);
         }}
       >
-        {workingRouteFiles[i].name}
-        {/* {workingRouteFiles[i] !== routeFiles[i] && "*"} */}
+        {workingFiles[i].name}
+        {workingFiles[i].contents !== originalFiles[i].contents && "*"}
       </div>
     );
   }
@@ -112,11 +116,11 @@ function RouteEditor({ routeFile, onUpdate, onReset }: RouteEditorProps) {
           <div className={classNames(formStyles.formInput, styles.editor)}>
             {selectedIndex !== undefined && (
               <Editor
-                value={workingRouteFiles[selectedIndex].contents}
+                value={workingFiles[selectedIndex].contents}
                 onValueChange={(value) => {
-                  const updatedRouteFiles = [...workingRouteFiles];
+                  const updatedRouteFiles = [...workingFiles];
                   updatedRouteFiles[selectedIndex].contents = value;
-                  setWorkingRouteFiles(updatedRouteFiles);
+                  setWorkingFiles(updatedRouteFiles);
                 }}
                 highlight={(value) =>
                   value !== undefined
@@ -133,7 +137,7 @@ function RouteEditor({ routeFile, onUpdate, onReset }: RouteEditorProps) {
           <button
             className={classNames(formStyles.formButton)}
             onClick={() => {
-              setWorkingRouteFiles(routeFileToWorkingFiles(routeFile));
+              setWorkingFiles(structuredClone(workingFiles));
               onReset();
             }}
           >
@@ -143,7 +147,7 @@ function RouteEditor({ routeFile, onUpdate, onReset }: RouteEditorProps) {
             className={classNames(formStyles.formButton)}
             onClick={() => {
               onUpdate(
-                workingRouteFiles
+                workingFiles
                   .map((x) => `#section ${x.name}\n${x.contents}`)
                   .join("\n")
               );
