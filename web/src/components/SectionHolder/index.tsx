@@ -5,19 +5,14 @@ import { TaskItemProps, TaskList } from "../TaskList";
 import styles from "./SectionHolder.module.css";
 
 interface SectionHolderProps {
-  id: number;
   name: string;
   items: TaskItemProps[];
 }
 
-export function SectionHolder({
-  id,
-  name,
-  items: taskItems,
-}: SectionHolderProps) {
+export function SectionHolder({ name, items: taskItems }: SectionHolderProps) {
   const [expanded, setExpanded] = useState(true);
 
-  const sectionId = `section-${id}`;
+  const sectionId = `section-${name.replace(/\s+/g, "_")}`;
   const scrollToAct = () => {
     const element = document.getElementById(sectionId);
     if (element) element.scrollIntoView({ behavior: "auto", block: "nearest" });

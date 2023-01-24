@@ -45,12 +45,7 @@ function RoutesContainer() {
     }
 
     items.push(
-      <SectionHolder
-        key={sectionIndex}
-        id={sectionIndex}
-        name={section.name}
-        items={taskItems}
-      />
+      <SectionHolder key={sectionIndex} name={section.name} items={taskItems} />
     );
   }
 
