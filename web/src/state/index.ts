@@ -20,7 +20,7 @@ const baseRouteSelector = selector({
       "../../../common/route-processing"
     );
 
-    const routeFile = get(routeFilesSelector);
+    const routeFiles = get(routeFilesSelector);
     const buildData = get(buildDataSelector);
 
     const routeState = initializeRouteState();
@@ -47,7 +47,7 @@ const baseRouteSelector = selector({
         break;
     }
 
-    return parseRoute(routeFile, routeState);
+    return parseRoute(routeFiles, routeState);
   },
 });
 
