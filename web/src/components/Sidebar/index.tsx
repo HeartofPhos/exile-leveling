@@ -4,14 +4,16 @@ import { FaRegClipboard } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useRecoilValue } from "recoil";
 import { searchStringsAtom } from "../../state/search-strings";
+import { Viewport } from "../Viewport";
 
 import styles from "./Sidebar.module.css";
+import treeSVG from "./tree.svg";
 
 export function Sidebar() {
   const searchStrings = useRecoilValue(searchStringsAtom);
   const [expanded, setExpanded] = useState(true);
 
-  if (searchStrings == null || searchStrings.length == 0) return <></>;
+  // if (searchStrings == null || searchStrings.length == 0) return <></>;
 
   const expandIcon = expanded ? <FiChevronRight /> : <FiChevronLeft />;
 
@@ -30,11 +32,14 @@ export function Sidebar() {
         {expanded && <span>Search Strings</span>}
         {expandIcon}
       </div>
+      <Viewport>
+        <img src={treeSVG} />
+      </Viewport>
       {expanded && (
         <>
           <hr />
           <div className={classNames(styles.sidebarItems)}>
-            {searchStrings.map((x, i) => (
+            {searchStrings?.map((x, i) => (
               <SearchString key={i} value={x} />
             ))}
           </div>
