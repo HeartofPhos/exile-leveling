@@ -6,8 +6,7 @@ import { searchStringsAtom } from "../../state/search-strings";
 import { BuildInfoForm, GemOrderList } from "../../components/BuildEditForm";
 import { formStyles } from "../../components/Form";
 import classNames from "classnames";
-
-import styles from "./Build.module.css";
+import styles from "./styles.module.css";
 
 function BuildContainer() {
   const [buildData, setBuildData] = useRecoilState(buildDataSelector);

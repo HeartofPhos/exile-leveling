@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import styles from "./InlineFakeBlock.module.css";
+import styles from "./styles.module.css";
 
 interface InlineFakeBlockProps {
   child: React.ReactElement;

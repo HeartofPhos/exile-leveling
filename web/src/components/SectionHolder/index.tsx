@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { useLayoutEffect, useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 import { TaskItemProps, TaskList } from "../TaskList";
-import styles from "./SectionHolder.module.css";
+import styles from "./styles.module.css";
 
 interface SectionHolderProps {
   name: string;

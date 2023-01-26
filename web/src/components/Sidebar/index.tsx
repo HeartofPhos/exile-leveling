@@ -4,8 +4,7 @@ import { FaRegClipboard } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useRecoilValue } from "recoil";
 import { searchStringsAtom } from "../../state/search-strings";
-
-import styles from "./Sidebar.module.css";
+import styles from "./styles.module.css";
 
 export function Sidebar() {
   const searchStrings = useRecoilValue(searchStringsAtom);

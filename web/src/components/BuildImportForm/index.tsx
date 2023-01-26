@@ -5,7 +5,7 @@ import { formStyles } from "../Form";
 import { processPob } from "./pob";
 import { toast } from "react-toastify";
 
-import styles from "./BuildImportForm.module.css";
+import styles from "./styles.module.css";
 
 interface BuildFormProps {
   onSubmit: (buildData: BuildData) => void;
