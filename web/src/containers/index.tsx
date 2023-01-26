@@ -14,12 +14,6 @@ export function App() {
   return (
     <>
       <Navbar />
-      <ToastContainer
-        autoClose={1000}
-        theme={"dark"}
-        pauseOnFocusLoss={false}
-        pauseOnHover={false}
-      />
       <ErrorBoundary FallbackComponent={ErrorFallback}>
         <Routes>
           <Route path="/" element={<RoutesContainer />} />
@@ -27,6 +21,12 @@ export function App() {
           <Route path="/edit-route" element={<EditRouteContainer />} />
         </Routes>
       </ErrorBoundary>
+      <ToastContainer
+        autoClose={1000}
+        theme={"dark"}
+        pauseOnFocusLoss={false}
+        pauseOnHover={false}
+      />
     </>
   );
 }
