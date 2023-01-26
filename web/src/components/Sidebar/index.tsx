@@ -7,6 +7,7 @@ import { searchStringsAtom } from "../../state/search-strings";
 import { Viewport } from "../Viewport";
 import styles from "./styles.module.css";
 import TreeSVG from "./tree.svg";
+import phos from "./So2ksuE.png";
 
 export function Sidebar() {
   const searchStrings = useRecoilValue(searchStringsAtom);
@@ -33,6 +34,9 @@ export function Sidebar() {
         <hr />
         <Viewport>
           <img src={TreeSVG} />
+          {/* <svg xmlns="http://www.w3.org/2000/svg">
+            <image href={TreeSVG} />
+          </svg> */}
         </Viewport>
         {searchStrings !== null && searchStrings.length > 0 && (
           <>
