@@ -1,11 +1,10 @@
 import classNames from "classnames";
 import { HiChevronDoubleUp, HiChevronDown, HiChevronUp } from "react-icons/hi";
 import { MdDeleteOutline } from "react-icons/md";
-import styles from "./GemOrder.module.css";
-
 import { GemReward } from "../ItemReward";
 import { RequiredGem } from "../../../../common/route-processing";
 import { InlineFakeBlock } from "../InlineFakeBlock";
+import styles from "./styles.module.css";
 
 interface GemOrderProps {
   requiredGem: RequiredGem;

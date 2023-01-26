@@ -5,8 +5,7 @@ import { gems, gemColours } from "../../../../common/data";
 import { InlineFakeBlock } from "../InlineFakeBlock";
 import { taskStyle } from "../TaskList";
 import { SplitRow } from "../SplitRow";
-
-import styles from "./ItemReward.module.css";
+import styles from "./styles.module.css";
 
 function getImageUrl(path: string) {
   return new URL(`./images/${path}`, import.meta.url).href;

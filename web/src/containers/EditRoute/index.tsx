@@ -5,9 +5,8 @@ import { formStyles } from "../../components/Form";
 import { routeFilesSelector } from "../../state/route";
 import Editor from "react-simple-code-editor";
 import { highlight, Grammar } from "prismjs";
-
-import styles from "./EditRoute.module.css";
 import { RouteFile } from "../../../../common/route-processing";
+import styles from "./styles.module.css";
 
 const RouteGrammar: Grammar = {
   keyword: {

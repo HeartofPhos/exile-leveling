@@ -1,3 +1,3 @@
-import styles from "./Form.module.css";
+import styles from "./styles.module.css";
 
 export const formStyles = styles;

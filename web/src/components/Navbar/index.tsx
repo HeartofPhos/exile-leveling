@@ -14,8 +14,7 @@ import { buildRouteSelector } from "../../state";
 import { routeFilesSelector, useClearRouteProgress } from "../../state/route";
 import { useClearGemProgress } from "../../state/gem-progress";
 import { toast } from "react-toastify";
-
-import styles from "./Navbar.module.css";
+import styles from "./styles.module.css";
 
 interface NavbarItemProps {
   label: string;

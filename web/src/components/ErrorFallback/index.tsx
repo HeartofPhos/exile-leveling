@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { FallbackProps } from "react-error-boundary";
-import styles from "./ErrorFallback.module.css";
+import styles from "./styles.module.css";
 
 export function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
   return (

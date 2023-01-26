@@ -5,8 +5,7 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useRecoilValue } from "recoil";
 import { searchStringsAtom } from "../../state/search-strings";
 import { Viewport } from "../Viewport";
-
-import styles from "./Sidebar.module.css";
+import styles from "./styles.module.css";
 import treeSVG from "./tree.svg";
 
 export function Sidebar() {

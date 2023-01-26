@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { RecoilState, useRecoilState } from "recoil";
-import styles from "./TaskList.module.css";
+import styles from "./styles.module.css";
 
 export const taskStyle = styles.task;
 

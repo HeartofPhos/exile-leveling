@@ -20,8 +20,7 @@ import { SplitRow } from "../SplitRow";
 import { taskStyle } from "../TaskList";
 import { QuestFragment } from "../../../../common/route-processing/fragment/quest";
 import { ItemReward } from "../ItemReward";
-
-import styles from "./ExileFragment.module.css";
+import styles from "./styles.module.css";
 
 interface FragmentProps {
   fragment: Fragment;

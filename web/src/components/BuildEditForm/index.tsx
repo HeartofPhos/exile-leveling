@@ -4,8 +4,7 @@ import { gemProgressSelectorFamily } from "../../state/gem-progress";
 import { GemOrder } from "../GemOrder";
 import { SplitRow } from "../SplitRow";
 import { TaskItemProps, TaskList } from "../TaskList";
-
-import styles from "./BuildEditForm.module.css";
+import styles from "./styles.module.css";
 
 interface BuildInfoFormProps {
   buildData: BuildData;
