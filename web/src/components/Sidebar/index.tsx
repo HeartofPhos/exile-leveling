@@ -6,7 +6,7 @@ import { useRecoilValue } from "recoil";
 import { searchStringsAtom } from "../../state/search-strings";
 import { Viewport } from "../Viewport";
 import styles from "./styles.module.css";
-import treeSVG from "./tree.svg";
+import TreeSVG from "./tree.svg";
 
 export function Sidebar() {
   const searchStrings = useRecoilValue(searchStringsAtom);
@@ -32,7 +32,7 @@ export function Sidebar() {
       <div style={{ display: expanded ? undefined : "none" }}>
         <hr />
         <Viewport>
-          <img src={treeSVG} />
+          <img src={TreeSVG} />
         </Viewport>
         {searchStrings !== null && searchStrings.length > 0 && (
           <>
