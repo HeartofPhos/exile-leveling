@@ -29,6 +29,10 @@ export function Viewport({ children }: React.PropsWithChildren) {
         if (!evt.isPrimary) return;
         setInputActive(false);
       }}
+      onPointerLeave={(evt) => {
+        if (!evt.isPrimary) return;
+        setInputActive(false);
+      }}
       onPointerMove={(evt) => {
         if (evt.pointerType === "mouse" && (evt.buttons & 1) !== 1) return;
 

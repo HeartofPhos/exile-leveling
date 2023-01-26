@@ -12,8 +12,6 @@ export function Sidebar() {
   const searchStrings = useRecoilValue(searchStringsAtom);
   const [expanded, setExpanded] = useState(true);
 
-  // if (searchStrings == null || searchStrings.length == 0) return <></>;
-
   const expandIcon = expanded ? <FiChevronRight /> : <FiChevronLeft />;
 
   return (
@@ -28,22 +26,26 @@ export function Sidebar() {
           setExpanded(!expanded);
         }}
       >
-        {expanded && <span>Search Strings</span>}
+        {expanded && <span>Sidebar</span>}
         {expandIcon}
       </div>
-      <Viewport>
-        <img src={treeSVG} />
-      </Viewport>
-      {expanded && (
-        <>
-          <hr />
-          <div className={classNames(styles.sidebarItems)}>
-            {searchStrings?.map((x, i) => (
-              <SearchString key={i} value={x} />
-            ))}
-          </div>
-        </>
-      )}
+      <div style={{ display: expanded ? undefined : "none" }}>
+        <hr />
+        <Viewport>
+          <img src={treeSVG} />
+        </Viewport>
+        {searchStrings !== null && searchStrings.length > 0 && (
+          <>
+            <span>Search Strings</span>
+            <hr />
+            <div className={classNames(styles.sidebarItems)}>
+              {searchStrings.map((x, i) => (
+                <SearchString key={i} value={x} />
+              ))}
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 }
