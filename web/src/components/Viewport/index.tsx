@@ -34,7 +34,7 @@ export function Viewport({ children }: React.PropsWithChildren) {
         setInputActive(false);
       }}
       onPointerMove={(evt) => {
-        if (evt.pointerType === "mouse" && (evt.buttons & 1) !== 1) return;
+        if (evt.pointerType === "mouse" && (evt.buttons & 5) === 0) return;
 
         setPos({
           x: pos.x + evt.movementX,
