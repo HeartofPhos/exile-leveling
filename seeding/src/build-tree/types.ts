@@ -193,3 +193,56 @@ export namespace SkillTree {
     coords: Record<string, SpriteCoords>;
   }
 }
+
+export namespace ExileTree {
+  export interface Data {
+    bounds: Bounds;
+    nodes: Node[];
+    connections: Connection[];
+  }
+
+  export interface Bounds {
+    minX: number;
+    minY: number;
+    maxX: number;
+    maxY: number;
+  }
+
+  export interface Node {
+    id: string;
+    position: Coord;
+    kind: "Normal" | "Mastery" | "Keystone" | "Ascendancy";
+    ascendancy?: AscendancyNode;
+  }
+
+  export interface AscendancyNode {
+    ascendancyName: string;
+    kind: "Start" | "Normal" | "Notable";
+  }
+
+  export interface Coord {
+    x: number;
+    y: number;
+  }
+
+  export interface Connection {
+    a: Node;
+    b: Node;
+    path: Path;
+  }
+
+  export type Path = Line | Sweep;
+  export interface Sweep {
+    sweep: "CW" | "CCW";
+    radius: number;
+  }
+  export interface Line {
+    sweep: undefined;
+  }
+
+  export interface AscendancyInfo {
+    class: number;
+    ascendancy: number;
+    start_node: string;
+  }
+}

@@ -1,48 +1,4 @@
-import { SkillTree } from "./types";
-
-interface Tree {
-  bounds: Bounds;
-  nodes: Node[];
-  connections: Connection[];
-}
-
-interface Bounds {
-  minX: number;
-  minY: number;
-  maxX: number;
-  maxY: number;
-}
-interface Node {
-  id: string;
-  position: Coord;
-  kind: "Normal" | "Mastery" | "Keystone" | "Ascendancy";
-}
-
-interface Coord {
-  x: number;
-  y: number;
-}
-
-interface Connection {
-  a: Node;
-  b: Node;
-  path: Path;
-}
-
-type Path = Line | Sweep;
-interface Sweep {
-  sweep: "CW" | "CCW";
-  radius: number;
-}
-interface Line {
-  sweep: undefined;
-}
-
-interface AscendancyInfo {
-  class: number;
-  ascendancy: number;
-  start_node: string;
-}
+import { ExileTree, SkillTree } from "./types";
 
 export const ANGLES_16: number[] = [
   0, 30, 45, 60, 90, 120, 135, 150, 180, 210, 225, 240, 270, 300, 315, 330,
@@ -74,7 +30,7 @@ function getPosition(data: SkillTree.Data, node: SkillTree.Node) {
 }
 
 export function parseSkillTree(data: SkillTree.Data) {
-  const tree: Tree = {
+  const tree: ExileTree.Data = {
     bounds: {
       minX: Number.MAX_VALUE,
       minY: Number.MAX_VALUE,
@@ -92,14 +48,14 @@ export function parseSkillTree(data: SkillTree.Data) {
     tree.bounds.maxY = Math.max(tree.bounds.maxY, y);
   };
 
-  const ascendancies: Record<string, AscendancyInfo> = {};
+  const ascendancies: Record<string, ExileTree.AscendancyInfo> = {};
   const tempAscendancies: Record<
     string,
     {
       startNode: string;
-      startPosition: Coord;
-      nodes: Node[];
-      connections: Connection[];
+      startPosition: ExileTree.Coord;
+      nodes: ExileTree.Node[];
+      connections: ExileTree.Connection[];
     }
   > = {};
 
@@ -116,10 +72,11 @@ export function parseSkillTree(data: SkillTree.Data) {
         id: nodeId,
         position: { x, y },
         kind: nodeKind(node),
+        ascendancy: ascendancyNode(node),
       };
 
-      let nodes: Node[];
-      let connections: Connection[];
+      let nodes: ExileTree.Node[];
+      let connections: ExileTree.Connection[];
       if (treeNode.kind === "Ascendancy") {
         let asc = tempAscendancies[node.ascendancyName!];
         if (asc === undefined) {
@@ -158,12 +115,12 @@ export function parseSkillTree(data: SkillTree.Data) {
 
         let [outAngle, outX, outY] = getPosition(data, outNode);
 
-        let path: Path;
+        let path: ExileTree.Path;
         if (node.group === outNode.group && node.orbit === outNode.orbit) {
           const radius = data.constants.orbitRadii[node.orbit!];
 
           let rot = (angle - outAngle + TWO_PI) % TWO_PI;
-          let sweep: Sweep["sweep"];
+          let sweep: ExileTree.Sweep["sweep"];
           if (rot > Math.PI) sweep = "CW";
           else sweep = "CCW";
 
@@ -178,6 +135,7 @@ export function parseSkillTree(data: SkillTree.Data) {
             id: outNodeId,
             position: { x: outX, y: outY },
             kind: nodeKind(outNode),
+            ascendancy: ascendancyNode(outNode),
           },
           path: path,
         });
@@ -191,7 +149,7 @@ export function parseSkillTree(data: SkillTree.Data) {
     const diff_x = ASCENDANCY_POS_X - asc.startPosition.x;
     const diff_y = ASCENDANCY_POS_Y - asc.startPosition.y;
 
-    const updateNode = (node: Node) => {
+    const updateNode = (node: ExileTree.Node) => {
       node.position.x += diff_x;
       node.position.y += diff_y;
     };
@@ -228,10 +186,26 @@ function filterConnection(a: SkillTree.Node, b: SkillTree.Node) {
   );
 }
 
-function nodeKind(node: SkillTree.Node): Node["kind"] {
+function nodeKind(node: SkillTree.Node): ExileTree.Node["kind"] {
   if (node.isKeystone) return "Keystone";
   if (node.isMastery) return "Mastery";
   if (node.ascendancyName !== undefined) return "Ascendancy";
 
   return "Normal";
+}
+
+function ascendancyNode(
+  node: SkillTree.Node
+): ExileTree.AscendancyNode | undefined {
+  if (node.ascendancyName === undefined) return undefined;
+
+  let kind: ExileTree.AscendancyNode["kind"];
+  if (node.isAscendancyStart) kind = "Start";
+  else if (node.isNotable) kind = "Notable";
+  else kind = "Normal";
+
+  return {
+    ascendancyName: node.ascendancyName,
+    kind: kind,
+  };
 }
