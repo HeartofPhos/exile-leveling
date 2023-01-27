@@ -2,26 +2,35 @@ import fs from "fs";
 import { getGems as seedGems } from "./seeding/gems";
 import { getQuests } from "./seeding/quests";
 import { getAreas } from "./seeding/areas";
-import { parsePassiveTree } from "./skill-tree";
+import { buildSVG } from "./build-tree";
 
 const dataPath = process.argv[2];
-function saveData(name: string, data: any) {
-  fs.writeFileSync(`${dataPath}/${name}.json`, JSON.stringify(data, null, 2));
+
+function saveJSON(name: string, data: any) {
+  fs.writeFileSync(
+    `${dataPath}/json/${name}.json`,
+    JSON.stringify(data, null, 2)
+  );
+}
+
+function saveTree(name: string, data: string) {
+  fs.writeFileSync(`${dataPath}/tree/${name}.svg`, data);
 }
 
 const COMMAND_PROCESSORS: Record<string, () => Promise<any>> = {
   ["data"]: async () => {
     const { gems, vaalGemLookup, awakenedGemLookup } = await seedGems();
-    saveData("gems", gems);
-    saveData("vaal-gem-lookup", vaalGemLookup);
-    saveData("awakened-gem-lookup", awakenedGemLookup);
+    saveJSON("gems", gems);
+    saveJSON("vaal-gem-lookup", vaalGemLookup);
+    saveJSON("awakened-gem-lookup", awakenedGemLookup);
     const quests = await getQuests();
-    saveData("quests", quests);
+    saveJSON("quests", quests);
     const areas = await getAreas();
-    saveData("areas", areas);
+    saveJSON("areas", areas);
   },
   ["tree"]: async () => {
-    await parsePassiveTree("3.20");
+    const svg = await buildSVG("3.19");
+    saveTree("tree", svg);
   },
 };
 
