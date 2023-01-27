@@ -14,7 +14,7 @@
 }
 
 .sidebar.expand {
-  width: 10rem;
+  width: 15rem;
 }
 
 .sidebarToggle {
@@ -24,7 +24,6 @@
   height: var(--line-height);
   color: var(--primary-light);
   font-weight: var(--font-heavy);
-  /* padding: var(--size-2) 0; */
 }
 
 .sidebarItems {
