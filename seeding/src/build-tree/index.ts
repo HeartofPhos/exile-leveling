@@ -33,7 +33,7 @@ export async function buildSVG(version: keyof typeof PASSIVE_TREE_JSON) {
   svg += `<g class="nodes" stroke="${stroke}" fill="${fill}">\n`;
   for (const node of tree.nodes) {
     let attrs;
-    if (node.kind == "Mastery") attrs = `r="35" class="mastery"`;
+    if (node.kind == "Mastery") attrs = `r="55" class="mastery"`;
     else if (node.kind == "Keystone") attrs = `r="80" class="keystone"`;
     else if (node.kind == "Ascendancy") attrs = `r="35" class="ascendancy"`;
     else attrs = `r="50"`;

@@ -70,7 +70,7 @@ function getPosition(data: SkillTree.Data, node: SkillTree.Node) {
   let x = group.x + radius * Math.sin(angle);
   let y = group.y - radius * Math.cos(angle);
 
-  return [angle % TWO_PI, x, y];
+  return [angle % TWO_PI, Math.round(x), Math.round(y)];
 }
 
 export function parseSkillTree(data: SkillTree.Data) {
