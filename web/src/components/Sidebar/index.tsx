@@ -4,10 +4,8 @@ import { FaRegClipboard } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useRecoilValue } from "recoil";
 import { searchStringsAtom } from "../../state/search-strings";
-import { Viewport } from "../Viewport";
+import { PassiveTreeViewer } from "../PassiveTreeViewer";
 import styles from "./styles.module.css";
-import TreeSVG from "./tree.svg";
-import phos from "./So2ksuE.png";
 
 export function Sidebar() {
   const searchStrings = useRecoilValue(searchStringsAtom);
@@ -32,12 +30,7 @@ export function Sidebar() {
       </div>
       <div style={{ display: expanded ? undefined : "none" }}>
         <hr />
-        <Viewport>
-          <img src={TreeSVG} />
-          {/* <svg xmlns="http://www.w3.org/2000/svg">
-            <image href={TreeSVG} />
-          </svg> */}
-        </Viewport>
+        <PassiveTreeViewer />
         {searchStrings !== null && searchStrings.length > 0 && (
           <>
             <span>Search Strings</span>
