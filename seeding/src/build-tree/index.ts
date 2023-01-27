@@ -11,6 +11,8 @@ const PASSIVE_TREE_JSON = {
     "https://raw.githubusercontent.com/grindinggear/skilltree-export/d2a0ffa5e15717e0115277f8bd852c6b53371429/data.json",
 };
 
+const PADDING = 175;
+
 export async function buildSVG(version: keyof typeof PASSIVE_TREE_JSON) {
   const data: SkillTree.Data = await fetch(PASSIVE_TREE_JSON[version]).then(
     (x) => x.json()
@@ -22,22 +24,27 @@ export async function buildSVG(version: keyof typeof PASSIVE_TREE_JSON) {
   const fill = "#000000";
 
   let svg = ``;
-  const vbX = tree.bounds.minX;
-  const vbY = tree.bounds.minY;
-  const vbW = tree.bounds.maxX - tree.bounds.minX;
-  const vbH = tree.bounds.maxY - tree.bounds.minY;
+  const vbX = tree.bounds.minX - PADDING;
+  const vbY = tree.bounds.minY - PADDING;
+  const vbW = tree.bounds.maxX - tree.bounds.minX + PADDING * 2;
+  const vbH = tree.bounds.maxY - tree.bounds.minY + PADDING * 2;
   svg += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vbX} ${vbY} ${vbW} ${vbH}">\n`;
 
   svg += `<g class="nodes" stroke="${stroke}" fill="${fill}">\n`;
   for (const node of tree.nodes) {
-    svg += `<circle cx="${node.position.x}" cy="${node.position.y}" id="n${node.id}" r="50"/>\n`;
+    let attrs;
+    if (node.kind == "Mastery") attrs = `r="35" class="mastery"`;
+    else if (node.kind == "Keystone") attrs = `r="80" class="keystone"`;
+    else if (node.kind == "Ascendancy") attrs = `r="35" class="ascendancy"`;
+    else attrs = `r="50"`;
+
+    svg += `<circle cx="${node.position.x}" cy="${node.position.y}" id="n${node.id}" ${attrs}/>\n`;
   }
   svg += `</g>\n`;
 
   svg += `<g class="connections" fill="none" stroke-width="20" stroke="${stroke}">\n`;
   for (const connection of tree.connections) {
-    // const id = [connection.a.id, connection.b.id].sort().join("-");
-    const id = "";
+    const id = [connection.a.id, connection.b.id].sort().join("-");
     const a = connection.a.position;
     const b = connection.b.position;
 

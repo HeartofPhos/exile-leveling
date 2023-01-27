@@ -15,6 +15,7 @@ interface Bounds {
 interface Node {
   id: string;
   position: Coord;
+  kind: "Normal" | "Mastery" | "Keystone" | "Ascendancy";
 }
 
 interface Coord {
@@ -42,16 +43,18 @@ interface AscendancyInfo {
   ascendancy: number;
   start_node: string;
 }
-const TWO_PI = Math.PI * 2;
-const DEG_2_RAD = Math.PI / 180;
-const ANGLES_16: number[] = [
+
+export const ANGLES_16: number[] = [
   0, 30, 45, 60, 90, 120, 135, 150, 180, 210, 225, 240, 270, 300, 315, 330,
 ];
-const ANGLES_40: number[] = [
+export const ANGLES_40: number[] = [
   0, 10, 20, 30, 40, 45, 50, 60, 70, 80, 90, 100, 110, 120, 130, 135, 140, 150,
   160, 170, 180, 190, 200, 210, 220, 225, 230, 240, 250, 260, 270, 280, 290,
   300, 310, 315, 320, 330, 340, 350,
 ];
+
+const TWO_PI = Math.PI * 2;
+const DEG_2_RAD = Math.PI / 180;
 
 function getPosition(data: SkillTree.Data, node: SkillTree.Node) {
   const radius = data.constants.orbitRadii[node.orbit!];
@@ -67,7 +70,7 @@ function getPosition(data: SkillTree.Data, node: SkillTree.Node) {
   let x = group.x + radius * Math.sin(angle);
   let y = group.y - radius * Math.cos(angle);
 
-  return [Math.round(angle % TWO_PI), Math.round(x), Math.round(y)];
+  return [angle % TWO_PI, x, y];
 }
 
 export function parseSkillTree(data: SkillTree.Data) {
@@ -109,10 +112,16 @@ export function parseSkillTree(data: SkillTree.Data) {
 
       const [angle, x, y] = getPosition(data, node);
 
+      const treeNode = {
+        id: nodeId,
+        position: { x, y },
+        kind: nodeKind(node),
+      };
+
       let nodes: Node[];
       let connections: Connection[];
-      if (node.ascendancyName !== undefined) {
-        let asc = tempAscendancies[node.ascendancyName];
+      if (treeNode.kind === "Ascendancy") {
+        let asc = tempAscendancies[node.ascendancyName!];
         if (asc === undefined) {
           asc = {
             startNode: "",
@@ -120,7 +129,7 @@ export function parseSkillTree(data: SkillTree.Data) {
             nodes: [],
             connections: [],
           };
-          tempAscendancies[node.ascendancyName] = asc;
+          tempAscendancies[node.ascendancyName!] = asc;
         }
 
         if (node.isAscendancyStart) {
@@ -137,10 +146,6 @@ export function parseSkillTree(data: SkillTree.Data) {
         connections = tree.connections;
       }
 
-      const treeNode = {
-        id: nodeId,
-        position: { x, y },
-      };
       nodes.push(treeNode);
 
       const outNodes =
@@ -172,6 +177,7 @@ export function parseSkillTree(data: SkillTree.Data) {
           b: {
             id: outNodeId,
             position: { x: outX, y: outY },
+            kind: nodeKind(outNode),
           },
           path: path,
         });
@@ -179,10 +185,28 @@ export function parseSkillTree(data: SkillTree.Data) {
     }
   }
 
-  tree.bounds.minX -= 75;
-  tree.bounds.minY -= 75;
-  tree.bounds.maxX += 75;
-  tree.bounds.maxY += 75;
+  const ASCENDANCY_POS_X = 7000;
+  const ASCENDANCY_POS_Y = -7700;
+  for (const [asc_name, asc] of Object.entries(tempAscendancies)) {
+    const diff_x = ASCENDANCY_POS_X - asc.startPosition.x;
+    const diff_y = ASCENDANCY_POS_Y - asc.startPosition.y;
+
+    const updateNode = (node: Node) => {
+      node.position.x += diff_x;
+      node.position.y += diff_y;
+    };
+
+    for (const node of asc.nodes) {
+      updateNode(node);
+      updateMinxMax(node.position.x, node.position.y);
+      tree.nodes.push(node);
+    }
+
+    for (const connection of asc.connections) {
+      updateNode(connection.b);
+      tree.connections.push(connection);
+    }
+  }
 
   return tree;
 }
@@ -190,9 +214,11 @@ export function parseSkillTree(data: SkillTree.Data) {
 function filterGroup(group: SkillTree.Group) {
   return !group.isProxy;
 }
+
 function filterNode(node: SkillTree.Node) {
   return node.classStartIndex === undefined;
 }
+
 function filterConnection(a: SkillTree.Node, b: SkillTree.Node) {
   return (
     filterNode(b) &&
@@ -200,4 +226,12 @@ function filterConnection(a: SkillTree.Node, b: SkillTree.Node) {
     !b.isMastery &&
     (a.ascendancyName === undefined) === (b.ascendancyName === undefined)
   );
+}
+
+function nodeKind(node: SkillTree.Node): Node["kind"] {
+  if (node.isKeystone) return "Keystone";
+  if (node.isMastery) return "Mastery";
+  if (node.ascendancyName !== undefined) return "Ascendancy";
+
+  return "Normal";
 }
