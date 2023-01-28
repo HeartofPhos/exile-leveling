@@ -87,20 +87,29 @@ export function parseNodes(
   const connectionsRemoved: string[] = [];
 
   for (const connection of passiveTree.connections) {
-    const exists =
-      (curNodeSet.has(connection.a) || prevNodeSet.has(connection.a)) &&
-      (curNodeSet.has(connection.b) || prevNodeSet.has(connection.b));
-    if (!exists) continue;
-
     const id = [connection.a, connection.b].sort().join("-");
 
-    if (nodesActiveSet.has(connection.a) && nodesActiveSet.has(connection.b))
-      connectionsActive.push(id);
+    const aIsActive = nodesActiveSet.has(connection.a);
+    const bIsActive = nodesActiveSet.has(connection.b);
 
-    if (nodesAddedSet.has(connection.a) || nodesAddedSet.has(connection.b))
+    if (aIsActive && bIsActive) connectionsActive.push(id);
+
+    const aIsAdded = nodesAddedSet.has(connection.a);
+    const bIsAdded = nodesAddedSet.has(connection.b);
+
+    if (
+      (aIsAdded && (bIsAdded || bIsActive)) ||
+      (bIsAdded && (aIsAdded || aIsActive))
+    )
       connectionsAdded.push(id);
 
-    if (nodesRemovedSet.has(connection.a) || nodesRemovedSet.has(connection.b))
+    const aIsRemoved = nodesRemovedSet.has(connection.a);
+    const bIsRemoved = nodesRemovedSet.has(connection.b);
+
+    if (
+      (aIsRemoved && (bIsRemoved || bIsActive)) ||
+      (bIsRemoved && (aIsRemoved || aIsActive))
+    )
       connectionsRemoved.push(id);
   }
 

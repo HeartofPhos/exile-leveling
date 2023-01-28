@@ -21,8 +21,8 @@ const TREE_DATA_LOOKUP = globImportLazy<PassiveTree.Data>(
 );
 
 const PASSIVE_TREE_URLS = [
-  "https://www.pathofexile.com/passive-skill-tree/AAAABgMCJCqNHwIdFEmy8Wwk2KyYvOpqQwQHpwjfsC9dj0Y2xVXG-tIsnEkb7FXYJIdlB6Wvt4VtMjQWb-NqOliD21ZINtiCENWBAuMQWAABuhovXQ==",
-  "https://www.pathofexile.com/passive-skill-tree/AAAABgMCL-xVHwIdFEmyeyD-h_FsJNismLzqakOGtzpYpwgXL9gkL13Pg4PbgKSPRviTVdbjagQHghAsnDbY1YEC41XGZOcQWEkbh2UHpSqNMcLfsBZvr7cQzPrSVkgyNIVtNsUAAs8Nhre6Gi9d",
+  "https://www.pathofexile.com/passive-skill-tree/AAAABgQACBm0Xzmwq8SCwo6K8Jst-KEAAA==",
+  "https://www.pathofexile.com/passive-skill-tree/AAAABgQACL6nXzmwq8SCmy2K8MKO-KEAAA==",
 ];
 
 export function PassiveTreeViewer() {
