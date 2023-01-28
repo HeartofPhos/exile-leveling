@@ -48,7 +48,6 @@ export function parseSkillTree(data: SkillTree.Data) {
     tree.bounds.maxY = Math.max(tree.bounds.maxY, y);
   };
 
-  const ascendancies: Record<string, ExileTree.AscendancyInfo> = {};
   const tempAscendancies: Record<
     string,
     {

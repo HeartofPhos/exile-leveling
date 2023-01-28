@@ -239,10 +239,4 @@ export namespace ExileTree {
   export interface Line {
     sweep: undefined;
   }
-
-  export interface AscendancyInfo {
-    class: number;
-    ascendancy: number;
-    start_node: string;
-  }
 }

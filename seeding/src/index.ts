@@ -2,7 +2,7 @@ import fs from "fs";
 import { getGems as seedGems } from "./seeding/gems";
 import { getQuests } from "./seeding/quests";
 import { getAreas } from "./seeding/areas";
-import { buildSVG } from "./build-tree";
+import { buildTemplates } from "./build-tree";
 
 const dataPath = process.argv[2];
 
@@ -13,7 +13,7 @@ function saveJSON(name: string, data: any) {
   );
 }
 
-function saveTree(name: string, data: string) {
+function saveTreeTemplate(name: string, data: string) {
   fs.writeFileSync(`${dataPath}/tree/${name}.svg`, data);
 }
 
@@ -29,8 +29,10 @@ const COMMAND_PROCESSORS: Record<string, () => Promise<any>> = {
     saveJSON("areas", areas);
   },
   ["tree"]: async () => {
-    const svg = await buildSVG("3.19");
-    saveTree("tree", svg);
+    const templates = await buildTemplates();
+    for (const { version, template } of templates) {
+      saveTreeTemplate(version, template);
+    }
   },
 };
 
