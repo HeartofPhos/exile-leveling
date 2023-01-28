@@ -9,6 +9,9 @@ const ASCENDANCY_NOTABLE_RADIUS = 65;
 const ASCENDANCY_NORMAL_RADIUS = 45;
 const NORMAL_RADIUS = 50;
 
+const NODE_STROKE_WIDTH = 0;
+const CONNECTION_STROKE_WIDTH = 20;
+
 const GROUP_NODE_CLASS = "nodes";
 const GROUP_CONNECTION_CLASS = "connections";
 
@@ -36,7 +39,7 @@ export function buildTemplate(tree: ExileTree.Data) {
   .${GROUP_NODE_CLASS} {
     fill: {{ nodeColor }};
     stroke: {{ nodeColor }};
-    stroke-width: {{ nodeStrokeWidth }};
+    stroke-width: ${NODE_STROKE_WIDTH};
   }
   
   .${GROUP_NODE_CLASS} .${NODE_MASTERY_CLASS} {
@@ -47,7 +50,7 @@ export function buildTemplate(tree: ExileTree.Data) {
   .${GROUP_CONNECTION_CLASS} {
     fill: none;
     stroke: {{ connectionColor }};
-    stroke-width: {{ connectionStrokeWidth }};
+    stroke-width: ${CONNECTION_STROKE_WIDTH};
   }
   
   .${NODE_ASCENDANCY_CLASS} {

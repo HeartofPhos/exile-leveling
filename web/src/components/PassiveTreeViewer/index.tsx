@@ -21,9 +21,7 @@ export function PassiveTreeViewer() {
       const svg = compiled({
         backgroundColor: "#00000000",
         nodeColor: "#64748b",
-        nodeStrokeWidth: 0,
         connectionColor: "#64748b",
-        connectionStrokeWidth: 20,
         ascendancy: "Saboteur",
       });
 
