@@ -1,4 +1,5 @@
 import Handlebars from "handlebars";
+import PLazy from "p-lazy";
 import { useEffect, useState } from "react";
 import { Viewport } from "../Viewport";
 
@@ -6,13 +7,16 @@ const TREE_TEMPLATE_LOOKUP = Object.entries(
   import.meta.glob("../../../../common/data/tree-templates/*.svg")
 ).reduce((prev, [key, value], i) => {
   const filename = /.*\/(.*?).svg$/.exec(key)![1];
-  prev[filename] = value()
-    .then((url) => fetch(new URL(url.default, import.meta.url).href))
-    .then((res) => res.text())
-    .then((template) => Handlebars.compile(template));
+  prev[filename] = new PLazy((resolve) =>
+    value()
+      .then((url) => fetch(new URL(url.default, import.meta.url).href))
+      .then((res) => res.text())
+      .then((template) => Handlebars.compile(template))
+      .then((x) => resolve(x))
+  );
 
   return prev;
-}, {} as Record<string, Promise<HandlebarsTemplateDelegate<any>>>);
+}, {} as Record<string, PLazy<HandlebarsTemplateDelegate<any>>>);
 
 export function PassiveTreeViewer() {
   const [svg, setSVG] = useState<string>();
