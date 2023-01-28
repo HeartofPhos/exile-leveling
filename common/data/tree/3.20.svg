@@ -4453,7 +4453,7 @@ svg {
 <circle cx="7000" cy="-8035" id="n32251" r="65" class="ascendancy Berserker"/>
 <circle cx="7493" cy="-7700" id="n57560" r="65" class="ascendancy Berserker"/>
 <circle cx="7290" cy="-7533" id="n9271" r="65" class="ascendancy Berserker"/>
-<circle cx="7000" cy="-7700" id="n29294" r="0" class="ascendancy Berserker"/>
+<circle cx="7000" cy="-7700" id="n29294" r="30" class="ascendancy Berserker"/>
 <circle cx="7081" cy="-7559" id="n32992" r="45" class="ascendancy Guardian"/>
 <circle cx="7168" cy="-7990" id="n61372" r="65" class="ascendancy Guardian"/>
 <circle cx="7086" cy="-8185" id="n64768" r="65" class="ascendancy Guardian"/>
@@ -4468,13 +4468,13 @@ svg {
 <circle cx="7290" cy="-7867" id="n37419" r="45" class="ascendancy Guardian"/>
 <circle cx="7081" cy="-7840" id="n46952" r="45" class="ascendancy Guardian"/>
 <circle cx="7247" cy="-8127" id="n20050" r="45" class="ascendancy Guardian"/>
-<circle cx="7000" cy="-7700" id="n409" r="0" class="ascendancy Guardian"/>
+<circle cx="7000" cy="-7700" id="n409" r="30" class="ascendancy Guardian"/>
 <circle cx="6895" cy="-7252" id="n14996" r="45" class="ascendancy Chieftain"/>
 <circle cx="6976" cy="-7393" id="n61355" r="65" class="ascendancy Chieftain"/>
 <circle cx="6652" cy="-7393" id="n42659" r="45" class="ascendancy Chieftain"/>
 <circle cx="6733" cy="-7533" id="n50692" r="65" class="ascendancy Chieftain"/>
 <circle cx="6733" cy="-7252" id="n1731" r="65" class="ascendancy Chieftain"/>
-<circle cx="7000" cy="-7700" id="n24704" r="0" class="ascendancy Chieftain"/>
+<circle cx="7000" cy="-7700" id="n24704" r="30" class="ascendancy Chieftain"/>
 <circle cx="7167" cy="-7990" id="n47486" r="45" class="ascendancy Chieftain"/>
 <circle cx="7493" cy="-7700" id="n48480" r="65" class="ascendancy Chieftain"/>
 <circle cx="7426" cy="-7946" id="n53095" r="65" class="ascendancy Chieftain"/>
@@ -4501,7 +4501,7 @@ svg {
 <circle cx="7000" cy="-7862" id="n32115" r="45" class="ascendancy Juggernaut"/>
 <circle cx="7463" cy="-7868" id="n62349" r="45" class="ascendancy Juggernaut"/>
 <circle cx="7348" cy="-8048" id="n62595" r="65" class="ascendancy Juggernaut"/>
-<circle cx="7000" cy="-7700" id="n17765" r="0" class="ascendancy Juggernaut"/>
+<circle cx="7000" cy="-7700" id="n17765" r="30" class="ascendancy Juggernaut"/>
 <circle cx="7291" cy="-7868" id="n44797" r="45" class="ascendancy Hierophant"/>
 <circle cx="7486" cy="-7786" id="n34434" r="65" class="ascendancy Hierophant"/>
 <circle cx="7335" cy="-7700" id="n25651" r="65" class="ascendancy Hierophant"/>
@@ -4518,7 +4518,7 @@ svg {
 <circle cx="7247" cy="-7274" id="n922" r="65" class="ascendancy Hierophant"/>
 <circle cx="6754" cy="-7274" id="n29026" r="65" class="ascendancy Hierophant"/>
 <circle cx="7427" cy="-7454" id="n1105" r="65" class="ascendancy Hierophant"/>
-<circle cx="7000" cy="-7700" id="n30940" r="0" class="ascendancy Hierophant"/>
+<circle cx="7000" cy="-7700" id="n30940" r="30" class="ascendancy Hierophant"/>
 <circle cx="6859" cy="-7619" id="n43193" r="45" class="ascendancy Inquisitor"/>
 <circle cx="7290" cy="-7868" id="n39790" r="65" class="ascendancy Inquisitor"/>
 <circle cx="7316" cy="-8078" id="n32816" r="65" class="ascendancy Inquisitor"/>
@@ -4533,7 +4533,7 @@ svg {
 <circle cx="7290" cy="-7533" id="n53884" r="65" class="ascendancy Inquisitor"/>
 <circle cx="7316" cy="-7323" id="n48214" r="65" class="ascendancy Inquisitor"/>
 <circle cx="7493" cy="-7700" id="n40059" r="65" class="ascendancy Inquisitor"/>
-<circle cx="7000" cy="-7700" id="n61871" r="0" class="ascendancy Inquisitor"/>
+<circle cx="7000" cy="-7700" id="n61871" r="30" class="ascendancy Inquisitor"/>
 <circle cx="6402" cy="-7516" id="n4194" r="45" class="ascendancy Ascendant"/>
 <circle cx="6491" cy="-7674" id="n57052" r="45" class="ascendancy Ascendant"/>
 <circle cx="6536" cy="-8128" id="n42144" r="45" class="ascendancy Ascendant"/>
@@ -4553,7 +4553,7 @@ svg {
 <circle cx="6767" cy="-7246" id="n43195" r="45" class="ascendancy Ascendant"/>
 <circle cx="6859" cy="-7088" id="n34774" r="45" class="ascendancy Ascendant"/>
 <circle cx="6953" cy="-7247" id="n39598" r="45" class="ascendancy Ascendant"/>
-<circle cx="7000" cy="-7700" id="n35754" r="0" class="ascendancy Ascendant"/>
+<circle cx="7000" cy="-7700" id="n35754" r="30" class="ascendancy Ascendant"/>
 <circle cx="7000" cy="-7112" id="n17445" r="45" class="ascendancy Ascendant"/>
 <circle cx="6859" cy="-7355" id="n41996" r="45" class="ascendancy Ascendant"/>
 <circle cx="7000" cy="-7436" id="n607" r="45" class="ascendancy Ascendant"/>
@@ -4597,7 +4597,7 @@ svg {
 <circle cx="7167" cy="-7410" id="n27864" r="65" class="ascendancy Gladiator"/>
 <circle cx="7335" cy="-7700" id="n15616" r="65" class="ascendancy Gladiator"/>
 <circle cx="7000" cy="-8035" id="n52575" r="65" class="ascendancy Gladiator"/>
-<circle cx="7000" cy="-7700" id="n32730" r="0" class="ascendancy Gladiator"/>
+<circle cx="7000" cy="-7700" id="n32730" r="30" class="ascendancy Gladiator"/>
 <circle cx="6832" cy="-7410" id="n31984" r="45" class="ascendancy Occultist"/>
 <circle cx="7377" cy="-7383" id="n37492" r="65" class="ascendancy Occultist"/>
 <circle cx="7000" cy="-7365" id="n27096" r="65" class="ascendancy Occultist"/>
@@ -4612,7 +4612,7 @@ svg {
 <circle cx="7167" cy="-7410" id="n48124" r="45" class="ascendancy Occultist"/>
 <circle cx="6622" cy="-7383" id="n37127" r="65" class="ascendancy Occultist"/>
 <circle cx="6537" cy="-7531" id="n31344" r="65" class="ascendancy Occultist"/>
-<circle cx="7000" cy="-7700" id="n18378" r="0" class="ascendancy Occultist"/>
+<circle cx="7000" cy="-7700" id="n18378" r="30" class="ascendancy Occultist"/>
 <circle cx="6710" cy="-7533" id="n61259" r="65" class="ascendancy Elementalist"/>
 <circle cx="6515" cy="-7615" id="n57197" r="65" class="ascendancy Elementalist"/>
 <circle cx="7463" cy="-7869" id="n4917" r="65" class="ascendancy Elementalist"/>
@@ -4629,7 +4629,7 @@ svg {
 <circle cx="7335" cy="-7700" id="n6052" r="45" class="ascendancy Elementalist"/>
 <circle cx="7140" cy="-7619" id="n54279" r="45" class="ascendancy Elementalist"/>
 <circle cx="7290" cy="-7533" id="n56461" r="65" class="ascendancy Elementalist"/>
-<circle cx="7000" cy="-7700" id="n16023" r="0" class="ascendancy Elementalist"/>
+<circle cx="7000" cy="-7700" id="n16023" r="30" class="ascendancy Elementalist"/>
 <circle cx="7000" cy="-8035" id="n6982" r="45" class="ascendancy Champion"/>
 <circle cx="7377" cy="-8017" id="n56967" r="65" class="ascendancy Champion"/>
 <circle cx="7290" cy="-7868" id="n11412" r="65" class="ascendancy Champion"/>
@@ -4644,7 +4644,7 @@ svg {
 <circle cx="6514" cy="-7615" id="n31700" r="65" class="ascendancy Champion"/>
 <circle cx="6573" cy="-7947" id="n33940" r="65" class="ascendancy Champion"/>
 <circle cx="7000" cy="-8193" id="n35750" r="65" class="ascendancy Champion"/>
-<circle cx="7000" cy="-7700" id="n24984" r="0" class="ascendancy Champion"/>
+<circle cx="7000" cy="-7700" id="n24984" r="30" class="ascendancy Champion"/>
 <circle cx="6639" cy="-7708" id="n5415" r="45" class="ascendancy Necromancer"/>
 <circle cx="7168" cy="-7410" id="n55646" r="45" class="ascendancy Necromancer"/>
 <circle cx="7486" cy="-7785" id="n48719" r="65" class="ascendancy Necromancer"/>
@@ -4661,7 +4661,7 @@ svg {
 <circle cx="7000" cy="-7365" id="n54159" r="65" class="ascendancy Necromancer"/>
 <circle cx="6832" cy="-7237" id="n65153" r="65" class="ascendancy Necromancer"/>
 <circle cx="7169" cy="-7237" id="n14603" r="65" class="ascendancy Necromancer"/>
-<circle cx="7000" cy="-7700" id="n60791" r="0" class="ascendancy Necromancer"/>
+<circle cx="7000" cy="-7700" id="n60791" r="30" class="ascendancy Necromancer"/>
 <circle cx="6665" cy="-7700" id="n61393" r="45" class="ascendancy Slayer"/>
 <circle cx="7168" cy="-8164" id="n34484" r="65" class="ascendancy Slayer"/>
 <circle cx="7427" cy="-7947" id="n10143" r="65" class="ascendancy Slayer"/>
@@ -4676,7 +4676,7 @@ svg {
 <circle cx="6831" cy="-8164" id="n3184" r="65" class="ascendancy Slayer"/>
 <circle cx="6507" cy="-7700" id="n17315" r="65" class="ascendancy Slayer"/>
 <circle cx="6573" cy="-7947" id="n62817" r="65" class="ascendancy Slayer"/>
-<circle cx="7000" cy="-7700" id="n33795" r="0" class="ascendancy Slayer"/>
+<circle cx="7000" cy="-7700" id="n33795" r="30" class="ascendancy Slayer"/>
 <circle cx="6919" cy="-7560" id="n12850" r="45" class="ascendancy Assassin"/>
 <circle cx="6753" cy="-8127" id="n19598" r="65" class="ascendancy Assassin"/>
 <circle cx="6859" cy="-7781" id="n33954" r="45" class="ascendancy Assassin"/>
@@ -4691,7 +4691,7 @@ svg {
 <circle cx="6709" cy="-7533" id="n6064" r="45" class="ascendancy Assassin"/>
 <circle cx="6573" cy="-7454" id="n19083" r="65" class="ascendancy Assassin"/>
 <circle cx="6573" cy="-7947" id="n23024" r="45" class="ascendancy Assassin"/>
-<circle cx="7000" cy="-7700" id="n58229" r="0" class="ascendancy Assassin"/>
+<circle cx="7000" cy="-7700" id="n58229" r="30" class="ascendancy Assassin"/>
 <circle cx="6515" cy="-7786" id="n36242" r="45" class="ascendancy Pathfinder"/>
 <circle cx="7000" cy="-8035" id="n6038" r="65" class="ascendancy Pathfinder"/>
 <circle cx="6838" cy="-7700" id="n32662" r="45" class="ascendancy Pathfinder"/>
@@ -4706,7 +4706,7 @@ svg {
 <circle cx="6915" cy="-8185" id="n40631" r="45" class="ascendancy Pathfinder"/>
 <circle cx="7169" cy="-8163" id="n61805" r="65" class="ascendancy Pathfinder"/>
 <circle cx="7000" cy="-7862" id="n59800" r="45" class="ascendancy Pathfinder"/>
-<circle cx="7000" cy="-7700" id="n64111" r="0" class="ascendancy Pathfinder"/>
+<circle cx="7000" cy="-7700" id="n64111" r="30" class="ascendancy Pathfinder"/>
 <circle cx="7000" cy="-7207" id="n48999" r="65" class="ascendancy Trickster"/>
 <circle cx="6710" cy="-7532" id="n37191" r="45" class="ascendancy Trickster"/>
 <circle cx="7427" cy="-7453" id="n41891" r="65" class="ascendancy Trickster"/>
@@ -4721,7 +4721,7 @@ svg {
 <circle cx="7081" cy="-7559" id="n19587" r="45" class="ascendancy Trickster"/>
 <circle cx="7168" cy="-7410" id="n29825" r="65" class="ascendancy Trickster"/>
 <circle cx="6833" cy="-7410" id="n35598" r="45" class="ascendancy Trickster"/>
-<circle cx="7000" cy="-7700" id="n55236" r="0" class="ascendancy Trickster"/>
+<circle cx="7000" cy="-7700" id="n55236" r="30" class="ascendancy Trickster"/>
 <circle cx="6860" cy="-7619" id="n64842" r="45" class="ascendancy Saboteur"/>
 <circle cx="6683" cy="-8078" id="n28535" r="65" class="ascendancy Saboteur"/>
 <circle cx="6665" cy="-7700" id="n25167" r="45" class="ascendancy Saboteur"/>
@@ -4736,7 +4736,7 @@ svg {
 <circle cx="6514" cy="-7615" id="n47366" r="45" class="ascendancy Saboteur"/>
 <circle cx="6514" cy="-7786" id="n51462" r="65" class="ascendancy Saboteur"/>
 <circle cx="6831" cy="-8164" id="n26446" r="45" class="ascendancy Saboteur"/>
-<circle cx="7000" cy="-7700" id="n18635" r="0" class="ascendancy Saboteur"/>
+<circle cx="7000" cy="-7700" id="n18635" r="30" class="ascendancy Saboteur"/>
 <circle cx="6573" cy="-7453" id="n53421" r="45" class="ascendancy Raider"/>
 <circle cx="6710" cy="-7867" id="n33645" r="65" class="ascendancy Raider"/>
 <circle cx="6573" cy="-7946" id="n15550" r="45" class="ascendancy Raider"/>
@@ -4749,7 +4749,7 @@ svg {
 <circle cx="7000" cy="-8193" id="n12146" r="45" class="ascendancy Raider"/>
 <circle cx="7168" cy="-8163" id="n11597" r="65" class="ascendancy Raider"/>
 <circle cx="6860" cy="-7781" id="n24432" r="45" class="ascendancy Raider"/>
-<circle cx="7000" cy="-7700" id="n58427" r="0" class="ascendancy Raider"/>
+<circle cx="7000" cy="-7700" id="n58427" r="30" class="ascendancy Raider"/>
 <circle cx="6710" cy="-7532" id="n53086" r="45" class="ascendancy Deadeye"/>
 <circle cx="7081" cy="-7559" id="n44482" r="65" class="ascendancy Deadeye"/>
 <circle cx="6919" cy="-7559" id="n55985" r="45" class="ascendancy Deadeye"/>
@@ -4768,6 +4768,6 @@ svg {
 <circle cx="6831" cy="-8163" id="n26067" r="65" class="ascendancy Deadeye"/>
 <circle cx="7167" cy="-7990" id="n28995" r="45" class="ascendancy Deadeye"/>
 <circle cx="7317" cy="-8077" id="n45313" r="65" class="ascendancy Deadeye"/>
-<circle cx="7000" cy="-7700" id="n56856" r="0" class="ascendancy Deadeye"/>
+<circle cx="7000" cy="-7700" id="n56856" r="30" class="ascendancy Deadeye"/>
 </g>
 </svg>
