@@ -216,7 +216,7 @@ export namespace ParsingTree {
   }
 
   export interface AscendancyNode {
-    ascendancyName: string;
+    name: string;
     kind: "Start" | "Normal" | "Notable";
   }
 

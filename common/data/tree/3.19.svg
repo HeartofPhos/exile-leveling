@@ -34,8 +34,8 @@ svg {
 }
 
 {{#each connections}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}{
-  fill: {{ connectionActiveColor }};
   stroke: {{ connectionActiveColor }};
+  stroke-width: 35;
 }
 </style>
 <g class="connections">

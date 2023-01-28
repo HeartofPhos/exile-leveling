@@ -1,3 +1,4 @@
+import { PassiveTree } from "../../../common/data/tree";
 import { ParsingTree, SkillTree } from "./types";
 
 export const ANGLES_16: number[] = [
@@ -30,7 +31,7 @@ function getPosition(data: SkillTree.Data, node: SkillTree.Node) {
 }
 
 export function parseSkillTree(data: SkillTree.Data) {
-  const tree: ParsingTree.Data = {
+  const parsingTree: ParsingTree.Data = {
     bounds: {
       minX: Number.MAX_VALUE,
       minY: Number.MAX_VALUE,
@@ -42,10 +43,10 @@ export function parseSkillTree(data: SkillTree.Data) {
   };
 
   const updateMinxMax = (x: number, y: number) => {
-    tree.bounds.minX = Math.min(tree.bounds.minX, x);
-    tree.bounds.minY = Math.min(tree.bounds.minY, y);
-    tree.bounds.maxX = Math.max(tree.bounds.maxX, x);
-    tree.bounds.maxY = Math.max(tree.bounds.maxY, y);
+    parsingTree.bounds.minX = Math.min(parsingTree.bounds.minX, x);
+    parsingTree.bounds.minY = Math.min(parsingTree.bounds.minY, y);
+    parsingTree.bounds.maxX = Math.max(parsingTree.bounds.maxX, x);
+    parsingTree.bounds.maxY = Math.max(parsingTree.bounds.maxY, y);
   };
 
   const tempAscendancies: Record<
@@ -98,8 +99,8 @@ export function parseSkillTree(data: SkillTree.Data) {
       } else {
         updateMinxMax(x, y);
 
-        nodes = tree.nodes;
-        connections = tree.connections;
+        nodes = parsingTree.nodes;
+        connections = parsingTree.connections;
       }
 
       nodes.push(treeNode);
@@ -156,16 +157,40 @@ export function parseSkillTree(data: SkillTree.Data) {
     for (const node of asc.nodes) {
       updateNode(node);
       updateMinxMax(node.position.x, node.position.y);
-      tree.nodes.push(node);
+      parsingTree.nodes.push(node);
     }
 
     for (const connection of asc.connections) {
       updateNode(connection.b);
-      tree.connections.push(connection);
+      parsingTree.connections.push(connection);
     }
   }
 
-  return tree;
+  const passiveTree: PassiveTree.Data = {
+    classes: data.classes.map((_class) => ({
+      id: _class.name,
+      ascendancies: _class.ascendancies.map((asc) => ({
+        id: asc.id,
+        startNodeId: parsingTree.nodes.filter(
+          (x) =>
+            x.ascendancy !== undefined &&
+            x.ascendancy.kind === "Start" &&
+            x.ascendancy.name == asc.name
+        )[0].id,
+      })),
+    })),
+    nodes: parsingTree.nodes.map((node) => ({
+      id: node.id,
+      x: node.position.x,
+      y: node.position.y,
+    })),
+    connections: parsingTree.connections.map((connection) => ({
+      a: connection.a.id,
+      b: connection.b.id,
+    })),
+  };
+
+  return { parsingTree, passiveTree };
 }
 
 function filterGroup(group: SkillTree.Group) {
@@ -204,7 +229,7 @@ function ascendancyNode(
   else kind = "Normal";
 
   return {
-    ascendancyName: node.ascendancyName,
+    name: node.ascendancyName,
     kind: kind,
   };
 }

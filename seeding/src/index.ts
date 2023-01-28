@@ -18,10 +18,7 @@ function saveTreeTemplate(name: string, data: string) {
 }
 
 function saveTreeJSON(name: string, data: any) {
-  fs.writeFileSync(
-    `${dataPath}/tree/${name}.json`,
-    JSON.stringify(data, null, 2)
-  );
+  fs.writeFileSync(`${dataPath}/tree/${name}.json`, JSON.stringify(data));
 }
 
 const COMMAND_PROCESSORS: Record<string, () => Promise<any>> = {

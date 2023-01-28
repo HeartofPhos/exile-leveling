@@ -11,6 +11,7 @@ const NORMAL_RADIUS = 50;
 
 const NODE_STROKE_WIDTH = 0;
 const CONNECTION_STROKE_WIDTH = 20;
+const CONNECTION_ACTIVE_STROKE_WIDTH = 35;
 
 const GROUP_NODE_CLASS = "nodes";
 const GROUP_CONNECTION_CLASS = "connections";
@@ -66,8 +67,8 @@ svg {
 }
 
 {{#each connections}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}{
-  fill: {{ connectionActiveColor }};
   stroke: {{ connectionActiveColor }};
+  stroke-width: ${CONNECTION_ACTIVE_STROKE_WIDTH};
 }
 </style>\n`;
 
@@ -96,11 +97,11 @@ function buildNode(node: ParsingTree.Node) {
     attrs = `r="${KEYSTONE_RADIUS}" class="${NODE_KEYSTONE_CLASS}"`;
   else if (node.kind == "Ascendancy" && node.ascendancy !== undefined) {
     if (node.ascendancy.kind === "Start")
-      attrs = `r="${ASCENDANCY_START_RADIUS}" class="${NODE_ASCENDANCY_CLASS} ${node.ascendancy.ascendancyName}"`;
+      attrs = `r="${ASCENDANCY_START_RADIUS}" class="${NODE_ASCENDANCY_CLASS} ${node.ascendancy.name}"`;
     else if (node.ascendancy.kind === "Notable")
-      attrs = `r="${ASCENDANCY_NOTABLE_RADIUS}" class="${NODE_ASCENDANCY_CLASS} ${node.ascendancy.ascendancyName}"`;
+      attrs = `r="${ASCENDANCY_NOTABLE_RADIUS}" class="${NODE_ASCENDANCY_CLASS} ${node.ascendancy.name}"`;
     else if (node.ascendancy.kind === "Normal")
-      attrs = `r="${ASCENDANCY_NORMAL_RADIUS}" class="${NODE_ASCENDANCY_CLASS} ${node.ascendancy.ascendancyName}"`;
+      attrs = `r="${ASCENDANCY_NORMAL_RADIUS}" class="${NODE_ASCENDANCY_CLASS} ${node.ascendancy.name}"`;
   } else if (node.kind === "Normal")
     attrs = `r="${NORMAL_RADIUS}" class="${NODE_NORMAL_CLASS}"`;
 
@@ -117,7 +118,7 @@ function buildConnection(connection: ParsingTree.Connection) {
     connection.a.kind === "Ascendancy" &&
     connection.a.ascendancy !== undefined
   )
-    attrs = `class="${CONNECTION_ASCENDANCY_CLASS} ${connection.a.ascendancy.ascendancyName}"`;
+    attrs = `class="${CONNECTION_ASCENDANCY_CLASS} ${connection.a.ascendancy.name}"`;
   else attrs = `class="${CONNECTION_NORMAL_CLASS}"`;
 
   if (connection.path.sweep !== undefined) {
