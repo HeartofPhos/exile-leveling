@@ -2,25 +2,24 @@ import Handlebars from "handlebars";
 import { useEffect, useState } from "react";
 import { Viewport } from "../Viewport";
 
-// @ts-expect-error
-const TREE_TEMPLATE_LOOKUP: Record<string, string> = import.meta.glob(
-  "../../../../common/data/tree-templates/*.svg"
-);
+const TREE_TEMPLATE_LOOKUP = Object.entries(
+  import.meta.glob("../../../../common/data/tree-templates/*.svg")
+).reduce((prev, [key, value], i) => {
+  const filename = /.*\/(.*?).svg$/.exec(key)![1];
+  prev[filename] = value()
+    .then((url) => fetch(new URL(url.default, import.meta.url).href))
+    .then((res) => res.text())
+    .then((template) => Handlebars.compile(template));
+
+  return prev;
+}, {} as Record<string, Promise<HandlebarsTemplateDelegate<any>>>);
 
 export function PassiveTreeViewer() {
   const [svg, setSVG] = useState<string>();
   useEffect(() => {
     async function fn() {
-      // @ts-expect-error
-      const res = await TREE_TEMPLATE_LOOKUP[
-        "../../../../common/data/tree-templates/3.20.svg"
-      ]();
+      const compiled = await TREE_TEMPLATE_LOOKUP["3.20"];
 
-      const template = await fetch(
-        new URL(res.default, import.meta.url).href
-      ).then((x) => x.text());
-
-      const compiled = Handlebars.compile(template);
       const svg = compiled({
         backgroundColor: "#00000000",
         nodeColor: "#64748b",
