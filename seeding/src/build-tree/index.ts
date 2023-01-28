@@ -1,4 +1,5 @@
 import fetch from "cross-fetch";
+import Handlebars from "handlebars";
 import { parseSkillTree } from "./tree";
 import { ExileTree, SkillTree } from "./types";
 
@@ -12,10 +13,6 @@ const PASSIVE_TREE_JSON = {
 };
 
 const PADDING = 175;
-
-const FILL = "#000000";
-const STROKE = "#000000";
-const STROKE_WIDTH = 20;
 
 const MASTERY_RADIUS = 55;
 const KEYSTONE_RADIUS = 80;
@@ -41,38 +38,74 @@ export async function buildSVG(version: keyof typeof PASSIVE_TREE_JSON) {
   );
 
   const tree = parseSkillTree(data);
+  const templateSrc = buildTemplate(tree);
+  const template = Handlebars.compile(templateSrc);
 
-  let svg = ``;
+  const svg = template({
+    backgroundColor: "#00000000",
+    nodeColor: "#64748b",
+    nodeStrokeWidth: 0,
+    connectionColor: "#64748b",
+    connectionStrokeWidth: 20,
+    ascendancy: "Saboteur",
+  });
+
+  return svg;
+}
+
+function buildTemplate(tree: ExileTree.Data) {
+  let svgTemplate = ``;
   const vbX = tree.bounds.minX - PADDING;
   const vbY = tree.bounds.minY - PADDING;
   const vbW = tree.bounds.maxX - tree.bounds.minX + PADDING * 2;
   const vbH = tree.bounds.maxY - tree.bounds.minY + PADDING * 2;
-  svg += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vbX} ${vbY} ${vbW} ${vbH}">\n`;
+  svgTemplate += `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vbX} ${vbY} ${vbW} ${vbH}">\n`;
 
-  svg += `<style>
+  svgTemplate += `<style>
+svg {
+  background-color: {{ backgroundColor }};
+}
+
+.${GROUP_NODE_CLASS} {
+  fill: {{ nodeColor }};
+  stroke: {{ nodeColor }};
+  stroke-width: {{ nodeStrokeWidth }};
+}
+
+.${GROUP_NODE_CLASS} .${NODE_MASTERY_CLASS} {
+  fill: transparent;
+  stroke: transparent;
+}
+
+.${GROUP_CONNECTION_CLASS} {
+  fill: none;
+  stroke: {{ connectionColor }};
+  stroke-width: {{ connectionStrokeWidth }};
+}
+
 .${NODE_ASCENDANCY_CLASS} {
   display: none;
 }
-.ascendancy.Saboteur {
-  display: block;
+.ascendancy.{{ ascendancy }} {
+  display: unset;
 }
 </style>\n`;
 
-  svg += `<g class="${GROUP_NODE_CLASS}" stroke="${STROKE}" fill="${FILL}">\n`;
+  svgTemplate += `<g class="${GROUP_NODE_CLASS}">\n`;
   for (const node of tree.nodes) {
-    svg += buildNode(node);
+    svgTemplate += buildNode(node);
   }
-  svg += `</g>\n`;
+  svgTemplate += `</g>\n`;
 
-  svg += `<g class="${GROUP_CONNECTION_CLASS}" fill="none" stroke-width="${STROKE_WIDTH}" stroke="${STROKE}">\n`;
+  svgTemplate += `<g class="${GROUP_CONNECTION_CLASS}">\n`;
   for (const connection of tree.connections) {
-    svg += buildConnection(connection);
+    svgTemplate += buildConnection(connection);
   }
-  svg += `</g>\n`;
+  svgTemplate += `</g>\n`;
 
-  svg += `</svg>\n`;
+  svgTemplate += `</svg>\n`;
 
-  return svg;
+  return svgTemplate;
 }
 
 function buildNode(node: ExileTree.Node) {
