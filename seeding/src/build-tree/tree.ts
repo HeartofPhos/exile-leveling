@@ -1,4 +1,4 @@
-import { ExileTree, SkillTree } from "./types";
+import { ParsingTree, SkillTree } from "./types";
 
 export const ANGLES_16: number[] = [
   0, 30, 45, 60, 90, 120, 135, 150, 180, 210, 225, 240, 270, 300, 315, 330,
@@ -30,7 +30,7 @@ function getPosition(data: SkillTree.Data, node: SkillTree.Node) {
 }
 
 export function parseSkillTree(data: SkillTree.Data) {
-  const tree: ExileTree.Data = {
+  const tree: ParsingTree.Data = {
     bounds: {
       minX: Number.MAX_VALUE,
       minY: Number.MAX_VALUE,
@@ -52,9 +52,9 @@ export function parseSkillTree(data: SkillTree.Data) {
     string,
     {
       startNode: string;
-      startPosition: ExileTree.Coord;
-      nodes: ExileTree.Node[];
-      connections: ExileTree.Connection[];
+      startPosition: ParsingTree.Coord;
+      nodes: ParsingTree.Node[];
+      connections: ParsingTree.Connection[];
     }
   > = {};
 
@@ -74,8 +74,8 @@ export function parseSkillTree(data: SkillTree.Data) {
         ascendancy: ascendancyNode(node),
       };
 
-      let nodes: ExileTree.Node[];
-      let connections: ExileTree.Connection[];
+      let nodes: ParsingTree.Node[];
+      let connections: ParsingTree.Connection[];
       if (treeNode.kind === "Ascendancy") {
         let asc = tempAscendancies[node.ascendancyName!];
         if (asc === undefined) {
@@ -114,12 +114,12 @@ export function parseSkillTree(data: SkillTree.Data) {
 
         let [outAngle, outX, outY] = getPosition(data, outNode);
 
-        let path: ExileTree.Path;
+        let path: ParsingTree.Path;
         if (node.group === outNode.group && node.orbit === outNode.orbit) {
           const radius = data.constants.orbitRadii[node.orbit!];
 
           let rot = (angle - outAngle + TWO_PI) % TWO_PI;
-          let sweep: ExileTree.Sweep["sweep"];
+          let sweep: ParsingTree.Sweep["sweep"];
           if (rot > Math.PI) sweep = "CW";
           else sweep = "CCW";
 
@@ -148,7 +148,7 @@ export function parseSkillTree(data: SkillTree.Data) {
     const diff_x = ASCENDANCY_POS_X - asc.startPosition.x;
     const diff_y = ASCENDANCY_POS_Y - asc.startPosition.y;
 
-    const updateNode = (node: ExileTree.Node) => {
+    const updateNode = (node: ParsingTree.Node) => {
       node.position.x += diff_x;
       node.position.y += diff_y;
     };
@@ -185,7 +185,7 @@ function filterConnection(a: SkillTree.Node, b: SkillTree.Node) {
   );
 }
 
-function nodeKind(node: SkillTree.Node): ExileTree.Node["kind"] {
+function nodeKind(node: SkillTree.Node): ParsingTree.Node["kind"] {
   if (node.isKeystone) return "Keystone";
   if (node.isMastery) return "Mastery";
   if (node.ascendancyName !== undefined) return "Ascendancy";
@@ -195,10 +195,10 @@ function nodeKind(node: SkillTree.Node): ExileTree.Node["kind"] {
 
 function ascendancyNode(
   node: SkillTree.Node
-): ExileTree.AscendancyNode | undefined {
+): ParsingTree.AscendancyNode | undefined {
   if (node.ascendancyName === undefined) return undefined;
 
-  let kind: ExileTree.AscendancyNode["kind"];
+  let kind: ParsingTree.AscendancyNode["kind"];
   if (node.isAscendancyStart) kind = "Start";
   else if (node.isNotable) kind = "Notable";
   else kind = "Normal";

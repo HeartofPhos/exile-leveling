@@ -194,7 +194,7 @@ export namespace SkillTree {
   }
 }
 
-export namespace ExileTree {
+export namespace ParsingTree {
   export interface Data {
     bounds: Bounds;
     nodes: Node[];

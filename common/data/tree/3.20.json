@@ -1,0 +1,96 @@
+{
+  "classes": [
+    {
+      "id": "Scion",
+      "ascendancies": [
+        {
+          "id": "Ascendant"
+        }
+      ]
+    },
+    {
+      "id": "Marauder",
+      "ascendancies": [
+        {
+          "id": "Juggernaut"
+        },
+        {
+          "id": "Berserker"
+        },
+        {
+          "id": "Chieftain"
+        }
+      ]
+    },
+    {
+      "id": "Ranger",
+      "ascendancies": [
+        {
+          "id": "Raider"
+        },
+        {
+          "id": "Deadeye"
+        },
+        {
+          "id": "Pathfinder"
+        }
+      ]
+    },
+    {
+      "id": "Witch",
+      "ascendancies": [
+        {
+          "id": "Occultist"
+        },
+        {
+          "id": "Elementalist"
+        },
+        {
+          "id": "Necromancer"
+        }
+      ]
+    },
+    {
+      "id": "Duelist",
+      "ascendancies": [
+        {
+          "id": "Slayer"
+        },
+        {
+          "id": "Gladiator"
+        },
+        {
+          "id": "Champion"
+        }
+      ]
+    },
+    {
+      "id": "Templar",
+      "ascendancies": [
+        {
+          "id": "Inquisitor"
+        },
+        {
+          "id": "Hierophant"
+        },
+        {
+          "id": "Guardian"
+        }
+      ]
+    },
+    {
+      "id": "Shadow",
+      "ascendancies": [
+        {
+          "id": "Assassin"
+        },
+        {
+          "id": "Trickster"
+        },
+        {
+          "id": "Saboteur"
+        }
+      ]
+    }
+  ]
+}

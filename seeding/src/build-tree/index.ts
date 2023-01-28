@@ -2,6 +2,7 @@ import fetch from "cross-fetch";
 import { buildTemplate as buildTemplateSVG } from "./svg";
 import { parseSkillTree } from "./tree";
 import { SkillTree } from "./types";
+import { PassiveTree } from "../../../common/data/tree";
 
 const PASSIVE_TREE_JSON = {
   "3.18":
@@ -20,7 +21,18 @@ export async function buildTemplates() {
     const tree = parseSkillTree(data);
     const template = buildTemplateSVG(tree);
 
-    result.push({ version, template });
+    const passiveTree: PassiveTree.Data = {
+      classes: data.classes.map((_class) => ({
+        id: _class.name,
+        ascendancies: _class.ascendancies.map((asc) => ({ id: asc.id })),
+      })),
+    };
+
+    result.push({
+      version,
+      template,
+      passiveTree,
+    });
   }
 
   return result;

@@ -1,4 +1,4 @@
-import { ExileTree } from "./types";
+import { ParsingTree } from "./types";
 
 const PADDING = 175;
 
@@ -23,7 +23,7 @@ const NODE_NORMAL_CLASS = "normal";
 const CONNECTION_ASCENDANCY_CLASS = "ascendancy";
 const CONNECTION_NORMAL_CLASS = "";
 
-export function buildTemplate(tree: ExileTree.Data) {
+export function buildTemplate(tree: ParsingTree.Data) {
   let svgTemplate = ``;
   const vbX = tree.bounds.minX - PADDING;
   const vbY = tree.bounds.minY - PADDING;
@@ -32,44 +32,54 @@ export function buildTemplate(tree: ExileTree.Data) {
   svgTemplate += `<svg viewBox="${vbX} ${vbY} ${vbW} ${vbH}" xmlns="http://www.w3.org/2000/svg">\n`;
 
   svgTemplate += `<style>
-  svg {
-    background-color: {{ backgroundColor }};
-  }
-  
-  .${GROUP_NODE_CLASS} {
-    fill: {{ nodeColor }};
-    stroke: {{ nodeColor }};
-    stroke-width: ${NODE_STROKE_WIDTH};
-  }
-  
-  .${GROUP_NODE_CLASS} .${NODE_MASTERY_CLASS} {
-    fill: transparent;
-    stroke: transparent;
-  }
-  
-  .${GROUP_CONNECTION_CLASS} {
-    fill: none;
-    stroke: {{ connectionColor }};
-    stroke-width: ${CONNECTION_STROKE_WIDTH};
-  }
-  
-  .${NODE_ASCENDANCY_CLASS} {
-    display: none;
-  }
-  .ascendancy.{{ ascendancy }} {
-    display: unset;
-  }
-  </style>\n`;
+svg {
+  background-color: {{ backgroundColor }};
+}
 
-  svgTemplate += `<g class="${GROUP_NODE_CLASS}">\n`;
-  for (const node of tree.nodes) {
-    svgTemplate += buildNode(node);
-  }
-  svgTemplate += `</g>\n`;
+.${GROUP_NODE_CLASS} {
+  fill: {{ nodeColor }};
+  stroke: {{ nodeColor }};
+  stroke-width: ${NODE_STROKE_WIDTH};
+}
+
+.${GROUP_NODE_CLASS} .${NODE_MASTERY_CLASS} {
+  fill: transparent;
+  stroke: transparent;
+}
+
+.${GROUP_CONNECTION_CLASS} {
+  fill: none;
+  stroke: {{ connectionColor }};
+  stroke-width: ${CONNECTION_STROKE_WIDTH};
+}
+
+.${NODE_ASCENDANCY_CLASS} {
+  display: none;
+}
+.ascendancy.{{ ascendancy }} {
+  display: unset;
+}
+
+{{#each nodes}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}} {
+  fill: {{ nodeActiveColor }};
+  stroke: {{ nodeActiveColor }};
+}
+
+{{#each connections}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}{
+  fill: {{ connectionActiveColor }};
+  stroke: {{ connectionActiveColor }};
+}
+</style>\n`;
 
   svgTemplate += `<g class="${GROUP_CONNECTION_CLASS}">\n`;
   for (const connection of tree.connections) {
     svgTemplate += buildConnection(connection);
+  }
+  svgTemplate += `</g>\n`;
+
+  svgTemplate += `<g class="${GROUP_NODE_CLASS}">\n`;
+  for (const node of tree.nodes) {
+    svgTemplate += buildNode(node);
   }
   svgTemplate += `</g>\n`;
 
@@ -78,7 +88,7 @@ export function buildTemplate(tree: ExileTree.Data) {
   return svgTemplate;
 }
 
-function buildNode(node: ExileTree.Node) {
+function buildNode(node: ParsingTree.Node) {
   let attrs;
   if (node.kind == "Mastery")
     attrs = `r="${MASTERY_RADIUS}" class="${NODE_MASTERY_CLASS}"`;
@@ -97,7 +107,7 @@ function buildNode(node: ExileTree.Node) {
   return `<circle cx="${node.position.x}" cy="${node.position.y}" id="n${node.id}" ${attrs}/>\n`;
 }
 
-function buildConnection(connection: ExileTree.Connection) {
+function buildConnection(connection: ParsingTree.Connection) {
   const id = [connection.a.id, connection.b.id].sort().join("-");
   const a = connection.a.position;
   const b = connection.b.position;

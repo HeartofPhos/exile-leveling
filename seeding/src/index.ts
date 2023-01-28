@@ -14,7 +14,14 @@ function saveJSON(name: string, data: any) {
 }
 
 function saveTreeTemplate(name: string, data: string) {
-  fs.writeFileSync(`${dataPath}/tree-templates/${name}.svg`, data);
+  fs.writeFileSync(`${dataPath}/tree/${name}.svg`, data);
+}
+
+function saveTreeJSON(name: string, data: any) {
+  fs.writeFileSync(
+    `${dataPath}/tree/${name}.json`,
+    JSON.stringify(data, null, 2)
+  );
 }
 
 const COMMAND_PROCESSORS: Record<string, () => Promise<any>> = {
@@ -30,8 +37,9 @@ const COMMAND_PROCESSORS: Record<string, () => Promise<any>> = {
   },
   ["tree"]: async () => {
     const templates = await buildTemplates();
-    for (const { version, template } of templates) {
+    for (const { version, template, passiveTree } of templates) {
       saveTreeTemplate(version, template);
+      saveTreeJSON(version, passiveTree);
     }
   },
 };
