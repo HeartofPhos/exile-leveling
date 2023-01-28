@@ -21,19 +21,21 @@ export function parseSkillTreeUrl(url: string, passiveTree: PassiveTree.Data) {
     nodes = read_u16s(buffer, 7, buffer[6]);
   } else throw "invalid version";
 
-  const nodeSet = new Set(nodes.map((x) => x.toString()));
+  nodes = nodes.map((x) => x.toString());
 
   let ascendancy;
   if (ascendancyId > 0) {
     ascendancy = passiveTree.classes[classId].ascendancies[ascendancyId - 1];
-    nodeSet.add(ascendancy.startNodeId);
+    nodes.push(ascendancy.startNodeId);
   }
 
   return {
     class: passiveTree.classes[classId],
-    ascendancy: ascendancy,
+    ascendancy:
+      ascendancyId > 0
+        ? passiveTree.classes[classId].ascendancies[ascendancyId - 1]
+        : undefined,
     nodes: nodes,
-    connections: parseConnections(nodeSet, passiveTree),
   };
 }
 
@@ -50,14 +52,64 @@ function read_u16s(buffer: Uint8Array, offset: number, length: number) {
   return result;
 }
 
-function parseConnections(nodes: Set<string>, passiveTree: PassiveTree.Data) {
-  const result = [];
-  for (const connection of passiveTree.connections) {
-    if (nodes.has(connection.a) && nodes.has(connection.b)) {
-      const id = [connection.a, connection.b].sort().join("-");
-      result.push(id);
+function intersection<T>(setA: Set<T>, setB: Set<T>) {
+  const _intersection = new Set<T>();
+  for (const elem of setB) {
+    if (setA.has(elem)) {
+      _intersection.add(elem);
     }
   }
+  return _intersection;
+}
 
-  return result;
+function difference<T>(setA: Set<T>, setB: Set<T>) {
+  const _difference = new Set<T>(setA);
+  for (const elem of setB) {
+    _difference.delete(elem);
+  }
+  return _difference;
+}
+
+export function parseNodes(
+  currentNodes: string[],
+  prevNodes: string[],
+  passiveTree: PassiveTree.Data
+) {
+  const curNodeSet = new Set(currentNodes);
+  const prevNodeSet = new Set(prevNodes);
+
+  const nodesActiveSet = intersection(curNodeSet, prevNodeSet);
+  const nodesAddedSet = difference(curNodeSet, prevNodeSet);
+  const nodesRemovedSet = difference(prevNodeSet, curNodeSet);
+
+  const connectionsActive: string[] = [];
+  const connectionsAdded: string[] = [];
+  const connectionsRemoved: string[] = [];
+
+  for (const connection of passiveTree.connections) {
+    const exists =
+      (curNodeSet.has(connection.a) || prevNodeSet.has(connection.a)) &&
+      (curNodeSet.has(connection.b) || prevNodeSet.has(connection.b));
+    if (!exists) continue;
+
+    const id = [connection.a, connection.b].sort().join("-");
+
+    if (nodesActiveSet.has(connection.a) && nodesActiveSet.has(connection.b))
+      connectionsActive.push(id);
+
+    if (nodesAddedSet.has(connection.a) || nodesAddedSet.has(connection.b))
+      connectionsAdded.push(id);
+
+    if (nodesRemovedSet.has(connection.a) || nodesRemovedSet.has(connection.b))
+      connectionsRemoved.push(id);
+  }
+
+  return {
+    nodesActive: Array.from(nodesActiveSet),
+    nodesAdded: Array.from(nodesAddedSet),
+    nodesRemoved: Array.from(nodesRemovedSet),
+    connectionsActive,
+    connectionsAdded,
+    connectionsRemoved,
+  };
 }

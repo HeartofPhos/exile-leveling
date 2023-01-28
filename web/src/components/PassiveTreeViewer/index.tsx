@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { globImportLazy } from "../../utility";
 import { Viewport } from "../Viewport";
 import { PassiveTree } from "../../../../common/data/tree";
-import { parseSkillTreeUrl } from "./parse";
+import { parseNodes, parseSkillTreeUrl } from "./parse";
 
 const TREE_TEMPLATE_LOOKUP = globImportLazy(
   import.meta.glob("../../../../common/data/tree/*.svg"),
@@ -20,8 +20,10 @@ const TREE_DATA_LOOKUP = globImportLazy<PassiveTree.Data>(
   (value) => value.default
 );
 
-const PASSIVE_TREE_URL =
-  "https://www.pathofexile.com/passive-skill-tree/AAAABgYDfqlur7wGcCpNotnrMhhqAedfmLcwyBRnTpuGg_cb-hiRxkUPqxOamAat_DWS-wnw1WKsfVu4vmyMEZZfP3Up9UdtbO8OV9gmlUIszzIi4sLsSshZbVBChMUvbxmKpDmxHVUp2RNqjPVvE21w5xQgDki8ny7Q5liMNnp_UEd85ds0xKRJUVFMwzq1SNjDASSgeZUuFAmP-v1KGo8HHha_naqQDTboLiNvdz8nX7Aki3loMF5qNkfiWAf22hPfwQQ2Pep__Euw2BRNbzth4gNlbqrkUewYrEcb4CaIeA2TH3C7ykrYveKwtMV4L5u1ZKol39FvVUvAGrXyWK-kGQAL-wjrMt7yxkUgaq38hnS4vkW8dSkGv1Up9bFw52_e2MO6GgEk-30wXu6p0W8=";
+const PASSIVE_TREE_URLS = [
+  "https://www.pathofexile.com/passive-skill-tree/AAAABgMCDIdlEFhJsmpDLJyvt9-wMjSCEAelAuO86gAA",
+  "https://www.pathofexile.com/passive-skill-tree/AAAABgMCFhBYHwI2xVXGSbIsnCTYAuMHpQQHh2U6WIPbhW3Vgd-wVkgyNIIQ2CQvXa-3AAG6Gi9d",
+];
 
 export function PassiveTreeViewer() {
   const [svg, setSVG] = useState<string>();
@@ -31,17 +33,40 @@ export function PassiveTreeViewer() {
       const compiled = await TREE_TEMPLATE_LOOKUP[version];
       const passiveTree = await TREE_DATA_LOOKUP[version];
 
-      const parsed = parseSkillTreeUrl(PASSIVE_TREE_URL, passiveTree);
+      const curParsed = parseSkillTreeUrl(PASSIVE_TREE_URLS[1], passiveTree);
+      const prevParsed = parseSkillTreeUrl(PASSIVE_TREE_URLS[0], passiveTree);
+
+      const {
+        nodesActive,
+        nodesAdded,
+        nodesRemoved,
+        connectionsActive,
+        connectionsAdded,
+        connectionsRemoved,
+      } = parseNodes(curParsed.nodes, prevParsed.nodes, passiveTree);
 
       const svg = compiled({
         backgroundColor: "#00000000",
+
         nodeColor: "#64748b",
         nodeActiveColor: "#38bdf8",
+        nodeAddedColor: "#00ff00",
+        nodeRemovedColor: "#ff0000",
+
         connectionColor: "#64748b",
-        connectionActiveColor: "#0ea5e9",
-        ascendancy: parsed.ascendancy?.id,
-        nodes: Array.from(parsed.nodes.values()),
-        connections: parsed.connections,
+        connectionActiveColor: "#38bdf8",
+        connectionAddedColor: "#00ff00",
+        connectionRemovedColor: "#ff0000",
+
+        nodesActive,
+        nodesAdded,
+        nodesRemoved,
+
+        connectionsActive,
+        connectionsAdded,
+        connectionsRemoved,
+
+        ascendancy: curParsed.ascendancy?.id,
       });
 
       setSVG(window.btoa(svg));

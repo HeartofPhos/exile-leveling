@@ -61,13 +61,33 @@ svg {
   display: unset;
 }
 
-{{#each nodes}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}} {
+{{#each nodesActive}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}} {
   fill: {{ nodeActiveColor }};
   stroke: {{ nodeActiveColor }};
 }
 
-{{#each connections}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}{
+{{#each nodesAdded}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}} {
+  fill: {{ nodeAddedColor }};
+  stroke: {{ nodeAddedColor }};
+}
+
+{{#each nodesRemoved}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}} {
+  fill: {{ nodeRemovedColor }};
+  stroke: {{ nodeRemovedColor }};
+}
+
+{{#each connectionsActive}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}{
   stroke: {{ connectionActiveColor }};
+  stroke-width: ${CONNECTION_ACTIVE_STROKE_WIDTH};
+}
+
+{{#each connectionsAdded}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}{
+  stroke: {{ connectionAddedColor }};
+  stroke-width: ${CONNECTION_ACTIVE_STROKE_WIDTH};
+}
+
+{{#each connectionsRemoved}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}{
+  stroke: {{ connectionRemovedColor }};
   stroke-width: ${CONNECTION_ACTIVE_STROKE_WIDTH};
 }
 </style>\n`;
