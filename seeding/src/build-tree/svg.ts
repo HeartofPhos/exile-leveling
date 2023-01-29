@@ -28,11 +28,16 @@ const CONNECTION_NORMAL_CLASS = "";
 export function buildTemplate(tree: ProcessedTree.Data) {
   let template = ``;
 
+  const width = tree.bounds.maxX - tree.bounds.minX;
+  const height = tree.bounds.maxY - tree.bounds.minY;
+
+  const size = Math.max(width, height);
+
   const viewBox: PassiveTree.ViewBox = {
     x: tree.bounds.minX - PADDING,
     y: tree.bounds.minY - PADDING,
-    w: tree.bounds.maxX - tree.bounds.minX + PADDING * 2,
-    h: tree.bounds.maxY - tree.bounds.minY + PADDING * 2,
+    w: size + PADDING * 2,
+    h: size + PADDING * 2,
     padding: PADDING,
   };
 
