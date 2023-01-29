@@ -58,22 +58,29 @@ export function PassiveTreeViewer() {
       let minY = Number.POSITIVE_INFINITY;
       let maxX = Number.NEGATIVE_INFINITY;
       let maxY = Number.NEGATIVE_INFINITY;
-      for (const nodeId of curParsed.nodes) {
-        const node = passiveTree.nodes[nodeId];
 
-        minX = Math.min(minX, node.x);
-        minY = Math.min(minY, node.y);
-        maxX = Math.max(maxX, node.x);
-        maxY = Math.max(maxY, node.y);
-      }
+      const updateMinMax = (x: number, y: number) => {
+        minX = Math.min(minX, x);
+        minY = Math.min(minY, y);
+        maxX = Math.max(maxX, x);
+        maxY = Math.max(maxY, y);
+      };
 
-      for (const nodeId of prevParsed.nodes) {
-        const node = passiveTree.nodes[nodeId];
+      if (nodesAdded.length == 0 && nodesRemoved.length == 0) {
+        for (const nodeId of nodesActive) {
+          const node = passiveTree.nodes[nodeId];
+          updateMinMax(node.x, node.y);
+        }
+      } else {
+        for (const nodeId of nodesAdded) {
+          const node = passiveTree.nodes[nodeId];
+          updateMinMax(node.x, node.y);
+        }
 
-        minX = Math.min(minX, node.x);
-        minY = Math.min(minY, node.y);
-        maxX = Math.max(maxX, node.x);
-        maxY = Math.max(maxY, node.y);
+        for (const nodeId of nodesRemoved) {
+          const node = passiveTree.nodes[nodeId];
+          updateMinMax(node.x, node.y);
+        }
       }
 
       setIntialFocus({
