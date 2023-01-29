@@ -21,8 +21,10 @@ const TREE_DATA_LOOKUP = globImportLazy<PassiveTree.Data>(
 );
 
 const PASSIVE_TREE_URLS = [
-  "https://www.pathofexile.com/passive-skill-tree/AAAABgQAAZstAAA=",
-  "https://www.pathofexile.com/passive-skill-tree/AAAABgQAAZstAAA=",
+  "https://www.pathofexile.com/passive-skill-tree/AAAABgQCAAAA",
+  "https://www.pathofexile.com/passive-skill-tree/AAAABgQCAAAA",
+  // "https://www.pathofexile.com/passive-skill-tree/AAAABgQAAZstAAA=",
+  // "https://www.pathofexile.com/passive-skill-tree/AAAABgQAAZstAAA=",
   // "https://www.pathofexile.com/passive-skill-tree/AAAABgQACBm0Xzmwq8SCwo6K8Jst-KEAAA==",
   // "https://www.pathofexile.com/passive-skill-tree/AAAABgQACL6nXzmwq8SCmy2K8MKO-KEAAA==",
   // "https://www.pathofexile.com/passive-skill-tree/AAAABgMCfBzcfXXDeSpNHRT2rv6HjxqGs41973p671O7320s6YZ3hrcFLTWShs6nCErEfVsXL26q_rpMi_iTz4OYrYCkCwyjigqbtz6PT0rIuJO9NoLHEMy79lZI9qMCIHiuhO_jsJLBTZK1BBZvfIPub9i9tNPTftlgdO0j9qxH-IJ7IBKO2zS-p9rBFSADotgkM6_XcB5qMHxEnkGHLPEZtD8nPeL60lXWA4cMcy2DkoDfsEfiMF5eExEtjr5khL63j0akOTu6Emnjahcc_gq18pD63hdM_2Tn-ejvSzHCcXkXpGVyo_IGoGMFvXwo-vm9EzUA7kMxIuLr7mVNAAfPDYa3hnQLDEI213AYSCzxuhowXpBnYwVsRr18",
@@ -52,16 +54,16 @@ export function PassiveTreeViewer() {
         connectionsRemoved,
       } = parseNodes(curParsed.nodes, prevParsed.nodes, passiveTree);
 
-      let minX = Number.MAX_VALUE;
-      let maxX = Number.MIN_VALUE;
-      let minY = Number.MAX_VALUE;
-      let maxY = Number.MIN_VALUE;
+      let minX = Number.POSITIVE_INFINITY;
+      let minY = Number.POSITIVE_INFINITY;
+      let maxX = Number.NEGATIVE_INFINITY;
+      let maxY = Number.NEGATIVE_INFINITY;
       for (const nodeId of curParsed.nodes) {
         const node = passiveTree.nodes[nodeId];
 
         minX = Math.min(minX, node.x);
-        maxX = Math.max(maxX, node.x);
         minY = Math.min(minY, node.y);
+        maxX = Math.max(maxX, node.x);
         maxY = Math.max(maxY, node.y);
       }
 
@@ -69,8 +71,8 @@ export function PassiveTreeViewer() {
         const node = passiveTree.nodes[nodeId];
 
         minX = Math.min(minX, node.x);
-        maxX = Math.max(maxX, node.x);
         minY = Math.min(minY, node.y);
+        maxX = Math.max(maxX, node.x);
         maxY = Math.max(maxY, node.y);
       }
 
@@ -82,10 +84,10 @@ export function PassiveTreeViewer() {
           // y: passiveTree.viewBox.y + passiveTree.viewBox.h / 2,
         },
         size: {
-          x: maxX - minX + 125,
-          y: maxY - minY + 125,
-          // x: passiveTree.viewBox.w,
-          // y: passiveTree.viewBox.h,
+          // x: maxX - minX + 110,
+          // y: maxY - minY + 110,
+          x: passiveTree.viewBox.w * 1,
+          y: passiveTree.viewBox.h * 1,
         },
       });
 

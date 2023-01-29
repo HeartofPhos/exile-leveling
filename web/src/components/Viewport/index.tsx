@@ -63,19 +63,20 @@ export function Viewport({ viewBox, intialFocus, children }: ViewportProps) {
 
     const rect = divRef.current.getBoundingClientRect();
 
-    const pixelRatio = Math.max(viewBox.w, viewBox.h);
+    const viewDim = Math.max(viewBox.w, viewBox.h);
+    // SVG copies width, preserveAspectRatio="xMidYMid"
+    const divDim = rect.width;
 
-    const normalizedX = (intialFocus.offset.x - viewBox.x) / pixelRatio;
-    const normalizedY = (intialFocus.offset.y - viewBox.y) / pixelRatio;
+    const normalizedX = (intialFocus.offset.x - viewBox.x) / viewDim;
+    const normalizedY = (intialFocus.offset.y - viewBox.y) / viewDim;
 
-    const divX = rect.width * normalizedX;
-    const divY = rect.height * normalizedY;
+    const divX = divDim * normalizedX;
+    const divY = divDim * normalizedY;
 
     const deltaX = rect.width / 2 - divX;
     const deltaY = rect.height / 2 - divY;
 
-    const scaleFactor =
-      pixelRatio / Math.max(intialFocus.size.x, intialFocus.size.y);
+    const scaleFactor = 200;
 
     const newPos = scaleTranslation(
       deltaX,

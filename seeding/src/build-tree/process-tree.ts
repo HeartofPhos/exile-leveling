@@ -33,10 +33,10 @@ function getPosition(data: SkillTree.Data, node: SkillTree.Node) {
 export function processSkillTree(data: SkillTree.Data) {
   const parsingTree: ProcessedTree.Data = {
     bounds: {
-      minX: Number.MAX_VALUE,
-      minY: Number.MAX_VALUE,
-      maxX: Number.MIN_VALUE,
-      maxY: Number.MIN_VALUE,
+      minX: Number.POSITIVE_INFINITY,
+      minY: Number.POSITIVE_INFINITY,
+      maxX: Number.NEGATIVE_INFINITY,
+      maxY: Number.NEGATIVE_INFINITY,
     },
     nodes: [],
     connections: [],
