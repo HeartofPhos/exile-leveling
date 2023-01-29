@@ -3,6 +3,14 @@ export namespace PassiveTree {
     classes: Class[];
     nodes: Node[];
     connections: Connection[];
+    viewBox: ViewBox;
+  }
+
+  export interface ViewBox {
+    x: number;
+    y: number;
+    w: number;
+    h: number;
   }
 
   export interface Node {

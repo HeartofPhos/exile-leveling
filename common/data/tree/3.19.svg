@@ -24,9 +24,11 @@ svg {
 .ascendancy {
   display: none;
 }
+{{#if ascendancy}}
 .ascendancy.{{ ascendancy }} {
   display: unset;
 }
+{{/if}}
 
 {{#each nodesActive}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}} {
   fill: {{ nodeActiveColor }};

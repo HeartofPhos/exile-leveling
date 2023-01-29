@@ -1,4 +1,5 @@
-import { ParsingTree } from "./types";
+import { PassiveTree } from "../../../common/data/tree";
+import { ProcessedTree } from "./types";
 
 const PADDING = 175;
 
@@ -24,15 +25,19 @@ const NODE_NORMAL_CLASS = "normal";
 const CONNECTION_ASCENDANCY_CLASS = "ascendancy";
 const CONNECTION_NORMAL_CLASS = "";
 
-export function buildTemplate(tree: ParsingTree.Data) {
-  let svgTemplate = ``;
-  const vbX = tree.bounds.minX - PADDING;
-  const vbY = tree.bounds.minY - PADDING;
-  const vbW = tree.bounds.maxX - tree.bounds.minX + PADDING * 2;
-  const vbH = tree.bounds.maxY - tree.bounds.minY + PADDING * 2;
-  svgTemplate += `<svg viewBox="${vbX} ${vbY} ${vbW} ${vbH}" xmlns="http://www.w3.org/2000/svg">\n`;
+export function buildTemplate(tree: ProcessedTree.Data) {
+  let template = ``;
 
-  svgTemplate += `<style>
+  const viewBox: PassiveTree.ViewBox = {
+    x: tree.bounds.minX - PADDING,
+    y: tree.bounds.minY - PADDING,
+    w: tree.bounds.maxX - tree.bounds.minX + PADDING * 2,
+    h: tree.bounds.maxY - tree.bounds.minY + PADDING * 2,
+  };
+
+  template += `<svg viewBox="${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}" xmlns="http://www.w3.org/2000/svg">\n`;
+
+  template += `<style>
 svg {
   background-color: {{ backgroundColor }};
 }
@@ -57,9 +62,11 @@ svg {
 .${NODE_ASCENDANCY_CLASS} {
   display: none;
 }
+{{#if ascendancy}}
 .ascendancy.{{ ascendancy }} {
   display: unset;
 }
+{{/if}}
 
 {{#each nodesActive}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}} {
   fill: {{ nodeActiveColor }};
@@ -92,24 +99,24 @@ svg {
 }
 </style>\n`;
 
-  svgTemplate += `<g class="${GROUP_CONNECTION_CLASS}">\n`;
+  template += `<g class="${GROUP_CONNECTION_CLASS}">\n`;
   for (const connection of tree.connections) {
-    svgTemplate += buildConnection(connection);
+    template += buildConnection(connection);
   }
-  svgTemplate += `</g>\n`;
+  template += `</g>\n`;
 
-  svgTemplate += `<g class="${GROUP_NODE_CLASS}">\n`;
+  template += `<g class="${GROUP_NODE_CLASS}">\n`;
   for (const node of tree.nodes) {
-    svgTemplate += buildNode(node);
+    template += buildNode(node);
   }
-  svgTemplate += `</g>\n`;
+  template += `</g>\n`;
 
-  svgTemplate += `</svg>\n`;
+  template += `</svg>\n`;
 
-  return svgTemplate;
+  return { template, viewBox };
 }
 
-function buildNode(node: ParsingTree.Node) {
+function buildNode(node: ProcessedTree.Node) {
   let attrs;
   if (node.kind == "Mastery")
     attrs = `r="${MASTERY_RADIUS}" class="${NODE_MASTERY_CLASS}"`;
@@ -128,7 +135,7 @@ function buildNode(node: ParsingTree.Node) {
   return `<circle cx="${node.position.x}" cy="${node.position.y}" id="n${node.id}" ${attrs}/>\n`;
 }
 
-function buildConnection(connection: ParsingTree.Connection) {
+function buildConnection(connection: ProcessedTree.Connection) {
   const id = [connection.a.id, connection.b.id].sort().join("-");
   const a = connection.a.position;
   const b = connection.b.position;

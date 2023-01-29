@@ -2,7 +2,39 @@ import classNames from "classnames";
 import { useEffect, useRef, useState } from "react";
 import styles from "./styles.module.css";
 
-export function Viewport({ children }: React.PropsWithChildren) {
+interface Coord {
+  x: number;
+  y: number;
+}
+
+interface Box {
+  offset: Coord;
+  size: Coord;
+}
+
+export interface ViewportProps {
+  pixelRatio: number;
+  intialFocus: Box;
+  children?: React.ReactNode;
+}
+
+function scaleTranslation(
+  posX: number,
+  posY: number,
+  anchorX: number,
+  anchorY: number,
+  scaleFactor: number
+) {
+  const deltaX = anchorX - posX;
+  const deltaY = anchorY - posY;
+
+  return {
+    x: anchorX - deltaX * scaleFactor,
+    y: anchorY - deltaY * scaleFactor,
+  };
+}
+
+export function Viewport({ pixelRatio, intialFocus, children }: ViewportProps) {
   const divRef = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [scale, setScale] = useState(1);
@@ -10,12 +42,43 @@ export function Viewport({ children }: React.PropsWithChildren) {
 
   useEffect(() => {
     if (divRef.current === null) return;
-    divRef.current.addEventListener("pointerdown", (evt) =>
-      evt.preventDefault()
-    );
-    divRef.current.addEventListener("wheel", (evt) => evt.preventDefault());
-    divRef.current.addEventListener("drag", (evt) => evt.preventDefault());
+
+    const preventDefault = (evt: Event) => evt.preventDefault();
+
+    divRef.current.addEventListener("pointerdown", preventDefault);
+    divRef.current.addEventListener("wheel", preventDefault);
+    divRef.current.addEventListener("drag", preventDefault);
+
+    return () => {
+      if (divRef.current === null) return;
+      divRef.current.removeEventListener("pointerdown", preventDefault);
+      divRef.current.removeEventListener("wheel", preventDefault);
+      divRef.current.removeEventListener("drag", preventDefault);
+    };
   }, [divRef]);
+
+  useEffect(() => {
+    if (divRef.current === null) return;
+
+    const rect = divRef.current.getBoundingClientRect();
+
+    const scaleFactor =
+      pixelRatio / Math.max(intialFocus.size.x, intialFocus.size.y);
+
+    const newPos = scaleTranslation(
+      -rect.width * (intialFocus.offset.x / pixelRatio),
+      -rect.height * (intialFocus.offset.y / pixelRatio),
+      rect.width / 2,
+      rect.height / 2,
+      scaleFactor
+    );
+
+    setScale(scaleFactor);
+    setPos({
+      x: newPos.x,
+      y: newPos.y,
+    });
+  }, [intialFocus, divRef]);
 
   return (
     <div
@@ -47,16 +110,21 @@ export function Viewport({ children }: React.PropsWithChildren) {
         const pointerX = evt.clientX - rect.left;
         const pointerY = evt.clientY - rect.top;
 
-        const deltaX = pointerX - pos.x;
-        const deltaY = pointerY - pos.y;
-
         let scaleFactor = 0.9;
         if (evt.deltaY < 0) scaleFactor = 1 / scaleFactor;
 
+        const newPos = scaleTranslation(
+          pos.x,
+          pos.y,
+          pointerX,
+          pointerY,
+          scaleFactor
+        );
+
         setScale(scale * scaleFactor);
         setPos({
-          x: pointerX - deltaX * scaleFactor,
-          y: pointerY - deltaY * scaleFactor,
+          x: newPos.x,
+          y: newPos.y,
         });
       }}
     >

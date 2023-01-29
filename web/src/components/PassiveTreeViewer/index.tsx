@@ -1,7 +1,7 @@
 import Handlebars from "handlebars";
 import { useEffect, useState } from "react";
 import { globImportLazy } from "../../utility";
-import { Viewport } from "../Viewport";
+import { Viewport, ViewportProps } from "../Viewport";
 import { PassiveTree } from "../../../../common/data/tree";
 import { parseNodes, parseSkillTreeUrl } from "./parse";
 
@@ -27,6 +27,8 @@ const PASSIVE_TREE_URLS = [
 
 export function PassiveTreeViewer() {
   const [svg, setSVG] = useState<string>();
+  const [passiveTree, setPassiveTree] = useState<PassiveTree.Data>();
+
   useEffect(() => {
     async function fn() {
       const version = "3.19";
@@ -70,13 +72,30 @@ export function PassiveTreeViewer() {
       });
 
       setSVG(window.btoa(svg));
+      setPassiveTree(passiveTree);
     }
 
     fn();
   }, []);
   return (
-    <Viewport>
-      {svg && <img src={`data:image/svg+xml;base64,${svg}`} alt="" />}
-    </Viewport>
+    <>
+      {passiveTree && svg && (
+        <Viewport
+          pixelRatio={Math.max(passiveTree.viewBox.w, passiveTree.viewBox.h)}
+          intialFocus={{
+            offset: {
+              x: passiveTree.viewBox.w * 0.5,
+              y: passiveTree.viewBox.h * 0,
+            },
+            size: {
+              x: passiveTree.viewBox.w * 0.5,
+              y: passiveTree.viewBox.h * 0.5,
+            },
+          }}
+        >
+          <img src={`data:image/svg+xml;base64,${svg}`} alt="" />
+        </Viewport>
+      )}
+    </>
   );
 }

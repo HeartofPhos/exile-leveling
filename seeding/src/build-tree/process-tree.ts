@@ -1,5 +1,5 @@
 import { PassiveTree } from "../../../common/data/tree";
-import { ParsingTree, SkillTree } from "./types";
+import { ProcessedTree, SkillTree } from "./types";
 
 export const ANGLES_16: number[] = [
   0, 30, 45, 60, 90, 120, 135, 150, 180, 210, 225, 240, 270, 300, 315, 330,
@@ -30,8 +30,8 @@ function getPosition(data: SkillTree.Data, node: SkillTree.Node) {
   return [angle % TWO_PI, Math.round(x), Math.round(y)];
 }
 
-export function parseSkillTree(data: SkillTree.Data) {
-  const parsingTree: ParsingTree.Data = {
+export function processSkillTree(data: SkillTree.Data) {
+  const parsingTree: ProcessedTree.Data = {
     bounds: {
       minX: Number.MAX_VALUE,
       minY: Number.MAX_VALUE,
@@ -53,9 +53,9 @@ export function parseSkillTree(data: SkillTree.Data) {
     string,
     {
       startNode: string;
-      startPosition: ParsingTree.Coord;
-      nodes: ParsingTree.Node[];
-      connections: ParsingTree.Connection[];
+      startPosition: ProcessedTree.Coord;
+      nodes: ProcessedTree.Node[];
+      connections: ProcessedTree.Connection[];
     }
   > = {};
 
@@ -75,8 +75,8 @@ export function parseSkillTree(data: SkillTree.Data) {
         ascendancy: ascendancyNode(node),
       };
 
-      let nodes: ParsingTree.Node[];
-      let connections: ParsingTree.Connection[];
+      let nodes: ProcessedTree.Node[];
+      let connections: ProcessedTree.Connection[];
       if (treeNode.kind === "Ascendancy") {
         let asc = tempAscendancies[node.ascendancyName!];
         if (asc === undefined) {
@@ -115,12 +115,12 @@ export function parseSkillTree(data: SkillTree.Data) {
 
         let [outAngle, outX, outY] = getPosition(data, outNode);
 
-        let path: ParsingTree.Path;
+        let path: ProcessedTree.Path;
         if (node.group === outNode.group && node.orbit === outNode.orbit) {
           const radius = data.constants.orbitRadii[node.orbit!];
 
           let rot = (angle - outAngle + TWO_PI) % TWO_PI;
-          let sweep: ParsingTree.Sweep["sweep"];
+          let sweep: ProcessedTree.Sweep["sweep"];
           if (rot > Math.PI) sweep = "CW";
           else sweep = "CCW";
 
@@ -145,11 +145,11 @@ export function parseSkillTree(data: SkillTree.Data) {
 
   const ASCENDANCY_POS_X = 7000;
   const ASCENDANCY_POS_Y = -7700;
-  for (const [asc_name, asc] of Object.entries(tempAscendancies)) {
+  for (const [, asc] of Object.entries(tempAscendancies)) {
     const diff_x = ASCENDANCY_POS_X - asc.startPosition.x;
     const diff_y = ASCENDANCY_POS_Y - asc.startPosition.y;
 
-    const updateNode = (node: ParsingTree.Node) => {
+    const updateNode = (node: ProcessedTree.Node) => {
       node.position.x += diff_x;
       node.position.y += diff_y;
     };
@@ -166,31 +166,7 @@ export function parseSkillTree(data: SkillTree.Data) {
     }
   }
 
-  const passiveTree: PassiveTree.Data = {
-    classes: data.classes.map((_class) => ({
-      id: _class.name,
-      ascendancies: _class.ascendancies.map((asc) => ({
-        id: asc.id,
-        startNodeId: parsingTree.nodes.filter(
-          (x) =>
-            x.ascendancy !== undefined &&
-            x.ascendancy.kind === "Start" &&
-            x.ascendancy.name == asc.name
-        )[0].id,
-      })),
-    })),
-    nodes: parsingTree.nodes.map((node) => ({
-      id: node.id,
-      x: node.position.x,
-      y: node.position.y,
-    })),
-    connections: parsingTree.connections.map((connection) => ({
-      a: connection.a.id,
-      b: connection.b.id,
-    })),
-  };
-
-  return { parsingTree, passiveTree };
+  return parsingTree;
 }
 
 function filterGroup(group: SkillTree.Group) {
@@ -210,7 +186,7 @@ function filterConnection(a: SkillTree.Node, b: SkillTree.Node) {
   );
 }
 
-function nodeKind(node: SkillTree.Node): ParsingTree.Node["kind"] {
+function nodeKind(node: SkillTree.Node): ProcessedTree.Node["kind"] {
   if (node.isKeystone) return "Keystone";
   if (node.isMastery) return "Mastery";
   if (node.ascendancyName !== undefined) return "Ascendancy";
@@ -220,10 +196,10 @@ function nodeKind(node: SkillTree.Node): ParsingTree.Node["kind"] {
 
 function ascendancyNode(
   node: SkillTree.Node
-): ParsingTree.AscendancyNode | undefined {
+): ProcessedTree.AscendancyNode | undefined {
   if (node.ascendancyName === undefined) return undefined;
 
-  let kind: ParsingTree.AscendancyNode["kind"];
+  let kind: ProcessedTree.AscendancyNode["kind"];
   if (node.isAscendancyStart) kind = "Start";
   else if (node.isNotable) kind = "Notable";
   else kind = "Normal";

@@ -1,6 +1,7 @@
 import fetch from "cross-fetch";
+import { PassiveTree } from "../../../common/data/tree";
 import { buildTemplate as buildTemplateSVG } from "./svg";
-import { parseSkillTree } from "./tree";
+import { processSkillTree } from "./process-tree";
 import { SkillTree } from "./types";
 
 const PASSIVE_TREE_JSON = {
@@ -17,8 +18,33 @@ export async function buildTemplates() {
   for (const [version, url] of Object.entries(PASSIVE_TREE_JSON)) {
     const data: SkillTree.Data = await fetch(url).then((x) => x.json());
 
-    const { parsingTree, passiveTree } = parseSkillTree(data);
-    const template = buildTemplateSVG(parsingTree);
+    const parsingTree = processSkillTree(data);
+    const { template, viewBox } = buildTemplateSVG(parsingTree);
+
+    const passiveTree: PassiveTree.Data = {
+      classes: data.classes.map((_class) => ({
+        id: _class.name,
+        ascendancies: _class.ascendancies.map((asc) => ({
+          id: asc.id,
+          startNodeId: parsingTree.nodes.filter(
+            (x) =>
+              x.ascendancy !== undefined &&
+              x.ascendancy.kind === "Start" &&
+              x.ascendancy.name == asc.name
+          )[0].id,
+        })),
+      })),
+      nodes: parsingTree.nodes.map((node) => ({
+        id: node.id,
+        x: node.position.x,
+        y: node.position.y,
+      })),
+      connections: parsingTree.connections.map((connection) => ({
+        a: connection.a.id,
+        b: connection.b.id,
+      })),
+      viewBox: viewBox,
+    };
 
     result.push({
       version,

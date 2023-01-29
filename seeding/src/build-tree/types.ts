@@ -194,7 +194,7 @@ export namespace SkillTree {
   }
 }
 
-export namespace ParsingTree {
+export namespace ProcessedTree {
   export interface Data {
     bounds: Bounds;
     nodes: Node[];
