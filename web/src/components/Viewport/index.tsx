@@ -59,6 +59,7 @@ export function Viewport({ viewBox, intialFocus, children }: ViewportProps) {
   }, [divRef]);
 
   useEffect(() => {
+    // TODO Revisit with some more sanity
     if (divRef.current === null) return;
 
     const rect = divRef.current.getBoundingClientRect();
@@ -79,7 +80,17 @@ export function Viewport({ viewBox, intialFocus, children }: ViewportProps) {
     const deltaX = halfRectW - divX;
     const deltaY = halfRectH - divY;
 
-    const scaleFactor = 200;
+    const ratioX = rect.width / intialFocus.size.x;
+    const ratioY = rect.height / intialFocus.size.y;
+
+    let scaleFactor;
+    if (ratioX < ratioY) {
+      const sizeX = divDim * (intialFocus.size.x / viewDim);
+      scaleFactor = rect.width / sizeX;
+    } else {
+      const sizeY = divDim * (intialFocus.size.y / viewDim);
+      scaleFactor = rect.height / sizeY;
+    }
 
     const newPos = scaleTranslation(
       deltaX,

@@ -31,6 +31,7 @@ export function buildTemplate(tree: ProcessedTree.Data) {
   const width = tree.bounds.maxX - tree.bounds.minX;
   const height = tree.bounds.maxY - tree.bounds.minY;
 
+  // More consistent across browsers
   const size = Math.max(width, height);
 
   const viewBox: PassiveTree.ViewBox = {

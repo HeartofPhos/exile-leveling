@@ -21,12 +21,12 @@ const TREE_DATA_LOOKUP = globImportLazy<PassiveTree.Data>(
 );
 
 const PASSIVE_TREE_URLS = [
-  "https://www.pathofexile.com/passive-skill-tree/AAAABgQCAAAA",
-  "https://www.pathofexile.com/passive-skill-tree/AAAABgQCAAAA",
+  // "https://www.pathofexile.com/passive-skill-tree/AAAABgQCAAAA",
+  // "https://www.pathofexile.com/passive-skill-tree/AAAABgQCAAAA",
   // "https://www.pathofexile.com/passive-skill-tree/AAAABgQAAZstAAA=",
   // "https://www.pathofexile.com/passive-skill-tree/AAAABgQAAZstAAA=",
-  // "https://www.pathofexile.com/passive-skill-tree/AAAABgQACBm0Xzmwq8SCwo6K8Jst-KEAAA==",
-  // "https://www.pathofexile.com/passive-skill-tree/AAAABgQACL6nXzmwq8SCmy2K8MKO-KEAAA==",
+  "https://www.pathofexile.com/passive-skill-tree/AAAABgQACBm0Xzmwq8SCwo6K8Jst-KEAAA==",
+  "https://www.pathofexile.com/passive-skill-tree/AAAABgQACL6nXzmwq8SCmy2K8MKO-KEAAA==",
   // "https://www.pathofexile.com/passive-skill-tree/AAAABgMCfBzcfXXDeSpNHRT2rv6HjxqGs41973p671O7320s6YZ3hrcFLTWShs6nCErEfVsXL26q_rpMi_iTz4OYrYCkCwyjigqbtz6PT0rIuJO9NoLHEMy79lZI9qMCIHiuhO_jsJLBTZK1BBZvfIPub9i9tNPTftlgdO0j9qxH-IJ7IBKO2zS-p9rBFSADotgkM6_XcB5qMHxEnkGHLPEZtD8nPeL60lXWA4cMcy2DkoDfsEfiMF5eExEtjr5khL63j0akOTu6Emnjahcc_gq18pD63hdM_2Tn-ejvSzHCcXkXpGVyo_IGoGMFvXwo-vm9EzUA7kMxIuLr7mVNAAfPDYa3hnQLDEI213AYSCzxuhowXpBnYwVsRr18",
 ];
 
@@ -80,14 +80,10 @@ export function PassiveTreeViewer() {
         offset: {
           x: (minX + maxX) * 0.5,
           y: (minY + maxY) * 0.5,
-          // x: passiveTree.viewBox.x + passiveTree.viewBox.w / 2,
-          // y: passiveTree.viewBox.y + passiveTree.viewBox.h / 2,
         },
         size: {
-          // x: maxX - minX + 110,
-          // y: maxY - minY + 110,
-          x: passiveTree.viewBox.w * 1,
-          y: passiveTree.viewBox.h * 1,
+          x: maxX - minX + 2500,
+          y: maxY - minY + 2500,
         },
       });
 

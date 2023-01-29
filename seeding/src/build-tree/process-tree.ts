@@ -1,4 +1,3 @@
-import { PassiveTree } from "../../../common/data/tree";
 import { ProcessedTree, SkillTree } from "./types";
 
 export const ANGLES_16: number[] = [
