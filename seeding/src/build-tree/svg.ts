@@ -1,7 +1,7 @@
 import { PassiveTree } from "../../../common/data/tree";
 import { ProcessedTree } from "./types";
 
-const PADDING = 175;
+const PADDING = 0;
 
 const MASTERY_RADIUS = 55;
 const KEYSTONE_RADIUS = 80;

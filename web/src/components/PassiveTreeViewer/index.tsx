@@ -21,8 +21,8 @@ const TREE_DATA_LOOKUP = globImportLazy<PassiveTree.Data>(
 );
 
 const PASSIVE_TREE_URLS = [
-  "https://www.pathofexile.com/passive-skill-tree/AAAABgQAAZstAAA=",
-  "https://www.pathofexile.com/passive-skill-tree/AAAABgQAAZstAAA=",
+  // "https://www.pathofexile.com/passive-skill-tree/AAAABgQAAZstAAA=",
+  // "https://www.pathofexile.com/passive-skill-tree/AAAABgQAAZstAAA=",
   "https://www.pathofexile.com/passive-skill-tree/AAAABgQACBm0Xzmwq8SCwo6K8Jst-KEAAA==",
   "https://www.pathofexile.com/passive-skill-tree/AAAABgQACL6nXzmwq8SCmy2K8MKO-KEAAA==",
   // "https://www.pathofexile.com/passive-skill-tree/AAAABgMCfBzcfXXDeSpNHRT2rv6HjxqGs41973p671O7320s6YZ3hrcFLTWShs6nCErEfVsXL26q_rpMi_iTz4OYrYCkCwyjigqbtz6PT0rIuJO9NoLHEMy79lZI9qMCIHiuhO_jsJLBTZK1BBZvfIPub9i9tNPTftlgdO0j9qxH-IJ7IBKO2zS-p9rBFSADotgkM6_XcB5qMHxEnkGHLPEZtD8nPeL60lXWA4cMcy2DkoDfsEfiMF5eExEtjr5khL63j0akOTu6Emnjahcc_gq18pD63hdM_2Tn-ejvSzHCcXkXpGVyo_IGoGMFvXwo-vm9EzUA7kMxIuLr7mVNAAfPDYa3hnQLDEI213AYSCzxuhowXpBnYwVsRr18",
@@ -65,23 +65,23 @@ export function PassiveTreeViewer() {
         maxY = Math.max(maxY, node.y);
       }
 
-      // for (const nodeId of prevParsed.nodes) {
-      //   const node = passiveTree.nodes[nodeId];
+      for (const nodeId of prevParsed.nodes) {
+        const node = passiveTree.nodes[nodeId];
 
-      //   minX = Math.min(minX, node.x);
-      //   maxX = Math.max(maxX, node.x);
-      //   minY = Math.min(minY, node.y);
-      //   maxY = Math.max(maxY, node.y);
-      // }
+        minX = Math.min(minX, node.x);
+        maxX = Math.max(maxX, node.x);
+        minY = Math.min(minY, node.y);
+        maxY = Math.max(maxY, node.y);
+      }
 
       setIntialFocus({
         offset: {
-          x: (minX + maxX) * 0.5 + passiveTree.viewBox.padding,
-          y: (minY + maxY) * 0.5 - passiveTree.viewBox.padding,
+          x: (minX + maxX) * 0.5,
+          y: (minY + maxY) * 0.5,
         },
         size: {
-          x: maxX - minX + 100,
-          y: maxY - minY + 100,
+          x: maxX - minX,
+          y: maxY - minY,
         },
       });
 
@@ -116,24 +116,10 @@ export function PassiveTreeViewer() {
     fn();
   }, []);
 
-  console.log(intialFocus);
   return (
     <>
       {intialFocus && passiveTree && svg && (
-        <Viewport
-          pixelRatio={Math.max(passiveTree.viewBox.w, passiveTree.viewBox.h)}
-          // intialFocus={{
-          //   offset: {
-          //     x: 653 + 175,
-          //     y: 4732 - 175,
-          //   },
-          //   size: {
-          //     x: passiveTree.viewBox.w * 0.05,
-          //     y: passiveTree.viewBox.h * 0.05,
-          //   },
-          // }}
-          intialFocus={intialFocus}
-        >
+        <Viewport viewBox={passiveTree.viewBox} intialFocus={intialFocus}>
           <img src={`data:image/svg+xml;base64,${svg}`} alt="" />
         </Viewport>
       )}

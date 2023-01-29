@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { useEffect, useRef, useState } from "react";
+import { PassiveTree } from "../../../../common/data/tree";
 import styles from "./styles.module.css";
 
 interface Coord {
@@ -13,7 +14,7 @@ export interface Box {
 }
 
 export interface ViewportProps {
-  pixelRatio: number;
+  viewBox: PassiveTree.ViewBox;
   intialFocus: Box;
   children?: React.ReactNode;
 }
@@ -34,7 +35,7 @@ function scaleTranslation(
   };
 }
 
-export function Viewport({ pixelRatio, intialFocus, children }: ViewportProps) {
+export function Viewport({ viewBox, intialFocus, children }: ViewportProps) {
   const divRef = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [scale, setScale] = useState(1);
@@ -62,12 +63,23 @@ export function Viewport({ pixelRatio, intialFocus, children }: ViewportProps) {
 
     const rect = divRef.current.getBoundingClientRect();
 
+    const pixelRatio = Math.max(viewBox.w, viewBox.h);
+
+    const normalizedX = (intialFocus.offset.x - viewBox.x) / pixelRatio;
+    const normalizedY = (intialFocus.offset.y - viewBox.y) / pixelRatio;
+
+    const divX = rect.width * normalizedX;
+    const divY = rect.height * normalizedY;
+
+    const deltaX = rect.width / 2 - divX;
+    const deltaY = rect.height / 2 - divY;
+
     const scaleFactor =
       pixelRatio / Math.max(intialFocus.size.x, intialFocus.size.y);
 
     const newPos = scaleTranslation(
-      -rect.width * (intialFocus.offset.x / pixelRatio),
-      -rect.height * (intialFocus.offset.y / pixelRatio),
+      deltaX,
+      deltaY,
       rect.width / 2,
       rect.height / 2,
       scaleFactor
@@ -135,6 +147,8 @@ export function Viewport({ pixelRatio, intialFocus, children }: ViewportProps) {
       />
       <div
         style={{
+          width: "100%",
+          height: "100%",
           transformOrigin: "0 0",
           transform: `translate(${pos.x}px, ${pos.y}px) scale(${scale}) `,
         }}
