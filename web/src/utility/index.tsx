@@ -46,11 +46,11 @@ export function globImportLazy<T>(
   keyTransform: (key: string) => string,
   valueTransform: (value: any) => T | Promise<T>
 ) {
-  return Object.entries(importLookup).reduce((prev, [key, value]) => {
-    prev[keyTransform(key)] = new PLazy((resolve) =>
+  return Object.entries(importLookup).reduce((record, [key, value]) => {
+    record[keyTransform(key)] = new PLazy((resolve) =>
       value().then((x) => resolve(valueTransform(x)))
     );
 
-    return prev;
+    return record;
   }, {} as Record<string, PromiseLike<T>>);
 }

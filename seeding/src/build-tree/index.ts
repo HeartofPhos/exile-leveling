@@ -34,11 +34,18 @@ export async function buildTemplates() {
           )[0].id,
         })),
       })),
-      nodes: parsingTree.nodes.map((node) => ({
-        id: node.id,
-        x: node.position.x,
-        y: node.position.y,
-      })),
+      nodes: parsingTree.nodes.reduce<PassiveTree.Data["nodes"]>(
+        (record, node) => {
+          record[node.id] = {
+            id: node.id,
+            x: node.position.x,
+            y: node.position.y,
+          };
+
+          return record;
+        },
+        {}
+      ),
       connections: parsingTree.connections.map((connection) => ({
         a: connection.a.id,
         b: connection.b.id,

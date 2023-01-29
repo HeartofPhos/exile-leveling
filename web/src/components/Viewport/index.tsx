@@ -7,7 +7,7 @@ interface Coord {
   y: number;
 }
 
-interface Box {
+export interface Box {
   offset: Coord;
   size: Coord;
 }

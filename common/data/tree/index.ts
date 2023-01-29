@@ -1,7 +1,7 @@
 export namespace PassiveTree {
   export interface Data {
     classes: Class[];
-    nodes: Node[];
+    nodes: Record<string, Node>;
     connections: Connection[];
     viewBox: ViewBox;
   }
@@ -11,6 +11,7 @@ export namespace PassiveTree {
     y: number;
     w: number;
     h: number;
+    padding: number;
   }
 
   export interface Node {
