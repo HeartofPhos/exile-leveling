@@ -26,6 +26,7 @@ export function PassiveTreeViewer() {
   const [version, setVersion] = useState<string>();
   const [parsedUrls, setParsedUrls] = useState<ParsedSkillTreeUrl[]>();
 
+  const [curIndex, setCurIndex] = useState<number>(0);
   const [svg, setSVG] = useState<string>();
   const [viewBox, setViewBox] = useState<PassiveTree.ViewBox>();
   const [intialFocus, setIntialFocus] =
@@ -66,8 +67,18 @@ export function PassiveTreeViewer() {
       if (!parsedUrls || parsedUrls.length == 0) return;
       if (!version) return;
 
-      const curParsed = parsedUrls[1];
-      const prevParsed = parsedUrls[0];
+      const curParsed = parsedUrls[curIndex];
+      let prevParsed: ParsedSkillTreeUrl;
+      if (curIndex != 0) prevParsed = parsedUrls[curIndex - 1];
+      else {
+        prevParsed = {
+          class: curParsed.class,
+          ascendancy: curParsed.ascendancy,
+          nodes: [],
+        };
+        if (curParsed.ascendancy)
+          prevParsed.nodes.push(curParsed.nodes[curParsed.nodes.length - 1]);
+      }
 
       const compiled = await TREE_TEMPLATE_LOOKUP[version];
       const passiveTree = await TREE_DATA_LOOKUP[version];
