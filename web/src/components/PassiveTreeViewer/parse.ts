@@ -1,6 +1,15 @@
 import { PassiveTree } from "../../../../common/data/tree";
 
-export function parseSkillTreeUrl(url: string, passiveTree: PassiveTree.Data) {
+export interface ParsedSkillTreeUrl {
+  class: PassiveTree.Class;
+  ascendancy?: PassiveTree.Ascendancy;
+  nodes: string[];
+}
+
+export function parseSkillTreeUrl(
+  url: string,
+  passiveTree: PassiveTree.Data
+): ParsedSkillTreeUrl {
   const data = /.*\/(.*?)$/.exec(url)?.[1];
   if (!data) throw "invalid url";
 

@@ -128,8 +128,15 @@ export interface BuildData {
   characterClass: string;
   requiredGems: RequiredGem[];
   bandit: "None" | "Oak" | "Kraityn" | "Alira";
+  passiveTrees: PassiveTree[];
   leagueStart: boolean;
   library: boolean;
+}
+
+export interface PassiveTree {
+  name: string;
+  version: string;
+  url: string;
 }
 
 export interface RequiredGem {
