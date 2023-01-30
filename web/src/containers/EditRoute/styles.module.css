@@ -6,6 +6,7 @@
   display: flex;
   height: 10rem;
   flex-grow: 1;
+  gap: var(--size-2);
 }
 
 .editor {
@@ -30,7 +31,6 @@
   border-color: var(--accent-primary);
   border-radius: var(--border-radius);
   padding: var(--size-2);
-  margin-right: var(--size-2);
   overflow-y: auto;
 }
 
