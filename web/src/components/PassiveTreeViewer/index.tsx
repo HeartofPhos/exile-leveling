@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Viewport, ViewportProps } from "../Viewport";
-import { PassiveTree } from "../../../../common/data/tree";
 import { parseNodes as processNodes } from "./parse";
 import { useRecoilValue } from "recoil";
 import {

@@ -20,7 +20,8 @@
     "react-router-dom": "^6.3.0",
     "react-simple-code-editor": "^0.13.1",
     "react-toastify": "^9.1.1",
-    "recoil": "^0.7.4"
+    "recoil": "^0.7.4",
+    "use-resize-observer": "^9.1.0"
   },
   "devDependencies": {
     "@types/pako": "^2.0.0",

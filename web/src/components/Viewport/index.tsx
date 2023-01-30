@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import { useEffect, useRef, useState } from "react";
 import styles from "./styles.module.css";
+import useResizeObserver, { ObservedSize } from "use-resize-observer";
 
 export interface ViewportProps {
   intialFocus: (rect: Rect) => Rect;
@@ -60,6 +61,35 @@ export function Viewport({ intialFocus, children }: ViewportProps) {
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [scale, setScale] = useState(1);
   const [inputActive, setInputActive] = useState(false);
+  const [prevSize, setPrevSize] = useState<ObservedSize>({
+    width: undefined,
+    height: undefined,
+  });
+
+  useResizeObserver({
+    ref: divRef,
+    onResize: (size) => {
+      setPrevSize(size);
+      if (prevSize.width === undefined || prevSize.height === undefined) return;
+      if (size.width === undefined || size.height === undefined) return;
+
+      const { newScale, newPos } = focusBox(
+        { x: 0, y: 0, width: size.width, height: size.height },
+        {
+          x: (prevSize.width / 2 - pos.x) / scale,
+          y: (prevSize.height / 2 - pos.y) / scale,
+          width: prevSize.width / scale,
+          height: prevSize.height / scale,
+        }
+      );
+
+      setScale(newScale);
+      setPos({
+        x: newPos.x,
+        y: newPos.y,
+      });
+    },
+  });
 
   useEffect(() => {
     if (divRef.current === null) return;
@@ -80,7 +110,6 @@ export function Viewport({ intialFocus, children }: ViewportProps) {
   useEffect(() => {
     if (divRef.current === null) return;
 
-    // TODO handle rect resize
     const rect = divRef.current.getBoundingClientRect();
     const { newScale, newPos } = focusBox(rect, intialFocus(rect));
 
