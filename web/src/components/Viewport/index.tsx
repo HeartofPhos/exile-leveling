@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import { useEffect, useRef, useState } from "react";
-import { PassiveTree } from "../../../../common/data/tree";
 import styles from "./styles.module.css";
 
 interface Coord {
@@ -14,8 +13,7 @@ export interface Box {
 }
 
 export interface ViewportProps {
-  viewBox: PassiveTree.ViewBox;
-  intialFocus: Box;
+  intialFocus: (react: DOMRect) => Box;
   children?: React.ReactNode;
 }
 
@@ -35,7 +33,37 @@ function scaleTranslation(
   };
 }
 
-export function Viewport({ viewBox, intialFocus, children }: ViewportProps) {
+interface Rect {
+  height: number;
+  width: number;
+}
+
+function focusBox(viewport: Rect, box: Box) {
+  const scaleX = viewport.width / box.size.x;
+  const scaleY = viewport.height / box.size.y;
+  let scaleFactor = Math.min(scaleX, scaleY);
+
+  const halfRectW = viewport.width / 2;
+  const halfRectH = viewport.height / 2;
+
+  const deltaX = halfRectW - box.offset.x;
+  const deltaY = halfRectH - box.offset.y;
+
+  const newPos = scaleTranslation(
+    deltaX,
+    deltaY,
+    halfRectW,
+    halfRectH,
+    scaleFactor
+  );
+
+  return {
+    scaleFactor,
+    newPos,
+  };
+}
+
+export function Viewport({ intialFocus, children }: ViewportProps) {
   const divRef = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [scale, setScale] = useState(1);
@@ -43,7 +71,6 @@ export function Viewport({ viewBox, intialFocus, children }: ViewportProps) {
 
   useEffect(() => {
     if (divRef.current === null) return;
-
     const preventDefault = (evt: Event) => evt.preventDefault();
 
     divRef.current.addEventListener("pointerdown", preventDefault);
@@ -65,41 +92,7 @@ export function Viewport({ viewBox, intialFocus, children }: ViewportProps) {
     // TODO handle rect resize
     const rect = divRef.current.getBoundingClientRect();
 
-    // SVG copies width, preserveAspectRatio="xMidYMid"
-    const divDim = rect.width;
-    const viewDim = Math.max(viewBox.w, viewBox.h);
-
-    const halfRectW = rect.width / 2;
-    const halfRectH = rect.height / 2;
-
-    const normalizedX = (intialFocus.offset.x - viewBox.x) / viewDim;
-    const normalizedY = (intialFocus.offset.y - viewBox.y) / viewDim;
-
-    const divX = divDim * normalizedX;
-    const divY = divDim * normalizedY;
-
-    const deltaX = halfRectW - divX;
-    const deltaY = halfRectH - divY;
-
-    const ratioX = rect.width / intialFocus.size.x;
-    const ratioY = rect.height / intialFocus.size.y;
-
-    let scaleFactor;
-    if (ratioX < ratioY) {
-      const sizeX = divDim * (intialFocus.size.x / viewDim);
-      scaleFactor = rect.width / sizeX;
-    } else {
-      const sizeY = divDim * (intialFocus.size.y / viewDim);
-      scaleFactor = rect.height / sizeY;
-    }
-
-    const newPos = scaleTranslation(
-      deltaX,
-      deltaY,
-      halfRectW,
-      halfRectH,
-      scaleFactor
-    );
+    const { scaleFactor, newPos } = focusBox(rect, intialFocus(rect));
 
     setScale(scaleFactor);
     setPos({

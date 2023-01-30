@@ -15,9 +15,8 @@ import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { formStyles } from "../Form";
 
 export function PassiveTreeViewer() {
-  const [curIndex, setCurIndex] = useState<number>(3);
+  const [curIndex, setCurIndex] = useState<number>(0);
   const [svg, setSVG] = useState<string>();
-  const [viewBox, setViewBox] = useState<PassiveTree.ViewBox>();
   const [intialFocus, setIntialFocus] =
     useState<ViewportProps["intialFocus"]>();
 
@@ -108,16 +107,32 @@ export function PassiveTreeViewer() {
       });
 
       setSVG(window.btoa(svg));
-      setViewBox(passiveTree.viewBox);
-      setIntialFocus({
-        offset: {
-          x: (minX + maxX) * 0.5,
-          y: (minY + maxY) * 0.5,
-        },
-        size: {
-          x: maxX - minX + 2500,
-          y: maxY - minY + 2500,
-        },
+      setIntialFocus(() => (rect: DOMRect) => {
+        const viewX = (minX + maxX) * 0.5;
+        const viewY = (minY + maxY) * 0.5;
+        const viewW = maxX - minX + 2500;
+        const viewH = maxY - minY + 2500;
+
+        // SVG copies width, preserveAspectRatio="xMidYMid"
+        const divDim = rect.width;
+        const viewDim = Math.max(passiveTree.viewBox.w, passiveTree.viewBox.h);
+
+        const normalizedX = (viewX - passiveTree.viewBox.x) / viewDim;
+        const normalizedY = (viewY - passiveTree.viewBox.y) / viewDim;
+
+        const sizeX = divDim * (viewW / viewDim);
+        const sizeY = divDim * (viewH / viewDim);
+
+        return {
+          offset: {
+            x: divDim * normalizedX,
+            y: divDim * normalizedY,
+          },
+          size: {
+            x: sizeX,
+            y: sizeY,
+          },
+        };
       });
     }
 
@@ -126,9 +141,9 @@ export function PassiveTreeViewer() {
 
   return (
     <>
-      {intialFocus && viewBox && svg && (
+      {intialFocus && svg && (
         <div className={classNames(styles.viewer)}>
-          <Viewport viewBox={viewBox} intialFocus={intialFocus}>
+          <Viewport intialFocus={intialFocus}>
             <img src={`data:image/svg+xml;base64,${svg}`} alt="" />
           </Viewport>
           <hr />
