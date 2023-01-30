@@ -1,93 +1,77 @@
-import {
-  atom,
-  atomFamily,
-  DefaultValue,
-  selector,
-  selectorFamily,
-  useRecoilCallback,
-} from "recoil";
-import { persistentStorageEffect } from ".";
-import { RouteFile } from "../../../common/route-processing";
-import { clearPersistent, getPersistent, setPersistent } from "../utility";
+import { selector } from "recoil";
+import { Route, Section } from "../../../common/route-processing";
+import { buildDataSelector } from "./build-data";
+import { routeFilesSelector } from "./route-files";
 
-async function loadDefaultRouteFiles() {
-  const { routeSourceLookup } = await import("../../../common/data");
-  const { getRouteFiles } = await import("../../../common/route-processing");
+const baseRouteSelector = selector({
+  key: "baseRouteSelector",
+  get: async ({ get }) => {
+    const { initializeRouteState, parseRoute } = await import(
+      "../../../common/route-processing"
+    );
 
-  const routeSources = [
-    routeSourceLookup["./routes/act-1.txt"],
-    routeSourceLookup["./routes/act-2.txt"],
-    routeSourceLookup["./routes/act-3.txt"],
-    routeSourceLookup["./routes/act-4.txt"],
-    routeSourceLookup["./routes/act-5.txt"],
-    routeSourceLookup["./routes/act-6.txt"],
-    routeSourceLookup["./routes/act-7.txt"],
-    routeSourceLookup["./routes/act-8.txt"],
-    routeSourceLookup["./routes/act-9.txt"],
-    routeSourceLookup["./routes/act-10.txt"],
-  ];
+    const routeFiles = get(routeFilesSelector);
+    const buildData = get(buildDataSelector);
 
-  return getRouteFiles(routeSources);
-}
+    const routeState = initializeRouteState();
 
-const routeFilesAtom = atom<RouteFile[] | null>({
-  key: "routeFilesAtom",
-  default: getPersistent("route-files"),
-  effects: [persistentStorageEffect("route-files")],
-});
+    if (buildData == null || buildData.leagueStart)
+      routeState.preprocessorDefinitions.add("LEAGUE_START");
 
-export const routeFilesSelector = selector<RouteFile[]>({
-  key: "routeFilesSelector",
-  get: ({ get }) => {
-    return get(routeFilesAtom) || loadDefaultRouteFiles();
-  },
-  set: ({ set }, newValue) => {
-    if (newValue instanceof DefaultValue) set(routeFilesAtom, null);
-    else set(routeFilesAtom, newValue);
+    if (buildData == null || buildData.library)
+      routeState.preprocessorDefinitions.add("LIBRARY");
+
+    const bandit = buildData?.bandit || "None";
+    switch (bandit) {
+      case "None":
+        routeState.preprocessorDefinitions.add("BANDIT_KILL");
+        break;
+      case "Oak":
+        routeState.preprocessorDefinitions.add("BANDIT_OAK");
+        break;
+      case "Kraityn":
+        routeState.preprocessorDefinitions.add("BANDIT_KRAITYN");
+        break;
+      case "Alira":
+        routeState.preprocessorDefinitions.add("BANDIT_ALIRA");
+        break;
+    }
+
+    return parseRoute(routeFiles, routeState);
   },
 });
 
-const routeProgress = new Set<string>(
-  getPersistent<string[]>("route-progress")
-);
+export const buildRouteSelector = selector({
+  key: "buildRouteSelector",
+  get: async ({ get }) => {
+    const { buildGemSteps } = await import(
+      "../../../common/route-processing/gems"
+    );
 
-const routeProgressAtomFamily = atomFamily<boolean, string>({
-  key: "routeProgressAtomFamily",
-  default: (param) => routeProgress.has(param),
-});
+    const baseRoute = get(baseRouteSelector);
+    const buildData = get(buildDataSelector);
 
-export const routeProgressSelectorFamily = selectorFamily<boolean, string>({
-  key: "routeProgressSelectorFamily",
-  get:
-    (param) =>
-    ({ get }) => {
-      const routeProgressAtom = get(routeProgressAtomFamily(param));
-      return routeProgressAtom;
-    },
-  set:
-    (param) =>
-    ({ set }, newValue) => {
-      set(routeProgressAtomFamily(param), newValue);
+    if (!buildData) return baseRoute;
 
-      if (newValue) routeProgress.add(param);
-      else routeProgress.delete(param);
-
-      if (routeProgress.size > 0)
-        setPersistent("route-progress", [...routeProgress]);
-      else clearPersistent("route-progress");
-    },
-});
-
-export const routeProgressKeys = () => routeProgress.keys();
-
-export function useClearRouteProgress() {
-  return useRecoilCallback(
-    ({ set }) =>
-      () => {
-        for (const key of routeProgress.keys()) {
-          set(routeProgressSelectorFamily(key), false);
+    const buildRoute: Route = [];
+    const routeGems: Set<number> = new Set();
+    for (const section of baseRoute) {
+      const buildSection: Section = { name: section.name, steps: [] };
+      for (const step of section.steps) {
+        buildSection.steps.push(step);
+        if (step.type == "fragment_step") {
+          for (const part of step.parts) {
+            if (typeof part !== "string" && part.type == "quest") {
+              const gemSteps = buildGemSteps(part, buildData, routeGems);
+              buildSection.steps.push(...gemSteps);
+            }
+          }
         }
-      },
-    []
-  );
-}
+      }
+
+      buildRoute.push(buildSection);
+    }
+
+    return buildRoute;
+  },
+});
