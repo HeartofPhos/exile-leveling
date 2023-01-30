@@ -1,7 +1,8 @@
 .viewer {
   display: flex;
   flex-direction: column;
-  /* gap: var(--size-2); */
+  height: 20rem;
+  width: 20rem;
 }
 
 .label {
@@ -10,6 +11,7 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  min-height: var(--line-height);
 }
 
 .buttons {

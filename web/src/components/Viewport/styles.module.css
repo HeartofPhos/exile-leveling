@@ -1,8 +1,8 @@
 .viewport {
   position: relative;
   overflow: hidden;
-  width: 20rem;
-  height: 20rem;
+  width: 100%;
+  height: 100%;
 }
 
 .inputArea {
