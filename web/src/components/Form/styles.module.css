@@ -4,10 +4,7 @@
   border-style: solid;
   border-width: 0;
   padding: var(--size-3);
-}
-
-.form > *:not(:last-child) {
-  margin-bottom: var(--size-3);
+  gap: var(--size-3);
 }
 
 .formRow > label {
@@ -31,11 +28,13 @@
 .groupLeft {
   display: flex;
   justify-content: start;
+  gap: var(--size-2);
 }
 
 .groupRight {
   display: flex;
   justify-content: end;
+  gap: var(--size-2);
 }
 
 .formButton {
@@ -47,7 +46,6 @@
   border-color: var(--accent-primary);
   border-radius: var(--border-radius);
   padding: var(--size-2);
-  margin-left: var(--size-2);
 }
 
 @media (hover: hover) {

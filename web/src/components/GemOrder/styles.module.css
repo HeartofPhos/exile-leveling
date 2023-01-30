@@ -1,10 +1,10 @@
 .gemOrder {
   display: flex;
   width: 100%;
+  gap: var(--size-3);
 }
 
 .orderButtonGroup {
-  margin-left: var(--size-3);
   height: var(--line-height);
   display: flex;
 }
