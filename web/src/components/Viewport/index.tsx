@@ -62,6 +62,7 @@ export function Viewport({ viewBox, intialFocus, children }: ViewportProps) {
     // TODO Revisit with some more sanity
     if (divRef.current === null) return;
 
+    // TODO handle rect resize
     const rect = divRef.current.getBoundingClientRect();
 
     // SVG copies width, preserveAspectRatio="xMidYMid"
