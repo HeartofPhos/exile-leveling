@@ -4,8 +4,40 @@ import { globImportLazy } from "../../utility";
 import { Viewport, ViewportProps } from "../Viewport";
 import { PassiveTree } from "../../../../common/data/tree";
 import { ParsedSkillTreeUrl, parseNodes, parseSkillTreeUrl } from "./parse";
-import { useRecoilValue } from "recoil";
+import { selector, useRecoilValue } from "recoil";
 import { buildDataSelector } from "../../state/build-data";
+import { toast } from "react-toastify";
+
+const parsedUrlsSelector = selector({
+  key: "parsedUrlsSelector",
+  get: async ({ get }) => {
+    const buildData = get(buildDataSelector);
+
+    let version;
+    const parsedUrls = [];
+    for (const buildTree of buildData.passiveTrees) {
+      if (version === undefined) version = buildTree.version;
+      else if (version !== buildTree.version) continue;
+
+      const passiveTree = await TREE_DATA_LOOKUP[buildTree.version];
+      try {
+        const parsed = parseSkillTreeUrl(buildTree.url, passiveTree);
+
+        const hasNodes =
+          parsed.ascendancy === undefined
+            ? parsed.nodes.length > 0
+            : parsed.nodes.length > 1;
+        if (!hasNodes) continue;
+
+        parsedUrls.push(parsed);
+      } catch (e) {
+        toast.error(`Invalid Passive Tree, ${e}`);
+      }
+    }
+
+    return { version, parsedUrls };
+  },
+});
 
 const TREE_TEMPLATE_LOOKUP = globImportLazy(
   import.meta.glob("../../../../common/data/tree/*.svg"),
@@ -23,44 +55,13 @@ const TREE_DATA_LOOKUP = globImportLazy<PassiveTree.Data>(
 );
 
 export function PassiveTreeViewer() {
-  const [version, setVersion] = useState<string>();
-  const [parsedUrls, setParsedUrls] = useState<ParsedSkillTreeUrl[]>();
-
-  const [curIndex, setCurIndex] = useState<number>(0);
+  const [curIndex, setCurIndex] = useState<number>(3);
   const [svg, setSVG] = useState<string>();
   const [viewBox, setViewBox] = useState<PassiveTree.ViewBox>();
   const [intialFocus, setIntialFocus] =
     useState<ViewportProps["intialFocus"]>();
 
-  const buildData = useRecoilValue(buildDataSelector);
-
-  useEffect(() => {
-    async function fn() {
-      const parsedUrls = [];
-
-      let version;
-      for (const buildTree of buildData.passiveTrees) {
-        if (version === undefined) version = buildTree.version;
-        else if (version !== buildTree.version) continue;
-
-        const passiveTree = await TREE_DATA_LOOKUP[buildTree.version];
-        const parsed = parseSkillTreeUrl(buildTree.url, passiveTree);
-
-        if (
-          parsed.ascendancy === undefined
-            ? parsed.nodes.length > 0
-            : parsed.nodes.length > 1
-        ) {
-          parsedUrls.push(parsed);
-        }
-      }
-
-      setVersion(version);
-      setParsedUrls(parsedUrls);
-    }
-
-    fn();
-  }, [buildData]);
+  const { version, parsedUrls } = useRecoilValue(parsedUrlsSelector);
 
   useEffect(() => {
     async function fn() {
@@ -75,6 +76,7 @@ export function PassiveTreeViewer() {
           class: curParsed.class,
           ascendancy: curParsed.ascendancy,
           nodes: [],
+          masteries: [],
         };
         if (curParsed.ascendancy)
           prevParsed.nodes.push(curParsed.nodes[curParsed.nodes.length - 1]);

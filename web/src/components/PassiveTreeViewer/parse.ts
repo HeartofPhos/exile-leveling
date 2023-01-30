@@ -4,6 +4,7 @@ export interface ParsedSkillTreeUrl {
   class: PassiveTree.Class;
   ascendancy?: PassiveTree.Ascendancy;
   nodes: string[];
+  masteries: string[];
 }
 
 export function parseSkillTreeUrl(
@@ -18,19 +19,31 @@ export function parseSkillTreeUrl(
     c.charCodeAt(0)
   );
 
-  const version =
-    (buffer[0] << 24) | (buffer[1] << 16) | (buffer[2] << 8) | buffer[3];
+  const version = read_u32(buffer, 0);
   const classId = buffer[4];
   const ascendancyId = buffer[5];
 
-  let nodes;
-  if (version == 4) {
-    nodes = read_u16s(buffer, 7, (data.length - 7) / 2);
-  } else if (version == 5 || version == 6) {
-    nodes = read_u16s(buffer, 7, buffer[6]);
+  let nodesOffset;
+  let nodesCount;
+  let clusterOffset;
+  let clusterCount;
+  let masteryOffset;
+  let masteryCount;
+  if (version >= 6) {
+    nodesOffset = 7;
+    nodesCount = buffer[6];
+    clusterOffset = nodesOffset + nodesCount * 2 + 1;
+    clusterCount = buffer[clusterOffset - 1];
+    masteryOffset = clusterOffset + clusterCount * 2 + 1;
+    masteryCount = buffer[masteryOffset - 1];
   } else throw "invalid version";
 
-  nodes = nodes.map((x) => x.toString());
+  const nodes = read_u16s(buffer, nodesOffset, nodesCount).map((x) =>
+    x.toString()
+  );
+  const masteries = read_u16s(buffer, masteryOffset, masteryCount).map((x) =>
+    x.toString()
+  );
 
   let ascendancy;
   if (ascendancyId > 0) {
@@ -45,7 +58,21 @@ export function parseSkillTreeUrl(
         ? passiveTree.classes[classId].ascendancies[ascendancyId - 1]
         : undefined,
     nodes: nodes,
+    masteries: masteries,
   };
+}
+
+function read_u16(buffer: Uint8Array, offset: number) {
+  return (buffer[offset] << 8) | buffer[offset + 1];
+}
+
+function read_u32(buffer: Uint8Array, offset: number) {
+  return (
+    (buffer[offset] << 24) |
+    (buffer[offset + 1] << 16) |
+    (buffer[offset + 2] << 8) |
+    buffer[offset + 3]
+  );
 }
 
 function read_u16s(buffer: Uint8Array, offset: number, length: number) {
@@ -54,8 +81,7 @@ function read_u16s(buffer: Uint8Array, offset: number, length: number) {
   let result: number[] = [];
   for (let i = 0; i < length; i++) {
     const index = offset + i * 2;
-    const value = (buffer[index] << 8) | buffer[index + 1];
-    result.push(value);
+    result.push(read_u16(buffer, index));
   }
 
   return result;
