@@ -25,15 +25,10 @@ export const urlSkillTreesSelector = selector({
   get: async ({ get }) => {
     const buildData = get(buildDataSelector);
 
-    let version;
     const urlSkillTrees: UrlSkillTree[] = [];
-    const invalidSkillTrees: InvalidSkillTree[] = [];
     for (const buildTree of buildData.passiveTrees) {
       try {
-        if (version === undefined) version = buildTree.version;
-        else if (version !== buildTree.version) throw "mixed versions";
-        const passiveTree = await TREE_DATA_LOOKUP[buildTree.version];
-        const urlSkillTree = buildUrlSkillTree(buildTree.url, passiveTree);
+        const urlSkillTree = await buildUrlSkillTree(buildTree);
 
         const hasNodes =
           urlSkillTree.ascendancy === undefined
@@ -43,32 +38,32 @@ export const urlSkillTreesSelector = selector({
 
         urlSkillTrees.push(urlSkillTree);
       } catch (e) {
-        invalidSkillTrees.push({ passiveTree: buildTree, reason: `${e}` });
+        console.error(
+          `invalid UrlSkillTree, ${buildTree.name}, ${buildTree.version}, ${buildTree.url}`
+        );
       }
     }
 
-    return { version, urlSkillTrees, invalidSkillTrees };
+    return { urlSkillTrees };
   },
 });
 
 export interface UrlSkillTree {
+  name: string;
+  version: string;
   class: PassiveTree.Class;
   ascendancy?: PassiveTree.Ascendancy;
   nodes: string[];
   masteries: string[];
 }
 
-export interface InvalidSkillTree {
-  passiveTree: BuildPassiveTree;
-  reason: string;
-}
-
-export function buildUrlSkillTree(
-  url: string,
-  passiveTree: PassiveTree.Data
-): UrlSkillTree {
-  const data = /.*\/(.*?)$/.exec(url)?.[1];
+export async function buildUrlSkillTree(
+  buildTree: BuildPassiveTree
+): Promise<UrlSkillTree> {
+  const data = /.*\/(.*?)$/.exec(buildTree.url)?.[1];
   if (!data) throw "invalid url";
+
+  const passiveTree = await TREE_DATA_LOOKUP[buildTree.version];
 
   const unescaped = data.replace(/-/g, "+").replace(/_/g, "/");
   const buffer = Uint8Array.from(window.atob(unescaped), (c) =>
@@ -108,6 +103,8 @@ export function buildUrlSkillTree(
   }
 
   return {
+    name: buildTree.name,
+    version: buildTree.version,
     class: passiveTree.classes[classId],
     ascendancy:
       ascendancyId > 0

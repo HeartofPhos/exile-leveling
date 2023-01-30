@@ -17,18 +17,24 @@ export function PassiveTreeViewer() {
   const [intialFocus, setIntialFocus] =
     useState<ViewportProps["intialFocus"]>();
 
-  const { version, urlSkillTrees } = useRecoilValue(urlSkillTreesSelector);
+  const { urlSkillTrees } = useRecoilValue(urlSkillTreesSelector);
 
   useEffect(() => {
     async function fn() {
       if (urlSkillTrees.length == 0) return;
-      if (!version) return;
 
-      const curTree = urlSkillTrees[curIndex];
+      const version = urlSkillTrees[0].version;
+      const filteredUrlSkillTrees = urlSkillTrees.filter(
+        (x) => x.version == version
+      );
+
+      const curTree = filteredUrlSkillTrees[curIndex];
       let prevTree: UrlSkillTree;
-      if (curIndex != 0) prevTree = urlSkillTrees[curIndex - 1];
+      if (curIndex != 0) prevTree = filteredUrlSkillTrees[curIndex - 1];
       else {
         prevTree = {
+          name: curTree.name,
+          version: curTree.version,
           class: curTree.class,
           ascendancy: curTree.ascendancy,
           nodes: [],
@@ -117,7 +123,7 @@ export function PassiveTreeViewer() {
     }
 
     fn();
-  }, [version, urlSkillTrees]);
+  }, [urlSkillTrees]);
 
   return (
     <>
