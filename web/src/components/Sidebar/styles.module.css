@@ -10,10 +10,11 @@
   border-width: var(--border-width);
   border-color: var(--accent-primary);
   border-radius: var(--border-radius);
-  /* padding: var(--size-2); */
+  padding: var(--size-2);
 }
 
 .sidebar.expand {
+  width: 15rem;
 }
 
 .sidebarToggle {
