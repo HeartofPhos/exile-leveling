@@ -44,6 +44,13 @@ export const urlSkillTreesSelector = selector({
       }
     }
 
+    if (urlSkillTrees.length > 0) {
+      const version = urlSkillTrees[0].version;
+      return {
+        urlSkillTrees: urlSkillTrees.filter((x) => x.version == version),
+      };
+    }
+
     return { urlSkillTrees };
   },
 });

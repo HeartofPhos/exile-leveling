@@ -23,14 +23,9 @@ export function PassiveTreeViewer() {
     async function fn() {
       if (urlSkillTrees.length == 0) return;
 
-      const version = urlSkillTrees[0].version;
-      const filteredUrlSkillTrees = urlSkillTrees.filter(
-        (x) => x.version == version
-      );
-
-      const curTree = filteredUrlSkillTrees[curIndex];
+      const curTree = urlSkillTrees[curIndex];
       let prevTree: UrlSkillTree;
-      if (curIndex != 0) prevTree = filteredUrlSkillTrees[curIndex - 1];
+      if (curIndex != 0) prevTree = urlSkillTrees[curIndex - 1];
       else {
         prevTree = {
           name: curTree.name,
@@ -44,8 +39,8 @@ export function PassiveTreeViewer() {
           prevTree.nodes.push(curTree.nodes[curTree.nodes.length - 1]);
       }
 
-      const compiled = await TREE_TEMPLATE_LOOKUP[version];
-      const passiveTree = await TREE_DATA_LOOKUP[version];
+      const compiled = await TREE_TEMPLATE_LOOKUP[curTree.version];
+      const passiveTree = await TREE_DATA_LOOKUP[curTree.version];
 
       const {
         nodesActive,
