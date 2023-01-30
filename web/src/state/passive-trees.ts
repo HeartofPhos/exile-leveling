@@ -3,7 +3,7 @@ import { PassiveTree } from "../../../common/data/tree";
 import { selector } from "recoil";
 import { buildDataSelector } from "./build-data";
 import { globImportLazy } from "../utility";
-import { toast } from "react-toastify";
+import { BuildPassiveTree } from "../../../common/route-processing";
 
 export const TREE_DATA_LOOKUP = globImportLazy<PassiveTree.Data>(
   import.meta.glob("../../../common/data/tree/*.json"),
@@ -26,24 +26,28 @@ export const urlSkillTreesSelector = selector({
     const buildData = get(buildDataSelector);
 
     let version;
-    const urlSkillTrees = [];
+    const urlSkillTrees: UrlSkillTree[] = [];
+    const invalidSkillTrees: InvalidSkillTree[] = [];
     for (const buildTree of buildData.passiveTrees) {
-      if (version === undefined) version = buildTree.version;
-      else if (version !== buildTree.version) continue;
+      try {
+        if (version === undefined) version = buildTree.version;
+        else if (version !== buildTree.version) throw "mixed versions";
+        const passiveTree = await TREE_DATA_LOOKUP[buildTree.version];
+        const urlSkillTree = buildUrlSkillTree(buildTree.url, passiveTree);
 
-      const passiveTree = await TREE_DATA_LOOKUP[buildTree.version];
-      const urlSkillTree = buildUrlSkillTree(buildTree.url, passiveTree);
+        const hasNodes =
+          urlSkillTree.ascendancy === undefined
+            ? urlSkillTree.nodes.length > 0
+            : urlSkillTree.nodes.length > 1;
+        if (!hasNodes) continue;
 
-      const hasNodes =
-        urlSkillTree.ascendancy === undefined
-          ? urlSkillTree.nodes.length > 0
-          : urlSkillTree.nodes.length > 1;
-      if (!hasNodes) continue;
-
-      urlSkillTrees.push(urlSkillTree);
+        urlSkillTrees.push(urlSkillTree);
+      } catch (e) {
+        invalidSkillTrees.push({ passiveTree: buildTree, reason: `${e}` });
+      }
     }
 
-    return { version, urlSkillTrees };
+    return { version, urlSkillTrees, invalidSkillTrees };
   },
 });
 
@@ -52,6 +56,11 @@ export interface UrlSkillTree {
   ascendancy?: PassiveTree.Ascendancy;
   nodes: string[];
   masteries: string[];
+}
+
+export interface InvalidSkillTree {
+  passiveTree: BuildPassiveTree;
+  reason: string;
 }
 
 export function buildUrlSkillTree(
