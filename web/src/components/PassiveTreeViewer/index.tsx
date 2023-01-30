@@ -9,6 +9,8 @@ import {
   UrlSkillTree,
   urlSkillTreesSelector,
 } from "../../state/passive-trees";
+import styles from "./styles.module.css";
+import classNames from "classnames";
 
 export function PassiveTreeViewer() {
   const [curIndex, setCurIndex] = useState<number>(3);
@@ -123,9 +125,15 @@ export function PassiveTreeViewer() {
   return (
     <>
       {intialFocus && viewBox && svg && (
-        <Viewport viewBox={viewBox} intialFocus={intialFocus}>
-          <img src={`data:image/svg+xml;base64,${svg}`} alt="" />
-        </Viewport>
+        <div className={classNames(styles.passiveTreeViewer)}>
+          <Viewport viewBox={viewBox} intialFocus={intialFocus}>
+            <img src={`data:image/svg+xml;base64,${svg}`} alt="" />
+          </Viewport>
+          <div className={classNames(styles.buttonsHolder)}>
+            <button>FWD</button>
+            <button>BCK</button>
+          </div>
+        </div>
       )}
     </>
   );

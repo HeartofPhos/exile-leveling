@@ -1,0 +1,13 @@
+.passiveTreeViewer {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonsHolder {
+  display: flex;
+  gap: var(--size-2);
+}
+
+.buttonsHolder > * {
+  flex: 1;
+}
