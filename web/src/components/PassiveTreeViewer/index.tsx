@@ -11,6 +11,8 @@ import {
 } from "../../state/passive-trees";
 import styles from "./styles.module.css";
 import classNames from "classnames";
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import { formStyles } from "../Form";
 
 export function PassiveTreeViewer() {
   const [curIndex, setCurIndex] = useState<number>(3);
@@ -120,18 +122,33 @@ export function PassiveTreeViewer() {
     }
 
     fn();
-  }, [urlSkillTrees]);
+  }, [urlSkillTrees, curIndex]);
 
   return (
     <>
       {intialFocus && viewBox && svg && (
-        <div className={classNames(styles.passiveTreeViewer)}>
+        <div className={classNames(styles.viewer)}>
           <Viewport viewBox={viewBox} intialFocus={intialFocus}>
             <img src={`data:image/svg+xml;base64,${svg}`} alt="" />
           </Viewport>
-          <div className={classNames(styles.buttonsHolder)}>
-            <button>FWD</button>
-            <button>BCK</button>
+          <hr />
+          <label className={classNames(styles.label)}>
+            {urlSkillTrees.length > 0 && urlSkillTrees[curIndex].name}
+          </label>
+          <div className={classNames(styles.buttons)}>
+            <HiChevronLeft
+              className={classNames(formStyles.formButton, styles.button)}
+              onClick={() => {
+                if (curIndex > 0) setCurIndex(curIndex - 1);
+              }}
+            />
+            <HiChevronRight
+              className={classNames(formStyles.formButton, styles.button)}
+              onClick={() => {
+                if (curIndex < urlSkillTrees.length - 1)
+                  setCurIndex(curIndex + 1);
+              }}
+            />
           </div>
         </div>
       )}

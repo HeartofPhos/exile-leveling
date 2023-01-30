@@ -1,13 +1,25 @@
-.passiveTreeViewer {
+.viewer {
   display: flex;
   flex-direction: column;
+  /* gap: var(--size-2); */
 }
 
-.buttonsHolder {
+.label {
+  text-align: center;
+  color: var(--primary-light);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.buttons {
   display: flex;
+  align-items: stretch;
+  height: var(--size-5);
   gap: var(--size-2);
 }
 
-.buttonsHolder > * {
+.button {
+  height: unset;
   flex: 1;
 }
