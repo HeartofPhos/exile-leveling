@@ -31,7 +31,7 @@ interface Rect {
   width: number;
 }
 
-function focusBox(viewport: Rect, focus: Rect) {
+function focusRect(viewport: Rect, focus: Rect) {
   const scaleX = viewport.width / focus.width;
   const scaleY = viewport.height / focus.height;
   const newScale = Math.min(scaleX, scaleY);
@@ -73,7 +73,7 @@ export function Viewport({ intialFocus, children }: ViewportProps) {
       if (prevSize.width === undefined || prevSize.height === undefined) return;
       if (size.width === undefined || size.height === undefined) return;
 
-      const { newScale, newPos } = focusBox(
+      const { newScale, newPos } = focusRect(
         { x: 0, y: 0, width: size.width, height: size.height },
         {
           x: (prevSize.width / 2 - pos.x) / scale,
@@ -111,7 +111,7 @@ export function Viewport({ intialFocus, children }: ViewportProps) {
     if (divRef.current === null) return;
 
     const rect = divRef.current.getBoundingClientRect();
-    const { newScale, newPos } = focusBox(rect, intialFocus(rect));
+    const { newScale, newPos } = focusRect(rect, intialFocus(rect));
 
     setScale(newScale);
     setPos({
