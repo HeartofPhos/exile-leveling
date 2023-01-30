@@ -1,7 +1,7 @@
 import fetch from "cross-fetch";
 import { PassiveTree } from "../../../common/data/tree";
 import { buildTemplate as buildTemplateSVG } from "./svg";
-import { processSkillTree } from "./process-tree";
+import { processSkillTree } from "./tree";
 import { SkillTree } from "./types";
 
 const PASSIVE_TREE_JSON = {

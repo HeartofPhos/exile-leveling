@@ -1,4 +1,4 @@
-import { ProcessedTree, SkillTree } from "./types";
+import { ProcessedTree as IntermediateTree, SkillTree } from "./types";
 
 export const ANGLES_16: number[] = [
   0, 30, 45, 60, 90, 120, 135, 150, 180, 210, 225, 240, 270, 300, 315, 330,
@@ -29,8 +29,8 @@ function getPosition(data: SkillTree.Data, node: SkillTree.Node) {
   return [angle % TWO_PI, Math.round(x), Math.round(y)];
 }
 
-export function processSkillTree(data: SkillTree.Data) {
-  const parsingTree: ProcessedTree.Data = {
+export function processSkillTree(skillTree: SkillTree.Data) {
+  const tree: IntermediateTree.Data = {
     bounds: {
       minX: Number.POSITIVE_INFINITY,
       minY: Number.POSITIVE_INFINITY,
@@ -42,30 +42,30 @@ export function processSkillTree(data: SkillTree.Data) {
   };
 
   const updateMinxMax = (x: number, y: number) => {
-    parsingTree.bounds.minX = Math.min(parsingTree.bounds.minX, x);
-    parsingTree.bounds.minY = Math.min(parsingTree.bounds.minY, y);
-    parsingTree.bounds.maxX = Math.max(parsingTree.bounds.maxX, x);
-    parsingTree.bounds.maxY = Math.max(parsingTree.bounds.maxY, y);
+    tree.bounds.minX = Math.min(tree.bounds.minX, x);
+    tree.bounds.minY = Math.min(tree.bounds.minY, y);
+    tree.bounds.maxX = Math.max(tree.bounds.maxX, x);
+    tree.bounds.maxY = Math.max(tree.bounds.maxY, y);
   };
 
   const tempAscendancies: Record<
     string,
     {
       startNode: string;
-      startPosition: ProcessedTree.Coord;
-      nodes: ProcessedTree.Node[];
-      connections: ProcessedTree.Connection[];
+      startPosition: IntermediateTree.Coord;
+      nodes: IntermediateTree.Node[];
+      connections: IntermediateTree.Connection[];
     }
   > = {};
 
-  for (const [, group] of Object.entries(data.groups)) {
+  for (const [, group] of Object.entries(skillTree.groups)) {
     if (!filterGroup(group)) continue;
 
     for (const nodeId of group.nodes) {
-      const node = data.nodes[nodeId];
+      const node = skillTree.nodes[nodeId];
       if (!filterNode(node)) continue;
 
-      const [angle, x, y] = getPosition(data, node);
+      const [angle, x, y] = getPosition(skillTree, node);
 
       const treeNode = {
         id: nodeId,
@@ -74,8 +74,8 @@ export function processSkillTree(data: SkillTree.Data) {
         ascendancy: ascendancyNode(node),
       };
 
-      let nodes: ProcessedTree.Node[];
-      let connections: ProcessedTree.Connection[];
+      let nodes: IntermediateTree.Node[];
+      let connections: IntermediateTree.Connection[];
       if (treeNode.kind === "Ascendancy") {
         let asc = tempAscendancies[node.ascendancyName!];
         if (asc === undefined) {
@@ -98,8 +98,8 @@ export function processSkillTree(data: SkillTree.Data) {
       } else {
         updateMinxMax(x, y);
 
-        nodes = parsingTree.nodes;
-        connections = parsingTree.connections;
+        nodes = tree.nodes;
+        connections = tree.connections;
       }
 
       nodes.push(treeNode);
@@ -107,19 +107,19 @@ export function processSkillTree(data: SkillTree.Data) {
       const outNodes =
         node.out?.map((outNodeId) => ({
           outNodeId,
-          outNode: data.nodes[outNodeId],
+          outNode: skillTree.nodes[outNodeId],
         })) || [];
       for (const { outNodeId, outNode } of outNodes) {
         if (!filterConnection(node, outNode)) continue;
 
-        let [outAngle, outX, outY] = getPosition(data, outNode);
+        let [outAngle, outX, outY] = getPosition(skillTree, outNode);
 
-        let path: ProcessedTree.Path;
+        let path: IntermediateTree.Path;
         if (node.group === outNode.group && node.orbit === outNode.orbit) {
-          const radius = data.constants.orbitRadii[node.orbit!];
+          const radius = skillTree.constants.orbitRadii[node.orbit!];
 
           let rot = (angle - outAngle + TWO_PI) % TWO_PI;
-          let sweep: ProcessedTree.Sweep["sweep"];
+          let sweep: IntermediateTree.Sweep["sweep"];
           if (rot > Math.PI) sweep = "CW";
           else sweep = "CCW";
 
@@ -148,7 +148,7 @@ export function processSkillTree(data: SkillTree.Data) {
     const diff_x = ASCENDANCY_POS_X - asc.startPosition.x;
     const diff_y = ASCENDANCY_POS_Y - asc.startPosition.y;
 
-    const updateNode = (node: ProcessedTree.Node) => {
+    const updateNode = (node: IntermediateTree.Node) => {
       node.position.x += diff_x;
       node.position.y += diff_y;
     };
@@ -156,16 +156,16 @@ export function processSkillTree(data: SkillTree.Data) {
     for (const node of asc.nodes) {
       updateNode(node);
       updateMinxMax(node.position.x, node.position.y);
-      parsingTree.nodes.push(node);
+      tree.nodes.push(node);
     }
 
     for (const connection of asc.connections) {
       updateNode(connection.b);
-      parsingTree.connections.push(connection);
+      tree.connections.push(connection);
     }
   }
 
-  return parsingTree;
+  return tree;
 }
 
 function filterGroup(group: SkillTree.Group) {
@@ -185,7 +185,7 @@ function filterConnection(a: SkillTree.Node, b: SkillTree.Node) {
   );
 }
 
-function nodeKind(node: SkillTree.Node): ProcessedTree.Node["kind"] {
+function nodeKind(node: SkillTree.Node): IntermediateTree.Node["kind"] {
   if (node.isKeystone) return "Keystone";
   if (node.isMastery) return "Mastery";
   if (node.ascendancyName !== undefined) return "Ascendancy";
@@ -195,10 +195,10 @@ function nodeKind(node: SkillTree.Node): ProcessedTree.Node["kind"] {
 
 function ascendancyNode(
   node: SkillTree.Node
-): ProcessedTree.AscendancyNode | undefined {
+): IntermediateTree.AscendancyNode | undefined {
   if (node.ascendancyName === undefined) return undefined;
 
-  let kind: ProcessedTree.AscendancyNode["kind"];
+  let kind: IntermediateTree.AscendancyNode["kind"];
   if (node.isAscendancyStart) kind = "Start";
   else if (node.isNotable) kind = "Notable";
   else kind = "Normal";
