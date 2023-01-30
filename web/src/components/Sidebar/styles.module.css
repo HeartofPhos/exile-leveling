@@ -13,8 +13,8 @@
   padding: var(--size-2);
 }
 
-.sidebar.expand {
-  width: 15rem;
+.sidebarContents:not(.expand) {
+  display: none;
 }
 
 .sidebarToggle {

@@ -2,18 +2,8 @@ import classNames from "classnames";
 import { useEffect, useRef, useState } from "react";
 import styles from "./styles.module.css";
 
-interface Coord {
-  x: number;
-  y: number;
-}
-
-export interface Box {
-  offset: Coord;
-  size: Coord;
-}
-
 export interface ViewportProps {
-  intialFocus: (react: DOMRect) => Box;
+  intialFocus: (rect: Rect) => Rect;
   children?: React.ReactNode;
 }
 
@@ -34,31 +24,33 @@ function scaleTranslation(
 }
 
 interface Rect {
+  x: number;
+  y: number;
   height: number;
   width: number;
 }
 
-function focusBox(viewport: Rect, box: Box) {
-  const scaleX = viewport.width / box.size.x;
-  const scaleY = viewport.height / box.size.y;
-  let scaleFactor = Math.min(scaleX, scaleY);
+function focusBox(viewport: Rect, focus: Rect) {
+  const scaleX = viewport.width / focus.width;
+  const scaleY = viewport.height / focus.height;
+  const newScale = Math.min(scaleX, scaleY);
 
   const halfRectW = viewport.width / 2;
   const halfRectH = viewport.height / 2;
 
-  const deltaX = halfRectW - box.offset.x;
-  const deltaY = halfRectH - box.offset.y;
+  const deltaX = halfRectW - focus.x;
+  const deltaY = halfRectH - focus.y;
 
   const newPos = scaleTranslation(
     deltaX,
     deltaY,
     halfRectW,
     halfRectH,
-    scaleFactor
+    newScale
   );
 
   return {
-    scaleFactor,
+    newScale,
     newPos,
   };
 }
@@ -86,15 +78,13 @@ export function Viewport({ intialFocus, children }: ViewportProps) {
   }, [divRef]);
 
   useEffect(() => {
-    // TODO Revisit with some more sanity
     if (divRef.current === null) return;
 
     // TODO handle rect resize
     const rect = divRef.current.getBoundingClientRect();
+    const { newScale, newPos } = focusBox(rect, intialFocus(rect));
 
-    const { scaleFactor, newPos } = focusBox(rect, intialFocus(rect));
-
-    setScale(scaleFactor);
+    setScale(newScale);
     setPos({
       x: newPos.x,
       y: newPos.y,
@@ -156,8 +146,7 @@ export function Viewport({ intialFocus, children }: ViewportProps) {
       />
       <div
         style={{
-          width: "100%",
-          height: "100%",
+          position: "absolute",
           transformOrigin: "0 0",
           transform: `translate(${pos.x}px, ${pos.y}px) scale(${scale}) `,
         }}

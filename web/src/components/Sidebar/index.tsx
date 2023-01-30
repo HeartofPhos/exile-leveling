@@ -9,26 +9,30 @@ import styles from "./styles.module.css";
 
 export function Sidebar() {
   const searchStrings = useRecoilValue(searchStringsAtom);
-  const [expanded, setExpanded] = useState(true);
+  const [expand, setExpand] = useState(true);
 
-  const expandIcon = expanded ? <FiChevronRight /> : <FiChevronLeft />;
+  const expandIcon = expand ? <FiChevronRight /> : <FiChevronLeft />;
 
   return (
     <div
       className={classNames(styles.sidebar, {
-        [styles.expand]: expanded,
+        [styles.expand]: expand,
       })}
     >
       <div
         className={classNames(styles.sidebarToggle)}
         onClick={() => {
-          setExpanded(!expanded);
+          setExpand(!expand);
         }}
       >
-        {expanded && <span>Sidebar</span>}
+        {expand && <span>Sidebar</span>}
         {expandIcon}
       </div>
-      <div style={{ display: expanded ? undefined : "none" }}>
+      <div
+        className={classNames(styles.sidebarContents, {
+          [styles.expand]: expand,
+        })}
+      >
         <hr />
         <PassiveTreeViewer />
         {searchStrings !== null && searchStrings.length > 0 && (

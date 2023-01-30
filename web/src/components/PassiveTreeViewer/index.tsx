@@ -107,31 +107,18 @@ export function PassiveTreeViewer() {
       });
 
       setSVG(window.btoa(svg));
-      setIntialFocus(() => (rect: DOMRect) => {
-        const viewX = (minX + maxX) * 0.5;
-        const viewY = (minY + maxY) * 0.5;
-        const viewW = maxX - minX + 2500;
-        const viewH = maxY - minY + 2500;
-
-        // SVG copies width, preserveAspectRatio="xMidYMid"
-        const divDim = rect.width;
-        const viewDim = Math.max(passiveTree.viewBox.w, passiveTree.viewBox.h);
-
-        const normalizedX = (viewX - passiveTree.viewBox.x) / viewDim;
-        const normalizedY = (viewY - passiveTree.viewBox.y) / viewDim;
-
-        const sizeX = divDim * (viewW / viewDim);
-        const sizeY = divDim * (viewH / viewDim);
+      setIntialFocus(() => () => {
+        const focusX = (minX + maxX) * 0.5;
+        const focusY = (minY + maxY) * 0.5;
+        const focusW = maxX - minX + 2500;
+        const focusH = maxY - minY + 2500;
 
         return {
-          offset: {
-            x: divDim * normalizedX,
-            y: divDim * normalizedY,
-          },
-          size: {
-            x: sizeX,
-            y: sizeY,
-          },
+          // Anchor 0,0
+          x: focusX - passiveTree.viewBox.x,
+          y: focusY - passiveTree.viewBox.y,
+          width: focusW,
+          height: focusH,
         };
       });
     }

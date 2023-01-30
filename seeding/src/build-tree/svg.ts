@@ -28,21 +28,15 @@ const CONNECTION_NORMAL_CLASS = "";
 export function buildTemplate(tree: ProcessedTree.Data) {
   let template = ``;
 
-  const width = tree.bounds.maxX - tree.bounds.minX;
-  const height = tree.bounds.maxY - tree.bounds.minY;
-
-  // More consistent across browsers
-  const size = Math.max(width, height);
-
   const viewBox: PassiveTree.ViewBox = {
     x: tree.bounds.minX - PADDING,
     y: tree.bounds.minY - PADDING,
-    w: size + PADDING * 2,
-    h: size + PADDING * 2,
+    w: tree.bounds.maxX - tree.bounds.minX + PADDING * 2,
+    h: tree.bounds.maxY - tree.bounds.minY + PADDING * 2,
     padding: PADDING,
   };
 
-  template += `<svg viewBox="${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}" xmlns="http://www.w3.org/2000/svg">\n`;
+  template += `<svg width="${viewBox.w}" height="${viewBox.h}" viewBox="${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}" xmlns="http://www.w3.org/2000/svg">\n`;
 
   template += `<style>
 svg {
