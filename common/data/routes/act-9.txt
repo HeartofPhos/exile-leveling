@@ -18,7 +18,7 @@ Head {dir|315} ➞ {enter|2_9_5} #The Foothills
 Head {dir|45} until you find the cliff
 Head {dir|315} get {waypoint_get}
 ➞ {enter|2_9_6} #The Boiling Lake
-Head {dir|45} look for petrified soliders
+Head {dir|45} look for petrified soldiers
 Find and Kill {kill|The Basilisk}, take {quest_text|Basilisk Acid}
 Get {crafting}
 {logout}
