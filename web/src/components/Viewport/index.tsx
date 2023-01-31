@@ -45,19 +45,13 @@ function focusRect(viewport: Size, focus: Rect) {
   const scaleY = viewport.height / focus.height;
   const newScale = Math.min(scaleX, scaleY);
 
-  const halfRectW = viewport.width / 2;
-  const halfRectH = viewport.height / 2;
+  const anchorX = viewport.width * 0.5;
+  const anchorY = viewport.height * 0.5;
 
-  const deltaX = halfRectW - focus.x;
-  const deltaY = halfRectH - focus.y;
+  const posX = anchorX - focus.x;
+  const posY = anchorY - focus.y;
 
-  const newPos = scaleTranslation(
-    deltaX,
-    deltaY,
-    halfRectW,
-    halfRectH,
-    newScale
-  );
+  const newPos = scaleTranslation(posX, posY, anchorX, anchorY, newScale);
 
   return {
     newScale,
