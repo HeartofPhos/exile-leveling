@@ -90,7 +90,7 @@ export function Viewport({
             const y = rzppRef.current.state.positionY;
             const scale = rzppRef.current.state.scale;
 
-            rzppRef.current.setTransform(x - dw / 2, y - dh / 2, scale);
+            rzppRef.current.setTransform(x - dw / 2, y - dh / 2, scale, 0);
           }
           break;
         case "focus":
@@ -109,7 +109,7 @@ export function Viewport({
               }
             );
 
-            rzppRef.current.setTransform(newPos.x, newPos.y, newScale);
+            rzppRef.current.setTransform(newPos.x, newPos.y, newScale, 0);
           }
           break;
       }
