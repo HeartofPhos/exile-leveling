@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Viewport, ViewportProps } from "../Viewport";
-import { parseNodes as processNodes } from "./parse";
+import { groupNodes, calculateBounds } from "./processs";
 import { useRecoilValue } from "recoil";
 import {
   TREE_DATA_LOOKUP,
@@ -14,8 +14,10 @@ import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { formStyles } from "../Form";
 
 export function PassiveTreeViewer() {
+  const objRef = useRef<HTMLObjectElement>(null);
   const [curIndex, setCurIndex] = useState<number>(0);
   const [svg, setSVG] = useState<string>();
+  const [svgObjectURL, setSVGObjectURL] = useState<string>();
   const [intialFocus, setIntialFocus] =
     useState<ViewportProps["intialFocus"]>();
 
@@ -44,42 +46,13 @@ export function PassiveTreeViewer() {
       const compiled = await TREE_TEMPLATE_LOOKUP[curTree.version];
       const passiveTree = await TREE_DATA_LOOKUP[curTree.version];
 
-      const {
-        nodesActive,
-        nodesAdded,
-        nodesRemoved,
-        connectionsActive,
-        connectionsAdded,
-        connectionsRemoved,
-      } = processNodes(curTree.nodes, prevTree.nodes, passiveTree);
+      const groupedNodes = groupNodes(
+        curTree.nodes,
+        prevTree.nodes,
+        passiveTree
+      );
 
-      let minX = Number.POSITIVE_INFINITY;
-      let minY = Number.POSITIVE_INFINITY;
-      let maxX = Number.NEGATIVE_INFINITY;
-      let maxY = Number.NEGATIVE_INFINITY;
-      const updateMinMax = (x: number, y: number) => {
-        minX = Math.min(minX, x);
-        minY = Math.min(minY, y);
-        maxX = Math.max(maxX, x);
-        maxY = Math.max(maxY, y);
-      };
-
-      if (nodesAdded.length == 0 && nodesRemoved.length == 0) {
-        for (const nodeId of nodesActive) {
-          const node = passiveTree.nodes[nodeId];
-          updateMinMax(node.x, node.y);
-        }
-      } else {
-        for (const nodeId of nodesAdded) {
-          const node = passiveTree.nodes[nodeId];
-          updateMinMax(node.x, node.y);
-        }
-
-        for (const nodeId of nodesRemoved) {
-          const node = passiveTree.nodes[nodeId];
-          updateMinMax(node.x, node.y);
-        }
-      }
+      const bounds = calculateBounds(groupedNodes, passiveTree);
 
       const svg = compiled({
         backgroundColor: "#00000000",
@@ -94,43 +67,49 @@ export function PassiveTreeViewer() {
         connectionAddedColor: "#00ff00",
         connectionRemovedColor: "#ff0000",
 
-        nodesActive,
-        nodesAdded,
-        nodesRemoved,
+        nodesActive: groupedNodes.nodesActive,
+        nodesAdded: groupedNodes.nodesAdded,
+        nodesRemoved: groupedNodes.nodesRemoved,
 
-        connectionsActive,
-        connectionsAdded,
-        connectionsRemoved,
+        connectionsActive: groupedNodes.connectionsActive,
+        connectionsAdded: groupedNodes.connectionsAdded,
+        connectionsRemoved: groupedNodes.connectionsRemoved,
 
         ascendancy: curTree.ascendancy?.id,
       });
 
-      setSVG(window.btoa(svg));
-      setIntialFocus(() => () => {
-        const focusX = (minX + maxX) * 0.5;
-        const focusY = (minY + maxY) * 0.5;
-        const focusW = maxX - minX + 2500;
-        const focusH = maxY - minY + 2500;
-
-        return {
-          // Anchor 0,0
-          x: focusX - passiveTree.viewBox.x,
-          y: focusY - passiveTree.viewBox.y,
-          width: focusW,
-          height: focusH,
-        };
-      });
+      setSVG(svg);
+      setIntialFocus(bounds);
     }
 
     fn();
   }, [urlSkillTrees, curIndex]);
+
+  useEffect(() => {
+    if (svg === undefined) return;
+
+    const url = URL.createObjectURL(new Blob([svg], { type: "image/svg+xml" }));
+    setSVGObjectURL(url);
+
+    return () => {
+      URL.revokeObjectURL(url);
+    };
+  }, [svg]);
 
   return (
     <>
       {intialFocus && svg && (
         <div className={classNames(styles.viewer)}>
           <Viewport intialFocus={intialFocus} resizePattern="clip">
-            <img src={`data:image/svg+xml;base64,${svg}`} alt="" />
+            <object
+              ref={objRef}
+              style={{ pointerEvents: "none" }}
+              onLoad={(evt) => {
+                const doc = objRef.current!.contentDocument;
+                console.log(doc);
+              }}
+              data={svgObjectURL}
+            />
           </Viewport>
           <hr />
           <label className={classNames(styles.label)}>

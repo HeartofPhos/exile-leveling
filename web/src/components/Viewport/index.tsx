@@ -9,7 +9,7 @@ import {
 } from "react-zoom-pan-pinch";
 
 export interface ViewportProps {
-  intialFocus: (rect: Rect) => Rect;
+  intialFocus: Rect;
   resizePattern: "clip" | "focus";
   children?: React.ReactNode;
 }
@@ -121,7 +121,7 @@ export function Viewport({
     if (rzppRef.current === null) return;
 
     const rect = divRef.current.getBoundingClientRect();
-    const { newScale, newPos } = focusRect(rect, intialFocus(rect));
+    const { newScale, newPos } = focusRect(rect, intialFocus);
 
     rzppRef.current.setTransform(newPos.x, newPos.y, newScale, 0);
   }, [intialFocus, divRef, initialized]);

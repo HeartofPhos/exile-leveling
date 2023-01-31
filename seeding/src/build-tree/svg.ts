@@ -39,6 +39,10 @@ export function buildTemplate(tree: ProcessedTree.Data) {
   template += `<svg width="${viewBox.w}" height="${viewBox.h}" viewBox="${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}" xmlns="http://www.w3.org/2000/svg">\n`;
 
   template += `<style>
+:root {
+  color-scheme: dark;
+}
+
 svg {
   background-color: {{ backgroundColor }};
 }

@@ -18,11 +18,20 @@ function difference<T>(setA: Set<T>, setB: Set<T>) {
   return _difference;
 }
 
-export function parseNodes(
+interface GroupedNodes {
+  nodesActive: string[];
+  nodesAdded: string[];
+  nodesRemoved: string[];
+  connectionsActive: string[];
+  connectionsAdded: string[];
+  connectionsRemoved: string[];
+}
+
+export function groupNodes(
   currentNodes: string[],
   prevNodes: string[],
   passiveTree: PassiveTree.Data
-) {
+): GroupedNodes {
   const curNodeSet = new Set(currentNodes);
   const prevNodeSet = new Set(prevNodes);
 
@@ -68,5 +77,52 @@ export function parseNodes(
     connectionsActive,
     connectionsAdded,
     connectionsRemoved,
+  };
+}
+
+export function calculateBounds(
+  { nodesActive, nodesAdded, nodesRemoved }: GroupedNodes,
+  passiveTree: PassiveTree.Data
+) {
+  let minX = Number.POSITIVE_INFINITY;
+  let minY = Number.POSITIVE_INFINITY;
+  let maxX = Number.NEGATIVE_INFINITY;
+  let maxY = Number.NEGATIVE_INFINITY;
+
+  const updateMinMax = (x: number, y: number) => {
+    minX = Math.min(minX, x);
+    minY = Math.min(minY, y);
+    maxX = Math.max(maxX, x);
+    maxY = Math.max(maxY, y);
+  };
+
+  if (nodesAdded.length == 0 && nodesRemoved.length == 0) {
+    for (const nodeId of nodesActive) {
+      const node = passiveTree.nodes[nodeId];
+      updateMinMax(node.x, node.y);
+    }
+  } else {
+    for (const nodeId of nodesAdded) {
+      const node = passiveTree.nodes[nodeId];
+      updateMinMax(node.x, node.y);
+    }
+
+    for (const nodeId of nodesRemoved) {
+      const node = passiveTree.nodes[nodeId];
+      updateMinMax(node.x, node.y);
+    }
+  }
+
+  const x = (minX + maxX) * 0.5;
+  const y = (minY + maxY) * 0.5;
+  const w = maxX - minX + 2500;
+  const h = maxY - minY + 2500;
+
+  return {
+    // Anchor 0,0
+    x: x - passiveTree.viewBox.x,
+    y: y - passiveTree.viewBox.y,
+    width: w,
+    height: h,
   };
 }
