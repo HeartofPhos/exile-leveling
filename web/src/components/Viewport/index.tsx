@@ -2,6 +2,11 @@ import classNames from "classnames";
 import { useEffect, useRef, useState } from "react";
 import styles from "./styles.module.css";
 import useResizeObserver, { ObservedSize } from "use-resize-observer";
+import {
+  ReactZoomPanPinchRef,
+  TransformComponent,
+  TransformWrapper,
+} from "react-zoom-pan-pinch";
 
 export interface ViewportProps {
   intialFocus: (rect: Rect) => Rect;
@@ -25,14 +30,17 @@ function scaleTranslation(
   };
 }
 
-interface Rect {
-  x: number;
-  y: number;
+interface Size {
   height: number;
   width: number;
 }
 
-function focusRect(viewport: Rect, focus: Rect) {
+interface Rect extends Size {
+  x: number;
+  y: number;
+}
+
+function focusRect(viewport: Size, focus: Rect) {
   const scaleX = viewport.width / focus.width;
   const scaleY = viewport.height / focus.height;
   const newScale = Math.min(scaleX, scaleY);
@@ -63,9 +71,8 @@ export function Viewport({
   children,
 }: ViewportProps) {
   const divRef = useRef<HTMLDivElement>(null);
-  const [pos, setPos] = useState({ x: 0, y: 0 });
-  const [scale, setScale] = useState(1);
-  const [inputActive, setInputActive] = useState(false);
+  const rzppRef = useRef<ReactZoomPanPinchRef>(null);
+  const [initialized, setInitialized] = useState(false);
   const [prevSize, setPrevSize] = useState<ObservedSize>({
     width: undefined,
     height: undefined,
@@ -77,6 +84,7 @@ export function Viewport({
       setPrevSize(size);
       if (prevSize.width === undefined || prevSize.height === undefined) return;
       if (size.width === undefined || size.height === undefined) return;
+      if (rzppRef.current === null) return;
 
       switch (resizePattern) {
         case "clip":
@@ -84,127 +92,61 @@ export function Viewport({
             const dw = prevSize.width - size.width;
             const dh = prevSize.height - size.height;
 
-            setPos({
-              x: pos.x - dw / 2,
-              y: pos.y - dh / 2,
-            });
+            const x = rzppRef.current.state.positionX;
+            const y = rzppRef.current.state.positionY;
+            const scale = rzppRef.current.state.scale;
+
+            rzppRef.current.setTransform(x - dw / 2, y - dh / 2, scale);
           }
           break;
         case "focus":
           {
+            const x = rzppRef.current.state.positionX;
+            const y = rzppRef.current.state.positionY;
+            const scale = rzppRef.current.state.scale;
+
             const { newScale, newPos } = focusRect(
-              { x: 0, y: 0, width: size.width, height: size.height },
+              { width: size.width, height: size.height },
               {
-                x: (prevSize.width / 2 - pos.x) / scale,
-                y: (prevSize.height / 2 - pos.y) / scale,
+                x: (prevSize.width / 2 - x) / scale,
+                y: (prevSize.height / 2 - y) / scale,
                 width: prevSize.width / scale,
                 height: prevSize.height / scale,
               }
             );
-            setScale(newScale);
-            setPos({
-              x: newPos.x,
-              y: newPos.y,
-            });
+
+            rzppRef.current.setTransform(newPos.x, newPos.y, newScale);
           }
           break;
       }
     },
   });
 
-  // Prevent events that interfere with viewport interaction
   useEffect(() => {
     if (divRef.current === null) return;
-    const preventDefault = (evt: Event) => evt.preventDefault();
-
-    divRef.current.addEventListener("pointerdown", preventDefault);
-    divRef.current.addEventListener("wheel", preventDefault);
-    divRef.current.addEventListener("touchmove", preventDefault);
-
-    return () => {
-      if (divRef.current === null) return;
-      divRef.current.removeEventListener("pointerdown", preventDefault);
-      divRef.current.removeEventListener("wheel", preventDefault);
-      divRef.current.removeEventListener("touchmove", preventDefault);
-    };
-  }, [divRef]);
-
-  useEffect(() => {
-    if (divRef.current === null) return;
+    if (rzppRef.current === null) return;
 
     const rect = divRef.current.getBoundingClientRect();
     const { newScale, newPos } = focusRect(rect, intialFocus(rect));
 
-    setScale(newScale);
-    setPos({
-      x: newPos.x,
-      y: newPos.y,
-    });
-  }, [intialFocus, divRef]);
+    rzppRef.current.setTransform(newPos.x, newPos.y, newScale, 0);
+  }, [intialFocus, divRef, initialized]);
 
   return (
-    <div
-      ref={divRef}
-      className={classNames(styles.viewport)}
-      onPointerDown={(evt) => {
-        if (!evt.isPrimary) return;
-        setInputActive(true);
-      }}
-      onPointerUp={(evt) => {
-        if (!evt.isPrimary) return;
-        setInputActive(false);
-      }}
-      onPointerLeave={(evt) => {
-        if (!evt.isPrimary) return;
-        setInputActive(false);
-      }}
-      onPointerMove={(evt) => {
-        if (evt.pointerType === "mouse" && (evt.buttons & 5) === 0) return;
-
-        const dir = evt.pointerType === "mouse" ? 1 : -1;
-        setPos({
-          x: pos.x + evt.movementX * dir,
-          y: pos.y + evt.movementY * dir,
-        });
-      }}
-      onWheelCapture={(evt) => {
-        const rect = evt.currentTarget.getBoundingClientRect();
-
-        const pointerX = evt.clientX - rect.left;
-        const pointerY = evt.clientY - rect.top;
-
-        let scaleFactor = 0.9;
-        if (evt.deltaY < 0) scaleFactor = 1 / scaleFactor;
-
-        const newPos = scaleTranslation(
-          pos.x,
-          pos.y,
-          pointerX,
-          pointerY,
-          scaleFactor
-        );
-
-        setScale(scale * scaleFactor);
-        setPos({
-          x: newPos.x,
-          y: newPos.y,
-        });
-      }}
-    >
-      <div
-        className={classNames(styles.inputArea, {
-          [styles.active]: inputActive,
-        })}
-      />
-      <div
-        style={{
-          position: "absolute",
-          transformOrigin: "0 0",
-          transform: `translate(${pos.x}px, ${pos.y}px) scale(${scale}) `,
+    <div ref={divRef} className={classNames(styles.viewport)}>
+      <TransformWrapper
+        onInit={() => {
+          setInitialized(true);
         }}
+        ref={rzppRef}
+        maxScale={Number.POSITIVE_INFINITY}
+        minScale={Number.NEGATIVE_INFINITY}
+        centerZoomedOut={false}
+        limitToBounds={false}
+        panning={{ velocityDisabled: true }}
       >
-        {children}
-      </div>
+        <TransformComponent>{children}</TransformComponent>
+      </TransformWrapper>
     </div>
   );
 }

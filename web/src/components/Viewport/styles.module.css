@@ -1,18 +1,5 @@
 .viewport {
-  position: relative;
   overflow: hidden;
   width: 100%;
   height: 100%;
-}
-
-.inputArea {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.inputArea.active {
-  position: fixed;
-  left: 0;
-  top: 0;
 }
