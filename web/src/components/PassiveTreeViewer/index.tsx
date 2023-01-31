@@ -129,7 +129,7 @@ export function PassiveTreeViewer() {
     <>
       {intialFocus && svg && (
         <div className={classNames(styles.viewer)}>
-          <Viewport intialFocus={intialFocus}>
+          <Viewport intialFocus={intialFocus} resizePattern="clip">
             <img src={`data:image/svg+xml;base64,${svg}`} alt="" />
           </Viewport>
           <hr />

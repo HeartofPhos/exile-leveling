@@ -5,6 +5,7 @@ import useResizeObserver, { ObservedSize } from "use-resize-observer";
 
 export interface ViewportProps {
   intialFocus: (rect: Rect) => Rect;
+  resizePattern: "clip" | "focus";
   children?: React.ReactNode;
 }
 
@@ -56,7 +57,11 @@ function focusRect(viewport: Rect, focus: Rect) {
   };
 }
 
-export function Viewport({ intialFocus, children }: ViewportProps) {
+export function Viewport({
+  intialFocus,
+  resizePattern,
+  children,
+}: ViewportProps) {
   const divRef = useRef<HTMLDivElement>(null);
   const [pos, setPos] = useState({ x: 0, y: 0 });
   const [scale, setScale] = useState(1);
@@ -73,21 +78,37 @@ export function Viewport({ intialFocus, children }: ViewportProps) {
       if (prevSize.width === undefined || prevSize.height === undefined) return;
       if (size.width === undefined || size.height === undefined) return;
 
-      const { newScale, newPos } = focusRect(
-        { x: 0, y: 0, width: size.width, height: size.height },
-        {
-          x: (prevSize.width / 2 - pos.x) / scale,
-          y: (prevSize.height / 2 - pos.y) / scale,
-          width: prevSize.width / scale,
-          height: prevSize.height / scale,
-        }
-      );
+      switch (resizePattern) {
+        case "clip":
+          {
+            const dw = prevSize.width - size.width;
+            const dh = prevSize.height - size.height;
 
-      setScale(newScale);
-      setPos({
-        x: newPos.x,
-        y: newPos.y,
-      });
+            setPos({
+              x: pos.x - dw / 2,
+              y: pos.y - dh / 2,
+            });
+          }
+          break;
+        case "focus":
+          {
+            const { newScale, newPos } = focusRect(
+              { x: 0, y: 0, width: size.width, height: size.height },
+              {
+                x: (prevSize.width / 2 - pos.x) / scale,
+                y: (prevSize.height / 2 - pos.y) / scale,
+                width: prevSize.width / scale,
+                height: prevSize.height / scale,
+              }
+            );
+            setScale(newScale);
+            setPos({
+              x: newPos.x,
+              y: newPos.y,
+            });
+          }
+          break;
+      }
     },
   });
 
