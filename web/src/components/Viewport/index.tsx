@@ -16,12 +16,12 @@ function scaleTranslation(
   anchorY: number,
   scaleFactor: number
 ) {
-  const deltaX = anchorX - posX;
-  const deltaY = anchorY - posY;
+  const deltaX = posX - anchorX;
+  const deltaY = posY - anchorY;
 
   return {
-    x: anchorX - deltaX * scaleFactor,
-    y: anchorY - deltaY * scaleFactor,
+    x: anchorX + deltaX * scaleFactor,
+    y: anchorY + deltaY * scaleFactor,
   };
 }
 
@@ -112,19 +112,20 @@ export function Viewport({
     },
   });
 
+  // Prevent events that interfere with viewport interaction
   useEffect(() => {
     if (divRef.current === null) return;
     const preventDefault = (evt: Event) => evt.preventDefault();
 
     divRef.current.addEventListener("pointerdown", preventDefault);
     divRef.current.addEventListener("wheel", preventDefault);
-    divRef.current.addEventListener("drag", preventDefault);
+    divRef.current.addEventListener("touchmove", preventDefault);
 
     return () => {
       if (divRef.current === null) return;
       divRef.current.removeEventListener("pointerdown", preventDefault);
       divRef.current.removeEventListener("wheel", preventDefault);
-      divRef.current.removeEventListener("drag", preventDefault);
+      divRef.current.removeEventListener("touchmove", preventDefault);
     };
   }, [divRef]);
 
@@ -160,9 +161,10 @@ export function Viewport({
       onPointerMove={(evt) => {
         if (evt.pointerType === "mouse" && (evt.buttons & 5) === 0) return;
 
+        const dir = evt.pointerType === "mouse" ? 1 : -1;
         setPos({
-          x: pos.x + evt.movementX,
-          y: pos.y + evt.movementY,
+          x: pos.x + evt.movementX * dir,
+          y: pos.y + evt.movementY * dir,
         });
       }}
       onWheelCapture={(evt) => {
