@@ -15,7 +15,7 @@ export const TREE_TEMPLATE_LOOKUP = globImportLazy(
   import.meta.glob("../../../common/data/tree/*.svg"),
   (key) => /.*\/(.*?).svg$/.exec(key)![1],
   (value) =>
-    fetch(new URL(value.default, import.meta.url).href)
+    fetch(value.default)
       .then((res) => res.text())
       .then((template) => Handlebars.compile(template))
 );

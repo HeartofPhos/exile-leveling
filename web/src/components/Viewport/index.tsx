@@ -143,6 +143,8 @@ export function Viewport({
         minScale={Number.NEGATIVE_INFINITY}
         centerZoomedOut={false}
         limitToBounds={false}
+        wheel={{ step: 0.2 }}
+        pinch={{ step: 0.2 }}
         panning={{ velocityDisabled: true }}
       >
         <TransformComponent>{children}</TransformComponent>
