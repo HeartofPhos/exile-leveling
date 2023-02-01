@@ -1,65 +1,61 @@
-<svg width="17879" height="17656" viewBox="-9123 -8981 17879 17656" xmlns="http://www.w3.org/2000/svg">
+<svg id="{{ svgId }}" width="17879" height="17656" viewBox="-9123 -8981 17879 17656" xmlns="http://www.w3.org/2000/svg">
 <style>
-:root {
-  color-scheme: dark;
-}
-
-svg {
+#{{ svgId }} {
   background-color: {{ backgroundColor }};
 }
 
-.nodes {
+#{{ svgId }} .nodes {
   fill: {{ nodeColor }};
   stroke: {{ nodeColor }};
   stroke-width: 0;
 }
 
-.nodes .mastery {
+#{{ svgId }} .nodes .mastery {
   fill: transparent;
   stroke: transparent;
 }
 
-.connections {
+#{{ svgId }} .connections {
   fill: none;
   stroke: {{ connectionColor }};
   stroke-width: 20;
 }
 
-.ascendancy {
+#{{ svgId }} .ascendancy {
   display: none;
 }
 {{#if ascendancy}}
-.ascendancy.{{ ascendancy }} {
+#{{ svgId }} .ascendancy.{{ ascendancy }} {
   display: unset;
 }
 {{/if}}
 
-{{#each nodesActive}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}} {
+#{{ svgId }} :is({{#each nodesActive}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}}) {
   fill: {{ nodeActiveColor }};
   stroke: {{ nodeActiveColor }};
 }
 
-{{#each nodesAdded}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}} {
+#{{ svgId }} :is({{#each nodesAdded}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}}) {
   fill: {{ nodeAddedColor }};
   stroke: {{ nodeAddedColor }};
 }
 
-{{#each nodesRemoved}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}} {
+#{{ svgId }} :is({{#each nodesRemoved}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}}) {
   fill: {{ nodeRemovedColor }};
   stroke: {{ nodeRemovedColor }};
 }
 
-{{#each connectionsActive}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}{
+#{{ svgId }} :is({{#each connectionsActive}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}) {
   stroke: {{ connectionActiveColor }};
   stroke-width: 35;
 }
 
-{{#each connectionsAdded}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}{
+#{{ svgId }} :is({{#each connectionsAdded}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}) {
   stroke: {{ connectionAddedColor }};
   stroke-width: 35;
 }
 
-{{#each connectionsRemoved}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}{
+#{{ svgId }} :is({{#each connectionsRemoved}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}) {
   stroke: {{ connectionRemovedColor }};
   stroke-width: 35;
 }

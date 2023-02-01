@@ -36,69 +36,65 @@ export function buildTemplate(tree: ProcessedTree.Data) {
     padding: PADDING,
   };
 
-  template += `<svg width="${viewBox.w}" height="${viewBox.h}" viewBox="${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}" xmlns="http://www.w3.org/2000/svg">\n`;
+  template += `<svg id="{{ svgId }}" width="${viewBox.w}" height="${viewBox.h}" viewBox="${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}" xmlns="http://www.w3.org/2000/svg">\n`;
 
   template += `<style>
-:root {
-  color-scheme: dark;
-}
-
-svg {
+#{{ svgId }} {
   background-color: {{ backgroundColor }};
 }
 
-.${GROUP_NODE_CLASS} {
+#{{ svgId }} .${GROUP_NODE_CLASS} {
   fill: {{ nodeColor }};
   stroke: {{ nodeColor }};
   stroke-width: ${NODE_STROKE_WIDTH};
 }
 
-.${GROUP_NODE_CLASS} .${NODE_MASTERY_CLASS} {
+#{{ svgId }} .${GROUP_NODE_CLASS} .${NODE_MASTERY_CLASS} {
   fill: transparent;
   stroke: transparent;
 }
 
-.${GROUP_CONNECTION_CLASS} {
+#{{ svgId }} .${GROUP_CONNECTION_CLASS} {
   fill: none;
   stroke: {{ connectionColor }};
   stroke-width: ${CONNECTION_STROKE_WIDTH};
 }
 
-.${NODE_ASCENDANCY_CLASS} {
+#{{ svgId }} .${NODE_ASCENDANCY_CLASS} {
   display: none;
 }
 {{#if ascendancy}}
-.ascendancy.{{ ascendancy }} {
+#{{ svgId }} .ascendancy.{{ ascendancy }} {
   display: unset;
 }
 {{/if}}
 
-{{#each nodesActive}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}} {
+#{{ svgId }} :is({{#each nodesActive}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}}) {
   fill: {{ nodeActiveColor }};
   stroke: {{ nodeActiveColor }};
 }
 
-{{#each nodesAdded}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}} {
+#{{ svgId }} :is({{#each nodesAdded}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}}) {
   fill: {{ nodeAddedColor }};
   stroke: {{ nodeAddedColor }};
 }
 
-{{#each nodesRemoved}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}} {
+#{{ svgId }} :is({{#each nodesRemoved}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}}) {
   fill: {{ nodeRemovedColor }};
   stroke: {{ nodeRemovedColor }};
 }
 
-{{#each connectionsActive}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}{
+#{{ svgId }} :is({{#each connectionsActive}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}) {
   stroke: {{ connectionActiveColor }};
   stroke-width: ${CONNECTION_ACTIVE_STROKE_WIDTH};
 }
 
-{{#each connectionsAdded}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}{
+#{{ svgId }} :is({{#each connectionsAdded}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}) {
   stroke: {{ connectionAddedColor }};
   stroke-width: ${CONNECTION_ACTIVE_STROKE_WIDTH};
 }
 
-{{#each connectionsRemoved}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}{
+#{{ svgId }} :is({{#each connectionsRemoved}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}) {
   stroke: {{ connectionRemovedColor }};
   stroke-width: ${CONNECTION_ACTIVE_STROKE_WIDTH};
 }

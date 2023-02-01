@@ -12,12 +12,11 @@ import styles from "./styles.module.css";
 import classNames from "classnames";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { formStyles } from "../Form";
+import { randomId } from "../../utility";
 
 export function PassiveTreeViewer() {
-  const objRef = useRef<HTMLObjectElement>(null);
   const [curIndex, setCurIndex] = useState<number>(0);
   const [svg, setSVG] = useState<string>();
-  const [svgObjectURL, setSVGObjectURL] = useState<string>();
   const [intialFocus, setIntialFocus] =
     useState<ViewportProps["intialFocus"]>();
 
@@ -55,7 +54,9 @@ export function PassiveTreeViewer() {
       const bounds = calculateBounds(groupedNodes, passiveTree);
 
       const svg = compiled({
+        svgId: randomId(6),
         backgroundColor: "#00000000",
+        ascendancy: curTree.ascendancy?.id,
 
         nodeColor: "#64748b",
         nodeActiveColor: "#38bdf8",
@@ -74,8 +75,6 @@ export function PassiveTreeViewer() {
         connectionsActive: groupedNodes.connectionsActive,
         connectionsAdded: groupedNodes.connectionsAdded,
         connectionsRemoved: groupedNodes.connectionsRemoved,
-
-        ascendancy: curTree.ascendancy?.id,
       });
 
       setSVG(svg);
@@ -85,31 +84,12 @@ export function PassiveTreeViewer() {
     fn();
   }, [urlSkillTrees, curIndex]);
 
-  useEffect(() => {
-    if (svg === undefined) return;
-
-    const url = URL.createObjectURL(new Blob([svg], { type: "image/svg+xml" }));
-    setSVGObjectURL(url);
-
-    return () => {
-      URL.revokeObjectURL(url);
-    };
-  }, [svg]);
-
   return (
     <>
       {intialFocus && svg && (
         <div className={classNames(styles.viewer)}>
           <Viewport intialFocus={intialFocus} resizePattern="clip">
-            <object
-              ref={objRef}
-              style={{ pointerEvents: "none" }}
-              onLoad={(evt) => {
-                const doc = objRef.current!.contentDocument;
-                console.log(doc);
-              }}
-              data={svgObjectURL}
-            />
+            <div dangerouslySetInnerHTML={{ __html: svg }} />
           </Viewport>
           <hr />
           <label className={classNames(styles.label)}>
