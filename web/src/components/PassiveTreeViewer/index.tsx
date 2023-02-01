@@ -13,12 +13,16 @@ import classNames from "classnames";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { formStyles } from "../Form";
 import { randomId } from "../../utility";
+import { PassiveTree } from "../../../../common/data/tree";
 
 export function PassiveTreeViewer() {
+  const svgDivRef = useRef<HTMLDivElement>(null);
   const [curIndex, setCurIndex] = useState<number>(0);
   const [svg, setSVG] = useState<string>();
   const [intialFocus, setIntialFocus] =
     useState<ViewportProps["intialFocus"]>();
+  const [passiveTree, setPassiveTree] = useState<PassiveTree.Data>();
+  const [masteries, setMasteries] = useState<UrlSkillTree.Data["masteries"]>();
 
   const { urlSkillTrees } = useRecoilValue(urlSkillTreesSelector);
 
@@ -27,7 +31,7 @@ export function PassiveTreeViewer() {
       if (urlSkillTrees.length == 0) return;
 
       const curTree = urlSkillTrees[curIndex];
-      let prevTree: UrlSkillTree;
+      let prevTree: UrlSkillTree.Data;
       if (curIndex != 0) prevTree = urlSkillTrees[curIndex - 1];
       else {
         prevTree = {
@@ -36,7 +40,7 @@ export function PassiveTreeViewer() {
           class: curTree.class,
           ascendancy: curTree.ascendancy,
           nodes: [],
-          masteries: [],
+          masteries: {},
         };
         if (curTree.ascendancy)
           prevTree.nodes.push(curTree.nodes[curTree.nodes.length - 1]);
@@ -79,17 +83,34 @@ export function PassiveTreeViewer() {
 
       setSVG(svg);
       setIntialFocus(bounds);
+      setPassiveTree(passiveTree);
+      setMasteries({ ...curTree.masteries, ...prevTree.masteries });
     }
 
     fn();
   }, [urlSkillTrees, curIndex]);
+
+  useEffect(() => {
+    if (svgDivRef.current === null) return;
+    if (passiveTree === undefined) return;
+    if (masteries === undefined) return;
+
+    for (const [nodeId, effectId] of Object.entries(masteries)) {
+      const node = svgDivRef.current.querySelector<HTMLElement>(`#n${nodeId}`);
+
+      if (node === null) return;
+      node.onclick = () => {
+        alert(passiveTree.masteryEffects[effectId].stats.join("\n"));
+      };
+    }
+  }, [svgDivRef, svg, passiveTree, masteries]);
 
   return (
     <>
       {intialFocus && svg && (
         <div className={classNames(styles.viewer)}>
           <Viewport intialFocus={intialFocus} resizePattern="clip">
-            <div dangerouslySetInnerHTML={{ __html: svg }} />
+            <div ref={svgDivRef} dangerouslySetInnerHTML={{ __html: svg }} />
           </Viewport>
           <hr />
           <label className={classNames(styles.label)}>

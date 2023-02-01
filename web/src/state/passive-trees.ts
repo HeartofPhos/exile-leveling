@@ -25,7 +25,7 @@ export const urlSkillTreesSelector = selector({
   get: async ({ get }) => {
     const buildData = get(buildDataSelector);
 
-    const urlSkillTrees: UrlSkillTree[] = [];
+    const urlSkillTrees: UrlSkillTree.Data[] = [];
     for (const buildTree of buildData.passiveTrees) {
       try {
         const urlSkillTree = await buildUrlSkillTree(buildTree);
@@ -55,18 +55,20 @@ export const urlSkillTreesSelector = selector({
   },
 });
 
-export interface UrlSkillTree {
-  name: string;
-  version: string;
-  class: PassiveTree.Class;
-  ascendancy?: PassiveTree.Ascendancy;
-  nodes: string[];
-  masteries: string[];
+export namespace UrlSkillTree {
+  export interface Data {
+    name: string;
+    version: string;
+    class: PassiveTree.Class;
+    ascendancy?: PassiveTree.Ascendancy;
+    nodes: string[];
+    masteries: Record<string, string>;
+  }
 }
 
 export async function buildUrlSkillTree(
   buildTree: BuildPassiveTree
-): Promise<UrlSkillTree> {
+): Promise<UrlSkillTree.Data> {
   const data = /.*\/(.*?)$/.exec(buildTree.url)?.[1];
   if (!data) throw "invalid url";
 
@@ -93,15 +95,20 @@ export async function buildUrlSkillTree(
     clusterOffset = nodesOffset + nodesCount * 2 + 1;
     clusterCount = buffer[clusterOffset - 1];
     masteryOffset = clusterOffset + clusterCount * 2 + 1;
-    masteryCount = buffer[masteryOffset - 1];
+    masteryCount = buffer[masteryOffset - 1] * 2;
   } else throw "invalid version";
 
   const nodes = read_u16s(buffer, nodesOffset, nodesCount).map((x) =>
     x.toString()
   );
-  const masteries = read_u16s(buffer, masteryOffset, masteryCount).map((x) =>
-    x.toString()
-  );
+
+  const masteries: UrlSkillTree.Data["masteries"] = {};
+  const masteryData = read_u16s(buffer, masteryOffset, masteryCount);
+  for (let i = 0; i < masteryData.length; i += 2) {
+    const nodeId = masteryData[i + 1].toString();
+    const effectId = masteryData[i].toString();
+    masteries[nodeId] = effectId;
+  }
 
   let ascendancy;
   if (ascendancyId > 0) {
