@@ -25,11 +25,10 @@
 .buttons {
   display: flex;
   align-items: stretch;
-  height: var(--size-5);
   gap: var(--size-2);
 }
 
 .button {
-  height: unset;
+  height: var(--size-5);
   flex: 1;
 }
