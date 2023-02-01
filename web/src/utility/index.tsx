@@ -30,12 +30,13 @@ export function clearPersistent(key: string) {
   localStorage.removeItem(key);
 }
 
-const characters =
-  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-export function randomString(length: number) {
+const idCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+export function randomId(length: number) {
   let result = "";
   for (let i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * characters.length));
+    result += idCharacters.charAt(
+      Math.floor(Math.random() * idCharacters.length)
+    );
   }
 
   return result;
