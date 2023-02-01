@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { Viewport, ViewportProps } from "../Viewport";
-import { groupNodes, calculateBounds } from "./processs";
+import {
+  groupNodes,
+  calculateBounds,
+  MasteryInfo,
+  buildMasteryInfos,
+} from "./processs";
 import {
   TREE_DATA_LOOKUP,
   TREE_TEMPLATE_LOOKUP,
@@ -14,11 +19,6 @@ import { randomId } from "../../utility";
 
 interface PassiveTreeViewerProps {
   urlSkillTrees: UrlSkillTree.Data[];
-}
-
-interface MasteryInfo {
-  nodeId: string;
-  info: string;
 }
 
 export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
@@ -84,19 +84,10 @@ export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
         connectionsRemoved: groupedNodes.connectionsRemoved,
       });
 
-      const masteryInfos: MasteryInfo[] = [];
-      for (const [nodeId, effectId] of Object.entries(curTree.masteries)) {
-        masteryInfos.push({
-          nodeId: nodeId,
-          info: passiveTree.masteryEffects[effectId].stats.join("\n"),
-        });
-      }
-      for (const [nodeId, effectId] of Object.entries(prevTree.masteries)) {
-        masteryInfos.push({
-          nodeId: nodeId,
-          info: passiveTree.masteryEffects[effectId].stats.join("\n"),
-        });
-      }
+      const masteryInfos = buildMasteryInfos(passiveTree, [
+        curTree.masteries,
+        prevTree.masteries,
+      ]);
 
       setSVG(svg);
       setIntialFocus(bounds);
