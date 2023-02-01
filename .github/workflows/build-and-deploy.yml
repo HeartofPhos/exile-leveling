@@ -17,6 +17,8 @@ jobs:
 
       - name: Install and Build
         run: |
+          npm -w seeding ci
+          npm -w seeding run seed tree
           npm -w web ci
           npm -w web run build
 
