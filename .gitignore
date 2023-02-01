@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+/common/data/tree/*.svg
+/common/data/tree/*.json
