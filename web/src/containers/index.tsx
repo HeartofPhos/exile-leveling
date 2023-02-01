@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { Route, Routes } from "react-router-dom";
 import { ErrorFallback } from "../components/ErrorFallback";
@@ -13,14 +13,16 @@ const EditRouteContainer = lazy(() => import("./EditRoute"));
 export function App() {
   return (
     <>
-      <Navbar />
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <Routes>
-          <Route path="/" element={<RoutesContainer />} />
-          <Route path="/build" element={<BuildContainer />} />
-          <Route path="/edit-route" element={<EditRouteContainer />} />
-        </Routes>
-      </ErrorBoundary>
+      <Suspense>
+        <Navbar />
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <Routes>
+            <Route path="/" element={<RoutesContainer />} />
+            <Route path="/build" element={<BuildContainer />} />
+            <Route path="/edit-route" element={<EditRouteContainer />} />
+          </Routes>
+        </ErrorBoundary>
+      </Suspense>
       <ToastContainer
         autoClose={1000}
         theme={"dark"}

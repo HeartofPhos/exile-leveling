@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 import { HashRouter } from "react-router-dom";
 import { RecoilRoot } from "recoil";
@@ -9,9 +9,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <HashRouter>
       <RecoilRoot>
-        <Suspense>
-          <App />
-        </Suspense>
+        <App />
       </RecoilRoot>
     </HashRouter>
   </React.StrictMode>
