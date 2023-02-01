@@ -3,6 +3,7 @@ export namespace PassiveTree {
     classes: Class[];
     nodes: Record<string, Node>;
     connections: Connection[];
+    masteryEffects: Record<string, MasteryEffect>;
     viewBox: ViewBox;
   }
 
@@ -33,5 +34,9 @@ export namespace PassiveTree {
   export interface Ascendancy {
     id: string;
     startNodeId: string;
+  }
+
+  export interface MasteryEffect {
+    stats: string[];
   }
 }

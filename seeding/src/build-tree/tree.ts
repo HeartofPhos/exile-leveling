@@ -1,4 +1,5 @@
-import { ProcessedTree as IntermediateTree, SkillTree } from "./types";
+import { PassiveTree } from "../../../common/data/tree";
+import { IntermediateTree, SkillTree } from "./types";
 
 export const ANGLES_16: number[] = [
   0, 30, 45, 60, 90, 120, 135, 150, 180, 210, 225, 240, 270, 300, 315, 330,
@@ -39,6 +40,7 @@ export function processSkillTree(skillTree: SkillTree.Data) {
     },
     nodes: [],
     connections: [],
+    masteryEffects: {},
   };
 
   const updateMinxMax = (x: number, y: number) => {
@@ -65,14 +67,17 @@ export function processSkillTree(skillTree: SkillTree.Data) {
       const node = skillTree.nodes[nodeId];
       if (!filterNode(node)) continue;
 
+      if (node.isMastery) {
+        for (const masteryEffect of node.masteryEffects!) {
+          tree.masteryEffects[masteryEffect.effect] = {
+            stats: masteryEffect.stats,
+          };
+        }
+      }
+
       const [angle, x, y] = getPosition(skillTree, node);
 
-      const treeNode = {
-        id: nodeId,
-        position: { x, y },
-        kind: nodeKind(node),
-        ascendancy: ascendancyNode(node),
-      };
+      const treeNode = buildNode(nodeId, { x, y }, node);
 
       let nodes: IntermediateTree.Node[];
       let connections: IntermediateTree.Connection[];
@@ -130,12 +135,7 @@ export function processSkillTree(skillTree: SkillTree.Data) {
 
         connections.push({
           a: treeNode,
-          b: {
-            id: outNodeId,
-            position: { x: outX, y: outY },
-            kind: nodeKind(outNode),
-            ascendancy: ascendancyNode(outNode),
-          },
+          b: buildNode(outNodeId, { x: outX, y: outY }, outNode),
           path: path,
         });
       }
@@ -185,26 +185,53 @@ function filterConnection(a: SkillTree.Node, b: SkillTree.Node) {
   );
 }
 
-function nodeKind(node: SkillTree.Node): IntermediateTree.Node["kind"] {
-  if (node.isKeystone) return "Keystone";
-  if (node.isMastery) return "Mastery";
-  if (node.ascendancyName !== undefined) return "Ascendancy";
-
-  return "Normal";
-}
-
-function ascendancyNode(
+function buildNode(
+  id: string,
+  pos: IntermediateTree.Coord,
   node: SkillTree.Node
-): IntermediateTree.AscendancyNode | undefined {
-  if (node.ascendancyName === undefined) return undefined;
+): IntermediateTree.Node {
+  if (node.ascendancyName !== undefined) {
+    let ascendancyKind: IntermediateTree.AscendancyNode["ascendancyKind"];
+    if (node.isAscendancyStart) ascendancyKind = "Start";
+    else if (node.isNotable) ascendancyKind = "Notable";
+    else ascendancyKind = "Normal";
 
-  let kind: IntermediateTree.AscendancyNode["kind"];
-  if (node.isAscendancyStart) kind = "Start";
-  else if (node.isNotable) kind = "Notable";
-  else kind = "Normal";
+    return {
+      id: id,
+      position: pos,
+      kind: "Ascendancy",
+      ascendancyName: node.ascendancyName,
+      ascendancyKind: ascendancyKind,
+    };
+  }
+
+  if (node.isMastery) {
+    return {
+      id: id,
+      position: pos,
+      kind: "Mastery",
+    };
+  }
+
+  if (node.isKeystone) {
+    return {
+      id: id,
+      position: pos,
+      kind: "Keystone",
+    };
+  }
+
+  if (node.isNotable) {
+    return {
+      id: id,
+      position: pos,
+      kind: "Notable",
+    };
+  }
 
   return {
-    name: node.ascendancyName,
-    kind: kind,
+    id: id,
+    position: pos,
+    kind: "Normal",
   };
 }

@@ -28,9 +28,9 @@ export async function buildTemplates() {
           id: asc.id,
           startNodeId: parsingTree.nodes.filter(
             (x) =>
-              x.ascendancy !== undefined &&
-              x.ascendancy.kind === "Start" &&
-              x.ascendancy.name == asc.name
+              x.kind === "Ascendancy" &&
+              x.ascendancyKind === "Start" &&
+              x.ascendancyName == asc.name
           )[0].id,
         })),
       })),
@@ -50,6 +50,7 @@ export async function buildTemplates() {
         a: connection.a.id,
         b: connection.b.id,
       })),
+      masteryEffects: parsingTree.masteryEffects,
       viewBox: viewBox,
     };
 

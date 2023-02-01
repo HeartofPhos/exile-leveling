@@ -194,11 +194,16 @@ export namespace SkillTree {
   }
 }
 
-export namespace ProcessedTree {
+export namespace IntermediateTree {
   export interface Data {
     bounds: Bounds;
     nodes: Node[];
     connections: Connection[];
+    masteryEffects: Record<string, MasteryEffect>;
+  }
+
+  export interface MasteryEffect {
+    stats: string[];
   }
 
   export interface Bounds {
@@ -208,16 +213,26 @@ export namespace ProcessedTree {
     maxY: number;
   }
 
-  export interface Node {
+  export type Node = BasicNode | AscendancyNode | MasteryNode;
+
+  export interface BasicNode {
     id: string;
     position: Coord;
-    kind: "Normal" | "Mastery" | "Keystone" | "Ascendancy";
-    ascendancy?: AscendancyNode;
+    kind: "Normal" | "Notable" | "Keystone";
+  }
+
+  export interface MasteryNode {
+    id: string;
+    position: Coord;
+    kind: "Mastery";
   }
 
   export interface AscendancyNode {
-    name: string;
-    kind: "Start" | "Normal" | "Notable";
+    id: string;
+    position: Coord;
+    kind: "Ascendancy";
+    ascendancyName: string;
+    ascendancyKind: "Start" | "Normal" | "Notable";
   }
 
   export interface Coord {

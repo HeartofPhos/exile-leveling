@@ -1,14 +1,15 @@
 import { PassiveTree } from "../../../common/data/tree";
-import { ProcessedTree } from "./types";
+import { IntermediateTree } from "./types";
 
 const PADDING = 175;
 
-const MASTERY_RADIUS = 55;
-const KEYSTONE_RADIUS = 80;
 const ASCENDANCY_START_RADIUS = 30;
 const ASCENDANCY_NOTABLE_RADIUS = 65;
 const ASCENDANCY_NORMAL_RADIUS = 45;
-const NORMAL_RADIUS = 50;
+const MASTERY_RADIUS = 55;
+const KEYSTONE_RADIUS = 80;
+const NOTABLE_RADIUS = 65;
+const NORMAL_RADIUS = 45;
 
 const NODE_STROKE_WIDTH = 0;
 const CONNECTION_STROKE_WIDTH = 20;
@@ -17,15 +18,16 @@ const CONNECTION_ACTIVE_STROKE_WIDTH = 35;
 const GROUP_NODE_CLASS = "nodes";
 const GROUP_CONNECTION_CLASS = "connections";
 
+const NODE_ASCENDANCY_CLASS = "ascendancy";
 const NODE_MASTERY_CLASS = "mastery";
 const NODE_KEYSTONE_CLASS = "keystone";
-const NODE_ASCENDANCY_CLASS = "ascendancy";
+const NODE_NOTABLE_CLASS = "notable";
 const NODE_NORMAL_CLASS = "normal";
 
 const CONNECTION_ASCENDANCY_CLASS = "ascendancy";
 const CONNECTION_NORMAL_CLASS = "";
 
-export function buildTemplate(tree: ProcessedTree.Data) {
+export function buildTemplate(tree: IntermediateTree.Data) {
   let template = ``;
 
   const viewBox: PassiveTree.ViewBox = {
@@ -117,26 +119,45 @@ export function buildTemplate(tree: ProcessedTree.Data) {
   return { template, viewBox };
 }
 
-function buildNode(node: ProcessedTree.Node) {
+function buildNode(node: IntermediateTree.Node) {
   let attrs;
-  if (node.kind == "Mastery")
-    attrs = `r="${MASTERY_RADIUS}" class="${NODE_MASTERY_CLASS}"`;
-  else if (node.kind == "Keystone")
-    attrs = `r="${KEYSTONE_RADIUS}" class="${NODE_KEYSTONE_CLASS}"`;
-  else if (node.kind == "Ascendancy" && node.ascendancy !== undefined) {
-    if (node.ascendancy.kind === "Start")
-      attrs = `r="${ASCENDANCY_START_RADIUS}" class="${NODE_ASCENDANCY_CLASS} ${node.ascendancy.name}"`;
-    else if (node.ascendancy.kind === "Notable")
-      attrs = `r="${ASCENDANCY_NOTABLE_RADIUS}" class="${NODE_ASCENDANCY_CLASS} ${node.ascendancy.name}"`;
-    else if (node.ascendancy.kind === "Normal")
-      attrs = `r="${ASCENDANCY_NORMAL_RADIUS}" class="${NODE_ASCENDANCY_CLASS} ${node.ascendancy.name}"`;
-  } else if (node.kind === "Normal")
-    attrs = `r="${NORMAL_RADIUS}" class="${NODE_NORMAL_CLASS}"`;
+  switch (node.kind) {
+    case "Ascendancy":
+      {
+        if (node.ascendancyKind === "Start")
+          attrs = `r="${ASCENDANCY_START_RADIUS}" class="${NODE_ASCENDANCY_CLASS} ${node.ascendancyName}"`;
+        else if (node.ascendancyKind === "Notable")
+          attrs = `r="${ASCENDANCY_NOTABLE_RADIUS}" class="${NODE_ASCENDANCY_CLASS} ${node.ascendancyName}"`;
+        else if (node.ascendancyKind === "Normal")
+          attrs = `r="${ASCENDANCY_NORMAL_RADIUS}" class="${NODE_ASCENDANCY_CLASS} ${node.ascendancyName}"`;
+      }
+      break;
+    case "Mastery":
+      {
+        attrs = `r="${MASTERY_RADIUS}" class="${NODE_MASTERY_CLASS}"`;
+      }
+      break;
+    case "Keystone":
+      {
+        attrs = `r="${KEYSTONE_RADIUS}" class="${NODE_KEYSTONE_CLASS}"`;
+      }
+      break;
+    case "Notable":
+      {
+        attrs = `r="${NOTABLE_RADIUS}" class="${NODE_NOTABLE_CLASS}"`;
+      }
+      break;
+    case "Normal":
+      {
+        attrs = `r="${NORMAL_RADIUS}" class="${NODE_NORMAL_CLASS}"`;
+      }
+      break;
+  }
 
   return `<circle cx="${node.position.x}" cy="${node.position.y}" id="n${node.id}" ${attrs}/>\n`;
 }
 
-function buildConnection(connection: ProcessedTree.Connection) {
+function buildConnection(connection: IntermediateTree.Connection) {
   const id = [connection.a.id, connection.b.id].sort().join("-");
   const a = connection.a.position;
   const b = connection.b.position;
@@ -144,9 +165,9 @@ function buildConnection(connection: ProcessedTree.Connection) {
   let attrs;
   if (
     connection.a.kind === "Ascendancy" &&
-    connection.a.ascendancy !== undefined
+    connection.a.ascendancyName !== undefined
   )
-    attrs = `class="${CONNECTION_ASCENDANCY_CLASS} ${connection.a.ascendancy.name}"`;
+    attrs = `class="${CONNECTION_ASCENDANCY_CLASS} ${connection.a.ascendancyName}"`;
   else attrs = `class="${CONNECTION_NORMAL_CLASS}"`;
 
   if (connection.path.sweep !== undefined) {
