@@ -93,6 +93,7 @@ export async function buildUrlSkillTree(
   let clusterCount;
   let masteryOffset;
   let masteryCount;
+
   if (version >= 6) {
     nodesOffset = 7;
     nodesCount = buffer[6];
