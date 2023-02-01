@@ -141,7 +141,7 @@ export interface BuildPassiveTree {
 
 export interface RequiredGem {
   id: string;
-  uid: number;
+  uid: string;
   note: string;
 }
 

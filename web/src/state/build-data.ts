@@ -5,10 +5,12 @@ import type { BuildData } from "../../../common/route-processing";
 import { getPersistent } from "../utility";
 import { gemProgressKeys, gemProgressSelectorFamily } from "./gem-progress";
 
+const BUILD_DATA_VERSION = 2;
+
 const buildDataAtom = atom<BuildData | null>({
   key: "buildDataAtom",
-  default: getPersistent("build-data"),
-  effects: [persistentStorageEffect("build-data")],
+  default: getPersistent("build-data", BUILD_DATA_VERSION),
+  effects: [persistentStorageEffect("build-data", BUILD_DATA_VERSION)],
 });
 export const buildDataSelector = selector<BuildData>({
   key: "buildDataSelector",
@@ -27,17 +29,15 @@ export const buildDataSelector = selector<BuildData>({
     return buildData;
   },
   set: ({ set }, newValue) => {
-    if (newValue instanceof DefaultValue) {
-      set(buildDataAtom, null);
-    } else {
-      set(buildDataAtom, newValue);
+    const value = newValue instanceof DefaultValue ? null : newValue;
 
-      for (const key of gemProgressKeys()) {
-        const exists =
-          newValue?.requiredGems.find((x) => x.uid == key) !== undefined;
+    set(buildDataAtom, value);
 
-        if (!exists) set(gemProgressSelectorFamily(key), false);
-      }
+    for (const key of gemProgressKeys()) {
+      const exists =
+        value?.requiredGems.find((x) => x.uid == key) !== undefined;
+
+      if (!exists) set(gemProgressSelectorFamily(key), false);
     }
   },
 });

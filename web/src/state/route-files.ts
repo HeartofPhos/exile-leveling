@@ -3,6 +3,8 @@ import { getPersistent } from "../utility";
 import { RouteFile } from "../../../common/route-processing";
 import { persistentStorageEffect } from ".";
 
+const ROUTE_PROGRESS_VERSION = 1;
+
 async function loadDefaultRouteFiles() {
   const { routeSourceLookup } = await import("../../../common/data");
   const { getRouteFiles } = await import("../../../common/route-processing");
@@ -25,8 +27,8 @@ async function loadDefaultRouteFiles() {
 
 const routeFilesAtom = atom<RouteFile[] | null>({
   key: "routeFilesAtom",
-  default: getPersistent("route-files"),
-  effects: [persistentStorageEffect("route-files")],
+  default: getPersistent("route-files", ROUTE_PROGRESS_VERSION),
+  effects: [persistentStorageEffect("route-files", ROUTE_PROGRESS_VERSION)],
 });
 
 export const routeFilesSelector = selector<RouteFile[]>({

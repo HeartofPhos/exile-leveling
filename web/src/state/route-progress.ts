@@ -1,8 +1,10 @@
 import { atomFamily, selectorFamily, useRecoilCallback } from "recoil";
 import { clearPersistent, getPersistent, setPersistent } from "../utility";
 
+const ROUTE_PROGRESS_VERSION = 0;
+
 const routeProgress = new Set<string>(
-  getPersistent<string[]>("route-progress")
+  getPersistent<string[]>("route-progress", ROUTE_PROGRESS_VERSION)
 );
 
 const routeProgressAtomFamily = atomFamily<boolean, string>({
@@ -27,7 +29,9 @@ export const routeProgressSelectorFamily = selectorFamily<boolean, string>({
       else routeProgress.delete(param);
 
       if (routeProgress.size > 0)
-        setPersistent("route-progress", [...routeProgress]);
+        setPersistent("route-progress", ROUTE_PROGRESS_VERSION, [
+          ...routeProgress,
+        ]);
       else clearPersistent("route-progress");
     },
 });

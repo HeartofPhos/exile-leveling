@@ -1,25 +1,16 @@
 import PLazy from "p-lazy";
 
-const PERSISTENT_VERSION: Partial<Record<string, number>> = {
-  "build-data": 1,
-  "route-progress": 0,
-  "gem-progress": 0,
-  "search-strings": 0,
-  "route-files": 1,
-};
-
 interface PersistentData<T> {
   value: T;
   version: number | undefined;
 }
 
-export function getPersistent<T>(key: string) {
+export function getPersistent<T>(key: string, expectedVersion: number) {
   const json = localStorage.getItem(key);
   if (!json) return null;
 
   const data = JSON.parse(json) as PersistentData<T>;
 
-  const expectedVersion = PERSISTENT_VERSION[key];
   if (expectedVersion !== undefined && expectedVersion != data.version) {
     clearPersistent(key);
     return null;
@@ -28,10 +19,10 @@ export function getPersistent<T>(key: string) {
   return data.value;
 }
 
-export function setPersistent<T>(key: string, value: T) {
+export function setPersistent<T>(key: string, version: number, value: T) {
   const data: PersistentData<T> = {
     value: value,
-    version: PERSISTENT_VERSION[key],
+    version: version,
   };
 
   localStorage.setItem(key, JSON.stringify(data));
@@ -53,4 +44,15 @@ export function globImportLazy<T>(
 
     return record;
   }, {} as Record<string, PromiseLike<T>>);
+}
+
+const characters =
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+export function randomString(length: number) {
+  let result = "";
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+
+  return result;
 }

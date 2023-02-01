@@ -1,14 +1,18 @@
 import { atomFamily, selectorFamily, useRecoilCallback } from "recoil";
 import { clearPersistent, getPersistent, setPersistent } from "../utility";
 
-const gemProgress = new Set<number>(getPersistent<number[]>("gem-progress"));
+const GEM_PROGRESS_VERSION = 1;
 
-const gemProgressAtomFamily = atomFamily<boolean, number>({
+const gemProgress = new Set<string>(
+  getPersistent<string[]>("gem-progress", GEM_PROGRESS_VERSION)
+);
+
+const gemProgressAtomFamily = atomFamily<boolean, string>({
   key: "gemProgressAtomFamily",
   default: (param) => gemProgress.has(param),
 });
 
-export const gemProgressSelectorFamily = selectorFamily<boolean, number>({
+export const gemProgressSelectorFamily = selectorFamily<boolean, string>({
   key: "gemProgressSelectorFamily",
   get:
     (param) =>
@@ -24,7 +28,8 @@ export const gemProgressSelectorFamily = selectorFamily<boolean, number>({
       if (newValue) gemProgress.add(param);
       else gemProgress.delete(param);
 
-      if (gemProgress.size > 0) setPersistent("gem-progress", [...gemProgress]);
+      if (gemProgress.size > 0)
+        setPersistent("gem-progress", GEM_PROGRESS_VERSION, [...gemProgress]);
       else clearPersistent("gem-progress");
     },
 });
