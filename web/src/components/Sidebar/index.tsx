@@ -3,15 +3,23 @@ import { useState } from "react";
 import { FaRegClipboard } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useRecoilValue } from "recoil";
+import { urlSkillTreesSelector } from "../../state/passive-trees";
 import { searchStringsAtom } from "../../state/search-strings";
 import { PassiveTreeViewer } from "../PassiveTreeViewer";
 import styles from "./styles.module.css";
 
 export function Sidebar() {
   const searchStrings = useRecoilValue(searchStringsAtom);
+  const { urlSkillTrees } = useRecoilValue(urlSkillTreesSelector);
   const [expand, setExpand] = useState(true);
 
   const expandIcon = expand ? <FiChevronRight /> : <FiChevronLeft />;
+
+  const passiveTreeViewerActive = urlSkillTrees.length > 0;
+  const searchStringsActive =
+    searchStrings !== null && searchStrings.length > 0;
+
+  if (!passiveTreeViewerActive && !searchStringsActive) return <></>;
 
   return (
     <div
@@ -33,11 +41,14 @@ export function Sidebar() {
           [styles.expand]: expand,
         })}
       >
-        <hr />
-        <PassiveTreeViewer />
-        {searchStrings !== null && searchStrings.length > 0 && (
+        {passiveTreeViewerActive && (
           <>
-            <span>Search Strings</span>
+            <hr />
+            <PassiveTreeViewer urlSkillTrees={urlSkillTrees} />
+          </>
+        )}
+        {searchStringsActive && (
+          <>
             <hr />
             <div className={classNames(styles.sidebarItems)}>
               {searchStrings.map((x, i) => (

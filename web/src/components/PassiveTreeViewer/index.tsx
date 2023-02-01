@@ -15,7 +15,11 @@ import { formStyles } from "../Form";
 import { randomId } from "../../utility";
 import { PassiveTree } from "../../../../common/data/tree";
 
-export function PassiveTreeViewer() {
+interface PassiveTreeViewerProps {
+  urlSkillTrees: UrlSkillTree.Data[];
+}
+
+export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
   const svgDivRef = useRef<HTMLDivElement>(null);
   const [curIndex, setCurIndex] = useState<number>(0);
   const [svg, setSVG] = useState<string>();
@@ -23,8 +27,6 @@ export function PassiveTreeViewer() {
     useState<ViewportProps["intialFocus"]>();
   const [passiveTree, setPassiveTree] = useState<PassiveTree.Data>();
   const [masteries, setMasteries] = useState<UrlSkillTree.Data["masteries"]>();
-
-  const { urlSkillTrees } = useRecoilValue(urlSkillTreesSelector);
 
   useEffect(() => {
     async function fn() {
