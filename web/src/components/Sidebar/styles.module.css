@@ -1,9 +1,11 @@
 .sidebar {
+  --offset: calc(var(--navbar-height) + var(--size-2));
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: calc(var(--navbar-height) + var(--actbar-height) + var(--size-2));
+  top: var(--offset);
   right: var(--size-2);
+  max-height: calc(100vh - var(--offset));
   background-color: var(--background-primary);
   border-style: solid;
   border-width: var(--border-width);
@@ -11,6 +13,7 @@
   border-radius: var(--border-radius);
   padding: var(--size-2);
   z-index: 2;
+  overflow: auto;
 }
 
 .sidebarContents {
