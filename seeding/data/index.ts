@@ -10,7 +10,11 @@ interface DatJson {
 }
 
 function parseDat(path: string): DatJson {
-  return JSON.parse(fs.readFileSync(`${__dirname}/${path}`, "utf-8"));
+  const filePath = `${__dirname}/${path}`;
+  if (fs.existsSync(filePath))
+    return JSON.parse(fs.readFileSync(`${__dirname}/${path}`, "utf-8"));
+
+  return null!;
 }
 
 export const BaseItemTypesDat = parseDat(
