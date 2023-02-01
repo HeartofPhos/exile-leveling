@@ -1,12 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Viewport, ViewportProps } from "../Viewport";
 import { groupNodes, calculateBounds } from "./processs";
-import { useRecoilValue } from "recoil";
 import {
   TREE_DATA_LOOKUP,
   TREE_TEMPLATE_LOOKUP,
   UrlSkillTree,
-  urlSkillTreesSelector,
 } from "../../state/passive-trees";
 import styles from "./styles.module.css";
 import classNames from "classnames";

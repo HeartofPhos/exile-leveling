@@ -39,7 +39,7 @@ export const urlSkillTreesSelector = selector({
         urlSkillTrees.push(urlSkillTree);
       } catch (e) {
         console.error(
-          `invalid UrlSkillTree, ${buildTree.name}, ${buildTree.version}, ${buildTree.url}`
+          `could not process UrlSkillTree, ${e}, ${buildTree.name}`
         );
       }
     }
@@ -70,9 +70,13 @@ export async function buildUrlSkillTree(
   buildTree: BuildPassiveTree
 ): Promise<UrlSkillTree.Data> {
   const data = /.*\/(.*?)$/.exec(buildTree.url)?.[1];
-  if (!data) throw "invalid url";
+  if (!data) throw `invalid url ${buildTree.url}`;
 
   const passiveTree = await TREE_DATA_LOOKUP[buildTree.version];
+  const template = await TREE_TEMPLATE_LOOKUP[buildTree.version];
+
+  if (passiveTree === undefined || template === undefined)
+    throw `invalid version ${buildTree.version}`;
 
   const unescaped = data.replace(/-/g, "+").replace(/_/g, "/");
   const buffer = Uint8Array.from(window.atob(unescaped), (c) =>
@@ -96,7 +100,7 @@ export async function buildUrlSkillTree(
     clusterCount = buffer[clusterOffset - 1];
     masteryOffset = clusterOffset + clusterCount * 2 + 1;
     masteryCount = buffer[masteryOffset - 1] * 2;
-  } else throw "invalid version";
+  } else throw "invalid url version";
 
   const nodes = read_u16s(buffer, nodesOffset, nodesCount).map((x) =>
     x.toString()
