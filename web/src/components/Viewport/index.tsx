@@ -1,6 +1,4 @@
-import classNames from "classnames";
 import { useEffect, useRef, useState } from "react";
-import styles from "./styles.module.css";
 import useResizeObserver, { ObservedSize } from "use-resize-observer";
 import {
   ReactZoomPanPinchRef,
@@ -49,8 +47,8 @@ function focusRect(viewport: Size, focus: Rect) {
   const anchorX = viewport.width * 0.5;
   const anchorY = viewport.height * 0.5;
 
-  const posX = anchorX - focus.x;
-  const posY = anchorY - focus.y;
+  const posX = anchorX - (focus.x + focus.width * 0.5);
+  const posY = anchorY - (focus.y + focus.height * 0.5);
 
   const newPos = scaleTranslation(posX, posY, anchorX, anchorY, newScale);
 
@@ -104,8 +102,8 @@ export function Viewport({
             const { newScale, newPos } = focusRect(
               { width: size.width, height: size.height },
               {
-                x: (prevSize.width / 2 - x) / scale,
-                y: (prevSize.height / 2 - y) / scale,
+                x: -x / scale,
+                y: -y / scale,
                 width: prevSize.width / scale,
                 height: prevSize.height / scale,
               }

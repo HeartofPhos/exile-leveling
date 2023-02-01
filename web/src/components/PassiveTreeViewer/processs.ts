@@ -115,12 +115,12 @@ export function calculateBounds(
     }
   }
 
-  const padding = 2500;
-  
-  const x = (minX + maxX) * 0.5;
-  const y = (minY + maxY) * 0.5;
-  const w = maxX - minX + padding;
-  const h = maxY - minY + padding;
+  const padding = 1250;
+
+  const x = minX - padding;
+  const y = minY - padding;
+  const w = maxX - minX + padding * 2;
+  const h = maxY - minY + padding * 2;
 
   return {
     // Anchor 0,0
@@ -131,13 +131,15 @@ export function calculateBounds(
   };
 }
 
-
 export interface MasteryInfo {
   nodeId: string;
   info: string;
 }
 
-export function buildMasteryInfos(passiveTree:PassiveTree.Data, masteriesArr:UrlSkillTree.Data["masteries"][]){
+export function buildMasteryInfos(
+  passiveTree: PassiveTree.Data,
+  masteriesArr: UrlSkillTree.Data["masteries"][]
+) {
   const masteryInfos: MasteryInfo[] = [];
   for (const masteries of masteriesArr) {
     for (const [nodeId, effectId] of Object.entries(masteries)) {
