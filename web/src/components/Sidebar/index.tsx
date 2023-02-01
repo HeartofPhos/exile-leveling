@@ -27,14 +27,17 @@ export function Sidebar() {
         [styles.expand]: expand,
       })}
     >
-      <div
-        className={classNames(styles.sidebarToggle)}
-        onClick={() => {
-          setExpand(!expand);
-        }}
-      >
-        {expand && <span>Sidebar</span>}
-        {expandIcon}
+      <div>
+        <div
+          className={classNames(styles.sidebarToggle)}
+          onClick={() => {
+            setExpand(!expand);
+          }}
+        >
+          {expand && <span>Sidebar</span>}
+          {expandIcon}
+        </div>
+        {expand && <hr />}
       </div>
       <div
         className={classNames(styles.sidebarContents, {
@@ -43,7 +46,6 @@ export function Sidebar() {
       >
         {passiveTreeViewerActive && (
           <>
-            <hr />
             <PassiveTreeViewer urlSkillTrees={urlSkillTrees} />
           </>
         )}

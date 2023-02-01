@@ -1,8 +1,16 @@
 .viewer {
   display: flex;
   flex-direction: column;
-  height: 20rem;
+  min-height: 10rem;
+  max-height: 20rem;
   width: 20rem;
+}
+
+.viewport {
+  border-style: solid;
+  border-width: var(--border-width);
+  border-color: var(--accent-primary);
+  border-radius: var(--border-radius);
 }
 
 .label {

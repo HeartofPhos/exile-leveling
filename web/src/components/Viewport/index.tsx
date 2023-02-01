@@ -11,6 +11,7 @@ import {
 export interface ViewportProps {
   intialFocus: Rect;
   resizePattern: "clip" | "focus";
+  className?: string;
   children?: React.ReactNode;
 }
 
@@ -60,6 +61,7 @@ function focusRect(viewport: Size, focus: Rect) {
 }
 
 export function Viewport({
+  className,
   intialFocus,
   resizePattern,
   children,
@@ -127,7 +129,7 @@ export function Viewport({
   }, [intialFocus, divRef, initialized]);
 
   return (
-    <div ref={divRef} className={classNames(styles.viewport)}>
+    <div ref={divRef} className={className} style={{ overflow: "hidden" }}>
       <TransformWrapper
         onInit={() => {
           setInitialized(true);
