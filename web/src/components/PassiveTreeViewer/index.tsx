@@ -11,10 +11,14 @@ import classNames from "classnames";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { formStyles } from "../Form";
 import { randomId } from "../../utility";
-import { PassiveTree } from "../../../../common/data/tree";
 
 interface PassiveTreeViewerProps {
   urlSkillTrees: UrlSkillTree.Data[];
+}
+
+interface MasteryInfo {
+  nodeId: string;
+  info: string;
 }
 
 export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
@@ -23,8 +27,7 @@ export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
   const [svg, setSVG] = useState<string>();
   const [intialFocus, setIntialFocus] =
     useState<ViewportProps["intialFocus"]>();
-  const [passiveTree, setPassiveTree] = useState<PassiveTree.Data>();
-  const [masteries, setMasteries] = useState<UrlSkillTree.Data["masteries"]>();
+  const [masteryInfos, setMasteryInfos] = useState<MasteryInfo[]>();
 
   useEffect(() => {
     async function fn() {
@@ -81,10 +84,23 @@ export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
         connectionsRemoved: groupedNodes.connectionsRemoved,
       });
 
+      const masteryInfos: MasteryInfo[] = [];
+      for (const [nodeId, effectId] of Object.entries(curTree.masteries)) {
+        masteryInfos.push({
+          nodeId: nodeId,
+          info: passiveTree.masteryEffects[effectId].stats.join("\n"),
+        });
+      }
+      for (const [nodeId, effectId] of Object.entries(prevTree.masteries)) {
+        masteryInfos.push({
+          nodeId: nodeId,
+          info: passiveTree.masteryEffects[effectId].stats.join("\n"),
+        });
+      }
+
       setSVG(svg);
       setIntialFocus(bounds);
-      setPassiveTree(passiveTree);
-      setMasteries({ ...curTree.masteries, ...prevTree.masteries });
+      setMasteryInfos(masteryInfos);
     }
 
     fn();
@@ -92,19 +108,21 @@ export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
 
   useEffect(() => {
     if (svgDivRef.current === null) return;
-    if (passiveTree === undefined) return;
-    if (masteries === undefined) return;
+    if (masteryInfos === undefined) return;
 
-    for (const [nodeId, effectId] of Object.entries(masteries)) {
+    for (const { nodeId, info } of masteryInfos) {
       const node = svgDivRef.current.querySelector<SVGElement>(`#n${nodeId}`);
       if (node === null) return;
 
-      const title = node.appendChild(
-        document.createElementNS("http://www.w3.org/2000/svg", "title", {})
+      const title = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "title"
       );
-      title.textContent = passiveTree.masteryEffects[effectId].stats.join("\n");
+      title.textContent = info;
+
+      node.appendChild(title);
     }
-  }, [svgDivRef, svg, passiveTree, masteries]);
+  }, [svgDivRef, svg, masteryInfos]);
 
   return (
     <>
