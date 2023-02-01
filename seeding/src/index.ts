@@ -2,35 +2,52 @@ import fs from "fs";
 import { getGems as seedGems } from "./seeding/gems";
 import { getQuests } from "./seeding/quests";
 import { getAreas } from "./seeding/areas";
+import { buildTemplates } from "./build-tree";
 
 const dataPath = process.argv[2];
-function saveData(name: string, data: any) {
-  fs.writeFileSync(`${dataPath}/${name}.json`, JSON.stringify(data, null, 2));
+
+function saveJSON(name: string, data: any) {
+  fs.writeFileSync(
+    `${dataPath}/json/${name}.json`,
+    JSON.stringify(data, null, 2)
+  );
 }
+
+function saveTreeTemplate(name: string, data: string) {
+  fs.writeFileSync(`${dataPath}/tree/${name}.svg`, data);
+}
+
+function saveTreeJSON(name: string, data: any) {
+  fs.writeFileSync(`${dataPath}/tree/${name}.json`, JSON.stringify(data));
+}
+
+const COMMAND_PROCESSORS: Record<string, () => Promise<any>> = {
+  ["data"]: async () => {
+    const { gems, vaalGemLookup, awakenedGemLookup } = await seedGems();
+    saveJSON("gems", gems);
+    saveJSON("vaal-gem-lookup", vaalGemLookup);
+    saveJSON("awakened-gem-lookup", awakenedGemLookup);
+    const quests = await getQuests();
+    saveJSON("quests", quests);
+    const areas = await getAreas();
+    saveJSON("areas", areas);
+  },
+  ["tree"]: async () => {
+    const templates = await buildTemplates();
+    for (const { version, template, passiveTree } of templates) {
+      saveTreeTemplate(version, template);
+      saveTreeJSON(version, passiveTree);
+    }
+  },
+};
 
 export async function main() {
   if (!fs.existsSync(dataPath)) fs.mkdirSync(dataPath, { recursive: true });
 
   const command = process.argv[3];
-  switch (command) {
-    case "seed-data":
-      {
-        const { gems, vaalGemLookup, awakenedGemLookup } = await seedGems();
-        saveData("gems", gems);
-        saveData("vaal-gem-lookup", vaalGemLookup);
-        saveData("awakened-gem-lookup", awakenedGemLookup);
-        const quests = await getQuests();
-        saveData("quests", quests);
-        const areas = await getAreas();
-        saveData("areas", areas);
-      }
-      break;
-    default:
-      {
-        console.log(`Unrecognized command ${command}`);
-      }
-      break;
-  }
+  const processor = COMMAND_PROCESSORS[command];
+  if (processor) await processor();
+  else console.log(`Unrecognized command ${command}`);
 }
 
 main();

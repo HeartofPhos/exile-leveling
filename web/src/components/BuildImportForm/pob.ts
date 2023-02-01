@@ -117,11 +117,22 @@ export function processPob(pobCode: string): BuildData | undefined {
   const bandit =
     buildElement[0].attributes.getNamedItem("bandit")?.value || "None";
 
+  let passiveTrees: BuildData["passiveTrees"] = [];
+  const specElements = Array.from(doc.getElementsByTagName("Spec"));
+  for (const specElement of specElements) {
+    passiveTrees.push({
+      name: specElement.getAttribute("title")!,
+      version: specElement.getAttribute("treeVersion")!,
+      url: specElement.getElementsByTagName("URL")[0].textContent?.trim()!,
+    });
+  }
+
   return {
     characterClass: characterClass!,
     requiredGems: requiredGems,
     bandit: bandit as BuildData["bandit"],
     leagueStart: true,
+    passiveTrees: passiveTrees,
     library: true,
   };
 }

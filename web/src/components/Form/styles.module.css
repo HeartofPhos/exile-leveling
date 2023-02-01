@@ -42,6 +42,7 @@
   font-weight: var(--font-heavy);
   color: var(--primary-light);
   background-color: var(--background-primary);
+  border-style: solid;
   border-width: var(--border-width);
   border-color: var(--accent-primary);
   border-radius: var(--border-radius);

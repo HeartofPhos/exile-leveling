@@ -21,6 +21,7 @@ export const buildDataSelector = selector<BuildData>({
         characterClass: "None",
         requiredGems: [],
         bandit: "None",
+        passiveTrees: [],
         leagueStart: true,
         library: true,
       };
