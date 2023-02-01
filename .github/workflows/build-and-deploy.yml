@@ -21,6 +21,7 @@ jobs:
           npm -w seeding run seed tree
           npm -w web ci
           npm -w web run build
+          touch web/dist/.nojekyll
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
