@@ -115,10 +115,12 @@ export function calculateBounds(
     }
   }
 
+  const padding = 2500;
+  
   const x = (minX + maxX) * 0.5;
   const y = (minY + maxY) * 0.5;
-  const w = maxX - minX + 2500;
-  const h = maxY - minY + 2500;
+  const w = maxX - minX + padding;
+  const h = maxY - minY + padding;
 
   return {
     // Anchor 0,0
