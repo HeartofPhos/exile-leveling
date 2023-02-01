@@ -5,10 +5,12 @@ import type { BuildData } from "../../../common/route-processing";
 import { getPersistent } from "../utility";
 import { gemProgressKeys, gemProgressSelectorFamily } from "./gem-progress";
 
+const BUILD_DATA_VERSION = 2;
+
 const buildDataAtom = atom<BuildData | null>({
   key: "buildDataAtom",
-  default: getPersistent("build-data"),
-  effects: [persistentStorageEffect("build-data")],
+  default: getPersistent("build-data", BUILD_DATA_VERSION),
+  effects: [persistentStorageEffect("build-data", BUILD_DATA_VERSION)],
 });
 export const buildDataSelector = selector<BuildData>({
   key: "buildDataSelector",
