@@ -46,11 +46,13 @@ export function globImportLazy<T>(
   }, {} as Record<string, PromiseLike<T>>);
 }
 
-const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+const idCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 export function randomId(length: number) {
   let result = "";
   for (let i = 0; i < length; i++) {
-    result += characters.charAt(Math.floor(Math.random() * characters.length));
+    result += idCharacters.charAt(
+      Math.floor(Math.random() * idCharacters.length)
+    );
   }
 
   return result;
