@@ -96,12 +96,13 @@ export function PassiveTreeViewer() {
     if (masteries === undefined) return;
 
     for (const [nodeId, effectId] of Object.entries(masteries)) {
-      const node = svgDivRef.current.querySelector<HTMLElement>(`#n${nodeId}`);
-
+      const node = svgDivRef.current.querySelector<SVGElement>(`#n${nodeId}`);
       if (node === null) return;
-      node.onclick = () => {
-        alert(passiveTree.masteryEffects[effectId].stats.join("\n"));
-      };
+
+      const title = node.appendChild(
+        document.createElementNS("http://www.w3.org/2000/svg", "title", {})
+      );
+      title.textContent = passiveTree.masteryEffects[effectId].stats.join("\n");
     }
   }, [svgDivRef, svg, passiveTree, masteries]);
 
