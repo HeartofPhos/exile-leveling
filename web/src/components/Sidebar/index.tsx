@@ -52,7 +52,7 @@ export function Sidebar() {
         {searchStringsActive && (
           <>
             <hr />
-            <div className={classNames(styles.sidebarItems)}>
+            <div className={classNames(styles.searchStrings)}>
               {searchStrings.map((x, i) => (
                 <SearchString key={i} value={x} />
               ))}
