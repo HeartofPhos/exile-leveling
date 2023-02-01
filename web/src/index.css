@@ -71,31 +71,7 @@ hr {
   margin-right: var(--size-1);
 }
 
-.header {
-  width: 100%;
-  color: var(--primary-light);
-  font-size: var(--size-5);
-  padding: var(--size-2);
-  font-weight: var(--font-heavy);
-  text-align: center;
-  cursor: pointer;
-}
-
 a:link,
 a:visited {
   color: var(--primary);
-}
-
-.borderListItem:first-child {
-  border-top: 0;
-}
-
-.borderListItem:last-child {
-  border-bottom: 0;
-}
-
-.borderListItem {
-  border-style: solid;
-  border-color: var(--accent-secondary);
-  border-width: var(--border-width) 0;
 }

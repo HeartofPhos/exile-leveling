@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { RecoilState, useRecoilState } from "recoil";
+import { borderListStyles } from "../BorderList";
 import styles from "./styles.module.css";
 
 export const taskStyle = styles.task;
@@ -20,7 +21,7 @@ function TaskListItem({ children, isCompletedState }: TaskItemProps) {
       onClick={() => {
         if (setIsCompleted) setIsCompleted(!isCompleted);
       }}
-      className={classNames("borderListItem", {
+      className={classNames(borderListStyles.item, {
         [styles.completed]: isCompleted,
       })}
     >

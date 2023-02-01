@@ -7,6 +7,7 @@ import Editor from "react-simple-code-editor";
 import { highlight, Grammar } from "prismjs";
 import { RouteFile } from "../../../../common/route-processing";
 import styles from "./styles.module.css";
+import { borderListStyles } from "../../components/BorderList";
 
 const RouteGrammar: Grammar = {
   keyword: {
@@ -64,7 +65,7 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
     fileListItems.push(
       <div
         key={i}
-        className={classNames("borderListItem", styles.fileListItem, {
+        className={classNames(borderListStyles.itemRound, styles.fileListItem, {
           [styles.selected]: selectedIndex === i,
         })}
         onClick={() => {

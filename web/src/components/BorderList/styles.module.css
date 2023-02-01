@@ -1,0 +1,31 @@
+.item {
+  border-style: solid;
+  border-color: var(--accent-secondary);
+  border-width: var(--border-width) 0;
+}
+
+.item:first-child {
+  border-top: 0;
+}
+
+.item:last-child {
+  border-bottom: 0;
+}
+
+.itemRound {
+  border-style: solid;
+  border-color: var(--accent-secondary);
+  border-width: var(--border-width) 0;
+}
+
+.itemRound:first-child {
+  border-top: 0;
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+.itemRound:last-child {
+  border-bottom: 0;
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}

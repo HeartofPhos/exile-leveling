@@ -49,6 +49,10 @@
   word-break: break-all;
 }
 
+.searchString:active {
+  background-color: var(--highlight);
+}
+
 @media (hover: hover) {
   .searchString:hover {
     border-color: var(--primary);

@@ -16,6 +16,7 @@ import { useClearRouteProgress } from "../../state/route-progress";
 import { useClearGemProgress } from "../../state/gem-progress";
 import { toast } from "react-toastify";
 import styles from "./styles.module.css";
+import { borderListStyles } from "../BorderList";
 
 interface NavbarItemProps {
   label: string;
@@ -30,7 +31,7 @@ function NavbarItem({ label, expand, icon, onClick }: NavbarItemProps) {
       onClick={onClick}
       className={classNames(styles.navItem, styles.navElement, {
         [styles.expand]: expand,
-        ["borderListItem"]: expand,
+        [borderListStyles.item]: expand,
       })}
     >
       {icon}

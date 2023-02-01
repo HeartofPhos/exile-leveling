@@ -28,7 +28,7 @@ export function SectionHolder({ name, items: taskItems }: SectionHolderProps) {
     <div id={sectionId}>
       <div className={classNames(styles.actbar)}>
         <div
-          className={classNames("header", styles.actbarHeader)}
+          className={classNames(styles.header, styles.actbarHeader)}
           onClick={() => {
             const updatedExpanded = !expanded;
             setExpanded(updatedExpanded);

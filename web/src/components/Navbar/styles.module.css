@@ -41,6 +41,10 @@
   width: 100%;
 }
 
+.navItem:active {
+  background-color: var(--highlight);
+}
+
 .navItem.expand {
   text-align: right;
 }
@@ -63,6 +67,10 @@
   height: var(--line-height);
   width: var(--line-height);
   padding: var(--size-3);
+}
+
+.navIcon:active {
+  background-color: var(--highlight);
 }
 
 .navMain.expand {

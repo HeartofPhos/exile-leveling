@@ -5,6 +5,7 @@ import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useRecoilValue } from "recoil";
 import { urlSkillTreesSelector } from "../../state/passive-trees";
 import { searchStringsAtom } from "../../state/search-strings";
+import { borderListStyles } from "../BorderList";
 import { PassiveTreeViewer } from "../PassiveTreeViewer";
 import styles from "./styles.module.css";
 
@@ -49,9 +50,9 @@ export function Sidebar() {
             <PassiveTreeViewer urlSkillTrees={urlSkillTrees} />
           </>
         )}
+        {passiveTreeViewerActive && searchStringsActive && <hr />}
         {searchStringsActive && (
           <>
-            <hr />
             <div className={classNames(styles.searchStrings)}>
               {searchStrings.map((x, i) => (
                 <SearchString key={i} value={x} />
@@ -71,7 +72,7 @@ interface SearchStringProps {
 function SearchString({ value }: SearchStringProps) {
   return (
     <div
-      className={classNames("borderListItem", styles.searchString)}
+      className={classNames(borderListStyles.itemRound, styles.searchString)}
       onClick={() => {
         navigator.clipboard.writeText(value);
       }}

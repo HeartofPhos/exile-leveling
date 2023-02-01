@@ -49,8 +49,6 @@
   padding: var(--size-2);
 }
 
-@media (hover: hover) {
-  .formButton:hover {
-    background-color: var(--highlight);
-  }
+.formButton:active {
+  background-color: var(--highlight);
 }

@@ -7,14 +7,16 @@
 .orderButtonGroup {
   height: var(--line-height);
   display: flex;
+  gap: var(--size-2);
 }
 
 .orderButton {
+  border-style: solid;
+  border-width: var(--border-width);
+  border-color: var(--accent-primary);
   border-radius: var(--border-radius);
 }
 
-@media (hover: hover) {
-  .orderButton:hover {
-    background-color: var(--highlight);
-  }
+.orderButton:active {
+  background-color: var(--highlight);
 }
