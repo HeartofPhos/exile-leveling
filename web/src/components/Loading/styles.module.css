@@ -1,0 +1,26 @@
+.holder {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: var(--size-3);
+}
+
+.loader {
+  width: 5rem;
+  height: 5rem;
+  border: 0.5rem solid var(--primary);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

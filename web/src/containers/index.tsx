@@ -5,6 +5,7 @@ import { ErrorFallback } from "../components/ErrorFallback";
 import { Navbar } from "../components/Navbar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Loading } from "../components/Loading";
 
 const RoutesContainer = lazy(() => import("./Routes"));
 const BuildContainer = lazy(() => import("./Build"));
@@ -13,8 +14,8 @@ const EditRouteContainer = lazy(() => import("./EditRoute"));
 export function App() {
   return (
     <>
-      <Suspense>
-        <Navbar />
+      <Navbar />
+      <Suspense fallback={<Loading />}>
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <Routes>
             <Route path="/" element={<RoutesContainer />} />
