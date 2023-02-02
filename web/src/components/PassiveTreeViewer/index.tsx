@@ -21,13 +21,16 @@ interface PassiveTreeViewerProps {
   urlSkillTrees: UrlSkillTree.Data[];
 }
 
+interface RenderInfo {
+  svg: string;
+  intialFocus: ViewportProps["intialFocus"];
+  masteryInfos: MasteryInfo[];
+}
+
 export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
   const svgDivRef = useRef<HTMLDivElement>(null);
   const [curIndex, setCurIndex] = useState<number>(0);
-  const [svg, setSVG] = useState<string>();
-  const [intialFocus, setIntialFocus] =
-    useState<ViewportProps["intialFocus"]>();
-  const [masteryInfos, setMasteryInfos] = useState<MasteryInfo[]>();
+  const [renderInfo, setRenderInfo] = useState<RenderInfo>();
 
   useEffect(() => {
     async function fn() {
@@ -89,9 +92,11 @@ export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
         prevTree.masteries,
       ]);
 
-      setSVG(svg);
-      setIntialFocus(bounds);
-      setMasteryInfos(masteryInfos);
+      setRenderInfo({
+        svg,
+        intialFocus: bounds,
+        masteryInfos,
+      });
     }
 
     fn();
@@ -99,9 +104,9 @@ export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
 
   useEffect(() => {
     if (svgDivRef.current === null) return;
-    if (masteryInfos === undefined) return;
+    if (renderInfo === undefined) return;
 
-    for (const { nodeId, info } of masteryInfos) {
+    for (const { nodeId, info } of renderInfo.masteryInfos) {
       const node = svgDivRef.current.querySelector<SVGElement>(`#n${nodeId}`);
       if (node === null) return;
 
@@ -113,18 +118,21 @@ export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
 
       node.appendChild(title);
     }
-  }, [svgDivRef, svg, masteryInfos]);
+  }, [svgDivRef, renderInfo]);
 
   return (
     <>
-      {intialFocus && svg && (
+      {renderInfo && (
         <div className={classNames(styles.viewer)}>
           <Viewport
             className={styles.viewport}
-            intialFocus={intialFocus}
+            intialFocus={renderInfo.intialFocus}
             resizePattern="clip"
           >
-            <div ref={svgDivRef} dangerouslySetInnerHTML={{ __html: svg }} />
+            <div
+              ref={svgDivRef}
+              dangerouslySetInnerHTML={{ __html: renderInfo.svg }}
+            />
           </Viewport>
           <label className={classNames(styles.label)}>
             {urlSkillTrees.length > 0 && urlSkillTrees[curIndex].name}
