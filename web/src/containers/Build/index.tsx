@@ -7,6 +7,7 @@ import { BuildInfoForm, GemOrderList } from "../../components/BuildEditForm";
 import { formStyles } from "../../components/Form";
 import classNames from "classnames";
 import styles from "./styles.module.css";
+import { withBlank } from "../../utility/withBlank";
 
 function BuildContainer() {
   const [buildData, setBuildData] = useRecoilState(buildDataSelector);
@@ -72,4 +73,4 @@ function BuildContainer() {
   );
 }
 
-export default withScrollRestoration(BuildContainer);
+export default withBlank(withScrollRestoration(BuildContainer));

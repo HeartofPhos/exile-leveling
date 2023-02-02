@@ -9,6 +9,7 @@ import { gemProgressSelectorFamily } from "../../state/gem-progress";
 import { buildRouteSelector } from "../../state/route";
 import { routeProgressSelectorFamily } from "../../state/route-progress";
 import { Sidebar } from "../../components/Sidebar";
+import { withBlank } from "../../utility/withBlank";
 
 function RoutesContainer() {
   const route = useRecoilValue(buildRouteSelector);
@@ -57,4 +58,4 @@ function RoutesContainer() {
   );
 }
 
-export default withScrollRestoration(RoutesContainer);
+export default withBlank(withScrollRestoration(RoutesContainer));
