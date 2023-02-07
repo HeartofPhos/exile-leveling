@@ -22,3 +22,14 @@
   inset: 0px;
   z-index: 3;
 }
+
+.grow {
+  flex-grow: 1;
+}
+
+.textInput {
+  width: 100%;
+  flex-grow: 1;
+  resize: none;
+  overflow: hidden;
+}

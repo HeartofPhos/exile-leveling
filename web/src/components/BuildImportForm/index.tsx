@@ -4,9 +4,7 @@ import { BuildData } from "../../../../common/route-processing";
 import { formStyles } from "../Form";
 import { fetchPob, processPob } from "./pob";
 import { toast } from "react-toastify";
-
-import styles from "./styles.module.css";
-import { ExileModal } from "../ExileModal";
+import { TextModal } from "../Modal";
 
 interface BuildFormProps {
   onSubmit: (buildData: BuildData) => void;
@@ -18,7 +16,8 @@ export function BuildImportForm({ onSubmit, onReset }: BuildFormProps) {
 
   return (
     <div className={classNames(formStyles.form)}>
-      <BuildImportModal
+      <TextModal
+        label="Path of Building Code"
         isOpen={modalOpen}
         onRequestClose={() => setModalOpen(false)}
         onSubmit={(pobCodeOrUrl) =>
@@ -59,59 +58,5 @@ export function BuildImportForm({ onSubmit, onReset }: BuildFormProps) {
         </button>
       </div>
     </div>
-  );
-}
-
-interface BuildImportModalProps {
-  isOpen: boolean;
-  onSubmit: (pobCodeOrUrl: string | undefined) => void;
-  onRequestClose: () => void;
-}
-
-function BuildImportModal({
-  isOpen,
-  onSubmit,
-  onRequestClose,
-}: BuildImportModalProps) {
-  const [pobCodeOrUrl, setPobCodeOrUrl] = useState<string>();
-
-  useEffect(() => {
-    if (!isOpen) setPobCodeOrUrl("");
-  }, [isOpen]);
-
-  return (
-    <ExileModal isOpen={isOpen} onRequestClose={onRequestClose}>
-      <div className={classNames(formStyles.form, styles.grow)}>
-        <div className={classNames(formStyles.formRow, styles.grow)}>
-          <label>Path of Building Code</label>
-          <textarea
-            spellCheck={false}
-            className={classNames(formStyles.formInput, styles.pobInput)}
-            value={pobCodeOrUrl || ""}
-            onChange={(e) => setPobCodeOrUrl(e.target.value)}
-            autoFocus={true}
-          />
-        </div>
-        <div className={classNames(formStyles.groupRight)}>
-          <button
-            className={classNames(formStyles.formButton)}
-            onClick={() => {
-              onRequestClose();
-            }}
-          >
-            Cancel
-          </button>
-          <button
-            className={classNames(formStyles.formButton)}
-            onClick={() => {
-              onRequestClose();
-              onSubmit(pobCodeOrUrl);
-            }}
-          >
-            Submit
-          </button>
-        </div>
-      </div>
-    </ExileModal>
   );
 }
