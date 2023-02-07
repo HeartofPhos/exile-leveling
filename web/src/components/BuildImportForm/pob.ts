@@ -5,7 +5,7 @@ import {
   BuildTree,
   RequiredGem,
 } from "../../../../common/route-processing";
-import { randomId } from "../../utility";
+import { decodeBase64Url, randomId } from "../../utility";
 
 const GEM_ID_REMAP: Record<string, string> = {
   // POB is weird https://github.com/PathOfBuildingCommunity/PathOfBuilding/blob/0d3bdf009c8bc9579eb8cffb5548f03c45e57373/src/Export/Scripts/skills.lua#L504
@@ -43,12 +43,10 @@ function MapGemId(gemId: string) {
 }
 
 function decodePathOfBuildingCode(code: string) {
-  const base64 = code.replace(/_/g, "/").replace(/-/g, "+");
-  const base64_bytes = Uint8Array.from(atob(base64), (c) => c.charCodeAt(0));
-  const inflated = pako.inflate(base64_bytes);
+  const buffer = pako.inflate(decodeBase64Url(code));
 
   const decoder = new TextDecoder();
-  const xmlString = decoder.decode(inflated);
+  const xmlString = decoder.decode(buffer);
 
   const parser = new DOMParser();
   const xml = parser.parseFromString(xmlString, "application/xml");

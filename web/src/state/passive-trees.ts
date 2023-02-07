@@ -1,7 +1,7 @@
 import Handlebars from "handlebars";
 import { PassiveTree } from "../../../common/data/tree";
 import { atom, DefaultValue, selector } from "recoil";
-import { getPersistent, globImportLazy } from "../utility";
+import { decodeBase64Url, getPersistent, globImportLazy } from "../utility";
 import { BuildTree } from "../../../common/route-processing";
 import { persistentStorageEffect } from ".";
 
@@ -98,10 +98,7 @@ export async function buildUrlTree(
   if (passiveTree === undefined || template === undefined)
     throw `invalid version ${buildTree.version}`;
 
-  const unescaped = data.replace(/-/g, "+").replace(/_/g, "/");
-  const buffer = Uint8Array.from(window.atob(unescaped), (c) =>
-    c.charCodeAt(0)
-  );
+  const buffer = decodeBase64Url(data);
 
   const version = read_u32(buffer, 0);
   const classId = buffer[4];

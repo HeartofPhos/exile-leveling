@@ -57,3 +57,8 @@ export function randomId(length: number) {
 
   return result;
 }
+
+export function decodeBase64Url(value: string) {
+  const unescaped = value.replace(/_/g, "/").replace(/-/g, "+");
+  return Uint8Array.from(window.atob(unescaped), (c) => c.charCodeAt(0));
+}
