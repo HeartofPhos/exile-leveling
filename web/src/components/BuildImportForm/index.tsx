@@ -89,6 +89,7 @@ function BuildImportModal({
             className={classNames(formStyles.formInput, styles.pobInput)}
             value={pobCodeOrUrl || ""}
             onChange={(e) => setPobCodeOrUrl(e.target.value)}
+            autoFocus={true}
           />
         </div>
         <div className={classNames(formStyles.groupRight)}>
