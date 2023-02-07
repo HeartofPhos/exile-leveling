@@ -6,13 +6,13 @@ import { useRecoilValue } from "recoil";
 import { SectionHolder } from "../../components/SectionHolder";
 import { ExileFragmentStep } from "../../components/ExileFragment";
 import { gemProgressSelectorFamily } from "../../state/gem-progress";
-import { buildRouteSelector } from "../../state/route";
+import { extendedRouteSelector } from "../../state/route";
 import { routeProgressSelectorFamily } from "../../state/route-progress";
 import { Sidebar } from "../../components/Sidebar";
 import { withBlank } from "../../utility/withBlank";
 
 function RoutesContainer() {
-  const route = useRecoilValue(buildRouteSelector);
+  const route = useRecoilValue(extendedRouteSelector);
 
   const items: ReactNode[] = [];
   for (let sectionIndex = 0; sectionIndex < route.length; sectionIndex++) {

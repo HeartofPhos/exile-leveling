@@ -10,7 +10,7 @@ import {
   FaUndoAlt,
 } from "react-icons/fa";
 import { useRecoilCallback, useRecoilValue } from "recoil";
-import { buildRouteSelector } from "../../state/route";
+import { extendedRouteSelector } from "../../state/route";
 import { routeFilesSelector } from "../../state/route-files";
 import { useClearRouteProgress } from "../../state/route-progress";
 import { useClearGemProgress } from "../../state/gem-progress";
@@ -49,7 +49,7 @@ export function Navbar({}: NavbarProps) {
   const clipboardRoute = useRecoilCallback(
     ({ snapshot }) =>
       async () => {
-        const route = await snapshot.getPromise(buildRouteSelector);
+        const route = await snapshot.getPromise(extendedRouteSelector);
         navigator.clipboard.writeText(JSON.stringify(route));
       },
     []
