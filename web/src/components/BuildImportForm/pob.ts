@@ -1,6 +1,10 @@
 import pako from "pako";
 import { awakenedGemLookup, vaalGemLookup } from "../../../../common/data";
-import { BuildData } from "../../../../common/route-processing";
+import {
+  BuildData,
+  BuildTree,
+  RequiredGem,
+} from "../../../../common/route-processing";
 import { randomId } from "../../utility";
 
 const GEM_ID_REMAP: Record<string, string> = {
@@ -55,7 +59,7 @@ function decodePathOfBuildingCode(code: string) {
 const POB_COLOUR_REGEX = /\^(x[a-zA-Z0-9]{6}|[0-9])/;
 
 function processSkills(
-  requiredGems: BuildData["requiredGems"],
+  requiredGems: RequiredGem[],
   parentElement: Element,
   parentTitle: string | undefined
 ) {
@@ -89,15 +93,20 @@ function processSkills(
   }
 }
 
-export function processPob(pobCode: string): BuildData | undefined {
+export interface PobData {
+  buildData: BuildData;
+  requiredGems: RequiredGem[];
+  passiveTrees: BuildTree[];
+}
+
+export function processPob(pobCode: string): PobData | undefined {
   let doc;
   try {
     doc = decodePathOfBuildingCode(pobCode);
   } catch (e) {
     return undefined;
   }
-  const requiredGems: BuildData["requiredGems"] = [];
-
+  const requiredGems: RequiredGem[] = [];
   const skillSetElements = Array.from(doc.getElementsByTagName("SkillSet"));
   if (skillSetElements.length > 0) {
     for (const skillSetElement of skillSetElements) {
@@ -117,7 +126,7 @@ export function processPob(pobCode: string): BuildData | undefined {
   const bandit =
     buildElement[0].attributes.getNamedItem("bandit")?.value || "None";
 
-  let passiveTrees: BuildData["passiveTrees"] = [];
+  const passiveTrees: BuildTree[] = [];
   const specElements = Array.from(doc.getElementsByTagName("Spec"));
   for (const specElement of specElements) {
     passiveTrees.push({
@@ -128,12 +137,14 @@ export function processPob(pobCode: string): BuildData | undefined {
   }
 
   return {
-    characterClass: characterClass!,
-    requiredGems: requiredGems,
-    bandit: bandit as BuildData["bandit"],
-    leagueStart: true,
-    passiveTrees: passiveTrees,
-    library: true,
+    buildData: {
+      characterClass: characterClass!,
+      bandit: bandit as BuildData["bandit"],
+      leagueStart: true,
+      library: true,
+    },
+    requiredGems,
+    passiveTrees,
   };
 }
 

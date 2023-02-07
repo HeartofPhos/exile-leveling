@@ -5,7 +5,7 @@ import type { BuildData } from "../../../common/route-processing";
 import { getPersistent } from "../utility";
 import { gemProgressKeys, gemProgressSelectorFamily } from "./gem-progress";
 
-const BUILD_DATA_VERSION = 2;
+const BUILD_DATA_VERSION = 3;
 
 const buildDataAtom = atom<BuildData | null>({
   key: "buildDataAtom",
@@ -15,29 +15,19 @@ const buildDataAtom = atom<BuildData | null>({
 export const buildDataSelector = selector<BuildData>({
   key: "buildDataSelector",
   get: ({ get }) => {
-    let buildData = get(buildDataAtom);
-    if (buildData === null)
-      buildData = {
+    let value = get(buildDataAtom);
+    if (value === null)
+      value = {
         characterClass: "None",
-        requiredGems: [],
         bandit: "None",
-        passiveTrees: [],
         leagueStart: true,
         library: true,
       };
 
-    return buildData;
+    return value;
   },
   set: ({ set }, newValue) => {
     const value = newValue instanceof DefaultValue ? null : newValue;
-
     set(buildDataAtom, value);
-
-    for (const key of gemProgressKeys()) {
-      const exists =
-        value?.requiredGems.find((x) => x.uid == key) !== undefined;
-
-      if (!exists) set(gemProgressSelectorFamily(key), false);
-    }
   },
 });

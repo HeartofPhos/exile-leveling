@@ -9,7 +9,7 @@ import {
 import {
   TREE_DATA_LOOKUP,
   TREE_TEMPLATE_LOOKUP,
-  UrlSkillTree,
+  UrlTree,
 } from "../../state/passive-trees";
 import styles from "./styles.module.css";
 import classNames from "classnames";
@@ -18,7 +18,7 @@ import { formStyles } from "../Form";
 import { randomId } from "../../utility";
 
 interface PassiveTreeViewerProps {
-  urlSkillTrees: UrlSkillTree.Data[];
+  urlTrees: UrlTree.Data[];
 }
 
 interface RenderInfo {
@@ -27,18 +27,18 @@ interface RenderInfo {
   masteryInfos: MasteryInfo[];
 }
 
-export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
+export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
   const svgDivRef = useRef<HTMLDivElement>(null);
   const [curIndex, setCurIndex] = useState<number>(0);
   const [renderInfo, setRenderInfo] = useState<RenderInfo>();
 
   useEffect(() => {
     async function fn() {
-      if (urlSkillTrees.length == 0) return;
+      if (urlTrees.length == 0) return;
 
-      const curTree = urlSkillTrees[curIndex];
-      let prevTree: UrlSkillTree.Data;
-      if (curIndex != 0) prevTree = urlSkillTrees[curIndex - 1];
+      const curTree = urlTrees[curIndex];
+      let prevTree: UrlTree.Data;
+      if (curIndex != 0) prevTree = urlTrees[curIndex - 1];
       else {
         prevTree = {
           name: curTree.name,
@@ -100,7 +100,7 @@ export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
     }
 
     fn();
-  }, [urlSkillTrees, curIndex]);
+  }, [urlTrees, curIndex]);
 
   useEffect(() => {
     if (svgDivRef.current === null) return;
@@ -135,8 +135,7 @@ export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
             />
           </Viewport>
           <label className={classNames(styles.label)}>
-            {urlSkillTrees.length > 0 &&
-              (urlSkillTrees[curIndex].name || "Default")}
+            {urlTrees.length > 0 && (urlTrees[curIndex].name || "Default")}
           </label>
           <div className={classNames(styles.buttons)}>
             <HiChevronLeft
@@ -148,8 +147,7 @@ export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
             <HiChevronRight
               className={classNames(formStyles.formButton, styles.button)}
               onClick={() => {
-                if (curIndex < urlSkillTrees.length - 1)
-                  setCurIndex(curIndex + 1);
+                if (curIndex < urlTrees.length - 1) setCurIndex(curIndex + 1);
               }}
             />
           </div>

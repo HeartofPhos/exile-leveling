@@ -1,6 +1,7 @@
 import { selector } from "recoil";
 import { Route, Section } from "../../../common/route-processing";
 import { buildDataSelector } from "./build-data";
+import { requiredGemsSelector } from "./gem";
 import { routeFilesSelector } from "./route-files";
 
 const baseRouteSelector = selector({
@@ -50,6 +51,7 @@ export const buildRouteSelector = selector({
 
     const baseRoute = get(baseRouteSelector);
     const buildData = get(buildDataSelector);
+    const requiredGems = get(requiredGemsSelector);
 
     if (!buildData) return baseRoute;
 
@@ -62,7 +64,12 @@ export const buildRouteSelector = selector({
         if (step.type == "fragment_step") {
           for (const part of step.parts) {
             if (typeof part !== "string" && part.type == "quest") {
-              const gemSteps = buildGemSteps(part, buildData, routeGems);
+              const gemSteps = buildGemSteps(
+                part,
+                buildData,
+                requiredGems,
+                routeGems
+              );
               buildSection.steps.push(...gemSteps);
             }
           }

@@ -1,9 +1,9 @@
 import Handlebars from "handlebars";
 import { PassiveTree } from "../../../common/data/tree";
-import { selector } from "recoil";
-import { buildDataSelector } from "./build-data";
-import { globImportLazy } from "../utility";
-import { BuildPassiveTree } from "../../../common/route-processing";
+import { atom, DefaultValue, selector } from "recoil";
+import { getPersistent, globImportLazy } from "../utility";
+import { BuildTree } from "../../../common/route-processing";
+import { persistentStorageEffect } from ".";
 
 export const TREE_DATA_LOOKUP = globImportLazy<PassiveTree.Data>(
   import.meta.glob("../../../common/data/tree/*.json"),
@@ -20,42 +20,62 @@ export const TREE_TEMPLATE_LOOKUP = globImportLazy(
       .then((template) => Handlebars.compile(template))
 );
 
-export const urlSkillTreesSelector = selector({
-  key: "urlSkillTreesSelector",
-  get: async ({ get }) => {
-    const buildData = get(buildDataSelector);
+const BUILD_PASSIVE_TREES_VERSION = 0;
 
-    const urlSkillTrees: UrlSkillTree.Data[] = [];
-    for (const buildTree of buildData.passiveTrees) {
-      try {
-        const urlSkillTree = await buildUrlSkillTree(buildTree);
+const buildTreesAtom = atom<BuildTree[] | null>({
+  key: "buildTreesAtom",
+  default: getPersistent("build-trees", BUILD_PASSIVE_TREES_VERSION),
+  effects: [
+    persistentStorageEffect("build-trees", BUILD_PASSIVE_TREES_VERSION),
+  ],
+});
 
-        const hasNodes =
-          urlSkillTree.ascendancy === undefined
-            ? urlSkillTree.nodes.length > 0
-            : urlSkillTree.nodes.length > 1;
-        if (!hasNodes) continue;
+export const buildTreesSelector = selector<BuildTree[]>({
+  key: "buildTreesSelector",
+  get: ({ get }) => {
+    let value = get(buildTreesAtom);
+    if (value === null) value = [];
 
-        urlSkillTrees.push(urlSkillTree);
-      } catch (e) {
-        console.error(
-          `could not process UrlSkillTree, ${e}, ${buildTree.name}`
-        );
-      }
-    }
-
-    if (urlSkillTrees.length > 0) {
-      const version = urlSkillTrees[0].version;
-      return {
-        urlSkillTrees: urlSkillTrees.filter((x) => x.version == version),
-      };
-    }
-
-    return { urlSkillTrees };
+    return value;
+  },
+  set: ({ set }, newValue) => {
+    const value = newValue instanceof DefaultValue ? null : newValue;
+    set(buildTreesAtom, value);
   },
 });
 
-export namespace UrlSkillTree {
+export const urlTreesSelector = selector({
+  key: "urlTreesSelector",
+  get: async ({ get }) => {
+    const buildPassiveTrees = get(buildTreesSelector);
+
+    let urlTrees: UrlTree.Data[] = [];
+    for (const buildTree of buildPassiveTrees) {
+      try {
+        const urlTree = await buildUrlTree(buildTree);
+
+        const hasNodes =
+          urlTree.ascendancy === undefined
+            ? urlTree.nodes.length > 0
+            : urlTree.nodes.length > 1;
+        if (!hasNodes) continue;
+
+        urlTrees.push(urlTree);
+      } catch (e) {
+        console.error(`could not process BuildTree, ${e}, ${buildTree.name}`);
+      }
+    }
+
+    if (urlTrees.length > 0) {
+      const version = urlTrees[0].version;
+      urlTrees = urlTrees.filter((x) => x.version == version);
+    }
+
+    return { urlTrees };
+  },
+});
+
+export namespace UrlTree {
   export interface Data {
     name: string;
     version: string;
@@ -66,9 +86,9 @@ export namespace UrlSkillTree {
   }
 }
 
-export async function buildUrlSkillTree(
-  buildTree: BuildPassiveTree
-): Promise<UrlSkillTree.Data> {
+export async function buildUrlTree(
+  buildTree: BuildTree
+): Promise<UrlTree.Data> {
   const data = /.*\/(.*?)$/.exec(buildTree.url)?.[1];
   if (!data) throw `invalid url ${buildTree.url}`;
 
@@ -108,7 +128,7 @@ export async function buildUrlSkillTree(
     .map((x) => x.toString())
     .filter((x) => passiveTree.nodes[x] !== undefined);
 
-  const masteries: UrlSkillTree.Data["masteries"] = {};
+  const masteries: UrlTree.Data["masteries"] = {};
   const masteryData = read_u16s(buffer, masteryOffset, masteryCount);
   for (let i = 0; i < masteryData.length; i += 2) {
     const nodeId = masteryData[i + 1].toString();

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FaRegClipboard } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useRecoilValue } from "recoil";
-import { urlSkillTreesSelector } from "../../state/passive-trees";
+import { urlTreesSelector } from "../../state/passive-trees";
 import { searchStringsAtom } from "../../state/search-strings";
 import { borderListStyles } from "../BorderList";
 import { PassiveTreeViewer } from "../PassiveTreeViewer";
@@ -11,12 +11,12 @@ import styles from "./styles.module.css";
 
 export function Sidebar() {
   const searchStrings = useRecoilValue(searchStringsAtom);
-  const { urlSkillTrees } = useRecoilValue(urlSkillTreesSelector);
+  const { urlTrees } = useRecoilValue(urlTreesSelector);
   const [expand, setExpand] = useState(true);
 
   const expandIcon = expand ? <FiChevronRight /> : <FiChevronLeft />;
 
-  const passiveTreeViewerActive = urlSkillTrees.length > 0;
+  const passiveTreeViewerActive = urlTrees.length > 0;
   const searchStringsActive =
     searchStrings !== null && searchStrings.length > 0;
 
@@ -47,7 +47,7 @@ export function Sidebar() {
       >
         {passiveTreeViewerActive && (
           <>
-            <PassiveTreeViewer urlSkillTrees={urlSkillTrees} />
+            <PassiveTreeViewer urlTrees={urlTrees} />
           </>
         )}
         {passiveTreeViewerActive && searchStringsActive && <hr />}

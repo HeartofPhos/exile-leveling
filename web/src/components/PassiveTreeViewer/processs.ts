@@ -1,6 +1,6 @@
 import { PassiveTree } from "../../../../common/data/tree";
-import { BuildPassiveTree } from "../../../../common/route-processing";
-import { UrlSkillTree } from "../../state/passive-trees";
+import { BuildTree } from "../../../../common/route-processing";
+import { UrlTree } from "../../state/passive-trees";
 
 function intersection<T>(setA: Set<T>, setB: Set<T>) {
   const _intersection = new Set<T>();
@@ -138,7 +138,7 @@ export interface MasteryInfo {
 
 export function buildMasteryInfos(
   passiveTree: PassiveTree.Data,
-  masteriesArr: UrlSkillTree.Data["masteries"][]
+  masteriesArr: UrlTree.Data["masteries"][]
 ) {
   const masteryInfos: MasteryInfo[] = [];
   for (const masteries of masteriesArr) {
