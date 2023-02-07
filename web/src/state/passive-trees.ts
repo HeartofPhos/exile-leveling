@@ -103,9 +103,10 @@ export async function buildUrlSkillTree(
     masteryCount = buffer[masteryOffset - 1] * 2;
   } else throw "invalid url version";
 
-  const nodes = read_u16s(buffer, nodesOffset, nodesCount).map((x) =>
-    x.toString()
-  );
+  // Filter nodes e.g. cluster jewels
+  const nodes = read_u16s(buffer, nodesOffset, nodesCount)
+    .map((x) => x.toString())
+    .filter((x) => passiveTree.nodes[x] !== undefined);
 
   const masteries: UrlSkillTree.Data["masteries"] = {};
   const masteryData = read_u16s(buffer, masteryOffset, masteryCount);

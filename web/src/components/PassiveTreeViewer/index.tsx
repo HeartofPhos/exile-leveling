@@ -135,7 +135,8 @@ export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
             />
           </Viewport>
           <label className={classNames(styles.label)}>
-            {urlSkillTrees.length > 0 && urlSkillTrees[curIndex].name}
+            {urlSkillTrees.length > 0 &&
+              (urlSkillTrees[curIndex].name || "Default")}
           </label>
           <div className={classNames(styles.buttons)}>
             <HiChevronLeft

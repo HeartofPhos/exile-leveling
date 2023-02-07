@@ -181,7 +181,7 @@ function filterConnection(a: SkillTree.Node, b: SkillTree.Node) {
     filterNode(b) &&
     !a.isMastery &&
     !b.isMastery &&
-    (a.ascendancyName === undefined) === (b.ascendancyName === undefined)
+    a.ascendancyName === b.ascendancyName
   );
 }
 
