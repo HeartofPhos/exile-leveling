@@ -96,7 +96,7 @@ function processSkills(
 export interface PobData {
   buildData: BuildData;
   requiredGems: RequiredGem[];
-  passiveTrees: BuildTree[];
+  buildTrees: BuildTree[];
 }
 
 export function processPob(pobCode: string): PobData | undefined {
@@ -126,10 +126,10 @@ export function processPob(pobCode: string): PobData | undefined {
   const bandit =
     buildElement[0].attributes.getNamedItem("bandit")?.value || "None";
 
-  const passiveTrees: BuildTree[] = [];
+  const buildTrees: BuildTree[] = [];
   const specElements = Array.from(doc.getElementsByTagName("Spec"));
   for (const specElement of specElements) {
-    passiveTrees.push({
+    buildTrees.push({
       name: specElement.getAttribute("title")!,
       version: specElement.getAttribute("treeVersion")!,
       url: specElement.getElementsByTagName("URL")[0].textContent?.trim()!,
@@ -144,7 +144,7 @@ export function processPob(pobCode: string): PobData | undefined {
       library: true,
     },
     requiredGems,
-    passiveTrees,
+    buildTrees,
   };
 }
 

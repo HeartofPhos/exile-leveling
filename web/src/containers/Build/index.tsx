@@ -5,11 +5,11 @@ import { buildDataSelector } from "../../state/build-data";
 import { searchStringsAtom } from "../../state/search-strings";
 import { BuildInfoForm, GemOrderList } from "../../components/BuildEditForm";
 import { formStyles } from "../../components/Form";
-import classNames from "classnames";
-import styles from "./styles.module.css";
 import { withBlank } from "../../utility/withBlank";
 import { requiredGemsSelector } from "../../state/gem";
 import { buildTreesSelector } from "../../state/passive-trees";
+import classNames from "classnames";
+import styles from "./styles.module.css";
 
 function BuildContainer() {
   const [buildData, setBuildData] = useRecoilState(buildDataSelector);
@@ -18,12 +18,9 @@ function BuildContainer() {
   const [requiredGems, setRequiredGems] = useRecoilState(requiredGemsSelector);
   const resetRequiredGems = useResetRecoilState(requiredGemsSelector);
 
-  const [buildPassiveTrees, setBuildPassiveTreesSelector] = useRecoilState(
-    buildTreesSelector
-  );
-  const resetBuildPassiveTreesSelector = useResetRecoilState(
-    buildTreesSelector
-  );
+  const [buildTrees, setBuildTreesSelector] =
+    useRecoilState(buildTreesSelector);
+  const resetBuildTreesSelector = useResetRecoilState(buildTreesSelector);
 
   return (
     <div>
@@ -40,12 +37,12 @@ function BuildContainer() {
           onSubmit={(pobData) => {
             setBuildData(pobData.buildData);
             setRequiredGems(pobData.requiredGems);
-            setBuildPassiveTreesSelector(pobData.passiveTrees);
+            setBuildTreesSelector(pobData.buildTrees);
           }}
           onReset={() => {
             resetBuildData();
             resetRequiredGems();
-            resetBuildPassiveTreesSelector();
+            resetBuildTreesSelector();
           }}
         />
       </div>
