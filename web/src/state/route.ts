@@ -42,8 +42,8 @@ const baseRouteSelector = selector({
   },
 });
 
-export const extendedRouteSelector = selector({
-  key: "extendedRouteSelector",
+export const routeSelector = selector({
+  key: "routeSelector",
   get: async ({ get }) => {
     const { buildGemSteps } = await import(
       "../../../common/route-processing/gems"
@@ -55,7 +55,7 @@ export const extendedRouteSelector = selector({
 
     if (requiredGems.length == 0) return baseRoute;
 
-    const extendedRoute: Route = [];
+    const route: Route = [];
     const routeGems: Set<number> = new Set();
     for (const section of baseRoute) {
       const buildSection: Section = { name: section.name, steps: [] };
@@ -76,9 +76,9 @@ export const extendedRouteSelector = selector({
         }
       }
 
-      extendedRoute.push(buildSection);
+      route.push(buildSection);
     }
 
-    return extendedRoute;
+    return route;
   },
 });
