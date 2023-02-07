@@ -82,7 +82,7 @@ export namespace UrlTree {
     class: PassiveTree.Class;
     ascendancy?: PassiveTree.Ascendancy;
     nodes: string[];
-    masteries: Record<string, string>;
+    masteryLookup: Record<string, string>;
   }
 }
 
@@ -128,7 +128,7 @@ export async function buildUrlTree(
     .map((x) => x.toString())
     .filter((x) => passiveTree.nodes[x] !== undefined);
 
-  const masteries: UrlTree.Data["masteries"] = {};
+  const masteries: UrlTree.Data["masteryLookup"] = {};
   const masteryData = read_u16s(buffer, masteryOffset, masteryCount);
   for (let i = 0; i < masteryData.length; i += 2) {
     const nodeId = masteryData[i + 1].toString();
@@ -151,7 +151,7 @@ export async function buildUrlTree(
         ? passiveTree.classes[classId].ascendancies[ascendancyId - 1]
         : undefined,
     nodes: nodes,
-    masteries: masteries,
+    masteryLookup: masteries,
   };
 }
 

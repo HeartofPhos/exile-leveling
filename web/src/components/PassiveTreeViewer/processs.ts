@@ -138,11 +138,11 @@ export interface MasteryInfo {
 
 export function buildMasteryInfos(
   passiveTree: PassiveTree.Data,
-  masteriesArr: UrlTree.Data["masteries"][]
+  masteryLookups: UrlTree.Data["masteryLookup"][]
 ) {
   const masteryInfos: MasteryInfo[] = [];
-  for (const masteries of masteriesArr) {
-    for (const [nodeId, effectId] of Object.entries(masteries)) {
+  for (const masteryLookup of masteryLookups) {
+    for (const [nodeId, effectId] of Object.entries(masteryLookup)) {
       masteryInfos.push({
         nodeId: nodeId,
         info: passiveTree.masteryEffects[effectId].stats.join("\n"),

@@ -46,7 +46,7 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
           class: curTree.class,
           ascendancy: curTree.ascendancy,
           nodes: [],
-          masteries: {},
+          masteryLookup: {},
         };
         if (curTree.ascendancy)
           prevTree.nodes.push(curTree.nodes[curTree.nodes.length - 1]);
@@ -88,8 +88,8 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
       });
 
       const masteryInfos = buildMasteryInfos(passiveTree, [
-        curTree.masteries,
-        prevTree.masteries,
+        curTree.masteryLookup,
+        prevTree.masteryLookup,
       ]);
 
       setRenderInfo({
