@@ -1,11 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Viewport, ViewportProps } from "../Viewport";
-import {
-  groupNodes,
-  calculateBounds,
-  MasteryInfo,
-  buildMasteryInfos,
-} from "./processs";
+import { groupNodes, calculateBounds, buildMasteryInfos } from "./processs";
 import {
   TREE_DATA_LOOKUP,
   TREE_TEMPLATE_LOOKUP,
@@ -24,7 +19,7 @@ interface PassiveTreeViewerProps {
 interface RenderInfo {
   svg: string;
   intialFocus: ViewportProps["intialFocus"];
-  masteryInfos: MasteryInfo[];
+  masteryInfos: Record<string, string>;
 }
 
 export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
@@ -106,7 +101,7 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
     if (svgDivRef.current === null) return;
     if (renderInfo === undefined) return;
 
-    for (const { nodeId, info } of renderInfo.masteryInfos) {
+    for (const [nodeId, info] of Object.entries(renderInfo.masteryInfos)) {
       const node = svgDivRef.current.querySelector<SVGElement>(`#n${nodeId}`);
       if (node === null) return;
 

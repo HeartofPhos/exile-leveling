@@ -130,23 +130,15 @@ export function calculateBounds(
     height: h,
   };
 }
-
-export interface MasteryInfo {
-  nodeId: string;
-  info: string;
-}
-
 export function buildMasteryInfos(
   passiveTree: PassiveTree.Data,
   masteryLookups: UrlTree.Data["masteryLookup"][]
 ) {
-  const masteryInfos: MasteryInfo[] = [];
+  const masteryInfos: Record<string, string> = {};
   for (const masteryLookup of masteryLookups) {
     for (const [nodeId, effectId] of Object.entries(masteryLookup)) {
-      masteryInfos.push({
-        nodeId: nodeId,
-        info: passiveTree.masteryEffects[effectId].stats.join("\n"),
-      });
+      masteryInfos[nodeId] =
+        passiveTree.masteryEffects[effectId].stats.join("\n");
     }
   }
 
