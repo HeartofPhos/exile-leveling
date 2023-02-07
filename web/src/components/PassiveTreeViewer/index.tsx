@@ -1,15 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Viewport, ViewportProps } from "../Viewport";
-import {
-  groupNodes,
-  calculateBounds,
-  MasteryInfo,
-  buildMasteryInfos,
-} from "./processs";
+import { groupNodes, calculateBounds, buildMasteryInfos } from "./processs";
 import {
   TREE_DATA_LOOKUP,
   TREE_TEMPLATE_LOOKUP,
-  UrlSkillTree,
+  UrlTree,
 } from "../../state/passive-trees";
 import styles from "./styles.module.css";
 import classNames from "classnames";
@@ -18,27 +13,27 @@ import { formStyles } from "../Form";
 import { randomId } from "../../utility";
 
 interface PassiveTreeViewerProps {
-  urlSkillTrees: UrlSkillTree.Data[];
+  urlTrees: UrlTree.Data[];
 }
 
 interface RenderInfo {
   svg: string;
   intialFocus: ViewportProps["intialFocus"];
-  masteryInfos: MasteryInfo[];
+  masteryInfos: Record<string, string>;
 }
 
-export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
+export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
   const svgDivRef = useRef<HTMLDivElement>(null);
   const [curIndex, setCurIndex] = useState<number>(0);
   const [renderInfo, setRenderInfo] = useState<RenderInfo>();
 
   useEffect(() => {
     async function fn() {
-      if (urlSkillTrees.length == 0) return;
+      if (urlTrees.length == 0) return;
 
-      const curTree = urlSkillTrees[curIndex];
-      let prevTree: UrlSkillTree.Data;
-      if (curIndex != 0) prevTree = urlSkillTrees[curIndex - 1];
+      const curTree = urlTrees[curIndex];
+      let prevTree: UrlTree.Data;
+      if (curIndex != 0) prevTree = urlTrees[curIndex - 1];
       else {
         prevTree = {
           name: curTree.name,
@@ -46,7 +41,7 @@ export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
           class: curTree.class,
           ascendancy: curTree.ascendancy,
           nodes: [],
-          masteries: {},
+          masteryLookup: {},
         };
         if (curTree.ascendancy)
           prevTree.nodes.push(curTree.nodes[curTree.nodes.length - 1]);
@@ -88,8 +83,8 @@ export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
       });
 
       const masteryInfos = buildMasteryInfos(passiveTree, [
-        curTree.masteries,
-        prevTree.masteries,
+        curTree.masteryLookup,
+        prevTree.masteryLookup,
       ]);
 
       setRenderInfo({
@@ -100,13 +95,13 @@ export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
     }
 
     fn();
-  }, [urlSkillTrees, curIndex]);
+  }, [urlTrees, curIndex]);
 
   useEffect(() => {
     if (svgDivRef.current === null) return;
     if (renderInfo === undefined) return;
 
-    for (const { nodeId, info } of renderInfo.masteryInfos) {
+    for (const [nodeId, info] of Object.entries(renderInfo.masteryInfos)) {
       const node = svgDivRef.current.querySelector<SVGElement>(`#n${nodeId}`);
       if (node === null) return;
 
@@ -135,8 +130,7 @@ export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
             />
           </Viewport>
           <label className={classNames(styles.label)}>
-            {urlSkillTrees.length > 0 &&
-              (urlSkillTrees[curIndex].name || "Default")}
+            {urlTrees.length > 0 && (urlTrees[curIndex].name || "Default")}
           </label>
           <div className={classNames(styles.buttons)}>
             <HiChevronLeft
@@ -148,8 +142,7 @@ export function PassiveTreeViewer({ urlSkillTrees }: PassiveTreeViewerProps) {
             <HiChevronRight
               className={classNames(formStyles.formButton, styles.button)}
               onClick={() => {
-                if (curIndex < urlSkillTrees.length - 1)
-                  setCurIndex(curIndex + 1);
+                if (curIndex < urlTrees.length - 1) setCurIndex(curIndex + 1);
               }}
             />
           </div>

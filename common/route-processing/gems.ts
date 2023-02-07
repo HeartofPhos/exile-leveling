@@ -12,6 +12,7 @@ export interface GemStep {
 export function buildGemSteps(
   questFragment: QuestFragment,
   buildData: BuildData,
+  requiredGems: RequiredGem[],
   routeGems: Set<number>
 ) {
   const quest = quests[questFragment.questId];
@@ -20,23 +21,29 @@ export function buildGemSteps(
   for (const index of questFragment.rewardOffers) {
     const reward_offer = quest.reward_offers[index];
 
-    const questReward = findQuestGem(buildData, routeGems, reward_offer.quest);
+    const questReward = findQuestGem(
+      buildData,
+      requiredGems,
+      routeGems,
+      reward_offer.quest
+    );
     if (questReward !== null)
       gemSteps.push({
         type: "gem_step",
-        requiredGem: buildData.requiredGems[questReward],
+        requiredGem: requiredGems[questReward],
         rewardType: "quest",
       });
 
     const vendorRewards = findVendorGems(
       buildData,
+      requiredGems,
       routeGems,
       reward_offer.vendor
     );
     for (const vendorReward of vendorRewards) {
       gemSteps.push({
         type: "gem_step",
-        requiredGem: buildData.requiredGems[vendorReward],
+        requiredGem: requiredGems[vendorReward],
         rewardType: "vendor",
       });
     }
@@ -47,11 +54,12 @@ export function buildGemSteps(
 
 function findQuestGem(
   buildData: BuildData,
+  requiredGems: RequiredGem[],
   routeGems: Set<number>,
   quest_rewards: Quest["reward_offers"][0]["quest"]
 ): number | null {
-  for (let i = 0; i < buildData.requiredGems.length; i++) {
-    const requiredGem = buildData.requiredGems[i];
+  for (let i = 0; i < requiredGems.length; i++) {
+    const requiredGem = requiredGems[i];
     if (routeGems.has(i)) continue;
 
     const reward = quest_rewards[requiredGem.id];
@@ -72,12 +80,13 @@ function findQuestGem(
 
 function findVendorGems(
   buildData: BuildData,
+  requiredGems: RequiredGem[],
   routeGems: Set<number>,
   vendor_rewards: Quest["reward_offers"][0]["vendor"]
 ): number[] {
   const result: number[] = [];
-  for (let i = 0; i < buildData.requiredGems.length; i++) {
-    const requiredGem = buildData.requiredGems[i];
+  for (let i = 0; i < requiredGems.length; i++) {
+    const requiredGem = requiredGems[i];
     if (routeGems.has(i)) continue;
 
     const reward = vendor_rewards[requiredGem.id];

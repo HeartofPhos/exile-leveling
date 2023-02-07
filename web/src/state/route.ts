@@ -1,6 +1,7 @@
 import { selector } from "recoil";
 import { Route, Section } from "../../../common/route-processing";
 import { buildDataSelector } from "./build-data";
+import { requiredGemsSelector } from "./gem";
 import { routeFilesSelector } from "./route-files";
 
 const baseRouteSelector = selector({
@@ -41,8 +42,8 @@ const baseRouteSelector = selector({
   },
 });
 
-export const buildRouteSelector = selector({
-  key: "buildRouteSelector",
+export const routeSelector = selector({
+  key: "routeSelector",
   get: async ({ get }) => {
     const { buildGemSteps } = await import(
       "../../../common/route-processing/gems"
@@ -50,10 +51,11 @@ export const buildRouteSelector = selector({
 
     const baseRoute = get(baseRouteSelector);
     const buildData = get(buildDataSelector);
+    const requiredGems = get(requiredGemsSelector);
 
-    if (!buildData) return baseRoute;
+    if (requiredGems.length == 0) return baseRoute;
 
-    const buildRoute: Route = [];
+    const route: Route = [];
     const routeGems: Set<number> = new Set();
     for (const section of baseRoute) {
       const buildSection: Section = { name: section.name, steps: [] };
@@ -62,16 +64,21 @@ export const buildRouteSelector = selector({
         if (step.type == "fragment_step") {
           for (const part of step.parts) {
             if (typeof part !== "string" && part.type == "quest") {
-              const gemSteps = buildGemSteps(part, buildData, routeGems);
+              const gemSteps = buildGemSteps(
+                part,
+                buildData,
+                requiredGems,
+                routeGems
+              );
               buildSection.steps.push(...gemSteps);
             }
           }
         }
       }
 
-      buildRoute.push(buildSection);
+      route.push(buildSection);
     }
 
-    return buildRoute;
+    return route;
   },
 });

@@ -1,7 +1,11 @@
 import pako from "pako";
 import { awakenedGemLookup, vaalGemLookup } from "../../../../common/data";
-import { BuildData } from "../../../../common/route-processing";
-import { randomId } from "../../utility";
+import {
+  BuildData,
+  BuildTree,
+  RequiredGem,
+} from "../../../../common/route-processing";
+import { decodeBase64Url, randomId } from "../../utility";
 
 const GEM_ID_REMAP: Record<string, string> = {
   // POB is weird https://github.com/PathOfBuildingCommunity/PathOfBuilding/blob/0d3bdf009c8bc9579eb8cffb5548f03c45e57373/src/Export/Scripts/skills.lua#L504
@@ -39,12 +43,10 @@ function MapGemId(gemId: string) {
 }
 
 function decodePathOfBuildingCode(code: string) {
-  const base64 = code.replace(/_/g, "/").replace(/-/g, "+");
-  const base64_bytes = Uint8Array.from(atob(base64), (c) => c.charCodeAt(0));
-  const inflated = pako.inflate(base64_bytes);
+  const buffer = pako.inflate(decodeBase64Url(code));
 
   const decoder = new TextDecoder();
-  const xmlString = decoder.decode(inflated);
+  const xmlString = decoder.decode(buffer);
 
   const parser = new DOMParser();
   const xml = parser.parseFromString(xmlString, "application/xml");
@@ -55,7 +57,7 @@ function decodePathOfBuildingCode(code: string) {
 const POB_COLOUR_REGEX = /\^(x[a-zA-Z0-9]{6}|[0-9])/;
 
 function processSkills(
-  requiredGems: BuildData["requiredGems"],
+  requiredGems: RequiredGem[],
   parentElement: Element,
   parentTitle: string | undefined
 ) {
@@ -89,15 +91,20 @@ function processSkills(
   }
 }
 
-export function processPob(pobCode: string): BuildData | undefined {
+export interface PobData {
+  buildData: BuildData;
+  requiredGems: RequiredGem[];
+  buildTrees: BuildTree[];
+}
+
+export function processPob(pobCode: string): PobData | undefined {
   let doc;
   try {
     doc = decodePathOfBuildingCode(pobCode);
   } catch (e) {
     return undefined;
   }
-  const requiredGems: BuildData["requiredGems"] = [];
-
+  const requiredGems: RequiredGem[] = [];
   const skillSetElements = Array.from(doc.getElementsByTagName("SkillSet"));
   if (skillSetElements.length > 0) {
     for (const skillSetElement of skillSetElements) {
@@ -117,10 +124,10 @@ export function processPob(pobCode: string): BuildData | undefined {
   const bandit =
     buildElement[0].attributes.getNamedItem("bandit")?.value || "None";
 
-  let passiveTrees: BuildData["passiveTrees"] = [];
+  const buildTrees: BuildTree[] = [];
   const specElements = Array.from(doc.getElementsByTagName("Spec"));
   for (const specElement of specElements) {
-    passiveTrees.push({
+    buildTrees.push({
       name: specElement.getAttribute("title")!,
       version: specElement.getAttribute("treeVersion")!,
       url: specElement.getElementsByTagName("URL")[0].textContent?.trim()!,
@@ -128,12 +135,14 @@ export function processPob(pobCode: string): BuildData | undefined {
   }
 
   return {
-    characterClass: characterClass!,
-    requiredGems: requiredGems,
-    bandit: bandit as BuildData["bandit"],
-    leagueStart: true,
-    passiveTrees: passiveTrees,
-    library: true,
+    buildData: {
+      characterClass: characterClass!,
+      bandit: bandit as BuildData["bandit"],
+      leagueStart: true,
+      library: true,
+    },
+    requiredGems,
+    buildTrees,
   };
 }
 

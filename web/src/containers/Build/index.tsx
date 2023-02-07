@@ -5,13 +5,22 @@ import { buildDataSelector } from "../../state/build-data";
 import { searchStringsAtom } from "../../state/search-strings";
 import { BuildInfoForm, GemOrderList } from "../../components/BuildEditForm";
 import { formStyles } from "../../components/Form";
+import { withBlank } from "../../utility/withBlank";
+import { requiredGemsSelector } from "../../state/gem";
+import { buildTreesSelector } from "../../state/passive-trees";
 import classNames from "classnames";
 import styles from "./styles.module.css";
-import { withBlank } from "../../utility/withBlank";
 
 function BuildContainer() {
   const [buildData, setBuildData] = useRecoilState(buildDataSelector);
   const resetBuildData = useResetRecoilState(buildDataSelector);
+
+  const [requiredGems, setRequiredGems] = useRecoilState(requiredGemsSelector);
+  const resetRequiredGems = useResetRecoilState(requiredGemsSelector);
+
+  const [buildTrees, setBuildTreesSelector] =
+    useRecoilState(buildTreesSelector);
+  const resetBuildTreesSelector = useResetRecoilState(buildTreesSelector);
 
   return (
     <div>
@@ -25,21 +34,25 @@ function BuildContainer() {
       <div className={classNames(formStyles.form)}>
         <EditSearchStrings />
         <BuildImportForm
-          onSubmit={(buildData) => {
-            setBuildData(buildData);
+          onSubmit={(pobData) => {
+            setBuildData(pobData.buildData);
+            setRequiredGems(pobData.requiredGems);
+            setBuildTreesSelector(pobData.buildTrees);
           }}
           onReset={() => {
             resetBuildData();
+            resetRequiredGems();
+            resetBuildTreesSelector();
           }}
         />
       </div>
       <hr />
-      {buildData.requiredGems.length > 0 && (
+      {requiredGems.length > 0 && (
         <>
           <GemOrderList
-            requiredGems={buildData.requiredGems}
+            requiredGems={requiredGems}
             onUpdate={(requiredGems) => {
-              setBuildData({ ...buildData, requiredGems });
+              setRequiredGems(requiredGems);
             }}
           />
           <hr />

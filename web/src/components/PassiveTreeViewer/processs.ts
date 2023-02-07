@@ -1,6 +1,6 @@
 import { PassiveTree } from "../../../../common/data/tree";
-import { BuildPassiveTree } from "../../../../common/route-processing";
-import { UrlSkillTree } from "../../state/passive-trees";
+import { BuildTree } from "../../../../common/route-processing";
+import { UrlTree } from "../../state/passive-trees";
 
 function intersection<T>(setA: Set<T>, setB: Set<T>) {
   const _intersection = new Set<T>();
@@ -130,23 +130,15 @@ export function calculateBounds(
     height: h,
   };
 }
-
-export interface MasteryInfo {
-  nodeId: string;
-  info: string;
-}
-
 export function buildMasteryInfos(
   passiveTree: PassiveTree.Data,
-  masteriesArr: UrlSkillTree.Data["masteries"][]
+  masteryLookups: UrlTree.Data["masteryLookup"][]
 ) {
-  const masteryInfos: MasteryInfo[] = [];
-  for (const masteries of masteriesArr) {
-    for (const [nodeId, effectId] of Object.entries(masteries)) {
-      masteryInfos.push({
-        nodeId: nodeId,
-        info: passiveTree.masteryEffects[effectId].stats.join("\n"),
-      });
+  const masteryInfos: Record<string, string> = {};
+  for (const masteryLookup of masteryLookups) {
+    for (const [nodeId, effectId] of Object.entries(masteryLookup)) {
+      masteryInfos[nodeId] =
+        passiveTree.masteryEffects[effectId].stats.join("\n");
     }
   }
 

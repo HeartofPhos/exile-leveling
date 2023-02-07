@@ -126,14 +126,12 @@ export function parseRoute(routeFiles: RouteFile[], state: RouteState) {
 
 export interface BuildData {
   characterClass: string;
-  requiredGems: RequiredGem[];
   bandit: "None" | "Oak" | "Kraityn" | "Alira";
-  passiveTrees: BuildPassiveTree[];
   leagueStart: boolean;
   library: boolean;
 }
 
-export interface BuildPassiveTree {
+export interface BuildTree {
   name: string;
   version: string;
   url: string;

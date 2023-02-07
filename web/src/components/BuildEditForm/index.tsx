@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { BuildData } from "../../../../common/route-processing";
+import { BuildData, RequiredGem } from "../../../../common/route-processing";
 import { gemProgressSelectorFamily } from "../../state/gem-progress";
 import { GemOrder } from "../GemOrder";
 import { SplitRow } from "../SplitRow";
@@ -71,8 +71,8 @@ export function BuildInfoForm({ buildData, onSubmit }: BuildInfoFormProps) {
 }
 
 interface GemOrderList {
-  requiredGems: BuildData["requiredGems"];
-  onUpdate: (requiredGems: BuildData["requiredGems"]) => void;
+  requiredGems: RequiredGem[];
+  onUpdate: (requiredGems: RequiredGem[]) => void;
 }
 
 export function GemOrderList({ requiredGems, onUpdate }: GemOrderList) {
