@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BuildData } from "../../../../common/route-processing";
 import { formStyles } from "../Form";
 import { fetchPob, processPob } from "./pob";
@@ -12,14 +12,14 @@ interface BuildFormProps {
 }
 
 export function BuildImportForm({ onSubmit, onReset }: BuildFormProps) {
-  const [modalOpen, setModalOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className={classNames(formStyles.form)}>
       <TextModal
         label="Path of Building Code"
-        isOpen={modalOpen}
-        onRequestClose={() => setModalOpen(false)}
+        isOpen={isOpen}
+        onRequestClose={() => setIsOpen(false)}
         onSubmit={(pobCodeOrUrl) =>
           toast.promise(
             async () => {
@@ -51,7 +51,7 @@ export function BuildImportForm({ onSubmit, onReset }: BuildFormProps) {
         <button
           className={classNames(formStyles.formButton)}
           onClick={() => {
-            setModalOpen(true);
+            setIsOpen(true);
           }}
         >
           Import Build
