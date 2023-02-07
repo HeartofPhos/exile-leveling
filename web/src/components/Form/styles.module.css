@@ -7,22 +7,15 @@
   gap: var(--size-3);
 }
 
+.formRow {
+  display: flex;
+  flex-direction: column;
+}
+
 .formRow > label {
   color: var(--primary-light);
   font-size: 1rem;
   font-weight: var(--font-heavy);
-}
-
-.formInput {
-  display: block;
-  padding: var(--size-2);
-  color: var(--primary);
-  background-color: var(--background-primary);
-  border-style: solid;
-  border-width: var(--border-width);
-  border-color: var(--accent-primary);
-  border-radius: var(--border-radius);
-  outline: none;
 }
 
 .groupLeft {
@@ -35,6 +28,18 @@
   display: flex;
   justify-content: end;
   gap: var(--size-2);
+}
+
+.formInput {
+  display: block;
+  padding: var(--size-2);
+  color: var(--primary);
+  background-color: var(--background-primary);
+  border-style: solid;
+  border-width: var(--border-width);
+  border-color: var(--accent-primary);
+  border-radius: var(--border-radius);
+  outline: none;
 }
 
 .formButton {

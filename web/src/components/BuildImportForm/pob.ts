@@ -136,3 +136,57 @@ export function processPob(pobCode: string): BuildData | undefined {
     library: true,
   };
 }
+
+type UrlImporter = (url: string) => string | null;
+
+function getPobCodeUrl(pobCodeOrUrl: string) {
+  for (const urlImporter of urlImporters) {
+    const downloadUrl = urlImporter(pobCodeOrUrl);
+    if (downloadUrl) return downloadUrl;
+  }
+
+  return null;
+}
+
+const urlImporters: UrlImporter[] = [
+  (url) => {
+    const match = /pastebin\.com\/(.+)$/.exec(url);
+    if (!match) return null;
+
+    return `pastebin.com/raw/${match[1]}`;
+  },
+  (url) => {
+    const match = /poe\.ninja\/pob\/(.+)$/.exec(url);
+    if (!match) return null;
+
+    return `poe.ninja/pob/raw/${match[1]}`;
+  },
+  (url) => {
+    const match = /pobb\.in\/(.+)$/.exec(url);
+    if (!match) return null;
+
+    return `pobb.in/pob/${match[1]}`;
+  },
+  (url) => {
+    const match = /youtube.com\/redirect\?.+?q=(.+?)(?:&|$)/.exec(url);
+    if (!match) return null;
+    const redirectUrl = decodeURIComponent(match[1]);
+
+    return getPobCodeUrl(redirectUrl);
+  },
+];
+
+export async function fetchPob(pobCodeOrUrl: string) {
+  let pobCode: string = pobCodeOrUrl;
+  const downloadUrl = getPobCodeUrl(pobCodeOrUrl);
+  if (downloadUrl) {
+    pobCode = await fetch(
+      `https://phos-cors-proxy.azurewebsites.net/${downloadUrl}`
+    ).then((x) => {
+      if (x.status >= 200 && x.status <= 299) return x.text();
+      return Promise.reject("download failed");
+    });
+  }
+
+  return pobCode;
+}
