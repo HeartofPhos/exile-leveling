@@ -1,6 +1,10 @@
 .pobInput {
   width: 100%;
-  height: 5rem;
+  flex-grow: 1;
   resize: none;
   overflow: hidden;
+}
+
+.grow {
+  flex-grow: 1;
 }

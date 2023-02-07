@@ -12,7 +12,6 @@ import { withBlank } from "../../utility/withBlank";
 function BuildContainer() {
   const [buildData, setBuildData] = useRecoilState(buildDataSelector);
   const resetBuildData = useResetRecoilState(buildDataSelector);
-  const [searchStrings, setSearchStrings] = useRecoilState(searchStringsAtom);
 
   return (
     <div>
@@ -23,32 +22,7 @@ function BuildContainer() {
         }}
       />
       <hr />
-      <div className={classNames(formStyles.form)}>
-        <div className={classNames(formStyles.formRow)}>
-          <label>
-            Search Strings {"("}
-            <a href="https://poe.re/" target="_blank">
-              Path of Exile Regex
-            </a>
-            {")"}
-          </label>
-          <textarea
-            spellCheck={false}
-            className={classNames(
-              formStyles.formInput,
-              styles.searchStringsInput
-            )}
-            value={searchStrings?.join("\n")}
-            onChange={(e) => {
-              if (e.target.value.length == 0) setSearchStrings(null);
-              else
-                setSearchStrings(
-                  e.target.value.split(/\r\n|\r|\n/).map((x) => x.trim())
-                );
-            }}
-          />
-        </div>
-      </div>
+      <EditSearchStrings />
       <BuildImportForm
         onSubmit={(buildData) => {
           setBuildData(buildData);
@@ -69,6 +43,39 @@ function BuildContainer() {
           <hr />
         </>
       )}
+    </div>
+  );
+}
+
+function EditSearchStrings() {
+  const [searchStrings, setSearchStrings] = useRecoilState(searchStringsAtom);
+
+  return (
+    <div className={classNames(formStyles.form)}>
+      <div className={classNames(formStyles.formRow)}>
+        <label>
+          Search Strings {"("}
+          <a href="https://poe.re/" target="_blank">
+            Path of Exile Regex
+          </a>
+          {")"}
+        </label>
+        <textarea
+          spellCheck={false}
+          className={classNames(
+            formStyles.formInput,
+            styles.searchStringsInput
+          )}
+          value={searchStrings?.join("\n")}
+          onChange={(e) => {
+            if (e.target.value.length == 0) setSearchStrings(null);
+            else
+              setSearchStrings(
+                e.target.value.split(/\r\n|\r|\n/).map((x) => x.trim())
+              );
+          }}
+        />
+      </div>
     </div>
   );
 }
