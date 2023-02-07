@@ -3,9 +3,9 @@ import { ErrorBoundary } from "react-error-boundary";
 import { Route, Routes } from "react-router-dom";
 import { ErrorFallback } from "../components/ErrorFallback";
 import { Navbar } from "../components/Navbar";
+import { Loading } from "../components/Loading";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Loading } from "../components/Loading";
 
 const RoutesContainer = lazy(() => import("./Routes"));
 const BuildContainer = lazy(() => import("./Build"));
@@ -25,7 +25,9 @@ export function App() {
         </ErrorBoundary>
       </Suspense>
       <ToastContainer
-        autoClose={1000}
+        position="bottom-right"
+        autoClose={2000}
+        closeOnClick={true}
         theme={"dark"}
         pauseOnFocusLoss={false}
         pauseOnHover={false}

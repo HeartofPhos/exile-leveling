@@ -15,7 +15,7 @@ export function BuildImportForm({ onSubmit, onReset }: BuildFormProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={classNames(formStyles.form)}>
+    <>
       <TextModal
         label="Path of Building Code"
         isOpen={isOpen}
@@ -57,6 +57,6 @@ export function BuildImportForm({ onSubmit, onReset }: BuildFormProps) {
           Import Build
         </button>
       </div>
-    </div>
+    </>
   );
 }

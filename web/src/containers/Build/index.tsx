@@ -22,15 +22,17 @@ function BuildContainer() {
         }}
       />
       <hr />
-      <EditSearchStrings />
-      <BuildImportForm
-        onSubmit={(buildData) => {
-          setBuildData(buildData);
-        }}
-        onReset={() => {
-          resetBuildData();
-        }}
-      />
+      <div className={classNames(formStyles.form)}>
+        <EditSearchStrings />
+        <BuildImportForm
+          onSubmit={(buildData) => {
+            setBuildData(buildData);
+          }}
+          onReset={() => {
+            resetBuildData();
+          }}
+        />
+      </div>
       <hr />
       {buildData.requiredGems.length > 0 && (
         <>
@@ -51,31 +53,26 @@ function EditSearchStrings() {
   const [searchStrings, setSearchStrings] = useRecoilState(searchStringsAtom);
 
   return (
-    <div className={classNames(formStyles.form)}>
-      <div className={classNames(formStyles.formRow)}>
-        <label>
-          Search Strings {"("}
-          <a href="https://poe.re/" target="_blank">
-            Path of Exile Regex
-          </a>
-          {")"}
-        </label>
-        <textarea
-          spellCheck={false}
-          className={classNames(
-            formStyles.formInput,
-            styles.searchStringsInput
-          )}
-          value={searchStrings?.join("\n")}
-          onChange={(e) => {
-            if (e.target.value.length == 0) setSearchStrings(null);
-            else
-              setSearchStrings(
-                e.target.value.split(/\r\n|\r|\n/).map((x) => x.trim())
-              );
-          }}
-        />
-      </div>
+    <div className={classNames(formStyles.formRow)}>
+      <label>
+        Search Strings {"("}
+        <a href="https://poe.re/" target="_blank">
+          Path of Exile Regex
+        </a>
+        {")"}
+      </label>
+      <textarea
+        spellCheck={false}
+        className={classNames(formStyles.formInput, styles.searchStringsInput)}
+        value={searchStrings?.join("\n")}
+        onChange={(e) => {
+          if (e.target.value.length == 0) setSearchStrings(null);
+          else
+            setSearchStrings(
+              e.target.value.split(/\r\n|\r|\n/).map((x) => x.trim())
+            );
+        }}
+      />
     </div>
   );
 }

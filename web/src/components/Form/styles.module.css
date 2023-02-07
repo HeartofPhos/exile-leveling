@@ -1,8 +1,6 @@
 .form {
   display: flex;
   flex-direction: column;
-  border-style: solid;
-  border-width: 0;
   padding: var(--size-3);
   gap: var(--size-3);
 }
