@@ -47,10 +47,10 @@ export const buildTreesSelector = selector<BuildTree[]>({
 export const urlTreesSelector = selector({
   key: "urlTreesSelector",
   get: async ({ get }) => {
-    const buildPassiveTrees = get(buildTreesSelector);
+    const buildTrees = get(buildTreesSelector);
 
     let urlTrees: UrlTree.Data[] = [];
-    for (const buildTree of buildPassiveTrees) {
+    for (const buildTree of buildTrees) {
       try {
         const urlTree = await buildUrlTree(buildTree);
 
