@@ -37,7 +37,6 @@ export async function buildTemplates() {
       nodes: parsingTree.nodes.reduce<PassiveTree.Data["nodes"]>(
         (record, node) => {
           record[node.id] = {
-            id: node.id,
             x: node.position.x,
             y: node.position.y,
           };

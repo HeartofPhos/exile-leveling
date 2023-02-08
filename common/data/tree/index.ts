@@ -12,11 +12,9 @@ export namespace PassiveTree {
     y: number;
     w: number;
     h: number;
-    padding: number;
   }
 
   export interface Node {
-    id: string;
     x: number;
     y: number;
   }

@@ -35,7 +35,6 @@ export function buildTemplate(tree: IntermediateTree.Data) {
     y: tree.bounds.minY - PADDING,
     w: tree.bounds.maxX - tree.bounds.minX + PADDING * 2,
     h: tree.bounds.maxY - tree.bounds.minY + PADDING * 2,
-    padding: PADDING,
   };
 
   template += `<svg id="{{ svgId }}" width="${viewBox.w}" height="${viewBox.h}" viewBox="${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}" xmlns="http://www.w3.org/2000/svg">\n`;
