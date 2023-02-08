@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRecoilState, useResetRecoilState } from "recoil";
 import { formStyles } from "../../components/Form";
 import { routeFilesSelector } from "../../state/route-files";
@@ -45,7 +45,7 @@ export default function EditRouteContainer() {
   return (
     <RouteEditor
       routeFiles={routeFiles}
-      onUpdate={(updatedRouteFiles) => setRouteFiles(updatedRouteFiles)}
+      onSubmit={(routeFiles) => setRouteFiles(routeFiles)}
       onReset={() => resetRouteFiles()}
     />
   );
@@ -53,26 +53,23 @@ export default function EditRouteContainer() {
 
 interface RouteEditorProps {
   routeFiles: RouteFile[];
-  onUpdate: (updatedRouteFiles: RouteFile[]) => void;
+  onSubmit: (routeFiles: RouteFile[]) => void;
   onReset: () => void;
 }
 
-function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
+function RouteEditor({ routeFiles, onSubmit, onReset }: RouteEditorProps) {
   const [workingFiles, setWorkingFiles] = useState<RouteFile[]>([]);
-  const [selectedIndex, setSelectedIndex] = useState<number>(0);
-
   const [importIsOpen, setImportIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
     setWorkingFiles(cloneRouteFiles(routeFiles));
-    if (workingFiles.length !== routeFiles.length) setSelectedIndex(0);
   }, [routeFiles]);
 
   useEffect(() => {
     const handler = (evt: KeyboardEvent) => {
       if ((evt.metaKey || evt.ctrlKey) && evt.key === "s") {
         evt.preventDefault();
-        onUpdate(workingFiles);
+        onSubmit(workingFiles);
       }
     };
     document.addEventListener("keydown", handler);
@@ -81,30 +78,6 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
       document.removeEventListener("keydown", handler);
     };
   }, [workingFiles]);
-
-  if (
-    selectedIndex >= workingFiles.length ||
-    routeFiles.length !== workingFiles.length
-  )
-    return <></>;
-
-  const fileListItems = [];
-  for (let i = 0; i < workingFiles.length; i++) {
-    fileListItems.push(
-      <div
-        key={i}
-        className={classNames(borderListStyles.itemRound, styles.fileListItem, {
-          [styles.selected]: selectedIndex === i,
-        })}
-        onClick={() => {
-          setSelectedIndex(i);
-        }}
-      >
-        {workingFiles[i].name}
-        {workingFiles[i].contents !== routeFiles[i].contents && "*"}
-      </div>
-    );
-  }
 
   return (
     <>
@@ -116,7 +89,7 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
           toast.promise(
             async () => {
               const routeFiles = getRouteFiles([routeSrc || ""]);
-              onUpdate(routeFiles);
+              onSubmit(routeFiles);
             },
             {
               pending: "Importing Route",
@@ -126,29 +99,15 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
           )
         }
       />
-      <div className={classNames(formStyles.form, styles.workspaceForm)}>
-        <div className={classNames(styles.workspace)}>
-          <div className={classNames(styles.fileList)}>{fileListItems}</div>
-          <div className={classNames(formStyles.formInput, styles.editor)}>
-            {
-              <Editor
-                value={workingFiles[selectedIndex].contents}
-                onValueChange={(value) => {
-                  const updatedRouteFiles = [...workingFiles];
-                  updatedRouteFiles[selectedIndex].contents = value;
-                  setWorkingFiles(updatedRouteFiles);
-                }}
-                highlight={(value) =>
-                  value !== undefined
-                    ? highlight(value, RouteGrammar, "")
-                    : value
-                }
-                tabSize={4}
-                textareaClassName={classNames(styles.editorTextArea)}
-              />
-            }
-          </div>
-        </div>
+      <div className={classNames(formStyles.form, styles.editorForm)}>
+        <Workspace
+          workingFiles={workingFiles}
+          isDirty={(workingFile, i) =>
+            i < routeFiles.length &&
+            routeFiles[i].contents !== workingFile.contents
+          }
+          onUpdate={setWorkingFiles}
+        />
         <div className={classNames(formStyles.groupRight)}>
           <button
             className={classNames(formStyles.formButton)}
@@ -180,7 +139,7 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
           <button
             className={classNames(formStyles.formButton)}
             onClick={() => {
-              onUpdate(workingFiles);
+              onSubmit(workingFiles);
             }}
           >
             Save
@@ -189,5 +148,72 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
       </div>
       <hr />
     </>
+  );
+}
+
+interface WorkspaceProps {
+  workingFiles: RouteFile[];
+  isDirty: (workingFile: RouteFile, index: number) => boolean;
+  onUpdate: (workingFiles: RouteFile[]) => void;
+}
+
+export function Workspace({ workingFiles, isDirty, onUpdate }: WorkspaceProps) {
+  const formInputRef = useRef<HTMLDivElement>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
+
+  useEffect(() => {
+    if (selectedIndex >= workingFiles.length) setSelectedIndex(0);
+  }, [workingFiles]);
+
+  useEffect(() => {
+    if (formInputRef.current === null) return;
+    formInputRef.current.scrollTo(0, 0);
+  }, [selectedIndex, formInputRef]);
+
+  return (
+    <div className={classNames(styles.workspace)}>
+      {selectedIndex < workingFiles.length && workingFiles.length > 0 && (
+        <>
+          <div className={classNames(styles.fileList)}>
+            {workingFiles.map((workingFile, i) => (
+              <div
+                key={i}
+                className={classNames(
+                  borderListStyles.itemRound,
+                  styles.fileListItem,
+                  {
+                    [styles.selected]: selectedIndex === i,
+                  }
+                )}
+                onClick={() => {
+                  setSelectedIndex(i);
+                }}
+              >
+                {workingFile.name}
+                {isDirty(workingFile, i) && "*"}
+              </div>
+            ))}
+          </div>
+          <div
+            ref={formInputRef}
+            className={classNames(formStyles.formInput, styles.editor)}
+          >
+            {
+              <Editor
+                value={workingFiles[selectedIndex].contents}
+                onValueChange={(value) => {
+                  const updatedRouteFiles = [...workingFiles];
+                  updatedRouteFiles[selectedIndex].contents = value;
+                  onUpdate(updatedRouteFiles);
+                }}
+                highlight={(value) => highlight(value, RouteGrammar, "")}
+                tabSize={4}
+                textareaClassName={classNames(styles.editorTextArea)}
+              />
+            }
+          </div>
+        </>
+      )}
+    </div>
   );
 }
