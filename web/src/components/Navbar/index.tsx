@@ -135,8 +135,8 @@ export function Navbar({}: NavbarProps) {
               expand={navExpand}
               icon={<FaRegClipboard className={classNames("inlineIcon")} />}
               onClick={() => {
-                toast.success("Exported to Clipboard");
                 clipboardRoute();
+                toast.success("Exported to Clipboard");
                 setNavExpand(false);
               }}
             />

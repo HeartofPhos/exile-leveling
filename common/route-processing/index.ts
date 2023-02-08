@@ -33,7 +33,7 @@ export function getRouteFiles(routeSources: string[]) {
           contents: "",
         });
       } else if (routeFiles.length == 0) {
-        routeFiles.push({ name: "Missing Section Name", contents: "" });
+        routeFiles.push({ name: "Default", contents: "" });
       } else {
         const workingFile = routeFiles[routeFiles.length - 1];
         if (workingFile.contents !== "") workingFile.contents += "\n";
@@ -43,6 +43,13 @@ export function getRouteFiles(routeSources: string[]) {
   }
 
   return routeFiles;
+}
+
+export function buildRouteSource(routeFiles: RouteFile[]) {
+  return routeFiles.reduce(
+    (prev, cur) => `${prev}#section ${cur.name}\n${cur.contents}\n`,
+    ""
+  );
 }
 
 export interface RouteState {

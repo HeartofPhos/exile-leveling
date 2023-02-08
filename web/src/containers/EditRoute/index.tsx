@@ -5,9 +5,15 @@ import { formStyles } from "../../components/Form";
 import { routeFilesSelector } from "../../state/route-files";
 import Editor from "react-simple-code-editor";
 import { highlight, Grammar } from "prismjs";
-import { RouteFile } from "../../../../common/route-processing";
+import {
+  buildRouteSource,
+  getRouteFiles,
+  RouteFile,
+} from "../../../../common/route-processing";
 import styles from "./styles.module.css";
 import { borderListStyles } from "../../components/BorderList";
+import { TextModal } from "../../components/Modal";
+import { toast } from "react-toastify";
 
 const RouteGrammar: Grammar = {
   keyword: {
@@ -53,12 +59,20 @@ interface RouteEditorProps {
 
 function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
   const [workingFiles, setWorkingFiles] = useState<RouteFile[]>([]);
-  const [selectedIndex, setSelectedIndex] = useState<number | undefined>();
+  const [selectedIndex, setSelectedIndex] = useState<number>(0);
+
+  const [importIsOpen, setImportIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
     setWorkingFiles(cloneRouteFiles(routeFiles));
-    if (selectedIndex === undefined) setSelectedIndex(0);
+    if (workingFiles.length !== routeFiles.length) setSelectedIndex(0);
   }, [routeFiles]);
+
+  if (
+    selectedIndex >= workingFiles.length ||
+    routeFiles.length !== workingFiles.length
+  )
+    return <></>;
 
   const fileListItems = [];
   for (let i = 0; i < workingFiles.length; i++) {
@@ -80,11 +94,29 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
 
   return (
     <>
+      <TextModal
+        label="Import Route"
+        isOpen={importIsOpen}
+        onRequestClose={() => setImportIsOpen(false)}
+        onSubmit={(routeSrc) =>
+          toast.promise(
+            async () => {
+              const routeFiles = getRouteFiles([routeSrc || ""]);
+              onUpdate(routeFiles);
+            },
+            {
+              pending: "Importing Route",
+              success: "Import Success",
+              error: "Import Failed",
+            }
+          )
+        }
+      />
       <div className={classNames(formStyles.form, styles.workspaceForm)}>
         <div className={classNames(styles.workspace)}>
           <div className={classNames(styles.fileList)}>{fileListItems}</div>
           <div className={classNames(formStyles.formInput, styles.editor)}>
-            {selectedIndex !== undefined && (
+            {
               <Editor
                 value={workingFiles[selectedIndex].contents}
                 onValueChange={(value) => {
@@ -100,14 +132,32 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
                 tabSize={4}
                 textareaClassName={classNames(styles.editorTextArea)}
               />
-            )}
+            }
           </div>
         </div>
         <div className={classNames(formStyles.groupRight)}>
           <button
             className={classNames(formStyles.formButton)}
             onClick={() => {
-              setWorkingFiles(routeFiles);
+              const routeSource = buildRouteSource(workingFiles);
+              navigator.clipboard.writeText(routeSource);
+              toast.success("Exported to Clipboard");
+            }}
+          >
+            Export
+          </button>
+          <button
+            className={classNames(formStyles.formButton)}
+            onClick={() => {
+              setImportIsOpen(true);
+            }}
+          >
+            Import
+          </button>
+          <button
+            className={classNames(formStyles.formButton)}
+            onClick={() => {
+              setWorkingFiles(cloneRouteFiles(routeFiles));
               onReset();
             }}
           >
