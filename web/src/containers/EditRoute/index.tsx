@@ -68,6 +68,20 @@ function RouteEditor({ routeFiles, onUpdate, onReset }: RouteEditorProps) {
     if (workingFiles.length !== routeFiles.length) setSelectedIndex(0);
   }, [routeFiles]);
 
+  useEffect(() => {
+    const handler = (evt: KeyboardEvent) => {
+      if ((evt.metaKey || evt.ctrlKey) && evt.key === "s") {
+        evt.preventDefault();
+        onUpdate(workingFiles);
+      }
+    };
+    document.addEventListener("keydown", handler);
+
+    return () => {
+      document.removeEventListener("keydown", handler);
+    };
+  }, [workingFiles]);
+
   if (
     selectedIndex >= workingFiles.length ||
     routeFiles.length !== workingFiles.length
