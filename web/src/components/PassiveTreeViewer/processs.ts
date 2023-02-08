@@ -20,22 +20,46 @@ function difference<T>(setA: Set<T>, setB: Set<T>) {
   return _difference;
 }
 
-interface GroupedNodes {
+export interface UrlTreeDelta {
   nodesActive: string[];
   nodesAdded: string[];
   nodesRemoved: string[];
   connectionsActive: string[];
   connectionsAdded: string[];
   connectionsRemoved: string[];
+  masteryInfos: Record<string, MasteryInfo>;
 }
 
-export function groupNodes(
-  currentNodes: string[],
-  prevNodes: string[],
+export interface MasteryInfo {
+  info: string;
+}
+
+export function buildUrlTreeDelta(
+  currentTree: UrlTree.Data,
+  previousTree: UrlTree.Data,
   passiveTree: PassiveTree.Data
-): GroupedNodes {
-  const curNodeSet = new Set(currentNodes);
-  const prevNodeSet = new Set(prevNodes);
+): UrlTreeDelta {
+  const curNodeSet = new Set(currentTree.nodes);
+  const prevNodeSet = new Set(previousTree.nodes);
+
+  for (const [nodeId, effectId] of Object.entries(currentTree.masteryLookup)) {
+    if (previousTree.masteryLookup[nodeId] !== effectId)
+      prevNodeSet.delete(nodeId);
+  }
+
+  const masteryLookups = [
+    previousTree.masteryLookup,
+    currentTree.masteryLookup,
+  ];
+
+  const masteryInfos: UrlTreeDelta["masteryInfos"] = {};
+  for (const masteryLookup of masteryLookups) {
+    for (const [nodeId, effectId] of Object.entries(masteryLookup)) {
+      masteryInfos[nodeId] = {
+        info: passiveTree.masteryEffects[effectId].stats.join("\n"),
+      };
+    }
+  }
 
   const nodesActiveSet = intersection(curNodeSet, prevNodeSet);
   const nodesAddedSet = difference(curNodeSet, prevNodeSet);
@@ -79,11 +103,12 @@ export function groupNodes(
     connectionsActive,
     connectionsAdded,
     connectionsRemoved,
+    masteryInfos,
   };
 }
 
 export function calculateBounds(
-  { nodesActive, nodesAdded, nodesRemoved }: GroupedNodes,
+  { nodesActive, nodesAdded, nodesRemoved }: UrlTreeDelta,
   passiveTree: PassiveTree.Data
 ) {
   let minX = Number.POSITIVE_INFINITY;
@@ -129,18 +154,4 @@ export function calculateBounds(
     width: w,
     height: h,
   };
-}
-export function buildMasteryInfos(
-  passiveTree: PassiveTree.Data,
-  masteryLookups: UrlTree.Data["masteryLookup"][]
-) {
-  const masteryInfos: Record<string, string> = {};
-  for (const masteryLookup of masteryLookups) {
-    for (const [nodeId, effectId] of Object.entries(masteryLookup)) {
-      masteryInfos[nodeId] =
-        passiveTree.masteryEffects[effectId].stats.join("\n");
-    }
-  }
-
-  return masteryInfos;
 }

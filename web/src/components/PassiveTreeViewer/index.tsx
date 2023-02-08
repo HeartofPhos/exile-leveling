@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Viewport, ViewportProps } from "../Viewport";
-import { groupNodes, calculateBounds, buildMasteryInfos } from "./processs";
+import { buildUrlTreeDelta, calculateBounds, UrlTreeDelta } from "./processs";
 import {
   TREE_DATA_LOOKUP,
   TREE_TEMPLATE_LOOKUP,
@@ -16,16 +16,16 @@ interface PassiveTreeViewerProps {
   urlTrees: UrlTree.Data[];
 }
 
-interface RenderInfo {
+interface RenderData {
   svg: string;
   intialFocus: ViewportProps["intialFocus"];
-  masteryInfos: Record<string, string>;
+  masteryInfos: UrlTreeDelta["masteryInfos"];
 }
 
 export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
   const svgDivRef = useRef<HTMLDivElement>(null);
   const [curIndex, setCurIndex] = useState<number>(0);
-  const [renderInfo, setRenderInfo] = useState<RenderInfo>();
+  const [renderData, setRenderData] = useState<RenderData>();
 
   useEffect(() => {
     async function fn() {
@@ -50,13 +50,9 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
       const compiled = await TREE_TEMPLATE_LOOKUP[curTree.version];
       const passiveTree = await TREE_DATA_LOOKUP[curTree.version];
 
-      const groupedNodes = groupNodes(
-        curTree.nodes,
-        prevTree.nodes,
-        passiveTree
-      );
+      const urlTreeDelta = buildUrlTreeDelta(curTree, prevTree, passiveTree);
 
-      const bounds = calculateBounds(groupedNodes, passiveTree);
+      const bounds = calculateBounds(urlTreeDelta, passiveTree);
 
       const svg = compiled({
         svgId: randomId(6),
@@ -73,24 +69,19 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
         connectionAddedColor: "#00ff00",
         connectionRemovedColor: "#ff0000",
 
-        nodesActive: groupedNodes.nodesActive,
-        nodesAdded: groupedNodes.nodesAdded,
-        nodesRemoved: groupedNodes.nodesRemoved,
+        nodesActive: urlTreeDelta.nodesActive,
+        nodesAdded: urlTreeDelta.nodesAdded,
+        nodesRemoved: urlTreeDelta.nodesRemoved,
 
-        connectionsActive: groupedNodes.connectionsActive,
-        connectionsAdded: groupedNodes.connectionsAdded,
-        connectionsRemoved: groupedNodes.connectionsRemoved,
+        connectionsActive: urlTreeDelta.connectionsActive,
+        connectionsAdded: urlTreeDelta.connectionsAdded,
+        connectionsRemoved: urlTreeDelta.connectionsRemoved,
       });
 
-      const masteryInfos = buildMasteryInfos(passiveTree, [
-        curTree.masteryLookup,
-        prevTree.masteryLookup,
-      ]);
-
-      setRenderInfo({
+      setRenderData({
         svg,
         intialFocus: bounds,
-        masteryInfos,
+        masteryInfos: urlTreeDelta.masteryInfos,
       });
     }
 
@@ -99,9 +90,11 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
 
   useEffect(() => {
     if (svgDivRef.current === null) return;
-    if (renderInfo === undefined) return;
+    if (renderData === undefined) return;
 
-    for (const [nodeId, info] of Object.entries(renderInfo.masteryInfos)) {
+    for (const [nodeId, masteryInfo] of Object.entries(
+      renderData.masteryInfos
+    )) {
       const node = svgDivRef.current.querySelector<SVGElement>(`#n${nodeId}`);
       if (node === null) return;
 
@@ -109,24 +102,24 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
         "http://www.w3.org/2000/svg",
         "title"
       );
-      title.textContent = info;
+      title.textContent = masteryInfo.info;
 
       node.appendChild(title);
     }
-  }, [svgDivRef, renderInfo]);
+  }, [svgDivRef, renderData]);
 
   return (
     <>
-      {renderInfo && (
+      {renderData && (
         <div className={classNames(styles.viewer)}>
           <Viewport
             className={styles.viewport}
-            intialFocus={renderInfo.intialFocus}
+            intialFocus={renderData.intialFocus}
             resizePattern="clip"
           >
             <div
               ref={svgDivRef}
-              dangerouslySetInnerHTML={{ __html: renderInfo.svg }}
+              dangerouslySetInnerHTML={{ __html: renderData.svg }}
             />
           </Viewport>
           <label className={classNames(styles.label)}>
