@@ -26,28 +26,18 @@ export async function buildTemplates() {
         id: _class.name,
         ascendancies: _class.ascendancies.map((asc) => ({
           id: asc.id,
-          startNodeId: parsingTree.nodes.filter(
-            (x) =>
-              x.kind === "Ascendancy" &&
-              x.ascendancyKind === "Start" &&
-              x.ascendancyName == asc.name
-          )[0].id,
+          startNodeId: parsingTree.ascendancies[asc.id].startNodeId,
         })),
       })),
-      nodes: parsingTree.nodes.reduce<PassiveTree.Data["nodes"]>(
-        (record, node) => {
-          record[node.id] = {
-            x: node.position.x,
-            y: node.position.y,
-          };
-
-          return record;
-        },
-        {}
-      ),
+      nodes: Object.entries(parsingTree.nodes).reduce<
+        PassiveTree.Data["nodes"]
+      >((record, [nodeId, node]) => {
+        record[nodeId] = node.position;
+        return record;
+      }, {}),
       connections: parsingTree.connections.map((connection) => ({
-        a: connection.a.id,
-        b: connection.b.id,
+        a: connection.a,
+        b: connection.b,
       })),
       masteryEffects: parsingTree.masteryEffects,
       viewBox: viewBox,
