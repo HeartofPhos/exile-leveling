@@ -29,7 +29,7 @@ function getPosition(data: SkillTree.Data, node: SkillTree.Node) {
   return [angle % TWO_PI, Math.round(x), Math.round(y)];
 }
 
-export function processSkillTree(skillTree: SkillTree.Data) {
+export function buildIntermediateTree(skillTree: SkillTree.Data) {
   const tree: IntermediateTree.Data = {
     bounds: {
       minX: Number.POSITIVE_INFINITY,
