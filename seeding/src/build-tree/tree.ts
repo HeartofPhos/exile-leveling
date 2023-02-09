@@ -1,13 +1,36 @@
 import { IntermediateTree, SkillTree } from "./types";
 
-export const ANGLES_16: number[] = [
+const ANGLES_16: number[] = [
   0, 30, 45, 60, 90, 120, 135, 150, 180, 210, 225, 240, 270, 300, 315, 330,
 ];
-export const ANGLES_40: number[] = [
+const ANGLES_40: number[] = [
   0, 10, 20, 30, 40, 45, 50, 60, 70, 80, 90, 100, 110, 120, 130, 135, 140, 150,
   160, 170, 180, 190, 200, 210, 220, 225, 230, 240, 250, 260, 270, 280, 290,
   300, 310, 315, 320, 330, 340, 350,
 ];
+
+// https://github.com/PathOfBuildingCommunity/PathOfBuilding/blob/e42c033ad0d1b46f714f902d00fd11fe9885afc2/fix_ascendancy_positions.py#L22
+const ASCENDANCY_OFFSETS: Record<string, IntermediateTree.Coord> = {
+  ["Juggernaut"]: { x: -10400, y: 5200 },
+  ["Berserker"]: { x: -10400, y: 3700 },
+  ["Chieftain"]: { x: -10400, y: 2200 },
+  ["Raider"]: { x: 10200, y: 5200 },
+  ["Deadeye"]: { x: 10200, y: 2200 },
+  ["Pathfinder"]: { x: 10200, y: 3700 },
+  ["Occultist"]: { x: -1500, y: -9850 },
+  ["Elementalist"]: { x: 0, y: -9850 },
+  ["Necromancer"]: { x: 1500, y: -9850 },
+  ["Slayer"]: { x: 1500, y: 9800 },
+  ["Gladiator"]: { x: -1500, y: 9800 },
+  ["Champion"]: { x: 0, y: 9800 },
+  ["Inquisitor"]: { x: -10400, y: -2200 },
+  ["Hierophant"]: { x: -10400, y: -3700 },
+  ["Guardian"]: { x: -10400, y: -5200 },
+  ["Assassin"]: { x: 10200, y: -5200 },
+  ["Trickster"]: { x: 10200, y: -3700 },
+  ["Saboteur"]: { x: 10200, y: -2200 },
+  ["Ascendant"]: { x: -7800, y: 7200 },
+};
 
 const TWO_PI = Math.PI * 2;
 const DEG_2_RAD = Math.PI / 180;
@@ -118,10 +141,13 @@ export function buildIntermediateTree(skillTree: SkillTree.Data) {
     }
   }
 
-  const ASCENDANCY_POS_X = 7000;
-  const ASCENDANCY_POS_Y = -7700;
   for (const [, asc] of Object.entries(tree.ascendancies)) {
-    const startNode = tree.nodes[asc.startNodeId];
+    const startNode = tree.nodes[
+      asc.startNodeId
+    ] as IntermediateTree.AscendancyNode;
+
+    const { x: ASCENDANCY_POS_X, y: ASCENDANCY_POS_Y } =
+      ASCENDANCY_OFFSETS[startNode.ascendancyName];
 
     const diff_x = ASCENDANCY_POS_X - startNode.position.x;
     const diff_y = ASCENDANCY_POS_Y - startNode.position.y;

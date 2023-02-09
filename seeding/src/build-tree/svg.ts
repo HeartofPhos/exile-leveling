@@ -1,9 +1,9 @@
 import { PassiveTree } from "../../../common/data/tree";
 import { IntermediateTree } from "./types";
 
-const PADDING = 175;
+const PADDING = 550;
 
-const ASCENDANCY_START_RADIUS = 30;
+const ASCENDANCY_START_RADIUS = 25;
 const ASCENDANCY_NOTABLE_RADIUS = 65;
 const ASCENDANCY_NORMAL_RADIUS = 45;
 const MASTERY_RADIUS = 55;
@@ -11,12 +11,16 @@ const KEYSTONE_RADIUS = 80;
 const NOTABLE_RADIUS = 65;
 const NORMAL_RADIUS = 45;
 
+const ASCENDANCY_BORDER_RADIUS = 650;
+const ASCENDANCY_ASCENDANT_BORDER_RADIUS = 750;
+
 const NODE_STROKE_WIDTH = 0;
 const CONNECTION_STROKE_WIDTH = 20;
 const CONNECTION_ACTIVE_STROKE_WIDTH = 35;
 
 const GROUP_NODE_CLASS = "nodes";
 const GROUP_CONNECTION_CLASS = "connections";
+const GROUP_BORDER_CLASS = "border";
 
 const NODE_ASCENDANCY_CLASS = "ascendancy";
 const NODE_MASTERY_CLASS = "mastery";
@@ -61,14 +65,11 @@ export function buildTemplate(tree: IntermediateTree.Data) {
   stroke-width: ${CONNECTION_STROKE_WIDTH};
 }
 
-#{{ svgId }} .${NODE_ASCENDANCY_CLASS} {
-  display: none;
+#{{ svgId }} .${GROUP_BORDER_CLASS} {
+  fill: none;
+  stroke: {{ connectionColor }};
+  stroke-width: ${CONNECTION_STROKE_WIDTH};
 }
-{{#if ascendancy}}
-#{{ svgId }} .ascendancy.{{ ascendancy }} {
-  display: unset;
-}
-{{/if}}
 
 #{{ svgId }} :is({{#each nodesActive}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}}) {
   fill: {{ nodeActiveColor }};
@@ -104,6 +105,14 @@ export function buildTemplate(tree: IntermediateTree.Data) {
   template += `<g class="${GROUP_CONNECTION_CLASS}">\n`;
   for (const connection of tree.connections) {
     template += buildConnection(connection, tree);
+  }
+  template += `</g>\n`;
+
+  template += `<g class="${GROUP_BORDER_CLASS}">\n`;
+  for (const [ascendancyName, ascendancy] of Object.entries(
+    tree.ascendancies
+  )) {
+    template += buildAscendancy(ascendancyName, ascendancy, tree);
   }
   template += `</g>\n`;
 
@@ -182,4 +191,18 @@ function buildConnection(
   } else {
     return `<line x1="${aX}" y1="${aY}" x2="${bX}" y2="${bY}" id="c${id}" ${attrs} />\n`;
   }
+}
+
+function buildAscendancy(
+  ascendancyName: string,
+  ascendancy: IntermediateTree.Ascendancy,
+  tree: IntermediateTree.Data
+) {
+  const startNode = tree.nodes[ascendancy.startNodeId];
+  const radius =
+    ascendancyName === "Ascendant"
+      ? ASCENDANCY_ASCENDANT_BORDER_RADIUS
+      : ASCENDANCY_BORDER_RADIUS;
+
+  return `<circle cx="${startNode.position.x}" cy="${startNode.position.y}" r="${radius}" class="$${NODE_ASCENDANCY_CLASS} ${ascendancyName}"/>\n`;
 }
