@@ -1,7 +1,7 @@
 import fetch from "cross-fetch";
 import { PassiveTree } from "../../../common/data/tree";
 import { buildTemplate as buildTemplateSVG } from "./svg";
-import { processSkillTree } from "./tree";
+import { buildIntermediateTree } from "./tree";
 import { SkillTree } from "./types";
 
 const PASSIVE_TREE_JSON = {
@@ -16,40 +16,30 @@ const PASSIVE_TREE_JSON = {
 export async function buildTemplates() {
   const result = [];
   for (const [version, url] of Object.entries(PASSIVE_TREE_JSON)) {
-    const data: SkillTree.Data = await fetch(url).then((x) => x.json());
+    const skillTree: SkillTree.Data = await fetch(url).then((x) => x.json());
 
-    const parsingTree = processSkillTree(data);
-    const { template, viewBox } = buildTemplateSVG(parsingTree);
+    const intermediateTree = buildIntermediateTree(skillTree);
+    const { template, viewBox } = buildTemplateSVG(intermediateTree);
 
     const passiveTree: PassiveTree.Data = {
-      classes: data.classes.map((_class) => ({
+      classes: skillTree.classes.map((_class) => ({
         id: _class.name,
         ascendancies: _class.ascendancies.map((asc) => ({
           id: asc.id,
-          startNodeId: parsingTree.nodes.filter(
-            (x) =>
-              x.kind === "Ascendancy" &&
-              x.ascendancyKind === "Start" &&
-              x.ascendancyName == asc.name
-          )[0].id,
+          startNodeId: intermediateTree.ascendancies[asc.id].startNodeId,
         })),
       })),
-      nodes: parsingTree.nodes.reduce<PassiveTree.Data["nodes"]>(
-        (record, node) => {
-          record[node.id] = {
-            x: node.position.x,
-            y: node.position.y,
-          };
-
-          return record;
-        },
-        {}
-      ),
-      connections: parsingTree.connections.map((connection) => ({
-        a: connection.a.id,
-        b: connection.b.id,
+      nodes: Object.entries(intermediateTree.nodes).reduce<
+        PassiveTree.Data["nodes"]
+      >((record, [nodeId, node]) => {
+        record[nodeId] = node.position;
+        return record;
+      }, {}),
+      connections: intermediateTree.connections.map((connection) => ({
+        a: connection.a,
+        b: connection.b,
       })),
-      masteryEffects: parsingTree.masteryEffects,
+      masteryEffects: intermediateTree.masteryEffects,
       viewBox: viewBox,
     };
 

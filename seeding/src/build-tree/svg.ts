@@ -103,13 +103,13 @@ export function buildTemplate(tree: IntermediateTree.Data) {
 
   template += `<g class="${GROUP_CONNECTION_CLASS}">\n`;
   for (const connection of tree.connections) {
-    template += buildConnection(connection);
+    template += buildConnection(connection, tree);
   }
   template += `</g>\n`;
 
   template += `<g class="${GROUP_NODE_CLASS}">\n`;
-  for (const node of tree.nodes) {
-    template += buildNode(node);
+  for (const [nodeId, node] of Object.entries(tree.nodes)) {
+    template += buildNode(nodeId, node);
   }
   template += `</g>\n`;
 
@@ -118,7 +118,7 @@ export function buildTemplate(tree: IntermediateTree.Data) {
   return { template, viewBox };
 }
 
-function buildNode(node: IntermediateTree.Node) {
+function buildNode(nodeId: string, node: IntermediateTree.Node) {
   let attrs;
   switch (node.kind) {
     case "Ascendancy":
@@ -153,27 +153,33 @@ function buildNode(node: IntermediateTree.Node) {
       break;
   }
 
-  return `<circle cx="${node.position.x}" cy="${node.position.y}" id="n${node.id}" ${attrs}/>\n`;
+  return `<circle cx="${node.position.x}" cy="${node.position.y}" id="n${nodeId}" ${attrs}/>\n`;
 }
 
-function buildConnection(connection: IntermediateTree.Connection) {
-  const id = [connection.a.id, connection.b.id].sort().join("-");
-  const a = connection.a.position;
-  const b = connection.b.position;
+function buildConnection(
+  connection: IntermediateTree.Connection,
+  tree: IntermediateTree.Data
+) {
+  const id = [connection.a, connection.b].sort().join("-");
+
+  const nodeA = tree.nodes[connection.a];
+  const aX = nodeA.position.x;
+  const aY = nodeA.position.y;
+
+  const nodeB = tree.nodes[connection.b];
+  const bX = nodeB.position.x;
+  const bY = nodeB.position.y;
 
   let attrs;
-  if (
-    connection.a.kind === "Ascendancy" &&
-    connection.a.ascendancyName !== undefined
-  )
-    attrs = `class="${CONNECTION_ASCENDANCY_CLASS} ${connection.a.ascendancyName}"`;
+  if (nodeA.kind === "Ascendancy" && nodeA.ascendancyName !== undefined)
+    attrs = `class="${CONNECTION_ASCENDANCY_CLASS} ${nodeA.ascendancyName}"`;
   else attrs = `class="${CONNECTION_NORMAL_CLASS}"`;
 
   if (connection.path.sweep !== undefined) {
     const sweep = connection.path.sweep === "CW" ? 1 : 0;
     const r = connection.path.radius;
-    return `<path d="M ${a.x} ${a.y} A ${r} ${r} 0 0 ${sweep} ${b.x} ${b.y}" id="c${id}" ${attrs} />\n`;
+    return `<path d="M ${aX} ${aY} A ${r} ${r} 0 0 ${sweep} ${bX} ${bY}" id="c${id}" ${attrs} />\n`;
   } else {
-    return `<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" id="c${id}" ${attrs} />\n`;
+    return `<line x1="${aX}" y1="${aY}" x2="${bX}" y2="${bY}" id="c${id}" ${attrs} />\n`;
   }
 }

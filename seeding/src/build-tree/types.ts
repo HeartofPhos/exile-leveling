@@ -197,8 +197,9 @@ export namespace SkillTree {
 export namespace IntermediateTree {
   export interface Data {
     bounds: Bounds;
-    nodes: Node[];
+    nodes: Record<string, Node>;
     connections: Connection[];
+    ascendancies: Record<string, Ascendancy>;
     masteryEffects: Record<string, MasteryEffect>;
   }
 
@@ -213,22 +214,24 @@ export namespace IntermediateTree {
     maxY: number;
   }
 
+  export interface Ascendancy {
+    startNodeId: string;
+    nodeIds: string[];
+  }
+
   export type Node = BasicNode | AscendancyNode | MasteryNode;
 
   export interface BasicNode {
-    id: string;
     position: Coord;
     kind: "Normal" | "Notable" | "Keystone";
   }
 
   export interface MasteryNode {
-    id: string;
     position: Coord;
     kind: "Mastery";
   }
 
   export interface AscendancyNode {
-    id: string;
     position: Coord;
     kind: "Ascendancy";
     ascendancyName: string;
@@ -241,8 +244,8 @@ export namespace IntermediateTree {
   }
 
   export interface Connection {
-    a: Node;
-    b: Node;
+    a: string;
+    b: string;
     path: Path;
   }
 
