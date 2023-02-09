@@ -77,6 +77,7 @@ export function buildIntermediateTree(skillTree: SkillTree.Data) {
       const [angle, x, y] = getPosition(skillTree, node);
 
       const treeNode = buildNode(nodeId, { x, y }, node);
+      tree.nodes[nodeId] = treeNode;
 
       if (treeNode.kind === "Ascendancy") {
         const asc = tree.ascendancies[node.ascendancyName!];
@@ -86,34 +87,33 @@ export function buildIntermediateTree(skillTree: SkillTree.Data) {
         updateMinxMax(x, y);
       }
 
-      tree.nodes[nodeId] = treeNode;
+      if (node.out) {
+        for (const outNodeId of node.out) {
+          const outNode = skillTree.nodes[outNodeId];
+          if (!filterConnection(node, outNode)) continue;
 
-      const outNodeIds = node.out || [];
-      for (const outNodeId of outNodeIds) {
-        const outNode = skillTree.nodes[outNodeId];
-        if (!filterConnection(node, outNode)) continue;
+          let [outAngle] = getPosition(skillTree, outNode);
 
-        let [outAngle] = getPosition(skillTree, outNode);
+          let path: IntermediateTree.Path;
+          if (node.group === outNode.group && node.orbit === outNode.orbit) {
+            const radius = skillTree.constants.orbitRadii[node.orbit!];
+            const rot = (angle - outAngle + TWO_PI) % TWO_PI;
 
-        let path: IntermediateTree.Path;
-        if (node.group === outNode.group && node.orbit === outNode.orbit) {
-          const radius = skillTree.constants.orbitRadii[node.orbit!];
-          const rot = (angle - outAngle + TWO_PI) % TWO_PI;
+            let sweep: IntermediateTree.Sweep["sweep"];
+            if (rot > Math.PI) sweep = "CW";
+            else sweep = "CCW";
 
-          let sweep: IntermediateTree.Sweep["sweep"];
-          if (rot > Math.PI) sweep = "CW";
-          else sweep = "CCW";
+            path = { sweep: sweep, radius: radius };
+          } else {
+            path = { sweep: undefined };
+          }
 
-          path = { sweep: sweep, radius: radius };
-        } else {
-          path = { sweep: undefined };
+          tree.connections.push({
+            a: nodeId,
+            b: outNodeId,
+            path: path,
+          });
         }
-
-        tree.connections.push({
-          a: nodeId,
-          b: outNodeId,
-          path: path,
-        });
       }
     }
   }
