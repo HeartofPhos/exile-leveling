@@ -3,14 +3,6 @@ import { IntermediateTree } from "./types";
 
 const PADDING = 550;
 
-const ASCENDANCY_START_RADIUS = 30;
-const ASCENDANCY_NOTABLE_RADIUS = 65;
-const ASCENDANCY_NORMAL_RADIUS = 45;
-const MASTERY_RADIUS = 55;
-const KEYSTONE_RADIUS = 80;
-const NOTABLE_RADIUS = 65;
-const NORMAL_RADIUS = 45;
-
 const ASCENDANCY_BORDER_RADIUS = 650;
 const ASCENDANCY_ASCENDANT_BORDER_RADIUS = 750;
 
@@ -20,7 +12,6 @@ const CONNECTION_ACTIVE_STROKE_WIDTH = 35;
 
 const GROUP_NODE_CLASS = "nodes";
 const GROUP_CONNECTION_CLASS = "connections";
-const GROUP_BORDER_CLASS = "border";
 
 const NODE_MASTERY_CLASS = "mastery";
 const NODE_KEYSTONE_CLASS = "keystone";
@@ -28,6 +19,49 @@ const NODE_NOTABLE_CLASS = "notable";
 const NODE_NORMAL_CLASS = "normal";
 
 const ASCENDANCY_CLASS = "ascendancy";
+const BORDER_CLASS = "border";
+
+type ConstantsLookup = Partial<
+  Record<IntermediateTree.Node["kind"], Constants>
+>;
+
+interface Constants {
+  radius: number;
+  class?: string;
+}
+
+const TREE_CONSTANTS: ConstantsLookup = {
+  Mastery: {
+    radius: 55,
+    class: NODE_MASTERY_CLASS,
+  },
+  Keystone: {
+    radius: 80,
+    class: NODE_KEYSTONE_CLASS,
+  },
+  Notable: {
+    radius: 65,
+    class: NODE_NOTABLE_CLASS,
+  },
+  Normal: {
+    radius: 45,
+    class: NODE_NORMAL_CLASS,
+  },
+};
+
+const ASCENDANCY_CONSTANTS: ConstantsLookup = {
+  Ascendancy_Start: {
+    radius: 30,
+  },
+  Notable: {
+    radius: 65,
+    class: NODE_NOTABLE_CLASS,
+  },
+  Normal: {
+    radius: 45,
+    class: NODE_NORMAL_CLASS,
+  },
+};
 
 export function buildTemplate(tree: IntermediateTree.Data) {
   let template = ``;
@@ -63,7 +97,17 @@ export function buildTemplate(tree: IntermediateTree.Data) {
   stroke-width: ${CONNECTION_STROKE_WIDTH};
 }
 
-#{{ svgId }} .${GROUP_BORDER_CLASS} {
+#{{ svgId }} .${ASCENDANCY_CLASS} {
+  opacity: 0.4;
+}
+
+{{#if ascendancy}}
+#{{ svgId }} .${ASCENDANCY_CLASS}.{{ ascendancy }} {
+  opacity: unset;
+}
+{{/if}}
+
+#{{ svgId }} .${BORDER_CLASS} {
   fill: none;
   stroke: {{ connectionColor }};
   stroke-width: ${CONNECTION_STROKE_WIDTH};
@@ -100,107 +144,90 @@ export function buildTemplate(tree: IntermediateTree.Data) {
 }
 </style>\n`;
 
-  template += `<g class="${GROUP_CONNECTION_CLASS}">\n`;
-  for (const connection of tree.connections) {
-    template += buildConnection(connection, tree);
-  }
-  template += `</g>\n`;
+  template += buildSubTree(tree.nodes, tree.connections, TREE_CONSTANTS);
 
-  template += `<g class="${GROUP_BORDER_CLASS}">\n`;
-  for (const [ascendancyName, ascendancy] of Object.entries(
-    tree.ascendancies
-  )) {
-    template += buildAscendancy(ascendancyName, ascendancy, tree);
+  for (const [, ascendancy] of Object.entries(tree.ascendancies)) {
+    template += buildAscendancy(ascendancy);
   }
-  template += `</g>\n`;
-
-  template += `<g class="${GROUP_NODE_CLASS}">\n`;
-  for (const [nodeId, node] of Object.entries(tree.nodes)) {
-    template += buildNode(nodeId, node);
-  }
-  template += `</g>\n`;
 
   template += `</svg>\n`;
 
   return { template, viewBox };
 }
 
-function buildNode(nodeId: string, node: IntermediateTree.Node) {
-  let attrs;
-  switch (node.kind) {
-    case "Ascendancy":
-      {
-        if (node.ascendancyKind === "Start")
-          attrs = `r="${ASCENDANCY_START_RADIUS}" class="${ASCENDANCY_CLASS} ${node.ascendancyName}"`;
-        else if (node.ascendancyKind === "Notable")
-          attrs = `r="${ASCENDANCY_NOTABLE_RADIUS}" class="${ASCENDANCY_CLASS} ${node.ascendancyName}"`;
-        else if (node.ascendancyKind === "Normal")
-          attrs = `r="${ASCENDANCY_NORMAL_RADIUS}" class="${ASCENDANCY_CLASS} ${node.ascendancyName}"`;
-      }
-      break;
-    case "Mastery":
-      {
-        attrs = `r="${MASTERY_RADIUS}" class="${NODE_MASTERY_CLASS}"`;
-      }
-      break;
-    case "Keystone":
-      {
-        attrs = `r="${KEYSTONE_RADIUS}" class="${NODE_KEYSTONE_CLASS}"`;
-      }
-      break;
-    case "Notable":
-      {
-        attrs = `r="${NOTABLE_RADIUS}" class="${NODE_NOTABLE_CLASS}"`;
-      }
-      break;
-    case "Normal":
-      {
-        attrs = `r="${NORMAL_RADIUS}" class="${NODE_NORMAL_CLASS}"`;
-      }
-      break;
-  }
+function buildSubTree(
+  nodes: Record<string, IntermediateTree.Node>,
+  connections: IntermediateTree.Connection[],
+  constantsLookup: Record<string, Constants>
+) {
+  let template = ``;
 
-  return `<circle cx="${node.position.x}" cy="${node.position.y}" id="n${nodeId}" ${attrs}/>\n`;
+  template += `<g class="${GROUP_CONNECTION_CLASS}">\n`;
+  for (const connection of connections) {
+    template += buildConnection(connection, nodes);
+  }
+  template += `</g>\n`;
+
+  template += `<g class="${GROUP_NODE_CLASS}">\n`;
+  for (const [nodeId, node] of Object.entries(nodes)) {
+    template += buildNode(nodeId, node, constantsLookup);
+  }
+  template += `</g>\n`;
+
+  return template;
+}
+
+function buildNode(
+  nodeId: string,
+  node: IntermediateTree.Node,
+  constantsLookup: ConstantsLookup
+) {
+  const constants = constantsLookup[node.kind];
+  if (constants === undefined) throw `missing constant, ${node.kind}`;
+
+  return `<circle cx="${node.position.x}" cy="${node.position.y}" id="n${nodeId}" r="${constants.radius}" class="${constants.class}"/>\n`;
 }
 
 function buildConnection(
   connection: IntermediateTree.Connection,
-  tree: IntermediateTree.Data
+  nodes: Record<string, IntermediateTree.Node>
 ) {
   const id = [connection.a, connection.b].sort().join("-");
 
-  const nodeA = tree.nodes[connection.a];
+  const nodeA = nodes[connection.a];
   const aX = nodeA.position.x;
   const aY = nodeA.position.y;
 
-  const nodeB = tree.nodes[connection.b];
+  const nodeB = nodes[connection.b];
   const bX = nodeB.position.x;
   const bY = nodeB.position.y;
-
-  let attrs;
-  if (nodeA.kind === "Ascendancy" && nodeA.ascendancyName !== undefined)
-    attrs = `class="${ASCENDANCY_CLASS} ${nodeA.ascendancyName}"`;
-  else attrs = ``;
 
   if (connection.path.sweep !== undefined) {
     const sweep = connection.path.sweep === "CW" ? 1 : 0;
     const r = connection.path.radius;
-    return `<path d="M ${aX} ${aY} A ${r} ${r} 0 0 ${sweep} ${bX} ${bY}" id="c${id}" ${attrs} />\n`;
+    return `<path d="M ${aX} ${aY} A ${r} ${r} 0 0 ${sweep} ${bX} ${bY}" id="c${id}" />\n`;
   } else {
-    return `<line x1="${aX}" y1="${aY}" x2="${bX}" y2="${bY}" id="c${id}" ${attrs} />\n`;
+    return `<line x1="${aX}" y1="${aY}" x2="${bX}" y2="${bY}" id="c${id}" />\n`;
   }
 }
 
-function buildAscendancy(
-  ascendancyName: string,
-  ascendancy: IntermediateTree.Ascendancy,
-  tree: IntermediateTree.Data
-) {
-  const startNode = tree.nodes[ascendancy.startNodeId];
+function buildAscendancy(ascendancy: IntermediateTree.Ascendancy) {
+  let template = ``;
+
+  const startNode = ascendancy.nodes[ascendancy.startNodeId];
   const radius =
-    ascendancyName === "Ascendant"
+    ascendancy.name === "Ascendant"
       ? ASCENDANCY_ASCENDANT_BORDER_RADIUS
       : ASCENDANCY_BORDER_RADIUS;
 
-  return `<circle cx="${startNode.position.x}" cy="${startNode.position.y}" r="${radius}" class="${ASCENDANCY_CLASS} ${ascendancyName}"/>\n`;
+  template += `<g class="${ASCENDANCY_CLASS} ${ascendancy.name}">`;
+  template += `<circle cx="${startNode.position.x}" cy="${startNode.position.y}" r="${radius}" class="${BORDER_CLASS}"/>\n`;
+  template += buildSubTree(
+    ascendancy.nodes,
+    ascendancy.connections,
+    ASCENDANCY_CONSTANTS
+  );
+  template += `</g>`;
+
+  return template;
 }
