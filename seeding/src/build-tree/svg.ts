@@ -3,14 +3,6 @@ import { IntermediateTree } from "./types";
 
 const PADDING = 550;
 
-const ASCENDANCY_START_RADIUS = 30;
-const ASCENDANCY_NOTABLE_RADIUS = 65;
-const ASCENDANCY_NORMAL_RADIUS = 45;
-const MASTERY_RADIUS = 55;
-const KEYSTONE_RADIUS = 80;
-const NOTABLE_RADIUS = 65;
-const NORMAL_RADIUS = 45;
-
 const ASCENDANCY_BORDER_RADIUS = 650;
 const ASCENDANCY_ASCENDANT_BORDER_RADIUS = 750;
 
@@ -28,6 +20,48 @@ const NODE_NORMAL_CLASS = "normal";
 
 const ASCENDANCY_CLASS = "ascendancy";
 const ASCENDANCY_BORDER_CLASS = "ascendancy-border";
+
+type ConstantsLookup = Partial<
+  Record<IntermediateTree.Node["kind"], Constants>
+>;
+
+interface Constants {
+  radius: number;
+  class?: string;
+}
+
+const TREE_CONSTANTS: ConstantsLookup = {
+  Mastery: {
+    radius: 55,
+    class: NODE_MASTERY_CLASS,
+  },
+  Keystone: {
+    radius: 80,
+    class: NODE_KEYSTONE_CLASS,
+  },
+  Notable: {
+    radius: 65,
+    class: NODE_NOTABLE_CLASS,
+  },
+  Normal: {
+    radius: 45,
+    class: NODE_NORMAL_CLASS,
+  },
+};
+
+const ASCENDANCY_CONSTANTS: ConstantsLookup = {
+  Ascendancy_Start: {
+    radius: 30,
+  },
+  Notable: {
+    radius: 65,
+    class: NODE_NOTABLE_CLASS,
+  },
+  Normal: {
+    radius: 45,
+    class: NODE_NORMAL_CLASS,
+  },
+};
 
 export function buildTemplate(tree: IntermediateTree.Data) {
   let template = ``;
@@ -120,47 +154,6 @@ export function buildTemplate(tree: IntermediateTree.Data) {
 
   return { template, viewBox };
 }
-
-type ConstantsLookup = Partial<
-  Record<IntermediateTree.Node["kind"], Constants>
->;
-interface Constants {
-  radius: number;
-  class?: string;
-}
-
-const TREE_CONSTANTS: ConstantsLookup = {
-  Mastery: {
-    radius: MASTERY_RADIUS,
-    class: NODE_MASTERY_CLASS,
-  },
-  Keystone: {
-    radius: KEYSTONE_RADIUS,
-    class: NODE_KEYSTONE_CLASS,
-  },
-  Notable: {
-    radius: NOTABLE_RADIUS,
-    class: NODE_NOTABLE_CLASS,
-  },
-  Normal: {
-    radius: NORMAL_RADIUS,
-    class: NODE_NORMAL_CLASS,
-  },
-};
-
-const ASCENDANCY_CONSTANTS: ConstantsLookup = {
-  Ascendancy_Start: {
-    radius: ASCENDANCY_START_RADIUS,
-  },
-  Normal: {
-    radius: ASCENDANCY_NORMAL_RADIUS,
-    class: NODE_NORMAL_CLASS,
-  },
-  Notable: {
-    radius: ASCENDANCY_NOTABLE_RADIUS,
-    class: NODE_NOTABLE_CLASS,
-  },
-};
 
 function buildSubTree(
   nodes: Record<string, IntermediateTree.Node>,
