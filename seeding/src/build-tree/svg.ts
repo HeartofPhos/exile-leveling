@@ -22,14 +22,12 @@ const GROUP_NODE_CLASS = "nodes";
 const GROUP_CONNECTION_CLASS = "connections";
 const GROUP_BORDER_CLASS = "border";
 
-const NODE_ASCENDANCY_CLASS = "ascendancy";
 const NODE_MASTERY_CLASS = "mastery";
 const NODE_KEYSTONE_CLASS = "keystone";
 const NODE_NOTABLE_CLASS = "notable";
 const NODE_NORMAL_CLASS = "normal";
 
-const CONNECTION_ASCENDANCY_CLASS = "ascendancy";
-const CONNECTION_NORMAL_CLASS = "";
+const ASCENDANCY_CLASS = "ascendancy";
 
 export function buildTemplate(tree: IntermediateTree.Data) {
   let template = ``;
@@ -133,11 +131,11 @@ function buildNode(nodeId: string, node: IntermediateTree.Node) {
     case "Ascendancy":
       {
         if (node.ascendancyKind === "Start")
-          attrs = `r="${ASCENDANCY_START_RADIUS}" class="${NODE_ASCENDANCY_CLASS} ${node.ascendancyName}"`;
+          attrs = `r="${ASCENDANCY_START_RADIUS}" class="${ASCENDANCY_CLASS} ${node.ascendancyName}"`;
         else if (node.ascendancyKind === "Notable")
-          attrs = `r="${ASCENDANCY_NOTABLE_RADIUS}" class="${NODE_ASCENDANCY_CLASS} ${node.ascendancyName}"`;
+          attrs = `r="${ASCENDANCY_NOTABLE_RADIUS}" class="${ASCENDANCY_CLASS} ${node.ascendancyName}"`;
         else if (node.ascendancyKind === "Normal")
-          attrs = `r="${ASCENDANCY_NORMAL_RADIUS}" class="${NODE_ASCENDANCY_CLASS} ${node.ascendancyName}"`;
+          attrs = `r="${ASCENDANCY_NORMAL_RADIUS}" class="${ASCENDANCY_CLASS} ${node.ascendancyName}"`;
       }
       break;
     case "Mastery":
@@ -181,8 +179,8 @@ function buildConnection(
 
   let attrs;
   if (nodeA.kind === "Ascendancy" && nodeA.ascendancyName !== undefined)
-    attrs = `class="${CONNECTION_ASCENDANCY_CLASS} ${nodeA.ascendancyName}"`;
-  else attrs = `class="${CONNECTION_NORMAL_CLASS}"`;
+    attrs = `class="${ASCENDANCY_CLASS} ${nodeA.ascendancyName}"`;
+  else attrs = ``;
 
   if (connection.path.sweep !== undefined) {
     const sweep = connection.path.sweep === "CW" ? 1 : 0;
@@ -204,5 +202,5 @@ function buildAscendancy(
       ? ASCENDANCY_ASCENDANT_BORDER_RADIUS
       : ASCENDANCY_BORDER_RADIUS;
 
-  return `<circle cx="${startNode.position.x}" cy="${startNode.position.y}" r="${radius}" class="$${NODE_ASCENDANCY_CLASS} ${ascendancyName}"/>\n`;
+  return `<circle cx="${startNode.position.x}" cy="${startNode.position.y}" r="${radius}" class="${ASCENDANCY_CLASS} ${ascendancyName}"/>\n`;
 }
