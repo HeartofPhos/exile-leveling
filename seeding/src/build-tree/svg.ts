@@ -190,7 +190,9 @@ function buildNode(
   constantsLookup: ConstantsLookup
 ) {
   const constants = constantsLookup[node.kind];
-  return `<circle cx="${node.position.x}" cy="${node.position.y}" id="n${nodeId}" r="${constants?.radius}" class="${constants?.class}"/>\n`;
+  if (constants === undefined) throw `missing constant, ${node.kind}`;
+
+  return `<circle cx="${node.position.x}" cy="${node.position.y}" id="n${nodeId}" r="${constants.radius}" class="${constants.class}"/>\n`;
 }
 
 function buildConnection(
