@@ -117,7 +117,7 @@ export function buildIntermediateTree(skillTree: SkillTree.Data) {
         connections = tree.connections;
       }
 
-      const treeNode = buildNode(nodeId, { x, y }, node);
+      const treeNode = buildNode(node, { x, y });
       nodes[nodeId] = treeNode;
 
       if (node.out) {
@@ -192,9 +192,8 @@ function filterConnection(a: SkillTree.Node, b: SkillTree.Node) {
 }
 
 function buildNode(
-  id: string,
-  pos: IntermediateTree.Coord,
-  node: SkillTree.Node
+  node: SkillTree.Node,
+  pos: IntermediateTree.Coord
 ): IntermediateTree.Node {
   if (node.isAscendancyStart)
     return {
