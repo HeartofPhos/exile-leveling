@@ -19,7 +19,7 @@ const NODE_NOTABLE_CLASS = "notable";
 const NODE_NORMAL_CLASS = "normal";
 
 const ASCENDANCY_CLASS = "ascendancy";
-const ASCENDANCY_BORDER_CLASS = "ascendancy-border";
+const BORDER_CLASS = "border";
 
 type ConstantsLookup = Partial<
   Record<IntermediateTree.Node["kind"], Constants>
@@ -107,7 +107,7 @@ export function buildTemplate(tree: IntermediateTree.Data) {
 }
 {{/if}}
 
-#{{ svgId }} .${ASCENDANCY_BORDER_CLASS} {
+#{{ svgId }} .${BORDER_CLASS} {
   fill: none;
   stroke: {{ connectionColor }};
   stroke-width: ${CONNECTION_STROKE_WIDTH};
@@ -221,7 +221,7 @@ function buildAscendancy(ascendancy: IntermediateTree.Ascendancy) {
       : ASCENDANCY_BORDER_RADIUS;
 
   template += `<g class="${ASCENDANCY_CLASS} ${ascendancy.name}">`;
-  template += `<circle cx="${startNode.position.x}" cy="${startNode.position.y}" r="${radius}" class="${ASCENDANCY_BORDER_CLASS}"/>\n`;
+  template += `<circle cx="${startNode.position.x}" cy="${startNode.position.y}" r="${radius}" class="${BORDER_CLASS}"/>\n`;
   template += buildSubTree(
     ascendancy.nodes,
     ascendancy.connections,
