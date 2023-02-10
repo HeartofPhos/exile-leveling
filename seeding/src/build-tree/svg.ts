@@ -97,12 +97,6 @@ export function buildTemplate(tree: IntermediateTree.Data) {
   stroke-width: ${CONNECTION_STROKE_WIDTH};
 }
 
-#{{ svgId }} .${ASCENDANCY_BORDER_CLASS} {
-  fill: none;
-  stroke: {{ connectionColor }};
-  stroke-width: ${CONNECTION_STROKE_WIDTH};
-}
-
 #{{ svgId }} .${ASCENDANCY_CLASS} {
   opacity: 0.4;
 }
@@ -112,6 +106,12 @@ export function buildTemplate(tree: IntermediateTree.Data) {
   opacity: unset;
 }
 {{/if}}
+
+#{{ svgId }} .${ASCENDANCY_BORDER_CLASS} {
+  fill: none;
+  stroke: {{ connectionColor }};
+  stroke-width: ${CONNECTION_STROKE_WIDTH};
+}
 
 #{{ svgId }} :is({{#each nodesActive}}#n{{this}}{{#unless @last}}, {{/unless}}{{/each}}) {
   fill: {{ nodeActiveColor }};
