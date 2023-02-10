@@ -79,7 +79,6 @@ export namespace UrlTree {
   export interface Data {
     name: string;
     version: string;
-    class: PassiveTree.Class;
     ascendancy?: PassiveTree.Ascendancy;
     nodes: string[];
     masteryLookup: Record<string, string>;
@@ -133,16 +132,9 @@ export async function buildUrlTree(
     masteries[nodeId] = effectId;
   }
 
-  let ascendancy;
-  if (ascendancyId > 0) {
-    ascendancy = passiveTree.classes[classId].ascendancies[ascendancyId - 1];
-    nodes.push(ascendancy.startNodeId);
-  }
-
   return {
     name: buildTree.name,
     version: buildTree.version,
-    class: passiveTree.classes[classId],
     ascendancy:
       ascendancyId > 0
         ? passiveTree.classes[classId].ascendancies[ascendancyId - 1]

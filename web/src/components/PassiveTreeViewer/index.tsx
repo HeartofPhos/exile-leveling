@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Viewport, ViewportProps } from "../Viewport";
-import { buildUrlTreeDelta, calculateBounds, UrlTreeDelta } from "./processs";
+import { buildUrlTreeDelta, UrlTreeDelta } from "./processs";
 import {
   TREE_DATA_LOOKUP,
   TREE_TEMPLATE_LOOKUP,
@@ -31,33 +31,32 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
     async function fn() {
       if (urlTrees.length == 0) return;
 
-      const curTree = urlTrees[curIndex];
-      let prevTree: UrlTree.Data;
-      if (curIndex != 0) prevTree = urlTrees[curIndex - 1];
+      const currentTree = urlTrees[curIndex];
+      let previousTree: UrlTree.Data;
+      if (curIndex != 0) previousTree = urlTrees[curIndex - 1];
       else {
-        prevTree = {
-          name: curTree.name,
-          version: curTree.version,
-          class: curTree.class,
-          ascendancy: curTree.ascendancy,
+        previousTree = {
+          name: currentTree.name,
+          version: currentTree.version,
+          ascendancy: currentTree.ascendancy,
           nodes: [],
           masteryLookup: {},
         };
-        if (curTree.ascendancy)
-          prevTree.nodes.push(curTree.nodes[curTree.nodes.length - 1]);
       }
 
-      const compiled = await TREE_TEMPLATE_LOOKUP[curTree.version];
-      const passiveTree = await TREE_DATA_LOOKUP[curTree.version];
+      const compiled = await TREE_TEMPLATE_LOOKUP[currentTree.version];
+      const passiveTree = await TREE_DATA_LOOKUP[currentTree.version];
 
-      const urlTreeDelta = buildUrlTreeDelta(curTree, prevTree, passiveTree);
-
-      const bounds = calculateBounds(urlTreeDelta, passiveTree);
+      const urlTreeDelta = buildUrlTreeDelta(
+        currentTree,
+        previousTree,
+        passiveTree
+      );
 
       const svg = compiled({
         svgId: randomId(6),
         backgroundColor: "#00000000",
-        ascendancy: curTree.ascendancy?.id,
+        ascendancy: currentTree.ascendancy?.id,
 
         nodeColor: "#64748b",
         nodeActiveColor: "#38bdf8",
@@ -80,7 +79,7 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
 
       setRenderData({
         svg,
-        intialFocus: bounds,
+        intialFocus: urlTreeDelta.bounds,
         masteryInfos: urlTreeDelta.masteryInfos,
       });
     }

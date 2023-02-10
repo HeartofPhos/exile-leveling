@@ -1,5 +1,4 @@
 import { PassiveTree } from "../../../../common/data/tree";
-import { BuildTree } from "../../../../common/route-processing";
 import { UrlTree } from "../../state/passive-trees";
 
 function intersection<T>(setA: Set<T>, setB: Set<T>) {
@@ -27,11 +26,8 @@ export interface UrlTreeDelta {
   connectionsActive: string[];
   connectionsAdded: string[];
   connectionsRemoved: string[];
+  bounds: Bounds;
   masteryInfos: Record<string, MasteryInfo>;
-}
-
-export interface MasteryInfo {
-  info: string;
 }
 
 export function buildUrlTreeDelta(
@@ -39,14 +35,60 @@ export function buildUrlTreeDelta(
   previousTree: UrlTree.Data,
   passiveTree: PassiveTree.Data
 ): UrlTreeDelta {
-  const curNodeSet = new Set(currentTree.nodes);
-  const prevNodeSet = new Set(previousTree.nodes);
+  const nodesPrevious = new Set(currentTree.nodes);
+  const nodesCurrent = new Set(previousTree.nodes);
 
   for (const [nodeId, effectId] of Object.entries(currentTree.masteryLookup)) {
     if (previousTree.masteryLookup[nodeId] !== effectId)
-      prevNodeSet.delete(nodeId);
+      nodesCurrent.delete(nodeId);
   }
 
+  const nodesActiveSet = intersection(nodesPrevious, nodesCurrent);
+  const nodesAddedSet = difference(nodesPrevious, nodesCurrent);
+  const nodesRemovedSet = difference(nodesCurrent, nodesPrevious);
+
+  const masteryInfos = buildMasteryInfos(
+    currentTree,
+    previousTree,
+    passiveTree
+  );
+
+  const bounds = calculateBounds(
+    nodesActiveSet,
+    nodesAddedSet,
+    nodesRemovedSet,
+    passiveTree
+  );
+
+  if (currentTree.ascendancy !== undefined)
+    nodesActiveSet.add(currentTree.ascendancy.startNodeId);
+
+  const connections = buildConnections(
+    nodesActiveSet,
+    nodesAddedSet,
+    nodesRemovedSet,
+    passiveTree
+  );
+
+  return {
+    nodesActive: Array.from(nodesActiveSet),
+    nodesAdded: Array.from(nodesAddedSet),
+    nodesRemoved: Array.from(nodesRemovedSet),
+    ...connections,
+    bounds,
+    masteryInfos,
+  };
+}
+
+export interface MasteryInfo {
+  info: string;
+}
+
+function buildMasteryInfos(
+  currentTree: UrlTree.Data,
+  previousTree: UrlTree.Data,
+  passiveTree: PassiveTree.Data
+) {
   const masteryLookups = [
     previousTree.masteryLookup,
     currentTree.masteryLookup,
@@ -61,10 +103,15 @@ export function buildUrlTreeDelta(
     }
   }
 
-  const nodesActiveSet = intersection(curNodeSet, prevNodeSet);
-  const nodesAddedSet = difference(curNodeSet, prevNodeSet);
-  const nodesRemovedSet = difference(prevNodeSet, curNodeSet);
+  return masteryInfos;
+}
 
+function buildConnections(
+  nodesActive: Set<string>,
+  nodesAdded: Set<string>,
+  nodesRemoved: Set<string>,
+  passiveTree: PassiveTree.Data
+) {
   const connectionsActive: string[] = [];
   const connectionsAdded: string[] = [];
   const connectionsRemoved: string[] = [];
@@ -72,13 +119,13 @@ export function buildUrlTreeDelta(
   for (const connection of passiveTree.connections) {
     const id = [connection.a, connection.b].sort().join("-");
 
-    const aIsActive = nodesActiveSet.has(connection.a);
-    const bIsActive = nodesActiveSet.has(connection.b);
+    const aIsActive = nodesActive.has(connection.a);
+    const bIsActive = nodesActive.has(connection.b);
 
     if (aIsActive && bIsActive) connectionsActive.push(id);
 
-    const aIsAdded = nodesAddedSet.has(connection.a);
-    const bIsAdded = nodesAddedSet.has(connection.b);
+    const aIsAdded = nodesAdded.has(connection.a);
+    const bIsAdded = nodesAdded.has(connection.b);
 
     if (
       (aIsAdded && (bIsAdded || bIsActive)) ||
@@ -86,8 +133,8 @@ export function buildUrlTreeDelta(
     )
       connectionsAdded.push(id);
 
-    const aIsRemoved = nodesRemovedSet.has(connection.a);
-    const bIsRemoved = nodesRemovedSet.has(connection.b);
+    const aIsRemoved = nodesRemoved.has(connection.a);
+    const bIsRemoved = nodesRemoved.has(connection.b);
 
     if (
       (aIsRemoved && (bIsRemoved || bIsActive)) ||
@@ -97,46 +144,50 @@ export function buildUrlTreeDelta(
   }
 
   return {
-    nodesActive: Array.from(nodesActiveSet),
-    nodesAdded: Array.from(nodesAddedSet),
-    nodesRemoved: Array.from(nodesRemovedSet),
     connectionsActive,
     connectionsAdded,
     connectionsRemoved,
-    masteryInfos,
   };
 }
 
-export function calculateBounds(
-  { nodesActive, nodesAdded, nodesRemoved }: UrlTreeDelta,
+export interface Bounds {
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}
+
+function calculateBounds(
+  nodesActive: Set<string>,
+  nodesAdded: Set<string>,
+  nodesRemoved: Set<string>,
   passiveTree: PassiveTree.Data
-) {
+): Bounds {
   let minX = Number.POSITIVE_INFINITY;
   let minY = Number.POSITIVE_INFINITY;
   let maxX = Number.NEGATIVE_INFINITY;
   let maxY = Number.NEGATIVE_INFINITY;
 
-  const updateMinMax = (x: number, y: number) => {
-    minX = Math.min(minX, x);
-    minY = Math.min(minY, y);
-    maxX = Math.max(maxX, x);
-    maxY = Math.max(maxY, y);
+  const updateMinMax = (nodeId: string) => {
+    const node = passiveTree.nodes[nodeId];
+
+    minX = Math.min(minX, node.x);
+    minY = Math.min(minY, node.y);
+    maxX = Math.max(maxX, node.x);
+    maxY = Math.max(maxY, node.y);
   };
 
-  if (nodesAdded.length == 0 && nodesRemoved.length == 0) {
+  if (nodesAdded.size == 0 && nodesRemoved.size == 0) {
     for (const nodeId of nodesActive) {
-      const node = passiveTree.nodes[nodeId];
-      updateMinMax(node.x, node.y);
+      updateMinMax(nodeId);
     }
   } else {
     for (const nodeId of nodesAdded) {
-      const node = passiveTree.nodes[nodeId];
-      updateMinMax(node.x, node.y);
+      updateMinMax(nodeId);
     }
 
     for (const nodeId of nodesRemoved) {
-      const node = passiveTree.nodes[nodeId];
-      updateMinMax(node.x, node.y);
+      updateMinMax(nodeId);
     }
   }
 

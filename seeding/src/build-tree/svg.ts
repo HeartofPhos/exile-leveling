@@ -3,7 +3,7 @@ import { IntermediateTree } from "./types";
 
 const PADDING = 550;
 
-const ASCENDANCY_START_RADIUS = 25;
+const ASCENDANCY_START_RADIUS = 30;
 const ASCENDANCY_NOTABLE_RADIUS = 65;
 const ASCENDANCY_NORMAL_RADIUS = 45;
 const MASTERY_RADIUS = 55;
