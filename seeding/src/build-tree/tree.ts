@@ -70,7 +70,8 @@ export function buildIntermediateTree(skillTree: SkillTree.Data) {
     for (const ascendancy of _class.ascendancies) {
       // @ts-expect-error
       tree.ascendancies[ascendancy.name] = {
-        nodeIds: [],
+        nodes: {},
+        connections: [],
       };
     }
   }
@@ -99,16 +100,25 @@ export function buildIntermediateTree(skillTree: SkillTree.Data) {
 
       const [angle, x, y] = getPosition(skillTree, node);
 
-      const treeNode = buildNode(nodeId, { x, y }, node);
-      tree.nodes[nodeId] = treeNode;
-
-      if (treeNode.kind === "Ascendancy") {
+      let nodes;
+      let connections;
+      if (node.ascendancyName !== undefined) {
         const asc = tree.ascendancies[node.ascendancyName!];
-        if (node.isAscendancyStart) asc.startNodeId = nodeId;
-        asc.nodeIds.push(nodeId);
+        if (node.isAscendancyStart) {
+          asc.startNodeId = nodeId;
+          asc.name = node.ascendancyName;
+        }
+
+        nodes = asc.nodes;
+        connections = asc.connections;
       } else {
         updateMinxMax(x, y);
+        nodes = tree.nodes;
+        connections = tree.connections;
       }
+
+      const treeNode = buildNode(nodeId, { x, y }, node);
+      nodes[nodeId] = treeNode;
 
       if (node.out) {
         for (const outNodeId of node.out) {
@@ -131,7 +141,7 @@ export function buildIntermediateTree(skillTree: SkillTree.Data) {
             path = { sweep: undefined };
           }
 
-          tree.connections.push({
+          connections.push({
             a: nodeId,
             b: outNodeId,
             path: path,
@@ -142,12 +152,10 @@ export function buildIntermediateTree(skillTree: SkillTree.Data) {
   }
 
   for (const [, asc] of Object.entries(tree.ascendancies)) {
-    const startNode = tree.nodes[
-      asc.startNodeId
-    ] as IntermediateTree.AscendancyNode;
+    const startNode = asc.nodes[asc.startNodeId];
 
     const { x: ASCENDANCY_POS_X, y: ASCENDANCY_POS_Y } =
-      ASCENDANCY_OFFSETS[startNode.ascendancyName];
+      ASCENDANCY_OFFSETS[asc.name];
 
     const diff_x = ASCENDANCY_POS_X - startNode.position.x;
     const diff_y = ASCENDANCY_POS_Y - startNode.position.y;
@@ -157,9 +165,7 @@ export function buildIntermediateTree(skillTree: SkillTree.Data) {
       node.position.y += diff_y;
     };
 
-    for (const nodeId of asc.nodeIds) {
-      const node = tree.nodes[nodeId];
-
+    for (const [, node] of Object.entries(asc.nodes)) {
       updateNode(node);
       updateMinxMax(node.position.x, node.position.y);
     }
@@ -190,40 +196,29 @@ function buildNode(
   pos: IntermediateTree.Coord,
   node: SkillTree.Node
 ): IntermediateTree.Node {
-  if (node.ascendancyName !== undefined) {
-    let ascendancyKind: IntermediateTree.AscendancyNode["ascendancyKind"];
-    if (node.isAscendancyStart) ascendancyKind = "Start";
-    else if (node.isNotable) ascendancyKind = "Notable";
-    else ascendancyKind = "Normal";
-
+  if (node.isAscendancyStart)
     return {
       position: pos,
-      kind: "Ascendancy",
-      ascendancyName: node.ascendancyName,
-      ascendancyKind: ascendancyKind,
+      kind: "Ascendancy_Start",
     };
-  }
 
-  if (node.isMastery) {
+  if (node.isMastery)
     return {
       position: pos,
       kind: "Mastery",
     };
-  }
 
-  if (node.isKeystone) {
+  if (node.isKeystone)
     return {
       position: pos,
       kind: "Keystone",
     };
-  }
 
-  if (node.isNotable) {
+  if (node.isNotable)
     return {
       position: pos,
       kind: "Notable",
     };
-  }
 
   return {
     position: pos,

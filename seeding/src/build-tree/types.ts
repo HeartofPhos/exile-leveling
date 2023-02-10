@@ -215,27 +215,15 @@ export namespace IntermediateTree {
   }
 
   export interface Ascendancy {
+    name: string;
     startNodeId: string;
-    nodeIds: string[];
+    nodes: Record<string, Node>;
+    connections: Connection[];
   }
 
-  export type Node = BasicNode | AscendancyNode | MasteryNode;
-
-  export interface BasicNode {
+  export interface Node {
     position: Coord;
-    kind: "Normal" | "Notable" | "Keystone";
-  }
-
-  export interface MasteryNode {
-    position: Coord;
-    kind: "Mastery";
-  }
-
-  export interface AscendancyNode {
-    position: Coord;
-    kind: "Ascendancy";
-    ascendancyName: string;
-    ascendancyKind: "Start" | "Normal" | "Notable";
+    kind: "Normal" | "Notable" | "Keystone" | "Mastery" | "Ascendancy_Start";
   }
 
   export interface Coord {
