@@ -11,7 +11,7 @@
 
 @media (hover: hover) {
   .list > li:hover {
-    border-color: var(--primary);
+    border-color: var(--accent-highlight);
   }
 }
 

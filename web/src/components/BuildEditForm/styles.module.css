@@ -5,7 +5,7 @@
 .buildInfoLabel {
   width: 100%;
   text-align: right;
-  color: var(--primary-light);
+  color: var(--primary);
   font-weight: var(--font-heavy);
 }
 

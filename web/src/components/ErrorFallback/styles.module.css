@@ -1,5 +1,5 @@
 .reset {
-  color: var(--primary-light);
+  color: var(--primary);
   text-decoration: underline;
   cursor: pointer;
 }

@@ -15,7 +15,7 @@
 
 .label {
   text-align: center;
-  color: var(--primary-light);
+  color: var(--primary);
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

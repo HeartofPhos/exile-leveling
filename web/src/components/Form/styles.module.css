@@ -11,7 +11,7 @@
 }
 
 .formRow > label {
-  color: var(--primary-light);
+  color: var(--primary);
   font-size: 1rem;
   font-weight: var(--font-heavy);
 }
@@ -31,7 +31,7 @@
 .formInput {
   display: block;
   padding: var(--size-2);
-  color: var(--primary);
+  color: var(--secondary);
   background-color: var(--background-primary);
   border-style: solid;
   border-width: var(--border-width);
@@ -43,7 +43,7 @@
 .formButton {
   font-size: 1rem;
   font-weight: var(--font-heavy);
-  color: var(--primary-light);
+  color: var(--primary);
   background-color: var(--background-primary);
   border-style: solid;
   border-width: var(--border-width);
@@ -53,5 +53,5 @@
 }
 
 .formButton:active {
-  background-color: var(--highlight);
+  background-color: var(--background-highlight);
 }

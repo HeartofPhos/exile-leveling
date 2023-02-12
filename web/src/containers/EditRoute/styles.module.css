@@ -39,11 +39,11 @@
 }
 
 .selected {
-  background-color: var(--highlight);
+  background-color: var(--background-highlight);
 }
 
 @media (hover: hover) {
   .fileListItem:hover {
-    border-color: var(--primary);
+    border-color: var(--accent-highlight);
   }
 }

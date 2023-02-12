@@ -1,5 +1,5 @@
 .default {
-  color: var(--primary-light);
+  color: var(--primary);
   font-weight: var(--font-heavy);
 }
 

@@ -42,7 +42,7 @@
 }
 
 .navItem:active {
-  background-color: var(--highlight);
+  background-color: var(--background-highlight);
 }
 
 .navItem.expand {
@@ -51,12 +51,12 @@
 
 @media (hover: hover) {
   .navItem:hover {
-    border-color: var(--primary);
+    border-color: var(--accent-highlight);
   }
 }
 
 .navElement {
-  color: var(--primary-light);
+  color: var(--primary);
   font-weight: var(--font-heavy);
   padding: var(--size-3);
 }
@@ -70,7 +70,7 @@
 }
 
 .navIcon:active {
-  background-color: var(--highlight);
+  background-color: var(--background-highlight);
 }
 
 .navMain.expand {

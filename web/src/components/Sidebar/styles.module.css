@@ -20,7 +20,7 @@
   justify-content: space-between;
   align-items: center;
   height: var(--line-height);
-  color: var(--primary-light);
+  color: var(--primary);
   font-weight: var(--font-heavy);
 }
 
@@ -50,11 +50,11 @@
 }
 
 .searchString:active {
-  background-color: var(--highlight);
+  background-color: var(--background-highlight);
 }
 
 @media (hover: hover) {
   .searchString:hover {
-    border-color: var(--primary);
+    border-color: var(----accent-highlight);
   }
 }

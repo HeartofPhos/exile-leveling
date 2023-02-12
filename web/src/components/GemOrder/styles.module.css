@@ -18,5 +18,5 @@
 }
 
 .orderButton:active {
-  background-color: var(--highlight);
+  background-color: var(--background-highlight);
 }
