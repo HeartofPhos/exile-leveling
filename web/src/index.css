@@ -69,7 +69,15 @@ hr {
   vertical-align: sub;
   width: auto;
   height: 1em;
-  margin-right: var(--size-1);
+  margin-inline: var(--size-1);
+}
+
+.inlineIcon:last-child {
+  margin-inline: var(--size-1) 0;
+}
+
+.inlineIcon:first-child {
+  margin-inline: 0 var(--size-1);
 }
 
 a:link,

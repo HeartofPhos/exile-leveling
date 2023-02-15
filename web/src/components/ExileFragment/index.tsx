@@ -39,7 +39,11 @@ function AreaComponent(name: string, isTownArea: boolean) {
     <div className={classNames(styles.noWrap)}>
       <span className={classNames(styles.area)}>{name}</span>
       {isTownArea && (
-        <InlineFakeBlock child={<img src={getImageUrl("town.png")} alt="" />} />
+        <img
+          src={getImageUrl("town.png")}
+          className={classNames("inlineIcon")}
+          alt=""
+        />
       )}
     </div>
   );
