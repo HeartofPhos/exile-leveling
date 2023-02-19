@@ -8,8 +8,8 @@ import { highlight, Grammar } from "prismjs";
 import {
   buildRouteSource,
   getRouteFiles,
-  RouteFile,
 } from "../../../../common/route-processing";
+import { RouteFile } from "../../../../common/route-processing/types";
 import styles from "./styles.module.css";
 import { borderListStyles } from "../../components/BorderList";
 import { TextModal } from "../../components/Modal";

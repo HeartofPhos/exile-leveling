@@ -1,9 +1,10 @@
 import classNames from "classnames";
 import {
   Fragment,
-  FragmentStep,
-} from "../../../../common/route-processing/fragment";
-import { Area } from "../../../../common/types";
+  QuestFragment,
+} from "../../../../common/route-processing/fragment/types";
+import { FragmentStep } from "../../../../common/route-processing/types";
+import { GameData } from "../../../../common/types";
 import {
   BsArrowDownSquare,
   BsArrowDownLeftSquare,
@@ -18,7 +19,6 @@ import { InlineFakeBlock } from "../InlineFakeBlock";
 import { quests, areas } from "../../../../common/data";
 import { SplitRow } from "../SplitRow";
 import { taskStyle } from "../TaskList";
-import { QuestFragment } from "../../../../common/route-processing/fragment/quest";
 import { ItemReward } from "../ItemReward";
 import styles from "./styles.module.css";
 
@@ -104,7 +104,7 @@ function TrialComponent() {
   );
 }
 
-function LogoutComponent(area: Area) {
+function LogoutComponent(area: GameData.Area) {
   return (
     <>
       <span className={classNames(styles.default)}>Logout</span>
@@ -114,7 +114,7 @@ function LogoutComponent(area: Area) {
   );
 }
 
-function PortalComponent(area?: Area) {
+function PortalComponent(area?: GameData.Area) {
   return (
     <div className={classNames(styles.noWrap)}>
       <img

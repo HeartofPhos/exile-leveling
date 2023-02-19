@@ -1,20 +1,8 @@
-import { Area } from "../types";
+import { GameData } from "../types";
 import { areas } from "../data";
-import { FragmentStep, parseFragmentStep } from "./fragment";
-import { GemStep } from "./gems";
+import { parseFragmentStep } from "./fragment";
 import { ScopedLogger } from "./scoped-logger";
-
-export type Step = FragmentStep | GemStep;
-export interface Section {
-  name: string;
-  steps: Step[];
-}
-export type Route = Section[];
-
-export interface RouteFile {
-  name: string;
-  contents: string;
-}
+import { Route, RouteFile, Section } from "./types";
 
 export function getRouteFiles(routeSources: string[]) {
   const routeFiles: RouteFile[] = [];
@@ -53,13 +41,13 @@ export function buildRouteSource(routeFiles: RouteFile[]) {
 }
 
 export interface RouteState {
-  implicitWaypoints: Set<Area["id"]>;
-  explicitWaypoints: Set<Area["id"]>;
-  usedWaypoints: Set<Area["id"]>;
-  craftingAreas: Set<Area["id"]>;
-  currentAreaId: Area["id"];
-  lastTownAreaId: Area["id"];
-  portalAreaId: Area["id"] | null;
+  implicitWaypoints: Set<GameData.Area["id"]>;
+  explicitWaypoints: Set<GameData.Area["id"]>;
+  usedWaypoints: Set<GameData.Area["id"]>;
+  craftingAreas: Set<GameData.Area["id"]>;
+  currentAreaId: GameData.Area["id"];
+  lastTownAreaId: GameData.Area["id"];
+  portalAreaId: GameData.Area["id"] | null;
   preprocessorDefinitions: Set<string>;
   logger: ScopedLogger;
 }
@@ -129,25 +117,6 @@ export function parseRoute(routeFiles: RouteFile[], state: RouteState) {
   state.logger.drain(console);
 
   return route;
-}
-
-export interface BuildData {
-  characterClass: string;
-  bandit: "None" | "Oak" | "Kraityn" | "Alira";
-  leagueStart: boolean;
-  library: boolean;
-}
-
-export interface BuildTree {
-  name: string;
-  version: string;
-  url: string;
-}
-
-export interface RequiredGem {
-  id: string;
-  uid: string;
-  note: string;
 }
 
 export function initializeRouteState() {

@@ -1,5 +1,8 @@
 import classNames from "classnames";
-import { BuildData, RequiredGem } from "../../../../common/route-processing";
+import {
+  BuildData,
+  RequiredGem,
+} from "../../../../common/route-processing/types";
 import { gemProgressSelectorFamily } from "../../state/gem-progress";
 import { GemOrder } from "../GemOrder";
 import { SplitRow } from "../SplitRow";

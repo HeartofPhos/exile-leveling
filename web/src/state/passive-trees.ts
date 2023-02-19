@@ -2,7 +2,7 @@ import Handlebars from "handlebars";
 import { PassiveTree } from "../../../common/data/tree";
 import { atom, DefaultValue, selector } from "recoil";
 import { decodeBase64Url, getPersistent, globImportLazy } from "../utility";
-import { BuildTree } from "../../../common/route-processing";
+import { BuildTree } from "../../../common/route-processing/types";
 import { persistentStorageEffect } from ".";
 
 export const TREE_DATA_LOOKUP = globImportLazy<PassiveTree.Data>(

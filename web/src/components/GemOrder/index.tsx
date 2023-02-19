@@ -2,7 +2,7 @@ import classNames from "classnames";
 import { HiChevronDoubleUp, HiChevronDown, HiChevronUp } from "react-icons/hi";
 import { MdDeleteOutline } from "react-icons/md";
 import { GemReward } from "../ItemReward";
-import { RequiredGem } from "../../../../common/route-processing";
+import { RequiredGem } from "../../../../common/route-processing/types";
 import { InlineFakeBlock } from "../InlineFakeBlock";
 import styles from "./styles.module.css";
 

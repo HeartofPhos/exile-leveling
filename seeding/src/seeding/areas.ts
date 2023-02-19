@@ -1,4 +1,4 @@
-import { Areas } from "../../../common/types";
+import { GameData } from "../../../common/types";
 import { MapPinsDat, RecipeUnlockDisplayDat, WorldAreasDat } from "../../data";
 
 const seedAreaIds = [
@@ -13,7 +13,7 @@ const seedAreaIds = [
 ];
 
 export async function getAreas() {
-  const result: Areas = {};
+  const result: GameData.Areas = {};
 
   const todo = WorldAreasDat.data.reduce<number[]>((p, c, i) => {
     if (seedAreaIds.some((areaId) => areaId == c.Id)) p.push(i);

@@ -4,7 +4,7 @@ import {
   BuildData,
   BuildTree,
   RequiredGem,
-} from "../../../../common/route-processing";
+} from "../../../../common/route-processing/types";
 import { decodeBase64Url, randomId } from "../../utility";
 
 const GEM_ID_REMAP: Record<string, string> = {

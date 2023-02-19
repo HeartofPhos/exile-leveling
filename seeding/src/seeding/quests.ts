@@ -1,4 +1,4 @@
-import { Quest, Quests } from "../../../common/types";
+import { GameData } from "../../../common/types";
 import { cargoQuery } from "../wiki";
 import { QuestDat } from "../../data";
 
@@ -8,8 +8,8 @@ const BREAKING_SOME_EGGS_REWARD_2 = [
   "Metadata/Items/Gems/SkillGemDash",
 ];
 
-function processRewards(quest: Quest, test: (key: string) => boolean) {
-  const reward_offers: Quest["reward_offers"] = [
+function processRewards(quest: GameData.Quest, test: (key: string) => boolean) {
+  const reward_offers: GameData.Quest["reward_offers"] = [
     { quest: {}, vendor: {} },
     { quest: {}, vendor: {} },
   ];
@@ -33,7 +33,7 @@ function processRewards(quest: Quest, test: (key: string) => boolean) {
   quest.reward_offers = reward_offers;
 }
 
-function postProcessQuest(quest: Quest) {
+function postProcessQuest(quest: GameData.Quest) {
   switch (quest.id) {
     //Hack for The Caged Brute
     case "a1q2":
@@ -51,12 +51,12 @@ function postProcessQuest(quest: Quest) {
 // QuestVendorRewards.dat no longer exists, use wiki data
 // Impractical to handle QuestRewards & VendorRewards from different sources
 export async function getQuests() {
-  const result: Quests = {};
+  const result: GameData.Quests = {};
 
   for (const row of QuestDat.data) {
     if (row.Type != 0 && row.Type != 1) continue;
 
-    const quest: Quest = {
+    const quest: GameData.Quest = {
       id: row.Id,
       name: row.Name,
       act: row.Act.toString(),

@@ -1,6 +1,6 @@
 import classNames from "classnames";
 import { MdCircle } from "react-icons/md";
-import { RequiredGem } from "../../../../common/route-processing";
+import { RequiredGem } from "../../../../common/route-processing/types";
 import { gems, gemColours } from "../../../../common/data";
 import { InlineFakeBlock } from "../InlineFakeBlock";
 import { taskStyle } from "../TaskList";

@@ -1,9 +1,8 @@
 import { DefaultValue } from "recoil";
 import { atom, selector } from "recoil";
 import { persistentStorageEffect } from ".";
-import type { BuildData } from "../../../common/route-processing";
+import { BuildData } from "../../../common/route-processing/types";
 import { getPersistent } from "../utility";
-import { gemProgressKeys, gemProgressSelectorFamily } from "./gem-progress";
 
 const BUILD_DATA_VERSION = 3;
 

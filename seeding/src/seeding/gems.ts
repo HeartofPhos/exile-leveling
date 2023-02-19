@@ -1,4 +1,4 @@
-import { Gems, VariantGemLookup } from "../../../common/types";
+import { GameData } from "../../../common/types";
 import {
   BaseItemTypesDat,
   GrantedEffectsDat,
@@ -22,9 +22,9 @@ const ATTRIBUTE_LOOKUP: Record<number, string> = {
 };
 
 export async function getGems() {
-  const gems: Gems = {};
-  const awakenedGemLookup: VariantGemLookup = {};
-  const vaalGemLookup: VariantGemLookup = {};
+  const gems: GameData.Gems = {};
+  const awakenedGemLookup: GameData.VariantGemLookup = {};
+  const vaalGemLookup: GameData.VariantGemLookup = {};
   for (const skillGem of SkillGemsDat.data) {
     const baseItemType = BaseItemTypesDat.data[skillGem.BaseItemTypesKey];
     if (!baseItemType.SiteVisibility) continue;

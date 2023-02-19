@@ -1,13 +1,7 @@
-import { BuildData, RequiredGem } from ".";
 import { quests } from "../data";
-import { Quest } from "../types";
-import { QuestFragment } from "./fragment/quest";
-
-export interface GemStep {
-  type: "gem_step";
-  requiredGem: RequiredGem;
-  rewardType: "quest" | "vendor";
-}
+import { GameData } from "../types";
+import { QuestFragment } from "./fragment/types";
+import { BuildData, GemStep, RequiredGem } from "./types";
 
 export function buildGemSteps(
   questFragment: QuestFragment,
@@ -56,7 +50,7 @@ function findQuestGem(
   buildData: BuildData,
   requiredGems: RequiredGem[],
   routeGems: Set<number>,
-  quest_rewards: Quest["reward_offers"][0]["quest"]
+  quest_rewards: GameData.Quest["reward_offers"][0]["quest"]
 ): number | null {
   for (let i = 0; i < requiredGems.length; i++) {
     const requiredGem = requiredGems[i];
@@ -82,7 +76,7 @@ function findVendorGems(
   buildData: BuildData,
   requiredGems: RequiredGem[],
   routeGems: Set<number>,
-  vendor_rewards: Quest["reward_offers"][0]["vendor"]
+  vendor_rewards: GameData.Quest["reward_offers"][0]["vendor"]
 ): number[] {
   const result: number[] = [];
   for (let i = 0; i < requiredGems.length; i++) {

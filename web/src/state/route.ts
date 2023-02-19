@@ -1,5 +1,5 @@
 import { selector } from "recoil";
-import { Route, Section } from "../../../common/route-processing";
+import { Route, Section } from "../../../common/route-processing/types";
 import { buildDataSelector } from "./build-data";
 import { requiredGemsSelector } from "./gem";
 import { routeFilesSelector } from "./route-files";

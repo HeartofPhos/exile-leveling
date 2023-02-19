@@ -1,6 +1,6 @@
 import { atom, DefaultValue, selector } from "recoil";
 import { persistentStorageEffect } from ".";
-import { RequiredGem } from "../../../common/route-processing";
+import { RequiredGem } from "../../../common/route-processing/types";
 import { getPersistent } from "../utility";
 import { gemProgressKeys, gemProgressSelectorFamily } from "./gem-progress";
 

@@ -1,22 +1,35 @@
 import { RouteState } from "..";
-import { areas, killWaypoints } from "../../data";
-import { Area } from "../../types";
-import {
-  AscendFragment,
-  EvaluateAscend,
-  EvaluateTrial,
-  TrialFragment,
-} from "./ascendancy";
+import { areas, killWaypoints, quests } from "../../data";
+import { GameData } from "../../types";
 import { matchPatterns, Pattern } from "./patterns";
-import {
-  EvaluateQuest,
-  EvaluateQuestText,
-  QuestFragment,
-  QuestTextFragment,
-} from "./quest";
+import { Fragment } from "./types";
+import { FragmentStep } from "../types";
 
 export type RawFragment = string | string[];
 export type RawFragmentStep = RawFragment[];
+
+const EvaluateLookup: Record<
+  string,
+  (rawFragment: RawFragment, state: RouteState) => string | EvaluateResult
+> = {
+  ["kill"]: EvaluateKill,
+  ["arena"]: EvaluateArena,
+  ["area"]: EvaluateArea,
+  ["enter"]: EvaluateEnter,
+  ["logout"]: EvaluateLogout,
+  ["waypoint"]: EvaluateWaypoint,
+  ["waypoint_get"]: EvaluateGetWaypoint,
+  ["portal"]: EvaluatePortal,
+  ["quest"]: EvaluateQuest,
+  ["quest_text"]: EvaluateQuestText,
+  ["generic"]: EvaluateGeneric,
+  ["reward_quest"]: EvaluateQuestReward,
+  ["reward_vendor"]: EvaluateVendorReward,
+  ["trial"]: EvaluateTrial,
+  ["ascend"]: EvaluateAscend,
+  ["crafting"]: EvaluateCrafting,
+  ["dir"]: EvaluateDirection,
+};
 
 const PATTERNS: Pattern[] = [
   // Comment
@@ -68,6 +81,7 @@ export function parseFragmentStep(text: string, state: RouteState) {
     if (typeof subStep == "string") {
       step.parts.push(subStep);
     } else {
+      const evaluateFragment = EvaluateLookup[subStep[0]];
       const result = evaluateFragment(subStep, state);
       if (typeof result === "string") state.logger.error(result);
       else step.parts.push(result.fragment);
@@ -76,7 +90,8 @@ export function parseFragmentStep(text: string, state: RouteState) {
 
   return step;
 }
-export function transitionArea(state: RouteState, area: Area) {
+
+function transitionArea(state: RouteState, area: GameData.Area) {
   if (area.is_town_area) {
     state.lastTownAreaId = area.id;
     if (area.has_waypoint) state.implicitWaypoints.add(area.id);
@@ -85,99 +100,12 @@ export function transitionArea(state: RouteState, area: Area) {
   state.currentAreaId = area.id;
 }
 
-export interface FragmentStep {
-  type: "fragment_step";
-  parts: (string | Fragment)[];
-}
+const ERROR_INVALID_FORMAT = "invalid format";
+const ERROR_MISSING_AREA = "area does not exist";
+const ERROR_AREA_NO_WAYPOINT = "area does not have a waypoint";
 
-export type Fragment =
-  | KillFragment
-  | ArenaFragment
-  | AreaFragment
-  | EnterFragment
-  | LogoutFragment
-  | WaypointFragment
-  | UseWaypointFragment
-  | GetWaypointFragment
-  | PortalFragment
-  | QuestFragment
-  | QuestTextFragment
-  | GenericFragment
-  | RewardQuestFragment
-  | RewardVendorFragment
-  | TrialFragment
-  | AscendFragment
-  | DirectionFragment
-  | CraftingFragment;
-
-interface KillFragment {
-  type: "kill";
-  value: string;
-}
-
-interface ArenaFragment {
-  type: "arena";
-  value: string;
-}
-
-interface AreaFragment {
-  type: "area";
-  areaId: Area["id"];
-}
-
-interface LogoutFragment {
-  type: "logout";
-  areaId: Area["id"];
-}
-
-interface EnterFragment {
-  type: "enter";
-  areaId: Area["id"];
-}
-
-interface WaypointFragment {
-  type: "waypoint";
-}
-
-interface UseWaypointFragment {
-  type: "waypoint_use";
-  dstAreaId: Area["id"];
-  srcAreaId: Area["id"];
-}
-
-interface GetWaypointFragment {
-  type: "waypoint_get";
-}
-
-interface GenericFragment {
-  type: "generic";
-  value: string;
-}
-
-interface RewardQuestFragment {
-  type: "reward_quest";
-  item: string;
-}
-
-interface RewardVendorFragment {
-  type: "reward_vendor";
-  item: string;
-  cost?: string;
-}
-
-interface PortalFragment {
-  type: "portal";
-  dstAreaId?: Area["id"];
-}
-
-interface CraftingFragment {
-  type: "crafting";
-  crafting_recipes: string[];
-}
-
-interface DirectionFragment {
-  type: "dir";
-  dirIndex: number;
+interface EvaluateResult {
+  fragment: Fragment;
 }
 
 function EvaluateKill(
@@ -483,54 +411,84 @@ function EvaluateDirection(
   };
 }
 
-export const ERROR_INVALID_FORMAT = "invalid format";
-export const ERROR_MISSING_AREA = "area does not exist";
-export const ERROR_AREA_NO_WAYPOINT = "area does not have a waypoint";
-
-export interface EvaluateResult {
-  fragment: Fragment;
-}
-
-export function evaluateFragment(
+function EvaluateQuest(
   rawFragment: RawFragment,
   state: RouteState
 ): string | EvaluateResult {
-  switch (rawFragment[0]) {
-    case "kill":
-      return EvaluateKill(rawFragment, state);
-    case "arena":
-      return EvaluateArena(rawFragment, state);
-    case "area":
-      return EvaluateArea(rawFragment, state);
-    case "enter":
-      return EvaluateEnter(rawFragment, state);
-    case "logout":
-      return EvaluateLogout(rawFragment, state);
-    case "waypoint":
-      return EvaluateWaypoint(rawFragment, state);
-    case "waypoint_get":
-      return EvaluateGetWaypoint(rawFragment, state);
-    case "portal":
-      return EvaluatePortal(rawFragment, state);
-    case "quest":
-      return EvaluateQuest(rawFragment, state);
-    case "quest_text":
-      return EvaluateQuestText(rawFragment, state);
-    case "generic":
-      return EvaluateGeneric(rawFragment, state);
-    case "reward_quest":
-      return EvaluateQuestReward(rawFragment, state);
-    case "reward_vendor":
-      return EvaluateVendorReward(rawFragment, state);
-    case "trial":
-      return EvaluateTrial(rawFragment, state);
-    case "ascend":
-      return EvaluateAscend(rawFragment, state);
-    case "crafting":
-      return EvaluateCrafting(rawFragment, state);
-    case "dir":
-      return EvaluateDirection(rawFragment, state);
+  {
+    if (rawFragment.length < 2) return ERROR_INVALID_FORMAT;
+
+    const questId = rawFragment[1];
+    const quest = quests[questId];
+    if (!quest) return "invalid quest id";
+
+    let rewardOfferIds;
+    if (rawFragment.length == 2) {
+      rewardOfferIds = quest.reward_offers.map((v, i) => i);
+    } else {
+      rewardOfferIds = [];
+      for (let i = 2; i < rawFragment.length; i++) {
+        const questRewardIndex = Number.parseInt(rawFragment[i]);
+        rewardOfferIds.push(questRewardIndex);
+      }
+    }
+
+    return {
+      fragment: {
+        type: "quest",
+        questId: rawFragment[1],
+        rewardOffers: rewardOfferIds,
+      },
+    };
+  }
+}
+
+function EvaluateQuestText(
+  rawFragment: RawFragment,
+  state: RouteState
+): string | EvaluateResult {
+  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
+  return {
+    fragment: {
+      type: "quest_text",
+      value: rawFragment[1],
+    },
+  };
+}
+
+function EvaluateTrial(
+  rawFragment: RawFragment,
+  state: RouteState
+): string | EvaluateResult {
+  if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
+  return {
+    fragment: {
+      type: "trial",
+    },
+  };
+}
+
+function EvaluateAscend(
+  rawFragment: RawFragment,
+  state: RouteState
+): string | EvaluateResult {
+  if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
+
+  const expectedAreaId = "Labyrinth_Airlock";
+  const currentArea = areas[state.currentAreaId];
+  if (currentArea.id != expectedAreaId) {
+    const expectedArea = areas[expectedAreaId];
+    state.logger.warn(`must be in "${expectedArea.name}"`);
   }
 
-  return ERROR_INVALID_FORMAT;
+  const townArea = areas[state.lastTownAreaId];
+  transitionArea(state, townArea);
+
+  return {
+    fragment: {
+      type: "ascend",
+      //@ts-expect-error
+      version: rawFragment[1],
+    },
+  };
 }
