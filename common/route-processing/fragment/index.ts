@@ -1,12 +1,11 @@
 import { RouteState } from "..";
 import { areas, killWaypoints, quests } from "../../data";
 import { GameData } from "../../types";
-import { matchPatterns, Pattern } from "./patterns";
+import { matchPatterns, Pattern } from "../patterns";
 import { Fragment } from "./types";
 import { FragmentStep } from "../types";
 
-export type RawFragment = string | string[];
-export type RawFragmentStep = RawFragment[];
+type RawFragment = string | string[];
 
 const EvaluateLookup: Record<
   string,
@@ -31,64 +30,56 @@ const EvaluateLookup: Record<
   ["dir"]: EvaluateDirection,
 };
 
-const PATTERNS: Pattern[] = [
+interface ParseContext {
+  state: RouteState;
+  step: FragmentStep;
+}
+
+const FRAGMENT_PATTERNS: Pattern<ParseContext>[] = [
   // Comment
   {
     regex: /(\s*#.*)/g,
-    processor: () => null,
+    processor: () => true,
   },
   // Text
   {
     regex: /[^{#]+/g,
-    processor: (match: RegExpExecArray) => {
-      return match[0];
+    processor: (match, { step }) => {
+      step.parts.push(match[0]);
+      return true;
     },
   },
   // Fragment
   {
     regex: /\{(.+?)\}/g,
-    processor: (match: RegExpExecArray) => {
+    processor: (match, { state, step }) => {
       const split = match[1].split("|");
-      return split;
+
+      const evaluateFragment = EvaluateLookup[split[0]];
+      const result = evaluateFragment(split, state);
+      if (typeof result === "string") state.logger.error(result);
+      else step.parts.push(result.fragment);
+
+      return true;
     },
   },
 ];
 
 export function parseFragmentStep(text: string, state: RouteState) {
-  text = text.trim();
-  const rawFragmentStep: RawFragmentStep = [];
-
-  let currentIndex = 0;
-  do {
-    const matchResult = matchPatterns(text, currentIndex, PATTERNS);
-
-    if (matchResult) {
-      currentIndex = matchResult.lastIndex;
-      if (matchResult.rawFragment)
-        rawFragmentStep.push(matchResult.rawFragment);
-    } else {
-      state.logger.error("invalid syntax");
-      break;
-    }
-  } while (currentIndex < text.length);
-
   const step: FragmentStep = {
     type: "fragment_step",
     parts: [],
   };
 
-  for (const subStep of rawFragmentStep) {
-    if (typeof subStep == "string") {
-      step.parts.push(subStep);
-    } else {
-      const evaluateFragment = EvaluateLookup[subStep[0]];
-      const result = evaluateFragment(subStep, state);
-      if (typeof result === "string") state.logger.error(result);
-      else step.parts.push(result.fragment);
-    }
-  }
+  const parseContext: ParseContext = {
+    state,
+    step,
+  };
 
-  return step;
+  const success = matchPatterns(text, FRAGMENT_PATTERNS, parseContext);
+  if (!success) state.logger.error("invalid syntax");
+
+  return parseContext.step;
 }
 
 function transitionArea(state: RouteState, area: GameData.Area) {
