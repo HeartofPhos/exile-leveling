@@ -1,26 +1,46 @@
-import { RawFragment } from ".";
-
-export interface Pattern {
+export interface Pattern<T> {
   regex: RegExp;
-  processor: (match: RegExpExecArray) => RawFragment | null;
+  processor: (match: RegExpExecArray) => T | null;
 }
 
-export function matchPatterns(
+export function matchAll<T>(
+  text: string,
+  patterns: Pattern<T>[],
+  onMatch: (value: T | null) => void
+) {
+  text = text.trim();
+
+  let currentIndex = 0;
+  do {
+    const matchResult = matchPatterns<T>(text, currentIndex, patterns);
+
+    if (matchResult) {
+      currentIndex = matchResult.lastIndex;
+      onMatch(matchResult.processed);
+    } else {
+      return false;
+    }
+  } while (currentIndex < text.length);
+
+  return true;
+}
+
+function matchPatterns<T>(
   text: string,
   lastIndex: number,
-  patterns: Pattern[]
+  patterns: Pattern<T>[]
 ) {
   for (const pattern of patterns) {
     pattern.regex.lastIndex = lastIndex;
     const match = pattern.regex.exec(text);
 
     if (match && match.index === lastIndex) {
-      let rawFragment: RawFragment | null = null;
-      if (pattern.processor) rawFragment = pattern.processor(match);
+      let processed: T | null = null;
+      if (pattern.processor) processed = pattern.processor(match);
 
       return {
         lastIndex: pattern.regex.lastIndex,
-        rawFragment: rawFragment,
+        processed: processed,
       };
     }
   }

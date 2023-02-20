@@ -1,7 +1,7 @@
 import { RouteState } from "..";
 import { areas, killWaypoints, quests } from "../../data";
 import { GameData } from "../../types";
-import { matchPatterns, Pattern } from "./patterns";
+import { matchAll, Pattern } from "./patterns";
 import { Fragment } from "./types";
 import { FragmentStep } from "../types";
 
@@ -31,7 +31,7 @@ const EvaluateLookup: Record<
   ["dir"]: EvaluateDirection,
 };
 
-const PATTERNS: Pattern[] = [
+const PATTERNS: Pattern<RawFragment>[] = [
   // Comment
   {
     regex: /(\s*#.*)/g,
@@ -55,22 +55,13 @@ const PATTERNS: Pattern[] = [
 ];
 
 export function parseFragmentStep(text: string, state: RouteState) {
-  text = text.trim();
   const rawFragmentStep: RawFragmentStep = [];
 
-  let currentIndex = 0;
-  do {
-    const matchResult = matchPatterns(text, currentIndex, PATTERNS);
+  const success = matchAll(text, PATTERNS, (value) => {
+    if (value) rawFragmentStep.push(value);
+  });
 
-    if (matchResult) {
-      currentIndex = matchResult.lastIndex;
-      if (matchResult.rawFragment)
-        rawFragmentStep.push(matchResult.rawFragment);
-    } else {
-      state.logger.error("invalid syntax");
-      break;
-    }
-  } while (currentIndex < text.length);
+  if (!success) state.logger.error("invalid syntax");
 
   const step: FragmentStep = {
     type: "fragment_step",
