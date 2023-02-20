@@ -3,6 +3,7 @@ import { areas } from "../data";
 import { parseFragmentStep } from "./fragment";
 import { ScopedLogger } from "./scoped-logger";
 import { Route, RouteFile, Section } from "./types";
+import { matchPatterns, Pattern } from "./patterns";
 
 export function getRouteFiles(routeSources: string[]) {
   const routeFiles: RouteFile[] = [];
@@ -52,6 +53,51 @@ export interface RouteState {
   logger: ScopedLogger;
 }
 
+interface ParseContext {
+  state: RouteState;
+  section: Section;
+  conditionalStack: boolean[];
+}
+
+const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
+  // endif
+  {
+    regex: /^\s*#endif/g,
+    processor: (match, { state, conditionalStack }) => {
+      const value = conditionalStack.pop();
+      if (value === undefined) state.logger.warn("unexpected #endif");
+
+      return false;
+    },
+  },
+  // ifdef
+  {
+    regex: /^\s*#ifdef\s+(\w+)/g,
+    processor: (match, { state, conditionalStack }) => {
+      const value = match[1];
+      conditionalStack.push(state.preprocessorDefinitions.has(value));
+
+      return false;
+    },
+  },
+  // FragmentStep
+  {
+    regex: /.*/g,
+    processor: (match, { state, section, conditionalStack }) => {
+      const evaluateLine =
+        conditionalStack.length == 0 ||
+        conditionalStack[conditionalStack.length - 1];
+
+      if (evaluateLine) {
+        const step = parseFragmentStep(match[0], state);
+        if (step.parts.length > 0) section.steps.push(step);
+      }
+
+      return false;
+    },
+  },
+];
+
 export function parseRoute(routeFiles: RouteFile[], state: RouteState) {
   const route: Route = [];
   for (const routeFile of routeFiles) {
@@ -62,40 +108,23 @@ export function parseRoute(routeFiles: RouteFile[], state: RouteState) {
 
     state.logger.pushScope(section.name);
 
-    const conditionalStack: boolean[] = [];
+    const parseContext: ParseContext = {
+      state,
+      section,
+      conditionalStack: [],
+    };
+
     for (let lineIndex = 0; lineIndex < routeLines.length; lineIndex++) {
       const line = routeLines[lineIndex];
       if (!line) continue;
 
-      state.logger.withScope(`line ${lineIndex + 1}`, () => {
-        const endifRegex = /^\s*#endif/g;
-        const endifMatch = endifRegex.exec(line);
-
-        if (endifMatch) {
-          const value = conditionalStack.pop();
-          if (value === undefined) state.logger.warn("unexpected #endif");
-          return;
-        }
-
-        const evaluateLine =
-          conditionalStack.length == 0 ||
-          conditionalStack[conditionalStack.length - 1];
-        if (!evaluateLine) return;
-
-        const ifdefRegex = /^\s*#ifdef\s+(\w+)/g;
-        const ifdefMatch = ifdefRegex.exec(line);
-        if (ifdefMatch) {
-          const value = ifdefMatch[1];
-          conditionalStack.push(state.preprocessorDefinitions.has(value));
-          return;
-        }
-
-        const step = parseFragmentStep(line, state);
-        if (step.parts.length > 0) section.steps.push(step);
-      });
+      state.logger.pushScope(`line ${lineIndex + 1}`);
+      matchPatterns(line, ROUTE_PATTERNS, parseContext);
+      state.logger.popScope();
     }
 
-    if (conditionalStack.length != 0) state.logger.warn("expected #endif");
+    if (parseContext.conditionalStack.length != 0)
+      state.logger.warn("expected #endif");
 
     state.logger.popScope();
   }
