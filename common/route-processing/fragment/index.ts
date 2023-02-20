@@ -5,8 +5,7 @@ import { matchPatterns, Pattern } from "../patterns";
 import { Fragment } from "./types";
 import { FragmentStep } from "../types";
 
-export type RawFragment = string | string[];
-export type RawFragmentStep = RawFragment[];
+type RawFragment = string | string[];
 
 const EvaluateLookup: Record<
   string,
@@ -31,7 +30,12 @@ const EvaluateLookup: Record<
   ["dir"]: EvaluateDirection,
 };
 
-const FRAGMENT_PATTERNS: Pattern<RawFragmentStep>[] = [
+interface ParseContext {
+  state: RouteState;
+  step: FragmentStep;
+}
+
+const FRAGMENT_PATTERNS: Pattern<ParseContext>[] = [
   // Comment
   {
     regex: /(\s*#.*)/g,
@@ -40,45 +44,42 @@ const FRAGMENT_PATTERNS: Pattern<RawFragmentStep>[] = [
   // Text
   {
     regex: /[^{#]+/g,
-    processor: (match, context) => {
-      context.push(match[0]);
+    processor: (match, { step }) => {
+      step.parts.push(match[0]);
       return true;
     },
   },
   // Fragment
   {
     regex: /\{(.+?)\}/g,
-    processor: (match, context) => {
+    processor: (match, { state, step }) => {
       const split = match[1].split("|");
-      context.push(split);
+
+      const evaluateFragment = EvaluateLookup[split[0]];
+      const result = evaluateFragment(split, state);
+      if (typeof result === "string") state.logger.error(result);
+      else step.parts.push(result.fragment);
+
       return true;
     },
   },
 ];
 
 export function parseFragmentStep(text: string, state: RouteState) {
-  const rawFragmentStep: RawFragmentStep = [];
-
-  const success = matchPatterns(text, FRAGMENT_PATTERNS, rawFragmentStep);
-  if (!success) state.logger.error("invalid syntax");
-
   const step: FragmentStep = {
     type: "fragment_step",
     parts: [],
   };
 
-  for (const subStep of rawFragmentStep) {
-    if (typeof subStep == "string") {
-      step.parts.push(subStep);
-    } else {
-      const evaluateFragment = EvaluateLookup[subStep[0]];
-      const result = evaluateFragment(subStep, state);
-      if (typeof result === "string") state.logger.error(result);
-      else step.parts.push(result.fragment);
-    }
-  }
+  const parseContext: ParseContext = {
+    state,
+    step,
+  };
 
-  return step;
+  const success = matchPatterns(text, FRAGMENT_PATTERNS, parseContext);
+  if (!success) state.logger.error("invalid syntax");
+
+  return parseContext.step;
 }
 
 function transitionArea(state: RouteState, area: GameData.Area) {
