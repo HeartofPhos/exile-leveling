@@ -15,7 +15,7 @@ export function getRouteFiles(routeSources: string[]) {
     for (let lineIndex = 0; lineIndex < routeLines.length; lineIndex++) {
       const line = routeLines[lineIndex];
 
-      const sectionRegex = /^#section\s*(.*)/g;
+      const sectionRegex = /^\s*#section\s*(.*)/g;
       const sectionMatch = sectionRegex.exec(line);
       if (sectionMatch) {
         const sectionName = sectionMatch[1] || DEFAULT_SECTION_NAME;
@@ -38,6 +38,10 @@ export function getRouteFiles(routeSources: string[]) {
       const workingFile = routeFiles[routeFiles.length - 1];
       workingFile.contents += line;
     }
+  }
+
+  for (const routeFile of routeFiles) {
+    routeFile.contents = routeFile.contents.replace(/\s*$/, "\n");
   }
 
   return routeFiles;
