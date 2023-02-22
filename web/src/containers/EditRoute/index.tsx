@@ -202,10 +202,11 @@ export function Workspace({ workingFiles, isDirty, onUpdate }: WorkspaceProps) {
               <Editor
                 value={buildRouteSource([workingFiles[selectedIndex]])}
                 onValueChange={(value) => {
-                  const routeFiles = getRouteFiles([value]);
-
-                  const updatedRouteFiles = [...workingFiles];
-                  updatedRouteFiles.splice(selectedIndex, 1, ...routeFiles);
+                  const updatedRouteFiles = getRouteFiles(
+                    workingFiles.map((x, i) =>
+                      i === selectedIndex ? value : x.contents
+                    )
+                  );
 
                   onUpdate(updatedRouteFiles);
                 }}

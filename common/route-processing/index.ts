@@ -15,7 +15,7 @@ export function getRouteFiles(routeSources: string[]) {
     for (let lineIndex = 0; lineIndex < routeLines.length; lineIndex++) {
       const line = routeLines[lineIndex];
 
-      const sectionRegex = /^#section\s*(.*)/g;
+      const sectionRegex = /^#section\s+(\w.*)/g;
       const sectionMatch = sectionRegex.exec(line);
       if (sectionMatch) {
         const sectionName = sectionMatch[1] || DEFAULT_SECTION_NAME;
@@ -103,7 +103,7 @@ const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
 export function parseRoute(routeFiles: RouteFile[], state: RouteState) {
   const route: Route = [];
   for (const routeFile of routeFiles) {
-    const routeLines = routeFile.contents.split(/(?:\r\n|\r|\n)/g);
+    const routeLines = routeFile.contents.split(/\r\n|\r|\n/g);
 
     const section: Section = { name: routeFile.name, steps: [] };
     route.push(section);
