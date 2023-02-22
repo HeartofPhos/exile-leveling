@@ -18,7 +18,7 @@ export function getRouteFiles(routeSources: string[]) {
       const sectionRegex = /^#section\s+(\w.*)/g;
       const sectionMatch = sectionRegex.exec(line);
       if (sectionMatch) {
-        const sectionName = sectionMatch[1] || DEFAULT_SECTION_NAME;
+        const sectionName = sectionMatch[1];
         routeFiles.push({
           name: sectionName,
           contents: "",
