@@ -200,10 +200,13 @@ export function Workspace({ workingFiles, isDirty, onUpdate }: WorkspaceProps) {
           >
             {
               <Editor
-                value={workingFiles[selectedIndex].contents}
+                value={buildRouteSource([workingFiles[selectedIndex]])}
                 onValueChange={(value) => {
+                  const routeFiles = getRouteFiles([value]);
+
                   const updatedRouteFiles = [...workingFiles];
-                  updatedRouteFiles[selectedIndex].contents = value;
+                  updatedRouteFiles.splice(selectedIndex, 1, ...routeFiles);
+
                   onUpdate(updatedRouteFiles);
                 }}
                 highlight={(value) => highlight(value, RouteGrammar, "")}

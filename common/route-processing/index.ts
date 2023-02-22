@@ -5,10 +5,12 @@ import { ScopedLogger } from "./scoped-logger";
 import { Route, RouteFile, Section } from "./types";
 import { matchPatterns, Pattern } from "./patterns";
 
+const DEFAULT_SECTION_NAME = "Default";
+
 export function getRouteFiles(routeSources: string[]) {
   const routeFiles: RouteFile[] = [];
   for (const routeSource of routeSources) {
-    const routeLines = routeSource.split(/(?:\r\n|\r|\n)/g);
+    const routeLines = routeSource.split(/(\r\n|\r|\n)/g);
 
     for (let lineIndex = 0; lineIndex < routeLines.length; lineIndex++) {
       const line = routeLines[lineIndex];
@@ -16,18 +18,21 @@ export function getRouteFiles(routeSources: string[]) {
       const sectionRegex = /^#section\s*(.*)/g;
       const sectionMatch = sectionRegex.exec(line);
       if (sectionMatch) {
-        const sectionName = sectionMatch[1];
+        const sectionName = sectionMatch[1] || DEFAULT_SECTION_NAME;
         routeFiles.push({
           name: sectionName,
           contents: "",
         });
-      } else if (routeFiles.length == 0) {
-        routeFiles.push({ name: "Default", contents: "" });
-      } else {
-        const workingFile = routeFiles[routeFiles.length - 1];
-        if (workingFile.contents !== "") workingFile.contents += "\n";
-        workingFile.contents += line;
       }
+
+      if (routeFiles.length == 0) {
+        routeFiles.push({
+          name: DEFAULT_SECTION_NAME,
+          contents: `#section ${DEFAULT_SECTION_NAME}\n`,
+        });
+      }
+      const workingFile = routeFiles[routeFiles.length - 1];
+      workingFile.contents += line;
     }
   }
 
@@ -35,10 +40,7 @@ export function getRouteFiles(routeSources: string[]) {
 }
 
 export function buildRouteSource(routeFiles: RouteFile[]) {
-  return routeFiles.reduce(
-    (prev, cur) => `${prev}#section ${cur.name}\n${cur.contents}\n`,
-    ""
-  );
+  return routeFiles.map((x) => x.contents).join("\n");
 }
 
 export interface RouteState {
