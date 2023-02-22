@@ -65,11 +65,15 @@ function RouteEditor({ routeFiles, onSubmit, onReset }: RouteEditorProps) {
     setWorkingFiles(cloneRouteFiles(routeFiles));
   }, [routeFiles]);
 
+  const submitWorkingFiles = () => {
+    onSubmit(getRouteFiles(workingFiles.map((x, i) => x.contents)));
+  };
+
   useEffect(() => {
     const handler = (evt: KeyboardEvent) => {
       if ((evt.metaKey || evt.ctrlKey) && evt.key === "s") {
         evt.preventDefault();
-        onSubmit(workingFiles);
+        submitWorkingFiles();
       }
     };
     document.addEventListener("keydown", handler);
@@ -139,7 +143,7 @@ function RouteEditor({ routeFiles, onSubmit, onReset }: RouteEditorProps) {
           <button
             className={classNames(formStyles.formButton)}
             onClick={() => {
-              onSubmit(workingFiles);
+              submitWorkingFiles();
             }}
           >
             Save
