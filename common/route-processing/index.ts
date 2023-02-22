@@ -15,14 +15,17 @@ export function getRouteFiles(routeSources: string[]) {
     for (let lineIndex = 0; lineIndex < routeLines.length; lineIndex++) {
       const line = routeLines[lineIndex];
 
-      const sectionRegex = /^#section\s+(\w.*)/g;
+      const sectionRegex = /^#section\s*(.*)/g;
       const sectionMatch = sectionRegex.exec(line);
       if (sectionMatch) {
-        const sectionName = sectionMatch[1];
+        const sectionName = sectionMatch[1] || DEFAULT_SECTION_NAME;
+
         routeFiles.push({
           name: sectionName,
-          contents: "",
+          contents: `#section ${sectionName}`,
         });
+
+        continue;
       }
 
       if (routeFiles.length == 0) {
@@ -31,6 +34,7 @@ export function getRouteFiles(routeSources: string[]) {
           contents: `#section ${DEFAULT_SECTION_NAME}\n`,
         });
       }
+
       const workingFile = routeFiles[routeFiles.length - 1];
       workingFile.contents += line;
     }
