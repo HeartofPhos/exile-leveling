@@ -10,7 +10,7 @@ const DEFAULT_SECTION_NAME = "Default";
 export function getRouteFiles(routeSources: string[]) {
   const routeFiles: RouteFile[] = [];
   for (const routeSource of routeSources) {
-    const routeLines = routeSource.split(/(\r\n|\r|\n)/g);
+    const routeLines = routeSource.split(/\r\n|\r|\n/g);
 
     for (let lineIndex = 0; lineIndex < routeLines.length; lineIndex++) {
       const line = routeLines[lineIndex];
@@ -31,17 +31,13 @@ export function getRouteFiles(routeSources: string[]) {
       if (routeFiles.length == 0) {
         routeFiles.push({
           name: DEFAULT_SECTION_NAME,
-          contents: `#section ${DEFAULT_SECTION_NAME}\n`,
+          contents: `#section ${DEFAULT_SECTION_NAME}`,
         });
       }
 
       const workingFile = routeFiles[routeFiles.length - 1];
-      workingFile.contents += line;
+      workingFile.contents += `\n${line}`;
     }
-  }
-
-  for (const routeFile of routeFiles) {
-    routeFile.contents = routeFile.contents.replace(/\s*$/, "\n");
   }
 
   return routeFiles;
