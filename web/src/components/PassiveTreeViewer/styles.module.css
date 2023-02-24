@@ -1,9 +1,10 @@
 .viewer {
   display: flex;
   flex-direction: column;
+  width: 20rem;
   min-height: 10rem;
   max-height: 20rem;
-  width: 20rem;
+  height: 20rem;
 }
 
 .viewport {
