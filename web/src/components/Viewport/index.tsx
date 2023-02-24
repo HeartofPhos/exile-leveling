@@ -6,7 +6,7 @@ import classNames from "classnames";
 
 export interface ViewportProps {
   intialFocus: Rect;
-  resizePattern: "clip" | "focus";
+  resizeHandling: "clip" | "contain";
   className?: string;
   children?: React.ReactNode;
 }
@@ -59,21 +59,21 @@ function focusRect(viewport: Size, focus: Rect) {
 export function Viewport({
   className,
   intialFocus,
-  resizePattern,
+  resizeHandling,
   children,
 }: ViewportProps) {
-  const viewportRef = useRef<HTMLDivElement>(null);
-  const worldRef = useRef<HTMLDivElement>(null);
+  const [viewportRef, setViewportRef] = useState<HTMLDivElement | null>(null);
+  const [worldRef, setWorldRef] = useState<HTMLDivElement | null>(null);
   const [prevSize, setPrevSize] = useState<ObservedSize>({
     width: undefined,
     height: undefined,
   });
 
   const [getTransform, setTransform] = useMemo(() => {
-    if (viewportRef.current === null || worldRef.current === null) return [];
+    if (viewportRef === null || worldRef === null) return [];
 
-    const viewportSelection = d3.select(viewportRef.current);
-    const worldSelection = d3.select(worldRef.current);
+    const viewportSelection = d3.select(viewportRef);
+    const worldSelection = d3.select(worldRef);
 
     const zoom = d3
       .zoom<HTMLDivElement, unknown>()
@@ -86,16 +86,16 @@ export function Viewport({
 
     viewportSelection.call(zoom);
 
-    const setTransform = (transform: d3.ZoomTransform) => {
-      viewportSelection.call(zoom.transform, transform);
+    const setTransform = (k: number, x: number, y: number) => {
+      viewportSelection.call(zoom.transform, new d3.ZoomTransform(k, x, y));
     };
 
     const getTransform = () => {
-      return d3.zoomTransform(viewportRef.current!);
+      return d3.zoomTransform(viewportRef);
     };
 
     return [getTransform, setTransform];
-  }, [viewportRef.current]);
+  }, [viewportRef, worldRef]);
 
   useResizeObserver({
     ref: viewportRef,
@@ -105,34 +105,32 @@ export function Viewport({
       if (size.width === undefined || size.height === undefined) return;
       if (getTransform === undefined || setTransform === undefined) return;
 
-      switch (resizePattern) {
+      switch (resizeHandling) {
         case "clip":
           {
             const dw = prevSize.width - size.width;
             const dh = prevSize.height - size.height;
 
-            const { x, y, k: scale } = getTransform();
+            const { k, x, y } = getTransform();
 
-            d3.zoomIdentity;
-
-            setTransform(new d3.ZoomTransform(scale, x - dw / 2, y - dh / 2));
+            setTransform(k, x - dw / 2, y - dh / 2);
           }
           break;
-        case "focus":
+        case "contain":
           {
-            const { x, y, k: scale } = getTransform();
+            const { k, x, y } = getTransform();
 
             const { newScale, newPos } = focusRect(
               { width: size.width, height: size.height },
               {
-                x: -x / scale,
-                y: -y / scale,
-                width: prevSize.width / scale,
-                height: prevSize.height / scale,
+                x: -x / k,
+                y: -y / k,
+                width: prevSize.width / k,
+                height: prevSize.height / k,
               }
             );
 
-            setTransform(new d3.ZoomTransform(newScale, newPos.x, newPos.y));
+            setTransform(newScale, newPos.x, newPos.y);
           }
           break;
       }
@@ -140,18 +138,21 @@ export function Viewport({
   });
 
   useEffect(() => {
-    if (viewportRef.current === null) return;
+    if (viewportRef === null) return;
     if (setTransform === undefined) return;
 
-    const rect = viewportRef.current.getBoundingClientRect();
+    const rect = viewportRef.getBoundingClientRect();
     const { newScale, newPos } = focusRect(rect, intialFocus);
 
-    setTransform(new d3.ZoomTransform(newScale, newPos.x, newPos.y));
+    setTransform(newScale, newPos.x, newPos.y);
   }, [intialFocus, viewportRef, setTransform]);
 
   return (
-    <div ref={viewportRef} className={classNames(className, styles.viewport)}>
-      <div ref={worldRef} className={classNames(styles.world)}>
+    <div
+      ref={setViewportRef}
+      className={classNames(className, styles.viewport)}
+    >
+      <div ref={setWorldRef} className={classNames(styles.world)}>
         {children}
       </div>
     </div>

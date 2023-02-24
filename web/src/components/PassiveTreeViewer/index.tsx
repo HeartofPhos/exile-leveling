@@ -114,7 +114,7 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
           <Viewport
             className={styles.viewport}
             intialFocus={renderData.intialFocus}
-            resizePattern="clip"
+            resizeHandling="clip"
           >
             <div
               ref={svgDivRef}
