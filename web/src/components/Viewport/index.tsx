@@ -1,10 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import useResizeObserver, { ObservedSize } from "use-resize-observer";
-import {
-  ReactZoomPanPinchRef,
-  TransformComponent,
-  TransformWrapper,
-} from "react-zoom-pan-pinch";
+import * as d3 from "d3";
+import styles from "./styles.module.css";
+import classNames from "classnames";
 
 export interface ViewportProps {
   intialFocus: Rect;
@@ -64,21 +62,48 @@ export function Viewport({
   resizePattern,
   children,
 }: ViewportProps) {
-  const divRef = useRef<HTMLDivElement>(null);
-  const rzppRef = useRef<ReactZoomPanPinchRef>(null);
-  const [initialized, setInitialized] = useState(false);
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const worldRef = useRef<HTMLDivElement>(null);
   const [prevSize, setPrevSize] = useState<ObservedSize>({
     width: undefined,
     height: undefined,
   });
 
+  const [getTransform, setTransform] = useMemo(() => {
+    if (viewportRef.current === null || worldRef.current === null) return [];
+
+    const viewportSelection = d3.select(viewportRef.current);
+    const worldSelection = d3.select(worldRef.current);
+
+    const zoom = d3
+      .zoom<HTMLDivElement, unknown>()
+      .on("zoom", ({ transform }) => {
+        worldSelection.style(
+          "transform",
+          `matrix3d(${transform.k}, 0, 0, 0, 0, ${transform.k}, 0, 0, 0, 0, 1, 0, ${transform.x}, ${transform.y}, 0, 1)`
+        );
+      });
+
+    viewportSelection.call(zoom);
+
+    const setTransform = (transform: d3.ZoomTransform) => {
+      viewportSelection.call(zoom.transform, transform);
+    };
+
+    const getTransform = () => {
+      return d3.zoomTransform(viewportRef.current!);
+    };
+
+    return [getTransform, setTransform];
+  }, [viewportRef.current]);
+
   useResizeObserver({
-    ref: divRef,
+    ref: viewportRef,
     onResize: (size) => {
       setPrevSize(size);
       if (prevSize.width === undefined || prevSize.height === undefined) return;
       if (size.width === undefined || size.height === undefined) return;
-      if (rzppRef.current === null) return;
+      if (getTransform === undefined || setTransform === undefined) return;
 
       switch (resizePattern) {
         case "clip":
@@ -86,18 +111,16 @@ export function Viewport({
             const dw = prevSize.width - size.width;
             const dh = prevSize.height - size.height;
 
-            const x = rzppRef.current.state.positionX;
-            const y = rzppRef.current.state.positionY;
-            const scale = rzppRef.current.state.scale;
+            const { x, y, k: scale } = getTransform();
 
-            rzppRef.current.setTransform(x - dw / 2, y - dh / 2, scale, 0);
+            d3.zoomIdentity;
+
+            setTransform(new d3.ZoomTransform(scale, x - dw / 2, y - dh / 2));
           }
           break;
         case "focus":
           {
-            const x = rzppRef.current.state.positionX;
-            const y = rzppRef.current.state.positionY;
-            const scale = rzppRef.current.state.scale;
+            const { x, y, k: scale } = getTransform();
 
             const { newScale, newPos } = focusRect(
               { width: size.width, height: size.height },
@@ -109,7 +132,7 @@ export function Viewport({
               }
             );
 
-            rzppRef.current.setTransform(newPos.x, newPos.y, newScale, 0);
+            setTransform(new d3.ZoomTransform(newScale, newPos.x, newPos.y));
           }
           break;
       }
@@ -117,32 +140,20 @@ export function Viewport({
   });
 
   useEffect(() => {
-    if (divRef.current === null) return;
-    if (rzppRef.current === null) return;
+    if (viewportRef.current === null) return;
+    if (setTransform === undefined) return;
 
-    const rect = divRef.current.getBoundingClientRect();
+    const rect = viewportRef.current.getBoundingClientRect();
     const { newScale, newPos } = focusRect(rect, intialFocus);
 
-    rzppRef.current.setTransform(newPos.x, newPos.y, newScale, 0);
-  }, [intialFocus, divRef, initialized]);
+    setTransform(new d3.ZoomTransform(newScale, newPos.x, newPos.y));
+  }, [intialFocus, viewportRef, setTransform]);
 
   return (
-    <div ref={divRef} className={className} style={{ overflow: "hidden" }}>
-      <TransformWrapper
-        onInit={() => {
-          setInitialized(true);
-        }}
-        ref={rzppRef}
-        maxScale={Number.POSITIVE_INFINITY}
-        minScale={Number.NEGATIVE_INFINITY}
-        centerZoomedOut={false}
-        limitToBounds={false}
-        wheel={{ step: 0.2 }}
-        pinch={{ step: 0.2 }}
-        panning={{ velocityDisabled: true }}
-      >
-        <TransformComponent>{children}</TransformComponent>
-      </TransformWrapper>
+    <div ref={viewportRef} className={classNames(className, styles.viewport)}>
+      <div ref={worldRef} className={classNames(styles.world)}>
+        {children}
+      </div>
     </div>
   );
 }

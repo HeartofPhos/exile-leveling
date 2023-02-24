@@ -1,0 +1,10 @@
+.viewport {
+  position: relative;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.world {
+  position: absolute;
+  transform-origin: 0 0;
+}
