@@ -46,6 +46,7 @@ export function TextModal({
             value={value}
             onChange={(e) => setValue(e.target.value)}
             autoFocus={true}
+            aria-label={label}
           />
         </div>
         <div className={classNames(formStyles.groupRight)}>

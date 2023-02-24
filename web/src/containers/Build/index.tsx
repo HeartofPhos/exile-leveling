@@ -85,6 +85,7 @@ function EditSearchStrings() {
               e.target.value.split(/\r\n|\r|\n/).map((x) => x.trim())
             );
         }}
+        aria-label="Search Strings"
       />
     </div>
   );

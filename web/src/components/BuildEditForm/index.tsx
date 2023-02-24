@@ -48,6 +48,7 @@ export function BuildInfoForm({ buildData, onSubmit }: BuildInfoFormProps) {
                   leagueStart: evt.target.checked,
                 });
               }}
+              aria-label="League Start"
             />
           </div>
         }
@@ -65,6 +66,7 @@ export function BuildInfoForm({ buildData, onSubmit }: BuildInfoFormProps) {
                   library: evt.target.checked,
                 });
               }}
+              aria-label="Library"
             />
           </div>
         }
