@@ -3,11 +3,10 @@
   flex-direction: column;
   width: 20rem;
   min-height: 10rem;
-  max-height: 20rem;
-  height: 20rem;
 }
 
 .viewport {
+  flex: 20rem;
   border-style: solid;
   border-width: var(--border-width);
   border-color: var(--accent-primary);

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import useResizeObserver, { ObservedSize } from "use-resize-observer";
 import * as d3 from "d3";
 import styles from "./styles.module.css";
@@ -7,24 +7,7 @@ import classNames from "classnames";
 export interface ViewportProps {
   intialFocus: Rect;
   resizeHandling: "clip" | "contain";
-  className?: string;
   children?: React.ReactNode;
-}
-
-function scaleTranslation(
-  posX: number,
-  posY: number,
-  anchorX: number,
-  anchorY: number,
-  scaleFactor: number
-) {
-  const deltaX = posX - anchorX;
-  const deltaY = posY - anchorY;
-
-  return {
-    x: anchorX + deltaX * scaleFactor,
-    y: anchorY + deltaY * scaleFactor,
-  };
 }
 
 interface Size {
@@ -37,27 +20,32 @@ interface Rect extends Size {
   y: number;
 }
 
-function focusRect(viewport: Size, focus: Rect) {
-  const scaleX = viewport.width / focus.width;
-  const scaleY = viewport.height / focus.height;
+const ANCHOR = {
+  x: 0.5,
+  y: 0.5,
+};
+
+function containRect(viewport: Size, worldFocus: Rect) {
+  const scaleX = viewport.width / worldFocus.width;
+  const scaleY = viewport.height / worldFocus.height;
   const newScale = Math.min(scaleX, scaleY);
 
-  const anchorX = viewport.width * 0.5;
-  const anchorY = viewport.height * 0.5;
+  const viewportAnchorX = viewport.width * ANCHOR.x;
+  const viewportAnchorY = viewport.height * ANCHOR.y;
 
-  const posX = anchorX - (focus.x + focus.width * 0.5);
-  const posY = anchorY - (focus.y + focus.height * 0.5);
-
-  const newPos = scaleTranslation(posX, posY, anchorX, anchorY, newScale);
+  const focusAnchorX = worldFocus.x + worldFocus.width * ANCHOR.x;
+  const focusAnchorY = worldFocus.y + worldFocus.height * ANCHOR.y;
 
   return {
     newScale,
-    newPos,
+    newPos: {
+      x: viewportAnchorX - focusAnchorX * newScale,
+      y: viewportAnchorY - focusAnchorY * newScale,
+    },
   };
 }
 
 export function Viewport({
-  className,
   intialFocus,
   resizeHandling,
   children,
@@ -113,14 +101,14 @@ export function Viewport({
 
             const { k, x, y } = getTransform();
 
-            setTransform(k, x - dw / 2, y - dh / 2);
+            setTransform(k, x - dw * ANCHOR.x, y - dh * ANCHOR.y);
           }
           break;
         case "contain":
           {
             const { k, x, y } = getTransform();
 
-            const { newScale, newPos } = focusRect(
+            const { newScale, newPos } = containRect(
               { width: size.width, height: size.height },
               {
                 x: -x / k,
@@ -142,16 +130,13 @@ export function Viewport({
     if (setTransform === undefined) return;
 
     const rect = viewportRef.getBoundingClientRect();
-    const { newScale, newPos } = focusRect(rect, intialFocus);
+    const { newScale, newPos } = containRect(rect, intialFocus);
 
     setTransform(newScale, newPos.x, newPos.y);
   }, [intialFocus, viewportRef, setTransform]);
 
   return (
-    <div
-      ref={setViewportRef}
-      className={classNames(className, styles.viewport)}
-    >
+    <div ref={setViewportRef} className={classNames(styles.viewport)}>
       <div ref={setWorldRef} className={classNames(styles.world)}>
         {children}
       </div>

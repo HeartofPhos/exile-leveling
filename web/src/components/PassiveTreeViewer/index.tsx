@@ -111,16 +111,17 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
     <>
       {renderData && (
         <div className={classNames(styles.viewer)}>
-          <Viewport
-            className={styles.viewport}
-            intialFocus={renderData.intialFocus}
-            resizeHandling="clip"
-          >
-            <div
-              ref={svgDivRef}
-              dangerouslySetInnerHTML={{ __html: renderData.svg }}
-            />
-          </Viewport>
+          <div className={styles.viewport}>
+            <Viewport
+              intialFocus={renderData.intialFocus}
+              resizeHandling="clip"
+            >
+              <div
+                ref={svgDivRef}
+                dangerouslySetInnerHTML={{ __html: renderData.svg }}
+              />
+            </Viewport>
+          </div>
           <label className={classNames(styles.label)}>
             {urlTrees.length > 0 && (urlTrees[curIndex].name || "Default")}
           </label>
