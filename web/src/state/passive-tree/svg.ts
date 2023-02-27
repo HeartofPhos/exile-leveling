@@ -162,7 +162,7 @@ export function buildTemplate(tree: PassiveTree.Data) {
 function buildSubTree(
   nodes: Record<string, PassiveTree.Node>,
   connections: PassiveTree.Connection[],
-  constantsLookup: Record<string, Constants>
+  constantsLookup: ConstantsLookup
 ) {
   let template = ``;
 
