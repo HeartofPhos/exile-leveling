@@ -1,6 +1,6 @@
 import { PassiveTree } from "../../../../common/data/tree";
-import { UrlTree } from "../../state/passive-tree";
-import { ViewBox } from "../../state/passive-tree/svg";
+import { UrlTree } from "../../state/tree/url-tree";
+import { ViewBox } from "../../state/tree/svg";
 
 function intersection<T>(setA: Set<T>, setB: Set<T>) {
   const _intersection = new Set<T>();

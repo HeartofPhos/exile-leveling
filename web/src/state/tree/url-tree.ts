@@ -1,47 +1,9 @@
+import { selector } from "recoil";
+import { TREE_DATA_LOOKUP } from ".";
 import { PassiveTree } from "../../../../common/data/tree";
-import { atom, DefaultValue, selector } from "recoil";
-import { decodeBase64Url, getPersistent, globImportLazy } from "../../utility";
 import { BuildTree } from "../../../../common/route-processing/types";
-import { persistentStorageEffect } from "..";
-import { buildTemplate, ViewBox } from "./svg";
-import Handlebars from "handlebars";
-
-export const TREE_DATA_LOOKUP = globImportLazy<
-  [PassiveTree.Data, Handlebars.TemplateDelegate, ViewBox]
->(
-  import.meta.glob("../../../../common/data/tree/*.json"),
-  (key) => /.*\/(.*?).json$/.exec(key)![1],
-  (value) => {
-    const passiveTree: PassiveTree.Data = value.default;
-    const { template, viewBox } = buildTemplate(passiveTree);
-    const compiled = Handlebars.compile(template);
-    return [passiveTree, compiled, viewBox];
-  }
-);
-
-const BUILD_PASSIVE_TREES_VERSION = 0;
-
-const buildTreesAtom = atom<BuildTree[] | null>({
-  key: "buildTreesAtom",
-  default: getPersistent("build-trees", BUILD_PASSIVE_TREES_VERSION),
-  effects: [
-    persistentStorageEffect("build-trees", BUILD_PASSIVE_TREES_VERSION),
-  ],
-});
-
-export const buildTreesSelector = selector<BuildTree[]>({
-  key: "buildTreesSelector",
-  get: ({ get }) => {
-    let value = get(buildTreesAtom);
-    if (value === null) value = [];
-
-    return value;
-  },
-  set: ({ set }, newValue) => {
-    const value = newValue instanceof DefaultValue ? null : newValue;
-    set(buildTreesAtom, value);
-  },
-});
+import { decodeBase64Url } from "../../utility";
+import { buildTreesSelector } from "./build-tree";
 
 export const urlTreesSelector = selector({
   key: "urlTreesSelector",

@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { Viewport, ViewportProps } from "../Viewport";
 import { buildUrlTreeDelta, UrlTreeDelta } from "./url-tree-delta";
-import { TREE_DATA_LOOKUP, UrlTree } from "../../state/passive-tree";
-import styles from "./styles.module.css";
+import { TREE_DATA_LOOKUP } from "../../state/tree";
+import { UrlTree } from "../../state/tree/url-tree";
 import classNames from "classnames";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { formStyles } from "../Form";
 import { randomId } from "../../utility";
+import styles from "./styles.module.css";
 
 interface PassiveTreeViewerProps {
   urlTrees: UrlTree.Data[];
