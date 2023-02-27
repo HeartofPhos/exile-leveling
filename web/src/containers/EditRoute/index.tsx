@@ -66,7 +66,7 @@ function RouteEditor({ routeFiles, onSubmit, onReset }: RouteEditorProps) {
   }, [routeFiles]);
 
   const submitWorkingFiles = () => {
-    onSubmit(getRouteFiles(workingFiles.map((x, i) => x.contents)));
+    onSubmit(getRouteFiles(workingFiles.map((x) => x.contents)));
   };
 
   useEffect(() => {
@@ -202,19 +202,17 @@ export function Workspace({ workingFiles, isDirty, onUpdate }: WorkspaceProps) {
             ref={formInputRef}
             className={classNames(formStyles.formInput, styles.editor)}
           >
-            {
-              <Editor
-                value={workingFiles[selectedIndex].contents}
-                onValueChange={(value) => {
-                  const updatedRouteFiles = [...workingFiles];
-                  updatedRouteFiles[selectedIndex].contents = value;
-                  onUpdate(updatedRouteFiles);
-                }}
-                highlight={(value) => highlight(value, RouteGrammar, "")}
-                tabSize={4}
-                textareaClassName={classNames(styles.editorTextArea)}
-              />
-            }
+            <Editor
+              value={workingFiles[selectedIndex].contents}
+              onValueChange={(value) => {
+                const updatedRouteFiles = [...workingFiles];
+                updatedRouteFiles[selectedIndex].contents = value;
+                onUpdate(updatedRouteFiles);
+              }}
+              highlight={(value) => highlight(value, RouteGrammar, "")}
+              tabSize={4}
+              textareaClassName={classNames(styles.editorTextArea)}
+            />
           </div>
         </>
       )}

@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import ReactModal from "react-modal";
 import { formStyles } from "../Form";
 import styles from "./styles.module.css";
@@ -29,10 +29,10 @@ export function TextModal({
   onSubmit,
   onRequestClose,
 }: TextModalProps) {
-  const [value, setValue] = useState<string>();
+  const valueRef = useRef<string>();
 
   useEffect(() => {
-    if (!isOpen) setValue(undefined);
+    if (!isOpen) valueRef.current = undefined;
   }, [isOpen]);
 
   return (
@@ -43,8 +43,9 @@ export function TextModal({
           <textarea
             spellCheck={false}
             className={classNames(formStyles.formInput, styles.textInput)}
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={(e) => {
+              valueRef.current = e.target.value;
+            }}
             autoFocus={true}
             aria-label={label}
           />
@@ -62,7 +63,7 @@ export function TextModal({
             className={classNames(formStyles.formButton)}
             onClick={() => {
               onRequestClose();
-              onSubmit(value);
+              onSubmit(valueRef.current);
             }}
           >
             Submit
