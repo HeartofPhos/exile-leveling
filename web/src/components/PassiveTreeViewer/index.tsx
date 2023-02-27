@@ -1,11 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Viewport, ViewportProps } from "../Viewport";
-import { buildUrlTreeDelta, UrlTreeDelta } from "./processs";
-import {
-  TREE_DATA_LOOKUP,
-  TREE_TEMPLATE_LOOKUP,
-  UrlTree,
-} from "../../state/passive-trees";
+import { buildUrlTreeDelta, UrlTreeDelta } from "./url-tree-delta";
+import { TREE_DATA_LOOKUP, UrlTree } from "../../state/passive-tree";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
@@ -44,21 +40,21 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
         };
       }
 
-      const [passiveTree, compiled] = await Promise.all([
-        TREE_DATA_LOOKUP[currentTree.version],
-        TREE_TEMPLATE_LOOKUP[currentTree.version],
-      ]);
+      const [passiveTree, compiled, viewBox] = await TREE_DATA_LOOKUP[
+        currentTree.version
+      ];
 
       const urlTreeDelta = buildUrlTreeDelta(
         currentTree,
         previousTree,
-        passiveTree
+        passiveTree,
+        viewBox
       );
 
       const svg = compiled({
         svgId: randomId(6),
         backgroundColor: "#00000000",
-        ascendancy: currentTree.ascendancy?.id,
+        ascendancy: currentTree.ascendancy?.name,
 
         nodeColor: "#64748b",
         nodeActiveColor: "#38bdf8",

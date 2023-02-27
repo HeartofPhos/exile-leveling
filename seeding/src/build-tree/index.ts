@@ -1,8 +1,6 @@
 import fetch from "cross-fetch";
-import { PassiveTree } from "../../../common/data/tree";
-import { buildTemplate as buildTemplateSVG } from "./svg";
-import { buildIntermediateTree } from "./tree";
-import { IntermediateTree, SkillTree } from "./types";
+import { buildPassiveTree } from "./tree";
+import { SkillTree } from "./types";
 
 const PASSIVE_TREE_JSON = {
   "3_18":
@@ -18,49 +16,10 @@ export async function buildTemplates() {
   for (const [version, url] of Object.entries(PASSIVE_TREE_JSON)) {
     const skillTree: SkillTree.Data = await fetch(url).then((x) => x.json());
 
-    const intermediateTree = buildIntermediateTree(skillTree);
-    const { template, viewBox } = buildTemplateSVG(intermediateTree);
-
-    const passiveTree: PassiveTree.Data = {
-      classes: skillTree.classes.map((_class) => ({
-        id: _class.name,
-        ascendancies: _class.ascendancies.map((asc) => ({
-          id: asc.id,
-          startNodeId: intermediateTree.ascendancies[asc.id].startNodeId,
-        })),
-      })),
-      nodes: {},
-      connections: [],
-      masteryEffects: intermediateTree.masteryEffects,
-      viewBox: viewBox,
-    };
-
-    function pushNodes(nodes: Record<string, IntermediateTree.Node>) {
-      for (const [nodeId, node] of Object.entries(nodes)) {
-        passiveTree.nodes[nodeId] = node.position;
-      }
-    }
-
-    function pushConnections(connections: IntermediateTree.Connection[]) {
-      for (const connection of connections) {
-        passiveTree.connections.push({
-          a: connection.a,
-          b: connection.b,
-        });
-      }
-    }
-
-    pushConnections(intermediateTree.connections);
-    pushNodes(intermediateTree.nodes);
-
-    for (const [, asc] of Object.entries(intermediateTree.ascendancies)) {
-      pushNodes(asc.nodes);
-      pushConnections(asc.connections);
-    }
+    const passiveTree = buildPassiveTree(skillTree);
 
     result.push({
       version,
-      template,
       passiveTree,
     });
   }

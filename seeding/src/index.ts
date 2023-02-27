@@ -34,8 +34,7 @@ const COMMAND_PROCESSORS: Record<string, () => Promise<any>> = {
   },
   ["tree"]: async () => {
     const templates = await buildTemplates();
-    for (const { version, template, passiveTree } of templates) {
-      saveTreeTemplate(version, template);
+    for (const { version, passiveTree } of templates) {
       saveTreeJSON(version, passiveTree);
     }
   },

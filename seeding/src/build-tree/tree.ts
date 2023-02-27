@@ -1,4 +1,5 @@
-import { IntermediateTree, SkillTree } from "./types";
+import { PassiveTree } from "../../../common/data/tree/index";
+import { SkillTree } from "./types";
 
 const ANGLES_16: number[] = [
   0, 30, 45, 60, 90, 120, 135, 150, 180, 210, 225, 240, 270, 300, 315, 330,
@@ -10,7 +11,7 @@ const ANGLES_40: number[] = [
 ];
 
 // https://github.com/PathOfBuildingCommunity/PathOfBuilding/blob/e42c033ad0d1b46f714f902d00fd11fe9885afc2/fix_ascendancy_positions.py#L22
-const ASCENDANCY_OFFSETS: Record<string, IntermediateTree.Coord> = {
+const ASCENDANCY_OFFSETS: Record<string, PassiveTree.Coord> = {
   ["Juggernaut"]: { x: -10400, y: 5200 },
   ["Berserker"]: { x: -10400, y: 3700 },
   ["Chieftain"]: { x: -10400, y: 2200 },
@@ -52,14 +53,18 @@ function getPosition(data: SkillTree.Data, node: SkillTree.Node) {
   return [angle % TWO_PI, Math.round(x), Math.round(y)];
 }
 
-export function buildIntermediateTree(skillTree: SkillTree.Data) {
-  const tree: IntermediateTree.Data = {
+export function buildPassiveTree(skillTree: SkillTree.Data) {
+  const tree: PassiveTree.Data = {
     bounds: {
       minX: Number.POSITIVE_INFINITY,
       minY: Number.POSITIVE_INFINITY,
       maxX: Number.NEGATIVE_INFINITY,
       maxY: Number.NEGATIVE_INFINITY,
     },
+    classes: skillTree.classes.map((_class) => ({
+      id: _class.name,
+      ascendancies: _class.ascendancies.map((asc) => asc.id),
+    })),
     nodes: {},
     connections: [],
     ascendancies: {},
@@ -127,24 +132,22 @@ export function buildIntermediateTree(skillTree: SkillTree.Data) {
 
           let [outAngle] = getPosition(skillTree, outNode);
 
-          let path: IntermediateTree.Path;
+          let sweep: PassiveTree.Sweep | undefined;
           if (node.group === outNode.group && node.orbit === outNode.orbit) {
             const radius = skillTree.constants.orbitRadii[node.orbit!];
             const rot = (angle - outAngle + TWO_PI) % TWO_PI;
 
-            let sweep: IntermediateTree.Sweep["sweep"];
-            if (rot > Math.PI) sweep = "CW";
-            else sweep = "CCW";
+            let direction: PassiveTree.Sweep["d"];
+            if (rot > Math.PI) direction = "CW";
+            else direction = "CCW";
 
-            path = { sweep: sweep, radius: radius };
-          } else {
-            path = { sweep: undefined };
+            sweep = { d: direction, r: radius };
           }
 
           connections.push({
             a: nodeId,
             b: outNodeId,
-            path: path,
+            s: sweep,
           });
         }
       }
@@ -157,17 +160,17 @@ export function buildIntermediateTree(skillTree: SkillTree.Data) {
     const { x: ASCENDANCY_POS_X, y: ASCENDANCY_POS_Y } =
       ASCENDANCY_OFFSETS[asc.name];
 
-    const diff_x = ASCENDANCY_POS_X - startNode.position.x;
-    const diff_y = ASCENDANCY_POS_Y - startNode.position.y;
+    const diff_x = ASCENDANCY_POS_X - startNode.x;
+    const diff_y = ASCENDANCY_POS_Y - startNode.y;
 
-    const updateNode = (node: IntermediateTree.Node) => {
-      node.position.x += diff_x;
-      node.position.y += diff_y;
+    const updateNode = (node: PassiveTree.Node) => {
+      node.x += diff_x;
+      node.y += diff_y;
     };
 
     for (const [, node] of Object.entries(asc.nodes)) {
       updateNode(node);
-      updateMinxMax(node.position.x, node.position.y);
+      updateMinxMax(node.x, node.y);
     }
   }
 
@@ -193,34 +196,38 @@ function filterConnection(a: SkillTree.Node, b: SkillTree.Node) {
 
 function buildNode(
   node: SkillTree.Node,
-  pos: IntermediateTree.Coord
-): IntermediateTree.Node {
+  pos: PassiveTree.Coord
+): PassiveTree.Node {
   if (node.isAscendancyStart)
     return {
-      position: pos,
-      kind: "Ascendancy_Start",
+      ...pos,
+      k: "Ascendancy_Start",
     };
 
   if (node.isMastery)
     return {
-      position: pos,
-      kind: "Mastery",
+      ...pos,
+      k: "Mastery",
+      text: node.name,
     };
 
   if (node.isKeystone)
     return {
-      position: pos,
-      kind: "Keystone",
+      ...pos,
+      k: "Keystone",
+      text: node.stats?.join("\n"),
     };
 
   if (node.isNotable)
     return {
-      position: pos,
-      kind: "Notable",
+      ...pos,
+      k: "Notable",
+      text: node.stats?.join("\n"),
     };
 
   return {
-    position: pos,
-    kind: "Normal",
+    ...pos,
+    k: "Normal",
+    text: node.stats?.join("\n"),
   };
 }

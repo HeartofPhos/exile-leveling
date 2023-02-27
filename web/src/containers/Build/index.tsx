@@ -7,7 +7,7 @@ import { BuildInfoForm, GemOrderList } from "../../components/BuildEditForm";
 import { formStyles } from "../../components/Form";
 import { withBlank } from "../../utility/withBlank";
 import { requiredGemsSelector } from "../../state/gem";
-import { buildTreesSelector } from "../../state/passive-trees";
+import { buildTreesSelector } from "../../state/passive-tree";
 import classNames from "classnames";
 import styles from "./styles.module.css";
 
