@@ -6,8 +6,10 @@ import { persistentStorageEffect } from ".";
 const ROUTE_PROGRESS_VERSION = 1;
 
 async function loadDefaultRouteFiles() {
-  const { routeSourceLookup } = await import("../../../common/data");
-  const { getRouteFiles } = await import("../../../common/route-processing");
+  const [{ routeSourceLookup }, { getRouteFiles }] = await Promise.all([
+    import("../../../common/data"),
+    import("../../../common/route-processing"),
+  ]);
 
   const routeSources = [
     routeSourceLookup["./routes/act-1.txt"],

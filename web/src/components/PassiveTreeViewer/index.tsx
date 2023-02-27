@@ -44,8 +44,10 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
         };
       }
 
-      const compiled = await TREE_TEMPLATE_LOOKUP[currentTree.version];
-      const passiveTree = await TREE_DATA_LOOKUP[currentTree.version];
+      const [passiveTree, compiled] = await Promise.all([
+        TREE_DATA_LOOKUP[currentTree.version],
+        TREE_TEMPLATE_LOOKUP[currentTree.version],
+      ]);
 
       const urlTreeDelta = buildUrlTreeDelta(
         currentTree,

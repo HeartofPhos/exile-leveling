@@ -91,8 +91,10 @@ export async function buildUrlTree(
   const data = /.*\/(.*?)$/.exec(buildTree.url)?.[1];
   if (!data) throw `invalid url ${buildTree.url}`;
 
-  const passiveTree = await TREE_DATA_LOOKUP[buildTree.version];
-  const template = await TREE_TEMPLATE_LOOKUP[buildTree.version];
+  const [passiveTree, template] = await Promise.all([
+    TREE_DATA_LOOKUP[buildTree.version],
+    TREE_TEMPLATE_LOOKUP[buildTree.version],
+  ]);
 
   if (passiveTree === undefined || template === undefined)
     throw `invalid version ${buildTree.version}`;
