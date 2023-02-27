@@ -43,7 +43,7 @@ export namespace PassiveTree {
   }
 
   export interface Sweep {
-    d: "CW" | "CCW";
+    w: "CW" | "CCW";
     r: number;
   }
 

@@ -135,13 +135,13 @@ export function buildPassiveTree(skillTree: SkillTree.Data) {
           let sweep: PassiveTree.Sweep | undefined;
           if (node.group === outNode.group && node.orbit === outNode.orbit) {
             const radius = skillTree.constants.orbitRadii[node.orbit!];
-            const rot = (angle - outAngle + TWO_PI) % TWO_PI;
+            const rotation = (angle - outAngle + TWO_PI) % TWO_PI;
 
-            let direction: PassiveTree.Sweep["d"];
-            if (rot > Math.PI) direction = "CW";
-            else direction = "CCW";
+            let winding: PassiveTree.Sweep["w"];
+            if (rotation > Math.PI) winding = "CW";
+            else winding = "CCW";
 
-            sweep = { d: direction, r: radius };
+            sweep = { w: winding, r: radius };
           }
 
           connections.push({

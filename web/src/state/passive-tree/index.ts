@@ -13,10 +13,8 @@ export const TREE_DATA_LOOKUP = globImportLazy<
   (key) => /.*\/(.*?).json$/.exec(key)![1],
   (value) => {
     const passiveTree: PassiveTree.Data = value.default;
-    console.time("yeet");
     const { template, viewBox } = buildTemplate(passiveTree);
     const compiled = Handlebars.compile(template);
-    console.timeEnd("yeet");
     return [passiveTree, compiled, viewBox];
   }
 );
@@ -51,7 +49,6 @@ export const urlTreesSelector = selector({
     const buildTrees = get(buildTreesSelector);
 
     let urlTrees: UrlTree.Data[] = [];
-    console.log(buildTrees);
     for (const buildTree of buildTrees) {
       try {
         const urlTree = await buildUrlTree(buildTree);

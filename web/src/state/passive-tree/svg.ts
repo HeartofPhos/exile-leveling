@@ -207,7 +207,7 @@ function buildConnection(
   const bY = nodeB.y;
 
   if (connection.s !== undefined) {
-    const d = connection.s.d === "CW" ? 1 : 0;
+    const d = connection.s.w === "CW" ? 1 : 0;
     const r = connection.s.r;
     return `<path d="M ${aX} ${aY} A ${r} ${r} 0 0 ${d} ${bX} ${bY}" id="c${id}" />\n`;
   } else {
