@@ -62,8 +62,8 @@ export function buildPassiveTree(skillTree: SkillTree.Data) {
       maxY: Number.NEGATIVE_INFINITY,
     },
     classes: skillTree.classes.map((_class) => ({
-      id: _class.name,
-      ascendancies: _class.ascendancies.map((asc) => asc.id),
+      name: _class.name,
+      ascendancies: _class.ascendancies.map((asc) => asc.name),
     })),
     nodes: {},
     connections: [],

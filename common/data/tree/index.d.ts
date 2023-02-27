@@ -48,7 +48,7 @@ export namespace PassiveTree {
   }
 
   export interface Class {
-    id: string;
+    name: string;
     ascendancies: string[];
   }
 }
