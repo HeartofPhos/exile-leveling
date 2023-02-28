@@ -68,8 +68,6 @@ export interface ViewBox {
 }
 
 export function buildTemplate(tree: PassiveTree.Data) {
-  let template = ``;
-
   const viewBox: ViewBox = {
     x: tree.bounds.minX - PADDING,
     y: tree.bounds.minY - PADDING,
@@ -77,9 +75,18 @@ export function buildTemplate(tree: PassiveTree.Data) {
     h: tree.bounds.maxY - tree.bounds.minY + PADDING * 2,
   };
 
-  template += `<svg id="{{ svgId }}" width="${viewBox.w}" height="${viewBox.h}" viewBox="${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}" xmlns="http://www.w3.org/2000/svg">\n`;
+  let svg = ``;
+  svg += `<svg width="${viewBox.w}" height="${viewBox.h}" viewBox="${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}" xmlns="http://www.w3.org/2000/svg">\n`;
 
-  template += `<style>
+  svg += buildSubTree(tree.nodes, tree.connections, TREE_CONSTANTS);
+
+  for (const [, ascendancy] of Object.entries(tree.ascendancies)) {
+    svg += buildAscendancy(ascendancy);
+  }
+
+  svg += `</svg>\n`;
+
+  const styleTemplate = `
 #{{ svgId }} {
   background-color: {{ backgroundColor }};
 }
@@ -145,18 +152,9 @@ export function buildTemplate(tree: PassiveTree.Data) {
 #{{ svgId }} :is({{#each connectionsRemoved}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}) {
   stroke: {{ connectionRemovedColor }};
   stroke-width: ${CONNECTION_ACTIVE_STROKE_WIDTH};
-}
-</style>\n`;
+}`;
 
-  template += buildSubTree(tree.nodes, tree.connections, TREE_CONSTANTS);
-
-  for (const [, ascendancy] of Object.entries(tree.ascendancies)) {
-    template += buildAscendancy(ascendancy);
-  }
-
-  template += `</svg>\n`;
-
-  return { template, viewBox };
+  return { svg, viewBox, styleTemplate };
 }
 
 function buildSubTree(

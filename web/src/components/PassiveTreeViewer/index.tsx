@@ -14,7 +14,9 @@ interface PassiveTreeViewerProps {
 }
 
 interface RenderData {
+  id: string;
   svg: string;
+  style: string;
   intialFocus: ViewportProps["intialFocus"];
   masteryInfos: UrlTreeDelta["masteryInfos"];
 }
@@ -41,7 +43,7 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
         };
       }
 
-      const [passiveTree, compiled, viewBox] = await TREE_DATA_LOOKUP[
+      const [passiveTree, svg, viewBox, compiledStyle] = await TREE_DATA_LOOKUP[
         currentTree.version
       ];
 
@@ -52,8 +54,10 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
         viewBox
       );
 
-      const svg = compiled({
-        svgId: randomId(6),
+      const id = randomId(6);
+
+      const style = compiledStyle({
+        svgId: id,
         backgroundColor: "#00000000",
         ascendancy: currentTree.ascendancy?.name,
 
@@ -77,7 +81,9 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
       });
 
       setRenderData({
+        id,
         svg,
+        style,
         intialFocus: urlTreeDelta.bounds,
         masteryInfos: urlTreeDelta.masteryInfos,
       });
@@ -115,7 +121,11 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
               intialFocus={renderData.intialFocus}
               resizeHandling="clip"
             >
+              <style
+                dangerouslySetInnerHTML={{ __html: renderData.style }}
+              ></style>
               <div
+                id={renderData.id}
                 ref={svgDivRef}
                 dangerouslySetInnerHTML={{ __html: renderData.svg }}
               />

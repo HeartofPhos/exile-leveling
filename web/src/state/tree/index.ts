@@ -4,14 +4,14 @@ import { buildTemplate, ViewBox } from "./svg";
 import Handlebars from "handlebars";
 
 export const TREE_DATA_LOOKUP = globImportLazy<
-  [PassiveTree.Data, Handlebars.TemplateDelegate, ViewBox]
+  [PassiveTree.Data, string, ViewBox, Handlebars.TemplateDelegate]
 >(
   import.meta.glob("../../../../common/data/tree/*.json"),
   (key) => /.*\/(.*?).json$/.exec(key)![1],
   (value) => {
     const passiveTree: PassiveTree.Data = value.default;
-    const { template, viewBox } = buildTemplate(passiveTree);
-    const compiled = Handlebars.compile(template);
-    return [passiveTree, compiled, viewBox];
+    const { svg, viewBox, styleTemplate } = buildTemplate(passiveTree);
+    const styleCompiled = Handlebars.compile(styleTemplate);
+    return [passiveTree, svg, viewBox, styleCompiled];
   }
 );
