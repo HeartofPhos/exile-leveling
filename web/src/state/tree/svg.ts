@@ -1,5 +1,4 @@
-import { PassiveTree } from "../../../common/data/tree";
-import { IntermediateTree } from "./types";
+import { PassiveTree } from "../../../../common/data/tree";
 
 const PADDING = 550;
 
@@ -21,9 +20,7 @@ const NODE_NORMAL_CLASS = "normal";
 const ASCENDANCY_CLASS = "ascendancy";
 const BORDER_CLASS = "border";
 
-type ConstantsLookup = Partial<
-  Record<IntermediateTree.Node["kind"], Constants>
->;
+type ConstantsLookup = Partial<Record<PassiveTree.Node["k"], Constants>>;
 
 interface Constants {
   radius: number;
@@ -63,19 +60,33 @@ const ASCENDANCY_CONSTANTS: ConstantsLookup = {
   },
 };
 
-export function buildTemplate(tree: IntermediateTree.Data) {
-  let template = ``;
+export interface ViewBox {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+}
 
-  const viewBox: PassiveTree.ViewBox = {
+export function buildTemplate(tree: PassiveTree.Data) {
+  const viewBox: ViewBox = {
     x: tree.bounds.minX - PADDING,
     y: tree.bounds.minY - PADDING,
     w: tree.bounds.maxX - tree.bounds.minX + PADDING * 2,
     h: tree.bounds.maxY - tree.bounds.minY + PADDING * 2,
   };
 
-  template += `<svg id="{{ svgId }}" width="${viewBox.w}" height="${viewBox.h}" viewBox="${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}" xmlns="http://www.w3.org/2000/svg">\n`;
+  let svg = ``;
+  svg += `<svg width="${viewBox.w}" height="${viewBox.h}" viewBox="${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}" xmlns="http://www.w3.org/2000/svg">\n`;
 
-  template += `<style>
+  svg += buildSubTree(tree.nodes, tree.connections, TREE_CONSTANTS);
+
+  for (const [, ascendancy] of Object.entries(tree.ascendancies)) {
+    svg += buildAscendancy(ascendancy);
+  }
+
+  svg += `</svg>\n`;
+
+  const styleTemplate = `
 #{{ svgId }} {
   background-color: {{ backgroundColor }};
 }
@@ -141,24 +152,15 @@ export function buildTemplate(tree: IntermediateTree.Data) {
 #{{ svgId }} :is({{#each connectionsRemoved}}#c{{this}}{{#unless @last}}, {{/unless}}{{/each}}) {
   stroke: {{ connectionRemovedColor }};
   stroke-width: ${CONNECTION_ACTIVE_STROKE_WIDTH};
-}
-</style>\n`;
+}`;
 
-  template += buildSubTree(tree.nodes, tree.connections, TREE_CONSTANTS);
-
-  for (const [, ascendancy] of Object.entries(tree.ascendancies)) {
-    template += buildAscendancy(ascendancy);
-  }
-
-  template += `</svg>\n`;
-
-  return { template, viewBox };
+  return { svg, viewBox, styleTemplate };
 }
 
 function buildSubTree(
-  nodes: Record<string, IntermediateTree.Node>,
-  connections: IntermediateTree.Connection[],
-  constantsLookup: Record<string, Constants>
+  nodes: Record<string, PassiveTree.Node>,
+  connections: PassiveTree.Connection[],
+  constantsLookup: ConstantsLookup
 ) {
   let template = ``;
 
@@ -179,39 +181,44 @@ function buildSubTree(
 
 function buildNode(
   nodeId: string,
-  node: IntermediateTree.Node,
+  node: PassiveTree.Node,
   constantsLookup: ConstantsLookup
 ) {
-  const constants = constantsLookup[node.kind];
-  if (constants === undefined) throw `missing constant, ${node.kind}`;
+  const constants = constantsLookup[node.k];
+  if (constants === undefined) throw `missing constant, ${node.k}`;
 
-  return `<circle cx="${node.position.x}" cy="${node.position.y}" id="n${nodeId}" r="${constants.radius}" class="${constants.class}"/>\n`;
+  let template = ``;
+  template += `<circle cx="${node.x}" cy="${node.y}" id="n${nodeId}" r="${constants.radius}" class="${constants.class}">`;
+  if (node.text) template += `<title>${node.text}</title>`;
+  template += `</circle>`;
+
+  return template;
 }
 
 function buildConnection(
-  connection: IntermediateTree.Connection,
-  nodes: Record<string, IntermediateTree.Node>
+  connection: PassiveTree.Connection,
+  nodes: Record<string, PassiveTree.Node>
 ) {
   const id = [connection.a, connection.b].sort().join("-");
 
   const nodeA = nodes[connection.a];
-  const aX = nodeA.position.x;
-  const aY = nodeA.position.y;
+  const aX = nodeA.x;
+  const aY = nodeA.y;
 
   const nodeB = nodes[connection.b];
-  const bX = nodeB.position.x;
-  const bY = nodeB.position.y;
+  const bX = nodeB.x;
+  const bY = nodeB.y;
 
-  if (connection.path.sweep !== undefined) {
-    const sweep = connection.path.sweep === "CW" ? 1 : 0;
-    const r = connection.path.radius;
-    return `<path d="M ${aX} ${aY} A ${r} ${r} 0 0 ${sweep} ${bX} ${bY}" id="c${id}" />\n`;
+  if (connection.s !== undefined) {
+    const d = connection.s.w === "CW" ? 1 : 0;
+    const r = connection.s.r;
+    return `<path d="M ${aX} ${aY} A ${r} ${r} 0 0 ${d} ${bX} ${bY}" id="c${id}" />\n`;
   } else {
     return `<line x1="${aX}" y1="${aY}" x2="${bX}" y2="${bY}" id="c${id}" />\n`;
   }
 }
 
-function buildAscendancy(ascendancy: IntermediateTree.Ascendancy) {
+function buildAscendancy(ascendancy: PassiveTree.Ascendancy) {
   let template = ``;
 
   const startNode = ascendancy.nodes[ascendancy.startNodeId];
@@ -221,7 +228,7 @@ function buildAscendancy(ascendancy: IntermediateTree.Ascendancy) {
       : ASCENDANCY_BORDER_RADIUS;
 
   template += `<g class="${ASCENDANCY_CLASS} ${ascendancy.name}">`;
-  template += `<circle cx="${startNode.position.x}" cy="${startNode.position.y}" r="${radius}" class="${BORDER_CLASS}"/>\n`;
+  template += `<circle cx="${startNode.x}" cy="${startNode.y}" r="${radius}" class="${BORDER_CLASS}"/>\n`;
   template += buildSubTree(
     ascendancy.nodes,
     ascendancy.connections,

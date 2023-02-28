@@ -1,48 +1,9 @@
-import Handlebars from "handlebars";
-import { PassiveTree } from "../../../common/data/tree";
-import { atom, DefaultValue, selector } from "recoil";
-import { decodeBase64Url, getPersistent, globImportLazy } from "../utility";
-import { BuildTree } from "../../../common/route-processing/types";
-import { persistentStorageEffect } from ".";
-
-export const TREE_DATA_LOOKUP = globImportLazy<PassiveTree.Data>(
-  import.meta.glob("../../../common/data/tree/*.json"),
-  (key) => /.*\/(.*?).json$/.exec(key)![1],
-  (value) => value.default
-);
-
-export const TREE_TEMPLATE_LOOKUP = globImportLazy(
-  import.meta.glob("../../../common/data/tree/*.svg"),
-  (key) => /.*\/(.*?).svg$/.exec(key)![1],
-  (value) =>
-    fetch(value.default)
-      .then((res) => res.text())
-      .then((template) => Handlebars.compile(template))
-);
-
-const BUILD_PASSIVE_TREES_VERSION = 0;
-
-const buildTreesAtom = atom<BuildTree[] | null>({
-  key: "buildTreesAtom",
-  default: getPersistent("build-trees", BUILD_PASSIVE_TREES_VERSION),
-  effects: [
-    persistentStorageEffect("build-trees", BUILD_PASSIVE_TREES_VERSION),
-  ],
-});
-
-export const buildTreesSelector = selector<BuildTree[]>({
-  key: "buildTreesSelector",
-  get: ({ get }) => {
-    let value = get(buildTreesAtom);
-    if (value === null) value = [];
-
-    return value;
-  },
-  set: ({ set }, newValue) => {
-    const value = newValue instanceof DefaultValue ? null : newValue;
-    set(buildTreesAtom, value);
-  },
-});
+import { selector } from "recoil";
+import { TREE_DATA_LOOKUP } from ".";
+import { PassiveTree } from "../../../../common/data/tree";
+import { BuildTree } from "../../../../common/route-processing/types";
+import { decodeBase64Url } from "../../utility";
+import { buildTreesSelector } from "./build-tree";
 
 export const urlTreesSelector = selector({
   key: "urlTreesSelector",
@@ -91,13 +52,8 @@ export async function buildUrlTree(
   const data = /.*\/(.*?)$/.exec(buildTree.url)?.[1];
   if (!data) throw `invalid url ${buildTree.url}`;
 
-  const [passiveTree, template] = await Promise.all([
-    TREE_DATA_LOOKUP[buildTree.version],
-    TREE_TEMPLATE_LOOKUP[buildTree.version],
-  ]);
-
-  if (passiveTree === undefined || template === undefined)
-    throw `invalid version ${buildTree.version}`;
+  const [passiveTree] = await TREE_DATA_LOOKUP[buildTree.version];
+  if (passiveTree === undefined) throw `invalid version ${buildTree.version}`;
 
   const buffer = decodeBase64Url(data);
 
@@ -139,7 +95,9 @@ export async function buildUrlTree(
     version: buildTree.version,
     ascendancy:
       ascendancyId > 0
-        ? passiveTree.classes[classId].ascendancies[ascendancyId - 1]
+        ? passiveTree.ascendancies[
+            passiveTree.classes[classId].ascendancies[ascendancyId - 1]
+          ]
         : undefined,
     nodes: nodes,
     masteryLookup: masteries,

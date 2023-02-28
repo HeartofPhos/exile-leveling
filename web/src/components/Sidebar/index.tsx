@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FaRegClipboard } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useRecoilValue } from "recoil";
-import { urlTreesSelector } from "../../state/passive-trees";
+import { urlTreesSelector } from "../../state/tree/url-tree";
 import { searchStringsAtom } from "../../state/search-strings";
 import { borderListStyles } from "../BorderList";
 import { PassiveTreeViewer } from "../PassiveTreeViewer";

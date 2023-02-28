@@ -1,5 +1,6 @@
 import { PassiveTree } from "../../../../common/data/tree";
-import { UrlTree } from "../../state/passive-trees";
+import { UrlTree } from "../../state/tree/url-tree";
+import { ViewBox } from "../../state/tree/svg";
 
 function intersection<T>(setA: Set<T>, setB: Set<T>) {
   const _intersection = new Set<T>();
@@ -33,7 +34,8 @@ export interface UrlTreeDelta {
 export function buildUrlTreeDelta(
   currentTree: UrlTree.Data,
   previousTree: UrlTree.Data,
-  passiveTree: PassiveTree.Data
+  passiveTree: PassiveTree.Data,
+  viewBox: ViewBox
 ): UrlTreeDelta {
   const nodesPrevious = new Set(currentTree.nodes);
   const nodesCurrent = new Set(previousTree.nodes);
@@ -57,7 +59,8 @@ export function buildUrlTreeDelta(
     nodesActiveSet,
     nodesAddedSet,
     nodesRemovedSet,
-    passiveTree
+    passiveTree,
+    viewBox
   );
 
   if (currentTree.ascendancy !== undefined)
@@ -161,7 +164,8 @@ function calculateBounds(
   nodesActive: Set<string>,
   nodesAdded: Set<string>,
   nodesRemoved: Set<string>,
-  passiveTree: PassiveTree.Data
+  passiveTree: PassiveTree.Data,
+  viewBox: ViewBox
 ): Bounds {
   let minX = Number.POSITIVE_INFINITY;
   let minY = Number.POSITIVE_INFINITY;
@@ -200,8 +204,8 @@ function calculateBounds(
 
   return {
     // Anchor 0,0
-    x: x - passiveTree.viewBox.x,
-    y: y - passiveTree.viewBox.y,
+    x: x - viewBox.x,
+    y: y - viewBox.y,
     width: w,
     height: h,
   };

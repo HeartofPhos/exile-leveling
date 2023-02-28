@@ -1,23 +1,24 @@
 import { useEffect, useRef, useState } from "react";
 import { Viewport, ViewportProps } from "../Viewport";
-import { buildUrlTreeDelta, UrlTreeDelta } from "./processs";
-import {
-  TREE_DATA_LOOKUP,
-  TREE_TEMPLATE_LOOKUP,
-  UrlTree,
-} from "../../state/passive-trees";
-import styles from "./styles.module.css";
+import { buildUrlTreeDelta, UrlTreeDelta } from "./url-tree-delta";
+import { PassiveTree } from "../../../../common/data/tree";
+import { TREE_DATA_LOOKUP } from "../../state/tree";
+import { UrlTree } from "../../state/tree/url-tree";
 import classNames from "classnames";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { formStyles } from "../Form";
 import { randomId } from "../../utility";
+import styles from "./styles.module.css";
 
 interface PassiveTreeViewerProps {
   urlTrees: UrlTree.Data[];
 }
 
 interface RenderData {
+  id: string;
   svg: string;
+  style: string;
+  passiveTree: PassiveTree.Data;
   intialFocus: ViewportProps["intialFocus"];
   masteryInfos: UrlTreeDelta["masteryInfos"];
 }
@@ -44,21 +45,23 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
         };
       }
 
-      const [passiveTree, compiled] = await Promise.all([
-        TREE_DATA_LOOKUP[currentTree.version],
-        TREE_TEMPLATE_LOOKUP[currentTree.version],
-      ]);
+      const [passiveTree, svg, viewBox, compiledStyle] = await TREE_DATA_LOOKUP[
+        currentTree.version
+      ];
 
       const urlTreeDelta = buildUrlTreeDelta(
         currentTree,
         previousTree,
-        passiveTree
+        passiveTree,
+        viewBox
       );
 
-      const svg = compiled({
-        svgId: randomId(6),
+      const id = randomId(6);
+
+      const style = compiledStyle({
+        svgId: id,
         backgroundColor: "#00000000",
-        ascendancy: currentTree.ascendancy?.id,
+        ascendancy: currentTree.ascendancy?.name,
 
         nodeColor: "#64748b",
         nodeActiveColor: "#38bdf8",
@@ -80,7 +83,10 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
       });
 
       setRenderData({
+        id,
         svg,
+        style,
+        passiveTree,
         intialFocus: urlTreeDelta.bounds,
         masteryInfos: urlTreeDelta.masteryInfos,
       });
@@ -96,16 +102,12 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
     for (const [nodeId, masteryInfo] of Object.entries(
       renderData.masteryInfos
     )) {
-      const node = svgDivRef.current.querySelector<SVGElement>(`#n${nodeId}`);
-      if (node === null) return;
-
-      const title = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "title"
+      const title = svgDivRef.current.querySelector<SVGTitleElement>(
+        `#n${nodeId} title`
       );
-      title.textContent = masteryInfo.info;
+      if (title === null) return;
 
-      node.appendChild(title);
+      title.textContent = `${renderData.passiveTree.nodes[nodeId].text}\n${masteryInfo.info}`;
     }
   }, [svgDivRef, renderData]);
 
@@ -118,7 +120,11 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
               intialFocus={renderData.intialFocus}
               resizeHandling="clip"
             >
+              <style
+                dangerouslySetInnerHTML={{ __html: renderData.style }}
+              ></style>
               <div
+                id={renderData.id}
                 ref={svgDivRef}
                 dangerouslySetInnerHTML={{ __html: renderData.svg }}
               />
