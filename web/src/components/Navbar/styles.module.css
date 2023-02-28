@@ -11,7 +11,7 @@
 
 .navHolder {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   align-items: flex-end;
   font-size: var(--size-4);
 }

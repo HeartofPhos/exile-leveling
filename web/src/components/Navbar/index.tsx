@@ -70,6 +70,13 @@ export function Navbar({}: NavbarProps) {
           [styles.expand]: navExpand,
         })}
       >
+        <button onClick={() => setNavExpand(!navExpand)}>
+          <FaBars
+            aria-label="Menu"
+            className={classNames(styles.navIcon)}
+            display="block"
+          />
+        </button>
         <div
           className={classNames(styles.navMain, {
             [styles.expand]: navExpand,
@@ -157,13 +164,6 @@ export function Navbar({}: NavbarProps) {
           </div>
           {navExpand && <hr />}
         </div>
-        <button onClick={() => setNavExpand(!navExpand)}>
-          <FaBars
-            aria-label="Menu"
-            className={classNames(styles.navIcon)}
-            display="block"
-          />
-        </button>
       </div>
       <hr />
     </div>
