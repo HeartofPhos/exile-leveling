@@ -27,15 +27,13 @@ export interface UrlTreeDelta {
   connectionsActive: string[];
   connectionsAdded: string[];
   connectionsRemoved: string[];
-  bounds: Bounds;
   masteryInfos: Record<string, MasteryInfo>;
 }
 
 export function buildUrlTreeDelta(
   currentTree: UrlTree.Data,
   previousTree: UrlTree.Data,
-  passiveTree: PassiveTree.Data,
-  viewBox: ViewBox
+  passiveTree: PassiveTree.Data
 ): UrlTreeDelta {
   const nodesPrevious = new Set(currentTree.nodes);
   const nodesCurrent = new Set(previousTree.nodes);
@@ -55,14 +53,6 @@ export function buildUrlTreeDelta(
     passiveTree
   );
 
-  const bounds = calculateBounds(
-    nodesActiveSet,
-    nodesAddedSet,
-    nodesRemovedSet,
-    passiveTree,
-    viewBox
-  );
-
   if (currentTree.ascendancy !== undefined)
     nodesActiveSet.add(currentTree.ascendancy.startNodeId);
 
@@ -78,7 +68,6 @@ export function buildUrlTreeDelta(
     nodesAdded: Array.from(nodesAddedSet),
     nodesRemoved: Array.from(nodesRemovedSet),
     ...connections,
-    bounds,
     masteryInfos,
   };
 }
@@ -119,31 +108,33 @@ function buildConnections(
   const connectionsAdded: string[] = [];
   const connectionsRemoved: string[] = [];
 
-  for (const connection of passiveTree.connections) {
-    const id = [connection.a, connection.b].sort().join("-");
+  for (const graph of passiveTree.graphs) {
+    for (const connection of graph.connections) {
+      const id = [connection.a, connection.b].sort().join("-");
 
-    const aIsActive = nodesActive.has(connection.a);
-    const bIsActive = nodesActive.has(connection.b);
+      const aIsActive = nodesActive.has(connection.a);
+      const bIsActive = nodesActive.has(connection.b);
 
-    if (aIsActive && bIsActive) connectionsActive.push(id);
+      if (aIsActive && bIsActive) connectionsActive.push(id);
 
-    const aIsAdded = nodesAdded.has(connection.a);
-    const bIsAdded = nodesAdded.has(connection.b);
+      const aIsAdded = nodesAdded.has(connection.a);
+      const bIsAdded = nodesAdded.has(connection.b);
 
-    if (
-      (aIsAdded && (bIsAdded || bIsActive)) ||
-      (bIsAdded && (aIsAdded || aIsActive))
-    )
-      connectionsAdded.push(id);
+      if (
+        (aIsAdded && (bIsAdded || bIsActive)) ||
+        (bIsAdded && (aIsAdded || aIsActive))
+      )
+        connectionsAdded.push(id);
 
-    const aIsRemoved = nodesRemoved.has(connection.a);
-    const bIsRemoved = nodesRemoved.has(connection.b);
+      const aIsRemoved = nodesRemoved.has(connection.a);
+      const bIsRemoved = nodesRemoved.has(connection.b);
 
-    if (
-      (aIsRemoved && (bIsRemoved || bIsActive)) ||
-      (bIsRemoved && (aIsRemoved || aIsActive))
-    )
-      connectionsRemoved.push(id);
+      if (
+        (aIsRemoved && (bIsRemoved || bIsActive)) ||
+        (bIsRemoved && (aIsRemoved || aIsActive))
+      )
+        connectionsRemoved.push(id);
+    }
   }
 
   return {
@@ -160,11 +151,11 @@ export interface Bounds {
   height: number;
 }
 
-function calculateBounds(
-  nodesActive: Set<string>,
-  nodesAdded: Set<string>,
-  nodesRemoved: Set<string>,
-  passiveTree: PassiveTree.Data,
+export function calculateBounds(
+  nodesActive: string[],
+  nodesAdded: string[],
+  nodesRemoved: string[],
+  nodes: PassiveTree.NodeLookup,
   viewBox: ViewBox
 ): Bounds {
   let minX = Number.POSITIVE_INFINITY;
@@ -173,7 +164,7 @@ function calculateBounds(
   let maxY = Number.NEGATIVE_INFINITY;
 
   const updateMinMax = (nodeId: string) => {
-    const node = passiveTree.nodes[nodeId];
+    const node = nodes[nodeId];
 
     minX = Math.min(minX, node.x);
     minY = Math.min(minY, node.y);
@@ -181,7 +172,7 @@ function calculateBounds(
     maxY = Math.max(maxY, node.y);
   };
 
-  if (nodesAdded.size == 0 && nodesRemoved.size == 0) {
+  if (nodesAdded.length == 0 && nodesRemoved.length == 0) {
     for (const nodeId of nodesActive) {
       updateMinMax(nodeId);
     }

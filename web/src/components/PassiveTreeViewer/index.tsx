@@ -5,7 +5,11 @@ import { randomId } from "../../utility";
 import { formStyles } from "../Form";
 import { Viewport, ViewportProps } from "../Viewport";
 import styles from "./styles.module.css";
-import { UrlTreeDelta, buildUrlTreeDelta } from "./url-tree-delta";
+import {
+  UrlTreeDelta,
+  buildUrlTreeDelta,
+  calculateBounds,
+} from "./url-tree-delta";
 import classNames from "classnames";
 import { useEffect, useRef, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
@@ -18,7 +22,7 @@ interface RenderData {
   id: string;
   svg: string;
   style: string;
-  passiveTree: PassiveTree.Data;
+  nodes: PassiveTree.NodeLookup;
   intialFocus: ViewportProps["intialFocus"];
   masteryInfos: UrlTreeDelta["masteryInfos"];
 }
@@ -45,14 +49,20 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
         };
       }
 
-      const [passiveTree, svg, viewBox, compiledStyle] = await TREE_DATA_LOOKUP[
-        currentTree.version
-      ];
+      const [passiveTree, nodeLookup, svg, viewBox, compiledStyle] =
+        await TREE_DATA_LOOKUP[currentTree.version];
 
       const urlTreeDelta = buildUrlTreeDelta(
         currentTree,
         previousTree,
-        passiveTree,
+        passiveTree
+      );
+
+      const bounds = calculateBounds(
+        urlTreeDelta.nodesActive,
+        urlTreeDelta.nodesAdded,
+        urlTreeDelta.nodesRemoved,
+        nodeLookup,
         viewBox
       );
 
@@ -63,15 +73,15 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
         backgroundColor: "#00000000",
         ascendancy: currentTree.ascendancy?.name,
 
-        nodeColor: "#64748b",
-        nodeActiveColor: "#38bdf8",
-        nodeAddedColor: "#00ff00",
-        nodeRemovedColor: "#ff0000",
+        nodeColor: "hsl(215, 15%, 50%)",
+        nodeActiveColor: "hsl(200, 80%, 50%)",
+        nodeAddedColor: "hsl(120, 90%, 50%)",
+        nodeRemovedColor: "hsl(0, 90%, 50%)",
 
-        connectionColor: "#64748b",
-        connectionActiveColor: "#38bdf8",
-        connectionAddedColor: "#00ff00",
-        connectionRemovedColor: "#ff0000",
+        connectionColor: "hsl(215, 15%, 40%)",
+        connectionActiveColor: "hsl(200, 80%, 40%)",
+        connectionAddedColor: "hsl(120, 90%, 40%)",
+        connectionRemovedColor: "hsl(0, 90%, 40%)",
 
         nodesActive: urlTreeDelta.nodesActive,
         nodesAdded: urlTreeDelta.nodesAdded,
@@ -86,8 +96,8 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
         id,
         svg,
         style,
-        passiveTree,
-        intialFocus: urlTreeDelta.bounds,
+        nodes: nodeLookup,
+        intialFocus: bounds,
         masteryInfos: urlTreeDelta.masteryInfos,
       });
     }
@@ -107,7 +117,7 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
       );
       if (title === null) return;
 
-      title.textContent = `${renderData.passiveTree.nodes[nodeId].text}\n${masteryInfo.info}`;
+      title.textContent = `${renderData.nodes[nodeId].text}\n${masteryInfo.info}`;
     }
   }, [svgDivRef, renderData]);
 

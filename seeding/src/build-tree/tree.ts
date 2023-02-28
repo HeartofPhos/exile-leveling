@@ -65,8 +65,8 @@ export function buildPassiveTree(skillTree: SkillTree.Data) {
       name: _class.name,
       ascendancies: _class.ascendancies.map((asc) => asc.name),
     })),
-    nodes: {},
-    connections: [],
+    graphIndex: 0,
+    graphs: [{ nodes: {}, connections: [] }],
     ascendancies: {},
     masteryEffects: {},
   };
@@ -75,9 +75,9 @@ export function buildPassiveTree(skillTree: SkillTree.Data) {
     for (const ascendancy of _class.ascendancies) {
       // @ts-expect-error
       tree.ascendancies[ascendancy.name] = {
-        nodes: {},
-        connections: [],
+        graphIndex: tree.graphs.length,
       };
+      tree.graphs.push({ nodes: {}, connections: [] });
     }
   }
 
@@ -105,8 +105,7 @@ export function buildPassiveTree(skillTree: SkillTree.Data) {
 
       const [angle, x, y] = getPosition(skillTree, node);
 
-      let nodes;
-      let connections;
+      let graph;
       if (node.ascendancyName !== undefined) {
         const asc = tree.ascendancies[node.ascendancyName!];
         if (node.isAscendancyStart) {
@@ -114,16 +113,14 @@ export function buildPassiveTree(skillTree: SkillTree.Data) {
           asc.name = node.ascendancyName;
         }
 
-        nodes = asc.nodes;
-        connections = asc.connections;
+        graph = tree.graphs[asc.graphIndex];
       } else {
         updateMinxMax(x, y);
-        nodes = tree.nodes;
-        connections = tree.connections;
+        graph = tree.graphs[tree.graphIndex];
       }
 
       const treeNode = buildNode(node, { x, y });
-      nodes[nodeId] = treeNode;
+      graph.nodes[nodeId] = treeNode;
 
       if (node.out) {
         for (const outNodeId of node.out) {
@@ -144,7 +141,7 @@ export function buildPassiveTree(skillTree: SkillTree.Data) {
             sweep = { w: winding, r: radius };
           }
 
-          connections.push({
+          graph.connections.push({
             a: nodeId,
             b: outNodeId,
             s: sweep,
@@ -155,7 +152,8 @@ export function buildPassiveTree(skillTree: SkillTree.Data) {
   }
 
   for (const [, asc] of Object.entries(tree.ascendancies)) {
-    const startNode = asc.nodes[asc.startNodeId];
+    const graph = tree.graphs[asc.graphIndex];
+    const startNode = graph.nodes[asc.startNodeId];
 
     const { x: ASCENDANCY_POS_X, y: ASCENDANCY_POS_Y } =
       ASCENDANCY_OFFSETS[asc.name];
@@ -168,7 +166,7 @@ export function buildPassiveTree(skillTree: SkillTree.Data) {
       node.y += diff_y;
     };
 
-    for (const [, node] of Object.entries(asc.nodes)) {
+    for (const [, node] of Object.entries(graph.nodes)) {
       updateNode(node);
       updateMinxMax(node.x, node.y);
     }
@@ -207,6 +205,8 @@ function buildNode(
     kind = "Keystone";
   } else if (node.isNotable) {
     kind = "Notable";
+  } else if (node.isJewelSocket) {
+    kind = "Jewel";
   } else {
     kind = "Normal";
   }

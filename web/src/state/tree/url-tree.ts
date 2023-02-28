@@ -52,7 +52,7 @@ export async function buildUrlTree(
   const data = /.*\/(.*?)$/.exec(buildTree.url)?.[1];
   if (!data) throw `invalid url ${buildTree.url}`;
 
-  const [passiveTree] = await TREE_DATA_LOOKUP[buildTree.version];
+  const [passiveTree, nodeLookup] = await TREE_DATA_LOOKUP[buildTree.version];
   if (passiveTree === undefined) throw `invalid version ${buildTree.version}`;
 
   const buffer = decodeBase64Url(data);
@@ -80,7 +80,7 @@ export async function buildUrlTree(
   // Filter nodes e.g. cluster jewels
   const nodes = read_u16s(buffer, nodesOffset, nodesCount)
     .map((x) => x.toString())
-    .filter((x) => passiveTree.nodes[x] !== undefined);
+    .filter((x) => nodeLookup[x] !== undefined);
 
   const masteries: UrlTree.Data["masteryLookup"] = {};
   const masteryData = read_u16s(buffer, masteryOffset, masteryCount);

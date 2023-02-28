@@ -2,10 +2,17 @@ export namespace PassiveTree {
   export interface Data {
     bounds: Bounds;
     classes: Class[];
-    nodes: Record<string, Node>;
-    connections: Connection[];
+    graphs: Graph[];
+    graphIndex: number;
     ascendancies: Record<string, Ascendancy>;
     masteryEffects: Record<string, MasteryEffect>;
+  }
+
+  export type NodeLookup = Record<string, Node>;
+
+  export interface Graph {
+    nodes: NodeLookup;
+    connections: Connection[];
   }
 
   export interface MasteryEffect {
@@ -22,12 +29,17 @@ export namespace PassiveTree {
   export interface Ascendancy {
     name: string;
     startNodeId: string;
-    nodes: Record<string, Node>;
-    connections: Connection[];
+    graphIndex: number;
   }
 
   export interface Node extends Coord {
-    k: "Normal" | "Notable" | "Keystone" | "Mastery" | "Ascendancy_Start";
+    k:
+      | "Normal"
+      | "Notable"
+      | "Keystone"
+      | "Mastery"
+      | "Jewel"
+      | "Ascendancy_Start";
     text?: string;
   }
 
