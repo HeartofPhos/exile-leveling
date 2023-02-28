@@ -27,7 +27,7 @@ export function SectionHolder({ name, items: taskItems }: SectionHolderProps) {
   return (
     <div id={sectionId}>
       <div className={classNames(styles.actbar)}>
-        <div
+        <button
           className={classNames(styles.header, styles.actbarHeader)}
           onClick={() => {
             const updatedExpanded = !expanded;
@@ -40,7 +40,7 @@ export function SectionHolder({ name, items: taskItems }: SectionHolderProps) {
           {expandIcon}
           <div>{`--== ${name} ==--`}</div>
           {expandIcon}
-        </div>
+        </button>
         <hr />
       </div>
       {expanded && (

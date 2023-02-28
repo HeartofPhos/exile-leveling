@@ -29,6 +29,9 @@
 }
 
 .button {
-  height: var(--size-5);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: var(--line-height);
   flex: 1;
 }

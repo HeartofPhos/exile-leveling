@@ -17,16 +17,16 @@ function TaskListItem({ children, isCompletedState }: TaskItemProps) {
     : [undefined, undefined];
 
   return (
-    <li
+    <button
       onClick={() => {
         if (setIsCompleted) setIsCompleted(!isCompleted);
       }}
-      className={classNames(borderListStyles.item, {
+      className={classNames(borderListStyles.item, styles.listItem, {
         [styles.completed]: isCompleted,
       })}
     >
       {children}
-    </li>
+    </button>
   );
 }
 

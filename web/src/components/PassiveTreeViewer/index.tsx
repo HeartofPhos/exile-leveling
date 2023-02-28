@@ -144,18 +144,22 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
             {urlTrees.length > 0 && (urlTrees[curIndex].name || "Default")}
           </label>
           <div className={classNames(styles.buttons)}>
-            <HiChevronLeft
+            <button
               className={classNames(formStyles.formButton, styles.button)}
               onClick={() => {
                 if (curIndex > 0) setCurIndex(curIndex - 1);
               }}
-            />
-            <HiChevronRight
+            >
+              <HiChevronLeft />
+            </button>
+            <button
               className={classNames(formStyles.formButton, styles.button)}
               onClick={() => {
                 if (curIndex < urlTrees.length - 1) setCurIndex(curIndex + 1);
               }}
-            />
+            >
+              <HiChevronRight />
+            </button>
           </div>
         </div>
       )}

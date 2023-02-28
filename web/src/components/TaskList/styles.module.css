@@ -3,25 +3,26 @@
   border-width: 0;
 }
 
-.list > li {
+.list > .listItem {
   display: flex;
   width: 100%;
+  text-align: left;
   padding: var(--size-3);
 }
 
 @media (hover: hover) {
-  .list > li:hover {
+  .list > .listItem:hover {
     border-color: var(--accent-highlight);
   }
 }
 
-.list > li:before {
+.list > .listItem:before {
   font-weight: var(--font-heavy);
   counter-increment: list-item;
   content: counter(list-item, decimal-leading-zero) ".";
   margin-right: var(--size-2);
 }
 
-.list > li.completed .task {
+.list > .listItem.completed .task {
   opacity: 0.25;
 }

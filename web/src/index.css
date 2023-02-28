@@ -27,12 +27,22 @@
 ::after,
 ::before {
   box-sizing: inherit;
-  font-family: inherit;
+  font: inherit;
+  color: unset;
+  background: unset;
+  border: unset;
   line-height: var(--line-height);
   padding: 0;
   margin: 0;
   user-select: none;
   scroll-margin: var(--navbar-height);
+}
+
+*:focus-visible {
+  outline-offset: calc(var(--size-1) * -1);
+  outline-style: solid;
+  outline-color: var(--accent-highlight);
+  outline-width: var(--size-1);
 }
 
 html {

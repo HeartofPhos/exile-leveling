@@ -27,7 +27,7 @@ interface NavbarItemProps {
 
 function NavbarItem({ label, expand, icon, onClick }: NavbarItemProps) {
   return (
-    <div
+    <button
       onClick={onClick}
       className={classNames(styles.navItem, styles.navElement, {
         [styles.expand]: expand,
@@ -36,7 +36,7 @@ function NavbarItem({ label, expand, icon, onClick }: NavbarItemProps) {
     >
       {icon}
       {label}
-    </div>
+    </button>
   );
 }
 
@@ -157,11 +157,13 @@ export function Navbar({}: NavbarProps) {
           </div>
           {navExpand && <hr />}
         </div>
-        <FaBars
-          className={classNames(styles.navIcon)}
-          onClick={() => setNavExpand(!navExpand)}
-          display="block"
-        />
+        <button onClick={() => setNavExpand(!navExpand)}>
+          <FaBars
+            aria-label="Menu"
+            className={classNames(styles.navIcon)}
+            display="block"
+          />
+        </button>
       </div>
       <hr />
     </div>

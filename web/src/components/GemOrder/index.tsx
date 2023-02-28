@@ -1,5 +1,4 @@
 import { RequiredGem } from "../../../../common/route-processing/types";
-import { InlineFakeBlock } from "../InlineFakeBlock";
 import { GemReward } from "../ItemReward";
 import styles from "./styles.module.css";
 import classNames from "classnames";
@@ -25,50 +24,42 @@ export function GemOrder({
     <div className={classNames(styles.gemOrder)}>
       <GemReward requiredGem={requiredGem} />
       <div className={classNames(styles.orderButtonGroup)}>
-        <InlineFakeBlock
-          child={
-            <HiChevronUp
-              className={classNames(styles.orderButton)}
-              onClick={(e) => {
-                e.stopPropagation();
-                if (onMoveUp) onMoveUp();
-              }}
-            />
-          }
-        />
-        <InlineFakeBlock
-          child={
-            <HiChevronDown
-              className={classNames(styles.orderButton)}
-              onClick={(e) => {
-                e.stopPropagation();
-                if (onMoveDown) onMoveDown();
-              }}
-            />
-          }
-        />
-        <InlineFakeBlock
-          child={
-            <HiChevronDoubleUp
-              className={classNames(styles.orderButton)}
-              onClick={(e) => {
-                e.stopPropagation();
-                if (onMoveTop) onMoveTop();
-              }}
-            />
-          }
-        />
-        <InlineFakeBlock
-          child={
-            <MdDeleteOutline
-              className={classNames(styles.orderButton)}
-              onClick={(e) => {
-                e.stopPropagation();
-                if (onDelete) onDelete();
-              }}
-            />
-          }
-        />
+        <button
+          className={classNames(styles.orderButton)}
+          onClick={(e) => {
+            e.stopPropagation();
+            if (onMoveUp) onMoveUp();
+          }}
+        >
+          <HiChevronUp className={classNames(styles.orderButtonImage)} />
+        </button>
+        <button
+          className={classNames(styles.orderButton)}
+          onClick={(e) => {
+            e.stopPropagation();
+            if (onMoveDown) onMoveDown();
+          }}
+        >
+          <HiChevronDown className={classNames(styles.orderButtonImage)} />
+        </button>
+        <button
+          className={classNames(styles.orderButton)}
+          onClick={(e) => {
+            e.stopPropagation();
+            if (onMoveTop) onMoveTop();
+          }}
+        >
+          <HiChevronDoubleUp className={classNames(styles.orderButtonImage)} />
+        </button>
+        <button
+          className={classNames(styles.orderButton)}
+          onClick={(e) => {
+            e.stopPropagation();
+            if (onDelete) onDelete();
+          }}
+        >
+          <MdDeleteOutline className={classNames(styles.orderButtonImage)} />
+        </button>
       </div>
     </div>
   );
