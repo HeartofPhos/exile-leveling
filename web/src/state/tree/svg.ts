@@ -187,7 +187,12 @@ function buildNode(
   const constants = constantsLookup[node.k];
   if (constants === undefined) throw `missing constant, ${node.k}`;
 
-  return `<circle cx="${node.x}" cy="${node.y}" id="n${nodeId}" r="${constants.radius}" class="${constants.class}"/>\n`;
+  let template = ``;
+  template += `<circle cx="${node.x}" cy="${node.y}" id="n${nodeId}" r="${constants.radius}" class="${constants.class}">`;
+  if (node.text) template += `<title>${node.text}</title>`;
+  template += `</circle>`;
+
+  return template;
 }
 
 function buildConnection(

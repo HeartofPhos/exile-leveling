@@ -198,36 +198,22 @@ function buildNode(
   node: SkillTree.Node,
   pos: PassiveTree.Coord
 ): PassiveTree.Node {
-  if (node.isAscendancyStart)
-    return {
-      ...pos,
-      k: "Ascendancy_Start",
-    };
-
-  if (node.isMastery)
-    return {
-      ...pos,
-      k: "Mastery",
-      text: node.name,
-    };
-
-  if (node.isKeystone)
-    return {
-      ...pos,
-      k: "Keystone",
-      text: node.stats?.join("\n"),
-    };
-
-  if (node.isNotable)
-    return {
-      ...pos,
-      k: "Notable",
-      text: node.stats?.join("\n"),
-    };
+  let kind: PassiveTree.Node["k"];
+  if (node.isAscendancyStart) {
+    kind = "Ascendancy_Start";
+  } else if (node.isMastery) {
+    kind = "Mastery";
+  } else if (node.isKeystone) {
+    kind = "Keystone";
+  } else if (node.isNotable) {
+    kind = "Notable";
+  } else {
+    kind = "Normal";
+  }
 
   return {
     ...pos,
-    k: "Normal",
-    text: node.stats?.join("\n"),
+    k: kind,
+    text: node?.name,
   };
 }

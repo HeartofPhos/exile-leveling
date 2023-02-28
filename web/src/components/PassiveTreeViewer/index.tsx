@@ -99,16 +99,12 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
     for (const [nodeId, masteryInfo] of Object.entries(
       renderData.masteryInfos
     )) {
-      const node = svgDivRef.current.querySelector<SVGElement>(`#n${nodeId}`);
-      if (node === null) return;
-
-      const title = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "title"
+      const titleNode = svgDivRef.current.querySelector<SVGTitleElement>(
+        `#n${nodeId} title`
       );
-      title.textContent = masteryInfo.info;
+      if (titleNode === null) return;
 
-      node.appendChild(title);
+      titleNode.textContent += `\n${masteryInfo.info}`;
     }
   }, [svgDivRef, renderData]);
 
