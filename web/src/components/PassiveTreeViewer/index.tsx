@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Viewport, ViewportProps } from "../Viewport";
 import { buildUrlTreeDelta, UrlTreeDelta } from "./url-tree-delta";
+import { PassiveTree } from "../../../../common/data/tree";
 import { TREE_DATA_LOOKUP } from "../../state/tree";
 import { UrlTree } from "../../state/tree/url-tree";
 import classNames from "classnames";
@@ -17,6 +18,7 @@ interface RenderData {
   id: string;
   svg: string;
   style: string;
+  passiveTree: PassiveTree.Data;
   intialFocus: ViewportProps["intialFocus"];
   masteryInfos: UrlTreeDelta["masteryInfos"];
 }
@@ -84,6 +86,7 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
         id,
         svg,
         style,
+        passiveTree,
         intialFocus: urlTreeDelta.bounds,
         masteryInfos: urlTreeDelta.masteryInfos,
       });
@@ -99,12 +102,12 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
     for (const [nodeId, masteryInfo] of Object.entries(
       renderData.masteryInfos
     )) {
-      const titleNode = svgDivRef.current.querySelector<SVGTitleElement>(
+      const title = svgDivRef.current.querySelector<SVGTitleElement>(
         `#n${nodeId} title`
       );
-      if (titleNode === null) return;
+      if (title === null) return;
 
-      titleNode.textContent += `\n${masteryInfo.info}`;
+      title.textContent = `${renderData.passiveTree.nodes[nodeId].text}\n${masteryInfo.info}`;
     }
   }, [svgDivRef, renderData]);
 
