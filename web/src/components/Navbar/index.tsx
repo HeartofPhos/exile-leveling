@@ -1,6 +1,11 @@
+import { useClearGemProgress } from "../../state/gem-progress";
+import { routeSelector } from "../../state/route";
+import { routeFilesSelector } from "../../state/route-files";
+import { useClearRouteProgress } from "../../state/route-progress";
+import { borderListStyles } from "../BorderList";
+import styles from "./styles.module.css";
 import classNames from "classnames";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import {
   FaBars,
   FaGithub,
@@ -9,14 +14,9 @@ import {
   FaTools,
   FaUndoAlt,
 } from "react-icons/fa";
-import { useRecoilCallback, useRecoilValue } from "recoil";
-import { routeSelector } from "../../state/route";
-import { routeFilesSelector } from "../../state/route-files";
-import { useClearRouteProgress } from "../../state/route-progress";
-import { useClearGemProgress } from "../../state/gem-progress";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import styles from "./styles.module.css";
-import { borderListStyles } from "../BorderList";
+import { useRecoilCallback, useRecoilValue } from "recoil";
 
 interface NavbarItemProps {
   label: string;

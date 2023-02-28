@@ -1,8 +1,8 @@
-import fs from "fs";
+import { buildTemplates } from "./build-tree";
+import { getAreas } from "./seeding/areas";
 import { getGems as seedGems } from "./seeding/gems";
 import { getQuests } from "./seeding/quests";
-import { getAreas } from "./seeding/areas";
-import { buildTemplates } from "./build-tree";
+import fs from "fs";
 
 const dataPath = process.argv[2];
 
@@ -11,10 +11,6 @@ function saveJSON(name: string, data: any) {
     `${dataPath}/json/${name}.json`,
     JSON.stringify(data, null, 2)
   );
-}
-
-function saveTreeTemplate(name: string, data: string) {
-  fs.writeFileSync(`${dataPath}/tree/${name}.svg`, data);
 }
 
 function saveTreeJSON(name: string, data: any) {

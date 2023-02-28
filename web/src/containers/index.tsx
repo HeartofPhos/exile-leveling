@@ -1,9 +1,9 @@
-import { lazy, Suspense } from "react";
+import { ErrorFallback } from "../components/ErrorFallback";
+import { Loading } from "../components/Loading";
+import { Navbar } from "../components/Navbar";
+import { Suspense, lazy } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { Route, Routes } from "react-router-dom";
-import { ErrorFallback } from "../components/ErrorFallback";
-import { Navbar } from "../components/Navbar";
-import { Loading } from "../components/Loading";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

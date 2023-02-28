@@ -1,5 +1,5 @@
-import classNames from "classnames";
 import styles from "./styles.module.css";
+import classNames from "classnames";
 
 interface SplitRowProps {
   left: React.ReactNode;

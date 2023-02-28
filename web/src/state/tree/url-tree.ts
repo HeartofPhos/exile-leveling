@@ -1,9 +1,9 @@
-import { selector } from "recoil";
 import { TREE_DATA_LOOKUP } from ".";
 import { PassiveTree } from "../../../../common/data/tree";
 import { BuildTree } from "../../../../common/route-processing/types";
 import { decodeBase64Url } from "../../utility";
 import { buildTreesSelector } from "./build-tree";
+import { selector } from "recoil";
 
 export const urlTreesSelector = selector({
   key: "urlTreesSelector",

@@ -1,6 +1,6 @@
-import { atom } from "recoil";
 import { persistentStorageEffect } from ".";
 import { getPersistent } from "../utility";
+import { atom } from "recoil";
 
 const SEARCH_STRINGS_VERSION = 0;
 

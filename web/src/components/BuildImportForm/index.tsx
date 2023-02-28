@@ -1,9 +1,9 @@
+import { formStyles } from "../Form";
+import { TextModal } from "../Modal";
+import { PobData, fetchPob, processPob } from "./pob";
 import classNames from "classnames";
 import { useState } from "react";
-import { formStyles } from "../Form";
-import { fetchPob, PobData, processPob } from "./pob";
 import { toast } from "react-toastify";
-import { TextModal } from "../Modal";
 
 interface BuildImportFormProps {
   onSubmit: (pobData: PobData) => void;

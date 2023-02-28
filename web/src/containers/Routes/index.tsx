@@ -1,15 +1,15 @@
-import { ReactNode } from "react";
-import { TaskItemProps } from "../../components/TaskList";
-import { GemReward } from "../../components/ItemReward";
-import { withScrollRestoration } from "../../utility/withScrollRestoration";
-import { useRecoilValue } from "recoil";
-import { SectionHolder } from "../../components/SectionHolder";
 import { ExileFragmentStep } from "../../components/ExileFragment";
+import { GemReward } from "../../components/ItemReward";
+import { SectionHolder } from "../../components/SectionHolder";
+import { Sidebar } from "../../components/Sidebar";
+import { TaskItemProps } from "../../components/TaskList";
 import { gemProgressSelectorFamily } from "../../state/gem-progress";
 import { routeSelector } from "../../state/route";
 import { routeProgressSelectorFamily } from "../../state/route-progress";
-import { Sidebar } from "../../components/Sidebar";
 import { withBlank } from "../../utility/withBlank";
+import { withScrollRestoration } from "../../utility/withScrollRestoration";
+import { ReactNode } from "react";
+import { useRecoilValue } from "recoil";
 
 function RoutesContainer() {
   const route = useRecoilValue(routeSelector);

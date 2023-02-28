@@ -1,13 +1,13 @@
+import { searchStringsAtom } from "../../state/search-strings";
+import { urlTreesSelector } from "../../state/tree/url-tree";
+import { borderListStyles } from "../BorderList";
+import { PassiveTreeViewer } from "../PassiveTreeViewer";
+import styles from "./styles.module.css";
 import classNames from "classnames";
 import { useState } from "react";
 import { FaRegClipboard } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useRecoilValue } from "recoil";
-import { urlTreesSelector } from "../../state/tree/url-tree";
-import { searchStringsAtom } from "../../state/search-strings";
-import { borderListStyles } from "../BorderList";
-import { PassiveTreeViewer } from "../PassiveTreeViewer";
-import styles from "./styles.module.css";
 
 export function Sidebar() {
   const searchStrings = useRecoilValue(searchStringsAtom);

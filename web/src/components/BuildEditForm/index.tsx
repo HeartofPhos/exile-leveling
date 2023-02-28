@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import {
   BuildData,
   RequiredGem,
@@ -8,6 +7,7 @@ import { GemOrder } from "../GemOrder";
 import { SplitRow } from "../SplitRow";
 import { TaskItemProps, TaskList } from "../TaskList";
 import styles from "./styles.module.css";
+import classNames from "classnames";
 
 interface BuildInfoFormProps {
   buildData: BuildData;

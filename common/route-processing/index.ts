@@ -1,9 +1,9 @@
-import { GameData } from "../types";
 import { areas } from "../data";
+import { GameData } from "../types";
 import { parseFragmentStep } from "./fragment";
+import { Pattern, matchPatterns } from "./patterns";
 import { ScopedLogger } from "./scoped-logger";
 import { Route, RouteFile, Section } from "./types";
-import { matchPatterns, Pattern } from "./patterns";
 
 const DEFAULT_SECTION_NAME = "Default";
 

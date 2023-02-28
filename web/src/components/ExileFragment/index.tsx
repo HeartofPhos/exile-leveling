@@ -1,26 +1,26 @@
-import classNames from "classnames";
+import { areas, quests } from "../../../../common/data";
 import {
   Fragment,
   QuestFragment,
 } from "../../../../common/route-processing/fragment/types";
 import { FragmentStep } from "../../../../common/route-processing/types";
 import { GameData } from "../../../../common/types";
-import {
-  BsArrowDownSquare,
-  BsArrowDownLeftSquare,
-  BsArrowDownRightSquare,
-  BsArrowLeftSquare,
-  BsArrowRightSquare,
-  BsArrowUpSquare,
-  BsArrowUpLeftSquare,
-  BsArrowUpRightSquare,
-} from "react-icons/bs";
 import { InlineFakeBlock } from "../InlineFakeBlock";
-import { quests, areas } from "../../../../common/data";
+import { ItemReward } from "../ItemReward";
 import { SplitRow } from "../SplitRow";
 import { taskStyle } from "../TaskList";
-import { ItemReward } from "../ItemReward";
 import styles from "./styles.module.css";
+import classNames from "classnames";
+import {
+  BsArrowDownLeftSquare,
+  BsArrowDownRightSquare,
+  BsArrowDownSquare,
+  BsArrowLeftSquare,
+  BsArrowRightSquare,
+  BsArrowUpLeftSquare,
+  BsArrowUpRightSquare,
+  BsArrowUpSquare,
+} from "react-icons/bs";
 
 interface FragmentProps {
   fragment: Fragment;

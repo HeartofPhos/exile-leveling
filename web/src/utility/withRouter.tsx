@@ -1,11 +1,11 @@
 import React from "react";
 import {
+  Location,
   NavigateFunction,
   Params,
   useLocation,
   useNavigate,
   useParams,
-  Location,
 } from "react-router-dom";
 
 export interface WithRouterProps {

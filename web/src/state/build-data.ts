@@ -1,8 +1,8 @@
-import { DefaultValue } from "recoil";
-import { atom, selector } from "recoil";
 import { persistentStorageEffect } from ".";
 import { BuildData } from "../../../common/route-processing/types";
 import { getPersistent } from "../utility";
+import { DefaultValue } from "recoil";
+import { atom, selector } from "recoil";
 
 const BUILD_DATA_VERSION = 3;
 

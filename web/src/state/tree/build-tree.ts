@@ -1,7 +1,7 @@
-import { atom, selector, DefaultValue } from "recoil";
 import { persistentStorageEffect } from "..";
 import { BuildTree } from "../../../../common/route-processing/types";
 import { getPersistent } from "../../utility";
+import { DefaultValue, atom, selector } from "recoil";
 
 const BUILD_PASSIVE_TREES_VERSION = 0;
 

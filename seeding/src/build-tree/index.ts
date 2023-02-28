@@ -1,6 +1,6 @@
-import fetch from "cross-fetch";
 import { buildPassiveTree } from "./tree";
 import { SkillTree } from "./types";
+import fetch from "cross-fetch";
 
 const PASSIVE_TREE_JSON = {
   "3_18":

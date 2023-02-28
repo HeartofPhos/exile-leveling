@@ -1,7 +1,7 @@
-import { atom, selector, DefaultValue } from "recoil";
-import { getPersistent } from "../utility";
-import { RouteFile } from "../../../common/route-processing/types";
 import { persistentStorageEffect } from ".";
+import { RouteFile } from "../../../common/route-processing/types";
+import { getPersistent } from "../utility";
+import { DefaultValue, atom, selector } from "recoil";
 
 const ROUTE_PROGRESS_VERSION = 1;
 

@@ -1,11 +1,11 @@
+import { gemColours, gems } from "../../../../common/data";
+import { RequiredGem } from "../../../../common/route-processing/types";
+import { InlineFakeBlock } from "../InlineFakeBlock";
+import { SplitRow } from "../SplitRow";
+import { taskStyle } from "../TaskList";
+import styles from "./styles.module.css";
 import classNames from "classnames";
 import { MdCircle } from "react-icons/md";
-import { RequiredGem } from "../../../../common/route-processing/types";
-import { gems, gemColours } from "../../../../common/data";
-import { InlineFakeBlock } from "../InlineFakeBlock";
-import { taskStyle } from "../TaskList";
-import { SplitRow } from "../SplitRow";
-import styles from "./styles.module.css";
 
 function getImageUrl(path: string) {
   return new URL(`./images/${path}`, import.meta.url).href;

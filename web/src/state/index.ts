@@ -1,5 +1,5 @@
-import { AtomEffect } from "recoil";
 import { clearPersistent, setPersistent } from "../utility";
+import { AtomEffect } from "recoil";
 
 export function persistentStorageEffect<T>(
   key: string,

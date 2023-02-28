@@ -1,5 +1,5 @@
-import { atomFamily, selectorFamily, useRecoilCallback } from "recoil";
 import { clearPersistent, getPersistent, setPersistent } from "../utility";
+import { atomFamily, selectorFamily, useRecoilCallback } from "recoil";
 
 const GEM_PROGRESS_VERSION = 1;
 

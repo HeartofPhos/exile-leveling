@@ -1,6 +1,6 @@
 import { PassiveTree } from "../../../../common/data/tree";
 import { globImportLazy } from "../../utility";
-import { buildTemplate, ViewBox } from "./svg";
+import { ViewBox, buildTemplate } from "./svg";
 import Handlebars from "handlebars";
 
 export const TREE_DATA_LOOKUP = globImportLazy<

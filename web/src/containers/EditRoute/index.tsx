@@ -1,19 +1,19 @@
-import classNames from "classnames";
-import { useEffect, useRef, useState } from "react";
-import { useRecoilState, useResetRecoilState } from "recoil";
-import { formStyles } from "../../components/Form";
-import { routeFilesSelector } from "../../state/route-files";
-import Editor from "react-simple-code-editor";
-import { highlight, Grammar } from "prismjs";
 import {
   buildRouteSource,
   getRouteFiles,
 } from "../../../../common/route-processing";
 import { RouteFile } from "../../../../common/route-processing/types";
-import styles from "./styles.module.css";
 import { borderListStyles } from "../../components/BorderList";
+import { formStyles } from "../../components/Form";
 import { TextModal } from "../../components/Modal";
+import { routeFilesSelector } from "../../state/route-files";
+import styles from "./styles.module.css";
+import classNames from "classnames";
+import { Grammar, highlight } from "prismjs";
+import { useEffect, useRef, useState } from "react";
+import Editor from "react-simple-code-editor";
 import { toast } from "react-toastify";
+import { useRecoilState, useResetRecoilState } from "recoil";
 
 const RouteGrammar: Grammar = {
   keyword: {

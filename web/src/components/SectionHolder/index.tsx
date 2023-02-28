@@ -1,8 +1,8 @@
+import { TaskItemProps, TaskList } from "../TaskList";
+import styles from "./styles.module.css";
 import classNames from "classnames";
 import { useLayoutEffect, useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-import { TaskItemProps, TaskList } from "../TaskList";
-import styles from "./styles.module.css";
 
 interface SectionHolderProps {
   name: string;

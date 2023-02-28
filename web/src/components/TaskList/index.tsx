@@ -1,7 +1,7 @@
-import classNames from "classnames";
-import { RecoilState, useRecoilState } from "recoil";
 import { borderListStyles } from "../BorderList";
 import styles from "./styles.module.css";
+import classNames from "classnames";
+import { RecoilState, useRecoilState } from "recoil";
 
 export const taskStyle = styles.task;
 

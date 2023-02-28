@@ -1,4 +1,3 @@
-import pako from "pako";
 import { awakenedGemLookup, vaalGemLookup } from "../../../../common/data";
 import {
   BuildData,
@@ -6,6 +5,7 @@ import {
   RequiredGem,
 } from "../../../../common/route-processing/types";
 import { decodeBase64Url, randomId } from "../../utility";
+import pako from "pako";
 
 const GEM_ID_REMAP: Record<string, string> = {
   // POB is weird https://github.com/PathOfBuildingCommunity/PathOfBuilding/blob/0d3bdf009c8bc9579eb8cffb5548f03c45e57373/src/Export/Scripts/skills.lua#L504

@@ -1,9 +1,9 @@
 import { RouteState } from "..";
 import { areas, killWaypoints, quests } from "../../data";
 import { GameData } from "../../types";
-import { matchPatterns, Pattern } from "../patterns";
-import { Fragment } from "./types";
+import { Pattern, matchPatterns } from "../patterns";
 import { FragmentStep } from "../types";
+import { Fragment } from "./types";
 
 type RawFragment = string | string[];
 
