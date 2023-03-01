@@ -3,7 +3,7 @@
   border-width: 0;
 }
 
-.list > .listItem {
+.listItem {
   display: flex;
   width: 100%;
   text-align: left;
@@ -11,18 +11,16 @@
 }
 
 @media (hover: hover) {
-  .list > .listItem:hover {
+  .listItem:hover {
     border-color: var(--accent-highlight);
   }
 }
 
-.list > .listItem:before {
+.bullet {
   font-weight: var(--font-heavy);
-  counter-increment: list-item;
-  content: counter(list-item, decimal-leading-zero) ".";
   margin-right: var(--size-2);
 }
 
-.list > .listItem.completed .task {
+.listItem.completed .task {
   opacity: 0.25;
 }

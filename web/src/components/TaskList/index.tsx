@@ -5,8 +5,7 @@ import { RecoilState, useRecoilState } from "recoil";
 
 export const taskStyle = styles.task;
 
-export interface TaskItemProps {
-  key?: any;
+interface TaskItemProps {
   children?: React.ReactNode;
   isCompletedState?: RecoilState<boolean>;
 }
@@ -18,29 +17,35 @@ function TaskListItem({ children, isCompletedState }: TaskItemProps) {
 
   return (
     <button
-      onClick={() => {
-        if (setIsCompleted) setIsCompleted(!isCompleted);
-      }}
+      role="listitem"
       className={classNames(borderListStyles.item, styles.listItem, {
         [styles.completed]: isCompleted,
       })}
+      onClick={() => {
+        if (setIsCompleted) setIsCompleted(!isCompleted);
+      }}
     >
       {children}
     </button>
   );
 }
 
-interface TaskListProps {
-  items?: TaskItemProps[];
+export interface TaskListProps {
+  items?: (TaskItemProps & { key?: React.Key })[];
 }
 
 export function TaskList({ items }: TaskListProps) {
   return (
-    <ol className={classNames(styles.list)}>
+    <div role="list" className={classNames(styles.list)}>
       {items &&
-        items.map(({ key, ...rest }, i) => (
-          <TaskListItem key={key || i} {...rest} />
+        items.map(({ key, children, ...rest }, i) => (
+          <TaskListItem key={key || i} {...rest}>
+            <span aria-hidden className={classNames(styles.bullet)}>
+              {`${i + 1}`.padStart(2, "0")}.
+            </span>
+            {children}
+          </TaskListItem>
         ))}
-    </ol>
+    </div>
   );
 }

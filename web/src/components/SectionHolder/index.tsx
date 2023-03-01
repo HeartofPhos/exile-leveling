@@ -1,4 +1,4 @@
-import { TaskItemProps, TaskList } from "../TaskList";
+import { TaskList, TaskListProps } from "../TaskList";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { useLayoutEffect, useState } from "react";
@@ -6,10 +6,10 @@ import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 interface SectionHolderProps {
   name: string;
-  items: TaskItemProps[];
+  items: TaskListProps["items"];
 }
 
-export function SectionHolder({ name, items: taskItems }: SectionHolderProps) {
+export function SectionHolder({ name, items }: SectionHolderProps) {
   const [expanded, setExpanded] = useState(true);
 
   const sectionId = `section-${name.replace(/\s+/g, "_")}`;
@@ -28,6 +28,7 @@ export function SectionHolder({ name, items: taskItems }: SectionHolderProps) {
     <div id={sectionId}>
       <div className={classNames(styles.actbar)}>
         <button
+          aria-label={name}
           className={classNames(styles.header, styles.actbarHeader)}
           onClick={() => {
             const updatedExpanded = !expanded;
@@ -45,7 +46,7 @@ export function SectionHolder({ name, items: taskItems }: SectionHolderProps) {
       </div>
       {expanded && (
         <>
-          <TaskList items={taskItems} />
+          <TaskList items={items} />
           <hr />
         </>
       )}

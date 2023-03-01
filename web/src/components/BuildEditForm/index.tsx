@@ -5,7 +5,7 @@ import {
 import { gemProgressSelectorFamily } from "../../state/gem-progress";
 import { GemOrder } from "../GemOrder";
 import { SplitRow } from "../SplitRow";
-import { TaskItemProps, TaskList } from "../TaskList";
+import { TaskList, TaskListProps } from "../TaskList";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 
@@ -83,7 +83,7 @@ interface GemOrderList {
 export function GemOrderList({ requiredGems, onUpdate }: GemOrderList) {
   const workingGems = [...requiredGems];
 
-  const taskItems: TaskItemProps[] = [];
+  const taskItems: TaskListProps["items"] = [];
   for (let i = 0; i < workingGems.length; i++) {
     const requiredGem = workingGems[i];
     taskItems.push({

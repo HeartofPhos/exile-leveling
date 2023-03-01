@@ -2,7 +2,7 @@ import { ExileFragmentStep } from "../../components/ExileFragment";
 import { GemReward } from "../../components/ItemReward";
 import { SectionHolder } from "../../components/SectionHolder";
 import { Sidebar } from "../../components/Sidebar";
-import { TaskItemProps } from "../../components/TaskList";
+import { TaskListProps } from "../../components/TaskList";
 import { gemProgressSelectorFamily } from "../../state/gem-progress";
 import { routeSelector } from "../../state/route";
 import { routeProgressSelectorFamily } from "../../state/route-progress";
@@ -18,7 +18,7 @@ function RoutesContainer() {
   for (let sectionIndex = 0; sectionIndex < route.length; sectionIndex++) {
     const section = route[sectionIndex];
 
-    let taskItems: TaskItemProps[] = [];
+    let taskItems: TaskListProps["items"] = [];
     for (let stepIndex = 0; stepIndex < section.steps.length; stepIndex++) {
       const step = section.steps[stepIndex];
 
