@@ -38,7 +38,7 @@ interface ParseContext {
 const FRAGMENT_PATTERNS: Pattern<ParseContext>[] = [
   // Comment
   {
-    regex: /(\s*#.*)/g,
+    regex: /( *#.*)/g,
     processor: () => true,
   },
   // Text

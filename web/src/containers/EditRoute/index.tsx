@@ -17,18 +17,18 @@ import { useRecoilState, useResetRecoilState } from "recoil";
 
 const RouteGrammar: Grammar = {
   keyword: {
-    pattern: /#ifdef(\s+\w+)?|#endif/,
+    pattern: /#section *(.*)|#ifdef *(.*)|#endif/,
     inside: {
-      keyword: /#ifdef|#endif/,
-      variable: /\w+/,
+      "keyword control-flow": /#\w+/,
+      variable: /.+/,
     },
   },
   comment: /#.*/,
   fragment: {
     pattern: /\{.*?\}|\{.*\}?/,
     inside: {
-      keyword: { pattern: /(\{)(\w|\s)+/, lookbehind: true },
-      "keyword control-flow": /[\|{}]/,
+      keyword: { pattern: /(\{)[^|{}]+/, lookbehind: true },
+      "keyword control-flow": /[|{}]/,
       property: /.+/,
     },
   },

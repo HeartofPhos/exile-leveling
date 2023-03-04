@@ -28,13 +28,13 @@
 ::before {
   box-sizing: inherit;
   font: inherit;
+  user-select: inherit;
   color: unset;
   background: unset;
   border: unset;
   line-height: var(--line-height);
   padding: 0;
   margin: 0;
-  user-select: none;
   scroll-margin: var(--navbar-height);
 }
 
@@ -53,6 +53,7 @@ html {
   font-size: 1em;
   font-weight: 400;
   overflow-y: scroll;
+  user-select: none;
 }
 
 hr {

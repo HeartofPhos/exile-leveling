@@ -15,7 +15,7 @@ export function getRouteFiles(routeSources: string[]) {
     for (let lineIndex = 0; lineIndex < routeLines.length; lineIndex++) {
       const line = routeLines[lineIndex];
 
-      const sectionRegex = /^\s*#section\s*(.*)/g;
+      const sectionRegex = /^ *#section *(.*)/g;
       const sectionMatch = sectionRegex.exec(line);
       if (sectionMatch) {
         const sectionName = sectionMatch[1] || DEFAULT_SECTION_NAME;
@@ -68,7 +68,7 @@ interface ParseContext {
 const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
   // endif
   {
-    regex: /^\s*#endif/g,
+    regex: /^ *#endif/g,
     processor: (match, { state, conditionalStack }) => {
       const value = conditionalStack.pop();
       if (value === undefined) state.logger.warn("unexpected #endif");
@@ -78,10 +78,11 @@ const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
   },
   // ifdef
   {
-    regex: /^\s*#ifdef\s+(\w+)/g,
+    regex: /^ *#ifdef *(.*)/g,
     processor: (match, { state, conditionalStack }) => {
       const value = match[1];
-      conditionalStack.push(state.preprocessorDefinitions.has(value));
+      if (value)
+        conditionalStack.push(state.preprocessorDefinitions.has(value));
 
       return false;
     },
