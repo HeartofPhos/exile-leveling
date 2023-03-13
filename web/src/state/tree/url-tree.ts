@@ -14,12 +14,7 @@ export const urlTreesSelector = selector({
     for (const buildTree of buildTrees) {
       try {
         const urlTree = await buildUrlTree(buildTree);
-
-        const hasNodes =
-          urlTree.ascendancy === undefined
-            ? urlTree.nodes.length > 0
-            : urlTree.nodes.length > 1;
-        if (!hasNodes) continue;
+        if (urlTree.nodes.length === 0) continue;
 
         urlTrees.push(urlTree);
       } catch (e) {

@@ -47,14 +47,14 @@ export function buildUrlTreeDelta(
   const nodesAddedSet = difference(nodesPrevious, nodesCurrent);
   const nodesRemovedSet = difference(nodesCurrent, nodesPrevious);
 
+  if (currentTree.ascendancy !== undefined)
+    nodesActiveSet.add(currentTree.ascendancy.startNodeId);
+
   const masteryInfos = buildMasteryInfos(
     currentTree,
     previousTree,
     passiveTree
   );
-
-  if (currentTree.ascendancy !== undefined)
-    nodesActiveSet.add(currentTree.ascendancy.startNodeId);
 
   const connections = buildConnections(
     nodesActiveSet,
