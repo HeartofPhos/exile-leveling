@@ -35,20 +35,20 @@ export function buildUrlTreeDelta(
   previousTree: UrlTree.Data,
   passiveTree: PassiveTree.Data
 ): UrlTreeDelta {
-  const nodesPrevious = new Set(currentTree.nodes);
-  const nodesCurrent = new Set(previousTree.nodes);
+  const nodesCurrent = new Set(currentTree.nodes);
+  const nodesPrevious = new Set(previousTree.nodes);
 
   for (const [nodeId, effectId] of Object.entries(currentTree.masteryLookup)) {
     if (previousTree.masteryLookup[nodeId] !== effectId)
-      nodesCurrent.delete(nodeId);
+      nodesPrevious.delete(nodeId);
   }
 
-  const nodesActiveSet = intersection(nodesPrevious, nodesCurrent);
-  const nodesAddedSet = difference(nodesPrevious, nodesCurrent);
-  const nodesRemovedSet = difference(nodesCurrent, nodesPrevious);
+  const nodesActive = intersection(nodesCurrent, nodesPrevious);
+  const nodesAdded = difference(nodesCurrent, nodesPrevious);
+  const nodesRemoved = difference(nodesPrevious, nodesCurrent);
 
   if (currentTree.ascendancy !== undefined)
-    nodesActiveSet.add(currentTree.ascendancy.startNodeId);
+    nodesActive.add(currentTree.ascendancy.startNodeId);
 
   const masteryInfos = buildMasteryInfos(
     currentTree,
@@ -57,16 +57,16 @@ export function buildUrlTreeDelta(
   );
 
   const connections = buildConnections(
-    nodesActiveSet,
-    nodesAddedSet,
-    nodesRemovedSet,
+    nodesActive,
+    nodesAdded,
+    nodesRemoved,
     passiveTree
   );
 
   return {
-    nodesActive: Array.from(nodesActiveSet),
-    nodesAdded: Array.from(nodesAddedSet),
-    nodesRemoved: Array.from(nodesRemovedSet),
+    nodesActive: Array.from(nodesActive),
+    nodesAdded: Array.from(nodesAdded),
+    nodesRemoved: Array.from(nodesRemoved),
     ...connections,
     masteryInfos,
   };

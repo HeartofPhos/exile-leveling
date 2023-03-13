@@ -16,8 +16,8 @@ function TaskListItem({ children, isCompletedState }: TaskItemProps) {
     : [undefined, undefined];
 
   return (
-    <button
-      role="listitem"
+    <li
+      tabIndex={0}
       className={classNames(borderListStyles.item, styles.listItem, {
         [styles.completed]: isCompleted,
       })}
@@ -26,7 +26,7 @@ function TaskListItem({ children, isCompletedState }: TaskItemProps) {
       }}
     >
       {children}
-    </button>
+    </li>
   );
 }
 
@@ -36,7 +36,7 @@ export interface TaskListProps {
 
 export function TaskList({ items }: TaskListProps) {
   return (
-    <div role="list" className={classNames(styles.list)}>
+    <ol className={classNames(styles.list)}>
       {items &&
         items.map(({ key, children, ...rest }, i) => (
           <TaskListItem key={key || i} {...rest}>
@@ -46,6 +46,6 @@ export function TaskList({ items }: TaskListProps) {
             {children}
           </TaskListItem>
         ))}
-    </div>
+    </ol>
   );
 }
