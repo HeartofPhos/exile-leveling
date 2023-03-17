@@ -14,20 +14,33 @@ export function Sidebar() {
   const { urlTrees } = useRecoilValue(urlTreesSelector);
   const [expand, setExpand] = useState(true);
 
-  const expandIcon = expand ? <FiChevronRight /> : <FiChevronLeft />;
+  const children = [];
+  if (urlTrees.length > 0) {
+    children.push(
+      <>
+        <hr />
+        <PassiveTreeViewer urlTrees={urlTrees} />
+      </>
+    );
+  }
 
-  const passiveTreeViewerActive = urlTrees.length > 0;
-  const searchStringsActive =
-    searchStrings !== null && searchStrings.length > 0;
+  if (searchStrings !== null && searchStrings.length > 0) {
+    children.push(
+      <>
+        <hr />
+        <div className={classNames(styles.searchStrings)}>
+          {searchStrings.map((x, i) => (
+            <SearchString key={i} value={x} />
+          ))}
+        </div>
+      </>
+    );
+  }
 
-  if (!passiveTreeViewerActive && !searchStringsActive) return <></>;
+  if (children.length === 0) return <></>;
 
   return (
-    <div
-      className={classNames(styles.sidebar, {
-        [styles.expand]: expand,
-      })}
-    >
+    <div className={classNames(styles.sidebar)}>
       <div>
         <button
           className={classNames(styles.sidebarToggle)}
@@ -36,26 +49,15 @@ export function Sidebar() {
           }}
         >
           {expand && <span>Sidebar</span>}
-          {expandIcon}
+          {expand ? <FiChevronRight /> : <FiChevronLeft />}
         </button>
-        {expand && <hr />}
       </div>
       <div
         className={classNames(styles.sidebarContents, {
           [styles.expand]: expand,
         })}
       >
-        {passiveTreeViewerActive && <PassiveTreeViewer urlTrees={urlTrees} />}
-        {passiveTreeViewerActive && searchStringsActive && <hr />}
-        {searchStringsActive && (
-          <>
-            <div className={classNames(styles.searchStrings)}>
-              {searchStrings.map((x, i) => (
-                <SearchString key={i} value={x} />
-              ))}
-            </div>
-          </>
-        )}
+        {children}
       </div>
     </div>
   );
