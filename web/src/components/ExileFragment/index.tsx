@@ -219,11 +219,8 @@ export function ExileFragment({ fragment }: FragmentProps) {
       const area = areas[fragment.areaId];
       return AreaComponent(area.name, area.is_town_area);
     }
-    case "quest": {
-      return QuestComponent(fragment);
-    }
-    case "quest_text":
-      return QuestTextComponent(fragment.value);
+    case "logout":
+      return LogoutComponent(areas[fragment.areaId]);
     case "waypoint":
       return WaypointComponent();
     case "waypoint_use": {
@@ -246,16 +243,15 @@ export function ExileFragment({ fragment }: FragmentProps) {
     }
     case "waypoint_get":
       return WaypointComponent();
-    case "trial":
-      return TrialComponent();
-    case "logout":
-      return LogoutComponent(areas[fragment.areaId]);
-    case "portal":
-      return PortalComponent(
-        fragment.dstAreaId ? areas[fragment.dstAreaId] : undefined
-      );
-    case "dir":
-      return DirectionComponent(fragment.dirIndex);
+    case "portal_use":
+      return PortalComponent(areas[fragment.dstAreaId]);
+    case "portal_set":
+      return PortalComponent();
+    case "quest": {
+      return QuestComponent(fragment);
+    }
+    case "quest_text":
+      return QuestTextComponent(fragment.value);
     case "generic":
       return GenericComponent(fragment.value);
     case "reward_quest":
@@ -268,10 +264,14 @@ export function ExileFragment({ fragment }: FragmentProps) {
           rewardType="vendor"
         />
       );
-    case "crafting":
-      return CraftingComponent(fragment.crafting_recipes);
+    case "trial":
+      return TrialComponent();
     case "ascend":
       return AscendComponent(fragment.version);
+    case "crafting":
+      return CraftingComponent(fragment.crafting_recipes);
+    case "dir":
+      return DirectionComponent(fragment.dirIndex);
   }
 
   return <>{`unmapped: ${JSON.stringify(fragment)}`}</>;

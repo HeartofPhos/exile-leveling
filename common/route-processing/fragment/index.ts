@@ -272,7 +272,7 @@ function EvaluatePortal(
       state.portalAreaId = state.currentAreaId;
       return {
         fragment: {
-          type: "portal",
+          type: "portal_set",
         },
       };
     }
@@ -297,7 +297,7 @@ function EvaluatePortal(
 
       return {
         fragment: {
-          type: "portal",
+          type: "portal_use",
           dstAreaId: state.currentAreaId,
         },
       };

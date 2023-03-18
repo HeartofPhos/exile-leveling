@@ -7,9 +7,10 @@ export type Fragment =
   | EnterFragment
   | LogoutFragment
   | WaypointFragment
-  | UseWaypointFragment
-  | GetWaypointFragment
-  | PortalFragment
+  | WaypointUseFragment
+  | WaypointGetFragment
+  | PortalUseFragment
+  | PortalSetFragment
   | QuestFragment
   | QuestTextFragment
   | GenericFragment
@@ -17,8 +18,8 @@ export type Fragment =
   | RewardVendorFragment
   | TrialFragment
   | AscendFragment
-  | DirectionFragment
-  | CraftingFragment;
+  | CraftingFragment
+  | DirectionFragment;
 
 export interface KillFragment {
   type: "kill";
@@ -49,13 +50,13 @@ export interface WaypointFragment {
   type: "waypoint";
 }
 
-export interface UseWaypointFragment {
+export interface WaypointUseFragment {
   type: "waypoint_use";
   dstAreaId: GameData.Area["id"];
   srcAreaId: GameData.Area["id"];
 }
 
-export interface GetWaypointFragment {
+export interface WaypointGetFragment {
   type: "waypoint_get";
 }
 
@@ -95,9 +96,13 @@ export interface QuestTextFragment {
   value: string;
 }
 
-export interface PortalFragment {
-  type: "portal";
-  dstAreaId?: GameData.Area["id"];
+export interface PortalUseFragment {
+  type: "portal_use";
+  dstAreaId: GameData.Area["id"];
+}
+
+export interface PortalSetFragment {
+  type: "portal_set";
 }
 
 export interface CraftingFragment {
