@@ -110,7 +110,7 @@ function buildConnections(
 
   for (const graph of passiveTree.graphs) {
     for (const connection of graph.connections) {
-      const id = [connection.a, connection.b].sort().join("-");
+      const id = `${connection.a}-${connection.b}`;
 
       const aIsActive = nodesActive.has(connection.a);
       const bIsActive = nodesActive.has(connection.b);

@@ -219,7 +219,7 @@ function buildConnection(
   connection: PassiveTree.Connection,
   nodeLookup: PassiveTree.NodeLookup
 ) {
-  const id = [connection.a, connection.b].sort().join("-");
+  const id = `${connection.a}-${connection.b}`;
 
   const nodeA = nodeLookup[connection.a];
   const aX = nodeA.x;
