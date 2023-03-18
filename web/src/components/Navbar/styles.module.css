@@ -39,6 +39,7 @@
 .navItem {
   text-align: left;
   width: 100%;
+  cursor: pointer;
 }
 
 .navItem:active {
@@ -67,6 +68,7 @@
   height: var(--line-height);
   width: var(--line-height);
   padding: var(--size-3);
+  cursor: pointer;
 }
 
 .navIcon:active {

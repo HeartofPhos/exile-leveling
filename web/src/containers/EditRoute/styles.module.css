@@ -36,6 +36,7 @@
 
 .fileListItem {
   padding: 0 var(--size-2);
+  cursor: pointer;
 }
 
 .selected {

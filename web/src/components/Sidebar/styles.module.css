@@ -23,6 +23,7 @@
   height: var(--line-height);
   color: var(--primary);
   font-weight: var(--font-heavy);
+  cursor: pointer;
 }
 
 .sidebarContents {
@@ -47,6 +48,7 @@
   display: flex;
   text-overflow: clip;
   word-break: break-all;
+  cursor: pointer;
 }
 
 .searchString:active {
