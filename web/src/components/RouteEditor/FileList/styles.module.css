@@ -1,24 +1,3 @@
-.editorForm {
-  flex-grow: 1;
-}
-
-.workspace {
-  display: flex;
-  height: 10rem;
-  flex-grow: 1;
-  gap: var(--size-2);
-}
-
-.editor {
-  flex-grow: 1;
-  overflow-y: scroll;
-  font-family: "Consolas", monospace;
-}
-
-.editorTextArea {
-  outline: inherit;
-}
-
 .fileList {
   min-width: 4.5rem;
   height: fit-content;
