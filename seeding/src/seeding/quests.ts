@@ -47,14 +47,14 @@ function processVendorReward(
 }
 
 // QuestVendorRewards.dat no longer exists, use wiki data
-// Impractical to handle QuestRewards & VendorRewards from different sources
 export async function getQuests() {
   const result: GameData.Quests = {};
 
   const rewardOfferNPCLookup: Partial<Record<string, string>> = {};
   for (const npcTalk of Dat.NPCTalk.data) {
-    if (npcTalk.QuestKey !== null) {
-      const quest_reward_offer = Dat.QuestRewardOffers.data[npcTalk.QuestKey];
+    if (npcTalk.QuestRewardOffersKey !== null) {
+      const quest_reward_offer =
+        Dat.QuestRewardOffers.data[npcTalk.QuestRewardOffersKey];
       const npc = Dat.NPCs.data[npcTalk.NPCKey];
       rewardOfferNPCLookup[quest_reward_offer.Id] = npc.Name;
     }
