@@ -5,6 +5,7 @@ import { PassiveTreeViewer } from "../PassiveTreeViewer";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { useState } from "react";
+import React from "react";
 import { FaRegClipboard } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useRecoilValue } from "recoil";
@@ -57,7 +58,7 @@ export function Sidebar() {
           [styles.expand]: expand,
         })}
       >
-        {children}
+        {React.Children.toArray(children)}
       </div>
     </div>
   );
