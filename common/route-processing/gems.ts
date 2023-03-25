@@ -12,8 +12,9 @@ export function buildGemSteps(
   const quest = quests[questFragment.questId];
 
   const gemSteps: GemStep[] = [];
-  for (const index of questFragment.rewardOffers) {
-    const reward_offer = quest.reward_offers[index];
+  for (const rewardOfferId of questFragment.rewardOffers) {
+    const reward_offer = quest.reward_offers[rewardOfferId];
+    if (!reward_offer) continue;
 
     const questReward = findQuestGem(
       buildData,
@@ -50,7 +51,7 @@ function findQuestGem(
   buildData: BuildData,
   requiredGems: RequiredGem[],
   routeGems: Set<number>,
-  quest_rewards: GameData.Quest["reward_offers"][0]["quest"]
+  quest_rewards: GameData.RewardOffer["quest"]
 ): number | null {
   for (let i = 0; i < requiredGems.length; i++) {
     const requiredGem = requiredGems[i];
@@ -76,7 +77,7 @@ function findVendorGems(
   buildData: BuildData,
   requiredGems: RequiredGem[],
   routeGems: Set<number>,
-  vendor_rewards: GameData.Quest["reward_offers"][0]["vendor"]
+  vendor_rewards: GameData.RewardOffer["vendor"]
 ): number[] {
   const result: number[] = [];
   for (let i = 0; i < requiredGems.length; i++) {

@@ -52,12 +52,13 @@ function AreaComponent(name: string, isTownArea: boolean) {
 function QuestComponent(fragment: QuestFragment) {
   const quest = quests[fragment.questId];
 
-  let partPostfix;
-  if (fragment.rewardOffers.length != quest.reward_offers.length)
-    partPostfix = (
-      <> Part {fragment.rewardOffers.map((x) => x + 1).join(", ")}</>
-    );
-  else partPostfix = <></>;
+  const npcs = Array.from(
+    new Set(
+      fragment.rewardOffers
+        .map((x) => quest.reward_offers[x]?.quest_npc)
+        .filter((x) => x !== undefined)
+    )
+  );
 
   return (
     <div className={classNames(styles.noWrap)}>
@@ -66,10 +67,10 @@ function QuestComponent(fragment: QuestFragment) {
         className={classNames("inlineIcon")}
         alt=""
       />
-      <span className={classNames(styles.quest)}>
-        {quest.name}
-        {partPostfix}
-      </span>
+      <span className={classNames(styles.quest)}>{quest.name}</span>
+      {npcs.length > 0 && (
+        <> - {GenericComponent(Array.from(npcs).join(", "))}</>
+      )}
     </div>
   );
 }
@@ -107,7 +108,7 @@ function TrialComponent() {
 function LogoutComponent(area: GameData.Area) {
   return (
     <>
-      <span className={classNames(styles.default)}>Logout</span>
+      {GenericComponent("Logout")}
       <span> ➞ </span>
       {AreaComponent(area.name, area.is_town_area)}
     </>
@@ -161,11 +162,9 @@ function CraftingComponent(craftingRecipes: string[]) {
           className={classNames("inlineIcon")}
           alt=""
         />
-        <span className={classNames(styles.default)}>Crafting: </span>
+        {GenericComponent("Crafting: ")}
       </div>
-      <span className={classNames(styles.default)}>
-        {craftingRecipes.join(", ")}
-      </span>
+      {GenericComponent(craftingRecipes.join(", "))}
     </span>
   );
 }

@@ -415,12 +415,11 @@ function EvaluateQuest(
 
     let rewardOfferIds;
     if (rawFragment.length == 2) {
-      rewardOfferIds = quest.reward_offers.map((v, i) => i);
+      rewardOfferIds = Object.keys(quest.reward_offers);
     } else {
       rewardOfferIds = [];
       for (let i = 2; i < rawFragment.length; i++) {
-        const questRewardIndex = Number.parseInt(rawFragment[i]);
-        rewardOfferIds.push(questRewardIndex);
+        rewardOfferIds.push(rawFragment[i]);
       }
     }
 

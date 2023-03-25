@@ -1,5 +1,5 @@
 import { GameData } from "../../../common/types";
-import { QuestDat } from "../../data";
+import { Dat } from "../../data";
 import { cargoQuery } from "../wiki";
 
 const BREAKING_SOME_EGGS_REWARD_2 = [
@@ -8,44 +8,42 @@ const BREAKING_SOME_EGGS_REWARD_2 = [
   "Metadata/Items/Gems/SkillGemDash",
 ];
 
-function processRewards(quest: GameData.Quest, test: (key: string) => boolean) {
-  const reward_offers: GameData.Quest["reward_offers"] = [
-    { quest: {}, vendor: {} },
-    { quest: {}, vendor: {} },
-  ];
+const VENDOR_REWARD_MAPPING: Partial<
+  Record<string, (item_id: string) => string>
+> = {
+  //Hack for The Caged Brute
+  ["a1q2"]: (item_id) => (item_id.includes("Support") ? "a1q2b" : "a1q2"),
+  //Hack for Breaking Some Eggs
+  ["a1q4"]: (item_id) =>
+    BREAKING_SOME_EGGS_REWARD_2.every((x) => x !== item_id) ? "a1q4" : "a1q4b",
+};
 
-  for (const key in quest.reward_offers[0].quest) {
-    if (test(key)) {
-      reward_offers[0].quest[key] = quest.reward_offers[0].quest[key];
-    } else {
-      reward_offers[1].quest[key] = quest.reward_offers[0].quest[key];
-    }
+const SKIP_QUESTS = new Set([
+  // Wiki is outdated, The Root of the Problem
+  "a2q9",
+]);
+
+function processVendorReward(
+  questId: string,
+  quests: Record<string, GameData.Quest>,
+  item_id: string,
+  vendor_reward: GameData.VendorReward
+) {
+  if (SKIP_QUESTS.has(questId)) return;
+
+  const quest = quests[questId];
+  if (!quest) return;
+
+  const mapRewardOfferId = VENDOR_REWARD_MAPPING[quest.id] || (() => quest.id);
+
+  const reward_offer_id = mapRewardOfferId(item_id);
+  const reward_offer = quest.reward_offers[reward_offer_id];
+  if (!reward_offer) {
+    console.log(`invalid reward_offer_id: ${reward_offer_id}`);
+    return;
   }
 
-  for (const key in quest.reward_offers[0].vendor) {
-    if (test(key)) {
-      reward_offers[0].vendor[key] = quest.reward_offers[0].vendor[key];
-    } else {
-      reward_offers[1].vendor[key] = quest.reward_offers[0].vendor[key];
-    }
-  }
-
-  quest.reward_offers = reward_offers;
-}
-
-function postProcessQuest(quest: GameData.Quest) {
-  switch (quest.id) {
-    //Hack for The Caged Brute
-    case "a1q2":
-      processRewards(quest, (key) => key.includes("Support"));
-      break;
-    //Hack for Breaking Some Eggs
-    case "a1q4":
-      processRewards(quest, (key) =>
-        BREAKING_SOME_EGGS_REWARD_2.every((x) => x != key)
-      );
-      break;
-  }
+  reward_offer.vendor[item_id] = vendor_reward;
 }
 
 // QuestVendorRewards.dat no longer exists, use wiki data
@@ -53,67 +51,68 @@ function postProcessQuest(quest: GameData.Quest) {
 export async function getQuests() {
   const result: GameData.Quests = {};
 
-  for (const row of QuestDat.data) {
-    if (row.Type != 0 && row.Type != 1) continue;
+  const rewardOfferNPCLookup: Partial<Record<string, string>> = {};
+  for (const npcTalk of Dat.NPCTalk.data) {
+    if (npcTalk.QuestKey !== null) {
+      const quest_reward_offer = Dat.QuestRewardOffers.data[npcTalk.QuestKey];
+      const npc = Dat.NPCs.data[npcTalk.NPCKey];
+      rewardOfferNPCLookup[quest_reward_offer.Id] = npc.Name;
+    }
+  }
+
+  for (let i = 0; i < Dat.Quest.data.length; i++) {
+    const questRow = Dat.Quest.data[i];
+    if (questRow.Type != 0 && questRow.Type != 1) continue;
 
     const quest: GameData.Quest = {
-      id: row.Id,
-      name: row.Name,
-      act: row.Act.toString(),
-      reward_offers: [{ quest: {}, vendor: {} }],
+      id: questRow.Id,
+      name: questRow.Name,
+      act: questRow.Act.toString(),
+      reward_offers: {},
     };
 
     result[quest.id] = quest;
   }
 
-  const questRewards = await getQuestRewards();
-  for (const item of questRewards) {
-    const quest = result[item.quest_id];
+  for (const questReward of Dat.QuestRewards.data) {
+    const questRewardOffer =
+      Dat.QuestRewardOffers.data[questReward.RewardOffer];
+    const baseItemType = Dat.BaseItemTypes.data[questReward.Reward];
+    const quest = result[Dat.Quest.data[questRewardOffer.QuestKey].Id];
     if (!quest) continue;
-    quest.reward_offers[0].quest[item.item_id] = {
-      classes: item.classes?.split(",") || [],
-    };
+
+    const npc = rewardOfferNPCLookup[questRewardOffer.Id];
+    if (npc === undefined) continue;
+
+    let reward_offer = quest.reward_offers[questRewardOffer.Id];
+    if (reward_offer === undefined) {
+      reward_offer = quest.reward_offers[questRewardOffer.Id] = {
+        quest_npc: npc,
+        quest: {},
+        vendor: {},
+      };
+    }
+
+    let quest_reward = reward_offer.quest[baseItemType.Id];
+    if (quest_reward === undefined) {
+      quest_reward = reward_offer.quest[baseItemType.Id] = {
+        classes: [],
+      };
+    }
+
+    quest_reward.classes.push(
+      ...questReward.Characters.map((x: any) => Dat.Characters.data[x].Name)
+    );
   }
 
   const vendorRewards = await getVendorRewards();
   for (const item of vendorRewards) {
-    const quest = result[item.quest_id];
-    if (!quest) continue;
-    quest.reward_offers[0].vendor[item.item_id] = {
+    processVendorReward(item.quest_id, result, item.item_id, {
       classes: item.classes?.split(",") || [],
       npc: item.npc,
-    };
+    });
   }
-
-  for (const key in result) {
-    const quest = result[key];
-    postProcessQuest(quest);
-  }
-
   return result;
-}
-
-export async function getQuestRewards() {
-  const queryResult = await cargoQuery({
-    tables: ["quest_rewards", "items"],
-    join_on: ["items._pageName = quest_rewards._pageName"],
-    fields: [
-      "quest_rewards.quest_id=quest_id",
-      "quest_rewards.quest",
-      "items.metadata_id=item_id",
-      "quest_rewards.act",
-      "quest_rewards.classes",
-    ],
-    where:
-      '(quest_rewards.act IS NOT NULL) AND (NOT items._pageName LIKE "Template:%") AND (items.metadata_id IS NOT NULL)',
-    order_by: [
-      "quest_rewards.act",
-      "quest_rewards.quest_id",
-      "quest_rewards._pageName",
-    ],
-  });
-
-  return queryResult;
 }
 
 export async function getVendorRewards() {

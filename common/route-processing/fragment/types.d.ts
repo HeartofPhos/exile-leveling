@@ -88,7 +88,7 @@ export interface AscendFragment {
 export interface QuestFragment {
   type: "quest";
   questId: GameData.Quest["id"];
-  rewardOffers: number[];
+  rewardOffers: string[];
 }
 
 export interface QuestTextFragment {

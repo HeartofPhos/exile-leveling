@@ -1,3 +1,4 @@
+import { Dat } from "../data";
 import { buildTemplates } from "./build-tree";
 import { getAreas } from "./seeding/areas";
 import { getGems as seedGems } from "./seeding/gems";

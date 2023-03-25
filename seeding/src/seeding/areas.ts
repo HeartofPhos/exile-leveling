@@ -1,5 +1,5 @@
 import { GameData } from "../../../common/types";
-import { MapPinsDat, RecipeUnlockDisplayDat, WorldAreasDat } from "../../data";
+import { Dat } from "../../data";
 
 const seedAreaIds = [
   // The Twilight Strand
@@ -15,7 +15,7 @@ const seedAreaIds = [
 export async function getAreas() {
   const result: GameData.Areas = {};
 
-  const todo = WorldAreasDat.data.reduce<number[]>((p, c, i) => {
+  const todo = Dat.WorldAreas.data.reduce<number[]>((p, c, i) => {
     if (seedAreaIds.some((areaId) => areaId == c.Id)) p.push(i);
     return p;
   }, []);
@@ -23,7 +23,7 @@ export async function getAreas() {
 
   while (todo.length > 0) {
     const worldAreasKey = todo.shift()!;
-    const worldArea = WorldAreasDat.data[worldAreasKey];
+    const worldArea = Dat.WorldAreas.data[worldAreasKey];
     done.add(worldAreasKey);
 
     const connected_area_ids = [];
@@ -31,12 +31,12 @@ export async function getAreas() {
       if (!done.has(key)) {
         todo.push(key);
       }
-      const connectedWorldArea = WorldAreasDat.data[key];
+      const connectedWorldArea = Dat.WorldAreas.data[key];
       connected_area_ids.push(connectedWorldArea.Id);
     }
 
     const crafting_recipes = [];
-    for (const recipeUnlockDisplay of RecipeUnlockDisplayDat.data) {
+    for (const recipeUnlockDisplay of Dat.RecipeUnlockDisplay.data) {
       if (recipeUnlockDisplay.UnlockArea == worldAreasKey)
         crafting_recipes.push(recipeUnlockDisplay.Description);
     }
@@ -49,16 +49,16 @@ export async function getAreas() {
       has_waypoint: worldArea.HasWaypoint,
       is_town_area: worldArea.IsTown,
       parent_town_area_id: worldArea.ParentTown_WorldAreasKey
-        ? WorldAreasDat.data[worldArea.ParentTown_WorldAreasKey].Id
+        ? Dat.WorldAreas.data[worldArea.ParentTown_WorldAreasKey].Id
         : null,
       connection_ids: connected_area_ids,
       crafting_recipes: crafting_recipes,
     };
   }
 
-  for (const mapPin of MapPinsDat.data) {
+  for (const mapPin of Dat.MapPins.data) {
     if (mapPin.Waypoint_WorldAreasKey) {
-      const worldArea = WorldAreasDat.data[mapPin.Waypoint_WorldAreasKey];
+      const worldArea = Dat.WorldAreas.data[mapPin.Waypoint_WorldAreasKey];
       const resultArea = result[worldArea.Id];
       if (!resultArea) continue;
 

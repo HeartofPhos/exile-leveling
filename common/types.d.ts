@@ -24,6 +24,7 @@ export namespace GameData {
   }
 
   export interface RewardOffer {
+    quest_npc: string;
     quest: Partial<Record<string, QuestReward>>;
     vendor: Partial<Record<string, VendorReward>>;
   }
@@ -32,7 +33,7 @@ export namespace GameData {
     id: string;
     name: string;
     act: string;
-    reward_offers: RewardOffer[];
+    reward_offers: Partial<Record<string, RewardOffer>>;
   }
 
   export interface Area {

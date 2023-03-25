@@ -1,10 +1,5 @@
 import { GameData } from "../../../common/types";
-import {
-  BaseItemTypesDat,
-  GrantedEffectsDat,
-  GrantedEffectsPerLevelDat,
-  SkillGemsDat,
-} from "../../data";
+import { Dat } from "../../data";
 
 function getGemCost(required_level: number) {
   if (required_level < 8) return "CurrencyIdentification";
@@ -25,12 +20,12 @@ export async function getGems() {
   const gems: GameData.Gems = {};
   const awakenedGemLookup: GameData.VariantGemLookup = {};
   const vaalGemLookup: GameData.VariantGemLookup = {};
-  for (const skillGem of SkillGemsDat.data) {
-    const baseItemType = BaseItemTypesDat.data[skillGem.BaseItemTypesKey];
+  for (const skillGem of Dat.SkillGems.data) {
+    const baseItemType = Dat.BaseItemTypes.data[skillGem.BaseItemTypesKey];
     if (!baseItemType.SiteVisibility) continue;
 
-    const grantedEffects = GrantedEffectsDat.data[skillGem.GrantedEffectsKey];
-    const grantedEffectsPerLevel = GrantedEffectsPerLevelDat.data.find(
+    const grantedEffects = Dat.GrantedEffects.data[skillGem.GrantedEffectsKey];
+    const grantedEffectsPerLevel = Dat.GrantedEffectsPerLevel.data.find(
       (x) => x.Level == 1 && x.GrantedEffect == skillGem.GrantedEffectsKey
     );
 
@@ -44,15 +39,15 @@ export async function getGems() {
 
     if (skillGem.VaalVariant_BaseItemTypesKey !== null) {
       const vaalBaseItemType =
-        BaseItemTypesDat.data[skillGem.VaalVariant_BaseItemTypesKey];
+        Dat.BaseItemTypes.data[skillGem.VaalVariant_BaseItemTypesKey];
       vaalGemLookup[vaalBaseItemType.Id] = baseItemType.Id;
     }
 
     if (skillGem.AwakenedVariant !== null) {
-      const awakenedSkillGem = SkillGemsDat.data[skillGem.AwakenedVariant];
+      const awakenedSkillGem = Dat.SkillGems.data[skillGem.AwakenedVariant];
 
       const awakenedBaseItemType =
-        BaseItemTypesDat.data[awakenedSkillGem.BaseItemTypesKey];
+        Dat.BaseItemTypes.data[awakenedSkillGem.BaseItemTypesKey];
       awakenedGemLookup[awakenedBaseItemType.Id] = baseItemType.Id;
     }
   }
