@@ -174,7 +174,7 @@ const urlImporters: UrlImporter[] = [
     const match = /pobb\.in\/(.+)$/.exec(url);
     if (!match) return null;
 
-    return `pobb.in/pob/${match[1]}`;
+    return `pobb.in/${match[1]}/raw`;
   },
   (url) => {
     const match = /youtube.com\/redirect\?.+?q=(.+?)(?:&|$)/.exec(url);
