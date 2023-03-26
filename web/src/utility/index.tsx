@@ -62,3 +62,34 @@ export function decodeBase64Url(value: string) {
   const unescaped = value.replace(/_/g, "/").replace(/-/g, "+");
   return Uint8Array.from(window.atob(unescaped), (c) => c.charCodeAt(0));
 }
+
+export type UrlRewriter = (url: string) => string | null;
+export function getRewriteUrl(
+  stringOrUrl: string,
+  urlRewriters: UrlRewriter[]
+) {
+  for (const urlRewriter of urlRewriters) {
+    const url = urlRewriter(stringOrUrl);
+    if (url) return url;
+  }
+
+  return null;
+}
+
+export async function fetchStringOrUrl(
+  stringOrUrl: string,
+  urlRewriters: UrlRewriter[]
+) {
+  let value: string = stringOrUrl;
+  const url = getRewriteUrl(stringOrUrl, urlRewriters);
+  if (url) {
+    value = await fetch(
+      `https://phos-cors-proxy.azurewebsites.net/${url}`
+    ).then((x) => {
+      if (x.status >= 200 && x.status <= 299) return x.text();
+      return Promise.reject("download failed");
+    });
+  }
+
+  return value;
+}

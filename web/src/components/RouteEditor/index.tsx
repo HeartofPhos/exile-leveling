@@ -3,10 +3,11 @@ import {
   getRouteFiles,
 } from "../../../../common/route-processing";
 import { RouteFile } from "../../../../common/route-processing/types";
+import { UrlRewriter, fetchStringOrUrl } from "../../utility";
 import { formStyles } from "../Form";
 import { TextModal } from "../Modal";
-import styles from "./styles.module.css";
 import { Workspace } from "./Workspace";
+import styles from "./styles.module.css";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
@@ -14,6 +15,15 @@ import { toast } from "react-toastify";
 function cloneRouteFiles(routeFiles: RouteFile[]) {
   return routeFiles.map((x) => ({ ...x }));
 }
+
+const URL_REWRITERS: UrlRewriter[] = [
+  (url) => {
+    const match = /pastebin\.com\/(.+)$/.exec(url);
+    if (!match) return null;
+
+    return `pastebin.com/raw/${match[1]}`;
+  },
+];
 
 interface RouteEditorProps {
   routeFiles: RouteFile[];
@@ -57,10 +67,16 @@ export function RouteEditor({
         label="Import Route"
         isOpen={importIsOpen}
         onRequestClose={() => setImportIsOpen(false)}
-        onSubmit={(routeSrc) =>
+        onSubmit={(routeOrUrl) =>
           toast.promise(
             async () => {
-              const routeFiles = getRouteFiles([routeSrc || ""]);
+              if (!routeOrUrl) return;
+              const routeSrc = await fetchStringOrUrl(
+                routeOrUrl,
+                URL_REWRITERS
+              );
+
+              const routeFiles = getRouteFiles([routeSrc]);
               onSubmit(routeFiles);
             },
             {
