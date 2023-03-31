@@ -1,5 +1,5 @@
 import { GameData } from "../../../common/types";
-import { Dat } from "../../data";
+import { Dat } from "../data";
 import { cargoQuery } from "../wiki";
 
 const BREAKING_SOME_EGGS_REWARD_2 = [
@@ -50,12 +50,19 @@ function processVendorReward(
 export async function getQuests() {
   const result: GameData.Quests = {};
 
-  const rewardOfferNPCLookup: Partial<Record<string, string>> = {};
+  const rewardOfferNPCLookup: Partial<Record<string, string>> = {
+    // TODO Find a nicer way to deal with multiple quest completion points
+    ["a2q7"]: "Eramir",
+    ["a9q2"]: "Irasha",
+  };
+
   for (const npcTalk of Dat.NPCTalk.data) {
     if (npcTalk.QuestRewardOffersKey !== null) {
       const quest_reward_offer =
         Dat.QuestRewardOffers.data[npcTalk.QuestRewardOffersKey];
       const npc = Dat.NPCs.data[npcTalk.NPCKey];
+
+      if (quest_reward_offer.Id in rewardOfferNPCLookup) continue;
       rewardOfferNPCLookup[quest_reward_offer.Id] = npc.Name;
     }
   }

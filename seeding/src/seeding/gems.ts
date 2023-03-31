@@ -1,5 +1,5 @@
 import { GameData } from "../../../common/types";
-import { Dat } from "../../data";
+import { Dat } from "../data";
 
 function getGemCost(required_level: number) {
   if (required_level < 8) return "CurrencyIdentification";
