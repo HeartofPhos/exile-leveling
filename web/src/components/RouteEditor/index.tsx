@@ -2,7 +2,7 @@ import {
   buildRouteSource,
   getRouteFiles,
 } from "../../../../common/route-processing";
-import { RouteFile } from "../../../../common/route-processing/types";
+import { RouteData } from "../../../../common/route-processing/types";
 import { UrlRewriter, fetchStringOrUrl } from "../../utility";
 import { formStyles } from "../Form";
 import { TextModal } from "../Modal";
@@ -12,7 +12,7 @@ import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
-function cloneRouteFiles(routeFiles: RouteFile[]) {
+function cloneRouteFiles(routeFiles: RouteData.RouteFile[]) {
   return routeFiles.map((x) => ({ ...x }));
 }
 
@@ -26,8 +26,8 @@ const URL_REWRITERS: UrlRewriter[] = [
 ];
 
 interface RouteEditorProps {
-  routeFiles: RouteFile[];
-  onSubmit: (routeFiles: RouteFile[]) => void;
+  routeFiles: RouteData.RouteFile[];
+  onSubmit: (routeFiles: RouteData.RouteFile[]) => void;
   onReset: () => void;
 }
 
@@ -36,7 +36,7 @@ export function RouteEditor({
   onSubmit,
   onReset,
 }: RouteEditorProps) {
-  const [workingFiles, setWorkingFiles] = useState<RouteFile[]>([]);
+  const [workingFiles, setWorkingFiles] = useState<RouteData.RouteFile[]>([]);
   const [importIsOpen, setImportIsOpen] = useState<boolean>(false);
 
   useEffect(() => {

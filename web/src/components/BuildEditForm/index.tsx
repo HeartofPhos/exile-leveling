@@ -1,7 +1,4 @@
-import {
-  BuildData,
-  RequiredGem,
-} from "../../../../common/route-processing/types";
+import { RouteData } from "../../../../common/route-processing/types";
 import { gemProgressSelectorFamily } from "../../state/gem-progress";
 import { GemOrder } from "../GemOrder";
 import { SplitRow } from "../SplitRow";
@@ -10,8 +7,8 @@ import styles from "./styles.module.css";
 import classNames from "classnames";
 
 interface BuildInfoFormProps {
-  buildData: BuildData;
-  onSubmit: (buildData: BuildData) => void;
+  buildData: RouteData.BuildData;
+  onSubmit: (buildData: RouteData.BuildData) => void;
 }
 
 export function BuildInfoForm({ buildData, onSubmit }: BuildInfoFormProps) {
@@ -76,8 +73,8 @@ export function BuildInfoForm({ buildData, onSubmit }: BuildInfoFormProps) {
 }
 
 interface GemOrderList {
-  requiredGems: RequiredGem[];
-  onUpdate: (requiredGems: RequiredGem[]) => void;
+  requiredGems: RouteData.RequiredGem[];
+  onUpdate: (requiredGems: RouteData.RequiredGem[]) => void;
 }
 
 export function GemOrderList({ requiredGems, onUpdate }: GemOrderList) {

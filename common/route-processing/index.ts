@@ -3,12 +3,12 @@ import { GameData } from "../types";
 import { parseFragmentStep } from "./fragment";
 import { Pattern, matchPatterns } from "./patterns";
 import { ScopedLogger } from "./scoped-logger";
-import { Route, RouteFile, Section } from "./types";
+import { RouteData } from "./types";
 
 const DEFAULT_SECTION_NAME = "Default";
 
 export function getRouteFiles(routeSources: string[]) {
-  const routeFiles: RouteFile[] = [];
+  const routeFiles: RouteData.RouteFile[] = [];
   for (const routeSource of routeSources) {
     const routeLines = routeSource.split(/\r\n|\r|\n/g);
 
@@ -43,7 +43,7 @@ export function getRouteFiles(routeSources: string[]) {
   return routeFiles;
 }
 
-export function buildRouteSource(routeFiles: RouteFile[]) {
+export function buildRouteSource(routeFiles: RouteData.RouteFile[]) {
   return routeFiles.map((x) => x.contents).join("\n");
 }
 
@@ -61,7 +61,7 @@ export interface RouteState {
 
 interface ParseContext {
   state: RouteState;
-  section: Section;
+  section: RouteData.Section;
   conditionalStack: boolean[];
 }
 
@@ -105,12 +105,18 @@ const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
   },
 ];
 
-export function parseRoute(routeFiles: RouteFile[], state: RouteState) {
-  const route: Route = [];
+export function parseRoute(
+  routeFiles: RouteData.RouteFile[],
+  state: RouteState
+) {
+  const route: RouteData.Route = [];
   for (const routeFile of routeFiles) {
     const routeLines = routeFile.contents.split(/\r\n|\r|\n/g);
 
-    const section: Section = { name: routeFile.name, steps: [] };
+    const section: RouteData.Section = {
+      name: routeFile.name,
+      steps: [],
+    };
     route.push(section);
 
     state.logger.pushScope(section.name);

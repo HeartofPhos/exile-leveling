@@ -1,9 +1,6 @@
 import { areas, quests } from "../../../../common/data";
-import {
-  Fragment,
-  QuestFragment,
-} from "../../../../common/route-processing/fragment/types";
-import { FragmentStep } from "../../../../common/route-processing/types";
+import { Fragments } from "../../../../common/route-processing/fragment/types";
+import { RouteData } from "../../../../common/route-processing/types";
 import { GameData } from "../../../../common/types";
 import { InlineFakeBlock } from "../InlineFakeBlock";
 import { ItemReward } from "../ItemReward";
@@ -23,7 +20,7 @@ import {
 } from "react-icons/bs";
 
 interface FragmentProps {
-  fragment: Fragment;
+  fragment: Fragments.AnyFragment;
 }
 
 function getImageUrl(path: string) {
@@ -49,7 +46,7 @@ function AreaComponent(name: string, isTownArea: boolean) {
   );
 }
 
-function QuestComponent(fragment: QuestFragment) {
+function QuestComponent(fragment: Fragments.QuestFragment) {
   const quest = quests[fragment.questId];
 
   const npcs = Array.from(
@@ -277,7 +274,7 @@ export function ExileFragment({ fragment }: FragmentProps) {
 }
 
 interface StepProps {
-  step: FragmentStep;
+  step: RouteData.FragmentStep;
 }
 
 export function ExileFragmentStep({ step }: StepProps) {

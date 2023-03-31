@@ -1,6 +1,6 @@
 import { TREE_DATA_LOOKUP } from ".";
 import { PassiveTree } from "../../../../common/data/tree";
-import { BuildTree } from "../../../../common/route-processing/types";
+import { RouteData } from "../../../../common/route-processing/types";
 import { decodeBase64Url } from "../../utility";
 import { buildTreesSelector } from "./build-tree";
 import { selector } from "recoil";
@@ -42,7 +42,7 @@ export namespace UrlTree {
 }
 
 export async function buildUrlTree(
-  buildTree: BuildTree
+  buildTree: RouteData.BuildTree
 ): Promise<UrlTree.Data> {
   const data = /.*\/(.*?)$/.exec(buildTree.url)?.[1];
   if (!data) throw `invalid url ${buildTree.url}`;

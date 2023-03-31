@@ -1,4 +1,4 @@
-import { RouteFile } from "../../../../../common/route-processing/types";
+import { RouteData } from "../../../../../common/route-processing/types";
 import { formStyles } from "../../Form";
 import { FileList } from "../FileList";
 import styles from "./styles.module.css";
@@ -27,9 +27,9 @@ const RouteGrammar: Grammar = {
 };
 
 interface WorkspaceProps {
-  workingFiles: RouteFile[];
-  isDirty: (workingFile: RouteFile, index: number) => boolean;
-  onUpdate: (workingFiles: RouteFile[]) => void;
+  workingFiles: RouteData.RouteFile[];
+  isDirty: (workingFile: RouteData.RouteFile, index: number) => boolean;
+  onUpdate: (workingFiles: RouteData.RouteFile[]) => void;
 }
 
 export function Workspace({ workingFiles, isDirty, onUpdate }: WorkspaceProps) {

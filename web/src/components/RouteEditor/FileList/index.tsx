@@ -1,12 +1,12 @@
-import { RouteFile } from "../../../../../common/route-processing/types";
+import { RouteData } from "../../../../../common/route-processing/types";
 import { borderListStyles } from "../../BorderList";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 
 interface FileListProps {
-  routeFiles: RouteFile[];
+  routeFiles: RouteData.RouteFile[];
   selectedIndex: number;
-  isDirty: (routeFile: RouteFile, index: number) => boolean;
+  isDirty: (routeFile: RouteData.RouteFile, index: number) => boolean;
   onSelect: (index: number) => void;
 }
 

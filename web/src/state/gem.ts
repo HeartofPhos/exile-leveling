@@ -1,18 +1,18 @@
 import { persistentStorageEffect } from ".";
-import { RequiredGem } from "../../../common/route-processing/types";
+import { RouteData } from "../../../common/route-processing/types";
 import { getPersistent } from "../utility";
 import { gemProgressKeys, gemProgressSelectorFamily } from "./gem-progress";
 import { DefaultValue, atom, selector } from "recoil";
 
 const REQUIRED_GEMS_VERSION = 0;
 
-const requiredGemsAtom = atom<RequiredGem[] | null>({
+const requiredGemsAtom = atom<RouteData.RequiredGem[] | null>({
   key: "requiredGemsAtom",
   default: getPersistent("required-gems", REQUIRED_GEMS_VERSION),
   effects: [persistentStorageEffect("required-gems", REQUIRED_GEMS_VERSION)],
 });
 
-export const requiredGemsSelector = selector<RequiredGem[]>({
+export const requiredGemsSelector = selector<RouteData.RequiredGem[]>({
   key: "requiredGemsSelector",
   get: ({ get }) => {
     let requiredGems = get(requiredGemsAtom);

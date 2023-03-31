@@ -1,4 +1,4 @@
-import { RequiredGem } from "../../../../common/route-processing/types";
+import { RouteData } from "../../../../common/route-processing/types";
 import { GemReward } from "../ItemReward";
 import styles from "./styles.module.css";
 import classNames from "classnames";
@@ -6,7 +6,7 @@ import { HiChevronDoubleUp, HiChevronDown, HiChevronUp } from "react-icons/hi";
 import { MdDeleteOutline } from "react-icons/md";
 
 interface GemOrderProps {
-  requiredGem: RequiredGem;
+  requiredGem: RouteData.RequiredGem;
   onMoveTop?: () => void;
   onMoveUp?: () => void;
   onMoveDown?: () => void;

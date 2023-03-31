@@ -2,8 +2,8 @@ import { RouteState } from "..";
 import { areas, killWaypoints, quests } from "../../data";
 import { GameData } from "../../types";
 import { Pattern, matchPatterns } from "../patterns";
-import { FragmentStep } from "../types";
-import { Fragment } from "./types";
+import { RouteData } from "../types";
+import { Fragments } from "./types";
 
 type RawFragment = string | string[];
 
@@ -32,7 +32,7 @@ const EvaluateLookup: Record<
 
 interface ParseContext {
   state: RouteState;
-  step: FragmentStep;
+  step: RouteData.FragmentStep;
 }
 
 const FRAGMENT_PATTERNS: Pattern<ParseContext>[] = [
@@ -66,7 +66,7 @@ const FRAGMENT_PATTERNS: Pattern<ParseContext>[] = [
 ];
 
 export function parseFragmentStep(text: string, state: RouteState) {
-  const step: FragmentStep = {
+  const step: RouteData.FragmentStep = {
     type: "fragment_step",
     parts: [],
   };
@@ -96,7 +96,7 @@ const ERROR_MISSING_AREA = "area does not exist";
 const ERROR_AREA_NO_WAYPOINT = "area does not have a waypoint";
 
 interface EvaluateResult {
-  fragment: Fragment;
+  fragment: Fragments.AnyFragment;
 }
 
 function EvaluateKill(
