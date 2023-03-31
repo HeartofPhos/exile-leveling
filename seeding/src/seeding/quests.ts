@@ -1,5 +1,5 @@
 import { GameData } from "../../../common/types";
-import { Dat } from "../../data";
+import { Dat } from "../data";
 import { cargoQuery } from "../wiki";
 
 const BREAKING_SOME_EGGS_REWARD_2 = [
@@ -56,6 +56,8 @@ export async function getQuests() {
       const quest_reward_offer =
         Dat.QuestRewardOffers.data[npcTalk.QuestRewardOffersKey];
       const npc = Dat.NPCs.data[npcTalk.NPCKey];
+
+      if (quest_reward_offer.Id in rewardOfferNPCLookup) continue;
       rewardOfferNPCLookup[quest_reward_offer.Id] = npc.Name;
     }
   }

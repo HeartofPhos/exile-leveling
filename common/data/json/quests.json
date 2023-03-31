@@ -3412,7 +3412,7 @@
     "act": "2",
     "reward_offers": {
       "a2q7": {
-        "quest_npc": "Alira",
+        "quest_npc": "Eramir",
         "quest": {
           "Metadata/Items/QuestItems/BanditAmulets/CombinedAmulet": {
             "classes": []
@@ -5998,15 +5998,15 @@
             "classes": [],
             "npc": "Siosa"
           },
+          "Metadata/Items/Gems/SupportGemOnslaught": {
+            "classes": [],
+            "npc": "Siosa"
+          },
           "Metadata/Items/Gems/SupportGemMultiTrap": {
             "classes": [],
             "npc": "Siosa"
           },
           "Metadata/Items/Gems/SupportGemNightblade": {
-            "classes": [],
-            "npc": "Siosa"
-          },
-          "Metadata/Items/Gems/SupportGemOnslaught": {
             "classes": [],
             "npc": "Siosa"
           },
@@ -9834,7 +9834,7 @@
     "act": "9",
     "reward_offers": {
       "a9q2": {
-        "quest_npc": "Irasha",
+        "quest_npc": "Tasuni",
         "quest": {
           "Metadata/Items/QuestItems/Act9/Book-a9q2": {
             "classes": []
