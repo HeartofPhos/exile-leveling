@@ -3,12 +3,13 @@ import { areas, killWaypoints, quests } from "../../data";
 import { GameData } from "../../types";
 import { Pattern, matchPatterns } from "../patterns";
 import { RouteData } from "../types";
+import { Language } from "./language";
 import { Fragments } from "./types";
 
 type RawFragment = string | string[];
 
 const EvaluateLookup: Record<
-  string,
+  Language.Fragment,
   (rawFragment: RawFragment, state: RouteState) => string | EvaluateResult
 > = {
   ["kill"]: EvaluateKill,
