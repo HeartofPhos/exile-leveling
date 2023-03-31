@@ -33,14 +33,14 @@ export namespace Language {
       ["kill"]: [
         {
           description:
-            "Describe monsters to kill, certain monsters unlock waypoints on kill",
+            "Kill a monster, certain bosses unlock waypoints",
           parameters: [{ name: "text", description: "Text to display" }],
         },
       ],
 
       ["arena"]: [
         {
-          description: "Describe sub-areas inside true areas",
+          description: "Sub-areas inside true areas",
           parameters: [{ name: "text", description: "Text to display" }],
         },
       ],
@@ -75,7 +75,7 @@ export namespace Language {
       ],
       ["waypoint"]: [
         {
-          description: "Describe a waypoint",
+          description: "A waypoint",
           parameters: [],
         },
         {
@@ -143,25 +143,25 @@ export namespace Language {
       ],
       ["quest_text"]: [
         {
-          description: "Describe quest text",
+          description: "Quest text",
           parameters: [{ name: "text", description: "Text to display" }],
         },
       ],
       ["generic"]: [
         {
-          description: "Describe generic text",
+          description: "Generic text",
           parameters: [{ name: "text", description: "Text to display" }],
         },
       ],
       ["reward_quest"]: [
         {
-          description: "Describe quest rewards a player should take",
+          description: "Quest rewards a player should take",
           parameters: [{ name: "text", description: "Text to display" }],
         },
       ],
       ["reward_vendor"]: [
         {
-          description: "Describe vendor rewards a player should buy",
+          description: "Vendor rewards a player should buy",
           parameters: [{ name: "text", description: "Text to display" }],
         },
       ],
@@ -191,7 +191,7 @@ export namespace Language {
       ],
       ["dir"]: [
         {
-          description: "Describe a direction",
+          description: "A direction",
           parameters: [
             {
               name: "number",
