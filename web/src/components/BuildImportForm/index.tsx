@@ -46,6 +46,7 @@ export function BuildImportForm({ onSubmit, onReset }: BuildImportFormProps) {
     <>
       <TextModal
         label="Path of Building Code"
+        size="small"
         isOpen={isOpen}
         onRequestClose={() => setIsOpen(false)}
         onSubmit={(pobCodeOrUrl) =>

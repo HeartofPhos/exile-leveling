@@ -1,5 +1,5 @@
 import { gemColours, gems } from "../../../../common/data";
-import { RequiredGem } from "../../../../common/route-processing/types";
+import { RouteData } from "../../../../common/route-processing/types";
 import { InlineFakeBlock } from "../InlineFakeBlock";
 import { SplitRow } from "../SplitRow";
 import { taskStyle } from "../TaskList";
@@ -46,7 +46,7 @@ export function ItemReward({ item, cost, rewardType }: ItemRewardProps) {
 }
 
 interface GemRewardProps {
-  requiredGem: RequiredGem;
+  requiredGem: RouteData.RequiredGem;
   rewardType?: ItemRewardProps["rewardType"];
 }
 

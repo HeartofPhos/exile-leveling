@@ -1,4 +1,4 @@
-import { Route, Section } from "../../../common/route-processing/types";
+import { RouteData } from "../../../common/route-processing/types";
 import { buildDataSelector } from "./build-data";
 import { requiredGemsSelector } from "./gem";
 import { routeFilesSelector } from "./route-files";
@@ -55,10 +55,13 @@ export const routeSelector = selector({
 
     if (requiredGems.length == 0) return baseRoute;
 
-    const route: Route = [];
+    const route: RouteData.Route = [];
     const routeGems: Set<number> = new Set();
     for (const section of baseRoute) {
-      const buildSection: Section = { name: section.name, steps: [] };
+      const buildSection: RouteData.Section = {
+        name: section.name,
+        steps: [],
+      };
       for (const step of section.steps) {
         buildSection.steps.push(step);
         if (step.type == "fragment_step") {

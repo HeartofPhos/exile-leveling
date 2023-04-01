@@ -2,13 +2,14 @@ import { RouteState } from "..";
 import { areas, killWaypoints, quests } from "../../data";
 import { GameData } from "../../types";
 import { Pattern, matchPatterns } from "../patterns";
-import { FragmentStep } from "../types";
-import { Fragment } from "./types";
+import { RouteData } from "../types";
+import { Language } from "./language";
+import { Fragments } from "./types";
 
 type RawFragment = string | string[];
 
 const EvaluateLookup: Record<
-  string,
+  Language.Fragment,
   (rawFragment: RawFragment, state: RouteState) => string | EvaluateResult
 > = {
   ["kill"]: EvaluateKill,
@@ -32,7 +33,7 @@ const EvaluateLookup: Record<
 
 interface ParseContext {
   state: RouteState;
-  step: FragmentStep;
+  step: RouteData.FragmentStep;
 }
 
 const FRAGMENT_PATTERNS: Pattern<ParseContext>[] = [
@@ -55,7 +56,7 @@ const FRAGMENT_PATTERNS: Pattern<ParseContext>[] = [
     processor: (match, { state, step }) => {
       const split = match[1].split("|");
 
-      const evaluateFragment = EvaluateLookup[split[0]];
+      const evaluateFragment = EvaluateLookup[split[0] as Language.Fragment];
       const result = evaluateFragment(split, state);
       if (typeof result === "string") state.logger.error(result);
       else step.parts.push(result.fragment);
@@ -66,7 +67,7 @@ const FRAGMENT_PATTERNS: Pattern<ParseContext>[] = [
 ];
 
 export function parseFragmentStep(text: string, state: RouteState) {
-  const step: FragmentStep = {
+  const step: RouteData.FragmentStep = {
     type: "fragment_step",
     parts: [],
   };
@@ -96,7 +97,7 @@ const ERROR_MISSING_AREA = "area does not exist";
 const ERROR_AREA_NO_WAYPOINT = "area does not have a waypoint";
 
 interface EvaluateResult {
-  fragment: Fragment;
+  fragment: Fragments.AnyFragment;
 }
 
 function EvaluateKill(

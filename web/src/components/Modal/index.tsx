@@ -6,17 +6,21 @@ import ReactModal from "react-modal";
 
 ReactModal.setAppElement("#root");
 
-export function Modal(props: ReactModal.Props) {
+interface ModalSizeProps {
+  size: "small" | "large";
+}
+
+export function Modal(props: ReactModal.Props & ModalSizeProps) {
   return (
     <ReactModal
-      className={classNames(styles.modal)}
+      className={classNames(styles.modal, styles[props.size])}
       overlayClassName={classNames(styles.overlay)}
       {...props}
     />
   );
 }
 
-interface TextModalProps {
+interface TextModalProps extends ModalSizeProps {
   label: string;
   isOpen: boolean;
   onSubmit: (value: string | undefined) => void;
@@ -28,6 +32,7 @@ export function TextModal({
   isOpen,
   onSubmit,
   onRequestClose,
+  size,
 }: TextModalProps) {
   const valueRef = useRef<string>();
 
@@ -36,7 +41,7 @@ export function TextModal({
   }, [isOpen]);
 
   return (
-    <Modal isOpen={isOpen} onRequestClose={onRequestClose}>
+    <Modal size={size} isOpen={isOpen} onRequestClose={onRequestClose}>
       <div className={classNames(formStyles.form, styles.grow)}>
         <div className={classNames(formStyles.formRow, styles.grow)}>
           <label>{label}</label>

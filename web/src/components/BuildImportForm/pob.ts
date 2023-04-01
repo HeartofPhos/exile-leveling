@@ -1,9 +1,5 @@
 import { awakenedGemLookup, vaalGemLookup } from "../../../../common/data";
-import {
-  BuildData,
-  BuildTree,
-  RequiredGem,
-} from "../../../../common/route-processing/types";
+import { RouteData } from "../../../../common/route-processing/types";
 import { decodeBase64Url, randomId } from "../../utility";
 import pako from "pako";
 
@@ -57,7 +53,7 @@ function decodePathOfBuildingCode(code: string) {
 const POB_COLOUR_REGEX = /\^(x[a-zA-Z0-9]{6}|[0-9])/;
 
 function processSkills(
-  requiredGems: RequiredGem[],
+  requiredGems: RouteData.RequiredGem[],
   parentElement: Element,
   parentTitle: string | undefined
 ) {
@@ -92,9 +88,9 @@ function processSkills(
 }
 
 export interface PobData {
-  buildData: BuildData;
-  requiredGems: RequiredGem[];
-  buildTrees: BuildTree[];
+  buildData: RouteData.BuildData;
+  requiredGems: RouteData.RequiredGem[];
+  buildTrees: RouteData.BuildTree[];
 }
 
 export function processPob(pobCode: string): PobData | undefined {
@@ -104,7 +100,7 @@ export function processPob(pobCode: string): PobData | undefined {
   } catch (e) {
     return undefined;
   }
-  const requiredGems: RequiredGem[] = [];
+  const requiredGems: RouteData.RequiredGem[] = [];
   const skillSetElements = Array.from(doc.getElementsByTagName("SkillSet"));
   if (skillSetElements.length > 0) {
     for (const skillSetElement of skillSetElements) {
@@ -124,7 +120,7 @@ export function processPob(pobCode: string): PobData | undefined {
   const bandit =
     buildElement[0].attributes.getNamedItem("bandit")?.value || "None";
 
-  const buildTrees: BuildTree[] = [];
+  const buildTrees: RouteData.BuildTree[] = [];
   const specElements = Array.from(doc.getElementsByTagName("Spec"));
   for (const specElement of specElements) {
     buildTrees.push({
@@ -137,7 +133,7 @@ export function processPob(pobCode: string): PobData | undefined {
   return {
     buildData: {
       characterClass: characterClass!,
-      bandit: bandit as BuildData["bandit"],
+      bandit: bandit as RouteData.BuildData["bandit"],
       leagueStart: true,
       library: true,
     },

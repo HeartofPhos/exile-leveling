@@ -1,17 +1,17 @@
 import { quests } from "../data";
 import { GameData } from "../types";
-import { QuestFragment } from "./fragment/types";
-import { BuildData, GemStep, RequiredGem } from "./types";
+import { Fragments } from "./fragment/types";
+import { RouteData } from "./types";
 
 export function buildGemSteps(
-  questFragment: QuestFragment,
-  buildData: BuildData,
-  requiredGems: RequiredGem[],
+  questFragment: Fragments.QuestFragment,
+  buildData: RouteData.BuildData,
+  requiredGems: RouteData.RequiredGem[],
   routeGems: Set<number>
 ) {
   const quest = quests[questFragment.questId];
 
-  const gemSteps: GemStep[] = [];
+  const gemSteps: RouteData.GemStep[] = [];
   for (const rewardOfferId of questFragment.rewardOffers) {
     const reward_offer = quest.reward_offers[rewardOfferId];
     if (!reward_offer) continue;
@@ -48,8 +48,8 @@ export function buildGemSteps(
 }
 
 function findQuestGem(
-  buildData: BuildData,
-  requiredGems: RequiredGem[],
+  buildData: RouteData.BuildData,
+  requiredGems: RouteData.RequiredGem[],
   routeGems: Set<number>,
   quest_rewards: GameData.RewardOffer["quest"]
 ): number | null {
@@ -74,8 +74,8 @@ function findQuestGem(
 }
 
 function findVendorGems(
-  buildData: BuildData,
-  requiredGems: RequiredGem[],
+  buildData: RouteData.BuildData,
+  requiredGems: RouteData.RequiredGem[],
   routeGems: Set<number>,
   vendor_rewards: GameData.RewardOffer["vendor"]
 ): number[] {

@@ -1,5 +1,5 @@
 import { persistentStorageEffect } from ".";
-import { RouteFile } from "../../../common/route-processing/types";
+import { RouteData } from "../../../common/route-processing/types";
 import { getPersistent } from "../utility";
 import { DefaultValue, atom, selector } from "recoil";
 
@@ -27,13 +27,13 @@ async function loadDefaultRouteFiles() {
   return getRouteFiles(routeSources);
 }
 
-const routeFilesAtom = atom<RouteFile[] | null>({
+const routeFilesAtom = atom<RouteData.RouteFile[] | null>({
   key: "routeFilesAtom",
   default: getPersistent("route-files", ROUTE_PROGRESS_VERSION),
   effects: [persistentStorageEffect("route-files", ROUTE_PROGRESS_VERSION)],
 });
 
-export const routeFilesSelector = selector<RouteFile[]>({
+export const routeFilesSelector = selector<RouteData.RouteFile[]>({
   key: "routeFilesSelector",
   get: ({ get }) => {
     return get(routeFilesAtom) || loadDefaultRouteFiles();

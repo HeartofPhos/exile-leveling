@@ -2,17 +2,20 @@ import {
   buildRouteSource,
   getRouteFiles,
 } from "../../../../common/route-processing";
-import { RouteFile } from "../../../../common/route-processing/types";
+import { Language } from "../../../../common/route-processing/fragment/language";
+import { RouteData } from "../../../../common/route-processing/types";
 import { UrlRewriter, fetchStringOrUrl } from "../../utility";
 import { formStyles } from "../Form";
-import { TextModal } from "../Modal";
+import { Modal, TextModal } from "../Modal";
 import { Workspace } from "./Workspace";
 import styles from "./styles.module.css";
 import classNames from "classnames";
+import React from "react";
 import { useEffect, useState } from "react";
+import { BiHelpCircle } from "react-icons/bi";
 import { toast } from "react-toastify";
 
-function cloneRouteFiles(routeFiles: RouteFile[]) {
+function cloneRouteFiles(routeFiles: RouteData.RouteFile[]) {
   return routeFiles.map((x) => ({ ...x }));
 }
 
@@ -26,8 +29,8 @@ const URL_REWRITERS: UrlRewriter[] = [
 ];
 
 interface RouteEditorProps {
-  routeFiles: RouteFile[];
-  onSubmit: (routeFiles: RouteFile[]) => void;
+  routeFiles: RouteData.RouteFile[];
+  onSubmit: (routeFiles: RouteData.RouteFile[]) => void;
   onReset: () => void;
 }
 
@@ -36,8 +39,9 @@ export function RouteEditor({
   onSubmit,
   onReset,
 }: RouteEditorProps) {
-  const [workingFiles, setWorkingFiles] = useState<RouteFile[]>([]);
+  const [workingFiles, setWorkingFiles] = useState<RouteData.RouteFile[]>([]);
   const [importIsOpen, setImportIsOpen] = useState<boolean>(false);
+  const [guideIsOpen, setGuideIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
     setWorkingFiles(cloneRouteFiles(routeFiles));
@@ -64,6 +68,7 @@ export function RouteEditor({
   return (
     <>
       <TextModal
+        size="large"
         label="Import Route"
         isOpen={importIsOpen}
         onRequestClose={() => setImportIsOpen(false)}
@@ -87,6 +92,13 @@ export function RouteEditor({
           )
         }
       />
+      <Modal
+        size="large"
+        isOpen={guideIsOpen}
+        onRequestClose={() => setGuideIsOpen(false)}
+      >
+        <HelpPage />
+      </Modal>
       <div className={classNames(formStyles.form, styles.editorForm)}>
         <Workspace
           workingFiles={workingFiles}
@@ -97,6 +109,12 @@ export function RouteEditor({
           onUpdate={setWorkingFiles}
         />
         <div className={classNames(formStyles.groupRight)}>
+          <BiHelpCircle
+            size={24}
+            onClick={() => {
+              setGuideIsOpen(true);
+            }}
+          />
           <button
             className={classNames(formStyles.formButton)}
             onClick={() => {
@@ -136,5 +154,46 @@ export function RouteEditor({
       </div>
       <hr />
     </>
+  );
+}
+
+function HelpPage() {
+  const fragmentDescriptions: React.ReactNode[] = Object.entries(
+    Language.FragmentDescriptionLookup
+  ).map(([key, variants], i) => (
+    <React.Fragment key={key}>
+      {variants.map((variant, j) => (
+        <React.Fragment key={`variant-${j}`}>
+          {i !== 0 && <hr />}
+          <div>
+            <span className="token keyword control-flow">{"{"}</span>
+            <span className="token keyword">{key}</span>
+            {variant.parameters.map((param, i) => (
+              <React.Fragment key={`variant-parameters-${i}`}>
+                <span className="token keyword control-flow">{"|"}</span>
+                <span className="token property">{param.name}</span>
+              </React.Fragment>
+            ))}
+            <span className="token keyword control-flow">{"}"}</span>
+            <br />
+            <span>{variant.description}</span>
+            <br />
+            {variant.parameters.map((param, j) => (
+              <React.Fragment key={`variant-description-${j}`}>
+                <span className="token property">{param.name}</span>:{" "}
+                {param.description}
+                <br />
+              </React.Fragment>
+            ))}
+          </div>
+        </React.Fragment>
+      ))}
+    </React.Fragment>
+  ));
+
+  return (
+    <div className={classNames(styles.help)}>
+      {React.Children.toArray(fragmentDescriptions)}
+    </div>
   );
 }

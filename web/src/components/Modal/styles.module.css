@@ -2,8 +2,6 @@
   display: flex;
   height: 100%;
   width: 100%;
-  max-height: 30rem;
-  max-width: 30rem;
   background: var(--background-primary);
   border-style: solid;
   border-width: var(--border-width);
@@ -12,13 +10,23 @@
   overflow: auto;
 }
 
+.small {
+  max-height: 20rem;
+  max-width: 20rem;
+}
+
+.large {
+  max-height: 40rem;
+  max-width: 40rem;
+}
+
 .overlay {
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.75);
-  padding: 5%;
+  padding: 2rem;
   inset: 0px;
   z-index: 3;
 }
