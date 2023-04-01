@@ -32,8 +32,7 @@ export namespace Language {
     {
       ["kill"]: [
         {
-          description:
-            "Kill a monster, certain bosses unlock waypoints",
+          description: "Kill a monster, certain bosses unlock waypoints",
           parameters: [{ name: "text", description: "Text to display" }],
         },
       ],
@@ -69,7 +68,7 @@ export namespace Language {
       ["logout"]: [
         {
           description:
-            "Logout or Exit to Character Selection and re-enter, removes portals",
+            "Logout or Exit to Character Selection, removes portals",
           parameters: [],
         },
       ],
@@ -118,7 +117,7 @@ export namespace Language {
       ["quest"]: [
         {
           description:
-            "Hand in a quest and receive all reward offers, will generate gem steps based on build data",
+            "Hand in a quest and receive all reward offers, generates gem steps",
           parameters: [
             {
               name: "quest_id",
@@ -128,7 +127,7 @@ export namespace Language {
         },
         {
           description:
-            "Hand in a quest and receive specified reward offer, will generate gem steps based on build data",
+            "Hand in a quest and receive specified reward offer, generates gem steps",
           parameters: [
             {
               name: "quest_id",
