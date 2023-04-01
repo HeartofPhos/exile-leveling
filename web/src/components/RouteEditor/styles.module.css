@@ -1,3 +1,14 @@
 .editorForm {
   flex-grow: 1;
 }
+
+.help {
+  display: flex;
+  flex-direction: column;
+  padding: var(--size-3);
+  gap: var(--size-3);
+  font-family: "Consolas", monospace;
+  height: 100%;
+  width: 100%;
+  user-select: text;
+}

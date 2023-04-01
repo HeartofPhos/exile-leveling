@@ -20,12 +20,14 @@
   display: flex;
   justify-content: start;
   gap: var(--size-2);
+  align-items: center;
 }
 
 .groupRight {
   display: flex;
   justify-content: end;
   gap: var(--size-2);
+  align-items: center;
 }
 
 .formInput {

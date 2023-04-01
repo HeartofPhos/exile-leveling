@@ -2,14 +2,17 @@ import {
   buildRouteSource,
   getRouteFiles,
 } from "../../../../common/route-processing";
+import { Language } from "../../../../common/route-processing/fragment/language";
 import { RouteData } from "../../../../common/route-processing/types";
 import { UrlRewriter, fetchStringOrUrl } from "../../utility";
 import { formStyles } from "../Form";
-import { TextModal } from "../Modal";
+import { Modal, TextModal } from "../Modal";
 import { Workspace } from "./Workspace";
 import styles from "./styles.module.css";
 import classNames from "classnames";
+import React from "react";
 import { useEffect, useState } from "react";
+import { BiHelpCircle } from "react-icons/bi";
 import { toast } from "react-toastify";
 
 function cloneRouteFiles(routeFiles: RouteData.RouteFile[]) {
@@ -38,6 +41,7 @@ export function RouteEditor({
 }: RouteEditorProps) {
   const [workingFiles, setWorkingFiles] = useState<RouteData.RouteFile[]>([]);
   const [importIsOpen, setImportIsOpen] = useState<boolean>(false);
+  const [guideIsOpen, setGuideIsOpen] = useState<boolean>(false);
 
   useEffect(() => {
     setWorkingFiles(cloneRouteFiles(routeFiles));
@@ -87,6 +91,9 @@ export function RouteEditor({
           )
         }
       />
+      <Modal isOpen={guideIsOpen} onRequestClose={() => setGuideIsOpen(false)}>
+        <HelpPage />
+      </Modal>
       <div className={classNames(formStyles.form, styles.editorForm)}>
         <Workspace
           workingFiles={workingFiles}
@@ -97,6 +104,12 @@ export function RouteEditor({
           onUpdate={setWorkingFiles}
         />
         <div className={classNames(formStyles.groupRight)}>
+          <BiHelpCircle
+            size={24}
+            onClick={() => {
+              setGuideIsOpen(true);
+            }}
+          />
           <button
             className={classNames(formStyles.formButton)}
             onClick={() => {
@@ -136,5 +149,47 @@ export function RouteEditor({
       </div>
       <hr />
     </>
+  );
+}
+
+function HelpPage() {
+  const fragmentDescriptions: React.ReactNode[] = [];
+  for (const [key, variants] of Object.entries(
+    Language.FragmentDescriptionLookup
+  )) {
+    fragmentDescriptions.push(
+      <React.Fragment key={key}>
+        {variants.map((variant, i) => (
+          <div key={`variant-${i}`}>
+            <span className="token keyword control-flow">{"{"}</span>
+            <span className="token keyword">{key}</span>
+
+            {variant.parameters.map((param, i) => (
+              <React.Fragment key={`variant-parameters-${i}`}>
+                <span className="token keyword control-flow">{"|"}</span>
+                <span className="token property">{param.name}</span>
+              </React.Fragment>
+            ))}
+            <span className="token keyword control-flow">{"}"}</span>
+            <br />
+            <span>{variant.description}</span>
+            <br />
+            {variant.parameters.map((param, i) => (
+              <React.Fragment key={`variant-description-${i}`}>
+                <span className="token property">{param.name}</span>:{" "}
+                {param.description}
+                <br />
+              </React.Fragment>
+            ))}
+          </div>
+        ))}
+      </React.Fragment>
+    );
+  }
+
+  return (
+    <div className={classNames(styles.help)}>
+      {React.Children.toArray(fragmentDescriptions)}
+    </div>
   );
 }
