@@ -56,7 +56,7 @@ const FRAGMENT_PATTERNS: Pattern<ParseContext>[] = [
     processor: (match, { state, step }) => {
       const split = match[1].split("|");
 
-      const evaluateFragment = EvaluateLookup[split[0]];
+      const evaluateFragment = EvaluateLookup[split[0] as Language.Fragment];
       const result = evaluateFragment(split, state);
       if (typeof result === "string") state.logger.error(result);
       else step.parts.push(result.fragment);

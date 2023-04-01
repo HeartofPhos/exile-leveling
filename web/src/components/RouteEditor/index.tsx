@@ -68,6 +68,7 @@ export function RouteEditor({
   return (
     <>
       <TextModal
+        size="large"
         label="Import Route"
         isOpen={importIsOpen}
         onRequestClose={() => setImportIsOpen(false)}
@@ -91,7 +92,11 @@ export function RouteEditor({
           )
         }
       />
-      <Modal isOpen={guideIsOpen} onRequestClose={() => setGuideIsOpen(false)}>
+      <Modal
+        size="large"
+        isOpen={guideIsOpen}
+        onRequestClose={() => setGuideIsOpen(false)}
+      >
         <HelpPage />
       </Modal>
       <div className={classNames(formStyles.form, styles.editorForm)}>
@@ -153,17 +158,16 @@ export function RouteEditor({
 }
 
 function HelpPage() {
-  const fragmentDescriptions: React.ReactNode[] = [];
-  for (const [key, variants] of Object.entries(
+  const fragmentDescriptions: React.ReactNode[] = Object.entries(
     Language.FragmentDescriptionLookup
-  )) {
-    fragmentDescriptions.push(
-      <React.Fragment key={key}>
-        {variants.map((variant, i) => (
-          <div key={`variant-${i}`}>
+  ).map(([key, variants], i) => (
+    <React.Fragment key={key}>
+      {variants.map((variant, j) => (
+        <React.Fragment key={`variant-${j}`}>
+          {i !== 0 && <hr />}
+          <div>
             <span className="token keyword control-flow">{"{"}</span>
             <span className="token keyword">{key}</span>
-
             {variant.parameters.map((param, i) => (
               <React.Fragment key={`variant-parameters-${i}`}>
                 <span className="token keyword control-flow">{"|"}</span>
@@ -174,18 +178,18 @@ function HelpPage() {
             <br />
             <span>{variant.description}</span>
             <br />
-            {variant.parameters.map((param, i) => (
-              <React.Fragment key={`variant-description-${i}`}>
+            {variant.parameters.map((param, j) => (
+              <React.Fragment key={`variant-description-${j}`}>
                 <span className="token property">{param.name}</span>:{" "}
                 {param.description}
                 <br />
               </React.Fragment>
             ))}
           </div>
-        ))}
-      </React.Fragment>
-    );
-  }
+        </React.Fragment>
+      ))}
+    </React.Fragment>
+  ));
 
   return (
     <div className={classNames(styles.help)}>
