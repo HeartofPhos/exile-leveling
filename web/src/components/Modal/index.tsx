@@ -11,7 +11,6 @@ interface ModalSizeProps {
 }
 
 export function Modal(props: ReactModal.Props & ModalSizeProps) {
-  console.log(styles[props.size]);
   return (
     <ReactModal
       className={classNames(styles.modal, styles[props.size])}
