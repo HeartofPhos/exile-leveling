@@ -7,6 +7,7 @@
   border-width: var(--border-width);
   border-color: var(--accent-primary);
   border-radius: var(--border-radius);
+  outline-style: none;
   overflow: auto;
 }
 
