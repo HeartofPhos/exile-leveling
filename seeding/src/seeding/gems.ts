@@ -2,11 +2,11 @@ import { GameData } from "../../../common/types";
 import { Dat } from "../data";
 
 function getGemCost(required_level: number) {
-  if (required_level < 8) return "CurrencyIdentification";
-  if (required_level < 16) return "CurrencyUpgradeToMagic";
-  if (required_level < 28) return "CurrencyRerollMagic";
-  if (required_level < 38) return "CurrencyUpgradeRandomly";
-  return "CurrencyUpgradeToRare";
+  if (required_level < 8) return "wisdom";
+  if (required_level < 16) return "transmutation";
+  if (required_level < 28) return "alteration";
+  if (required_level < 38) return "chance";
+  return "alchemy";
 }
 
 const ATTRIBUTE_LOOKUP: Record<number, string> = {

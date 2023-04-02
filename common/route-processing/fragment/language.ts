@@ -67,8 +67,7 @@ export namespace Language {
       ],
       ["logout"]: [
         {
-          description:
-            "Logout or Exit to Character Selection, removes portals",
+          description: "Logout or Exit to Character Selection, removes portals",
           parameters: [],
         },
       ],
@@ -161,7 +160,14 @@ export namespace Language {
       ["reward_vendor"]: [
         {
           description: "Vendor rewards a player should buy",
-          parameters: [{ name: "text", description: "Text to display" }],
+          parameters: [
+            { name: "text", description: "Text to display" },
+            {
+              name: "cost",
+              description:
+                "Currency cost, wisdom/transmutation/alteration/chance/alchemy",
+            },
+          ],
         },
       ],
       ["trial"]: [
