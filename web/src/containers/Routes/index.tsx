@@ -2,7 +2,7 @@ import { ExileFragmentStep } from "../../components/ExileFragment";
 import { GemReward } from "../../components/ItemReward";
 import { SectionHolder } from "../../components/SectionHolder";
 import { Sidebar } from "../../components/Sidebar";
-import { TaskListProps } from "../../components/TaskList";
+import { TaskListItem, TaskListProps } from "../../components/TaskList";
 import { gemProgressSelectorFamily } from "../../state/gem-progress";
 import { routeSelector } from "../../state/route";
 import { routeProgressSelectorFamily } from "../../state/route-progress";
@@ -11,10 +11,28 @@ import { withScrollRestoration } from "../../utility/withScrollRestoration";
 import { ReactNode } from "react";
 import { useRecoilValue } from "recoil";
 
+const showGemsOnly = false;
+
+function FilterGemsOnly(taskItems: TaskListItem[]) {
+  const newTasksItems = [];
+  for (let i = 0; i < taskItems.length; i++) {
+    const nextStep: TaskListItem | undefined = taskItems[i+1];
+
+    if (taskItems[i].type === "fragment_Step" && nextStep?.type !== "gem_step") {
+      continue;
+    }
+
+    newTasksItems.push(taskItems[i]);
+  }
+
+  return newTasksItems;
+}
+
 function RoutesContainer() {
   const route = useRecoilValue(routeSelector);
 
   const items: ReactNode[] = [];
+
   for (let sectionIndex = 0; sectionIndex < route.length; sectionIndex++) {
     const section = route[sectionIndex];
 
@@ -24,6 +42,7 @@ function RoutesContainer() {
 
       if (step.type == "fragment_step")
         taskItems.push({
+          type: "fragment_Step",
           key: stepIndex,
           isCompletedState: routeProgressSelectorFamily(
             [sectionIndex, stepIndex].toString()
@@ -33,6 +52,7 @@ function RoutesContainer() {
 
       if (step.type == "gem_step")
         taskItems.push({
+          type: "gem_step",
           key: step.requiredGem.uid,
           isCompletedState: gemProgressSelectorFamily(step.requiredGem.uid),
           children: (
@@ -43,6 +63,10 @@ function RoutesContainer() {
             />
           ),
         });
+    }
+
+    if (showGemsOnly) {
+      taskItems = FilterGemsOnly(taskItems);
     }
 
     items.push(
