@@ -1,9 +1,5 @@
 {
   "name": "exile-leveling",
-  "scripts": {
-    "run": "npm run dev -w web",
-    "seed-tree": "npm run seed tree -w seeding"
-  },
   "workspaces": [
     "seeding",
     "web"
