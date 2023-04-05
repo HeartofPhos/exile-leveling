@@ -1,4 +1,5 @@
 import { searchStringsAtom } from "../../state/search-strings";
+import { gemLinksSelector } from "../../state/gem-links";
 import { urlTreesSelector } from "../../state/tree/url-tree";
 import { borderListStyles } from "../BorderList";
 import { PassiveTreeViewer } from "../PassiveTreeViewer";
@@ -13,6 +14,7 @@ import { useRecoilValue } from "recoil";
 export function Sidebar() {
   const searchStrings = useRecoilValue(searchStringsAtom);
   const { urlTrees } = useRecoilValue(urlTreesSelector);
+  const gemLinks = useRecoilValue(gemLinksSelector);
   const [expand, setExpand] = useState(true);
 
   const children = [];
@@ -20,7 +22,7 @@ export function Sidebar() {
     children.push(
       <>
         <hr />
-        <PassiveTreeViewer urlTrees={urlTrees} />
+        <PassiveTreeViewer urlTrees={urlTrees} gemLinks={gemLinks} />
       </>
     );
   }

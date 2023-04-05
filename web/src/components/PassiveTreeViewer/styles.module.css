@@ -35,3 +35,22 @@
   height: var(--line-height);
   flex: 1;
 }
+
+.gemLinkSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gemLinkRow {
+  display: flex;
+  flex-direction: column;
+}
+
+.primaryGem {
+  font-weight: bold;
+}
+
+.supportGem {
+  margin-left: 12px;
+}
