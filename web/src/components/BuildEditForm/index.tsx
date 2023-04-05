@@ -8,10 +8,11 @@ import classNames from "classnames";
 
 interface BuildInfoFormProps {
   buildData: RouteData.BuildData;
+  requiredGems: RouteData.RequiredGem[];
   onSubmit: (buildData: RouteData.BuildData) => void;
 }
 
-export function BuildInfoForm({ buildData, onSubmit }: BuildInfoFormProps) {
+export function BuildInfoForm({ buildData, requiredGems, onSubmit }: BuildInfoFormProps) {
   return (
     <div className={classNames(styles.buildInfo)}>
       <SplitRow
@@ -68,26 +69,28 @@ export function BuildInfoForm({ buildData, onSubmit }: BuildInfoFormProps) {
           </div>
         }
       />
-      <SplitRow
-        left={
-          <div className={classNames(styles.buildInfoLabel)}>Gem Mode</div>
-        }
-        right={
-          <div className={classNames(styles.buildInfoValue)}>
-            <input
-              type="checkbox"
-              checked={buildData.gemMode}
-              onChange={(evt) => {
-                onSubmit({
-                  ...buildData,
-                  gemMode: evt.target.checked,
-                });
-              }}
-              aria-label="Gem Mode"
-            />
-          </div>
-        }
-      />
+      {requiredGems?.length > 0 && (
+        <SplitRow
+          left={
+            <div className={classNames(styles.buildInfoLabel)}>Gem Mode</div>
+          }
+          right={
+            <div className={classNames(styles.buildInfoValue)}>
+              <input
+                type="checkbox"
+                checked={buildData.gemMode}
+                onChange={(evt) => {
+                  onSubmit({
+                    ...buildData,
+                    gemMode: evt.target.checked,
+                  });
+                }}
+                aria-label="Gem Mode"
+              />
+            </div>
+          }
+        />
+      )}
     </div>
   );
 }
@@ -104,6 +107,7 @@ export function GemOrderList({ requiredGems, onUpdate }: GemOrderList) {
   for (let i = 0; i < workingGems.length; i++) {
     const requiredGem = workingGems[i];
     taskItems.push({
+      type: 'gem_step',
       isCompletedState: gemProgressSelectorFamily(requiredGem.uid),
       children: (
         <GemOrder
