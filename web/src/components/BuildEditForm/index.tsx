@@ -68,6 +68,26 @@ export function BuildInfoForm({ buildData, onSubmit }: BuildInfoFormProps) {
           </div>
         }
       />
+      <SplitRow
+        left={
+          <div className={classNames(styles.buildInfoLabel)}>Gem Mode</div>
+        }
+        right={
+          <div className={classNames(styles.buildInfoValue)}>
+            <input
+              type="checkbox"
+              checked={buildData.gemMode}
+              onChange={(evt) => {
+                onSubmit({
+                  ...buildData,
+                  gemMode: evt.target.checked,
+                });
+              }}
+              aria-label="Gem Mode"
+            />
+          </div>
+        }
+      />
     </div>
   );
 }
