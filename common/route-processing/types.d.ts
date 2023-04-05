@@ -31,6 +31,7 @@ export namespace RouteData {
     bandit: "None" | "Oak" | "Kraityn" | "Alira";
     leagueStart: boolean;
     library: boolean;
+    gemsOnly: boolean;
   }
 
   export interface BuildTree {
