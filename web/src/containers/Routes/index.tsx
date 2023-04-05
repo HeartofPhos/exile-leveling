@@ -6,7 +6,6 @@ import { TaskListProps } from "../../components/TaskList";
 import { gemProgressSelectorFamily } from "../../state/gem-progress";
 import { routeSelector } from "../../state/route";
 import { routeProgressSelectorFamily } from "../../state/route-progress";
-import { buildDataSelector } from "../../state/build-data";
 import { withBlank } from "../../utility/withBlank";
 import { withScrollRestoration } from "../../utility/withScrollRestoration";
 import { ReactNode } from "react";
@@ -14,10 +13,8 @@ import { useRecoilValue } from "recoil";
 
 function RoutesContainer() {
   const route = useRecoilValue(routeSelector);
-  const buildData = useRecoilValue(buildDataSelector);
 
   const items: ReactNode[] = [];
-
   for (let sectionIndex = 0; sectionIndex < route.length; sectionIndex++) {
     const section = route[sectionIndex];
 
