@@ -23,10 +23,5 @@ export const gemLinksSelector = selector<RouteData.GemLink[]>({
   set: ({ set }, newValue) => {
     const value = newValue instanceof DefaultValue ? null : newValue;
     set(gemLinksAtom, value);
-
-    // for (const key of gemProgressKeys()) {
-    //   const exists = value?.find((x) => x.uid == key) !== undefined;
-    //   if (!exists) set(gemProgressSelectorFamily(key), false);
-    // }
   },
 });

@@ -137,8 +137,6 @@ export function processPob(pobCode: string): PobData | undefined {
     });
   }
 
-  console.log('gemLinks', gemLinks);
-
   return {
     buildData: {
       characterClass: characterClass!,
