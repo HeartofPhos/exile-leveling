@@ -11,14 +11,14 @@ import { withScrollRestoration } from "../../utility/withScrollRestoration";
 import { ReactNode } from "react";
 import { useRecoilValue } from "recoil";
 
-const showGemsOnly = false;
+const showGemsOnly = true;
 
-function FilterGemsOnly(taskItems: TaskListItem[]) {
+function filterGemsOnly(taskItems: TaskListItem[]) {
   const newTasksItems = [];
   for (let i = 0; i < taskItems.length; i++) {
     const nextStep: TaskListItem | undefined = taskItems[i+1];
 
-    if (taskItems[i].type === "fragment_Step" && nextStep?.type !== "gem_step") {
+    if (taskItems[i].type === "fragment_step" && nextStep?.type !== "gem_step") {
       continue;
     }
 
@@ -42,7 +42,7 @@ function RoutesContainer() {
 
       if (step.type == "fragment_step")
         taskItems.push({
-          type: "fragment_Step",
+          type: "fragment_step",
           key: stepIndex,
           isCompletedState: routeProgressSelectorFamily(
             [sectionIndex, stepIndex].toString()
@@ -66,7 +66,7 @@ function RoutesContainer() {
     }
 
     if (showGemsOnly) {
-      taskItems = FilterGemsOnly(taskItems);
+      taskItems = filterGemsOnly(taskItems);
     }
 
     items.push(
