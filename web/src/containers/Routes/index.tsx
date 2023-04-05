@@ -12,7 +12,7 @@ import { withScrollRestoration } from "../../utility/withScrollRestoration";
 import { ReactNode } from "react";
 import { useRecoilValue } from "recoil";
 
-function gemOnlyFilter(taskItems: TaskListItem[]) {
+function filterGemsOnly(taskItems: TaskListItem[]) {
   return taskItems.filter((item, index) => {
     const nextStep = taskItems[index + 1]
     if (!nextStep && item.type !== 'gem_step') return;
@@ -27,6 +27,7 @@ function RoutesContainer() {
   const buildData = useRecoilValue(buildDataSelector);
 
   const items: ReactNode[] = [];
+
   for (let sectionIndex = 0; sectionIndex < route.length; sectionIndex++) {
     const section = route[sectionIndex];
 
@@ -60,7 +61,7 @@ function RoutesContainer() {
     }
 
     if (buildData.gemMode) {
-      taskItems = gemOnlyFilter(taskItems);
+      taskItems = filterGemsOnly(taskItems);
     }
 
     items.push(
