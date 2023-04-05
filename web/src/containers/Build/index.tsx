@@ -26,7 +26,6 @@ function BuildContainer() {
     <div>
       <BuildInfoForm
         buildData={buildData}
-        requiredGems={requiredGems}
         onSubmit={(buildData) => {
           setBuildData(buildData);
         }}

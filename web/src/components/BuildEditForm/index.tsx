@@ -8,11 +8,10 @@ import classNames from "classnames";
 
 interface BuildInfoFormProps {
   buildData: RouteData.BuildData;
-  requiredGems: RouteData.RequiredGem[];
   onSubmit: (buildData: RouteData.BuildData) => void;
 }
 
-export function BuildInfoForm({ buildData, requiredGems, onSubmit }: BuildInfoFormProps) {
+export function BuildInfoForm({ buildData, onSubmit }: BuildInfoFormProps) {
   return (
     <div className={classNames(styles.buildInfo)}>
       <SplitRow
@@ -69,28 +68,26 @@ export function BuildInfoForm({ buildData, requiredGems, onSubmit }: BuildInfoFo
           </div>
         }
       />
-      {requiredGems?.length > 0 && (
-        <SplitRow
-          left={
-            <div className={classNames(styles.buildInfoLabel)}>Gems Only</div>
-          }
-          right={
-            <div className={classNames(styles.buildInfoValue)}>
-              <input
-                type="checkbox"
-                checked={buildData.gemsOnly}
-                onChange={(evt) => {
-                  onSubmit({
-                    ...buildData,
-                    gemsOnly: evt.target.checked,
-                  });
-                }}
-                aria-label="Gems Only"
-              />
-            </div>
-          }
-        />
-      )}
+      <SplitRow
+        left={
+          <div className={classNames(styles.buildInfoLabel)}>Gems Only</div>
+        }
+        right={
+          <div className={classNames(styles.buildInfoValue)}>
+            <input
+              type="checkbox"
+              checked={buildData.gemsOnly}
+              onChange={(evt) => {
+                onSubmit({
+                  ...buildData,
+                  gemsOnly: evt.target.checked,
+                });
+              }}
+              aria-label="Gems Only"
+            />
+          </div>
+        }
+      />
     </div>
   );
 }
