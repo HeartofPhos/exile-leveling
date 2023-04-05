@@ -107,7 +107,6 @@ export function GemOrderList({ requiredGems, onUpdate }: GemOrderList) {
   for (let i = 0; i < workingGems.length; i++) {
     const requiredGem = workingGems[i];
     taskItems.push({
-      type: 'gem_step',
       isCompletedState: gemProgressSelectorFamily(requiredGem.uid),
       children: (
         <GemOrder
