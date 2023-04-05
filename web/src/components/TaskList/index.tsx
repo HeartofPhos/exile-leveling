@@ -30,9 +30,8 @@ function TaskListItem({ children, isCompletedState }: TaskItemProps) {
   );
 }
 
-export type TaskListItem = (TaskItemProps & { key?: React.Key, type?: 'fragment_step' | 'gem_step' })
 export interface TaskListProps {
-  items?: TaskListItem[];
+  items?: (TaskItemProps & { key?: React.Key })[];
 }
 
 export function TaskList({ items }: TaskListProps) {

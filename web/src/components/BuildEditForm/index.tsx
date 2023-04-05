@@ -72,20 +72,20 @@ export function BuildInfoForm({ buildData, requiredGems, onSubmit }: BuildInfoFo
       {requiredGems?.length > 0 && (
         <SplitRow
           left={
-            <div className={classNames(styles.buildInfoLabel)}>Gem Mode</div>
+            <div className={classNames(styles.buildInfoLabel)}>Gems Only</div>
           }
           right={
             <div className={classNames(styles.buildInfoValue)}>
               <input
                 type="checkbox"
-                checked={buildData.gemMode}
+                checked={buildData.gemsOnly}
                 onChange={(evt) => {
                   onSubmit({
                     ...buildData,
-                    gemMode: evt.target.checked,
+                    gemsOnly: evt.target.checked,
                   });
                 }}
-                aria-label="Gem Mode"
+                aria-label="Gems Only"
               />
             </div>
           }

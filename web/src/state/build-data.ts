@@ -21,7 +21,7 @@ export const buildDataSelector = selector<RouteData.BuildData>({
         bandit: "None",
         leagueStart: true,
         library: true,
-        gemMode: false,
+        gemsOnly: false,
       };
 
     return value;

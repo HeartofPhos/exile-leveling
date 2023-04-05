@@ -2,7 +2,7 @@ import { ExileFragmentStep } from "../../components/ExileFragment";
 import { GemReward } from "../../components/ItemReward";
 import { SectionHolder } from "../../components/SectionHolder";
 import { Sidebar } from "../../components/Sidebar";
-import { TaskListItem, TaskListProps } from "../../components/TaskList";
+import { TaskListProps } from "../../components/TaskList";
 import { gemProgressSelectorFamily } from "../../state/gem-progress";
 import { routeSelector } from "../../state/route";
 import { routeProgressSelectorFamily } from "../../state/route-progress";
@@ -11,16 +11,6 @@ import { withBlank } from "../../utility/withBlank";
 import { withScrollRestoration } from "../../utility/withScrollRestoration";
 import { ReactNode } from "react";
 import { useRecoilValue } from "recoil";
-
-function filterGemsOnly(taskItems: TaskListItem[]) {
-  return taskItems.filter((item, index) => {
-    const nextStep = taskItems[index + 1]
-    if (!nextStep && item.type !== 'gem_step') return;
-    if (item.type === 'fragment_step' && nextStep.type !== 'gem_step') return;
-
-    return true;
-  })
-}
 
 function RoutesContainer() {
   const route = useRecoilValue(routeSelector);
@@ -37,7 +27,6 @@ function RoutesContainer() {
 
       if (step.type == "fragment_step")
         taskItems.push({
-          type: step.type,
           key: stepIndex,
           isCompletedState: routeProgressSelectorFamily(
             [sectionIndex, stepIndex].toString()
@@ -47,7 +36,6 @@ function RoutesContainer() {
 
       if (step.type == "gem_step")
         taskItems.push({
-          type: step.type,
           key: step.requiredGem.uid,
           isCompletedState: gemProgressSelectorFamily(step.requiredGem.uid),
           children: (
@@ -58,10 +46,6 @@ function RoutesContainer() {
             />
           ),
         });
-    }
-
-    if (buildData.gemMode) {
-      taskItems = filterGemsOnly(taskItems);
     }
 
     items.push(
