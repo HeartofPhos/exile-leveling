@@ -1,7 +1,7 @@
 .viewer {
   display: flex;
   flex-direction: column;
-  width: 20rem;
+  width: 100%;
   min-height: 10rem;
 }
 

@@ -32,40 +32,40 @@ export function GemLinkViewer({ gemLinks }: GemLinkViewerProps) {
 
   const activeGemLinks: RouteData.GemLink[] = gemLinks.filter(link => link.title === gemSections[curIndex]);
   return (
-    <>
+    <div className={classNames(styles.gemLinks)}>
       <label className={classNames(styles.label)}>
         {gemSections.length > 0 && (gemSections[curIndex] || "Default")}
       </label>
       {activeGemLinks.length > 0 && (
         <div className={classNames(styles.gemLinkSection)}>
-            {activeGemLinks.map(({ gems: activeGems }) => {
-              const sortedGems = activeGems.map(gem => ({ ...gem, isSkillGem: gem.id.includes('SkillGem')})).sort((gem1, gem2) => {
-                return (gem2.isSkillGem ? 1 : 0) - (gem1.isSkillGem ? 1 : 0);
-              })
-              return (
-                <div className={classNames(styles.gemLinkRow)}>
-                  {sortedGems.map((gem) => {
-                    const gemData = gems[gem.id];
-                    return (
-                        <div className={gem.isSkillGem ? styles.skillGem : styles.supportGem} key={gem.uid}>
-                          <MdCircle
-                            color={gemColours[gemData.primary_attribute]}
-                            className={classNames("inlineIcon")}
-                          />
-                          <span>{gemData.name}</span>
-                        </div>
-                      )
-                  })}
-                </div>
-              )
-            })}
+          {activeGemLinks.map(({ gems: activeGems }) => {
+            const sortedGems = activeGems.map(gem => ({ ...gem, isSkillGem: gem.id.includes('SkillGem') })).sort((gem1, gem2) => {
+              return (gem2.isSkillGem ? 1 : 0) - (gem1.isSkillGem ? 1 : 0);
+            })
+            return (
+              <div className={classNames(styles.gemLinkRow)}>
+                {sortedGems.map((gem) => {
+                  const gemData = gems[gem.id];
+                  return (
+                    <div className={gem.isSkillGem ? styles.skillGem : styles.supportGem} key={gem.uid}>
+                      <MdCircle
+                        color={gemColours[gemData.primary_attribute]}
+                        className={classNames("inlineIcon")}
+                      />
+                      <span>{gemData.name}</span>
+                    </div>
+                  )
+                })}
+              </div>
+            )
+          })}
         </div>
       )}
       <div className={classNames(styles.buttons)}>
         <button
           className={classNames(formStyles.formButton, styles.button)}
           onClick={() => {
-          if (curIndex > 0) setCurIndex(curIndex - 1);
+            if (curIndex > 0) setCurIndex(curIndex - 1);
           }}
         >
           <HiChevronLeft />
@@ -73,12 +73,12 @@ export function GemLinkViewer({ gemLinks }: GemLinkViewerProps) {
         <button
           className={classNames(formStyles.formButton, styles.button)}
           onClick={() => {
-          if (curIndex < gemSections.length - 1) setCurIndex(curIndex + 1);
+            if (curIndex < gemSections.length - 1) setCurIndex(curIndex + 1);
           }}
         >
           <HiChevronRight />
         </button>
       </div>
-    </>
+    </div>
   );
 }
