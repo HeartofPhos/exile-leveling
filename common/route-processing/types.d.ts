@@ -32,6 +32,7 @@ export namespace RouteData {
     leagueStart: boolean;
     library: boolean;
     gemsOnly: boolean;
+    displayGemLinks: boolean;
   }
 
   export interface BuildTree {

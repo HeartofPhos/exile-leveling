@@ -144,6 +144,7 @@ export function processPob(pobCode: string): PobData | undefined {
       leagueStart: true,
       library: true,
       gemsOnly: false,
+      displayGemLinks: true,
     },
     requiredGems,
     buildTrees,

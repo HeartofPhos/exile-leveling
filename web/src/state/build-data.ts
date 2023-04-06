@@ -22,6 +22,7 @@ export const buildDataSelector = selector<RouteData.BuildData>({
         leagueStart: true,
         library: true,
         gemsOnly: false,
+        displayGemLinks: true,
       };
 
     return value;

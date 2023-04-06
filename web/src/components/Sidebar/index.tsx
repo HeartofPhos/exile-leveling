@@ -1,6 +1,7 @@
 import { searchStringsAtom } from "../../state/search-strings";
 import { gemLinksSelector } from "../../state/gem-links";
 import { urlTreesSelector } from "../../state/tree/url-tree";
+import { buildDataSelector } from "../../state/build-data";
 import { borderListStyles } from "../BorderList";
 import { PassiveTreeViewer } from "../PassiveTreeViewer";
 import styles from "./styles.module.css";
@@ -13,6 +14,7 @@ import { useRecoilValue } from "recoil";
 import { GemLinkViewer } from "../GemLinkViewer";
 
 export function Sidebar() {
+  const buildData = useRecoilValue(buildDataSelector);
   const searchStrings = useRecoilValue(searchStringsAtom);
   const { urlTrees } = useRecoilValue(urlTreesSelector);
   const gemLinks = useRecoilValue(gemLinksSelector);
@@ -28,7 +30,7 @@ export function Sidebar() {
     );
   }
 
-  if (gemLinks.length > 0) {
+  if (buildData.displayGemLinks && gemLinks.length > 0) {
     children.push(
       <>
         <hr />
