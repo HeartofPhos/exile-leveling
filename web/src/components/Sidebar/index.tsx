@@ -10,6 +10,7 @@ import React from "react";
 import { FaRegClipboard } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useRecoilValue } from "recoil";
+import { GemLinkViewer } from "../GemLinkViewer";
 
 export function Sidebar() {
   const searchStrings = useRecoilValue(searchStringsAtom);
@@ -22,9 +23,18 @@ export function Sidebar() {
     children.push(
       <>
         <hr />
-        <PassiveTreeViewer urlTrees={urlTrees} gemLinks={gemLinks} />
+        <PassiveTreeViewer urlTrees={urlTrees} />
       </>
     );
+  }
+
+  if (gemLinks.length > 0) {
+    children.push(
+      <>
+        <hr />
+        <GemLinkViewer gemLinks={gemLinks} />
+      </>
+    )
   }
 
   if (searchStrings !== null && searchStrings.length > 0) {

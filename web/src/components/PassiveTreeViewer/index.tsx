@@ -1,6 +1,4 @@
-import { gemColours, gems } from "../../../../common/data";
 import { PassiveTree } from "../../../../common/data/tree";
-import { RouteData } from "../../../../common/route-processing/types";
 import { TREE_DATA_LOOKUP } from "../../state/tree";
 import { UrlTree } from "../../state/tree/url-tree";
 import { randomId } from "../../utility";
@@ -18,7 +16,6 @@ import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
 interface PassiveTreeViewerProps {
   urlTrees: UrlTree.Data[];
-  gemLinks: RouteData.GemLink[];
 }
 
 interface RenderData {
@@ -29,7 +26,7 @@ interface RenderData {
   masteryInfos: UrlTreeDelta["masteryInfos"];
 }
 
-export function PassiveTreeViewer({ urlTrees, gemLinks }: PassiveTreeViewerProps) {
+export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
   const svgDivRef = useRef<HTMLDivElement>(null);
   const [curIndex, setCurIndex] = useState<number>(0);
   const [renderData, setRenderData] = useState<RenderData>();
@@ -121,8 +118,6 @@ export function PassiveTreeViewer({ urlTrees, gemLinks }: PassiveTreeViewerProps
     }
   }, [svgDivRef, renderData]);
 
-  const activeGemLinks: RouteData.GemLink[] = gemLinks.filter(link => link?.title === urlTrees[curIndex]?.name)
-
   return (
     <>
       {renderData && (
@@ -143,20 +138,6 @@ export function PassiveTreeViewer({ urlTrees, gemLinks }: PassiveTreeViewerProps
           <label className={classNames(styles.label)}>
             {urlTrees.length > 0 && (urlTrees[curIndex].name || "Default")}
           </label>
-          {activeGemLinks.length > 0 && (
-            <div className={classNames(styles.gemLinkSection)}>
-              {activeGemLinks.map(({ gems: activeGems }) => (
-                <div className={classNames(styles.gemLinkRow)}>
-                  {activeGems.map((gem, index) => {
-                    const gemData = gems[gem.id];
-                    return (
-                      <span className={index === 0 ? styles.primaryGem : styles.supportGem} key={gem.uid} style={{ color: gemColours[gemData.primary_attribute] }}>{gemData.name}</span>
-                    )
-                  })}
-                </div>
-              ))}
-            </div>
-          )}
           <div className={classNames(styles.buttons)}>
             <button
               className={classNames(formStyles.formButton, styles.button)}
