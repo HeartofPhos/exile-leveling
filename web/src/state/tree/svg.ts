@@ -94,14 +94,14 @@ export function buildTemplate(
         ? ASCENDANCY_ASCENDANT_BORDER_RADIUS
         : ASCENDANCY_BORDER_RADIUS;
 
-    svg += `<g class="${ASCENDANCY_CLASS} ${ascendancy.name}">`;
+    svg += `<g class="${ASCENDANCY_CLASS} ${ascendancy.name}">\n`;
     svg += `<circle cx="${startNode.x}" cy="${startNode.y}" r="${radius}" class="${BORDER_CLASS}"/>\n`;
     svg += buildSubTree(
       tree.graphs[ascendancy.graphIndex],
       nodeLookup,
       ASCENDANCY_CONSTANTS
     );
-    svg += `</g>`;
+    svg += `</g>\n`;
   }
 
   svg += `</svg>\n`;
@@ -208,9 +208,9 @@ function buildNode(
   if (constants === undefined) throw `missing constant, ${node.k}`;
 
   let template = ``;
-  template += `<circle cx="${node.x}" cy="${node.y}" id="n${nodeId}" r="${constants.radius}" class="${constants.class}">`;
-  if (node.text) template += `<title>${node.text}</title>`;
-  template += `</circle>`;
+  template += `<circle cx="${node.x}" cy="${node.y}" id="n${nodeId}" r="${constants.radius}" class="${constants.class}">\n`;
+  if (node.text) template += `<title>${node.text}</title>\n`;
+  template += `</circle>\n`;
 
   return template;
 }
