@@ -1,3 +1,4 @@
+import { MdCircle } from "react-icons/md";
 import { gemColours, gems } from "../../../../common/data";
 import { RouteData } from "../../../../common/route-processing/types";
 import { formStyles } from "../Form";
@@ -37,16 +38,27 @@ export function GemLinkViewer({ gemLinks }: GemLinkViewerProps) {
       </label>
       {activeGemLinks.length > 0 && (
         <div className={classNames(styles.gemLinkSection)}>
-            {activeGemLinks.map(({ gems: activeGems }) => (
-            <div className={classNames(styles.gemLinkRow)}>
-              {activeGems.map((gem, index) => {
-                const gemData = gems[gem.id];
-                return (
-                    <span className={index === 0 ? styles.primaryGem : styles.supportGem} key={gem.uid} style={{ color: gemColours[gemData.primary_attribute] }}>{gemData.name}</span>
-                )
-              })}
-            </div>
-            ))}
+            {activeGemLinks.map(({ gems: activeGems }) => {
+              const sortedGems = activeGems.map(gem => ({ ...gem, isSkillGem: gem.id.includes('SkillGem')})).sort((gem1, gem2) => {
+                return (gem2.isSkillGem ? 1 : 0) - (gem1.isSkillGem ? 1 : 0);
+              })
+              return (
+                <div className={classNames(styles.gemLinkRow)}>
+                  {sortedGems.map((gem) => {
+                    const gemData = gems[gem.id];
+                    return (
+                        <div className={gem.isSkillGem ? styles.skillGem : styles.supportGem} key={gem.uid}>
+                          <MdCircle
+                            color={gemColours[gemData.primary_attribute]}
+                            className={classNames("inlineIcon")}
+                          />
+                          <span>{gemData.name}</span>
+                        </div>
+                      )
+                  })}
+                </div>
+              )
+            })}
         </div>
       )}
       <div className={classNames(styles.buttons)}>
