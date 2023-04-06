@@ -24,7 +24,7 @@
 .gemLinkSection {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--size-3);
 }
 
 .gemLinkRow {
@@ -37,5 +37,5 @@
 }
 
 .supportGem {
-  margin-left: 12px;
+  margin-left: var(--size-4);
 }
