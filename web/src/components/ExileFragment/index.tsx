@@ -1,4 +1,4 @@
-import { areas, quests } from "../../../../common/data";
+import { Data } from "../../../../common/data";
 import { Fragments } from "../../../../common/route-processing/fragment/types";
 import { RouteData } from "../../../../common/route-processing/types";
 import { GameData } from "../../../../common/types";
@@ -47,7 +47,7 @@ function AreaComponent(name: string, isTownArea: boolean) {
 }
 
 function QuestComponent(fragment: Fragments.QuestFragment) {
-  const quest = quests[fragment.questId];
+  const quest = Data.Quests[fragment.questId];
 
   const npcs = Array.from(
     new Set(
@@ -208,20 +208,20 @@ export function ExileFragment({ fragment }: FragmentProps) {
     case "arena":
       return AreaComponent(fragment.value, false);
     case "area": {
-      const area = areas[fragment.areaId];
+      const area = Data.Areas[fragment.areaId];
       return AreaComponent(area.name, area.is_town_area);
     }
     case "enter": {
-      const area = areas[fragment.areaId];
+      const area = Data.Areas[fragment.areaId];
       return AreaComponent(area.name, area.is_town_area);
     }
     case "logout":
-      return LogoutComponent(areas[fragment.areaId]);
+      return LogoutComponent(Data.Areas[fragment.areaId]);
     case "waypoint":
       return WaypointComponent();
     case "waypoint_use": {
-      const dstArea = areas[fragment.dstAreaId];
-      const srcArea = areas[fragment.srcAreaId];
+      const dstArea = Data.Areas[fragment.dstAreaId];
+      const srcArea = Data.Areas[fragment.srcAreaId];
       return (
         <>
           {WaypointComponent()}
@@ -240,7 +240,7 @@ export function ExileFragment({ fragment }: FragmentProps) {
     case "waypoint_get":
       return WaypointComponent();
     case "portal_use":
-      return PortalComponent(areas[fragment.dstAreaId]);
+      return PortalComponent(Data.Areas[fragment.dstAreaId]);
     case "portal_set":
       return PortalComponent();
     case "quest": {

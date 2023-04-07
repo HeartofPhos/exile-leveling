@@ -1,4 +1,4 @@
-import { gemColours, gems } from "../../../../common/data";
+import { Data } from "../../../../common/data";
 import { RouteData } from "../../../../common/route-processing/types";
 import { InlineFakeBlock } from "../InlineFakeBlock";
 import { SplitRow } from "../SplitRow";
@@ -51,7 +51,7 @@ interface GemRewardProps {
 }
 
 export function GemReward({ requiredGem, rewardType }: GemRewardProps) {
-  const gem = gems[requiredGem.id];
+  const gem = Data.Gems[requiredGem.id];
 
   if (!gem)
     return (
@@ -66,7 +66,7 @@ export function GemReward({ requiredGem, rewardType }: GemRewardProps) {
       left={
         <>
           <MdCircle
-            color={gemColours[gem.primary_attribute]}
+            color={Data.GemColours[gem.primary_attribute]}
             className={classNames("inlineIcon")}
           />
           <ItemReward item={gem.name} cost={gem.cost} rewardType={rewardType} />

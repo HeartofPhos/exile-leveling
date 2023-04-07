@@ -1,5 +1,5 @@
 import { RouteState } from "..";
-import { areas, killWaypoints, quests } from "../../data";
+import { Data } from "../../data";
 import { GameData } from "../../types";
 import { Pattern, matchPatterns } from "../patterns";
 import { RouteData } from "../types";
@@ -111,7 +111,7 @@ function EvaluateKill(
   // const currentArea = state.areas[state.currentAreaId];
   // if (!currentArea.bosses.some((x) => x.name == bossName)) return false;
 
-  const waypointUnlocks = killWaypoints[bossName];
+  const waypointUnlocks = Data.KillWaypoints[bossName];
   if (waypointUnlocks) {
     for (const waypointUnlock of waypointUnlocks) {
       state.implicitWaypoints.add(waypointUnlock);
@@ -145,7 +145,7 @@ function EvaluateArea(
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
-  const area = areas[rawFragment[1]];
+  const area = Data.Areas[rawFragment[1]];
   if (!area) return ERROR_MISSING_AREA;
 
   return {
@@ -162,7 +162,7 @@ function EvaluateEnter(
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
-  const area = areas[rawFragment[1]];
+  const area = Data.Areas[rawFragment[1]];
   if (!area) return ERROR_MISSING_AREA;
 
   if (!area.connection_ids.some((x) => x == state.currentAreaId))
@@ -184,7 +184,7 @@ function EvaluateLogout(
 ): string | EvaluateResult {
   if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
 
-  const townArea = areas[state.lastTownAreaId];
+  const townArea = Data.Areas[state.lastTownAreaId];
   transitionArea(state, townArea);
   state.portalAreaId = null;
 
@@ -205,7 +205,7 @@ function EvaluateWaypoint(
       return ERROR_INVALID_FORMAT;
 
     if (rawFragment.length == 2) {
-      const area = areas[rawFragment[1]];
+      const area = Data.Areas[rawFragment[1]];
       if (!area) return ERROR_MISSING_AREA;
       if (
         !state.implicitWaypoints.has(area.id) &&
@@ -213,7 +213,7 @@ function EvaluateWaypoint(
       )
         state.logger.warn("missing waypoint");
 
-      const currentArea = areas[state.currentAreaId];
+      const currentArea = Data.Areas[state.currentAreaId];
       if (!currentArea.has_waypoint) state.logger.warn(ERROR_AREA_NO_WAYPOINT);
 
       state.implicitWaypoints.add(currentArea.id);
@@ -244,7 +244,7 @@ function EvaluateGetWaypoint(
 ): string | EvaluateResult {
   if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
 
-  const area = areas[state.currentAreaId];
+  const area = Data.Areas[state.currentAreaId];
   if (!area) return ERROR_MISSING_AREA;
   if (!area.has_waypoint) state.logger.warn(ERROR_AREA_NO_WAYPOINT);
   if (state.implicitWaypoints.has(area.id))
@@ -265,7 +265,7 @@ function EvaluatePortal(
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
-  const currentArea = areas[state.currentAreaId];
+  const currentArea = Data.Areas[state.currentAreaId];
   switch (rawFragment[1]) {
     case "set": {
       if (currentArea.is_town_area) return "portal cannot be set";
@@ -282,13 +282,13 @@ function EvaluatePortal(
         state.portalAreaId = currentArea.id;
 
       if (!state.portalAreaId) return "portal not set";
-      const portalArea = areas[state.portalAreaId];
+      const portalArea = Data.Areas[state.portalAreaId];
 
       if (currentArea.id == portalArea.id) {
         if (!currentArea.parent_town_area_id)
           return "cannot use portal in this area";
 
-        const townArea = areas[currentArea.parent_town_area_id];
+        const townArea = Data.Areas[currentArea.parent_town_area_id];
         transitionArea(state, townArea);
         state.portalAreaId = state.currentAreaId;
       } else if (currentArea.id == portalArea.parent_town_area_id) {
@@ -314,7 +314,7 @@ function EvaluateQuestReward(
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
-  const currentArea = areas[state.currentAreaId];
+  const currentArea = Data.Areas[state.currentAreaId];
   if (!currentArea.is_town_area)
     state.logger.warn("quest_reward used outside of town");
 
@@ -333,7 +333,7 @@ function EvaluateVendorReward(
   if (rawFragment.length != 2 && rawFragment.length != 3)
     return ERROR_INVALID_FORMAT;
 
-  const currentArea = areas[state.currentAreaId];
+  const currentArea = Data.Areas[state.currentAreaId];
   if (!currentArea.is_town_area)
     state.logger.warn("reward_vendor used outside of town");
 
@@ -366,9 +366,9 @@ function EvaluateCrafting(
   if (rawFragment.length > 2) return ERROR_INVALID_FORMAT;
 
   let area;
-  if (rawFragment.length == 1) area = areas[state.currentAreaId];
+  if (rawFragment.length == 1) area = Data.Areas[state.currentAreaId];
   else {
-    area = areas[rawFragment[1]];
+    area = Data.Areas[rawFragment[1]];
     if (!area) return ERROR_MISSING_AREA;
   }
   state.craftingAreas.add(area.id);
@@ -411,7 +411,7 @@ function EvaluateQuest(
     if (rawFragment.length < 2) return ERROR_INVALID_FORMAT;
 
     const questId = rawFragment[1];
-    const quest = quests[questId];
+    const quest = Data.Quests[questId];
     if (!quest) return "invalid quest id";
 
     let rewardOfferIds;
@@ -466,13 +466,13 @@ function EvaluateAscend(
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
   const expectedAreaId = "Labyrinth_Airlock";
-  const currentArea = areas[state.currentAreaId];
+  const currentArea = Data.Areas[state.currentAreaId];
   if (currentArea.id != expectedAreaId) {
-    const expectedArea = areas[expectedAreaId];
+    const expectedArea = Data.Areas[expectedAreaId];
     state.logger.warn(`must be in "${expectedArea.name}"`);
   }
 
-  const townArea = areas[state.lastTownAreaId];
+  const townArea = Data.Areas[state.lastTownAreaId];
   transitionArea(state, townArea);
 
   return {
