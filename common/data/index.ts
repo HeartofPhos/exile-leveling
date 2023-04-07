@@ -8,18 +8,21 @@ import KILL_WAYPOINTS_JSON from "./json/kill-waypoints.json";
 import QUESTS_JSON from "./json/quests.json";
 import VAAL_GEM_LOOKUP_JSON from "./json/vaal-gem-lookup.json";
 
-export const areas = AREAS_JSON as GameData.Areas;
-export const awakenedGemLookup =
-  AWAKENED_GEM_LOOKUP_JSON as GameData.VariantGemLookup;
-export const characters = CHARACTERS_JSON as GameData.Characters;
-export const gemColours = GEM_COLOURS_JSON as GameData.GemColours;
-export const gems = GEMS_JSON as GameData.Gems;
-export const killWaypoints = KILL_WAYPOINTS_JSON as GameData.KillWaypoints;
-export const quests = QUESTS_JSON as GameData.Quests;
-export const vaalGemLookup = VAAL_GEM_LOOKUP_JSON as GameData.VariantGemLookup;
+export namespace Data {
+  export const Areas = AREAS_JSON as GameData.Areas;
+  export const AwakenedGemLookup =
+    AWAKENED_GEM_LOOKUP_JSON as GameData.VariantGemLookup;
+  export const Characters = CHARACTERS_JSON as GameData.Characters;
+  export const GemColours = GEM_COLOURS_JSON as GameData.GemColours;
+  export const Gems = GEMS_JSON as GameData.Gems;
+  export const KillWaypoints = KILL_WAYPOINTS_JSON as GameData.KillWaypoints;
+  export const Quests = QUESTS_JSON as GameData.Quests;
+  export const VaalGemLookup =
+    VAAL_GEM_LOOKUP_JSON as GameData.VariantGemLookup;
 
-//@ts-expect-error
-export const routeSourceLookup: Record<string, string> = import.meta.glob(
-  "./routes/*.txt",
-  { as: "raw" }
-);
+  //@ts-expect-error
+  export const RouteSourceLookup: Record<string, string> = import.meta.glob(
+    "./routes/*.txt",
+    { as: "raw" }
+  );
+}

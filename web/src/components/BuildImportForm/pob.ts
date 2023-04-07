@@ -1,8 +1,4 @@
-import {
-  awakenedGemLookup,
-  gems,
-  vaalGemLookup,
-} from "../../../../common/data";
+import { Data } from "../../../../common/data";
 import { RouteData } from "../../../../common/route-processing/types";
 import { decodeBase64Url, randomId } from "../../utility";
 import pako from "pako";
@@ -33,10 +29,10 @@ function MapGemId(gemId: string) {
   const pobRemapId = GEM_ID_REMAP[gemId];
   if (pobRemapId) gemId = pobRemapId;
 
-  const vaalToNormalId = vaalGemLookup[gemId];
+  const vaalToNormalId = Data.VaalGemLookup[gemId];
   if (vaalToNormalId) gemId = vaalToNormalId;
 
-  const awakenedToNormalId = awakenedGemLookup[gemId];
+  const awakenedToNormalId = Data.AwakenedGemLookup[gemId];
   if (awakenedToNormalId) gemId = awakenedToNormalId;
 
   return gemId;
@@ -90,7 +86,7 @@ function processSkills(
           requiredGems.push(gem);
         }
 
-        if (gems[gemId].is_support) secondaryGemIds.push(gemId);
+        if (Data.Gems[gemId].is_support) secondaryGemIds.push(gemId);
         else primaryGemIds.push(gemId);
       }
     }
