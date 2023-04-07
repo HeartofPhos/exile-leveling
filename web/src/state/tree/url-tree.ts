@@ -47,8 +47,10 @@ export async function buildUrlTree(
   const data = /.*\/(.*?)$/.exec(buildTree.url)?.[1];
   if (!data) throw `invalid url ${buildTree.url}`;
 
-  const [passiveTree, nodeLookup] = await TREE_DATA_LOOKUP[buildTree.version];
-  if (passiveTree === undefined) throw `invalid version ${buildTree.version}`;
+  const lookup = TREE_DATA_LOOKUP[buildTree.version];
+  if (lookup === undefined) throw `invalid version ${buildTree.version}`;
+
+  const [passiveTree, nodeLookup] = await lookup;
 
   const buffer = decodeBase64Url(data);
 

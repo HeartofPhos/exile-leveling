@@ -1,0 +1,30 @@
+{
+  "Marauder": {
+    "start_gem_id": "Metadata/Items/Gems/SkillGemHeavyStrike",
+    "chest_gem_id": "Metadata/Items/Gems/SupportGemRuthless"
+  },
+  "Witch": {
+    "start_gem_id": "Metadata/Items/Gems/SkillGemFireball",
+    "chest_gem_id": "Metadata/Items/Gems/SupportGemArcaneSurge"
+  },
+  "Scion": {
+    "start_gem_id": "Metadata/Items/Gems/SkillGemThrownWeapon",
+    "chest_gem_id": "Metadata/Items/Gems/SupportGemOnslaught"
+  },
+  "Ranger": {
+    "start_gem_id": "Metadata/Items/Gems/SkillGemBurningArrow",
+    "chest_gem_id": "Metadata/Items/Gems/SupportGemPierce"
+  },
+  "Duelist": {
+    "start_gem_id": "Metadata/Items/Gems/SkillGemDoubleStrike",
+    "chest_gem_id": "Metadata/Items/Gems/SupportGemChanceToBleed"
+  },
+  "Shadow": {
+    "start_gem_id": "Metadata/Items/Gems/SkillGemViperStrike",
+    "chest_gem_id": "Metadata/Items/Gems/SupportGemLesserPoison"
+  },
+  "Templar": {
+    "start_gem_id": "Metadata/Items/Gems/SkillGemGlacialHammer",
+    "chest_gem_id": "Metadata/Items/Gems/SupportGemElementalProliferation"
+  }
+}

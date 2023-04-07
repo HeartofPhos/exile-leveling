@@ -5,13 +5,20 @@ export namespace GameData {
   export type Gems = Record<Gem["id"], Gem>;
   export type VariantGemLookup = Record<Gem["id"], Gem["id"]>;
   export type GemColours = Record<Gem["primary_attribute"], string>;
+  export type Characters = Record<string, Character>;
 
   export interface Gem {
     id: string;
     name: string;
     primary_attribute: string;
     required_level: number;
+    is_support: boolean;
     cost: string;
+  }
+
+  export interface Character {
+    start_gem_id: string;
+    chest_gem_id: string;
   }
 
   export interface QuestReward {
