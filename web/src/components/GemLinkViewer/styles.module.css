@@ -30,7 +30,6 @@
 .gemLinkSection {
   display: flex;
   flex-direction: column;
-  gap: var(--size-3);
 }
 
 .gemLinkRow {
@@ -38,10 +37,10 @@
   flex-direction: column;
 }
 
-.skillGem {
+.gemPrimary {
   font-weight: bold;
 }
 
-.supportGem {
+.gemSecondary {
   margin-left: var(--size-4);
 }

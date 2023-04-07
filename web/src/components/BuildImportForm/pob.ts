@@ -1,4 +1,8 @@
-import { awakenedGemLookup, vaalGemLookup } from "../../../../common/data";
+import {
+  awakenedGemLookup,
+  gems,
+  vaalGemLookup,
+} from "../../../../common/data";
 import { RouteData } from "../../../../common/route-processing/types";
 import { decodeBase64Url, randomId } from "../../utility";
 import pako from "pako";
@@ -70,7 +74,8 @@ function processSkills(
     const gemElements = Array.from(skillElement.getElementsByTagName("Gem"));
     if (gemElements.length == 0) recentEmptySkillLabel = skillLabel;
 
-    const gemLink: RouteData.GemLink = { title: recentEmptySkillLabel || parentTitle, gems: [] };
+    let primaryGemIds: string[] = [];
+    let secondaryGemIds: string[] = [];
     for (const gemElement of gemElements) {
       const attribute = gemElement.attributes.getNamedItem("gemId");
       if (attribute) {
@@ -84,10 +89,24 @@ function processSkills(
         if (!requiredGems.some((x) => x.id == gemId)) {
           requiredGems.push(gem);
         }
-        gemLink.gems.push(gem);
+
+        if (gems[gemId].is_support) secondaryGemIds.push(gemId);
+        else primaryGemIds.push(gemId);
       }
     }
-    gemLinks.push(gemLink)
+
+    if (primaryGemIds.length > 0)
+      gemLinks.push({
+        title: recentEmptySkillLabel || parentTitle,
+        primaryGemIds: primaryGemIds,
+        secondaryGemIds: secondaryGemIds,
+      });
+    else
+      gemLinks.push({
+        title: recentEmptySkillLabel || parentTitle,
+        primaryGemIds: secondaryGemIds,
+        secondaryGemIds: [],
+      });
   }
 }
 
