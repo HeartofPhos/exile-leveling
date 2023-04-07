@@ -5,6 +5,7 @@ import { buildDataSelector } from "../../state/build-data";
 import { requiredGemsSelector } from "../../state/gem";
 import { searchStringsAtom } from "../../state/search-strings";
 import { buildTreesSelector } from "../../state/tree/build-tree";
+import { gemLinksSelector } from "../../state/gem-links";
 import { withBlank } from "../../utility/withBlank";
 import { withScrollRestoration } from "../../utility/withScrollRestoration";
 import styles from "./styles.module.css";
@@ -21,6 +22,9 @@ function BuildContainer() {
   const [buildTrees, setBuildTreesSelector] =
     useRecoilState(buildTreesSelector);
   const resetBuildTreesSelector = useResetRecoilState(buildTreesSelector);
+  
+  const [gemLinks, setGemLinks] = useRecoilState(gemLinksSelector);
+  const resetGemLinks = useResetRecoilState(gemLinksSelector)
 
   return (
     <div>
@@ -38,11 +42,13 @@ function BuildContainer() {
             setBuildData(pobData.buildData);
             setRequiredGems(pobData.requiredGems);
             setBuildTreesSelector(pobData.buildTrees);
+            setGemLinks(pobData.gemLinks);
           }}
           onReset={() => {
             resetBuildData();
             resetRequiredGems();
             resetBuildTreesSelector();
+            resetGemLinks();
           }}
         />
       </div>

@@ -1,16 +1,7 @@
-.viewer {
+.gemLinks {
   display: flex;
   flex-direction: column;
   width: 100%;
-  min-height: 10rem;
-}
-
-.viewport {
-  flex: 20rem;
-  border-style: solid;
-  border-width: var(--border-width);
-  border-color: var(--accent-primary);
-  border-radius: var(--border-radius);
 }
 
 .label {
@@ -34,4 +25,24 @@
   align-content: center;
   height: var(--line-height);
   flex: 1;
+}
+
+.gemLinkSection {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  max-height: 15rem;
+}
+
+.gemLinkRow {
+  display: flex;
+  flex-direction: column;
+}
+
+.gemPrimary {
+  font-weight: bold;
+}
+
+.gemSecondary {
+  margin-left: var(--size-4);
 }

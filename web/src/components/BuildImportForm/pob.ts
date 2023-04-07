@@ -54,6 +54,7 @@ const POB_COLOUR_REGEX = /\^(x[a-zA-Z0-9]{6}|[0-9])/;
 
 function processSkills(
   requiredGems: RouteData.RequiredGem[],
+  gemLinks: RouteData.GemLink[],
   parentElement: Element,
   parentTitle: string | undefined
 ) {
@@ -69,21 +70,39 @@ function processSkills(
     const gemElements = Array.from(skillElement.getElementsByTagName("Gem"));
     if (gemElements.length == 0) recentEmptySkillLabel = skillLabel;
 
+    let primaryGemIds: string[] = [];
+    let secondaryGemIds: string[] = [];
     for (const gemElement of gemElements) {
       const attribute = gemElement.attributes.getNamedItem("gemId");
       if (attribute) {
         const gemId = MapGemId(attribute.value);
+        const note = recentEmptySkillLabel || parentTitle || skillLabel || "";
+        const gem = {
+          id: gemId,
+          uid: randomId(6),
+          note: note.replace(POB_COLOUR_REGEX, ""),
+        };
         if (!requiredGems.some((x) => x.id == gemId)) {
-          const note = recentEmptySkillLabel || parentTitle || skillLabel || "";
-
-          requiredGems.push({
-            id: gemId,
-            uid: randomId(6),
-            note: note.replace(POB_COLOUR_REGEX, ""),
-          });
+          requiredGems.push(gem);
         }
+
+        if (Data.Gems[gemId].is_support) secondaryGemIds.push(gemId);
+        else primaryGemIds.push(gemId);
       }
     }
+
+    if (primaryGemIds.length > 0)
+      gemLinks.push({
+        title: recentEmptySkillLabel || parentTitle,
+        primaryGemIds: primaryGemIds,
+        secondaryGemIds: secondaryGemIds,
+      });
+    else
+      gemLinks.push({
+        title: recentEmptySkillLabel || parentTitle,
+        primaryGemIds: secondaryGemIds,
+        secondaryGemIds: [],
+      });
   }
 }
 
@@ -91,6 +110,7 @@ export interface PobData {
   buildData: RouteData.BuildData;
   requiredGems: RouteData.RequiredGem[];
   buildTrees: RouteData.BuildTree[];
+  gemLinks: RouteData.GemLink[];
 }
 
 export function processPob(pobCode: string): PobData | undefined {
@@ -101,17 +121,19 @@ export function processPob(pobCode: string): PobData | undefined {
     return undefined;
   }
   const requiredGems: RouteData.RequiredGem[] = [];
+  const gemLinks: RouteData.GemLink[] = [];
   const skillSetElements = Array.from(doc.getElementsByTagName("SkillSet"));
   if (skillSetElements.length > 0) {
     for (const skillSetElement of skillSetElements) {
       processSkills(
         requiredGems,
+        gemLinks,
         skillSetElement,
         skillSetElement.attributes.getNamedItem("title")?.value
       );
     }
   } else {
-    processSkills(requiredGems, doc.documentElement, undefined);
+    processSkills(requiredGems, gemLinks, doc.documentElement, undefined);
   }
 
   const buildElement = Array.from(doc.getElementsByTagName("Build"));
@@ -136,9 +158,11 @@ export function processPob(pobCode: string): PobData | undefined {
       bandit: bandit as RouteData.BuildData["bandit"],
       leagueStart: true,
       library: true,
+      gemLinks: true,
       gemsOnly: false,
     },
     requiredGems,
     buildTrees,
+    gemLinks,
   };
 }
