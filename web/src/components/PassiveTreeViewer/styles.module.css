@@ -6,7 +6,8 @@
 }
 
 .viewport {
-  flex: 20rem;
+  display: flex;
+  flex-basis: 20rem;
   border-style: solid;
   border-width: var(--border-width);
   border-color: var(--accent-primary);
