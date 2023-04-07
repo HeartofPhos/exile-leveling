@@ -1,5 +1,6 @@
 import { Data } from "../../../../common/data";
 import { RouteData } from "../../../../common/route-processing/types";
+import { GameData } from "../../../../common/types";
 import { decodeBase64Url, randomId } from "../../utility";
 import pako from "pako";
 
@@ -55,6 +56,7 @@ const POB_COLOUR_REGEX = /\^(x[a-zA-Z0-9]{6}|[0-9])/;
 function processSkills(
   requiredGems: RouteData.RequiredGem[],
   gemLinks: RouteData.GemLink[],
+  character: GameData.Character,
   parentElement: Element,
   parentTitle: string | undefined
 ) {
@@ -82,7 +84,12 @@ function processSkills(
           uid: randomId(6),
           note: note.replace(POB_COLOUR_REGEX, ""),
         };
-        if (!requiredGems.some((x) => x.id == gemId)) {
+
+        if (
+          character.start_gem_id !== gemId &&
+          character.chest_gem_id !== gemId &&
+          !requiredGems.some((x) => x.id === gemId)
+        ) {
           requiredGems.push(gem);
         }
 
@@ -120,6 +127,16 @@ export function processPob(pobCode: string): PobData | undefined {
   } catch (e) {
     return undefined;
   }
+
+  const buildElement = Array.from(doc.getElementsByTagName("Build"));
+
+  const characterClass =
+    buildElement[0].attributes.getNamedItem("className")?.value!;
+  const character = Data.Characters[characterClass];
+
+  const bandit =
+    buildElement[0].attributes.getNamedItem("bandit")?.value || "None";
+
   const requiredGems: RouteData.RequiredGem[] = [];
   const gemLinks: RouteData.GemLink[] = [];
   const skillSetElements = Array.from(doc.getElementsByTagName("SkillSet"));
@@ -128,19 +145,20 @@ export function processPob(pobCode: string): PobData | undefined {
       processSkills(
         requiredGems,
         gemLinks,
+        character,
         skillSetElement,
         skillSetElement.attributes.getNamedItem("title")?.value
       );
     }
   } else {
-    processSkills(requiredGems, gemLinks, doc.documentElement, undefined);
+    processSkills(
+      requiredGems,
+      gemLinks,
+      character,
+      doc.documentElement,
+      undefined
+    );
   }
-
-  const buildElement = Array.from(doc.getElementsByTagName("Build"));
-  const characterClass =
-    buildElement[0].attributes.getNamedItem("className")?.value;
-  const bandit =
-    buildElement[0].attributes.getNamedItem("bandit")?.value || "None";
 
   const buildTrees: RouteData.BuildTree[] = [];
   const specElements = Array.from(doc.getElementsByTagName("Spec"));
@@ -154,7 +172,7 @@ export function processPob(pobCode: string): PobData | undefined {
 
   return {
     buildData: {
-      characterClass: characterClass!,
+      characterClass: characterClass,
       bandit: bandit as RouteData.BuildData["bandit"],
       leagueStart: true,
       library: true,
