@@ -68,7 +68,7 @@ export function Viewport({
       .on("zoom", ({ transform }) => {
         worldSelection.style(
           "transform",
-          `matrix3d(${transform.k}, 0, 0, 0, 0, ${transform.k}, 0, 0, 0, 0, 1, 0, ${transform.x}, ${transform.y}, 0, 1)`
+          `translate(${transform.x}px, ${transform.y}px) scale(${transform.k})`
         );
       });
 
