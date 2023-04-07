@@ -98,15 +98,19 @@ function processSkills(
       }
     }
 
+    const gemLinkTitle = (recentEmptySkillLabel || parentTitle || "").replace(
+      POB_COLOUR_REGEX,
+      ""
+    );
     if (primaryGemIds.length > 0)
       gemLinks.push({
-        title: recentEmptySkillLabel || parentTitle,
+        title: gemLinkTitle,
         primaryGemIds: primaryGemIds,
         secondaryGemIds: secondaryGemIds,
       });
     else
       gemLinks.push({
-        title: recentEmptySkillLabel || parentTitle,
+        title: gemLinkTitle,
         primaryGemIds: secondaryGemIds,
         secondaryGemIds: [],
       });

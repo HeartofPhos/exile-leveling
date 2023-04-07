@@ -48,7 +48,7 @@ export namespace RouteData {
   }
 
   export interface GemLink {
-    title?: string;
+    title: string;
     primaryGemIds: string[];
     secondaryGemIds: string[];
   }
