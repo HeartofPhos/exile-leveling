@@ -34,6 +34,7 @@ export async function getGems() {
       name: baseItemType.Name,
       primary_attribute: ATTRIBUTE_LOOKUP[grantedEffects.Attribute],
       required_level: grantedEffectsPerLevel.PlayerLevelReq,
+      is_support: skillGem.IsSupport,
       cost: getGemCost(grantedEffectsPerLevel.PlayerLevelReq),
     };
 

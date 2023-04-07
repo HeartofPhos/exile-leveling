@@ -1,5 +1,6 @@
 import { buildTemplates } from "./build-tree";
 import { getAreas } from "./seeding/areas";
+import { getCharacters } from "./seeding/characters";
 import { getGems as seedGems } from "./seeding/gems";
 import { getQuests } from "./seeding/quests";
 import fs from "fs";
@@ -27,6 +28,8 @@ const COMMAND_PROCESSORS: Record<string, () => Promise<any>> = {
     saveJSON("quests", quests);
     const areas = await getAreas();
     saveJSON("areas", areas);
+    const characters = await getCharacters();
+    saveJSON("characters", characters);
   },
   ["tree"]: async () => {
     const templates = await buildTemplates();
