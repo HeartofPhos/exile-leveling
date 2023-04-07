@@ -66,7 +66,6 @@ export function Viewport({
     const zoom = d3
       .zoom<HTMLDivElement, unknown>()
       .on("zoom", ({ transform }) => {
-        console.log(transform)
         worldSelection.style(
           "transform",
           `translate(${transform.x}px, ${transform.y}px) scale(${transform.k})`
