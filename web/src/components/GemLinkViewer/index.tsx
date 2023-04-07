@@ -1,4 +1,4 @@
-import { gemColours, gems } from "../../../../common/data";
+import { Data } from "../../../../common/data";
 import { RouteData } from "../../../../common/route-processing/types";
 import { formStyles } from "../Form";
 import styles from "./styles.module.css";
@@ -63,11 +63,11 @@ export function GemLinkViewer({ gemLinks }: GemLinkViewerProps) {
             return (
               <div className={classNames(styles.gemLinkRow)} key={i}>
                 {primaryGemIds.map((gemId, j) => {
-                  const gemData = gems[gemId];
+                  const gemData = Data.Gems[gemId];
                   return (
                     <div className={styles.gemPrimary} key={j}>
                       <MdCircle
-                        color={gemColours[gemData.primary_attribute]}
+                        color={Data.GemColours[gemData.primary_attribute]}
                         className={classNames("inlineIcon")}
                       />
                       <span>{gemData.name}</span>
@@ -75,14 +75,14 @@ export function GemLinkViewer({ gemLinks }: GemLinkViewerProps) {
                   );
                 })}
                 {secondaryGemIds.map((gemId, j) => {
-                  const gemData = gems[gemId];
+                  const gemData = Data.Gems[gemId];
                   return (
                     <div
                       className={styles.gemSecondary}
                       key={primaryGemIds.length + j}
                     >
                       <MdCircle
-                        color={gemColours[gemData.primary_attribute]}
+                        color={Data.GemColours[gemData.primary_attribute]}
                         className={classNames("inlineIcon")}
                       />
                       <span>{gemData.name}</span>
