@@ -1,4 +1,4 @@
-import { areas } from "../data";
+import { Data } from "../data";
 import { GameData } from "../types";
 import { parseFragmentStep } from "./fragment";
 import { Pattern, matchPatterns } from "./patterns";
@@ -148,8 +148,8 @@ export function parseRoute(
     }
   }
 
-  for (const key in areas) {
-    const area = areas[key];
+  for (const key in Data.Areas) {
+    const area = Data.Areas[key];
     if (area.crafting_recipes.length > 0 && !state.craftingAreas.has(area.id))
       state.logger.warn(
         `missing crafting area ${area.id}, ${area.crafting_recipes.join(", ")}`

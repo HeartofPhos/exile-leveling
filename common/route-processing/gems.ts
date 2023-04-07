@@ -1,4 +1,4 @@
-import { quests } from "../data";
+import { Data } from "../data";
 import { GameData } from "../types";
 import { Fragments } from "./fragment/types";
 import { RouteData } from "./types";
@@ -9,7 +9,7 @@ export function buildGemSteps(
   requiredGems: RouteData.RequiredGem[],
   routeGems: Set<number>
 ) {
-  const quest = quests[questFragment.questId];
+  const quest = Data.Quests[questFragment.questId];
 
   const gemSteps: RouteData.GemStep[] = [];
   for (const rewardOfferId of questFragment.rewardOffers) {
