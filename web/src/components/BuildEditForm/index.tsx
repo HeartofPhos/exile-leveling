@@ -70,6 +70,26 @@ export function BuildInfoForm({ buildData, onSubmit }: BuildInfoFormProps) {
       />
       <SplitRow
         left={
+          <div className={classNames(styles.buildInfoLabel)}>Gem Links</div>
+        }
+        right={
+          <div className={classNames(styles.buildInfoValue)}>
+            <input
+              type="checkbox"
+              checked={buildData.gemLinks}
+              onChange={(evt) => {
+                onSubmit({
+                  ...buildData,
+                  gemLinks: evt.target.checked,
+                });
+              }}
+              aria-label="Gem Links"
+            />
+          </div>
+        }
+      />
+      <SplitRow
+        left={
           <div className={classNames(styles.buildInfoLabel)}>Gems Only</div>
         }
         right={
@@ -84,26 +104,6 @@ export function BuildInfoForm({ buildData, onSubmit }: BuildInfoFormProps) {
                 });
               }}
               aria-label="Gems Only"
-            />
-          </div>
-        }
-      />
-      <SplitRow
-        left={
-          <div className={classNames(styles.buildInfoLabel)}>Gem Links in Sidebar</div>
-        }
-        right={
-          <div className={classNames(styles.buildInfoValue)}>
-            <input
-              type="checkbox"
-              checked={buildData.displayGemLinks}
-              onChange={(evt) => {
-                onSubmit({
-                  ...buildData,
-                  displayGemLinks: evt.target.checked,
-                });
-              }}
-              aria-label="Gem Links in Sidebar"
             />
           </div>
         }

@@ -30,7 +30,7 @@ export function Sidebar() {
     );
   }
 
-  if (buildData.displayGemLinks && gemLinks.length > 0) {
+  if (buildData.gemLinks && gemLinks.length > 0) {
     children.push(
       <>
         <hr />

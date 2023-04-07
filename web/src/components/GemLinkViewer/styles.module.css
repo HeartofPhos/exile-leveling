@@ -30,6 +30,9 @@
 .gemLinkSection {
   display: flex;
   flex-direction: column;
+  overflow: auto;
+  overscroll-behavior: contain;
+  max-height: 10rem;
 }
 
 .gemLinkRow {

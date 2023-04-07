@@ -39,6 +39,24 @@ export function GemLinkViewer({ gemLinks }: GemLinkViewerProps) {
       <label className={classNames(styles.label)}>
         {gemSections.length > 0 && (gemSections[curIndex] || "Default")}
       </label>
+      <div className={classNames(styles.buttons)}>
+        <button
+          className={classNames(formStyles.formButton, styles.button)}
+          onClick={() => {
+            if (curIndex > 0) setCurIndex(curIndex - 1);
+          }}
+        >
+          <HiChevronLeft />
+        </button>
+        <button
+          className={classNames(formStyles.formButton, styles.button)}
+          onClick={() => {
+            if (curIndex < gemSections.length - 1) setCurIndex(curIndex + 1);
+          }}
+        >
+          <HiChevronRight />
+        </button>
+      </div>
       {activeGemLinks.length > 0 && (
         <div className={classNames(styles.gemLinkSection)}>
           {activeGemLinks.map(({ primaryGemIds, secondaryGemIds }, i) => {
@@ -76,24 +94,6 @@ export function GemLinkViewer({ gemLinks }: GemLinkViewerProps) {
           })}
         </div>
       )}
-      <div className={classNames(styles.buttons)}>
-        <button
-          className={classNames(formStyles.formButton, styles.button)}
-          onClick={() => {
-            if (curIndex > 0) setCurIndex(curIndex - 1);
-          }}
-        >
-          <HiChevronLeft />
-        </button>
-        <button
-          className={classNames(formStyles.formButton, styles.button)}
-          onClick={() => {
-            if (curIndex < gemSections.length - 1) setCurIndex(curIndex + 1);
-          }}
-        >
-          <HiChevronRight />
-        </button>
-      </div>
     </div>
   );
 }
