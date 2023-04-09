@@ -38,11 +38,6 @@ Head {dir|225} ➞ {arena|The Forest Encampment}, kill {kill|Greust, Lord of the
 ➞ {enter|2_7_8} #The Northern Forest
 {waypoint|2_7_town} #The Bridge Encampment
 Hand in {quest|a7q1} #The Master of a Million Faces
-{waypoint|2_6_8} #Prisoner's Gate
-Go down the ledge next to the road
-➞ {arena|Valley of the Fire Drinker}, kill {kill|Abberath, the Cloven One}
-{portal|use}
-Hand in {quest|a6q7} #The Cloven One
 {waypoint|2_7_8} #The Northern Forest
 ➞ {enter|2_7_10} #The Causeway
 Get {crafting}

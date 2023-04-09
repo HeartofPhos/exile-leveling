@@ -21,6 +21,9 @@ Get {crafting}
 ➞ {arena|The Warden's Chambers}
 Get {crafting}
 ➞ {enter|2_6_8} #Prisoner's Gate
+Go down the ledge next to the road
+➞ {arena|Valley of the Fire Drinker}, kill {kill|Abberath, the Cloven One}
+➞ {enter|2_6_8} #Prisoner's Gate
 Follow the road ➞ {enter|2_6_9} #The Western Forest
 Get {crafting}
 Follow the road ➞ {enter|2_6_10} #The Riverways
@@ -28,9 +31,10 @@ Follow the road, get {waypoint_get}
 Look for 2 pillars near {waypoint}, follow the trail ➞ {enter|2_6_11} #The Wetlands
 Head {dir|315} ➞ {arena|The Spawning Ground}, kill {kill|Ryslatha, the Puppet Mistress}
 {logout}
-Hand in {quest|a6q3} #The Father of War
 Hand in {quest|a6q2} #Essence of Umbra
+Hand in {quest|a6q3} #The Father of War
 Hand in {quest|a6q6} #The Puppet Mistress
+Hand in {quest|a6q7} #The Cloven One
 {waypoint|2_6_10} #The Riverways
 Follow the road until it ends
 Head {dir|135} ➞ {enter|2_6_12} #The Southern Forest
