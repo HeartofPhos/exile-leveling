@@ -31,7 +31,8 @@ Hand in {quest|a1q2|a1q2b} #The Caged Brute
 #endif
 ➞ {enter|1_1_7_2} #The Upper Prison
 ➞ {arena|The Warden's Quarters}, kill {kill|Brutus, Lord Incarcerator}
-{logout}
+➞ {enter|1_1_8} #Prisoner's Gate
+{waypoint|1_1_town} #Lioneye's Watch
 Hand in {quest|a1q2|a1q2} #The Caged Brute
 {waypoint|1_1_8} #Prisoner's Gate
 Go down the ledge next to the road
