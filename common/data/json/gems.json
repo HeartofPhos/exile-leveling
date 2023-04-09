@@ -227,9 +227,9 @@
     "id": "Metadata/Items/Gems/SupportGemFasterAttack",
     "name": "Faster Attacks Support",
     "primary_attribute": "dexterity",
-    "required_level": 18,
+    "required_level": 8,
     "is_support": true,
-    "cost": "alteration"
+    "cost": "transmutation"
   },
   "Metadata/Items/Gems/SupportGemGreaterMultipleProjectiles": {
     "id": "Metadata/Items/Gems/SupportGemGreaterMultipleProjectiles",
@@ -475,7 +475,7 @@
     "id": "Metadata/Items/Gems/SupportGemPierce",
     "name": "Pierce Support",
     "primary_attribute": "dexterity",
-    "required_level": 1,
+    "required_level": 4,
     "is_support": true,
     "cost": "wisdom"
   },
@@ -611,7 +611,7 @@
     "id": "Metadata/Items/Gems/SkillGemWarlordsMark",
     "name": "Warlord's Mark",
     "primary_attribute": "strength",
-    "required_level": 24,
+    "required_level": 16,
     "is_support": false,
     "cost": "alteration"
   },
@@ -635,7 +635,7 @@
     "id": "Metadata/Items/Gems/SkillGemCriticalWeakness",
     "name": "Assassin's Mark",
     "primary_attribute": "intelligence",
-    "required_level": 24,
+    "required_level": 16,
     "is_support": false,
     "cost": "alteration"
   },
@@ -643,9 +643,9 @@
     "id": "Metadata/Items/Gems/SkillGemProjectileWeakness",
     "name": "Sniper's Mark",
     "primary_attribute": "dexterity",
-    "required_level": 24,
+    "required_level": 4,
     "is_support": false,
-    "cost": "alteration"
+    "cost": "wisdom"
   },
   "Metadata/Items/Gems/SkillGemVulnerability": {
     "id": "Metadata/Items/Gems/SkillGemVulnerability",
@@ -658,14 +658,6 @@
   "Metadata/Items/Gems/SkillGemLightningWarp": {
     "id": "Metadata/Items/Gems/SkillGemLightningWarp",
     "name": "Lightning Warp",
-    "primary_attribute": "intelligence",
-    "required_level": 10,
-    "is_support": false,
-    "cost": "transmutation"
-  },
-  "Metadata/Items/Gems/SkillGemVaalLightningWarp": {
-    "id": "Metadata/Items/Gems/SkillGemVaalLightningWarp",
-    "name": "Vaal Lightning Warp",
     "primary_attribute": "intelligence",
     "required_level": 10,
     "is_support": false,
@@ -1210,6 +1202,14 @@
   "Metadata/Items/Gems/SkillGemArcticArmour": {
     "id": "Metadata/Items/Gems/SkillGemArcticArmour",
     "name": "Arctic Armour",
+    "primary_attribute": "dexterity",
+    "required_level": 16,
+    "is_support": false,
+    "cost": "alteration"
+  },
+  "Metadata/Items/Gems/SkillGemVaalArcticArmour": {
+    "id": "Metadata/Items/Gems/SkillGemVaalArcticArmour",
+    "name": "Vaal Arctic Armour",
     "primary_attribute": "dexterity",
     "required_level": 16,
     "is_support": false,
@@ -1827,7 +1827,7 @@
     "id": "Metadata/Items/Gems/SkillGemPoachersMark",
     "name": "Poacher's Mark",
     "primary_attribute": "dexterity",
-    "required_level": 24,
+    "required_level": 16,
     "is_support": false,
     "cost": "alteration"
   },
@@ -2393,7 +2393,7 @@
   },
   "Metadata/Items/Gems/SupportGemOnslaught": {
     "id": "Metadata/Items/Gems/SupportGemOnslaught",
-    "name": "Onslaught Support",
+    "name": "Momentum Support",
     "primary_attribute": "dexterity",
     "required_level": 1,
     "is_support": true,
@@ -4054,5 +4054,101 @@
     "required_level": 28,
     "is_support": false,
     "cost": "chance"
+  },
+  "Metadata/Items/Gems/SkillGemVaalReap": {
+    "id": "Metadata/Items/Gems/SkillGemVaalReap",
+    "name": "Vaal Reap",
+    "primary_attribute": "strength",
+    "required_level": 28,
+    "is_support": false,
+    "cost": "chance"
+  },
+  "Metadata/Items/Gems/SkillGemVaalAnimateWeapon": {
+    "id": "Metadata/Items/Gems/SkillGemVaalAnimateWeapon",
+    "name": "Vaal Animate Weapon",
+    "primary_attribute": "dexterity",
+    "required_level": 4,
+    "is_support": false,
+    "cost": "wisdom"
+  },
+  "Metadata/Items/Gems/SkillGemVaalLightningArrow": {
+    "id": "Metadata/Items/Gems/SkillGemVaalLightningArrow",
+    "name": "Vaal Lightning Arrow",
+    "primary_attribute": "dexterity",
+    "required_level": 12,
+    "is_support": false,
+    "cost": "transmutation"
+  },
+  "Metadata/Items/Gems/SkillGemVaalAbsolution": {
+    "id": "Metadata/Items/Gems/SkillGemVaalAbsolution",
+    "name": "Vaal Absolution",
+    "primary_attribute": "strength",
+    "required_level": 12,
+    "is_support": false,
+    "cost": "transmutation"
+  },
+  "Metadata/Items/Gems/SkillGemVaalDomination": {
+    "id": "Metadata/Items/Gems/SkillGemVaalDomination",
+    "name": "Vaal Domination",
+    "primary_attribute": "strength",
+    "required_level": 28,
+    "is_support": false,
+    "cost": "chance"
+  },
+  "Metadata/Items/Gems/SkillGemVaalIceShot": {
+    "id": "Metadata/Items/Gems/SkillGemVaalIceShot",
+    "name": "Vaal Ice Shot",
+    "primary_attribute": "dexterity",
+    "required_level": 1,
+    "is_support": false,
+    "cost": "wisdom"
+  },
+  "Metadata/Items/Gems/SkillGemVaalFirestorm": {
+    "id": "Metadata/Items/Gems/SkillGemVaalFirestorm",
+    "name": "Vaal Firestorm",
+    "primary_attribute": "intelligence",
+    "required_level": 28,
+    "is_support": false,
+    "cost": "chance"
+  },
+  "Metadata/Items/Gems/SkillGemVaalRejuvenationTotem": {
+    "id": "Metadata/Items/Gems/SkillGemVaalRejuvenationTotem",
+    "name": "Vaal Rejuvenation Totem",
+    "primary_attribute": "strength",
+    "required_level": 4,
+    "is_support": false,
+    "cost": "wisdom"
+  },
+  "Metadata/Items/Gems/SupportGemManaforgedArrows": {
+    "id": "Metadata/Items/Gems/SupportGemManaforgedArrows",
+    "name": "Manaforged Arrows Support",
+    "primary_attribute": "dexterity",
+    "required_level": 8,
+    "is_support": true,
+    "cost": "transmutation"
+  },
+  "Metadata/Items/Gems/SupportGemPrismaticBurst": {
+    "id": "Metadata/Items/Gems/SupportGemPrismaticBurst",
+    "name": "Prismatic Burst Support",
+    "primary_attribute": "intelligence",
+    "required_level": 1,
+    "is_support": true,
+    "cost": "wisdom"
+  },
+  "Metadata/Items/Gems/SkillGemChannelledSnipe": {
+    "id": "Metadata/Items/Gems/SkillGemChannelledSnipe",
+    "name": "Snipe",
+    "primary_attribute": "dexterity",
+    "required_level": 34,
+    "is_support": false,
+    "cost": "chance"
+  },
+  "Metadata/Items/Gems/SkillGemQuickstep": {
+    "id": "Metadata/Items/Gems/SkillGemQuickstep",
+    "name": "Quickstep",
+    "primary_attribute": "none",
+    "required_level": 1,
+    "is_support": false,
+    "cost": "wisdom"
   }
 }

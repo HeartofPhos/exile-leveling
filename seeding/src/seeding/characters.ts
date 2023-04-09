@@ -4,8 +4,8 @@ import { Dat } from "../data";
 const CHARACTER_CHEST_GEMS: Record<string, string> = {
   ["Marauder"]: "Metadata/Items/Gems/SupportGemRuthless",
   ["Witch"]: "Metadata/Items/Gems/SupportGemArcaneSurge",
-  ["Scion"]: "Metadata/Items/Gems/SupportGemOnslaught",
-  ["Ranger"]: "Metadata/Items/Gems/SupportGemPierce",
+  ["Scion"]: "Metadata/Items/Gems/SupportGemPrismaticBurst",
+  ["Ranger"]: "Metadata/Items/Gems/SupportGemOnslaught",
   ["Duelist"]: "Metadata/Items/Gems/SupportGemChanceToBleed",
   ["Shadow"]: "Metadata/Items/Gems/SupportGemLesserPoison",
   ["Templar"]: "Metadata/Items/Gems/SupportGemElementalProliferation",
