@@ -9,7 +9,7 @@ import Editor from "react-simple-code-editor";
 
 const RouteGrammar: Grammar = {
   keyword: {
-    pattern: /#section *(.*)|#ifdef *(.*)|#endif/,
+    pattern: /#section *(.*)|#endif|#ifdef *(.*)|#ifndef *(.*)/,
     inside: {
       "keyword control-flow": /#\w+/,
       variable: /.+/,
