@@ -3,16 +3,24 @@ Find and kill {kill|Hillock}
 ➞ {enter|1_1_town} #Lioneye's Watch
 Hand in {quest|a1q1} #Enemy at the Gate
 ➞ {enter|1_1_2} #The Coast
-Get {waypoint_get}
+#ifdef LEAGUE_START
+    Get {waypoint_get}
+#endif
 ➞ {enter|1_1_3} #The Mud Flats
 Find 3x{quest_text|Glyph}
 ➞ {enter|1_1_4_1} #The Submerged Passage
-{waypoint|1_1_2} #The Coast
-➞ {enter|1_1_2a} #The Tidal Island
-Find and kill {kill|Hailrake}, take {quest_text|Medicine Chest}
-{logout}
-Hand in {quest|a1q4} #Breaking Some Eggs
-Hand in {quest|a1q5} #Mercy Mission
+#ifdef LEAGUE_START
+    {waypoint|1_1_2} #The Coast
+    ➞ {enter|1_1_2a} #The Tidal Island
+    Find and kill {kill|Hailrake}, take {quest_text|Medicine Chest}
+    {logout}
+    Hand in {quest|a1q4} #Breaking Some Eggs
+    Hand in {quest|a1q5} #Mercy Mission
+#endif
+#ifndef LEAGUE_START
+    {waypoint|1_1_town} #Lioneye's Watch
+    Hand in {quest|a1q5} #Mercy Mission
+#endif
 {waypoint|1_1_4_1} #The Submerged Passage
 Find bridge, place {portal|set}
 ➞ {enter|1_1_5} #The Ledge

@@ -2,15 +2,22 @@
 ➞ {enter|1_2_1} #The Southern Forest
 ➞ {enter|1_2_town} #The Forest Encampment
 Head {dir|45} ➞ {enter|1_2_2} #The Old Fields
-Find {area|1_2_2a}, place {portal|set} #The Den
+#ifdef LEAGUE_START
+    Find {area|1_2_2a}, place {portal|set} #The Den
+#endif
 Follow the road ➞ {enter|1_2_3} #The Crossroads
-Follow the road, {waypoint|1_2_town} #The Forest Encampment
-Take {portal|use}
-➞ {enter|1_2_2a} #The Den
-Find and kill {kill|The Great White Beast}
-{logout}
-Hand in {quest|a2q10} #The Great White Beast
-{waypoint|1_2_3} #The Crossroads
+#ifdef LEAGUE_START
+    Follow the road, {waypoint|1_2_town} #The Forest Encampment
+    Take {portal|use}
+    ➞ {enter|1_2_2a} #The Den
+    Find and kill {kill|The Great White Beast}
+    {logout}
+    Hand in {quest|a2q10} #The Great White Beast
+    {waypoint|1_2_3} #The Crossroads
+#endif
+#ifndef LEAGUE_START
+    Get {waypoint_get}
+#endif
 Head {dir|315} ➞ {enter|1_2_6_1} #The Chamber of Sins Level 1
 Go in same direction as {waypoint}
 ➞ {enter|1_2_6_2} #The Chamber of Sins Level 2

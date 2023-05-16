@@ -87,6 +87,17 @@ const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
       return false;
     },
   },
+  // ifndef
+  {
+    regex: /^ *#ifndef *(.*)/g,
+    processor: (match, { state, conditionalStack }) => {
+      const value = match[1];
+      if (value)
+        conditionalStack.push(!state.preprocessorDefinitions.has(value));
+
+      return false;
+    },
+  },
   // FragmentStep
   {
     regex: /.*/g,
