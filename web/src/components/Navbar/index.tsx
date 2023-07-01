@@ -2,7 +2,7 @@ import { useClearGemProgress } from "../../state/gem-progress";
 import { routeSelector } from "../../state/route";
 import { routeFilesSelector } from "../../state/route-files";
 import { useClearRouteProgress } from "../../state/route-progress";
-import { borderListStyles } from "../BorderList";
+import { borderListStyles, interactiveStyles } from "../../styles";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import React, { useEffect, useState } from "react";
@@ -29,10 +29,16 @@ function NavbarItem({ label, expand, icon, onClick }: NavbarItemProps) {
   return (
     <button
       onClick={onClick}
-      className={classNames(styles.navItem, styles.navElement, {
-        [styles.expand]: expand,
-        [borderListStyles.item]: expand,
-      })}
+      className={classNames(
+        styles.navItem,
+        styles.navElement,
+        interactiveStyles.active,
+        {
+          [styles.expand]: expand,
+          [borderListStyles.item]: expand,
+          [interactiveStyles.hover]: expand,
+        }
+      )}
     >
       {icon}
       {label}
@@ -73,7 +79,7 @@ export function Navbar({}: NavbarProps) {
         <button onClick={() => setNavExpand(!navExpand)}>
           <FaBars
             aria-label="Menu"
-            className={classNames(styles.navIcon)}
+            className={classNames(styles.navIcon, interactiveStyles.active)}
             display="block"
           />
         </button>

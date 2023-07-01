@@ -1,5 +1,5 @@
 import { RouteData } from "../../../../../common/route-processing/types";
-import { borderListStyles } from "../../BorderList";
+import { borderListStyles, interactiveStyles } from "../../../styles";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 
@@ -23,6 +23,7 @@ export function FileList({
           key={i}
           className={classNames(
             borderListStyles.itemRound,
+            interactiveStyles.hover,
             styles.fileListItem,
             {
               [styles.selected]: selectedIndex === i,

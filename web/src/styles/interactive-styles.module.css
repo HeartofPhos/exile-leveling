@@ -1,0 +1,9 @@
+@media (hover: hover) {
+  .hover:hover {
+    border-color: var(--accent-highlight);
+  }
+}
+
+.active:active {
+  background-color: var(--background-highlight);
+}

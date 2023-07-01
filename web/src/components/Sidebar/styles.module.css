@@ -52,13 +52,3 @@
   word-break: break-all;
   cursor: pointer;
 }
-
-.searchString:active {
-  background-color: var(--background-highlight);
-}
-
-@media (hover: hover) {
-  .searchString:hover {
-    border-color: var(----accent-highlight);
-  }
-}

@@ -10,12 +10,6 @@
   padding: var(--size-3);
 }
 
-@media (hover: hover) {
-  .listItem:hover {
-    border-color: var(--accent-highlight);
-  }
-}
-
 .bullet {
   font-weight: var(--font-heavy);
   margin-right: var(--size-2);

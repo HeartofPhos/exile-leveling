@@ -1,8 +1,8 @@
-import { formStyles } from "../Form";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { useEffect, useRef } from "react";
 import ReactModal from "react-modal";
+import { formStyles } from "../../styles";
 
 ReactModal.setAppElement("#root");
 

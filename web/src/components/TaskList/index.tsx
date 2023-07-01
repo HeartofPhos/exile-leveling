@@ -1,4 +1,4 @@
-import { borderListStyles } from "../BorderList";
+import { borderListStyles, interactiveStyles } from "../../styles";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { RecoilState, useRecoilState } from "recoil";
@@ -18,9 +18,14 @@ function TaskListItem({ children, isCompletedState }: TaskItemProps) {
   return (
     <li
       tabIndex={0}
-      className={classNames(borderListStyles.item, styles.listItem, {
-        [styles.completed]: isCompleted,
-      })}
+      className={classNames(
+        borderListStyles.item,
+        interactiveStyles.hover,
+        styles.listItem,
+        {
+          [styles.completed]: isCompleted,
+        }
+      )}
       onClick={() => {
         if (setIsCompleted) setIsCompleted(!isCompleted);
       }}

@@ -1,6 +1,5 @@
 import { BuildInfoForm, GemOrderList } from "../../components/BuildEditForm";
 import { BuildImportForm } from "../../components/BuildImportForm";
-import { formStyles } from "../../components/Form";
 import { buildDataSelector } from "../../state/build-data";
 import { requiredGemsSelector } from "../../state/gem";
 import { searchStringsAtom } from "../../state/search-strings";
@@ -11,6 +10,7 @@ import { withScrollRestoration } from "../../utility/withScrollRestoration";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { useRecoilState, useResetRecoilState } from "recoil";
+import { formStyles } from "../../styles";
 
 function BuildContainer() {
   const [buildData, setBuildData] = useRecoilState(buildDataSelector);

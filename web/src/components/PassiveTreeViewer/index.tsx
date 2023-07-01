@@ -1,8 +1,8 @@
 import { PassiveTree } from "../../../../common/data/tree";
 import { TREE_DATA_LOOKUP } from "../../state/tree";
 import { UrlTree } from "../../state/tree/url-tree";
+import { formStyles } from "../../styles";
 import { randomId } from "../../utility";
-import { formStyles } from "../Form";
 import { Viewport, ViewportProps } from "../Viewport";
 import styles from "./styles.module.css";
 import {

@@ -2,7 +2,7 @@ import { buildDataSelector } from "../../state/build-data";
 import { gemLinksSelector } from "../../state/gem-links";
 import { searchStringsAtom } from "../../state/search-strings";
 import { urlTreesSelector } from "../../state/tree/url-tree";
-import { borderListStyles } from "../BorderList";
+import { borderListStyles, interactiveStyles } from "../../styles";
 import { GemLinkViewer } from "../GemLinkViewer";
 import { PassiveTreeViewer } from "../PassiveTreeViewer";
 import styles from "./styles.module.css";
@@ -85,7 +85,12 @@ interface SearchStringProps {
 function SearchString({ value }: SearchStringProps) {
   return (
     <div
-      className={classNames(borderListStyles.itemRound, styles.searchString)}
+      className={classNames(
+        borderListStyles.itemRound,
+        interactiveStyles.hover,
+        interactiveStyles.active,
+        styles.searchString
+      )}
       onClick={() => {
         navigator.clipboard.writeText(value);
       }}

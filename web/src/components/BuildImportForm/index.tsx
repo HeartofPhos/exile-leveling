@@ -1,5 +1,5 @@
+import { formStyles } from "../../styles";
 import { UrlRewriter, fetchStringOrUrl, getRewriteUrl } from "../../utility";
-import { formStyles } from "../Form";
 import { TextModal } from "../Modal";
 import { PobData, processPob } from "./pob";
 import classNames from "classnames";

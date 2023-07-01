@@ -22,7 +22,3 @@
   height: 100%;
   width: 100%;
 }
-
-.orderButton:active {
-  background-color: var(--background-highlight);
-}

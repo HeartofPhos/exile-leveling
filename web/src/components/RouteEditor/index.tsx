@@ -4,8 +4,8 @@ import {
 } from "../../../../common/route-processing";
 import { Language } from "../../../../common/route-processing/fragment/language";
 import { RouteData } from "../../../../common/route-processing/types";
+import { formStyles } from "../../styles";
 import { UrlRewriter, fetchStringOrUrl } from "../../utility";
-import { formStyles } from "../Form";
 import { Modal, TextModal } from "../Modal";
 import { Workspace } from "./Workspace";
 import styles from "./styles.module.css";

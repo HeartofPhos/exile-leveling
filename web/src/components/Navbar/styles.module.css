@@ -42,18 +42,8 @@
   cursor: pointer;
 }
 
-.navItem:active {
-  background-color: var(--background-highlight);
-}
-
 .navItem.expand {
   text-align: right;
-}
-
-@media (hover: hover) {
-  .navItem:hover {
-    border-color: var(--accent-highlight);
-  }
 }
 
 .navElement {
@@ -69,10 +59,6 @@
   width: var(--line-height);
   padding: var(--size-3);
   cursor: pointer;
-}
-
-.navIcon:active {
-  background-color: var(--background-highlight);
 }
 
 .navMain.expand {

@@ -1,4 +1,5 @@
 import { RouteData } from "../../../../common/route-processing/types";
+import { interactiveStyles } from "../../styles";
 import { GemReward } from "../ItemReward";
 import styles from "./styles.module.css";
 import classNames from "classnames";
@@ -25,7 +26,7 @@ export function GemOrder({
       <GemReward requiredGem={requiredGem} />
       <div className={classNames(styles.orderButtonGroup)}>
         <button
-          className={classNames(styles.orderButton)}
+          className={classNames(styles.orderButton, interactiveStyles.active)}
           onClick={(e) => {
             e.stopPropagation();
             if (onMoveUp) onMoveUp();

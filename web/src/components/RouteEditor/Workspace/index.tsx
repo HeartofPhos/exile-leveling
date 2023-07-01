@@ -1,5 +1,5 @@
 import { RouteData } from "../../../../../common/route-processing/types";
-import { formStyles } from "../../Form";
+import { formStyles } from "../../../styles";
 import { FileList } from "../FileList";
 import styles from "./styles.module.css";
 import classNames from "classnames";

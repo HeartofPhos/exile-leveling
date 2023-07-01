@@ -1,11 +1,11 @@
 import { Data } from "../../../../common/data";
 import { RouteData } from "../../../../common/route-processing/types";
-import { formStyles } from "../Form";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { MdCircle } from "react-icons/md";
+import { formStyles } from "../../styles";
 
 interface GemLinkViewerProps {
   gemLinks: RouteData.GemLink[];
