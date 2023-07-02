@@ -87,8 +87,8 @@ function SearchString({ value }: SearchStringProps) {
     <div
       className={classNames(
         borderListStyles.itemRound,
-        interactiveStyles.hover,
-        interactiveStyles.active,
+        interactiveStyles.hoverPrimary,
+        interactiveStyles.activePrimary,
         styles.searchString
       )}
       onClick={() => {

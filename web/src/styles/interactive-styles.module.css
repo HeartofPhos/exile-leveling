@@ -1,9 +1,17 @@
 @media (hover: hover) {
-  .hover:hover {
-    border-color: var(--accent-highlight);
+  .hoverPrimary:hover {
+    background-color: var(--highlight-primary);
+  }
+
+  .hoverSecondary:hover {
+    background-color: var(--highlight-secondary);
   }
 }
 
-.active:active {
-  background-color: var(--background-highlight);
+.activePrimary:active {
+  background-color: var(--highlight-primary);
+}
+
+.activeSecondary:active {
+  background-color: var(--highlight-secondary);
 }

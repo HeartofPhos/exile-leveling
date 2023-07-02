@@ -1,10 +1,10 @@
 .default {
-  color: var(--primary);
+  color: var(--on-secondary);
   font-weight: var(--font-heavy);
 }
 
 .rewardNote {
-  color: var(--primary);
+  color: var(--on-secondary);
 }
 
 .noWrap {

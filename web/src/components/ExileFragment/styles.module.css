@@ -1,5 +1,5 @@
 .default {
-  color: var(--primary);
+  color: var(--on-secondary);
   font-weight: var(--font-heavy);
 }
 

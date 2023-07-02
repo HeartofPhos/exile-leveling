@@ -1,14 +1,14 @@
 :root {
   color-scheme: dark;
-  --primary: #f5f5f5;
-  --secondary: #d4d4d4;
-  --background-primary: #161616;
-  --background-secondary: #222222;
-  --background-highlight: #404040;
+  --primary: #161616;
+  --secondary: #222222;
+  --on-primary: #d4d4d4;
+  --on-secondary: #f5f5f5;
+  --highlight-primary: #242424;
+  --highlight-secondary: #404040;
   --accent-primary: #808080;
   --accent-secondary: #505050;
-  --accent-highlight: #d4d4d4;
-  --toastify-color-dark: var(--background-secondary);
+  --toastify-color-dark: var(--secondary);
   --border-width: 0.0625rem;
   --border-radius: 0.25rem;
   --size-1: 0.125rem;
@@ -41,14 +41,14 @@
 *:focus-visible {
   outline-offset: calc(var(--size-1) * -1);
   outline-style: solid;
-  outline-color: var(--accent-highlight);
+  outline-color: var(--on-primary);
   outline-width: var(--size-1);
 }
 
 html {
   box-sizing: border-box;
-  background-color: var(--background-primary);
-  color: var(--secondary);
+  background-color: var(--primary);
+  color: var(--on-primary);
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1em;
   font-weight: 400;
@@ -93,5 +93,5 @@ hr {
 
 a:link,
 a:visited {
-  color: var(--secondary);
+  color: var(--on-primary);
 }

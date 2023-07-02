@@ -20,7 +20,7 @@ function TaskListItem({ children, isCompletedState }: TaskItemProps) {
       tabIndex={0}
       className={classNames(
         borderListStyles.item,
-        interactiveStyles.hover,
+        interactiveStyles.hoverPrimary,
         styles.listItem,
         {
           [styles.completed]: isCompleted,

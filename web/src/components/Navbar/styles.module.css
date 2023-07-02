@@ -1,7 +1,7 @@
 .navbar {
   display: flex;
   flex-direction: column;
-  background-color: var(--background-secondary);
+  background-color: var(--secondary);
   position: sticky;
   top: 0;
   width: 100%;
@@ -33,7 +33,7 @@
 
 .navItems.expand {
   flex-direction: column;
-  background-color: var(--background-primary);
+  background-color: var(--primary);
 }
 
 .navItem {
@@ -47,7 +47,7 @@
 }
 
 .navElement {
-  color: var(--primary);
+  color: var(--on-secondary);
   font-weight: var(--font-heavy);
   padding: var(--size-3);
 }

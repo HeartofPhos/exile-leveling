@@ -23,7 +23,7 @@ export function FileList({
           key={i}
           className={classNames(
             borderListStyles.itemRound,
-            interactiveStyles.hover,
+            interactiveStyles.hoverPrimary,
             styles.fileListItem,
             {
               [styles.selected]: selectedIndex === i,

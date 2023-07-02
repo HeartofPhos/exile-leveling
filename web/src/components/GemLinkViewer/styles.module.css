@@ -6,7 +6,7 @@
 
 .label {
   text-align: center;
-  color: var(--primary);
+  color: var(--on-secondary);
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

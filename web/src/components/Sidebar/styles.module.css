@@ -6,7 +6,7 @@
   top: var(--offset);
   right: var(--size-2);
   max-height: calc(100vh - var(--offset));
-  background-color: var(--background-primary);
+  background-color: var(--primary);
   border-style: solid;
   border-width: var(--border-width);
   border-color: var(--accent-primary);
@@ -21,7 +21,7 @@
   align-items: center;
   width: 100%;
   height: var(--line-height);
-  color: var(--primary);
+  color: var(--on-secondary);
   font-weight: var(--font-heavy);
   cursor: pointer;
 }

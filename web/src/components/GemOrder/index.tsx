@@ -26,7 +26,7 @@ export function GemOrder({
       <GemReward requiredGem={requiredGem} />
       <div className={classNames(styles.orderButtonGroup)}>
         <button
-          className={classNames(styles.orderButton, interactiveStyles.active)}
+          className={classNames(styles.orderButton, interactiveStyles.activePrimary)}
           onClick={(e) => {
             e.stopPropagation();
             if (onMoveUp) onMoveUp();

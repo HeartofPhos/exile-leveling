@@ -1,6 +1,6 @@
 .actbar {
   position: sticky;
-  background-color: var(--background-primary);
+  background-color: var(--primary);
   top: var(--navbar-height);
   z-index: 1;
 }
@@ -13,7 +13,7 @@
 
 .header {
   width: 100%;
-  color: var(--primary);
+  color: var(--on-secondary);
   font-size: var(--size-5);
   padding: var(--size-2);
   font-weight: var(--font-heavy);

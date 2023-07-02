@@ -29,16 +29,12 @@ function NavbarItem({ label, expand, icon, onClick }: NavbarItemProps) {
   return (
     <button
       onClick={onClick}
-      className={classNames(
-        styles.navItem,
-        styles.navElement,
-        interactiveStyles.active,
-        {
-          [styles.expand]: expand,
-          [borderListStyles.item]: expand,
-          [interactiveStyles.hover]: expand,
-        }
-      )}
+      className={classNames(styles.navItem, styles.navElement, {
+        [styles.expand]: expand,
+        [borderListStyles.item]: expand,
+        [interactiveStyles.activeSecondary]: !expand,
+        [interactiveStyles.hoverPrimary]: expand,
+      })}
     >
       {icon}
       {label}
@@ -79,7 +75,10 @@ export function Navbar({}: NavbarProps) {
         <button onClick={() => setNavExpand(!navExpand)}>
           <FaBars
             aria-label="Menu"
-            className={classNames(styles.navIcon, interactiveStyles.active)}
+            className={classNames(
+              styles.navIcon,
+              interactiveStyles.activePrimary
+            )}
             display="block"
           />
         </button>
