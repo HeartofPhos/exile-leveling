@@ -1,4 +1,4 @@
-.fileList {
+.selectList {
   min-width: 4.5rem;
   height: fit-content;
   max-height: 100%;
@@ -9,15 +9,15 @@
   border-width: var(--border-width);
   border-color: var(--accent-primary);
   border-radius: var(--border-radius);
-  padding: var(--size-2);
+  /* padding: var(--size-2); */
   overflow-y: auto;
 }
 
-.fileListItem {
+.selectListItem {
   padding: 0 var(--size-2);
   cursor: pointer;
 }
 
 .selected {
-  background-color: var(--highlight-primary);
+  background-color: var(--highlight-secondary);
 }

@@ -1,6 +1,6 @@
 import { RouteData } from "../../../../../common/route-processing/types";
 import { formStyles } from "../../../styles";
-import { FileList } from "../FileList";
+import { SelectList } from "../../SelectList";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { Grammar, highlight } from "prismjs";
@@ -49,11 +49,16 @@ export function Workspace({ workingFiles, isDirty, onUpdate }: WorkspaceProps) {
     <div className={classNames(styles.workspace)}>
       {selectedIndex < workingFiles.length && (
         <>
-          <FileList
+          <SelectList
+            items={workingFiles}
             selectedIndex={selectedIndex}
-            routeFiles={workingFiles}
-            isDirty={isDirty}
             onSelect={setSelectedIndex}
+            getLabel={(index) => {
+              const workingFile = workingFiles[index];
+              return isDirty(workingFile, index)
+                ? workingFile.name + "*"
+                : workingFile.name;
+            }}
           />
           <div
             ref={formInputRef}
