@@ -9,11 +9,11 @@
   },
   "Scion": {
     "start_gem_id": "Metadata/Items/Gems/SkillGemThrownWeapon",
-    "chest_gem_id": "Metadata/Items/Gems/SupportGemOnslaught"
+    "chest_gem_id": "Metadata/Items/Gems/SupportGemPrismaticBurst"
   },
   "Ranger": {
     "start_gem_id": "Metadata/Items/Gems/SkillGemBurningArrow",
-    "chest_gem_id": "Metadata/Items/Gems/SupportGemPierce"
+    "chest_gem_id": "Metadata/Items/Gems/SupportGemOnslaught"
   },
   "Duelist": {
     "start_gem_id": "Metadata/Items/Gems/SkillGemDoubleStrike",

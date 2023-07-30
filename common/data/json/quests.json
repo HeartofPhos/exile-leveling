@@ -365,9 +365,9 @@
             ],
             "npc": "Nessa"
           },
-          "Metadata/Items/Gems/SupportGemPierce": {
+          "Metadata/Items/Gems/SupportGemPrismaticBurst": {
             "classes": [
-              "Ranger"
+              "Scion"
             ],
             "npc": "Nessa"
           },
@@ -560,7 +560,6 @@
           },
           "Metadata/Items/Gems/SupportGemOnslaught": {
             "classes": [
-              "Templar",
               "Marauder",
               "Duelist",
               "Shadow",
@@ -573,7 +572,17 @@
             "classes": [
               "Duelist",
               "Scion",
-              "Shadow"
+              "Shadow",
+              "Ranger"
+            ],
+            "npc": "Nessa"
+          },
+          "Metadata/Items/Gems/SupportGemPrismaticBurst": {
+            "classes": [
+              "Templar",
+              "Shadow",
+              "Witch",
+              "Scion"
             ],
             "npc": "Nessa"
           },
@@ -1429,6 +1438,16 @@
             ],
             "npc": "Nessa"
           },
+          "Metadata/Items/Gems/SupportGemFasterAttack": {
+            "classes": [
+              "Duelist",
+              "Marauder",
+              "Ranger",
+              "Shadow",
+              "Scion"
+            ],
+            "npc": "Nessa"
+          },
           "Metadata/Items/Gems/SupportGemIncreasedCriticalStrikes": {
             "classes": [
               "Ranger",
@@ -1488,6 +1507,14 @@
               "Marauder",
               "Ranger",
               "Scion"
+            ],
+            "npc": "Nessa"
+          },
+          "Metadata/Items/Gems/SupportGemManaforgedArrows": {
+            "classes": [
+              "Ranger",
+              "Scion",
+              "Shadow"
             ],
             "npc": "Nessa"
           },
@@ -3225,17 +3252,6 @@
               "Duelist",
               "Marauder",
               "Scion",
-              "Templar"
-            ],
-            "npc": "Yeena"
-          },
-          "Metadata/Items/Gems/SupportGemFasterAttack": {
-            "classes": [
-              "Duelist",
-              "Marauder",
-              "Ranger",
-              "Scion",
-              "Shadow",
               "Templar"
             ],
             "npc": "Yeena"
@@ -6012,6 +6028,10 @@
             "classes": [],
             "npc": "Siosa"
           },
+          "Metadata/Items/Gems/SupportGemManaforgedArrows": {
+            "classes": [],
+            "npc": "Siosa"
+          },
           "Metadata/Items/Gems/SupportGemMeatShield": {
             "classes": [],
             "npc": "Siosa"
@@ -6129,6 +6149,10 @@
             "npc": "Siosa"
           },
           "Metadata/Items/Gems/SkillGemPride": {
+            "classes": [],
+            "npc": "Siosa"
+          },
+          "Metadata/Items/Gems/SupportGemPrismaticBurst": {
             "classes": [],
             "npc": "Siosa"
           },
@@ -7272,6 +7296,15 @@
               "Templar",
               "Shadow",
               "Scion"
+            ],
+            "npc": "Petarus and Vanja"
+          },
+          "Metadata/Items/Gems/SkillGemChannelledSnipe": {
+            "classes": [
+              "Duelist",
+              "Shadow",
+              "Scion",
+              "Ranger"
             ],
             "npc": "Petarus and Vanja"
           },
@@ -8815,6 +8848,10 @@
             "classes": [],
             "npc": "Lilly Roth"
           },
+          "Metadata/Items/Gems/SupportGemManaforgedArrows": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
           "Metadata/Items/Gems/SupportGemMarkOnHit": {
             "classes": [],
             "npc": "Lilly Roth"
@@ -8859,6 +8896,10 @@
             "classes": [],
             "npc": "Lilly Roth"
           },
+          "Metadata/Items/Gems/SupportGemOnslaught": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
           "Metadata/Items/Gems/SupportGemMultiTotem": {
             "classes": [],
             "npc": "Lilly Roth"
@@ -8899,6 +8940,10 @@
             "classes": [],
             "npc": "Lilly Roth"
           },
+          "Metadata/Items/Gems/SupportGemPierce": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
           "Metadata/Items/Gems/SupportGemPinpoint": {
             "classes": [],
             "npc": "Lilly Roth"
@@ -8928,6 +8973,10 @@
             "npc": "Lilly Roth"
           },
           "Metadata/Items/Gems/SkillGemPride": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
+          "Metadata/Items/Gems/SupportGemPrismaticBurst": {
             "classes": [],
             "npc": "Lilly Roth"
           },
@@ -9092,6 +9141,10 @@
             "npc": "Lilly Roth"
           },
           "Metadata/Items/Gems/SkillGemSmokeMine": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
+          "Metadata/Items/Gems/SkillGemChannelledSnipe": {
             "classes": [],
             "npc": "Lilly Roth"
           },
