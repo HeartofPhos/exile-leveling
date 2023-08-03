@@ -11,30 +11,38 @@
   border-width: var(--border-width);
   border-color: var(--accent-primary);
   border-radius: var(--border-radius);
-  padding: var(--size-2);
   z-index: 2;
+  overflow: hidden;
 }
 
-.sidebarToggle {
+.header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: var(--line-height);
   color: var(--on-secondary);
   font-weight: var(--font-heavy);
-  cursor: pointer;
+  background-color: var(--secondary);
+  height: 2rem;
 }
 
-.sidebarContents {
+.toggle {
+  display: flex;
+  align-items: center;
+  padding: var(--size-2);
+}
+
+.tab {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding: var(--size-2);
+}
+
+.contents {
   display: flex;
   flex-direction: column;
-  gap: var(--size-2);
   overflow: auto;
   overscroll-behavior: contain;
+  padding: var(--size-1);
   width: 20rem;
-}
-
-.sidebarContents:not(.expand) {
-  display: none;
 }
