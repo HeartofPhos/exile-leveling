@@ -2,7 +2,6 @@ import { buildDataSelector } from "../../state/build-data";
 import { gemLinksSelector } from "../../state/gem-links";
 import { searchStringsAtom } from "../../state/search-strings";
 import { urlTreesSelector } from "../../state/tree/url-tree";
-import { borderListStyles, interactiveStyles } from "../../styles";
 import { GemLinkViewer } from "../GemLinkViewer";
 import { PassiveTreeViewer } from "../PassiveTreeViewer";
 import { SearchString } from "../SearchStrings";
@@ -10,7 +9,6 @@ import styles from "./styles.module.css";
 import classNames from "classnames";
 import { useState } from "react";
 import React from "react";
-import { FaRegClipboard } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
 import { useRecoilValue } from "recoil";
 
@@ -54,6 +52,11 @@ export function Sidebar() {
   }
 
   if (children.length === 0) return <></>;
+
+  // tab selector
+  // if tab == tree { tree }
+  // if tab == search { search-strings }
+  // if tab == links { links }
 
   return (
     <div className={classNames(styles.sidebar)}>

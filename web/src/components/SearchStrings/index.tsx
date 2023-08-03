@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import { borderListStyles, interactiveStyles } from "../../styles";
 import styles from "./styles.module.css";
 import classNames from "classnames";
@@ -18,6 +19,7 @@ export function SearchString({ value }: SearchStringProps) {
       )}
       onClick={() => {
         navigator.clipboard.writeText(value);
+        toast.success("Copied to Clipboard");
       }}
     >
       <div>
