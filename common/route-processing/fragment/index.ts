@@ -37,7 +37,7 @@ const EvaluateLookup: Record<
 
 interface ParseContext {
   state: RouteState;
-  step: RouteData.FragmentStep;
+  fragments: Fragments.AnyFragment[];
   logger: ScopedLogger;
 }
 
@@ -50,8 +50,8 @@ const FRAGMENT_PATTERNS: Pattern<ParseContext>[] = [
   // Text
   {
     regex: /[^{#]+/g,
-    processor: (match, { step }) => {
-      step.parts.push(match[0]);
+    processor: (match, { fragments }) => {
+      fragments.push(match[0]);
       return true;
     },
   },
@@ -64,33 +64,28 @@ const FRAGMENT_PATTERNS: Pattern<ParseContext>[] = [
       const evaluateFragment = EvaluateLookup[split[0] as Language.Fragment];
       const result = evaluateFragment(split, context);
       if (typeof result === "string") context.logger.error(result);
-      else context.step.parts.push(result.fragment);
+      else context.fragments.push(result.fragment);
 
       return true;
     },
   },
 ];
 
-export function parseFragmentStep(
+export function parseFragment(
   text: string,
   state: RouteState,
   logger: ScopedLogger
 ) {
-  const step: RouteData.FragmentStep = {
-    type: "fragment_step",
-    parts: [],
-  };
-
   const context: ParseContext = {
     state,
-    step,
+    fragments: [],
     logger,
   };
 
   const success = matchPatterns(text, FRAGMENT_PATTERNS, context);
   if (!success) logger.error("invalid syntax");
 
-  return context.step;
+  return context.fragments;
 }
 
 function transitionArea(state: RouteState, area: GameData.Area) {

@@ -202,6 +202,8 @@ function AscendComponent(version: string) {
 }
 
 export function ExileFragment({ fragment }: FragmentProps) {
+  if (typeof fragment === "string") return <>{fragment}</>;
+
   switch (fragment.type) {
     case "kill":
       return EnemyComponent(fragment.value);
@@ -273,20 +275,16 @@ export function ExileFragment({ fragment }: FragmentProps) {
   return <>{`unmapped: ${JSON.stringify(fragment)}`}</>;
 }
 
-interface StepProps {
-  step: RouteData.FragmentStep;
+interface FragmentsProps {
+  fragments: Fragments.AnyFragment[];
 }
 
-export function ExileFragmentStep({ step }: StepProps) {
+export function ExileFragments({ fragments }: FragmentsProps) {
   return (
     <div className={classNames(styles.fragmentStep, taskStyle)}>
-      {step.parts.map((part, i) =>
-        typeof part == "string" ? (
-          part
-        ) : (
-          <ExileFragment key={i} fragment={part} />
-        )
-      )}
+      {fragments.map((fragment, i) => (
+        <ExileFragment key={i} fragment={fragment} />
+      ))}
     </div>
   );
 }
