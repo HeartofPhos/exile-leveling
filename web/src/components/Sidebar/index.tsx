@@ -5,6 +5,7 @@ import { urlTreesSelector } from "../../state/tree/url-tree";
 import { borderListStyles, interactiveStyles } from "../../styles";
 import { GemLinkViewer } from "../GemLinkViewer";
 import { PassiveTreeViewer } from "../PassiveTreeViewer";
+import { SearchString } from "../SearchStrings";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { useState } from "react";
@@ -74,31 +75,6 @@ export function Sidebar() {
       >
         {React.Children.toArray(children)}
       </div>
-    </div>
-  );
-}
-
-interface SearchStringProps {
-  value: string;
-}
-
-function SearchString({ value }: SearchStringProps) {
-  return (
-    <div
-      className={classNames(
-        borderListStyles.itemRound,
-        interactiveStyles.hoverPrimary,
-        interactiveStyles.activePrimary,
-        styles.searchString
-      )}
-      onClick={() => {
-        navigator.clipboard.writeText(value);
-      }}
-    >
-      <div>
-        <FaRegClipboard className={classNames("inlineIcon")} />
-      </div>
-      {value}
     </div>
   );
 }

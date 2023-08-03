@@ -38,17 +38,3 @@
 .sidebarContents:not(.expand) {
   display: none;
 }
-
-.searchStrings {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  width: 100%;
-}
-
-.searchString {
-  display: flex;
-  text-overflow: clip;
-  word-break: break-all;
-  cursor: pointer;
-}
