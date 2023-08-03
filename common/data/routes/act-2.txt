@@ -119,7 +119,7 @@ Hand in {quest|a2q4} #Sharp and Cruel
     Find and help {kill|Oak, Skullbreaker}, take {quest_text|The Apex}
     Search opposite direction of the encampment entrance
 #endif
-Poison the {quest_text|Tree Roots} ➞ {enter|1_2_11} #The Vaal Ruins
+Poison the {quest_text|Tree Roots} ➞ {enter|1_2_11} #The Vaal Ruins - S shape or L shape leads to exit
 ➞ {enter|1_2_8} #The Northern Forest
 ➞ {enter|1_2_14_2} #The Caverns
 Get {crafting}

@@ -21,9 +21,11 @@ Get {crafting|1_Labyrinth_boss_3}
 {waypoint|1_4_3_3} #The Crystal Veins
 ➞ {enter|1_4_5_1} #Daresso's Dream
 ➞ {enter|1_4_5_2} #The Grand Arena
+Head {dir|225} from waypoint and follow the exits keeping {dir|45}
 Get {crafting}
 {waypoint|1_4_3_3} #The Crystal Veins
 ➞ {enter|1_4_4_1} #Kaom's Dream
+Head {dir|45} then follow Bridges
 ➞ {enter|1_4_4_3} #Kaom's Stronghold
 Get {crafting}
 ➞ {arena|Caldera of the King}, kill {kill|King Kaom}, take {quest_text|The Eye of Fury}
@@ -39,6 +41,7 @@ Talk to {generic|Lady Dialla}
 Talk to {generic|Piety}
 Get {crafting}
 ➞ {enter|1_4_6_3} #The Harvest
+For {kill|Doedre Darktongue} Red=take more damage, Green=deal less damage, Purple=slow. Stay in red and dodge.
 Find and kill {kill|Doedre Darktongue}, take {quest_text|Malachai's Lungs}
 Find and kill {kill|Maligaro, The Inquisitor}, take {quest_text|Malachai's Heart}
 Find and kill {kill|Shavronne of Umbra}, take {quest_text|Malachai's Entrails}

@@ -22,6 +22,7 @@ Get {crafting}
 Get {waypoint_get}
 Activate {quest_text|Map Device} with {quest_text|Maligaro's Map}
 ➞ {enter|2_7_5_map} #Maligaro's Sanctum
+Follow edges of the zone and cross bridges in the corners, typically bridges spawn in the opposite diagonal corners
 ➞ {arena|Maligaro's Workshop}, kill {kill|Maligaro, the Artist}, take {quest_text|Black Venom}
 {logout}
 Hand in {quest|a7q2} #Essence of the Artist

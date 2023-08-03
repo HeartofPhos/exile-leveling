@@ -1,11 +1,11 @@
 #section Act 5
-➞ {enter|1_5_1} #The Slave Pens
+➞ {enter|1_5_1} #The Slave Pens - Head {dir|180} as much as possible, then head {dir|270}, then head {dir|0}
 Find and kill {kill|Overseer Krow}
 ➞ {enter|1_5_town} #Overseer's Tower
 Hand in {quest|a5q1b} #Return to Oriath
 ➞ {enter|1_5_2} #The Control Blocks
-Find and take {quest_text|Miasmeter}
-Find and kill {kill|Justicar Casticus}, take {quest_text|Eyes of Zeal}
+Find and take {quest_text|Miasmeter} - Head {dir|0} and to the {dir|270} as much as possible
+Find and kill {kill|Justicar Casticus}, take {quest_text|Eyes of Zeal} - Head {dir|90} and {dir|0} from {quest_text|Miasmeter}
 ➞ {enter|1_5_3} #Oriath Square
 Head {dir|45} ➞ {enter|1_5_4} #The Templar Courts
 Loop around clockwise ➞ {enter|1_5_5} #The Chamber of Innocence

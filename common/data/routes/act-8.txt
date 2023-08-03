@@ -1,7 +1,7 @@
 #section Act 8
 ➞ {enter|2_8_1} #The Sarn Ramparts
 ➞ {enter|2_8_town} #The Sarn Encampment
-Head {dir|270} ➞ {enter|2_8_2_1} #The Toxic Conduits
+Head {dir|270} ➞ {enter|2_8_2_1} #The Toxic Conduits- Black splashes of paint on ground points to the right direction to go
 ➞ {enter|2_8_2_2} #Doedre's Cesspool
 ➞ {arena|The Cauldron}, kill {kill|Doedre the Vile}
 ➞ {arena|Sewer Outlet}

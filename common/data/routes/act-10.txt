@@ -43,3 +43,4 @@ Talk to {generic|Lilly Roth}, Set Sail from Oriath
 ➞ {enter|2_11_endgame_town} #Karui Shores
 Get {crafting}
 Hand in {quest|a10q3} #An End to Hunger
+Type /passives in chat to confirm that you have all 24 passives from quests

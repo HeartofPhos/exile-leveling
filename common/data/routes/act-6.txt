@@ -6,7 +6,7 @@ Kill {kill|Everything}
 Hand in {quest|a6q4} #Fallen from Grace
 ➞ {enter|2_6_2} #The Coast
 ➞ {enter|2_6_4} #The Mud Flats
-Find and kill {kill|The Dishonoured Queen}, take {quest_text|Eye of Conquest}
+Find and kill {kill|The Dishonoured Queen}, take {quest_text|Eye of Conquest} - {dir|45} corner of area, normally by a house
 ➞ {enter|2_6_5} #The Karui Fortress
 ➞ {arena|Tukohama's Keep}, kill {kill|Tukohama, Karui God of War}
 Get {crafting}
@@ -40,7 +40,7 @@ Take {quest_text|The Black Flag}
 Follow the shore, get {crafting}
 Complete {quest_text|Pillar Push}
 Light the {quest_text|Beacon}, throw in {quest_text|The Black Flag}
-Talk to {generic|Weylam Roth}, sail to {enter|2_6_15} #The Brine King's Reef
+Talk to {generic|Weylam Roth}, sail to {enter|2_6_15} #The Brine King's Reef - Hug border of map, go clockwise to find boss
 ➞ {arena|The Bring King's Throne}, kill {kill|Tsoagoth, The Brine King}
 {logout}
 Select {generic|Pantheons}
