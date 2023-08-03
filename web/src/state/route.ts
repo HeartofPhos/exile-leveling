@@ -63,43 +63,26 @@ export const routeSelector = selector({
         steps: [],
       };
       for (const step of section.steps) {
-        if (buildData.gemsOnly) {
-          if (step.type == "fragment_step") {
-            for (const part of step.parts) {
-              if (typeof part !== "string" && part.type == "quest") {
+        const gemSteps: RouteData.GemStep[] = [];
 
-                const gemSteps = buildGemSteps(
-                  part,
-                  buildData,
-                  requiredGems,
-                  routeGems
-                );
-
-                if (gemSteps.length > 0)
-                  buildSection.steps.push(step, ...gemSteps);
-              }
-            }
-          }
-        } else {
-          buildSection.steps.push(step);
-          if (step.type == "fragment_step") {
-            for (const part of step.parts) {
-              if (typeof part !== "string" && part.type == "quest") {
-                const gemSteps = buildGemSteps(
-                  part,
-                  buildData,
-                  requiredGems,
-                  routeGems
-                );
-                buildSection.steps.push(...gemSteps);
-              }
+        if (step.type == "fragment_step") {
+          for (const part of step.parts) {
+            if (typeof part !== "string" && part.type === "quest") {
+              gemSteps.push(
+                ...buildGemSteps(part, buildData, requiredGems, routeGems)
+              );
             }
           }
         }
+
+        if (buildData.gemsOnly) {
+          if (gemSteps.length > 0) buildSection.steps.push(step, ...gemSteps);
+        } else {
+          buildSection.steps.push(step);
+        }
       }
 
-      if (buildSection.steps.length > 0)
-        route.push(buildSection);
+      if (buildSection.steps.length > 0) route.push(buildSection);
     }
 
     return route;
