@@ -1,3 +1,4 @@
+import { globImportLazy } from "../../web/src/utility";
 import { GameData } from "../types";
 import AREAS_JSON from "./json/areas.json";
 import AWAKENED_GEM_LOOKUP_JSON from "./json/awakened-gem-lookup.json";
@@ -20,9 +21,9 @@ export namespace Data {
   export const VaalGemLookup =
     VAAL_GEM_LOOKUP_JSON as GameData.VariantGemLookup;
 
-  //@ts-expect-error
-  export const RouteSourceLookup: Record<string, string> = import.meta.glob(
-    "./routes/*.txt",
-    { as: "raw" }
+  export const RouteSourceLookup = globImportLazy<string>(
+    import.meta.glob("./routes/*.txt", { as: "raw" }),
+    (key) => key,
+    (value) => value
   );
 }

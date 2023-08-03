@@ -11,7 +11,7 @@ async function loadDefaultRouteFiles() {
     import("../../../common/route-processing"),
   ]);
 
-  const routeSources = [
+  const routeSources = await Promise.all([
     Data.RouteSourceLookup["./routes/act-1.txt"],
     Data.RouteSourceLookup["./routes/act-2.txt"],
     Data.RouteSourceLookup["./routes/act-3.txt"],
@@ -22,7 +22,7 @@ async function loadDefaultRouteFiles() {
     Data.RouteSourceLookup["./routes/act-8.txt"],
     Data.RouteSourceLookup["./routes/act-9.txt"],
     Data.RouteSourceLookup["./routes/act-10.txt"],
-  ];
+  ]);
 
   return getRouteFiles(routeSources);
 }
