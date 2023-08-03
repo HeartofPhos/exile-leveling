@@ -5,7 +5,7 @@ import { urlTreesSelector } from "../../state/tree/url-tree";
 import { interactiveStyles } from "../../styles";
 import { GemLinkViewer } from "../GemLinkViewer";
 import { PassiveTreeViewer } from "../PassiveTreeViewer";
-import { SearchString } from "../SearchStrings";
+import { SearchStrings } from "../SearchStrings";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { useState } from "react";
@@ -57,13 +57,7 @@ export function Sidebar() {
           Search
         </>
       ),
-      content: (
-        <div className={classNames(styles.searchStrings)}>
-          {searchStrings.map((x, i) => (
-            <SearchString key={i} value={x} />
-          ))}
-        </div>
-      ),
+      content: <SearchStrings values={searchStrings} />,
     });
   }
 
@@ -104,7 +98,15 @@ export function Sidebar() {
           <hr />
           <div className={classNames(styles.contents)}>
             {React.Children.toArray(
-              sections.map((v, i) => <>{activeTab == i && v.content}</>)
+              sections.map((v, i) => (
+                <div
+                  className={classNames(styles.content, {
+                    [styles.hidden]: activeTab !== i,
+                  })}
+                >
+                  {v.content}
+                </div>
+              ))
             )}
           </div>
         </>

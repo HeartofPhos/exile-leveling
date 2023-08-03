@@ -46,3 +46,13 @@
   padding: var(--size-1);
   width: 20rem;
 }
+
+.content {
+  display: flex;
+  min-height: 10rem;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
