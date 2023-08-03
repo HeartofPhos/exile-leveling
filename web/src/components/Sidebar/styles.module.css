@@ -47,6 +47,10 @@
   width: 20rem;
 }
 
+.contents:not(.expand) {
+  display: none;
+}
+
 .content {
   display: flex;
   min-height: 10rem;

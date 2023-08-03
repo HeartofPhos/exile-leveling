@@ -93,24 +93,20 @@ export function Sidebar() {
           {expand ? <FiChevronRight /> : <FiChevronLeft />}
         </button>
       </div>
-      {expand && (
-        <>
-          <hr />
-          <div className={classNames(styles.contents)}>
-            {React.Children.toArray(
-              sections.map((v, i) => (
-                <div
-                  className={classNames(styles.content, {
-                    [styles.hidden]: activeTab !== i,
-                  })}
-                >
-                  {v.content}
-                </div>
-              ))
-            )}
-          </div>
-        </>
-      )}
+      {expand && <hr />}
+      <div className={classNames(styles.contents, { [styles.expand]: expand })}>
+        {React.Children.toArray(
+          sections.map((v, i) => (
+            <div
+              className={classNames(styles.content, {
+                [styles.hidden]: activeTab !== i,
+              })}
+            >
+              {v.content}
+            </div>
+          ))
+        )}
+      </div>
     </div>
   );
 }
