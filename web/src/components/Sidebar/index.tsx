@@ -2,15 +2,17 @@ import { buildDataSelector } from "../../state/build-data";
 import { gemLinksSelector } from "../../state/gem-links";
 import { searchStringsAtom } from "../../state/search-strings";
 import { urlTreesSelector } from "../../state/tree/url-tree";
-import { borderListStyles, interactiveStyles } from "../../styles";
+import { interactiveStyles } from "../../styles";
 import { GemLinkViewer } from "../GemLinkViewer";
 import { PassiveTreeViewer } from "../PassiveTreeViewer";
+import { SearchString } from "../SearchStrings";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { useState } from "react";
 import React from "react";
-import { FaRegClipboard } from "react-icons/fa";
-import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+import { FaLink } from "react-icons/fa";
+import { FiChevronLeft, FiChevronRight, FiSearch } from "react-icons/fi";
+import { TbHierarchy } from "react-icons/tb";
 import { useRecoilValue } from "recoil";
 
 export function Sidebar() {
@@ -19,86 +21,94 @@ export function Sidebar() {
   const { urlTrees } = useRecoilValue(urlTreesSelector);
   const gemLinks = useRecoilValue(gemLinksSelector);
   const [expand, setExpand] = useState(true);
+  const [activeTab, setActiveTab] = useState<number>(0);
 
-  const children = [];
+  const sections: { tab: React.ReactNode; content: React.ReactNode }[] = [];
+
   if (urlTrees.length > 0) {
-    children.push(
-      <>
-        <hr />
-        <PassiveTreeViewer urlTrees={urlTrees} />
-      </>
-    );
+    sections.push({
+      tab: (
+        <>
+          <TbHierarchy className={classNames("inlineIcon")} />
+          Tree
+        </>
+      ),
+      content: <PassiveTreeViewer urlTrees={urlTrees} />,
+    });
+  }
+
+  if (buildData.gemLinks && gemLinks.length > 0) {
+    sections.push({
+      tab: (
+        <>
+          <FaLink className={classNames("inlineIcon")} />
+          Gems
+        </>
+      ),
+      content: <GemLinkViewer gemLinks={gemLinks} />,
+    });
   }
 
   if (searchStrings !== null && searchStrings.length > 0) {
-    children.push(
-      <>
-        <hr />
+    sections.push({
+      tab: (
+        <>
+          <FiSearch className={classNames("inlineIcon")} />
+          Search
+        </>
+      ),
+      content: (
         <div className={classNames(styles.searchStrings)}>
           {searchStrings.map((x, i) => (
             <SearchString key={i} value={x} />
           ))}
         </div>
-      </>
-    );
+      ),
+    });
   }
 
-  if (buildData.gemLinks && gemLinks.length > 0) {
-    children.push(
-      <>
-        <hr />
-        <GemLinkViewer gemLinks={gemLinks} />
-      </>
-    );
-  }
-
-  if (children.length === 0) return <></>;
+  if (sections.length === 0) return <></>;
 
   return (
     <div className={classNames(styles.sidebar)}>
-      <div>
+      <div className={classNames(styles.header)}>
+        {expand &&
+          sections.map((v, i) => (
+            <button
+              key={i}
+              className={classNames(
+                styles.tab,
+                interactiveStyles.activeSecondary
+              )}
+              onClick={() => {
+                setActiveTab(i);
+              }}
+            >
+              {v.tab}
+            </button>
+          ))}
         <button
-          className={classNames(styles.sidebarToggle)}
+          className={classNames(
+            styles.toggle,
+            interactiveStyles.activeSecondary
+          )}
           onClick={() => {
             setExpand(!expand);
           }}
         >
-          {expand && <span>Sidebar</span>}
           {expand ? <FiChevronRight /> : <FiChevronLeft />}
         </button>
       </div>
-      <div
-        className={classNames(styles.sidebarContents, {
-          [styles.expand]: expand,
-        })}
-      >
-        {React.Children.toArray(children)}
-      </div>
-    </div>
-  );
-}
-
-interface SearchStringProps {
-  value: string;
-}
-
-function SearchString({ value }: SearchStringProps) {
-  return (
-    <div
-      className={classNames(
-        borderListStyles.itemRound,
-        interactiveStyles.hoverPrimary,
-        interactiveStyles.activePrimary,
-        styles.searchString
+      {expand && (
+        <>
+          <hr />
+          <div className={classNames(styles.contents)}>
+            {React.Children.toArray(
+              sections.map((v, i) => <>{activeTab == i && v.content}</>)
+            )}
+          </div>
+        </>
       )}
-      onClick={() => {
-        navigator.clipboard.writeText(value);
-      }}
-    >
-      <div>
-        <FaRegClipboard className={classNames("inlineIcon")} />
-      </div>
-      {value}
     </div>
   );
 }
