@@ -56,29 +56,29 @@ export interface RouteState {
   lastTownAreaId: GameData.Area["id"];
   portalAreaId: GameData.Area["id"] | null;
   preprocessorDefinitions: Set<string>;
-  logger: ScopedLogger;
 }
 
 interface ParseContext {
   state: RouteState;
   section: RouteData.Section;
   conditionalStack: boolean[];
+  logger: ScopedLogger;
 }
 
 const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
   // endif
   {
-    regex: /^ *#endif/g,
-    processor: (match, { state, conditionalStack }) => {
+    regex: /#endif/g,
+    processor: (match, { state, conditionalStack, logger }) => {
       const value = conditionalStack.pop();
-      if (value === undefined) state.logger.warn("unexpected #endif");
+      if (value === undefined) logger.warn("unexpected #endif");
 
       return false;
     },
   },
   // ifdef
   {
-    regex: /^ *#ifdef *(.*)/g,
+    regex: /#ifdef *(.*)/g,
     processor: (match, { state, conditionalStack }) => {
       const value = match[1];
       if (value)
@@ -89,7 +89,7 @@ const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
   },
   // ifndef
   {
-    regex: /^ *#ifndef *(.*)/g,
+    regex: /#ifndef *(.*)/g,
     processor: (match, { state, conditionalStack }) => {
       const value = match[1];
       if (value)
@@ -101,13 +101,13 @@ const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
   // FragmentStep
   {
     regex: /.*/g,
-    processor: (match, { state, section, conditionalStack }) => {
+    processor: (match, { state, section, conditionalStack, logger }) => {
       const evaluateLine =
         conditionalStack.length == 0 ||
         conditionalStack[conditionalStack.length - 1];
 
       if (evaluateLine) {
-        const step = parseFragmentStep(match[0], state);
+        const step = parseFragmentStep(match[0], state, logger);
         if (step.parts.length > 0) section.steps.push(step);
       }
 
@@ -116,10 +116,25 @@ const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
   },
 ];
 
+function assertPadding(text: string, depth: number, logger: ScopedLogger) {
+  const expectedPadding = depth * 4;
+
+  let actualPadding = 0;
+  const match = /^( *)/g.exec(text);
+  if (match) actualPadding = match[1].length;
+
+  if (actualPadding !== expectedPadding)
+    logger.warn(
+      `expected ${expectedPadding} whitespace, found ${actualPadding}`
+    );
+}
+
 export function parseRoute(
   routeFiles: RouteData.RouteFile[],
   state: RouteState
 ) {
+  const logger = new ScopedLogger();
+
   const route: RouteData.Route = [];
   for (const routeFile of routeFiles) {
     const routeLines = routeFile.contents.split(/\r\n|\r|\n/g);
@@ -130,44 +145,55 @@ export function parseRoute(
     };
     route.push(section);
 
-    state.logger.pushScope(section.name);
+    logger.pushScope(section.name);
 
-    const parseContext: ParseContext = {
+    const context: ParseContext = {
       state,
       section,
       conditionalStack: [],
+      logger,
     };
 
     for (let lineIndex = 0; lineIndex < routeLines.length; lineIndex++) {
       const line = routeLines[lineIndex];
       if (!line) continue;
 
-      state.logger.pushScope(`line ${lineIndex + 1}`);
-      matchPatterns(line, ROUTE_PATTERNS, parseContext);
-      state.logger.popScope();
+      logger.pushScope(`line ${lineIndex + 1}`);
+
+      const conditionalCountBefore = context.conditionalStack.length;
+      matchPatterns(line.trim(), ROUTE_PATTERNS, context);
+      const conditionalCountAfter = context.conditionalStack.length;
+
+      const depth =
+        conditionalCountBefore >= conditionalCountAfter
+          ? conditionalCountAfter
+          : conditionalCountBefore;
+
+      assertPadding(line, depth, logger);
+
+      logger.popScope();
     }
 
-    if (parseContext.conditionalStack.length != 0)
-      state.logger.warn("expected #endif");
+    if (context.conditionalStack.length != 0) logger.warn("expected #endif");
 
-    state.logger.popScope();
+    logger.popScope();
   }
 
   for (const waypoint of state.explicitWaypoints) {
     if (!state.usedWaypoints.has(waypoint)) {
-      state.logger.warn(`unused waypoint ${waypoint}`);
+      logger.warn(`unused waypoint ${waypoint}`);
     }
   }
 
   for (const key in Data.Areas) {
     const area = Data.Areas[key];
     if (area.crafting_recipes.length > 0 && !state.craftingAreas.has(area.id))
-      state.logger.warn(
+      logger.warn(
         `missing crafting area ${area.id}, ${area.crafting_recipes.join(", ")}`
       );
   }
 
-  state.logger.drain(console);
+  logger.drain(console);
 
   return route;
 }
@@ -182,7 +208,6 @@ export function initializeRouteState() {
     lastTownAreaId: "1_1_town",
     portalAreaId: null,
     preprocessorDefinitions: new Set(),
-    logger: new ScopedLogger(),
   };
 
   return state;

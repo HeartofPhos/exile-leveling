@@ -2,6 +2,7 @@ import { RouteState } from "..";
 import { Data } from "../../data";
 import { GameData } from "../../types";
 import { Pattern, matchPatterns } from "../patterns";
+import { ScopedLogger } from "../scoped-logger";
 import { RouteData } from "../types";
 import { Language } from "./language";
 import { Fragments } from "./types";
@@ -10,7 +11,10 @@ type RawFragment = string | string[];
 
 const EvaluateLookup: Record<
   Language.Fragment,
-  (rawFragment: RawFragment, state: RouteState) => string | EvaluateResult
+  (
+    rawFragment: RawFragment,
+    { state, logger }: ParseContext
+  ) => string | EvaluateResult
 > = {
   ["kill"]: EvaluateKill,
   ["arena"]: EvaluateArena,
@@ -34,6 +38,7 @@ const EvaluateLookup: Record<
 interface ParseContext {
   state: RouteState;
   step: RouteData.FragmentStep;
+  logger: ScopedLogger;
 }
 
 const FRAGMENT_PATTERNS: Pattern<ParseContext>[] = [
@@ -53,34 +58,39 @@ const FRAGMENT_PATTERNS: Pattern<ParseContext>[] = [
   // Fragment
   {
     regex: /\{(.+?)\}/g,
-    processor: (match, { state, step }) => {
+    processor: (match, context) => {
       const split = match[1].split("|");
 
       const evaluateFragment = EvaluateLookup[split[0] as Language.Fragment];
-      const result = evaluateFragment(split, state);
-      if (typeof result === "string") state.logger.error(result);
-      else step.parts.push(result.fragment);
+      const result = evaluateFragment(split, context);
+      if (typeof result === "string") context.logger.error(result);
+      else context.step.parts.push(result.fragment);
 
       return true;
     },
   },
 ];
 
-export function parseFragmentStep(text: string, state: RouteState) {
+export function parseFragmentStep(
+  text: string,
+  state: RouteState,
+  logger: ScopedLogger
+) {
   const step: RouteData.FragmentStep = {
     type: "fragment_step",
     parts: [],
   };
 
-  const parseContext: ParseContext = {
+  const context: ParseContext = {
     state,
     step,
+    logger,
   };
 
-  const success = matchPatterns(text, FRAGMENT_PATTERNS, parseContext);
-  if (!success) state.logger.error("invalid syntax");
+  const success = matchPatterns(text, FRAGMENT_PATTERNS, context);
+  if (!success) logger.error("invalid syntax");
 
-  return parseContext.step;
+  return context.step;
 }
 
 function transitionArea(state: RouteState, area: GameData.Area) {
@@ -102,7 +112,7 @@ interface EvaluateResult {
 
 function EvaluateKill(
   rawFragment: RawFragment,
-  state: RouteState
+  { state, logger }: ParseContext
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
   const bossName = rawFragment[1];
@@ -128,7 +138,7 @@ function EvaluateKill(
 
 function EvaluateArena(
   rawFragment: RawFragment,
-  state: RouteState
+  { state, logger }: ParseContext
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
   return {
@@ -141,7 +151,7 @@ function EvaluateArena(
 
 function EvaluateArea(
   rawFragment: RawFragment,
-  state: RouteState
+  { state, logger }: ParseContext
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
@@ -158,7 +168,7 @@ function EvaluateArea(
 
 function EvaluateEnter(
   rawFragment: RawFragment,
-  state: RouteState
+  { state, logger }: ParseContext
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
@@ -166,7 +176,7 @@ function EvaluateEnter(
   if (!area) return ERROR_MISSING_AREA;
 
   if (!area.connection_ids.some((x) => x == state.currentAreaId))
-    state.logger.warn("not connected to current area");
+    logger.warn("not connected to current area");
 
   transitionArea(state, area);
 
@@ -180,7 +190,7 @@ function EvaluateEnter(
 
 function EvaluateLogout(
   rawFragment: RawFragment,
-  state: RouteState
+  { state, logger }: ParseContext
 ): string | EvaluateResult {
   if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
 
@@ -198,7 +208,7 @@ function EvaluateLogout(
 
 function EvaluateWaypoint(
   rawFragment: RawFragment,
-  state: RouteState
+  { state, logger }: ParseContext
 ): string | EvaluateResult {
   {
     if (rawFragment.length != 1 && rawFragment.length != 2)
@@ -211,10 +221,10 @@ function EvaluateWaypoint(
         !state.implicitWaypoints.has(area.id) &&
         !state.explicitWaypoints.has(area.id)
       )
-        state.logger.warn("missing waypoint");
+        logger.warn("missing waypoint");
 
       const currentArea = Data.Areas[state.currentAreaId];
-      if (!currentArea.has_waypoint) state.logger.warn(ERROR_AREA_NO_WAYPOINT);
+      if (!currentArea.has_waypoint) logger.warn(ERROR_AREA_NO_WAYPOINT);
 
       state.implicitWaypoints.add(currentArea.id);
       state.usedWaypoints.add(area.id);
@@ -240,15 +250,15 @@ function EvaluateWaypoint(
 
 function EvaluateGetWaypoint(
   rawFragment: RawFragment,
-  state: RouteState
+  { state, logger }: ParseContext
 ): string | EvaluateResult {
   if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
 
   const area = Data.Areas[state.currentAreaId];
   if (!area) return ERROR_MISSING_AREA;
-  if (!area.has_waypoint) state.logger.warn(ERROR_AREA_NO_WAYPOINT);
+  if (!area.has_waypoint) logger.warn(ERROR_AREA_NO_WAYPOINT);
   if (state.implicitWaypoints.has(area.id))
-    state.logger.warn("waypoint already acquired");
+    logger.warn("waypoint already acquired");
 
   state.explicitWaypoints.add(area.id);
 
@@ -261,7 +271,7 @@ function EvaluateGetWaypoint(
 
 function EvaluatePortal(
   rawFragment: RawFragment,
-  state: RouteState
+  { state, logger }: ParseContext
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
@@ -310,13 +320,13 @@ function EvaluatePortal(
 
 function EvaluateQuestReward(
   rawFragment: RawFragment,
-  state: RouteState
+  { state, logger }: ParseContext
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
   const currentArea = Data.Areas[state.currentAreaId];
   if (!currentArea.is_town_area)
-    state.logger.warn("quest_reward used outside of town");
+    logger.warn("quest_reward used outside of town");
 
   return {
     fragment: {
@@ -328,14 +338,14 @@ function EvaluateQuestReward(
 
 function EvaluateVendorReward(
   rawFragment: RawFragment,
-  state: RouteState
+  { state, logger }: ParseContext
 ): string | EvaluateResult {
   if (rawFragment.length != 2 && rawFragment.length != 3)
     return ERROR_INVALID_FORMAT;
 
   const currentArea = Data.Areas[state.currentAreaId];
   if (!currentArea.is_town_area)
-    state.logger.warn("reward_vendor used outside of town");
+    logger.warn("reward_vendor used outside of town");
 
   return {
     fragment: {
@@ -348,7 +358,7 @@ function EvaluateVendorReward(
 
 function EvaluateGeneric(
   rawFragment: RawFragment,
-  state: RouteState
+  { state, logger }: ParseContext
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
   return {
@@ -361,7 +371,7 @@ function EvaluateGeneric(
 
 function EvaluateCrafting(
   rawFragment: RawFragment,
-  state: RouteState
+  { state, logger }: ParseContext
 ): string | EvaluateResult {
   if (rawFragment.length > 2) return ERROR_INVALID_FORMAT;
 
@@ -383,7 +393,7 @@ function EvaluateCrafting(
 
 function EvaluateDirection(
   rawFragment: RawFragment,
-  state: RouteState
+  { state, logger }: ParseContext
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
@@ -405,7 +415,7 @@ function EvaluateDirection(
 
 function EvaluateQuest(
   rawFragment: RawFragment,
-  state: RouteState
+  { state, logger }: ParseContext
 ): string | EvaluateResult {
   {
     if (rawFragment.length < 2) return ERROR_INVALID_FORMAT;
@@ -436,7 +446,7 @@ function EvaluateQuest(
 
 function EvaluateQuestText(
   rawFragment: RawFragment,
-  state: RouteState
+  { state, logger }: ParseContext
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
   return {
@@ -449,7 +459,7 @@ function EvaluateQuestText(
 
 function EvaluateTrial(
   rawFragment: RawFragment,
-  state: RouteState
+  { state, logger }: ParseContext
 ): string | EvaluateResult {
   if (rawFragment.length != 1) return ERROR_INVALID_FORMAT;
   return {
@@ -461,7 +471,7 @@ function EvaluateTrial(
 
 function EvaluateAscend(
   rawFragment: RawFragment,
-  state: RouteState
+  { state, logger }: ParseContext
 ): string | EvaluateResult {
   if (rawFragment.length != 2) return ERROR_INVALID_FORMAT;
 
@@ -469,7 +479,7 @@ function EvaluateAscend(
   const currentArea = Data.Areas[state.currentAreaId];
   if (currentArea.id != expectedAreaId) {
     const expectedArea = Data.Areas[expectedAreaId];
-    state.logger.warn(`must be in "${expectedArea.name}"`);
+    logger.warn(`must be in "${expectedArea.name}"`);
   }
 
   const townArea = Data.Areas[state.lastTownAreaId];
