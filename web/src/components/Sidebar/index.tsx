@@ -37,7 +37,7 @@ export function Sidebar() {
     });
   }
 
-  if (buildData.gemLinks && gemLinks.length > 0) {
+  if (gemLinks.length > 0) {
     sections.push({
       tab: (
         <>
