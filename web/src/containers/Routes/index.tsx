@@ -1,4 +1,4 @@
-import { ExileFragments } from "../../components/ExileFragment";
+import { ExileStep } from "../../components/ExileFragment";
 import { GemReward } from "../../components/ItemReward";
 import { SectionHolder } from "../../components/SectionHolder";
 import { Sidebar } from "../../components/Sidebar";
@@ -28,14 +28,7 @@ function RoutesContainer() {
           isCompletedState: routeProgressSelectorFamily(
             [sectionIndex, stepIndex].toString()
           ),
-          children: (
-            <>
-              <ExileFragments key={stepIndex} fragments={step.parts} />
-              {step.hints.map((fragments) => (
-                <ExileFragments key={stepIndex} fragments={fragments} />
-              ))}
-            </>
-          ),
+          children: <ExileStep key={stepIndex} step={step} />,
         });
 
       if (step.type == "gem_step")

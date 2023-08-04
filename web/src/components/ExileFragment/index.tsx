@@ -8,6 +8,7 @@ import { SplitRow } from "../SplitRow";
 import { taskStyle } from "../TaskList";
 import styles from "./styles.module.css";
 import classNames from "classnames";
+import React from "react";
 import {
   BsArrowDownLeftSquare,
   BsArrowDownRightSquare,
@@ -18,10 +19,7 @@ import {
   BsArrowUpRightSquare,
   BsArrowUpSquare,
 } from "react-icons/bs";
-
-interface FragmentProps {
-  fragment: Fragments.AnyFragment;
-}
+import { RiInformationFill } from "react-icons/ri";
 
 function getImageUrl(path: string) {
   return new URL(`./images/${path}`, import.meta.url).href;
@@ -173,58 +171,54 @@ const GUIDE_URL_LOOKUP: Record<string, string> = {
   eternal: "https://www.poelab.com/wfbra",
 };
 
-function AscendComponent(version: string) {
-  return (
-    <SplitRow
-      left={
-        <div className={classNames(styles.noWrap)}>
-          <img
-            src={getImageUrl("trial.png")}
-            className={classNames("inlineIcon")}
-            alt=""
-          />
-          <span className={classNames(styles.trial)}>Ascend</span>
-        </div>
-      }
-      right={
-        <a
-          href={GUIDE_URL_LOOKUP[version]}
-          target="_blank"
-          onClick={(e) => {
-            e.stopPropagation();
-          }}
-        >
-          Daily Layout
-        </a>
-      }
-    />
-  );
+function AscendComponent(version: string): [React.ReactNode, React.ReactNode] {
+  return [
+    <div className={classNames(styles.noWrap)}>
+      <img
+        src={getImageUrl("trial.png")}
+        className={classNames("inlineIcon")}
+        alt=""
+      />
+      <span className={classNames(styles.trial)}>Ascend</span>
+    </div>,
+    <a
+      href={GUIDE_URL_LOOKUP[version]}
+      target="_blank"
+      onClick={(e) => {
+        e.stopPropagation();
+      }}
+    >
+      Daily Layout
+    </a>,
+  ];
 }
 
-export function ExileFragment({ fragment }: FragmentProps) {
-  if (typeof fragment === "string") return <>{fragment}</>;
+function ExileFragment(
+  fragment: Fragments.AnyFragment
+): [React.ReactNode, React.ReactNode] {
+  if (typeof fragment === "string") return [<>{fragment}</>, null];
 
   switch (fragment.type) {
     case "kill":
-      return EnemyComponent(fragment.value);
+      return [EnemyComponent(fragment.value), null];
     case "arena":
-      return AreaComponent(fragment.value, false);
+      return [AreaComponent(fragment.value, false), null];
     case "area": {
       const area = Data.Areas[fragment.areaId];
-      return AreaComponent(area.name, area.is_town_area);
+      return [AreaComponent(area.name, area.is_town_area), null];
     }
     case "enter": {
       const area = Data.Areas[fragment.areaId];
-      return AreaComponent(area.name, area.is_town_area);
+      return [AreaComponent(area.name, area.is_town_area), null];
     }
     case "logout":
-      return LogoutComponent(Data.Areas[fragment.areaId]);
+      return [LogoutComponent(Data.Areas[fragment.areaId]), null];
     case "waypoint":
-      return WaypointComponent();
+      return [WaypointComponent(), null];
     case "waypoint_use": {
       const dstArea = Data.Areas[fragment.dstAreaId];
       const srcArea = Data.Areas[fragment.srcAreaId];
-      return (
+      return [
         <>
           {WaypointComponent()}
           <span> ➞ </span>
@@ -236,55 +230,76 @@ export function ExileFragment({ fragment }: FragmentProps) {
             dstArea.id !== "Labyrinth_Airlock" && (
               <> - {GenericComponent(`Act ${dstArea.act}`)}</>
             )}
-        </>
-      );
+        </>,
+        null,
+      ];
     }
     case "waypoint_get":
-      return WaypointComponent();
+      return [WaypointComponent(), null];
     case "portal_use":
-      return PortalComponent(Data.Areas[fragment.dstAreaId]);
+      return [PortalComponent(Data.Areas[fragment.dstAreaId]), null];
     case "portal_set":
-      return PortalComponent();
-    case "quest": {
-      return QuestComponent(fragment);
-    }
+      return [PortalComponent(), null];
+    case "quest":
+      return [QuestComponent(fragment), null];
     case "quest_text":
-      return QuestTextComponent(fragment.value);
+      return [QuestTextComponent(fragment.value), null];
     case "generic":
-      return GenericComponent(fragment.value);
+      return [GenericComponent(fragment.value), null];
     case "reward_quest":
-      return <ItemReward item={fragment.item} rewardType="quest" />;
+      return [<ItemReward item={fragment.item} rewardType="quest" />, null];
     case "reward_vendor":
-      return (
+      return [
         <ItemReward
           item={fragment.item}
           cost={fragment.cost}
           rewardType="vendor"
-        />
-      );
+        />,
+        null,
+      ];
     case "trial":
-      return TrialComponent();
+      return [TrialComponent(), null];
     case "ascend":
       return AscendComponent(fragment.version);
     case "crafting":
-      return CraftingComponent(fragment.crafting_recipes);
+      return [CraftingComponent(fragment.crafting_recipes), null];
     case "dir":
-      return DirectionComponent(fragment.dirIndex);
+      return [DirectionComponent(fragment.dirIndex), null];
   }
 
-  return <>{`unmapped: ${JSON.stringify(fragment)}`}</>;
+  return [<>{`unmapped: ${JSON.stringify(fragment)}`}</>, null];
 }
 
-interface FragmentsProps {
-  fragments: Fragments.AnyFragment[];
+interface StepProps {
+  step: RouteData.FragmentStep;
 }
 
-export function ExileFragments({ fragments }: FragmentsProps) {
+export function ExileStep({ step }: StepProps) {
+  const headNodes: React.ReactNode[] = [];
+  const tailNodes: React.ReactNode[] = [];
+
+  for (let i = 0; i < step.parts.length; i++) {
+    const fragment = step.parts[i];
+    const [head, tail] = ExileFragment(fragment);
+
+    if (head) headNodes.push(head);
+    if (tail) tailNodes.push(tail);
+  }
+
+  if (step.hints.length > 0) {
+    tailNodes.push(<RiInformationFill className={classNames("inlineIcon")} />);
+  }
+
   return (
     <div className={classNames(styles.fragmentStep, taskStyle)}>
-      {fragments.map((fragment, i) => (
-        <ExileFragment key={i} fragment={fragment} />
-      ))}
+      {headNodes.length > 0 && tailNodes.length > 0 ? (
+        <SplitRow
+          left={React.Children.toArray(headNodes)}
+          right={React.Children.toArray(tailNodes)}
+        />
+      ) : (
+        React.Children.toArray(headNodes)
+      )}
     </div>
   );
 }
