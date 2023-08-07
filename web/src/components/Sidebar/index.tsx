@@ -16,12 +16,13 @@ import { TbHierarchy } from "react-icons/tb";
 import { useRecoilValue } from "recoil";
 
 export function Sidebar() {
-  const buildData = useRecoilValue(buildDataSelector);
   const searchStrings = useRecoilValue(searchStringsAtom);
   const { urlTrees } = useRecoilValue(urlTreesSelector);
   const gemLinks = useRecoilValue(gemLinksSelector);
   const [expand, setExpand] = useState(true);
   const [activeTab, setActiveTab] = useState<number>(0);
+
+  const displayAll = false;
 
   const sections: { tab: React.ReactNode; content: React.ReactNode }[] = [];
 
@@ -66,7 +67,8 @@ export function Sidebar() {
   return (
     <div className={classNames(styles.sidebar)}>
       <div className={classNames(styles.header)}>
-        {expand &&
+        {!displayAll &&
+          expand &&
           sections.map((v, i) => (
             <button
               key={i}
@@ -94,16 +96,27 @@ export function Sidebar() {
         </button>
       </div>
       {expand && <hr />}
-      <div className={classNames(styles.contents, { [styles.expand]: expand })}>
+      <div
+        className={classNames(styles.contents, {
+          [styles.expand]: expand,
+        })}
+      >
         {React.Children.toArray(
           sections.map((v, i) => (
-            <div
-              className={classNames(styles.content, {
-                [styles.hidden]: activeTab !== i,
-              })}
-            >
-              {v.content}
-            </div>
+            <>
+              <hr
+                className={classNames({
+                  [styles.hidden]: !displayAll || i === 0,
+                })}
+              />
+              <div
+                className={classNames(styles.content, {
+                  [styles.hidden]: !displayAll && activeTab !== i,
+                })}
+              >
+                {v.content}
+              </div>
+            </>
           ))
         )}
       </div>
