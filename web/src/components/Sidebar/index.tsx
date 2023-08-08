@@ -22,8 +22,6 @@ export function Sidebar() {
   const [expand, setExpand] = useState(true);
   const [activeTab, setActiveTab] = useState<number>(0);
 
-  const displayAll = false;
-
   const sections: { tab: React.ReactNode; content: React.ReactNode }[] = [];
 
   if (urlTrees.length > 0) {
@@ -67,8 +65,7 @@ export function Sidebar() {
   return (
     <div className={classNames(styles.sidebar)}>
       <div className={classNames(styles.header)}>
-        {!displayAll &&
-          expand &&
+        {expand &&
           sections.map((v, i) => (
             <button
               key={i}
@@ -104,14 +101,9 @@ export function Sidebar() {
         {React.Children.toArray(
           sections.map((v, i) => (
             <>
-              <hr
-                className={classNames({
-                  [styles.hidden]: !displayAll || i === 0,
-                })}
-              />
               <div
                 className={classNames(styles.content, {
-                  [styles.hidden]: !displayAll && activeTab !== i,
+                  [styles.hidden]: activeTab !== i,
                 })}
               >
                 {v.content}

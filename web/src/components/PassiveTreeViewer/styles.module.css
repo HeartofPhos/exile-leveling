@@ -1,13 +1,13 @@
 .viewer {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  min-height: 10rem;
+  flex: 1;
 }
 
 .viewport {
   display: flex;
-  flex-basis: 20rem;
+  min-height: 10rem;
+  height: 20rem;
   border-style: solid;
   border-width: var(--border-width);
   border-color: var(--accent-primary);
