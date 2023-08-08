@@ -11,8 +11,9 @@ interface SearchStringsProps {
 export function SearchStrings({ values }: SearchStringsProps) {
   return (
     <div className={classNames(styles.searchStrings)}>
-      {values.map((value) => (
+      {values.map((value, i) => (
         <div
+          key={i}
           className={classNames(
             borderListStyles.itemRound,
             interactiveStyles.hoverPrimary,
