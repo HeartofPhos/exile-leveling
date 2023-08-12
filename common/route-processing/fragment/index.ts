@@ -300,7 +300,6 @@ function EvaluatePortal(
 
         const townArea = Data.Areas[currentArea.parent_town_area_id];
         transitionArea(state, townArea);
-        state.portalAreaId = state.currentAreaId;
       } else if (currentArea.id == portalArea.parent_town_area_id) {
         transitionArea(state, portalArea);
         state.portalAreaId = null;
