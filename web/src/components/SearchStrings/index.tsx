@@ -9,6 +9,12 @@ interface SearchStringsProps {
 }
 
 export function SearchStrings({ values }: SearchStringsProps) {
+
+  const excludeLine = (line: string): boolean => {
+    const exclusionCharacter = "#";
+    return line.includes(exclusionCharacter);
+  };
+
   return (
     <div className={classNames(styles.searchStrings)}>
       {values.map((value, i) => (
@@ -25,9 +31,15 @@ export function SearchStrings({ values }: SearchStringsProps) {
             toast.success("Copied to Clipboard");
           }}
         >
-          <div>
+          {/* Only render clipboard icon and add copy functionality if line shouldn't be excluded */}
+          {!excludeLine(value) && (
+            <div onClick={() => {
+              navigator.clipboard.writeText(value);
+              toast.success("Copied to Clipboard");
+            }}>
             <FaRegClipboard className={classNames("inlineIcon")} />
           </div>
+          )}
           {value}
         </div>
       ))}
