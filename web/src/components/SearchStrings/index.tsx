@@ -17,32 +17,36 @@ export function SearchStrings({ values }: SearchStringsProps) {
 
   return (
     <div className={classNames(styles.searchStrings)}>
-      {values.map((value, i) => (
-        <div
-          key={i}
-          className={classNames(
-            borderListStyles.itemRound,
-            interactiveStyles.hoverPrimary,
-            interactiveStyles.activePrimary,
-            styles.searchString
-          )}
-          onClick={() => {
-            navigator.clipboard.writeText(value);
-            toast.success("Copied to Clipboard");
-          }}
-        >
-          {/* Only render clipboard icon and add copy functionality if line shouldn't be excluded */}
-          {!excludeLine(value) && (
-            <div onClick={() => {
-              navigator.clipboard.writeText(value);
-              toast.success("Copied to Clipboard");
-            }}>
-            <FaRegClipboard className={classNames("inlineIcon")} />
+      {values.map((value, i) => {
+        const isExcluded = excludeLine(value);
+
+        // This function will only execute for non-excluded lines
+        const handleClick = () => {
+          navigator.clipboard.writeText(value);
+          toast.success("Copied to Clipboard");
+        };
+
+        return (
+          <div
+            key={i}
+            className={classNames(
+              borderListStyles.itemRound,
+              !isExcluded && interactiveStyles.hoverPrimary,
+              !isExcluded && interactiveStyles.activePrimary,
+              styles.searchString
+            )}
+            onClick={!isExcluded ? handleClick : undefined}
+          >
+            {/* Only render clipboard icon for non-excluded lines */}
+            {!isExcluded && (
+              <div onClick={handleClick}>
+                <FaRegClipboard className={classNames("inlineIcon")} />
+              </div>
+            )}
+            {value}
           </div>
-          )}
-          {value}
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
