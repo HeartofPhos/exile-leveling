@@ -1,10 +1,19 @@
-import { clearPersistent, getPersistent, setPersistent } from "../utility";
+import {
+  NO_MIGRATORS,
+  clearPersistent,
+  getPersistent,
+  setPersistent,
+} from "../utility";
 import { atomFamily, selectorFamily, useRecoilCallback } from "recoil";
 
 const ROUTE_PROGRESS_VERSION = 0;
 
 const routeProgress = new Set<string>(
-  getPersistent<string[]>("route-progress", ROUTE_PROGRESS_VERSION)
+  getPersistent<string[]>(
+    "route-progress",
+    ROUTE_PROGRESS_VERSION,
+    NO_MIGRATORS
+  )
 );
 
 const routeProgressAtomFamily = atomFamily<boolean, string>({
