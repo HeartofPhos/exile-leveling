@@ -1,11 +1,11 @@
 import { Data } from "../../../../common/data";
 import { RouteData } from "../../../../common/route-processing/types";
+import { formStyles } from "../../styles";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { MdCircle } from "react-icons/md";
-import { formStyles } from "../../styles";
 
 interface GemLinkViewerProps {
   gemLinks: RouteData.GemLink[];
@@ -14,11 +14,9 @@ interface GemLinkViewerProps {
 export function GemLinkViewer({ gemLinks }: GemLinkViewerProps) {
   const findUniqueGemTitles = (links: RouteData.GemLink[]): string[] => {
     const linkTitles = new Set<string>();
-    links.forEach((link) => {
-      if (typeof link.title === "string") {
-        linkTitles.add(link.title);
-      }
-    });
+    for (const link of links) {
+      linkTitles.add(link.title);
+    }
     return [...linkTitles];
   };
   const [curIndex, setCurIndex] = useState<number>(0);
@@ -59,8 +57,9 @@ export function GemLinkViewer({ gemLinks }: GemLinkViewerProps) {
       </div>
       {activeGemLinks.length > 0 && (
         <div className={classNames(styles.gemLinkSection)}>
-          {activeGemLinks.map(({ primaryGemIds, secondaryGemIds }, i) => {
-            return (
+          {activeGemLinks.map(({ primaryGemIds, secondaryGemIds }, i) => (
+            <>
+              {i !== 0 && <hr />}
               <div className={classNames(styles.gemLinkRow)} key={i}>
                 {primaryGemIds.map((gemId, j) => {
                   const gemData = Data.Gems[gemId];
@@ -90,8 +89,8 @@ export function GemLinkViewer({ gemLinks }: GemLinkViewerProps) {
                   );
                 })}
               </div>
-            );
-          })}
+            </>
+          ))}
         </div>
       )}
     </div>

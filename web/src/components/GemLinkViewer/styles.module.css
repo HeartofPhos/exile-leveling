@@ -32,6 +32,7 @@
   flex-direction: column;
   overflow: auto;
   overscroll-behavior: contain;
+  gap: var(--size-1);
 }
 
 .gemLinkRow {
