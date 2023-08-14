@@ -88,8 +88,11 @@ export function getPersistent<T>(
       new Set()
     );
 
-    if (migratorChain !== null)
-      return ApplyMigratorChain<T>(migratorChain, data.value);
+    if (migratorChain !== null) {
+      const migratedValue = ApplyMigratorChain<T>(migratorChain, data.value);
+      setPersistent(key, expectedVersion, migratedValue);
+      return migratedValue;
+    }
 
     clearPersistent(key);
     return null;
