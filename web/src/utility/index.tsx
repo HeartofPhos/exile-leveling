@@ -32,7 +32,7 @@ export function BuildMigratorMap(
   return migratorMap;
 }
 
-export function FindMigratorChain(
+function FindMigratorChain(
   currentVersion: Versioned["version"],
   expectedVersion: Versioned["version"],
   migratorMap: MigratorMap,
