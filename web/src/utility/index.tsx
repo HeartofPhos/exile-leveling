@@ -1,17 +1,97 @@
 import PLazy from "p-lazy";
 
-interface PersistentData<T> {
-  value: T;
-  version: number | undefined;
+interface Versioned {
+  version: number;
 }
 
-export function getPersistent<T>(key: string, expectedVersion: number) {
+interface PersistentData<T> extends Versioned {
+  value: T;
+}
+
+type Migrator<TOld, TNew> = (old: TOld) => TNew;
+
+type MigratorMap = Map<
+  Versioned["version"],
+  Map<Versioned["version"], Migrator<any, any>>
+>;
+
+export function BuildMigratorMap(
+  migrators: [Versioned["version"], Versioned["version"], Migrator<any, any>][]
+) {
+  const migratorMap: MigratorMap = new Map();
+  for (const [src, dst, migrator] of migrators) {
+    let inner = migratorMap.get(src);
+    if (!inner) {
+      inner = new Map();
+      migratorMap.set(src, inner);
+    }
+
+    inner.set(dst, migrator);
+  }
+
+  return migratorMap;
+}
+
+export function FindMigratorChain(
+  currentVersion: Versioned["version"],
+  expectedVersion: Versioned["version"],
+  migratorMap: MigratorMap,
+  visited: Set<Versioned["version"]>
+): Migrator<any, any>[] | null {
+  const migrators = migratorMap.get(currentVersion);
+  if (migrators === undefined) return null;
+
+  visited.add(currentVersion);
+
+  for (const [version, migrator] of migrators.entries()) {
+    if (visited.has(version)) continue;
+
+    if (version === expectedVersion) return [migrator!];
+
+    const migratorChain = FindMigratorChain(
+      version,
+      expectedVersion,
+      migratorMap,
+      visited
+    );
+    if (migratorChain !== null) return [migrator, ...migratorChain];
+  }
+
+  return null;
+}
+
+export function ApplyMigratorChain<T>(
+  migratorChain: Migrator<any, any>[],
+  data: any
+): T {
+  for (const migrator of migratorChain) {
+    data = migrator(data);
+  }
+
+  return data;
+}
+
+export function getPersistent<T>(
+  key: string,
+  expectedVersion: number,
+  migratorMap: MigratorMap
+) {
   const json = localStorage.getItem(key);
   if (!json) return null;
 
   const data = JSON.parse(json) as PersistentData<T>;
 
-  if (expectedVersion !== undefined && expectedVersion != data.version) {
+  if (expectedVersion !== data.version) {
+    const migratorChain = FindMigratorChain(
+      data.version,
+      expectedVersion,
+      migratorMap,
+      new Set()
+    );
+
+    if (migratorChain !== null)
+      return ApplyMigratorChain<T>(migratorChain, data.value);
+
     clearPersistent(key);
     return null;
   }

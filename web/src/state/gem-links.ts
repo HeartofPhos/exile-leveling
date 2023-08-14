@@ -7,7 +7,7 @@ const GEM_LINKS_VERSION = 0;
 
 const gemLinksAtom = atom<RouteData.GemLink[] | null>({
   key: "gemLinksAtom",
-  default: getPersistent("gem-links", GEM_LINKS_VERSION),
+  default: getPersistent("gem-links", GEM_LINKS_VERSION, {}),
   effects: [persistentStorageEffect("gem-links", GEM_LINKS_VERSION)],
 });
 

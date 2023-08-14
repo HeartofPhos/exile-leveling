@@ -8,7 +8,7 @@ const BUILD_DATA_VERSION = 3;
 
 const buildDataAtom = atom<RouteData.BuildData | null>({
   key: "buildDataAtom",
-  default: getPersistent("build-data", BUILD_DATA_VERSION),
+  default: getPersistent("build-data", BUILD_DATA_VERSION, {}),
   effects: [persistentStorageEffect("build-data", BUILD_DATA_VERSION)],
 });
 export const buildDataSelector = selector<RouteData.BuildData>({

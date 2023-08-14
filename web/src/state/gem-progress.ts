@@ -4,7 +4,7 @@ import { atomFamily, selectorFamily, useRecoilCallback } from "recoil";
 const GEM_PROGRESS_VERSION = 1;
 
 const gemProgress = new Set<string>(
-  getPersistent<string[]>("gem-progress", GEM_PROGRESS_VERSION)
+  getPersistent<string[]>("gem-progress", GEM_PROGRESS_VERSION, {})
 );
 
 const gemProgressAtomFamily = atomFamily<boolean, string>({

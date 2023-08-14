@@ -8,7 +8,7 @@ const REQUIRED_GEMS_VERSION = 0;
 
 const requiredGemsAtom = atom<RouteData.RequiredGem[] | null>({
   key: "requiredGemsAtom",
-  default: getPersistent("required-gems", REQUIRED_GEMS_VERSION),
+  default: getPersistent("required-gems", REQUIRED_GEMS_VERSION, {}),
   effects: [persistentStorageEffect("required-gems", REQUIRED_GEMS_VERSION)],
 });
 

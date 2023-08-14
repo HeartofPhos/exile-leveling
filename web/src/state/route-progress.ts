@@ -4,7 +4,7 @@ import { atomFamily, selectorFamily, useRecoilCallback } from "recoil";
 const ROUTE_PROGRESS_VERSION = 0;
 
 const routeProgress = new Set<string>(
-  getPersistent<string[]>("route-progress", ROUTE_PROGRESS_VERSION)
+  getPersistent<string[]>("route-progress", ROUTE_PROGRESS_VERSION, {})
 );
 
 const routeProgressAtomFamily = atomFamily<boolean, string>({
