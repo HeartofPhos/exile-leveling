@@ -1,11 +1,10 @@
 import { RouteData } from "../../../../../common/route-processing/types";
-import { formStyles } from "../../../styles";
+import { CodeEditor } from "../../CodeEditor";
 import { SelectList } from "../../SelectList";
 import styles from "./styles.module.css";
 import classNames from "classnames";
-import { Grammar, highlight } from "prismjs";
+import { Grammar } from "prismjs";
 import { useEffect, useRef, useState } from "react";
-import Editor from "react-simple-code-editor";
 
 const RouteGrammar: Grammar = {
   keyword: {
@@ -33,7 +32,7 @@ interface WorkspaceProps {
 }
 
 export function Workspace({ workingFiles, isDirty, onUpdate }: WorkspaceProps) {
-  const formInputRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLDivElement>(null);
   const [selectedIndex, setSelectedIndex] = useState<number>(0);
 
   useEffect(() => {
@@ -41,9 +40,9 @@ export function Workspace({ workingFiles, isDirty, onUpdate }: WorkspaceProps) {
   }, [workingFiles]);
 
   useEffect(() => {
-    if (formInputRef.current === null) return;
-    formInputRef.current.scrollTo(0, 0);
-  }, [selectedIndex, formInputRef]);
+    if (inputRef.current === null) return;
+    inputRef.current.scrollTo(0, 0);
+  }, [selectedIndex, inputRef]);
 
   return (
     <div className={classNames(styles.workspace)}>
@@ -60,22 +59,16 @@ export function Workspace({ workingFiles, isDirty, onUpdate }: WorkspaceProps) {
                 : workingFile.name;
             }}
           />
-          <div
-            ref={formInputRef}
-            className={classNames(formStyles.formInput, styles.editor)}
-          >
-            <Editor
-              value={workingFiles[selectedIndex].contents}
-              onValueChange={(value) => {
-                const updatedRouteFiles = [...workingFiles];
-                updatedRouteFiles[selectedIndex].contents = value;
-                onUpdate(updatedRouteFiles);
-              }}
-              highlight={(value) => highlight(value, RouteGrammar, "")}
-              tabSize={4}
-              textareaClassName={classNames(styles.editorTextArea)}
-            />
-          </div>
+          <CodeEditor
+            ref={inputRef}
+            grammar={RouteGrammar}
+            value={workingFiles[selectedIndex].contents}
+            onValueChange={(value) => {
+              const updatedRouteFiles = [...workingFiles];
+              updatedRouteFiles[selectedIndex].contents = value;
+              onUpdate(updatedRouteFiles);
+            }}
+          />
         </>
       )}
     </div>

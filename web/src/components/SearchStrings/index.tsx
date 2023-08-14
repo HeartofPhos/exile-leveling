@@ -1,3 +1,4 @@
+import { SearchString } from "../../state/search-strings";
 import { borderListStyles, interactiveStyles } from "../../styles";
 import styles from "./styles.module.css";
 import classNames from "classnames";
@@ -5,7 +6,7 @@ import { FaRegClipboard } from "react-icons/fa";
 import { toast } from "react-toastify";
 
 interface SearchStringsProps {
-  values: string[];
+  values: SearchString[];
 }
 
 export function SearchStrings({ values }: SearchStringsProps) {
@@ -21,14 +22,14 @@ export function SearchStrings({ values }: SearchStringsProps) {
             styles.searchString
           )}
           onClick={() => {
-            navigator.clipboard.writeText(value);
+            navigator.clipboard.writeText(value.text);
             toast.success("Copied to Clipboard");
           }}
         >
           <div>
             <FaRegClipboard className={classNames("inlineIcon")} />
           </div>
-          {value}
+          {value.alias || value.text}
         </div>
       ))}
     </div>
