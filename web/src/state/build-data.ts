@@ -1,6 +1,6 @@
 import { persistentStorageEffect } from ".";
 import { RouteData } from "../../../common/route-processing/types";
-import { getPersistent } from "../utility";
+import { NO_MIGRATORS, getPersistent } from "../utility";
 import { DefaultValue } from "recoil";
 import { atom, selector } from "recoil";
 
@@ -8,7 +8,7 @@ const BUILD_DATA_VERSION = 3;
 
 const buildDataAtom = atom<RouteData.BuildData | null>({
   key: "buildDataAtom",
-  default: getPersistent("build-data", BUILD_DATA_VERSION),
+  default: getPersistent("build-data", BUILD_DATA_VERSION, NO_MIGRATORS),
   effects: [persistentStorageEffect("build-data", BUILD_DATA_VERSION)],
 });
 export const buildDataSelector = selector<RouteData.BuildData>({

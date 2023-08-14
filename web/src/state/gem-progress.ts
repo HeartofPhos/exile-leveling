@@ -1,10 +1,10 @@
-import { clearPersistent, getPersistent, setPersistent } from "../utility";
+import { NO_MIGRATORS, clearPersistent, getPersistent, setPersistent } from "../utility";
 import { atomFamily, selectorFamily, useRecoilCallback } from "recoil";
 
 const GEM_PROGRESS_VERSION = 1;
 
 const gemProgress = new Set<string>(
-  getPersistent<string[]>("gem-progress", GEM_PROGRESS_VERSION)
+  getPersistent<string[]>("gem-progress", GEM_PROGRESS_VERSION, NO_MIGRATORS)
 );
 
 const gemProgressAtomFamily = atomFamily<boolean, string>({
