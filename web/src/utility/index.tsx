@@ -8,15 +8,17 @@ interface PersistentData<T> extends Versioned {
   value: T;
 }
 
-type Migrator<TOld, TNew> = (old: TOld) => TNew;
+type Migrator = (old: any) => any;
 
 type MigratorMap = Map<
   Versioned["version"],
-  Map<Versioned["version"], Migrator<any, any>>
+  Map<Versioned["version"], Migrator>
 >;
 
+export const NO_MIGRATORS = new Map();
+
 export function BuildMigratorMap(
-  migrators: [Versioned["version"], Versioned["version"], Migrator<any, any>][]
+  migrators: [Versioned["version"], Versioned["version"], Migrator][]
 ) {
   const migratorMap: MigratorMap = new Map();
   for (const [src, dst, migrator] of migrators) {
@@ -37,7 +39,7 @@ function FindMigratorChain(
   expectedVersion: Versioned["version"],
   migratorMap: MigratorMap,
   visited: Set<Versioned["version"]>
-): Migrator<any, any>[] | null {
+): Migrator[] | null {
   const migrators = migratorMap.get(currentVersion);
   if (migrators === undefined) return null;
 
@@ -60,10 +62,7 @@ function FindMigratorChain(
   return null;
 }
 
-export function ApplyMigratorChain<T>(
-  migratorChain: Migrator<any, any>[],
-  data: any
-): T {
+export function ApplyMigratorChain<T>(migratorChain: Migrator[], data: any): T {
   for (const migrator of migratorChain) {
     data = migrator(data);
   }

@@ -1,13 +1,13 @@
 import { persistentStorageEffect } from "..";
 import { RouteData } from "../../../../common/route-processing/types";
-import { getPersistent } from "../../utility";
+import { NO_MIGRATORS, getPersistent } from "../../utility";
 import { DefaultValue, atom, selector } from "recoil";
 
 const BUILD_PASSIVE_TREES_VERSION = 0;
 
 const buildTreesAtom = atom<RouteData.BuildTree[] | null>({
   key: "buildTreesAtom",
-  default: getPersistent("build-trees", BUILD_PASSIVE_TREES_VERSION, {}),
+  default: getPersistent("build-trees", BUILD_PASSIVE_TREES_VERSION, NO_MIGRATORS),
   effects: [
     persistentStorageEffect("build-trees", BUILD_PASSIVE_TREES_VERSION),
   ],

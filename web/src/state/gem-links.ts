@@ -1,13 +1,13 @@
 import { persistentStorageEffect } from ".";
 import { RouteData } from "../../../common/route-processing/types";
-import { getPersistent } from "../utility";
+import { NO_MIGRATORS, getPersistent } from "../utility";
 import { DefaultValue, atom, selector } from "recoil";
 
 const GEM_LINKS_VERSION = 0;
 
 const gemLinksAtom = atom<RouteData.GemLink[] | null>({
   key: "gemLinksAtom",
-  default: getPersistent("gem-links", GEM_LINKS_VERSION, {}),
+  default: getPersistent("gem-links", GEM_LINKS_VERSION, NO_MIGRATORS),
   effects: [persistentStorageEffect("gem-links", GEM_LINKS_VERSION)],
 });
 
