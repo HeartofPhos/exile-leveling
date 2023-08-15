@@ -1420,6 +1420,15 @@
             ],
             "npc": "Nessa"
           },
+          "Metadata/Items/Gems/SupportGemDevour": {
+            "classes": [
+              "Witch",
+              "Templar",
+              "Shadow",
+              "Scion"
+            ],
+            "npc": "Nessa"
+          },
           "Metadata/Items/Gems/SupportGemEarthbreaker": {
             "classes": [
               "Marauder",
@@ -1444,6 +1453,14 @@
               "Marauder",
               "Ranger",
               "Shadow",
+              "Scion"
+            ],
+            "npc": "Nessa"
+          },
+          "Metadata/Items/Gems/SupportGemFlamewood": {
+            "classes": [
+              "Marauder",
+              "Templar",
               "Scion"
             ],
             "npc": "Nessa"
@@ -1497,6 +1514,15 @@
               "Marauder",
               "Templar",
               "Duelist",
+              "Scion"
+            ],
+            "npc": "Nessa"
+          },
+          "Metadata/Items/Gems/SupportGemLocusMine": {
+            "classes": [
+              "Ranger",
+              "Witch",
+              "Shadow",
               "Scion"
             ],
             "npc": "Nessa"
@@ -3265,6 +3291,14 @@
             ],
             "npc": "Yeena"
           },
+          "Metadata/Items/Gems/SupportGemFreshMeat": {
+            "classes": [
+              "Witch",
+              "Templar",
+              "Scion"
+            ],
+            "npc": "Yeena"
+          },
           "Metadata/Items/Gems/SupportGemIncreasedCriticalDamage": {
             "classes": [
               "Ranger",
@@ -3378,6 +3412,10 @@
             ],
             "npc": "Yeena"
           },
+          "Metadata/Items/Gems/SupportGemSadism": {
+            "classes": [],
+            "npc": "Yeena"
+          },
           "Metadata/Items/Gems/SupportGemShockwave": {
             "classes": [
               "Duelist",
@@ -3400,6 +3438,7 @@
           "Metadata/Items/Gems/SupportGemTrinity": {
             "classes": [
               "Witch",
+              "Shadow",
               "Duelist",
               "Ranger",
               "Templar",
@@ -3411,6 +3450,15 @@
             "classes": [
               "Duelist",
               "Ranger",
+              "Scion"
+            ],
+            "npc": "Yeena"
+          },
+          "Metadata/Items/Gems/SupportGemVolatility": {
+            "classes": [
+              "Marauder",
+              "Templar",
+              "Duelist",
               "Scion"
             ],
             "npc": "Yeena"
@@ -5436,6 +5484,10 @@
             "classes": [],
             "npc": "Siosa"
           },
+          "Metadata/Items/Gems/SupportGemControlledBlaze": {
+            "classes": [],
+            "npc": "Siosa"
+          },
           "Metadata/Items/Gems/SupportGemControlledDestruction": {
             "classes": [],
             "npc": "Siosa"
@@ -5445,6 +5497,10 @@
             "npc": "Siosa"
           },
           "Metadata/Items/Gems/SkillGemConvocation": {
+            "classes": [],
+            "npc": "Siosa"
+          },
+          "Metadata/Items/Gems/SupportGemCorruptingCry": {
             "classes": [],
             "npc": "Siosa"
           },
@@ -5521,6 +5577,10 @@
             "npc": "Siosa"
           },
           "Metadata/Items/Gems/SkillGemDetonateDead": {
+            "classes": [],
+            "npc": "Siosa"
+          },
+          "Metadata/Items/Gems/SupportGemDevour": {
             "classes": [],
             "npc": "Siosa"
           },
@@ -5704,6 +5764,10 @@
             "classes": [],
             "npc": "Siosa"
           },
+          "Metadata/Items/Gems/SupportGemFlamewood": {
+            "classes": [],
+            "npc": "Siosa"
+          },
           "Metadata/Items/Gems/SkillGemFlammability": {
             "classes": [],
             "npc": "Siosa"
@@ -5741,6 +5805,10 @@
             "npc": "Siosa"
           },
           "Metadata/Items/Gems/SkillGemFrenzy": {
+            "classes": [],
+            "npc": "Siosa"
+          },
+          "Metadata/Items/Gems/SupportGemFreshMeat": {
             "classes": [],
             "npc": "Siosa"
           },
@@ -5793,6 +5861,10 @@
             "npc": "Siosa"
           },
           "Metadata/Items/Gems/SkillGemGroundSlam": {
+            "classes": [],
+            "npc": "Siosa"
+          },
+          "Metadata/Items/Gems/SupportGemGuardiansBlessing": {
             "classes": [],
             "npc": "Siosa"
           },
@@ -6009,6 +6081,10 @@
             "npc": "Siosa"
           },
           "Metadata/Items/Gems/SkillGemLightningWarp": {
+            "classes": [],
+            "npc": "Siosa"
+          },
+          "Metadata/Items/Gems/SupportGemLocusMine": {
             "classes": [],
             "npc": "Siosa"
           },
@@ -6245,6 +6321,14 @@
             "npc": "Siosa"
           },
           "Metadata/Items/Gems/SupportGemRuthless": {
+            "classes": [],
+            "npc": "Siosa"
+          },
+          "Metadata/Items/Gems/SupportGemSacrifice": {
+            "classes": [],
+            "npc": "Siosa"
+          },
+          "Metadata/Items/Gems/SupportGemSadism": {
             "classes": [],
             "npc": "Siosa"
           },
@@ -6521,6 +6605,10 @@
             "npc": "Siosa"
           },
           "Metadata/Items/Gems/SkillGemVolatileDead": {
+            "classes": [],
+            "npc": "Siosa"
+          },
+          "Metadata/Items/Gems/SupportGemVolatility": {
             "classes": [],
             "npc": "Siosa"
           },
@@ -6953,6 +7041,14 @@
             ],
             "npc": "Petarus and Vanja"
           },
+          "Metadata/Items/Gems/SupportGemFrigidBond": {
+            "classes": [
+              "Scion",
+              "Templar",
+              "Witch"
+            ],
+            "npc": "Petarus and Vanja"
+          },
           "Metadata/Items/Gems/SupportGemGreaterMultipleProjectiles": {
             "classes": [],
             "npc": "Petarus and Vanja"
@@ -7014,8 +7110,30 @@
             "classes": [],
             "npc": "Petarus and Vanja"
           },
+          "Metadata/Items/Gems/SupportGemReturningProjectiles": {
+            "classes": [],
+            "npc": "Petarus and Vanja"
+          },
           "Metadata/Items/Gems/SupportGemMulticast": {
             "classes": [],
+            "npc": "Petarus and Vanja"
+          },
+          "Metadata/Items/Gems/SupportGemSpellblade": {
+            "classes": [
+              "Scion",
+              "Shadow",
+              "Templar",
+              "Witch"
+            ],
+            "npc": "Petarus and Vanja"
+          },
+          "Metadata/Items/Gems/SupportGemTrauma": {
+            "classes": [
+              "Marauder",
+              "Duelist",
+              "Templar",
+              "Scion"
+            ],
             "npc": "Petarus and Vanja"
           },
           "Metadata/Items/Gems/SupportGemHandcastAnticipation": {
@@ -8208,11 +8326,19 @@
             "classes": [],
             "npc": "Lilly Roth"
           },
+          "Metadata/Items/Gems/SupportGemControlledBlaze": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
           "Metadata/Items/Gems/SkillGemConversionTrap": {
             "classes": [],
             "npc": "Lilly Roth"
           },
           "Metadata/Items/Gems/SkillGemConvocation": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
+          "Metadata/Items/Gems/SupportGemCorruptingCry": {
             "classes": [],
             "npc": "Lilly Roth"
           },
@@ -8297,6 +8423,10 @@
             "npc": "Lilly Roth"
           },
           "Metadata/Items/Gems/SkillGemDetonateMines": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
+          "Metadata/Items/Gems/SupportGemDevour": {
             "classes": [],
             "npc": "Lilly Roth"
           },
@@ -8476,6 +8606,10 @@
             "classes": [],
             "npc": "Lilly Roth"
           },
+          "Metadata/Items/Gems/SupportGemFlamewood": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
           "Metadata/Items/Gems/SkillGemFlammability": {
             "classes": [],
             "npc": "Lilly Roth"
@@ -8513,6 +8647,14 @@
             "npc": "Lilly Roth"
           },
           "Metadata/Items/Gems/SkillGemFrenzy": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
+          "Metadata/Items/Gems/SupportGemFreshMeat": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
+          "Metadata/Items/Gems/SupportGemFrigidBond": {
             "classes": [],
             "npc": "Lilly Roth"
           },
@@ -8581,6 +8723,10 @@
             "npc": "Lilly Roth"
           },
           "Metadata/Items/Gems/SkillGemGroundSlam": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
+          "Metadata/Items/Gems/SupportGemGuardiansBlessing": {
             "classes": [],
             "npc": "Lilly Roth"
           },
@@ -8832,6 +8978,10 @@
             "classes": [],
             "npc": "Lilly Roth"
           },
+          "Metadata/Items/Gems/SupportGemLocusMine": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
           "Metadata/Items/Gems/SupportGemMaim": {
             "classes": [],
             "npc": "Lilly Roth"
@@ -9056,6 +9206,10 @@
             "classes": [],
             "npc": "Lilly Roth"
           },
+          "Metadata/Items/Gems/SupportGemReturningProjectiles": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
           "Metadata/Items/Gems/SkillGemRighteousFire": {
             "classes": [],
             "npc": "Lilly Roth"
@@ -9065,6 +9219,14 @@
             "npc": "Lilly Roth"
           },
           "Metadata/Items/Gems/SkillGemMagmaOrb": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
+          "Metadata/Items/Gems/SupportGemSacrifice": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
+          "Metadata/Items/Gems/SupportGemSadism": {
             "classes": [],
             "npc": "Lilly Roth"
           },
@@ -9185,6 +9347,10 @@
             "npc": "Lilly Roth"
           },
           "Metadata/Items/Gems/SupportGemSpellTotem": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
+          "Metadata/Items/Gems/SupportGemSpellblade": {
             "classes": [],
             "npc": "Lilly Roth"
           },
@@ -9340,6 +9506,10 @@
             "classes": [],
             "npc": "Lilly Roth"
           },
+          "Metadata/Items/Gems/SupportGemTrauma": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
           "Metadata/Items/Gems/SupportGemTrinity": {
             "classes": [],
             "npc": "Lilly Roth"
@@ -9401,6 +9571,10 @@
             "npc": "Lilly Roth"
           },
           "Metadata/Items/Gems/SkillGemVolatileDead": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
+          "Metadata/Items/Gems/SupportGemVolatility": {
             "classes": [],
             "npc": "Lilly Roth"
           },
