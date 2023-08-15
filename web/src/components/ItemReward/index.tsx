@@ -2,7 +2,6 @@ import { Data } from "../../../../common/data";
 import { RouteData } from "../../../../common/route-processing/types";
 import { InlineFakeBlock } from "../InlineFakeBlock";
 import { SplitRow } from "../SplitRow";
-import { taskStyle } from "../TaskList";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { MdCircle } from "react-icons/md";
@@ -62,7 +61,6 @@ export function GemReward({ requiredGem, rewardType }: GemRewardProps) {
 
   return (
     <SplitRow
-      className={classNames(taskStyle)}
       left={
         <>
           <MdCircle

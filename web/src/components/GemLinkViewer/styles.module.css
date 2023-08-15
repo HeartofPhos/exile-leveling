@@ -31,7 +31,8 @@
   display: flex;
   flex-direction: column;
   overflow: auto;
-  max-height: 15rem;
+  overscroll-behavior: contain;
+  gap: var(--size-1);
 }
 
 .gemLinkRow {

@@ -1,11 +1,12 @@
 import { Data } from "../../../../common/data";
 import { RouteData } from "../../../../common/route-processing/types";
+import { formStyles } from "../../styles";
 import styles from "./styles.module.css";
 import classNames from "classnames";
+import React from "react";
 import { useEffect, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { MdCircle } from "react-icons/md";
-import { formStyles } from "../../styles";
 
 interface GemLinkViewerProps {
   gemLinks: RouteData.GemLink[];
@@ -14,11 +15,9 @@ interface GemLinkViewerProps {
 export function GemLinkViewer({ gemLinks }: GemLinkViewerProps) {
   const findUniqueGemTitles = (links: RouteData.GemLink[]): string[] => {
     const linkTitles = new Set<string>();
-    links.forEach((link) => {
-      if (typeof link.title === "string") {
-        linkTitles.add(link.title);
-      }
-    });
+    for (const link of links) {
+      linkTitles.add(link.title);
+    }
     return [...linkTitles];
   };
   const [curIndex, setCurIndex] = useState<number>(0);
@@ -37,7 +36,7 @@ export function GemLinkViewer({ gemLinks }: GemLinkViewerProps) {
   return (
     <div className={classNames(styles.gemLinks)}>
       <label className={classNames(styles.label)}>
-        {gemSections.length > 0 && (gemSections[curIndex] || "Default")}
+        {gemSections.length > 0 && gemSections[curIndex]}
       </label>
       <div className={classNames(styles.buttons)}>
         <button
@@ -59,39 +58,43 @@ export function GemLinkViewer({ gemLinks }: GemLinkViewerProps) {
       </div>
       {activeGemLinks.length > 0 && (
         <div className={classNames(styles.gemLinkSection)}>
-          {activeGemLinks.map(({ primaryGemIds, secondaryGemIds }, i) => {
-            return (
-              <div className={classNames(styles.gemLinkRow)} key={i}>
-                {primaryGemIds.map((gemId, j) => {
-                  const gemData = Data.Gems[gemId];
-                  return (
-                    <div className={styles.gemPrimary} key={j}>
-                      <MdCircle
-                        color={Data.GemColours[gemData.primary_attribute]}
-                        className={classNames("inlineIcon")}
-                      />
-                      <span>{gemData.name}</span>
-                    </div>
-                  );
-                })}
-                {secondaryGemIds.map((gemId, j) => {
-                  const gemData = Data.Gems[gemId];
-                  return (
-                    <div
-                      className={styles.gemSecondary}
-                      key={primaryGemIds.length + j}
-                    >
-                      <MdCircle
-                        color={Data.GemColours[gemData.primary_attribute]}
-                        className={classNames("inlineIcon")}
-                      />
-                      <span>{gemData.name}</span>
-                    </div>
-                  );
-                })}
-              </div>
-            );
-          })}
+          {React.Children.toArray(
+            activeGemLinks.map(({ primaryGemIds, secondaryGemIds }, i) => (
+              <>
+                {i !== 0 && <hr />}
+                <div className={classNames(styles.gemLinkRow)}>
+                  {React.Children.toArray(
+                    primaryGemIds.map((gemId) => {
+                      const gemData = Data.Gems[gemId];
+                      return (
+                        <div className={styles.gemPrimary}>
+                          <MdCircle
+                            color={Data.GemColours[gemData.primary_attribute]}
+                            className={classNames("inlineIcon")}
+                          />
+                          <span>{gemData.name}</span>
+                        </div>
+                      );
+                    })
+                  )}
+                  {React.Children.toArray(
+                    secondaryGemIds.map((gemId) => {
+                      const gemData = Data.Gems[gemId];
+                      return (
+                        <div className={styles.gemSecondary}>
+                          <MdCircle
+                            color={Data.GemColours[gemData.primary_attribute]}
+                            className={classNames("inlineIcon")}
+                          />
+                          <span>{gemData.name}</span>
+                        </div>
+                      );
+                    })
+                  )}
+                </div>
+              </>
+            ))
+          )}
         </div>
       )}
     </div>

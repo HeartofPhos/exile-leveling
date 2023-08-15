@@ -12,7 +12,8 @@ export namespace RouteData {
 
   export interface FragmentStep {
     type: "fragment_step";
-    parts: (string | Fragments.AnyFragment)[];
+    parts: Fragments.AnyFragment[];
+    subSteps: FragmentStep[];
   }
 
   export interface GemStep {
@@ -32,7 +33,6 @@ export namespace RouteData {
     leagueStart: boolean;
     library: boolean;
     gemsOnly: boolean;
-    gemLinks: boolean;
   }
 
   export interface BuildTree {

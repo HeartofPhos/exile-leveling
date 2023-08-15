@@ -11,44 +11,53 @@
   border-width: var(--border-width);
   border-color: var(--accent-primary);
   border-radius: var(--border-radius);
-  padding: var(--size-2);
   z-index: 2;
+  overflow: hidden;
 }
 
-.sidebarToggle {
+.header {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: flex-end;
   width: 100%;
-  height: var(--line-height);
+  min-height: 2rem;
   color: var(--on-secondary);
   font-weight: var(--font-heavy);
+  background-color: var(--secondary);
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  padding: var(--size-2);
   cursor: pointer;
 }
 
-.sidebarContents {
+.tab {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  padding: var(--size-2);
+  cursor: pointer;
+}
+
+.contents {
   display: flex;
   flex-direction: column;
-  gap: var(--size-2);
   overflow: auto;
-  overscroll-behavior: contain;
   width: 20rem;
 }
 
-.sidebarContents:not(.expand) {
+.contents:not(.expand) {
   display: none;
 }
 
-.searchStrings {
+.content {
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  width: 100%;
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: var(--size-1);
 }
 
-.searchString {
-  display: flex;
-  text-overflow: clip;
-  word-break: break-all;
-  cursor: pointer;
+.hidden {
+  display: none;
 }

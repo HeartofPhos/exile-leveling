@@ -70,26 +70,6 @@ export function BuildInfoForm({ buildData, onSubmit }: BuildInfoFormProps) {
       />
       <SplitRow
         left={
-          <div className={classNames(styles.buildInfoLabel)}>Gem Links</div>
-        }
-        right={
-          <div className={classNames(styles.buildInfoValue)}>
-            <input
-              type="checkbox"
-              checked={buildData.gemLinks}
-              onChange={(evt) => {
-                onSubmit({
-                  ...buildData,
-                  gemLinks: evt.target.checked,
-                });
-              }}
-              aria-label="Gem Links"
-            />
-          </div>
-        }
-      />
-      <SplitRow
-        left={
           <div className={classNames(styles.buildInfoLabel)}>Gems Only</div>
         }
         right={

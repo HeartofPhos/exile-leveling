@@ -53,6 +53,10 @@ function decodePathOfBuildingCode(code: string) {
 
 const POB_COLOUR_REGEX = /\^(x[a-zA-Z0-9]{6}|[0-9])/;
 
+function cleanPobText(dirty: string) {
+  return dirty.replace(POB_COLOUR_REGEX, "");
+}
+
 function processSkills(
   requiredGems: RouteData.RequiredGem[],
   gemLinks: RouteData.GemLink[],
@@ -78,11 +82,13 @@ function processSkills(
       const attribute = gemElement.attributes.getNamedItem("gemId");
       if (attribute) {
         const gemId = MapGemId(attribute.value);
-        const note = recentEmptySkillLabel || parentTitle || skillLabel || "";
+        const note = cleanPobText(
+          recentEmptySkillLabel || parentTitle || skillLabel || ""
+        );
         const gem = {
           id: gemId,
           uid: randomId(6),
-          note: note.replace(POB_COLOUR_REGEX, ""),
+          note: note,
         };
 
         if (
@@ -98,9 +104,8 @@ function processSkills(
       }
     }
 
-    const gemLinkTitle = (recentEmptySkillLabel || parentTitle || "").replace(
-      POB_COLOUR_REGEX,
-      ""
+    const gemLinkTitle = cleanPobText(
+      recentEmptySkillLabel || parentTitle || "Default"
     );
     if (primaryGemIds.length > 0)
       gemLinks.push({
@@ -108,7 +113,7 @@ function processSkills(
         primaryGemIds: primaryGemIds,
         secondaryGemIds: secondaryGemIds,
       });
-    else
+    else if (secondaryGemIds.length > 0)
       gemLinks.push({
         title: gemLinkTitle,
         primaryGemIds: secondaryGemIds,
@@ -168,7 +173,7 @@ export function processPob(pobCode: string): PobData | undefined {
   const specElements = Array.from(doc.getElementsByTagName("Spec"));
   for (const specElement of specElements) {
     buildTrees.push({
-      name: specElement.getAttribute("title")!,
+      name: cleanPobText(specElement.getAttribute("title") || "Default"),
       version: specElement.getAttribute("treeVersion")!,
       url: specElement.getElementsByTagName("URL")[0].textContent?.trim()!,
     });
@@ -180,7 +185,6 @@ export function processPob(pobCode: string): PobData | undefined {
       bandit: bandit as RouteData.BuildData["bandit"],
       leagueStart: true,
       library: true,
-      gemLinks: true,
       gemsOnly: false,
     },
     requiredGems,

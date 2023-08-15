@@ -1,16 +1,15 @@
 import { BuildInfoForm, GemOrderList } from "../../components/BuildEditForm";
 import { BuildImportForm } from "../../components/BuildImportForm";
+import { SearchStringsEditor } from "../../components/SearchStringsEditor";
 import { buildDataSelector } from "../../state/build-data";
 import { requiredGemsSelector } from "../../state/gem";
-import { searchStringsAtom } from "../../state/search-strings";
-import { buildTreesSelector } from "../../state/tree/build-tree";
 import { gemLinksSelector } from "../../state/gem-links";
+import { buildTreesSelector } from "../../state/tree/build-tree";
+import { formStyles } from "../../styles";
 import { withBlank } from "../../utility/withBlank";
 import { withScrollRestoration } from "../../utility/withScrollRestoration";
-import styles from "./styles.module.css";
 import classNames from "classnames";
 import { useRecoilState, useResetRecoilState } from "recoil";
-import { formStyles } from "../../styles";
 
 function BuildContainer() {
   const [buildData, setBuildData] = useRecoilState(buildDataSelector);
@@ -22,9 +21,9 @@ function BuildContainer() {
   const [buildTrees, setBuildTreesSelector] =
     useRecoilState(buildTreesSelector);
   const resetBuildTreesSelector = useResetRecoilState(buildTreesSelector);
-  
+
   const [gemLinks, setGemLinks] = useRecoilState(gemLinksSelector);
-  const resetGemLinks = useResetRecoilState(gemLinksSelector)
+  const resetGemLinks = useResetRecoilState(gemLinksSelector);
 
   return (
     <div>
@@ -36,7 +35,7 @@ function BuildContainer() {
       />
       <hr />
       <div className={classNames(formStyles.form)}>
-        <EditSearchStrings />
+        <SearchStringsEditor />
         <BuildImportForm
           onSubmit={(pobData) => {
             setBuildData(pobData.buildData);
@@ -64,35 +63,6 @@ function BuildContainer() {
           <hr />
         </>
       )}
-    </div>
-  );
-}
-
-function EditSearchStrings() {
-  const [searchStrings, setSearchStrings] = useRecoilState(searchStringsAtom);
-
-  return (
-    <div className={classNames(formStyles.formRow)}>
-      <label>
-        Search Strings {"("}
-        <a href="https://poe.re/" target="_blank">
-          Path of Exile Regex
-        </a>
-        {")"}
-      </label>
-      <textarea
-        spellCheck={false}
-        className={classNames(formStyles.formInput, styles.searchStringsInput)}
-        value={searchStrings?.join("\n")}
-        onChange={(e) => {
-          if (e.target.value.length == 0) setSearchStrings(null);
-          else
-            setSearchStrings(
-              e.target.value.split(/\r\n|\r|\n/).map((x) => x.trim())
-            );
-        }}
-        aria-label="Search Strings"
-      />
     </div>
   );
 }

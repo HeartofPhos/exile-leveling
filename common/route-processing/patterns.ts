@@ -8,8 +8,6 @@ export function matchPatterns<T>(
   patterns: Pattern<T>[],
   context: T
 ) {
-  text = text.trim();
-
   let currentIndex = 0;
   do {
     const lastIndex = matchAny<T>(text, currentIndex, patterns, context);

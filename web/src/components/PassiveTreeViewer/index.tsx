@@ -136,7 +136,7 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
             </Viewport>
           </div>
           <label className={classNames(styles.label)}>
-            {urlTrees.length > 0 && (urlTrees[curIndex].name || "Default")}
+            {urlTrees.length > 0 && urlTrees[curIndex].name}
           </label>
           <div className={classNames(styles.buttons)}>
             <button
