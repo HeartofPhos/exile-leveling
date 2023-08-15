@@ -8,6 +8,7 @@ import { SplitRow } from "../SplitRow";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import React, { useState } from "react";
+import { BiInfoCircle, BiSolidInfoCircle } from "react-icons/bi";
 import {
   BsArrowDownLeftSquare,
   BsArrowDownRightSquare,
@@ -18,7 +19,6 @@ import {
   BsArrowUpRightSquare,
   BsArrowUpSquare,
 } from "react-icons/bs";
-import { RiInformationFill, RiInformationLine } from "react-icons/ri";
 
 function getImageUrl(path: string) {
   return new URL(`./images/${path}`, import.meta.url).href;
@@ -288,20 +288,23 @@ export function ExileStep({ step }: StepProps) {
   }
 
   if (step.subSteps.length > 0) {
-    tailNodes.push(
-      <button
-        className={classNames(styles.subStepToggle)}
-        onClick={(e) => {
-          setShowSubSteps(!showSubSteps);
-          e.stopPropagation();
-        }}
-      >
-        {showSubSteps ? (
-          <RiInformationLine className={classNames("inlineIcon")} />
-        ) : (
-          <RiInformationFill className={classNames("inlineIcon")} />
-        )}
-      </button>
+    headNodes.push(
+      <>
+        {" "}
+        <button
+          className={classNames(styles.subStepToggle)}
+          onClick={(e) => {
+            setShowSubSteps(!showSubSteps);
+            e.stopPropagation();
+          }}
+        >
+          {showSubSteps ? (
+            <BiInfoCircle className={classNames("inlineIcon")} />
+          ) : (
+            <BiSolidInfoCircle className={classNames("inlineIcon")} />
+          )}
+        </button>
+      </>
     );
   }
 
