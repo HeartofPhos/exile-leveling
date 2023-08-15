@@ -1,6 +1,6 @@
 import { Data } from "../data";
 import { GameData } from "../types";
-import { parseFragmentStep } from "./fragment";
+import { parseFragments } from "./fragment";
 import { Pattern, matchPatterns } from "./patterns";
 import { ScopedLogger } from "./scoped-logger";
 import { RouteData } from "./types";
@@ -68,19 +68,26 @@ interface ParseContext {
 const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
   // endif
   {
-    regex: /#endif/g,
-    processor: (match, { state, conditionalStack, logger }) => {
+    regex: /^( *)#endif/g,
+    processor: (match, { conditionalStack, logger }) => {
+      const [, padding] = match;
+
       const value = conditionalStack.pop();
       if (value === undefined) logger.warn("unexpected #endif");
+
+      assertPadding(padding, conditionalStack.length, logger);
 
       return false;
     },
   },
   // ifdef
   {
-    regex: /#ifdef *(.*)/g,
-    processor: (match, { state, conditionalStack }) => {
-      const value = match[1];
+    regex: /^( *)#ifdef *(.*)/g,
+    processor: (match, { state, conditionalStack, logger }) => {
+      const [, padding, value] = match;
+
+      assertPadding(padding, conditionalStack.length, logger);
+
       if (value)
         conditionalStack.push(state.preprocessorDefinitions.has(value));
 
@@ -89,27 +96,75 @@ const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
   },
   // ifndef
   {
-    regex: /#ifndef *(.*)/g,
-    processor: (match, { state, conditionalStack }) => {
-      const value = match[1];
+    regex: /^( *)#ifndef *(.*)/g,
+    processor: (match, { state, conditionalStack, logger }) => {
+      const [, padding, value] = match;
+
+      assertPadding(padding, conditionalStack.length, logger);
+
       if (value)
         conditionalStack.push(!state.preprocessorDefinitions.has(value));
 
       return false;
     },
   },
-  // FragmentStep
+  // SubStep
   {
-    regex: /.*/g,
+    regex: /^( *)#sub *(.*)/g,
     processor: (match, { state, section, conditionalStack, logger }) => {
       const evaluateLine =
         conditionalStack.length == 0 ||
         conditionalStack[conditionalStack.length - 1];
+      if (!evaluateLine) return false;
 
-      if (evaluateLine) {
-        const step = parseFragmentStep(match[0], state, logger);
-        if (step.parts.length > 0) section.steps.push(step);
+      const [, padding, value] = match;
+      assertPadding(padding, conditionalStack.length + 1, logger);
+
+      const prevStep =
+        section.steps.length > 0
+          ? section.steps[section.steps.length - 1]
+          : null;
+
+      if (prevStep === null) {
+        logger.warn("substep expected step");
+        return false;
       }
+
+      if (prevStep.type !== "fragment_step") {
+        logger.warn("substep expected fragment_step");
+        return false;
+      }
+
+      const fragments = parseFragments(value.trim(), state, logger);
+      if (fragments.length > 0)
+        prevStep.subSteps.push({
+          type: "fragment_step",
+          parts: fragments,
+          subSteps: [],
+        });
+
+      return false;
+    },
+  },
+  // FragmentStep
+  {
+    regex: /^( *)(.*)/g,
+    processor: (match, { state, section, conditionalStack, logger }) => {
+      const evaluateLine =
+        conditionalStack.length == 0 ||
+        conditionalStack[conditionalStack.length - 1];
+      if (!evaluateLine) return false;
+
+      const [, padding, value] = match;
+      assertPadding(padding, conditionalStack.length, logger);
+
+      const fragments = parseFragments(value.trim(), state, logger);
+      if (fragments.length > 0)
+        section.steps.push({
+          type: "fragment_step",
+          parts: fragments,
+          subSteps: [],
+        });
 
       return false;
     },
@@ -159,18 +214,7 @@ export function parseRoute(
       if (!line) continue;
 
       logger.pushScope(`line ${lineIndex + 1}`);
-
-      const conditionalCountBefore = context.conditionalStack.length;
-      matchPatterns(line.trim(), ROUTE_PATTERNS, context);
-      const conditionalCountAfter = context.conditionalStack.length;
-
-      const depth =
-        conditionalCountBefore >= conditionalCountAfter
-          ? conditionalCountAfter
-          : conditionalCountBefore;
-
-      assertPadding(line, depth, logger);
-
+      matchPatterns(line, ROUTE_PATTERNS, context);
       logger.popScope();
     }
 

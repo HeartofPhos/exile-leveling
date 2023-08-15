@@ -18,3 +18,7 @@
 .listItem.completed .task {
   opacity: 0.25;
 }
+
+.task {
+  flex: 1;
+}

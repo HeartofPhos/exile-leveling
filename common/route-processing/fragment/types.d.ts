@@ -2,6 +2,7 @@ import { GameData } from "../../types";
 
 export namespace Fragments {
   export type AnyFragment =
+    | string
     | KillFragment
     | ArenaFragment
     | AreaFragment

@@ -3,8 +3,6 @@ import styles from "./styles.module.css";
 import classNames from "classnames";
 import { RecoilState, useRecoilState } from "recoil";
 
-export const taskStyle = styles.task;
-
 interface TaskItemProps {
   children?: React.ReactNode;
   isCompletedState?: RecoilState<boolean>;
@@ -48,7 +46,7 @@ export function TaskList({ items }: TaskListProps) {
             <span aria-hidden className={classNames(styles.bullet)}>
               {`${i + 1}`.padStart(2, "0")}.
             </span>
-            {children}
+            <div className={classNames(styles.task)}>{children}</div>
           </TaskListItem>
         ))}
     </ol>
