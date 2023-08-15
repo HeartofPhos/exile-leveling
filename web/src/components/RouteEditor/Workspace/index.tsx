@@ -7,12 +7,16 @@ import { Grammar } from "prismjs";
 import { useEffect, useRef, useState } from "react";
 
 const RouteGrammar: Grammar = {
-  keyword: {
+  preProcessors: {
     pattern: /#section *(.*)|#endif|#ifdef *(.*)|#ifndef *(.*)/,
     inside: {
       "keyword control-flow": /#\w+/,
       variable: /.+/,
     },
+  },
+  subStep: {
+    alias: "keyword control-flow",
+    pattern: /#sub/,
   },
   comment: /#.*/,
   fragment: {

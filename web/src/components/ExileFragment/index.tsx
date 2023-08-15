@@ -5,10 +5,9 @@ import { GameData } from "../../../../common/types";
 import { InlineFakeBlock } from "../InlineFakeBlock";
 import { ItemReward } from "../ItemReward";
 import { SplitRow } from "../SplitRow";
-import { taskStyle } from "../TaskList";
 import styles from "./styles.module.css";
 import classNames from "classnames";
-import React from "react";
+import React, { useState } from "react";
 import {
   BsArrowDownLeftSquare,
   BsArrowDownRightSquare,
@@ -275,6 +274,8 @@ interface StepProps {
 }
 
 export function ExileStep({ step }: StepProps) {
+  const [showSubSteps, setShowSubSteps] = useState(false);
+
   const headNodes: React.ReactNode[] = [];
   const tailNodes: React.ReactNode[] = [];
 
@@ -286,12 +287,21 @@ export function ExileStep({ step }: StepProps) {
     if (tail) tailNodes.push(tail);
   }
 
-  if (step.hints.length > 0) {
-    tailNodes.push(<RiInformationFill className={classNames("inlineIcon")} />);
+  if (step.subSteps.length > 0) {
+    tailNodes.push(
+      <button
+        onClick={(e) => {
+          setShowSubSteps(!showSubSteps);
+          e.stopPropagation();
+        }}
+      >
+        <RiInformationFill className={classNames("inlineIcon")} />
+      </button>
+    );
   }
 
   return (
-    <div className={classNames(styles.fragmentStep, taskStyle)}>
+    <>
       {headNodes.length > 0 && tailNodes.length > 0 ? (
         <SplitRow
           left={React.Children.toArray(headNodes)}
@@ -300,6 +310,19 @@ export function ExileStep({ step }: StepProps) {
       ) : (
         React.Children.toArray(headNodes)
       )}
-    </div>
+      {showSubSteps && (
+        <>
+          <hr />
+          {React.Children.toArray(
+            step.subSteps.map((x) => (
+              <>
+                <ExileStep step={x} />
+                <br />
+              </>
+            ))
+          )}
+        </>
+      )}
+    </>
   );
 }

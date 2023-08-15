@@ -13,7 +13,7 @@ export namespace RouteData {
   export interface FragmentStep {
     type: "fragment_step";
     parts: Fragments.AnyFragment[];
-    hints: Fragments.AnyFragment[][];
+    subSteps: FragmentStep[];
   }
 
   export interface GemStep {

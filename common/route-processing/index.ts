@@ -108,9 +108,9 @@ const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
       return false;
     },
   },
-  // StepHint
+  // SubStep
   {
-    regex: /^( *)#hint *(.*)/g,
+    regex: /^( *)#sub *(.*)/g,
     processor: (match, { state, section, conditionalStack, logger }) => {
       const evaluateLine =
         conditionalStack.length == 0 ||
@@ -126,17 +126,22 @@ const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
           : null;
 
       if (prevStep === null) {
-        logger.warn("hint expected step");
+        logger.warn("substep expected step");
         return false;
       }
 
       if (prevStep.type !== "fragment_step") {
-        logger.warn("hint expected fragment_step");
+        logger.warn("substep expected fragment_step");
         return false;
       }
 
       const fragments = parseFragment(value.trim(), state, logger);
-      if (fragments.length > 0) prevStep.hints.push(fragments);
+      if (fragments.length > 0)
+        prevStep.subSteps.push({
+          type: "fragment_step",
+          parts: fragments,
+          subSteps: [],
+        });
 
       return false;
     },
@@ -158,7 +163,7 @@ const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
         section.steps.push({
           type: "fragment_step",
           parts: fragments,
-          hints: [],
+          subSteps: [],
         });
 
       return false;
