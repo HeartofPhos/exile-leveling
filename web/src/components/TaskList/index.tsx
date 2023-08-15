@@ -46,7 +46,7 @@ export function TaskList({ items }: TaskListProps) {
             <span aria-hidden className={classNames(styles.bullet)}>
               {`${i + 1}`.padStart(2, "0")}.
             </span>
-            <div className={classNames(styles.task)}> {children}</div>
+            <div className={classNames(styles.task)}>{children}</div>
           </TaskListItem>
         ))}
     </ol>
