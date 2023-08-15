@@ -2,6 +2,7 @@ import { formStyles } from "../../styles";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { Grammar, highlight } from "prismjs";
+import React from "react";
 import Editor from "react-simple-code-editor";
 
 interface CodeEditorProps {
@@ -10,19 +11,13 @@ interface CodeEditorProps {
   onValueChange: (value: string) => void;
 }
 
-export function CodeEditor({
-  grammar,
-  value,
-  onValueChange,
-  className,
-  ...rest
-}: CodeEditorProps &
-  React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLDivElement>,
-    HTMLDivElement
-  >) {
+export const CodeEditor = React.forwardRef<
+  HTMLDivElement,
+  CodeEditorProps & React.HTMLAttributes<HTMLDivElement>
+>(({ grammar, value, onValueChange, className, ...rest }, ref) => {
   return (
     <div
+      ref={ref}
       className={classNames(className, formStyles.formInput, styles.editor)}
       {...rest}
     >
@@ -35,4 +30,4 @@ export function CodeEditor({
       />
     </div>
   );
-}
+});
