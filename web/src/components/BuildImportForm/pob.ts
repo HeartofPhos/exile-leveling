@@ -82,11 +82,13 @@ function processSkills(
       const attribute = gemElement.attributes.getNamedItem("gemId");
       if (attribute) {
         const gemId = MapGemId(attribute.value);
-        const note = recentEmptySkillLabel || parentTitle || skillLabel || "";
+        const note = cleanPobText(
+          recentEmptySkillLabel || parentTitle || skillLabel || ""
+        );
         const gem = {
           id: gemId,
           uid: randomId(6),
-          note: cleanPobText(note),
+          note: note,
         };
 
         if (
@@ -103,7 +105,7 @@ function processSkills(
     }
 
     const gemLinkTitle = cleanPobText(
-      recentEmptySkillLabel || parentTitle || ""
+      recentEmptySkillLabel || parentTitle || "Default"
     );
     if (primaryGemIds.length > 0)
       gemLinks.push({
@@ -171,7 +173,7 @@ export function processPob(pobCode: string): PobData | undefined {
   const specElements = Array.from(doc.getElementsByTagName("Spec"));
   for (const specElement of specElements) {
     buildTrees.push({
-      name: cleanPobText(specElement.getAttribute("title")!),
+      name: cleanPobText(specElement.getAttribute("title") || "Default"),
       version: specElement.getAttribute("treeVersion")!,
       url: specElement.getElementsByTagName("URL")[0].textContent?.trim()!,
     });

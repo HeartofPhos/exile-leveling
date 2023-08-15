@@ -36,7 +36,7 @@ export function GemLinkViewer({ gemLinks }: GemLinkViewerProps) {
   return (
     <div className={classNames(styles.gemLinks)}>
       <label className={classNames(styles.label)}>
-        {gemSections.length > 0 && (gemSections[curIndex] || "Default")}
+        {gemSections.length > 0 && gemSections[curIndex]}
       </label>
       <div className={classNames(styles.buttons)}>
         <button
