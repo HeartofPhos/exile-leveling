@@ -1,6 +1,6 @@
 import { Data } from "../data";
 import { GameData } from "../types";
-import { parseFragment } from "./fragment";
+import { parseFragments } from "./fragment";
 import { Pattern, matchPatterns } from "./patterns";
 import { ScopedLogger } from "./scoped-logger";
 import { RouteData } from "./types";
@@ -135,7 +135,7 @@ const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
         return false;
       }
 
-      const fragments = parseFragment(value.trim(), state, logger);
+      const fragments = parseFragments(value.trim(), state, logger);
       if (fragments.length > 0)
         prevStep.subSteps.push({
           type: "fragment_step",
@@ -158,7 +158,7 @@ const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
       const [, padding, value] = match;
       assertPadding(padding, conditionalStack.length, logger);
 
-      const fragments = parseFragment(value.trim(), state, logger);
+      const fragments = parseFragments(value.trim(), state, logger);
       if (fragments.length > 0)
         section.steps.push({
           type: "fragment_step",

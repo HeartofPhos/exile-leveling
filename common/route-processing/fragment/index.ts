@@ -71,7 +71,7 @@ const FRAGMENT_PATTERNS: Pattern<ParseContext>[] = [
   },
 ];
 
-export function parseFragment(
+export function parseFragments(
   text: string,
   state: RouteState,
   logger: ScopedLogger
