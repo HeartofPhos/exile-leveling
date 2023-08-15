@@ -46,3 +46,7 @@
 .fragmentStep {
   flex: 1;
 }
+
+.subStepToggle {
+  cursor: pointer;
+}

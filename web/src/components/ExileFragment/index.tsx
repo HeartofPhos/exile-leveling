@@ -18,7 +18,7 @@ import {
   BsArrowUpRightSquare,
   BsArrowUpSquare,
 } from "react-icons/bs";
-import { RiInformationFill } from "react-icons/ri";
+import { RiInformationFill, RiInformationLine } from "react-icons/ri";
 
 function getImageUrl(path: string) {
   return new URL(`./images/${path}`, import.meta.url).href;
@@ -290,12 +290,17 @@ export function ExileStep({ step }: StepProps) {
   if (step.subSteps.length > 0) {
     tailNodes.push(
       <button
+        className={classNames(styles.subStepToggle)}
         onClick={(e) => {
           setShowSubSteps(!showSubSteps);
           e.stopPropagation();
         }}
       >
-        <RiInformationFill className={classNames("inlineIcon")} />
+        {showSubSteps ? (
+          <RiInformationLine className={classNames("inlineIcon")} />
+        ) : (
+          <RiInformationFill className={classNames("inlineIcon")} />
+        )}
       </button>
     );
   }
