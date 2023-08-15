@@ -42,11 +42,3 @@
   display: inline-block;
   white-space: pre;
 }
-
-.fragmentStep {
-  flex: 1;
-}
-
-.subStepToggle {
-  cursor: pointer;
-}

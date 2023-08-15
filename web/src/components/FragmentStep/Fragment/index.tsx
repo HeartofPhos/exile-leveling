@@ -1,14 +1,11 @@
-import { Data } from "../../../../common/data";
-import { Fragments } from "../../../../common/route-processing/fragment/types";
-import { RouteData } from "../../../../common/route-processing/types";
-import { GameData } from "../../../../common/types";
-import { InlineFakeBlock } from "../InlineFakeBlock";
-import { ItemReward } from "../ItemReward";
-import { SplitRow } from "../SplitRow";
+import { Data } from "../../../../../common/data";
+import { Fragments } from "../../../../../common/route-processing/fragment/types";
+import { GameData } from "../../../../../common/types";
+import { InlineFakeBlock } from "../../InlineFakeBlock";
+import { ItemReward } from "../../ItemReward";
 import styles from "./styles.module.css";
 import classNames from "classnames";
-import React, { useState } from "react";
-import { BiInfoCircle, BiSolidInfoCircle } from "react-icons/bi";
+import React from "react";
 import {
   BsArrowDownLeftSquare,
   BsArrowDownRightSquare,
@@ -192,7 +189,7 @@ function AscendComponent(version: string): [React.ReactNode, React.ReactNode] {
   ];
 }
 
-function ExileFragment(
+export function Fragment(
   fragment: Fragments.AnyFragment
 ): [React.ReactNode, React.ReactNode] {
   if (typeof fragment === "string") return [<>{fragment}</>, null];
@@ -267,70 +264,4 @@ function ExileFragment(
   }
 
   return [<>{`unmapped: ${JSON.stringify(fragment)}`}</>, null];
-}
-
-interface StepProps {
-  step: RouteData.FragmentStep;
-}
-
-export function ExileStep({ step }: StepProps) {
-  const [showSubSteps, setShowSubSteps] = useState(false);
-
-  const headNodes: React.ReactNode[] = [];
-  const tailNodes: React.ReactNode[] = [];
-
-  for (let i = 0; i < step.parts.length; i++) {
-    const fragment = step.parts[i];
-    const [head, tail] = ExileFragment(fragment);
-
-    if (head) headNodes.push(head);
-    if (tail) tailNodes.push(tail);
-  }
-
-  if (step.subSteps.length > 0) {
-    headNodes.push(
-      <>
-        {" "}
-        <button
-          className={classNames(styles.subStepToggle)}
-          onClick={(e) => {
-            setShowSubSteps(!showSubSteps);
-            e.stopPropagation();
-          }}
-        >
-          {showSubSteps ? (
-            <BiInfoCircle className={classNames("inlineIcon")} />
-          ) : (
-            <BiSolidInfoCircle className={classNames("inlineIcon")} />
-          )}
-        </button>
-      </>
-    );
-  }
-
-  return (
-    <>
-      {headNodes.length > 0 && tailNodes.length > 0 ? (
-        <SplitRow
-          left={React.Children.toArray(headNodes)}
-          right={React.Children.toArray(tailNodes)}
-        />
-      ) : (
-        React.Children.toArray(headNodes)
-      )}
-      {showSubSteps && (
-        <>
-          <hr />
-          {React.Children.toArray(
-            step.subSteps.map((x) => (
-              <>
-                <ExileStep step={x} />
-                <br />
-              </>
-            ))
-          )}
-        </>
-      )}
-    </>
-  );
 }
