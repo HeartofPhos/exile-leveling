@@ -1043,6 +1043,15 @@
             ],
             "npc": "Nessa"
           },
+          "Metadata/Items/Gems/SkillGemProjectileWeakness": {
+            "classes": [
+              "Duelist",
+              "Ranger",
+              "Shadow",
+              "Scion"
+            ],
+            "npc": "Nessa"
+          },
           "Metadata/Items/Gems/SkillGemSummonRelic": {
             "classes": [
               "Templar",
@@ -2800,6 +2809,15 @@
             ],
             "npc": "Yeena"
           },
+          "Metadata/Items/Gems/SkillGemCriticalWeakness": {
+            "classes": [
+              "Ranger",
+              "Shadow",
+              "Duelist",
+              "Scion"
+            ],
+            "npc": "Yeena"
+          },
           "Metadata/Items/Gems/SkillGemBladeBlast": {
             "classes": [
               "Ranger",
@@ -2985,6 +3003,24 @@
               "Shadow",
               "Templar",
               "Witch"
+            ],
+            "npc": "Yeena"
+          },
+          "Metadata/Items/Gems/SkillGemPoachersMark": {
+            "classes": [
+              "Shadow",
+              "Duelist",
+              "Ranger",
+              "Scion"
+            ],
+            "npc": "Yeena"
+          },
+          "Metadata/Items/Gems/SkillGemWarlordsMark": {
+            "classes": [
+              "Marauder",
+              "Duelist",
+              "Ranger",
+              "Scion"
             ],
             "npc": "Yeena"
           }
@@ -3814,15 +3850,6 @@
             ],
             "npc": "Clarissa"
           },
-          "Metadata/Items/Gems/SkillGemCriticalWeakness": {
-            "classes": [
-              "Ranger",
-              "Shadow",
-              "Duelist",
-              "Scion"
-            ],
-            "npc": "Clarissa"
-          },
           "Metadata/Items/Gems/SkillGemDarkRitual": {
             "classes": [
               "Scion",
@@ -4013,15 +4040,6 @@
             ],
             "npc": "Clarissa"
           },
-          "Metadata/Items/Gems/SkillGemPoachersMark": {
-            "classes": [
-              "Duelist",
-              "Ranger",
-              "Shadow",
-              "Scion"
-            ],
-            "npc": "Clarissa"
-          },
           "Metadata/Items/Gems/SkillGemPride": {
             "classes": [],
             "npc": "Clarissa"
@@ -4075,15 +4093,6 @@
             ],
             "npc": "Clarissa"
           },
-          "Metadata/Items/Gems/SkillGemProjectileWeakness": {
-            "classes": [
-              "Duelist",
-              "Ranger",
-              "Shadow",
-              "Scion"
-            ],
-            "npc": "Clarissa"
-          },
           "Metadata/Items/Gems/SkillGemSpellslinger": {
             "classes": [
               "Scion",
@@ -4116,15 +4125,6 @@
               "Marauder",
               "Scion",
               "Templar"
-            ],
-            "npc": "Clarissa"
-          },
-          "Metadata/Items/Gems/SkillGemWarlordsMark": {
-            "classes": [
-              "Marauder",
-              "Duelist",
-              "Ranger",
-              "Scion"
             ],
             "npc": "Clarissa"
           },
