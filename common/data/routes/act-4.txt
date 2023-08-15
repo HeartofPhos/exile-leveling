@@ -32,7 +32,7 @@ Get {crafting}
 {portal|use}
 {waypoint|1_4_5_2} #The Grand Arena
 ➞ {arena|The Ring of Blades}, kill {kill|Daresso, King of Swords}, take {quest_text|The Eye of Desire}
-    #sub Head {dir|225} from waypoint and follow the exits keeping {dir|270}
+    #sub Head {dir|225} follow the exits keeping {dir|270}
 {logout}
 {waypoint|1_4_3_3} #The Crystal Veins
 Talk to {generic|Lady Dialla}

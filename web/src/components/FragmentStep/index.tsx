@@ -53,17 +53,17 @@ export function FragmentStep({ step }: StepProps) {
           right={React.Children.toArray(tailNodes)}
         />
       ) : (
-        React.Children.toArray(headNodes)
+        <span>{React.Children.toArray(headNodes)}</span>
       )}
       {showSubSteps && (
         <>
           <hr />
           {React.Children.toArray(
             step.subSteps.map((x) => (
-              <>
+              <span>
+                {"• "}
                 <FragmentStep step={x} />
-                <br />
-              </>
+              </span>
             ))
           )}
         </>

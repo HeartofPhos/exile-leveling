@@ -1,7 +1,8 @@
 #section Act 5
 ➞ {enter|1_5_1} #The Slave Pens
 Find and kill {kill|Overseer Krow}
-    #sub Head {dir|180} as much as possible, then {dir|270}
+    #sub Head {dir|180} as much as possible
+    #sub Head {dir|270}
 ➞ {enter|1_5_town} #Overseer's Tower
 Hand in {quest|a5q1b} #Return to Oriath
 ➞ {enter|1_5_2} #The Control Blocks

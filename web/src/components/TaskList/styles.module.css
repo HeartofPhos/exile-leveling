@@ -20,5 +20,8 @@
 }
 
 .task {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-2);
   flex: 1;
 }

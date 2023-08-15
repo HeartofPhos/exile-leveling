@@ -63,7 +63,7 @@ Kill {kill|General Gravicius}
 ➞ {enter|1_3_14_2} #The Lunaris Temple Level 2
 Find and kill {kill|Piety}, take {quest_text|Tower Key}
     #sub Follow stairs that are going up
-    #sub At the fork in road with wagons, go the route with 1 wagon, not 2
+    #sub At the fork in the road with wagons, go the route with 1 wagon, not 2
 Get {crafting}
 {logout}
 Hand in {quest|a3q9} #Piety's Pets

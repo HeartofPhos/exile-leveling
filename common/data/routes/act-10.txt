@@ -48,5 +48,11 @@ Talk to {generic|Sin} ➞ {enter|2_10_town} #Oriath Docks
 Talk to {generic|Lilly Roth}, Set Sail from Oriath
 ➞ {enter|2_11_endgame_town} #Karui Shores
 Get {crafting}
-Hand in {quest|a10q3} #An End to Hunger
-    #sub Type /passives in chat to confirm that you have all 24 passives from quests
+#ifdef BANDIT_KILL
+    Hand in {quest|a10q3} #An End to Hunger
+        #sub Type {generic|/passives} in chat to confirm that you have all 24 passives from quests
+#endif
+#ifndef BANDIT_KILL
+    Hand in {quest|a10q3} #An End to Hunger
+        #sub Type {generic|/passives} in chat to confirm that you have all 22 passives from quests
+#endif
