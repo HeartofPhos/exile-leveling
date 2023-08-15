@@ -29,6 +29,7 @@
   display: flex;
   align-items: center;
   padding: var(--size-2);
+  cursor: pointer;
 }
 
 .tab {
@@ -36,6 +37,7 @@
   flex: 1;
   align-items: center;
   padding: var(--size-2);
+  cursor: pointer;
 }
 
 .contents {
