@@ -1,6 +1,5 @@
-import { buildDataSelector } from "../../state/build-data";
 import { gemLinksSelector } from "../../state/gem-links";
-import { searchStringsAtom } from "../../state/search-strings";
+import { searchStringsSelector } from "../../state/search-strings";
 import { urlTreesSelector } from "../../state/tree/url-tree";
 import { interactiveStyles } from "../../styles";
 import { GemLinkViewer } from "../GemLinkViewer";
@@ -16,8 +15,7 @@ import { TbHierarchy } from "react-icons/tb";
 import { useRecoilValue } from "recoil";
 
 export function Sidebar() {
-  const buildData = useRecoilValue(buildDataSelector);
-  const searchStrings = useRecoilValue(searchStringsAtom);
+  const searchStrings = useRecoilValue(searchStringsSelector);
   const { urlTrees } = useRecoilValue(urlTreesSelector);
   const gemLinks = useRecoilValue(gemLinksSelector);
   const [expand, setExpand] = useState(true);
@@ -37,7 +35,7 @@ export function Sidebar() {
     });
   }
 
-  if (buildData.gemLinks && gemLinks.length > 0) {
+  if (gemLinks.length > 0) {
     sections.push({
       tab: (
         <>
@@ -94,16 +92,22 @@ export function Sidebar() {
         </button>
       </div>
       {expand && <hr />}
-      <div className={classNames(styles.contents, { [styles.expand]: expand })}>
+      <div
+        className={classNames(styles.contents, {
+          [styles.expand]: expand,
+        })}
+      >
         {React.Children.toArray(
           sections.map((v, i) => (
-            <div
-              className={classNames(styles.content, {
-                [styles.hidden]: activeTab !== i,
-              })}
-            >
-              {v.content}
-            </div>
+            <>
+              <div
+                className={classNames(styles.content, {
+                  [styles.hidden]: activeTab !== i,
+                })}
+              >
+                {v.content}
+              </div>
+            </>
           ))
         )}
       </div>

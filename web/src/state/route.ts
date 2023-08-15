@@ -75,11 +75,8 @@ export const routeSelector = selector({
           }
         }
 
-        if (buildData.gemsOnly) {
-          if (gemSteps.length > 0) buildSection.steps.push(step, ...gemSteps);
-        } else {
-          buildSection.steps.push(step);
-        }
+        const skipStep = buildData.gemsOnly && gemSteps.length === 0;
+        if (!skipStep) buildSection.steps.push(step, ...gemSteps);
       }
 
       if (buildSection.steps.length > 0) route.push(buildSection);
