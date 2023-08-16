@@ -10,8 +10,9 @@ export function buildGemSteps(
   routeGems: Set<number>
 ) {
   const quest = Data.Quests[questFragment.questId];
-
   const gemSteps: RouteData.GemStep[] = [];
+
+  // find all quest gems
   for (const rewardOfferId of questFragment.rewardOffers) {
     const reward_offer = quest.reward_offers[rewardOfferId];
     if (!reward_offer) continue;
@@ -28,6 +29,12 @@ export function buildGemSteps(
         requiredGem: requiredGems[questReward],
         rewardType: "quest",
       });
+  }
+
+  // find all vendor gems
+  for (const rewardOfferId of questFragment.rewardOffers) {
+    const reward_offer = quest.reward_offers[rewardOfferId];
+    if (!reward_offer) continue;
 
     const vendorRewards = findVendorGems(
       buildData,
