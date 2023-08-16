@@ -52,7 +52,7 @@ Get {waypoint_get}
 ➞ {enter|1_2_10} #The Weaver's Chambers
     #sub Search the side of road opposite {waypoint}
 ➞ {arena|The Weaver's Nest}, kill {kill|The Weaver}, take {quest_text|Maligaro's Spike}
-    #sub Try go (dir|270}, if it's blocked go {dir|45}
+    #sub Try go {dir|270}, if it's blocked go {dir|45}
 {logout}
 Hand in {quest|a2q4} #Sharp and Cruel
 #ifdef BANDIT_KILL
