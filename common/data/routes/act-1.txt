@@ -67,4 +67,6 @@ Hand in {quest|a1q6} #The Marooned Mariner
 Hand in {quest|a1q3} #The Siren's Cadence
 {waypoint|1_1_11_1} #The Cavern of Wrath
 ➞ {enter|1_1_11_2} #The Cavern of Anger
+    #sub Follow the water
 ➞ {arena|Merveil's Lair}, kill {kill|Merveil, the Siren}
+    #sub Follow the water
