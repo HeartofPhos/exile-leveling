@@ -34,6 +34,8 @@ Take {portal|use}
 ➞ {enter|1_1_4_0} #The Flooded Depths
     #sub Go right of the bridge
 Find and kill {kill|The Dweller of the Deep}
+    #sub Search opposite the entrance
+    #sub Look for the large empty room
 {logout}
 Hand in {quest|a1q7} #The Dweller of the Deep
 Hand in {quest|a1q2|a1q2b} #The Caged Brute
@@ -56,6 +58,7 @@ Find {area|1_1_9a}, place {portal|set} #The Ship Graveyard Cave
 Take {portal|use}
 ➞ {enter|1_1_9a} #The Ship Graveyard Cave
 Find {quest_text|Allflame}
+    #sub Search opposite the entrance
 {logout}
 {waypoint|1_1_9} #The Ship Graveyard
 Find and kill {kill|Captain Fairgraves}
