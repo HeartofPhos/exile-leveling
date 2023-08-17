@@ -2,16 +2,16 @@
 {waypoint|2_10_town} #Oriath Docks
 ➞ {enter|2_10_1} #The Cathedral Rooftop
 ➞ {arena|Cathedral Apex}, kill {kill|Plaguewing}
-    #sub Head {dir|0}
+    #sub Go {dir|0}
 ➞ {enter|2_10_2} #The Ravaged Square
 Place {portal|set} in the plaza
 ➞ {enter|2_10_7} #The Control Blocks
-    #sub Head {dir|180}
+    #sub Go {dir|180}
 {waypoint|2_10_town} #Oriath Docks
 Hand in {quest|a10q1} #Safe Passage
 Take {portal|use}
 Get {waypoint_get}
-    #sub Head {dir|45}
+    #sub Go {dir|45}
 #ifdef LEAGUE_START
     ➞ {enter|2_10_9} #The Ossuary
     Get {crafting}
@@ -27,18 +27,18 @@ Find and kill {kill|Vilenta}
 Hand in {quest|a10q6} #Vilenta's Vengeance
 {waypoint|2_10_2} #The Ravaged Square
 ➞ {enter|2_10_3} #The Torched Courts
-    #sub Head {dir|135}
+    #sub Go {dir|135}
 ➞ {enter|2_10_4} #The Desecrated Chambers
     #sub Loop around clockwise
 Get {crafting}
 ➞ {arena|Sanctum of Innocence}, kill {kill|Avarius, Reassembled}, take {quest_text|The Staff of Purity}
-    #sub Head {dir|315} counter-clockwise spiral
+    #sub Go {dir|315} counter-clockwise spiral
 {logout}
 Talk to {generic|Bannon}
 Hand in {quest|a10q2} #Death and Rebirth
 {waypoint|2_10_2} #The Ravaged Square
 Talk to {generic|Innocence}
-    #sub Head {dir|45}
+    #sub Go {dir|45}
 ➞ {enter|2_10_5} #The Canals
 ➞ {enter|2_10_6} #The Feeding Trough
 Get {crafting}

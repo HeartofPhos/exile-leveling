@@ -2,7 +2,7 @@
 ➞ {enter|1_2_1} #The Southern Forest
 ➞ {enter|1_2_town} #The Forest Encampment
 ➞ {enter|1_2_2} #The Old Fields
-    #sub Head {dir|45}
+    #sub Go {dir|45}
 #ifdef LEAGUE_START
     Find {area|1_2_2a}, place {portal|set} #The Den
 #endif
@@ -22,7 +22,7 @@
     Get {waypoint_get}
 #endif
 ➞ {enter|1_2_6_1} #The Chamber of Sins Level 1
-    #sub Head {dir|315}
+    #sub Go {dir|315}
 ➞ {enter|1_2_6_2} #The Chamber of Sins Level 2
     #sub Go in same direction as {waypoint}
 #ifdef LEAGUE_START
@@ -35,14 +35,14 @@ Hand in {quest|a2q6} #Intruders in Black
 #ifdef LEAGUE_START
     {waypoint|1_2_3} #The Crossroads
     ➞ {enter|1_2_15} #The Fellshrine Ruins
-        #sub Head {dir|135}
+        #sub Go {dir|135}
     ➞ {enter|1_2_5_1} #The Crypt Level 1
         #sub Follow the road
     Complete {trial}
     {logout}
 #endif
 ➞ {enter|1_2_7} #The Riverways
-    #sub Head {dir|225}
+    #sub Go {dir|225}
 Get {waypoint_get}
     #sub Follow the road
 ➞ {enter|1_2_9} #The Western Forest
@@ -58,7 +58,7 @@ Hand in {quest|a2q4} #Sharp and Cruel
 #ifdef BANDIT_KILL
     {waypoint|1_2_3} #The Crossroads
     ➞ {enter|1_2_4} #The Broken Bridge
-        #sub Head {dir|45}
+        #sub Go {dir|45}
     Kill {kill|Kraityn, Scarbearer}, take {quest_text|Kraityn's Amulet}
         #sub Follow the road
     {logout}
@@ -69,7 +69,7 @@ Hand in {quest|a2q4} #Sharp and Cruel
     {waypoint|1_2_9} #The Western Forest
         #sub Search opposite direction of the encampment entrance
     Kill {kill|Alira Darktongue}, take {quest_text|Alira's Amulet}
-        #sub Head {dir|180} look for the torch touching the road
+        #sub Go {dir|180} look for the torch touching the road
         #sub Follow the trail in the direction of the torch
     Kill {kill|Captain Arteri}
         #sub Follow the road {dir|225}
@@ -84,7 +84,7 @@ Hand in {quest|a2q4} #Sharp and Cruel
 #ifdef BANDIT_ALIRA
     {waypoint|1_2_3} #The Crossroads
     ➞ {enter|1_2_4} #The Broken Bridge
-        #sub Head {dir|45}
+        #sub Go {dir|45}
     Kill {kill|Kraityn, Scarbearer}, take {quest_text|Kraityn's Amulet}
         #sub Follow the road
     {logout}
@@ -95,7 +95,7 @@ Hand in {quest|a2q4} #Sharp and Cruel
     {waypoint|1_2_9} #The Western Forest
         #sub Search opposite direction of the encampment entrance
     Help {kill|Alira Darktongue}, take {quest_text|The Apex}
-        #sub Head {dir|180} look for the torch touching the road
+        #sub Go {dir|180} look for the torch touching the road
         #sub Follow the trail in the direction of the torch
     Kill {kill|Captain Arteri}
         #sub Follow the road {dir|225}
@@ -114,7 +114,7 @@ Hand in {quest|a2q4} #Sharp and Cruel
     {waypoint|1_2_9} #The Western Forest
         #sub Search opposite direction of the encampment entrance
     Kill {kill|Alira Darktongue}, take {quest_text|Alira's Amulet}
-        #sub Head {dir|180} look for the torch touching the road
+        #sub Go {dir|180} look for the torch touching the road
         #sub Follow the trail in the direction of the torch
     Kill {kill|Captain Arteri}
         #sub Follow the road {dir|225}
@@ -124,7 +124,7 @@ Hand in {quest|a2q4} #Sharp and Cruel
     Hand in {quest|a1q9} #The Way Forward
     {waypoint|1_2_3} #The Crossroads
     ➞ {enter|1_2_4} #The Broken Bridge
-        #sub Head {dir|45}
+        #sub Go {dir|45}
     Help {kill|Kraityn, Scarbearer}, take {quest_text|The Apex}
         #sub Follow the road
     {logout}
@@ -134,13 +134,13 @@ Hand in {quest|a2q4} #Sharp and Cruel
 #ifdef BANDIT_OAK
     {waypoint|1_2_3} #The Crossroads
     ➞ {enter|1_2_4} #The Broken Bridge
-        #sub Head {dir|45}
+        #sub Go {dir|45}
     Kill {kill|Kraityn, Scarbearer}, take {quest_text|Kraityn's Amulet}
         #sub Follow the road
     {logout}
     {waypoint|1_2_9} #The Western Forest
     Kill {kill|Alira Darktongue}, take {quest_text|Alira's Amulet}
-        #sub Head {dir|180} look for the torch touching the road
+        #sub Go {dir|180} look for the torch touching the road
         #sub Follow the trail in the direction of the torch
     Kill {kill|Captain Arteri}
         #sub Follow the road {dir|225}

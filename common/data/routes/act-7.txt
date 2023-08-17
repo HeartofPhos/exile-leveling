@@ -9,7 +9,7 @@
     #sub Follow the road
 Get {waypoint_get}
 ➞ {enter|2_7_3} #The Fellshrine Ruins
-    #sub Head {dir|135}
+    #sub Go {dir|135}
 ➞ {enter|2_7_4} #The Crypt
     #sub Follow the road
 #ifdef LEAGUE_START
@@ -21,7 +21,7 @@ Find and take {quest_text|Maligaro's Map}
 {logout}
 {waypoint|2_7_2} #The Crossroads
 ➞ {enter|2_7_5_1} #The Chamber of Sins Level 1
-    #sub Head {dir|315}
+    #sub Go {dir|315}
 Get {crafting}
 Get {waypoint_get}
 Activate {quest_text|Map Device} with {quest_text|Maligaro's Map}
@@ -45,7 +45,7 @@ Hand in {quest|a7q3}, take {quest_text|Obsidian Key} #Web of Secrets
 Open {generic|Secret Passage} ➞ {enter|2_7_6} #The Den
 ➞ {enter|2_7_7} #The Ashen Fields
 ➞ {arena|The Forest Encampment}, kill {kill|Greust, Lord of the Forest}
-    #sub Head {dir|225}
+    #sub Go {dir|225}
 ➞ {enter|2_7_8} #The Northern Forest
 {waypoint|2_7_town} #The Bridge Encampment
 Hand in {quest|a7q1} #The Master of a Million Faces
