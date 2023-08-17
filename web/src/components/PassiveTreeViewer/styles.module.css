@@ -6,7 +6,6 @@
 
 .viewport {
   display: flex;
-  min-height: 10rem;
   height: 20rem;
   border-style: solid;
   border-width: var(--border-width);
