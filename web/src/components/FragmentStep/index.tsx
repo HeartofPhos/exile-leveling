@@ -36,9 +36,9 @@ export function FragmentStep({ step }: StepProps) {
           }}
         >
           {showSubSteps ? (
-            <BiInfoCircle className={classNames("inlineIcon")} />
-          ) : (
             <BiSolidInfoCircle className={classNames("inlineIcon")} />
+          ) : (
+            <BiInfoCircle className={classNames("inlineIcon")} />
           )}
         </button>
       </>
