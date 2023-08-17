@@ -15,7 +15,8 @@ Find 3x{quest_text|Glyph}
     {waypoint|1_1_2} #The Coast
     ➞ {enter|1_1_2a} #The Tidal Island
     Find and kill {kill|Hailrake}, take {quest_text|Medicine Chest}
-        #sub Go {dir|270} if there's a ledge, turn around and go {dir|90}
+        #sub Go {dir|270}
+        #sub If you find a ledge, turn around and go {dir|90}
     {logout}
     Hand in {quest|a1q4} #Breaking Some Eggs
     Hand in {quest|a1q5} #Mercy Mission
