@@ -1216,6 +1216,11 @@
               "Witch"
             ]
           },
+          "Metadata/Items/Gems/SupportGemDevour": {
+            "classes": [
+              "Witch"
+            ]
+          },
           "Metadata/Items/Gems/SupportGemAddedFireDamage": {
             "classes": [
               "Templar",
@@ -1248,6 +1253,11 @@
               "Ranger",
               "Shadow",
               "Scion"
+            ]
+          },
+          "Metadata/Items/Gems/SupportGemFlamewood": {
+            "classes": [
+              "Marauder"
             ]
           },
           "Metadata/Items/Gems/SupportGemLesserMultipleProjectiles": {
@@ -3132,6 +3142,11 @@
               "Witch"
             ]
           },
+          "Metadata/Items/Gems/SupportGemFreshMeat": {
+            "classes": [
+              "Witch"
+            ]
+          },
           "Metadata/Items/Gems/SupportGemWeaponElementalDamage": {
             "classes": [
               "Templar",
@@ -3169,10 +3184,21 @@
               "Duelist"
             ]
           },
+          "Metadata/Items/Gems/SupportGemVolatility": {
+            "classes": [
+              "Marauder"
+            ]
+          },
           "Metadata/Items/Gems/SupportGemPhysicalProjectileAttackDamage": {
             "classes": [
               "Duelist",
               "Ranger",
+              "Scion"
+            ]
+          },
+          "Metadata/Items/Gems/SupportGemSadism": {
+            "classes": [
+              "Duelist",
               "Scion"
             ]
           },
@@ -5059,6 +5085,11 @@
               "Scion"
             ]
           },
+          "Metadata/Items/Gems/SupportGemSacrifice": {
+            "classes": [
+              "Witch"
+            ]
+          },
           "Metadata/Items/Gems/SupportGemFortify": {
             "classes": [
               "Templar",
@@ -5093,6 +5124,11 @@
               "Scion"
             ]
           },
+          "Metadata/Items/Gems/SupportGemGuardiansBlessing": {
+            "classes": [
+              "Templar"
+            ]
+          },
           "Metadata/Items/Gems/SupportGemLifeLeech": {
             "classes": [
               "Marauder",
@@ -5124,6 +5160,17 @@
               "Marauder",
               "Duelist",
               "Scion"
+            ]
+          },
+          "Metadata/Items/Gems/SupportGemCorruptingCry": {
+            "classes": [
+              "Marauder",
+              "Duelist"
+            ]
+          },
+          "Metadata/Items/Gems/SupportGemControlledBlaze": {
+            "classes": [
+              "Marauder"
             ]
           },
           "Metadata/Items/Gems/SupportGemDamageAgainstChilled": {
@@ -6872,6 +6919,17 @@
               "Duelist"
             ]
           },
+          "Metadata/Items/Gems/SupportGemFrigidBond": {
+            "classes": [
+              "Templar",
+              "Scion"
+            ]
+          },
+          "Metadata/Items/Gems/SupportGemSpellblade": {
+            "classes": [
+              "Templar"
+            ]
+          },
           "Metadata/Items/Gems/SupportGemBrutality": {
             "classes": [
               "Marauder"
@@ -6886,6 +6944,12 @@
           "Metadata/Items/Gems/SupportGemEternalBlessing": {
             "classes": [
               "Marauder"
+            ]
+          },
+          "Metadata/Items/Gems/SupportGemTrauma": {
+            "classes": [
+              "Marauder",
+              "Duelist"
             ]
           },
           "Metadata/Items/Gems/SupportGemGreaterVolley": {
@@ -6908,6 +6972,13 @@
             "classes": [
               "Ranger",
               "Shadow"
+            ]
+          },
+          "Metadata/Items/Gems/SupportGemReturningProjectiles": {
+            "classes": [
+              "Ranger",
+              "Shadow",
+              "Scion"
             ]
           },
           "Metadata/Items/Gems/SupportGemVileToxins": {
@@ -10718,16 +10789,16 @@
       "atlas": {
         "quest_npc": "Commander Kirac",
         "quest": {
-          "Metadata/Items/Maps/MapWorldsColonnade": {
+          "Metadata/Items/Maps/MapWorldsArena": {
             "classes": []
           },
-          "Metadata/Items/Maps/MapWorldsAlleyways": {
+          "Metadata/Items/Maps/MapWorldsBarrows": {
             "classes": []
           },
           "Metadata/Items/Maps/MapWorldsBoneCrypt": {
             "classes": []
           },
-          "Metadata/Items/Maps/MapWorldsScriptorium": {
+          "Metadata/Items/Maps/MapWorldsPlateau": {
             "classes": []
           }
         },
@@ -10750,6 +10821,12 @@
   "lake_tutorial": {
     "id": "lake_tutorial",
     "name": "Lake of Kalandra",
+    "act": "1",
+    "reward_offers": {}
+  },
+  "ancestral_tutorial": {
+    "id": "ancestral_tutorial",
+    "name": "Dying for a Fight",
     "act": "1",
     "reward_offers": {}
   }
