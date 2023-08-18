@@ -40,9 +40,7 @@ Find and take {quest_text|Ribbon Spool}
 ➞ {enter|1_3_8_1} #The Solaris Temple Level 1
     #sub Go {dir|45}
 ➞ {enter|1_3_8_2} #The Solaris Temple Level 2
-    #sub Follow the carpets
 ➞ {arena|Eternal Laboratory}, get {crafting}
-    #sub Follow the carpets
 {waypoint|1_3_7} #The Battlefront
 ➞ {enter|1_3_9} #The Docks
     #sub Go {dir|315}
