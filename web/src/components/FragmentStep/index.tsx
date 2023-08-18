@@ -1,17 +1,22 @@
 import { RouteData } from "../../../../common/route-processing/types";
+import { configSelector } from "../../state/config";
 import { SplitRow } from "../SplitRow";
 import { Fragment } from "./Fragment";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import React, { useState } from "react";
 import { BiInfoCircle, BiSolidInfoCircle } from "react-icons/bi";
+import { useRecoilValue } from "recoil";
 
 interface StepProps {
   step: RouteData.FragmentStep;
 }
 
 export function FragmentStep({ step }: StepProps) {
-  const [showSubSteps, setShowSubSteps] = useState(false);
+  const config = useRecoilValue(configSelector);
+  const [showSubSteps, setShowSubSteps] = useState(
+    config.showSubsteps && step.subSteps.length > 0
+  );
 
   const headNodes: React.ReactNode[] = [];
   const tailNodes: React.ReactNode[] = [];

@@ -185,7 +185,6 @@ export function processPob(pobCode: string): PobData | undefined {
       bandit: bandit as RouteData.BuildData["bandit"],
       leagueStart: true,
       library: true,
-      gemsOnly: false,
     },
     requiredGems,
     buildTrees,

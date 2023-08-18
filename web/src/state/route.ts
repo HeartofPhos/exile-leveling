@@ -2,6 +2,7 @@ import { RouteData } from "../../../common/route-processing/types";
 import { buildDataSelector } from "./build-data";
 import { requiredGemsSelector } from "./gem";
 import { routeFilesSelector } from "./route-files";
+import { configSelector } from "./config";
 import { selector } from "recoil";
 
 const baseRouteSelector = selector({
@@ -51,6 +52,7 @@ export const routeSelector = selector({
 
     const baseRoute = get(baseRouteSelector);
     const buildData = get(buildDataSelector);
+    const settings = get(configSelector);
     const requiredGems = get(requiredGemsSelector);
 
     if (requiredGems.length == 0) return baseRoute;
@@ -75,7 +77,7 @@ export const routeSelector = selector({
           }
         }
 
-        const skipStep = buildData.gemsOnly && gemSteps.length === 0;
+        const skipStep = settings.gemsOnly && gemSteps.length === 0;
         if (!skipStep) buildSection.steps.push(step, ...gemSteps);
       }
 

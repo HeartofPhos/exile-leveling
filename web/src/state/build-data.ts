@@ -11,6 +11,7 @@ const buildDataAtom = atom<RouteData.BuildData | null>({
   default: getPersistent("build-data", BUILD_DATA_VERSION, NO_MIGRATORS),
   effects: [persistentStorageEffect("build-data", BUILD_DATA_VERSION)],
 });
+
 export const buildDataSelector = selector<RouteData.BuildData>({
   key: "buildDataSelector",
   get: ({ get }) => {
@@ -21,7 +22,6 @@ export const buildDataSelector = selector<RouteData.BuildData>({
         bandit: "None",
         leagueStart: true,
         library: true,
-        gemsOnly: false,
       };
 
     return value;

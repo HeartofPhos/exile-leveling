@@ -1,0 +1,15 @@
+.form {
+  padding: var(--size-2);
+}
+
+.label {
+  width: 100%;
+  text-align: right;
+  color: var(--on-secondary);
+  font-weight: var(--font-heavy);
+}
+
+.value {
+  width: 100%;
+  text-align: left;
+}

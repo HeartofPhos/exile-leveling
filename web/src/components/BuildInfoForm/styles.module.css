@@ -1,15 +1,15 @@
-.buildInfo {
+.form {
   padding: var(--size-2);
 }
 
-.buildInfoLabel {
+.label {
   width: 100%;
   text-align: right;
   color: var(--on-secondary);
   font-weight: var(--font-heavy);
 }
 
-.buildInfoValue {
+.value {
   width: 100%;
   text-align: left;
 }
