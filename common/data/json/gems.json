@@ -4262,5 +4262,13 @@
     "required_level": 31,
     "is_support": true,
     "cost": "chance"
+  },
+  "Metadata/Items/Gems/SupportGemVolatility": {
+    "id": "Metadata/Items/Gems/SupportGemVolatility",
+    "name": "Volatility Support",
+    "primary_attribute": "strength",
+    "required_level": 18,
+    "is_support": true,
+    "cost": "alteration"
   }
 }
