@@ -19,32 +19,32 @@ function parseDat(path: string): DatJson {
 
 export namespace Dat {
   export const BaseItemTypes = parseDat(
-    "../../exports/Data/BaseItemTypes.dat64.json"
+    "../../exports/data/BaseItemTypes.dat64.json"
   );
   export const Characters = parseDat(
-    "../../exports/Data/Characters.dat64.json"
+    "../../exports/data/Characters.dat64.json"
   );
   export const GrantedEffects = parseDat(
-    "../../exports/Data/GrantedEffects.dat64.json"
+    "../../exports/data/GrantedEffects.dat64.json"
   );
   export const GrantedEffectsPerLevel = parseDat(
-    "../../exports/Data/GrantedEffectsPerLevel.dat64.json"
+    "../../exports/data/GrantedEffectsPerLevel.dat64.json"
   );
-  export const MapPins = parseDat("../../exports/Data/MapPins.dat64.json");
-  export const NPCs = parseDat("../../exports/Data/NPCs.dat64.json");
-  export const NPCTalk = parseDat("../../exports/Data/NPCTalk.dat64.json");
-  export const Quest = parseDat("../../exports/Data/Quest.dat64.json");
+  export const MapPins = parseDat("../../exports/data/MapPins.dat64.json");
+  export const NPCs = parseDat("../../exports/data/NPCs.dat64.json");
+  export const NPCTalk = parseDat("../../exports/data/NPCTalk.dat64.json");
+  export const Quest = parseDat("../../exports/data/Quest.dat64.json");
   export const QuestRewardOffers = parseDat(
-    "../../exports/Data/QuestRewardOffers.dat64.json"
+    "../../exports/data/QuestRewardOffers.dat64.json"
   );
   export const QuestRewards = parseDat(
-    "../../exports/Data/QuestRewards.dat64.json"
+    "../../exports/data/QuestRewards.dat64.json"
   );
   export const RecipeUnlockDisplay = parseDat(
-    "../../exports/Data/RecipeUnlockDisplay.dat64.json"
+    "../../exports/data/RecipeUnlockDisplay.dat64.json"
   );
-  export const SkillGems = parseDat("../../exports/Data/SkillGems.dat64.json");
+  export const SkillGems = parseDat("../../exports/data/SkillGems.dat64.json");
   export const WorldAreas = parseDat(
-    "../../exports/Data/WorldAreas.dat64.json"
+    "../../exports/data/WorldAreas.dat64.json"
   );
 }

@@ -4207,14 +4207,6 @@
     "is_support": true,
     "cost": "chance"
   },
-  "Metadata/Items/Gems/SupportGemConflagration": {
-    "id": "Metadata/Items/Gems/SupportGemConflagration",
-    "name": "[UNUSED] Conflagration Support",
-    "primary_attribute": "strength",
-    "required_level": 18,
-    "is_support": true,
-    "cost": "alteration"
-  },
   "Metadata/Items/Gems/SupportGemGuardiansBlessing": {
     "id": "Metadata/Items/Gems/SupportGemGuardiansBlessing",
     "name": "Guardian's Blessing Support",
