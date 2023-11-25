@@ -20,6 +20,7 @@ export namespace RouteData {
     type: "gem_step";
     requiredGem: RequiredGem;
     rewardType: "quest" | "vendor";
+    count: number;
   }
 
   export interface RouteFile {
@@ -42,8 +43,8 @@ export namespace RouteData {
 
   export interface RequiredGem {
     id: string;
-    uid: string;
     note: string;
+    count: number;
   }
 
   export interface GemLink {

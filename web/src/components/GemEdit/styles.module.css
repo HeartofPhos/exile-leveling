@@ -1,16 +1,16 @@
-.gemOrder {
+.holder {
   display: flex;
   width: 100%;
   gap: var(--size-3);
 }
 
-.orderButtonGroup {
+.buttonGroup {
   height: var(--line-height);
   display: flex;
   gap: var(--size-2);
 }
 
-.orderButton {
+.button {
   width: var(--line-height);
   border-style: solid;
   border-width: var(--border-width);
@@ -19,7 +19,12 @@
   cursor: pointer;
 }
 
-.orderButtonImage {
+.buttonImage {
   height: 100%;
   width: 100%;
+}
+
+.inputCount {
+  text-align: right;
+  width: 2rem;
 }

@@ -7,7 +7,8 @@ export function buildGemSteps(
   questFragment: Fragments.QuestFragment,
   buildData: RouteData.BuildData,
   requiredGems: RouteData.RequiredGem[],
-  routeGems: Set<number>
+  questGems: Set<number>,
+  vendorGems: Set<number>
 ) {
   const quest = Data.Quests[questFragment.questId];
   const gemSteps: RouteData.GemStep[] = [];
@@ -20,7 +21,7 @@ export function buildGemSteps(
     const questReward = findQuestGem(
       buildData,
       requiredGems,
-      routeGems,
+      questGems,
       reward_offer.quest
     );
     if (questReward !== null)
@@ -28,6 +29,7 @@ export function buildGemSteps(
         type: "gem_step",
         requiredGem: requiredGems[questReward],
         rewardType: "quest",
+        count: 1,
       });
   }
 
@@ -39,14 +41,17 @@ export function buildGemSteps(
     const vendorRewards = findVendorGems(
       buildData,
       requiredGems,
-      routeGems,
+      questGems,
+      vendorGems,
       reward_offer.vendor
     );
     for (const vendorReward of vendorRewards) {
+      let requiredGem = requiredGems[vendorReward];
       gemSteps.push({
         type: "gem_step",
-        requiredGem: requiredGems[vendorReward],
+        requiredGem: requiredGem,
         rewardType: "vendor",
+        count: requiredGem.count - (questGems.has(vendorReward) ? 1 : 0),
       });
     }
   }
@@ -57,12 +62,12 @@ export function buildGemSteps(
 function findQuestGem(
   buildData: RouteData.BuildData,
   requiredGems: RouteData.RequiredGem[],
-  routeGems: Set<number>,
+  questGems: Set<number>,
   quest_rewards: GameData.RewardOffer["quest"]
 ): number | null {
   for (let i = 0; i < requiredGems.length; i++) {
     const requiredGem = requiredGems[i];
-    if (routeGems.has(i)) continue;
+    if (questGems.has(i)) continue;
 
     const reward = quest_rewards[requiredGem.id];
     if (!reward) continue;
@@ -72,7 +77,7 @@ function findQuestGem(
       reward.classes.some((x) => x == buildData.characterClass);
 
     if (validClass) {
-      routeGems.add(i);
+      questGems.add(i);
       return i;
     }
   }
@@ -83,23 +88,25 @@ function findQuestGem(
 function findVendorGems(
   buildData: RouteData.BuildData,
   requiredGems: RouteData.RequiredGem[],
-  routeGems: Set<number>,
+  questGems: Set<number>,
+  vendorGems: Set<number>,
   vendor_rewards: GameData.RewardOffer["vendor"]
 ): number[] {
   const result: number[] = [];
   for (let i = 0; i < requiredGems.length; i++) {
     const requiredGem = requiredGems[i];
-    if (routeGems.has(i)) continue;
+    if ((requiredGem.count === 1 && questGems.has(i)) || vendorGems.has(i))
+      continue;
 
     const reward = vendor_rewards[requiredGem.id];
     if (!reward) continue;
 
     const validClass =
-      reward.classes.length == 0 ||
+      reward.classes.length === 0 ||
       reward.classes.some((x) => x == buildData.characterClass);
 
     if (validClass) {
-      routeGems.add(i);
+      vendorGems.add(i);
       result.push(i);
     }
   }

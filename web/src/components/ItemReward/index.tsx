@@ -23,15 +23,17 @@ function ItemRewardVerb(type: ItemRewardProps["rewardType"]) {
 
 interface ItemRewardProps {
   item: string;
+  count?: number;
   rewardType?: "quest" | "vendor";
   cost?: string;
 }
 
-export function ItemReward({ item, cost, rewardType }: ItemRewardProps) {
+export function ItemReward({ item, count, cost, rewardType }: ItemRewardProps) {
   return (
     <>
       {ItemRewardVerb(rewardType)}
       <span className={classNames(styles.default)}>{item}</span>
+      {count && count > 1 && <span> x{count}</span>}
       {rewardType === "vendor" && cost !== undefined && (
         <div className={classNames(styles.noWrap)}>
           <span> for </span>
@@ -46,10 +48,11 @@ export function ItemReward({ item, cost, rewardType }: ItemRewardProps) {
 
 interface GemRewardProps {
   requiredGem: RouteData.RequiredGem;
+  count: number;
   rewardType?: ItemRewardProps["rewardType"];
 }
 
-export function GemReward({ requiredGem, rewardType }: GemRewardProps) {
+export function GemReward({ requiredGem, count, rewardType }: GemRewardProps) {
   const gem = Data.Gems[requiredGem.id];
 
   if (!gem)
@@ -67,7 +70,12 @@ export function GemReward({ requiredGem, rewardType }: GemRewardProps) {
             color={Data.GemColours[gem.primary_attribute]}
             className={classNames("inlineIcon")}
           />
-          <ItemReward item={gem.name} cost={gem.cost} rewardType={rewardType} />
+          <ItemReward
+            item={gem.name}
+            cost={gem.cost}
+            rewardType={rewardType}
+            count={count}
+          />
         </>
       }
       right={

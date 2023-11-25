@@ -1,7 +1,7 @@
 import { BuildImportForm } from "../../components/BuildImportForm";
 import { BuildInfoForm } from "../../components/BuildInfoForm";
 import { ConfigForm } from "../../components/ConfigForm";
-import { GemOrderForm } from "../../components/GemOrderForm";
+import { GemEditForm } from "../../components/GemEditForm";
 import { SearchStringsEditor } from "../../components/SearchStringsEditor";
 import { buildDataSelector } from "../../state/build-data";
 import { configSelector } from "../../state/config";
@@ -65,7 +65,7 @@ function BuildContainer() {
       <hr />
       {requiredGems.length > 0 && (
         <>
-          <GemOrderForm
+          <GemEditForm
             requiredGems={requiredGems}
             onUpdate={(requiredGems) => {
               setRequiredGems(requiredGems);

@@ -85,10 +85,10 @@ function processSkills(
         const note = cleanPobText(
           recentEmptySkillLabel || parentTitle || skillLabel || ""
         );
-        const gem = {
+        const gem: RouteData.RequiredGem = {
           id: gemId,
-          uid: randomId(6),
           note: note,
+          count: 1,
         };
 
         if (

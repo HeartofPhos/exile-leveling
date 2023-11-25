@@ -25,7 +25,7 @@ export const requiredGemsSelector = selector<RouteData.RequiredGem[]>({
     set(requiredGemsAtom, value);
 
     for (const key of gemProgressKeys()) {
-      const exists = value?.find((x) => x.uid == key) !== undefined;
+      const exists = value?.find((x) => x.id == key) !== undefined;
       if (!exists) set(gemProgressSelectorFamily(key), false);
     }
   },

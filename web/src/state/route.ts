@@ -1,8 +1,8 @@
 import { RouteData } from "../../../common/route-processing/types";
 import { buildDataSelector } from "./build-data";
+import { configSelector } from "./config";
 import { requiredGemsSelector } from "./gem";
 import { routeFilesSelector } from "./route-files";
-import { configSelector } from "./config";
 import { selector } from "recoil";
 
 const baseRouteSelector = selector({
@@ -58,7 +58,8 @@ export const routeSelector = selector({
     if (requiredGems.length == 0) return baseRoute;
 
     const route: RouteData.Route = [];
-    const routeGems: Set<number> = new Set();
+    const questGems: Set<number> = new Set();
+    const vendorGems: Set<number> = new Set();
     for (const section of baseRoute) {
       const buildSection: RouteData.Section = {
         name: section.name,
@@ -71,7 +72,13 @@ export const routeSelector = selector({
           for (const part of step.parts) {
             if (typeof part !== "string" && part.type === "quest") {
               gemSteps.push(
-                ...buildGemSteps(part, buildData, requiredGems, routeGems)
+                ...buildGemSteps(
+                  part,
+                  buildData,
+                  requiredGems,
+                  questGems,
+                  vendorGems
+                )
               );
             }
           }

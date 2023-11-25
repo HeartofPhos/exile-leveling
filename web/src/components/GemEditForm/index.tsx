@@ -1,23 +1,23 @@
 import { RouteData } from "../../../../common/route-processing/types";
 import { gemProgressSelectorFamily } from "../../state/gem-progress";
-import { GemOrder } from "../GemOrder";
+import { GemEdit } from "../GemEdit";
 import { TaskList, TaskListProps } from "../TaskList";
 
-interface GemOrderFormProps {
+interface GemEditFormProps {
   requiredGems: RouteData.RequiredGem[];
   onUpdate: (requiredGems: RouteData.RequiredGem[]) => void;
 }
 
-export function GemOrderForm({ requiredGems, onUpdate }: GemOrderFormProps) {
+export function GemEditForm({ requiredGems, onUpdate }: GemEditFormProps) {
   const workingGems = [...requiredGems];
 
   const taskItems: TaskListProps["items"] = [];
   for (let i = 0; i < workingGems.length; i++) {
     const requiredGem = workingGems[i];
     taskItems.push({
-      isCompletedState: gemProgressSelectorFamily(requiredGem.uid),
+      isCompletedState: gemProgressSelectorFamily(requiredGem.id),
       children: (
-        <GemOrder
+        <GemEdit
           onMoveTop={() => {
             const splice = workingGems.splice(i, 1);
             workingGems.unshift(...splice);
@@ -48,6 +48,12 @@ export function GemOrderForm({ requiredGems, onUpdate }: GemOrderFormProps) {
             onUpdate(workingGems);
           }}
           requiredGem={requiredGem}
+          onCountChange={(value) => {
+            if (value > 0) {
+              workingGems[i] = { ...workingGems[i], count: value };
+              onUpdate(workingGems);
+            }
+          }}
         />
       ),
     });

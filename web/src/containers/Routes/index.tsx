@@ -33,12 +33,13 @@ function RoutesContainer() {
 
       if (step.type == "gem_step")
         taskItems.push({
-          key: step.requiredGem.uid,
-          isCompletedState: gemProgressSelectorFamily(step.requiredGem.uid),
+          key: step.requiredGem.id,
+          isCompletedState: gemProgressSelectorFamily(step.requiredGem.id),
           children: (
             <GemReward
               key={taskItems.length}
               requiredGem={step.requiredGem}
+              count={step.count}
               rewardType={step.rewardType}
             />
           ),
