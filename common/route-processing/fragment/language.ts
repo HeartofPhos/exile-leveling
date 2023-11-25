@@ -16,7 +16,8 @@ export namespace Language {
     | "trial"
     | "ascend"
     | "crafting"
-    | "dir";
+    | "dir"
+    | "copy";
 
   export interface FragmentParameter {
     name: string;
@@ -201,6 +202,17 @@ export namespace Language {
             {
               name: "number",
               description: "Number of degrees in multiples of 45, where 0 = Up",
+            },
+          ],
+        },
+      ],
+      ["copy"]: [
+        {
+          description: "One click copy",
+          parameters: [
+            {
+              name: "text",
+              description: "Text to copy",
             },
           ],
         },

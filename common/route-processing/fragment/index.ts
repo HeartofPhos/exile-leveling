@@ -3,11 +3,10 @@ import { Data } from "../../data";
 import { GameData } from "../../types";
 import { Pattern, matchPatterns } from "../patterns";
 import { ScopedLogger } from "../scoped-logger";
-import { RouteData } from "../types";
 import { Language } from "./language";
 import { Fragments } from "./types";
 
-type RawFragment = string | string[];
+type RawFragment = string[];
 
 const EvaluateLookup: Record<
   Language.Fragment,
@@ -33,6 +32,7 @@ const EvaluateLookup: Record<
   ["ascend"]: EvaluateAscend,
   ["crafting"]: EvaluateCrafting,
   ["dir"]: EvaluateDirection,
+  ["copy"]: EvaluateCopy,
 };
 
 interface ParseContext {
@@ -484,6 +484,20 @@ function EvaluateAscend(
       type: "ascend",
       //@ts-expect-error
       version: rawFragment[1],
+    },
+  };
+}
+
+function EvaluateCopy(
+  rawFragment: RawFragment,
+  { state, logger }: ParseContext
+): string | EvaluateResult {
+  if (rawFragment.length <= 1) return ERROR_INVALID_FORMAT;
+
+  return {
+    fragment: {
+      type: "copy",
+      text: rawFragment.slice(1).join(""),
     },
   };
 }

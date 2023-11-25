@@ -21,7 +21,8 @@ export namespace Fragments {
     | TrialFragment
     | AscendFragment
     | CraftingFragment
-    | DirectionFragment;
+    | DirectionFragment
+    | CopyFragment;
 
   export interface KillFragment {
     type: "kill";
@@ -115,5 +116,10 @@ export namespace Fragments {
   export interface DirectionFragment {
     type: "dir";
     dirIndex: number;
+  }
+
+  export interface CopyFragment {
+    type: "copy";
+    text: string;
   }
 }

@@ -16,6 +16,8 @@ import {
   BsArrowUpRightSquare,
   BsArrowUpSquare,
 } from "react-icons/bs";
+import { FaRegClipboard } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 function getImageUrl(path: string) {
   return new URL(`./images/${path}`, import.meta.url).href;
@@ -140,6 +142,27 @@ function DirectionComponent(dirIndex: number) {
   return <span>{directions[dirIndex]}</span>;
 }
 
+function CopyComponent(text: string) {
+  return (
+    <span
+      className={classNames(styles.copy)}
+      onClick={(e) => {
+        navigator.clipboard.writeText(text);
+        toast.success(
+          <div>
+            Copied to Clipboard
+            <br />
+            {text}
+          </div>
+        );
+        e.stopPropagation();
+      }}
+    >
+      <FaRegClipboard className={classNames("inlineIcon")} />
+    </span>
+  );
+}
+
 function GenericComponent(text: string) {
   return <span className={classNames(styles.default)}>{text}</span>;
 }
@@ -261,6 +284,8 @@ export function Fragment(
       return [CraftingComponent(fragment.crafting_recipes), null];
     case "dir":
       return [DirectionComponent(fragment.dirIndex), null];
+    case "copy":
+      return [CopyComponent(fragment.text), null];
   }
 
   return [<>{`unmapped: ${JSON.stringify(fragment)}`}</>, null];
