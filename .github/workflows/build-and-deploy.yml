@@ -8,6 +8,9 @@ on:
 permissions:
   contents: write
 
+env:
+  VITE_ANALYTICS_KEY: ${{ secrets.VITE_ANALYTICS_KEY }}
+
 jobs:
   build-and-deploy:
     concurrency: ci-${{ github.ref }}
