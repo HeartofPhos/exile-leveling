@@ -69,7 +69,7 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
       const style = compiledStyle({
         styleId: styleId,
         backgroundColor: "#00000000",
-        ascendancy: currentTree.ascendancy?.name,
+        ascendancy: currentTree.ascendancy?.id,
 
         nodeColor: "hsl(215, 15%, 50%)",
         nodeActiveColor: "hsl(200, 80%, 50%)",

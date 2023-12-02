@@ -2,6 +2,7 @@ export namespace SkillTree {
   export interface Data {
     tree: string;
     classes: Class[];
+    alternate_ascendancies: AscendancyElement[] | undefined;
     groups: Record<string, Group>;
     nodes: Record<string, Node>;
     extraImages: Record<string, ExtraImage>;
@@ -26,7 +27,6 @@ export namespace SkillTree {
 
   export interface AscendancyElement {
     id: string;
-    name: string;
     flavourText?: string;
     flavourTextColour?: string;
     flavourTextRect?: FlavourTextRect;

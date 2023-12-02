@@ -31,6 +31,9 @@ const ASCENDANCY_OFFSETS: Record<string, PassiveTree.Coord> = {
   ["Trickster"]: { x: 10200, y: -3700 },
   ["Saboteur"]: { x: 10200, y: -2200 },
   ["Ascendant"]: { x: -7800, y: 7200 },
+  ["Warden"]: { x: 8250, y: 8350 },
+  ["Primalist"]: { x: 7200, y: 9400 },
+  ["Warlock"]: { x: 9300, y: 7300 },
 };
 
 const TWO_PI = Math.PI * 2;
@@ -63,7 +66,7 @@ export function buildPassiveTree(skillTree: SkillTree.Data) {
     },
     classes: skillTree.classes.map((_class) => ({
       name: _class.name,
-      ascendancies: _class.ascendancies.map((asc) => asc.name),
+      ascendancies: _class.ascendancies.map((asc) => asc.id),
     })),
     graphIndex: 0,
     graphs: [{ nodes: {}, connections: [] }],
@@ -74,7 +77,17 @@ export function buildPassiveTree(skillTree: SkillTree.Data) {
   for (const _class of skillTree.classes) {
     for (const ascendancy of _class.ascendancies) {
       // @ts-expect-error
-      tree.ascendancies[ascendancy.name] = {
+      tree.ascendancies[ascendancy.id] = {
+        graphIndex: tree.graphs.length,
+      };
+      tree.graphs.push({ nodes: {}, connections: [] });
+    }
+  }
+
+  if (skillTree.alternate_ascendancies !== undefined) {
+    for (const ascendancy of skillTree.alternate_ascendancies) {
+      // @ts-expect-error
+      tree.ascendancies[ascendancy.id] = {
         graphIndex: tree.graphs.length,
       };
       tree.graphs.push({ nodes: {}, connections: [] });
@@ -107,10 +120,10 @@ export function buildPassiveTree(skillTree: SkillTree.Data) {
 
       let graph;
       if (node.ascendancyName !== undefined) {
-        const asc = tree.ascendancies[node.ascendancyName!];
+        const asc = tree.ascendancies[node.ascendancyName];
         if (node.isAscendancyStart) {
           asc.startNodeId = nodeId;
-          asc.name = node.ascendancyName;
+          asc.id = node.ascendancyName;
         }
 
         graph = tree.graphs[asc.graphIndex];
@@ -156,7 +169,7 @@ export function buildPassiveTree(skillTree: SkillTree.Data) {
     const startNode = graph.nodes[asc.startNodeId];
 
     const { x: ASCENDANCY_POS_X, y: ASCENDANCY_POS_Y } =
-      ASCENDANCY_OFFSETS[asc.name];
+      ASCENDANCY_OFFSETS[asc.id];
 
     const diff_x = ASCENDANCY_POS_X - startNode.x;
     const diff_y = ASCENDANCY_POS_Y - startNode.y;

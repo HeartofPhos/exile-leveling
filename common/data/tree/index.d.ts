@@ -27,7 +27,7 @@ export namespace PassiveTree {
   }
 
   export interface Ascendancy {
-    name: string;
+    id: string;
     startNodeId: string;
     graphIndex: number;
   }

@@ -90,11 +90,11 @@ export function buildTemplate(
   for (const [, ascendancy] of Object.entries(tree.ascendancies)) {
     const startNode = nodeLookup[ascendancy.startNodeId];
     const radius =
-      ascendancy.name === "Ascendant"
+      ascendancy.id === "Ascendant"
         ? ASCENDANCY_ASCENDANT_BORDER_RADIUS
         : ASCENDANCY_BORDER_RADIUS;
 
-    svg += `<g class="${ASCENDANCY_CLASS} ${ascendancy.name}">\n`;
+    svg += `<g class="${ASCENDANCY_CLASS} ${ascendancy.id}">\n`;
     svg += `<circle cx="${startNode.x}" cy="${startNode.y}" r="${radius}" class="${BORDER_CLASS}"/>\n`;
     svg += buildSubTree(
       tree.graphs[ascendancy.graphIndex],
