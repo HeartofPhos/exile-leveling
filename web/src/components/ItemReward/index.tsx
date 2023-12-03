@@ -1,5 +1,6 @@
 import { Data } from "../../../../common/data";
 import { RouteData } from "../../../../common/route-processing/types";
+import { CopyToClipboard } from "../CopyToClipboard";
 import { InlineFakeBlock } from "../InlineFakeBlock";
 import { SplitRow } from "../SplitRow";
 import styles from "./styles.module.css";
@@ -79,7 +80,9 @@ export function GemReward({ requiredGem, count, rewardType }: GemRewardProps) {
         </>
       }
       right={
-        <div className={classNames(styles.rewardNote)}>{requiredGem.note}</div>
+        <div className={classNames(styles.rewardNote)}>
+          {requiredGem.note} <CopyToClipboard text={gem.name} />
+        </div>
       }
     />
   );

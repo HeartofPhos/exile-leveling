@@ -1,6 +1,7 @@
 import { Data } from "../../../../../common/data";
 import { Fragments } from "../../../../../common/route-processing/fragment/types";
 import { GameData } from "../../../../../common/types";
+import { CopyToClipboard } from "../../CopyToClipboard";
 import { InlineFakeBlock } from "../../InlineFakeBlock";
 import { ItemReward } from "../../ItemReward";
 import styles from "./styles.module.css";
@@ -16,8 +17,6 @@ import {
   BsArrowUpRightSquare,
   BsArrowUpSquare,
 } from "react-icons/bs";
-import { FaRegClipboard } from "react-icons/fa";
-import { toast } from "react-toastify";
 
 function getImageUrl(path: string) {
   return new URL(`./images/${path}`, import.meta.url).href;
@@ -142,27 +141,6 @@ function DirectionComponent(dirIndex: number) {
   return <span>{directions[dirIndex]}</span>;
 }
 
-function CopyComponent(text: string) {
-  return (
-    <span
-      className={classNames(styles.copy)}
-      onClick={(e) => {
-        navigator.clipboard.writeText(text);
-        toast.success(
-          <div>
-            Copied to Clipboard
-            <br />
-            {text}
-          </div>
-        );
-        e.stopPropagation();
-      }}
-    >
-      <FaRegClipboard className={classNames("inlineIcon")} />
-    </span>
-  );
-}
-
 function GenericComponent(text: string) {
   return <span className={classNames(styles.default)}>{text}</span>;
 }
@@ -285,7 +263,7 @@ export function Fragment(
     case "dir":
       return [DirectionComponent(fragment.dirIndex), null];
     case "copy":
-      return [CopyComponent(fragment.text), null];
+      return [<CopyToClipboard text={fragment.text} />, null];
   }
 
   return [<>{`unmapped: ${JSON.stringify(fragment)}`}</>, null];
