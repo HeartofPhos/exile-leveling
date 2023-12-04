@@ -1,3 +1,4 @@
+import { findCharacterGems } from "../../../common/route-processing/gems";
 import { RouteData } from "../../../common/route-processing/types";
 import { buildDataSelector } from "./build-data";
 import { configSelector } from "./config";
@@ -60,11 +61,15 @@ export const routeSelector = selector({
     const route: RouteData.Route = [];
     const questGems: Set<number> = new Set();
     const vendorGems: Set<number> = new Set();
+
+    findCharacterGems(buildData, requiredGems, questGems);
+
     for (const section of baseRoute) {
       const buildSection: RouteData.Section = {
         name: section.name,
         steps: [],
       };
+
       for (const step of section.steps) {
         const gemSteps: RouteData.GemStep[] = [];
 

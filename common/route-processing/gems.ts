@@ -59,6 +59,26 @@ export function buildGemSteps(
   return gemSteps;
 }
 
+export function findCharacterGems(
+  buildData: RouteData.BuildData,
+  requiredGems: RouteData.RequiredGem[],
+  questGems: Set<number>
+) {
+  const character = Data.Characters[buildData.characterClass];
+  for (let i = 0; i < requiredGems.length; i++) {
+    const requiredGem = requiredGems[i];
+    if (questGems.has(i)) continue;
+
+    if (character.start_gem_id === requiredGem.id) {
+      questGems.add(i);
+    }
+
+    if (character.chest_gem_id === requiredGem.id) {
+      questGems.add(i);
+    }
+  }
+}
+
 function findQuestGem(
   buildData: RouteData.BuildData,
   requiredGems: RouteData.RequiredGem[],

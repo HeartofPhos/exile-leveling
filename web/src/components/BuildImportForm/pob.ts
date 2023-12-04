@@ -60,7 +60,6 @@ function cleanPobText(dirty: string) {
 function processSkills(
   requiredGems: RouteData.RequiredGem[],
   gemLinks: RouteData.GemLink[],
-  character: GameData.Character,
   parentElement: Element,
   parentTitle: string | undefined
 ) {
@@ -91,11 +90,7 @@ function processSkills(
           count: 1,
         };
 
-        if (
-          character.start_gem_id !== gemId &&
-          character.chest_gem_id !== gemId &&
-          !requiredGems.some((x) => x.id === gemId)
-        ) {
+        if (!requiredGems.some((x) => x.id === gemId)) {
           requiredGems.push(gem);
         }
 
@@ -141,7 +136,6 @@ export function processPob(pobCode: string): PobData | undefined {
 
   const characterClass =
     buildElement[0].attributes.getNamedItem("className")?.value!;
-  const character = Data.Characters[characterClass];
 
   const bandit =
     buildElement[0].attributes.getNamedItem("bandit")?.value || "None";
@@ -154,19 +148,12 @@ export function processPob(pobCode: string): PobData | undefined {
       processSkills(
         requiredGems,
         gemLinks,
-        character,
         skillSetElement,
         skillSetElement.attributes.getNamedItem("title")?.value
       );
     }
   } else {
-    processSkills(
-      requiredGems,
-      gemLinks,
-      character,
-      doc.documentElement,
-      undefined
-    );
+    processSkills(requiredGems, gemLinks, doc.documentElement, undefined);
   }
 
   const buildTrees: RouteData.BuildTree[] = [];
