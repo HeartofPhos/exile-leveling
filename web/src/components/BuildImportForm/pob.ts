@@ -51,7 +51,7 @@ function decodePathOfBuildingCode(code: string) {
   return xml;
 }
 
-const POB_COLOUR_REGEX = /\^(x[a-zA-Z0-9]{6}|[0-9])/;
+const POB_COLOUR_REGEX = /\^(x[a-zA-Z0-9]{6}|[0-9])/g;
 
 function cleanPobText(dirty: string) {
   return dirty.replace(POB_COLOUR_REGEX, "");
