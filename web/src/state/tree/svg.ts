@@ -62,6 +62,10 @@ const ASCENDANCY_CONSTANTS: ConstantsLookup = {
     radius: 45,
     class: NODE_NORMAL_CLASS,
   },
+  Jewel: {
+    radius: 65,
+    class: NODE_NOTABLE_CLASS,
+  },
 };
 
 export interface ViewBox {
