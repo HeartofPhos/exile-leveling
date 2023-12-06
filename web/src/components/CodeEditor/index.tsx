@@ -24,6 +24,7 @@ export const CodeEditor = React.forwardRef<
       <Editor
         highlight={(value) => highlight(value, grammar, "")}
         tabSize={4}
+        className={classNames(styles.editorDiv)}
         textareaClassName={classNames(styles.editorTextArea)}
         value={value}
         onValueChange={onValueChange}

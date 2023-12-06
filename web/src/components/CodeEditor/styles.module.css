@@ -4,6 +4,11 @@
   font-family: "Consolas", monospace;
 }
 
+.editorDiv {
+  height: 100%;
+}
+
 .editorTextArea {
+  height: 100%;
   outline: inherit;
 }

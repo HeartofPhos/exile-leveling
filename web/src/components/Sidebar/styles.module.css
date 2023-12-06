@@ -17,9 +17,9 @@
 
 .header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   width: 100%;
-  min-height: 2rem;
+  height: 2rem;
   color: var(--on-secondary);
   font-weight: var(--font-heavy);
   background-color: var(--secondary);
@@ -35,10 +35,16 @@
 .tab {
   display: flex;
   flex: 1;
+  flex-basis: content;
   align-items: center;
   padding: var(--size-2);
   cursor: pointer;
 }
+
+/* .all {
+  flex: 1;
+  justify-content: end;
+} */
 
 .contents {
   display: flex;
