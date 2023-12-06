@@ -41,11 +41,6 @@
   cursor: pointer;
 }
 
-/* .all {
-  flex: 1;
-  justify-content: end;
-} */
-
 .contents {
   display: flex;
   flex-direction: column;
