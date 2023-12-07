@@ -6,12 +6,10 @@ import { TaskListProps } from "../../components/TaskList";
 import { gemProgressSelectorFamily } from "../../state/gem-progress";
 import { routeSelector } from "../../state/route";
 import { routeProgressSelectorFamily } from "../../state/route-progress";
-import { withBlank } from "../../utility/withBlank";
-import { withScrollRestoration } from "../../utility/withScrollRestoration";
 import { ReactNode } from "react";
 import { useRecoilValue } from "recoil";
 
-function RoutesContainer() {
+export default function RoutesContainer() {
   const route = useRecoilValue(routeSelector);
 
   const items: ReactNode[] = [];
@@ -58,5 +56,3 @@ function RoutesContainer() {
     </>
   );
 }
-
-export default withBlank(withScrollRestoration(RoutesContainer));

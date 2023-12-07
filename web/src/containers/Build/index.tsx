@@ -9,12 +9,10 @@ import { requiredGemsSelector } from "../../state/gem";
 import { gemLinksSelector } from "../../state/gem-links";
 import { buildTreesSelector } from "../../state/tree/build-tree";
 import { formStyles } from "../../styles";
-import { withBlank } from "../../utility/withBlank";
-import { withScrollRestoration } from "../../utility/withScrollRestoration";
 import classNames from "classnames";
 import { useRecoilState, useResetRecoilState } from "recoil";
 
-function BuildContainer() {
+export default function BuildContainer() {
   const [config, setConfig] = useRecoilState(configSelector);
 
   const [buildData, setBuildData] = useRecoilState(buildDataSelector);
@@ -77,5 +75,3 @@ function BuildContainer() {
     </div>
   );
 }
-
-export default withBlank(withScrollRestoration(BuildContainer));
