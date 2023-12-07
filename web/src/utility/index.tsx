@@ -176,7 +176,7 @@ export async function fetchStringOrUrl(
   return value;
 }
 
-type ComposeFunction<T> = (arg: T) => T;
-export function compose<T>(...fns: ComposeFunction<T>[]) {
+type PipeFunction<T> = (arg: T) => T;
+export function pipe<T>(...fns: PipeFunction<T>[]) {
   return (initialVal: T) => fns.reduceRight((val, fn) => fn(val), initialVal);
 }

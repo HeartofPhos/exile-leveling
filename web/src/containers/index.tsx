@@ -1,7 +1,7 @@
 import { ErrorFallback } from "../components/ErrorFallback";
 import { Loading } from "../components/Loading";
 import { Navbar } from "../components/Navbar";
-import { compose } from "../utility";
+import { pipe } from "../utility";
 import { withBlank } from "../utility/withBlank";
 import { withScrollRestoration } from "../utility/withScrollRestoration";
 import { withTitle } from "../utility/withTitle";
@@ -11,16 +11,16 @@ import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const RoutesContainer = compose(
+const RoutesContainer = pipe(
   withBlank,
   withScrollRestoration,
   withTitle("Route")
 )(lazy(() => import("./Routes")));
-const BuildContainer = compose(
+const BuildContainer = pipe(
   withBlank,
   withTitle("Build")
 )(lazy(() => import("./Build")));
-const EditRouteContainer = compose(
+const EditRouteContainer = pipe(
   withBlank,
   withTitle("Edit Route")
 )(lazy(() => import("./EditRoute")));
