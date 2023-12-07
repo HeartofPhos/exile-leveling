@@ -4,7 +4,6 @@ import { Navbar } from "../components/Navbar";
 import { pipe } from "../utility";
 import { withBlank } from "../utility/withBlank";
 import { withScrollRestoration } from "../utility/withScrollRestoration";
-import { withTitle } from "../utility/withTitle";
 import { Suspense, lazy } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { Route, Routes } from "react-router-dom";
@@ -13,17 +12,10 @@ import "react-toastify/dist/ReactToastify.css";
 
 const RoutesContainer = pipe(
   withBlank,
-  withScrollRestoration,
-  withTitle("Route")
+  withScrollRestoration
 )(lazy(() => import("./Routes")));
-const BuildContainer = pipe(
-  withBlank,
-  withTitle("Build")
-)(lazy(() => import("./Build")));
-const EditRouteContainer = pipe(
-  withBlank,
-  withTitle("Edit Route")
-)(lazy(() => import("./EditRoute")));
+const BuildContainer = withBlank(lazy(() => import("./Build")));
+const EditRouteContainer = withBlank(lazy(() => import("./EditRoute")));
 
 export function App() {
   return (
