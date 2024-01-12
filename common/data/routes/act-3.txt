@@ -49,7 +49,7 @@ Find and take {quest_text|Thaumetic Sulphite}
 {waypoint|1_3_8_2} #The Solaris Temple Level 2
 Talk to {generic|Lady Dialla}
 Hand in {quest|a3q4} #The Ribbon Spool
-Hand in {quest|a3q5} #Fiery Dust, take {quest_text|Infernal Talc}
+Hand in {quest|a3q5}, take {quest_text|Infernal Talc} #Fiery Dust
 {waypoint|1_3_10_1} #The Sewers
 Burn the {quest_text|Undying Blockage}
 Get {crafting}
