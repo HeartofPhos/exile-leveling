@@ -24,9 +24,10 @@ export async function getGems() {
     const baseItemType = Dat.BaseItemTypes.data[skillGem.BaseItemTypesKey];
     if (!baseItemType.SiteVisibility) continue;
 
-    const grantedEffects = Dat.GrantedEffects.data[skillGem.GrantedEffectsKey];
+    const gemEffects = Dat.GemEffects.data[skillGem.GemEffects[0]];
+    const grantedEffects = Dat.GrantedEffects.data[gemEffects.GrantedEffect];
     const grantedEffectsPerLevel = Dat.GrantedEffectsPerLevel.data.find(
-      (x) => x.Level == 1 && x.GrantedEffect == skillGem.GrantedEffectsKey
+      (x) => x.Level == 1 && x.GrantedEffect == gemEffects.GrantedEffect
     );
 
     gems[baseItemType.Id] = {

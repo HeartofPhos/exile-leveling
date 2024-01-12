@@ -2969,6 +2969,15 @@
             "classes": [],
             "npc": "Yeena"
           },
+          "Metadata/Items/Gems/SkillGemPoachersMark": {
+            "classes": [
+              "Shadow",
+              "Duelist",
+              "Ranger",
+              "Scion"
+            ],
+            "npc": "Yeena"
+          },
           "Metadata/Items/Gems/SkillGemRighteousFire": {
             "classes": [
               "Marauder",
@@ -3007,30 +3016,21 @@
             ],
             "npc": "Yeena"
           },
-          "Metadata/Items/Gems/SkillGemPurge": {
-            "classes": [
-              "Scion",
-              "Shadow",
-              "Templar",
-              "Witch"
-            ],
-            "npc": "Yeena"
-          },
-          "Metadata/Items/Gems/SkillGemPoachersMark": {
-            "classes": [
-              "Shadow",
-              "Duelist",
-              "Ranger",
-              "Scion"
-            ],
-            "npc": "Yeena"
-          },
           "Metadata/Items/Gems/SkillGemWarlordsMark": {
             "classes": [
               "Marauder",
               "Duelist",
               "Ranger",
               "Scion"
+            ],
+            "npc": "Yeena"
+          },
+          "Metadata/Items/Gems/SkillGemPurge": {
+            "classes": [
+              "Scion",
+              "Shadow",
+              "Templar",
+              "Witch"
             ],
             "npc": "Yeena"
           }
@@ -10722,7 +10722,7 @@
   "trialmaster_tutorial": {
     "id": "trialmaster_tutorial",
     "name": "A Choice of Futures",
-    "act": "1",
+    "act": "11",
     "reward_offers": {}
   },
   "expedition_tutorial": {
@@ -10785,16 +10785,16 @@
       "atlas": {
         "quest_npc": "Commander Kirac",
         "quest": {
-          "Metadata/Items/Maps/MapWorldsArena": {
+          "Metadata/Items/Maps/MapWorldsFloodedMine": {
             "classes": []
           },
-          "Metadata/Items/Maps/MapWorldsBarrows": {
+          "Metadata/Items/Maps/MapWorldsGorge": {
             "classes": []
           },
           "Metadata/Items/Maps/MapWorldsBoneCrypt": {
             "classes": []
           },
-          "Metadata/Items/Maps/MapWorldsPlateau": {
+          "Metadata/Items/Maps/MapWorldsPier": {
             "classes": []
           }
         },

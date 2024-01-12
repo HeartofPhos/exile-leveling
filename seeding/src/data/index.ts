@@ -24,6 +24,9 @@ export namespace Dat {
   export const Characters = parseDat(
     "../../exports/data/Characters.dat64.json"
   );
+  export const GemEffects = parseDat(
+    "../../exports/data/GemEffects.dat64.json"
+  );
   export const GrantedEffects = parseDat(
     "../../exports/data/GrantedEffects.dat64.json"
   );
