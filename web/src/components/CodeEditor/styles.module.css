@@ -5,10 +5,9 @@
 }
 
 .editorDiv {
-  height: 100%;
+  min-height: 100%;
 }
 
 .editorTextArea {
-  height: 100%;
   outline: inherit;
 }
