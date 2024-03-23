@@ -1,4 +1,4 @@
-export namespace PassiveTree {
+export namespace SkillTree {
   export interface Data {
     bounds: Bounds;
     classes: Class[];

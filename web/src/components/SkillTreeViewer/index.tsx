@@ -1,4 +1,4 @@
-import { PassiveTree } from "../../../../common/data/tree";
+import { SkillTree } from "../../../../common/data/tree";
 import { TREE_DATA_LOOKUP } from "../../state/tree";
 import { UrlTree } from "../../state/tree/url-tree";
 import { formStyles } from "../../styles";
@@ -14,19 +14,19 @@ import classNames from "classnames";
 import { useEffect, useRef, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
-interface PassiveTreeViewerProps {
+interface SkillTreeViewerProps {
   urlTrees: UrlTree.Data[];
 }
 
 interface RenderData {
   svg: string;
   style: string;
-  nodes: PassiveTree.NodeLookup;
+  nodes: SkillTree.NodeLookup;
   intialFocus: ViewportProps["intialFocus"];
   masteryInfos: UrlTreeDelta["masteryInfos"];
 }
 
-export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
+export function SkillTreeViewer({ urlTrees }: SkillTreeViewerProps) {
   const svgDivRef = useRef<HTMLDivElement>(null);
   const [curIndex, setCurIndex] = useState<number>(0);
   const [renderData, setRenderData] = useState<RenderData>();
@@ -50,13 +50,13 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
         };
       }
 
-      const [passiveTree, nodeLookup, svg, viewBox, compiledStyle] =
+      const [skillTree, nodeLookup, svg, viewBox, compiledStyle] =
         await TREE_DATA_LOOKUP[currentTree.version];
 
       const urlTreeDelta = buildUrlTreeDelta(
         currentTree,
         previousTree,
-        passiveTree
+        skillTree
       );
 
       const bounds = calculateBounds(
@@ -179,8 +179,8 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
 }
 
 interface NodeTooltipProps {
-  nodes: PassiveTree.NodeLookup;
-  nodeId: keyof PassiveTree.NodeLookup;
+  nodes: SkillTree.NodeLookup;
+  nodeId: keyof SkillTree.NodeLookup;
 }
 function NodeTooltip({ nodes, nodeId }: NodeTooltipProps) {
   return (

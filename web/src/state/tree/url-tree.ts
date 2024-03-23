@@ -1,5 +1,5 @@
 import { TREE_DATA_LOOKUP } from ".";
-import { PassiveTree } from "../../../../common/data/tree";
+import { SkillTree } from "../../../../common/data/tree";
 import { RouteData } from "../../../../common/route-processing/types";
 import { decodeBase64Url } from "../../utility";
 import { buildTreesSelector } from "./build-tree";
@@ -35,7 +35,7 @@ export namespace UrlTree {
   export interface Data {
     name: string;
     version: string;
-    ascendancy?: PassiveTree.Ascendancy;
+    ascendancy?: SkillTree.Ascendancy;
     nodes: string[];
     masteryLookup: Record<string, string>;
   }
@@ -50,7 +50,7 @@ export async function buildUrlTree(
   const lookup = TREE_DATA_LOOKUP[buildTree.version];
   if (lookup === undefined) throw `invalid version ${buildTree.version}`;
 
-  const [passiveTree, nodeLookup] = await lookup;
+  const [skillTree, nodeLookup] = await lookup;
 
   const buffer = decodeBase64Url(data);
 
@@ -92,8 +92,8 @@ export async function buildUrlTree(
     version: buildTree.version,
     ascendancy:
       ascendancyId > 0
-        ? passiveTree.ascendancies[
-            passiveTree.classes[classId].ascendancies[ascendancyId - 1]
+        ? skillTree.ascendancies[
+            skillTree.classes[classId].ascendancies[ascendancyId - 1]
           ]
         : undefined,
     nodes: nodes,

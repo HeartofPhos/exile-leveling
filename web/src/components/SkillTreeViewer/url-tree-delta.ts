@@ -1,4 +1,4 @@
-import { PassiveTree } from "../../../../common/data/tree";
+import { SkillTree } from "../../../../common/data/tree";
 import { ViewBox } from "../../state/tree/svg";
 import { UrlTree } from "../../state/tree/url-tree";
 
@@ -33,7 +33,7 @@ export interface UrlTreeDelta {
 export function buildUrlTreeDelta(
   currentTree: UrlTree.Data,
   previousTree: UrlTree.Data,
-  passiveTree: PassiveTree.Data
+  skillTree: SkillTree.Data
 ): UrlTreeDelta {
   const nodesCurrent = new Set(currentTree.nodes);
   const nodesPrevious = new Set(previousTree.nodes);
@@ -53,14 +53,14 @@ export function buildUrlTreeDelta(
   const masteryInfos = buildMasteryInfos(
     currentTree,
     previousTree,
-    passiveTree
+    skillTree
   );
 
   const connections = buildConnections(
     nodesActive,
     nodesAdded,
     nodesRemoved,
-    passiveTree
+    skillTree
   );
 
   return {
@@ -79,7 +79,7 @@ export interface MasteryInfo {
 function buildMasteryInfos(
   currentTree: UrlTree.Data,
   previousTree: UrlTree.Data,
-  passiveTree: PassiveTree.Data
+  skillTree: SkillTree.Data
 ) {
   const masteryLookups = [
     previousTree.masteryLookup,
@@ -90,7 +90,7 @@ function buildMasteryInfos(
   for (const masteryLookup of masteryLookups) {
     for (const [nodeId, effectId] of Object.entries(masteryLookup)) {
       masteryInfos[nodeId] = {
-        info: passiveTree.masteryEffects[effectId].stats.join("\n"),
+        info: skillTree.masteryEffects[effectId].stats.join("\n"),
       };
     }
   }
@@ -102,13 +102,13 @@ function buildConnections(
   nodesActive: Set<string>,
   nodesAdded: Set<string>,
   nodesRemoved: Set<string>,
-  passiveTree: PassiveTree.Data
+  skillTree: SkillTree.Data
 ) {
   const connectionsActive: string[] = [];
   const connectionsAdded: string[] = [];
   const connectionsRemoved: string[] = [];
 
-  for (const graph of passiveTree.graphs) {
+  for (const graph of skillTree.graphs) {
     for (const connection of graph.connections) {
       const id = `${connection.a}-${connection.b}`;
 
@@ -155,7 +155,7 @@ export function calculateBounds(
   nodesActive: string[],
   nodesAdded: string[],
   nodesRemoved: string[],
-  nodes: PassiveTree.NodeLookup,
+  nodes: SkillTree.NodeLookup,
   viewBox: ViewBox
 ): Bounds {
   let minX = Number.POSITIVE_INFINITY;

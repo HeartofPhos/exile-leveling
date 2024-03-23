@@ -3,8 +3,8 @@ import { searchStringsSelector } from "../../state/search-strings";
 import { urlTreesSelector } from "../../state/tree/url-tree";
 import { interactiveStyles } from "../../styles";
 import { GemLinkViewer } from "../GemLinkViewer";
-import { PassiveTreeViewer } from "../PassiveTreeViewer";
 import { SearchStrings } from "../SearchStrings";
+import { SkillTreeViewer } from "../SkillTreeViewer";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { useMemo, useState } from "react";
@@ -75,7 +75,7 @@ function useSections() {
             Tree
           </>
         ),
-        content: <PassiveTreeViewer urlTrees={urlTrees} />,
+        content: <SkillTreeViewer urlTrees={urlTrees} />,
       });
     }
 
