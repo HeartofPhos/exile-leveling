@@ -31,6 +31,7 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
   const [curIndex, setCurIndex] = useState<number>(0);
   const [renderData, setRenderData] = useState<RenderData>();
   const [styleId] = useState(() => randomId(6));
+  const [tooltip, setTooltip] = useState<string | null>(null);
 
   useEffect(() => {
     async function fn() {
@@ -106,15 +107,29 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
     if (svgDivRef.current === null) return;
     if (renderData === undefined) return;
 
-    for (const [nodeId, masteryInfo] of Object.entries(
-      renderData.masteryInfos
-    )) {
-      const title = svgDivRef.current.querySelector<SVGTitleElement>(
-        `#n${nodeId} title`
-      );
-      if (title === null) return;
+    for (const [nodeId, node] of Object.entries(renderData.nodes)) {
+      if (node.text === undefined) continue;
 
-      title.textContent = `${renderData.nodes[nodeId].text}\n${masteryInfo.info}`;
+      let title = node.text;
+      let text = "";
+
+      const masteryInfo = renderData.masteryInfos[nodeId];
+      if (masteryInfo) {
+        text = `${masteryInfo.info}`;
+      }
+
+      const element = svgDivRef.current.querySelector<SVGTitleElement>(
+        `#n${nodeId}`
+      );
+      if (element === null) continue;
+
+      element.addEventListener("pointerenter", () => {
+        setTooltip(nodeId);
+      });
+
+      element.addEventListener("pointerleave", () => {
+        setTooltip(null);
+      });
     }
   }, [svgDivRef, renderData]);
 
@@ -122,6 +137,7 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
     <>
       {renderData && (
         <div className={classNames(styles.viewer)}>
+          {tooltip && <NodeTooltip nodes={renderData.nodes} nodeId={tooltip} />}
           <div className={styles.viewport}>
             <Viewport
               intialFocus={renderData.intialFocus}
@@ -159,5 +175,19 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
         </div>
       )}
     </>
+  );
+}
+
+interface NodeTooltipProps {
+  nodes: PassiveTree.NodeLookup;
+  nodeId: keyof PassiveTree.NodeLookup;
+}
+function NodeTooltip({ nodes, nodeId }: NodeTooltipProps) {
+  return (
+    <div className={classNames(styles.tooltip)}>
+      title
+      <br />
+      text
+    </div>
   );
 }

@@ -213,7 +213,6 @@ function buildNode(
 
   let template = ``;
   template += `<circle cx="${node.x}" cy="${node.y}" id="n${nodeId}" r="${constants.radius}" class="${constants.class}">\n`;
-  if (node.text) template += `<title>${node.text}</title>\n`;
   template += `</circle>\n`;
 
   return template;
