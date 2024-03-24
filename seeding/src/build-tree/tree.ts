@@ -1,5 +1,5 @@
-import { PassiveTree } from "../../../common/data/tree/index";
-import { SkillTree } from "./types";
+import { SkillTree } from "../../../common/data/tree/index";
+import { RawTree } from "./types";
 
 const ANGLES_16: number[] = [
   0, 30, 45, 60, 90, 120, 135, 150, 180, 210, 225, 240, 270, 300, 315, 330,
@@ -11,7 +11,7 @@ const ANGLES_40: number[] = [
 ];
 
 // https://github.com/PathOfBuildingCommunity/PathOfBuilding/blob/e42c033ad0d1b46f714f902d00fd11fe9885afc2/fix_ascendancy_positions.py#L22
-const ASCENDANCY_OFFSETS: Record<string, PassiveTree.Coord> = {
+const ASCENDANCY_OFFSETS: Record<string, SkillTree.Coord> = {
   ["Juggernaut"]: { x: -10400, y: 5200 },
   ["Berserker"]: { x: -10400, y: 3700 },
   ["Chieftain"]: { x: -10400, y: 2200 },
@@ -39,7 +39,7 @@ const ASCENDANCY_OFFSETS: Record<string, PassiveTree.Coord> = {
 const TWO_PI = Math.PI * 2;
 const DEG_2_RAD = Math.PI / 180;
 
-function getPosition(data: SkillTree.Data, node: SkillTree.Node) {
+function getPosition(data: RawTree.Data, node: RawTree.Node) {
   const radius = data.constants.orbitRadii[node.orbit!];
   const skillsPerOrbit = data.constants.skillsPerOrbit[node.orbit!];
   const orbitIndex = node.orbitIndex || 0;
@@ -56,15 +56,15 @@ function getPosition(data: SkillTree.Data, node: SkillTree.Node) {
   return [angle % TWO_PI, Math.round(x), Math.round(y)];
 }
 
-export function buildPassiveTree(skillTree: SkillTree.Data) {
-  const tree: PassiveTree.Data = {
+export function buildSkillTree(rawTree: RawTree.Data) {
+  const tree: SkillTree.Data = {
     bounds: {
       minX: Number.POSITIVE_INFINITY,
       minY: Number.POSITIVE_INFINITY,
       maxX: Number.NEGATIVE_INFINITY,
       maxY: Number.NEGATIVE_INFINITY,
     },
-    classes: skillTree.classes.map((_class) => ({
+    classes: rawTree.classes.map((_class) => ({
       name: _class.name,
       ascendancies: _class.ascendancies.map((asc) => asc.id),
     })),
@@ -74,7 +74,7 @@ export function buildPassiveTree(skillTree: SkillTree.Data) {
     masteryEffects: {},
   };
 
-  for (const _class of skillTree.classes) {
+  for (const _class of rawTree.classes) {
     for (const ascendancy of _class.ascendancies) {
       // @ts-expect-error
       tree.ascendancies[ascendancy.id] = {
@@ -84,8 +84,8 @@ export function buildPassiveTree(skillTree: SkillTree.Data) {
     }
   }
 
-  if (skillTree.alternate_ascendancies !== undefined) {
-    for (const ascendancy of skillTree.alternate_ascendancies) {
+  if (rawTree.alternate_ascendancies !== undefined) {
+    for (const ascendancy of rawTree.alternate_ascendancies) {
       // @ts-expect-error
       tree.ascendancies[ascendancy.id] = {
         graphIndex: tree.graphs.length,
@@ -101,11 +101,11 @@ export function buildPassiveTree(skillTree: SkillTree.Data) {
     tree.bounds.maxY = Math.max(tree.bounds.maxY, y);
   };
 
-  for (const [, group] of Object.entries(skillTree.groups)) {
+  for (const [, group] of Object.entries(rawTree.groups)) {
     if (!filterGroup(group)) continue;
 
     for (const nodeId of group.nodes) {
-      const node = skillTree.nodes[nodeId];
+      const node = rawTree.nodes[nodeId];
       if (!filterNode(node)) continue;
 
       if (node.isMastery) {
@@ -116,7 +116,7 @@ export function buildPassiveTree(skillTree: SkillTree.Data) {
         }
       }
 
-      const [angle, x, y] = getPosition(skillTree, node);
+      const [angle, x, y] = getPosition(rawTree, node);
 
       let graph;
       if (node.ascendancyName !== undefined) {
@@ -133,21 +133,25 @@ export function buildPassiveTree(skillTree: SkillTree.Data) {
       }
 
       const treeNode = buildNode(node, { x, y });
+      if (!treeNode) {
+        console.log(`skipping node: ${nodeId}`);
+        continue;
+      }
       graph.nodes[nodeId] = treeNode;
 
       if (node.out) {
         for (const outNodeId of node.out) {
-          const outNode = skillTree.nodes[outNodeId];
+          const outNode = rawTree.nodes[outNodeId];
           if (!filterConnection(node, outNode)) continue;
 
-          let [outAngle] = getPosition(skillTree, outNode);
+          let [outAngle] = getPosition(rawTree, outNode);
 
-          let sweep: PassiveTree.Sweep | undefined;
+          let sweep: SkillTree.Sweep | undefined;
           if (node.group === outNode.group && node.orbit === outNode.orbit) {
-            const radius = skillTree.constants.orbitRadii[node.orbit!];
+            const radius = rawTree.constants.orbitRadii[node.orbit!];
             const rotation = (angle - outAngle + TWO_PI) % TWO_PI;
 
-            let winding: PassiveTree.Sweep["w"];
+            let winding: SkillTree.Sweep["w"];
             if (rotation > Math.PI) winding = "CW";
             else winding = "CCW";
 
@@ -174,7 +178,7 @@ export function buildPassiveTree(skillTree: SkillTree.Data) {
     const diff_x = ASCENDANCY_POS_X - startNode.x;
     const diff_y = ASCENDANCY_POS_Y - startNode.y;
 
-    const updateNode = (node: PassiveTree.Node) => {
+    const updateNode = (node: SkillTree.Node) => {
       node.x += diff_x;
       node.y += diff_y;
     };
@@ -188,15 +192,15 @@ export function buildPassiveTree(skillTree: SkillTree.Data) {
   return tree;
 }
 
-function filterGroup(group: SkillTree.Group) {
+function filterGroup(group: RawTree.Group) {
   return !group.isProxy;
 }
 
-function filterNode(node: SkillTree.Node) {
+function filterNode(node: RawTree.Node) {
   return node.classStartIndex === undefined;
 }
 
-function filterConnection(a: SkillTree.Node, b: SkillTree.Node) {
+function filterConnection(a: RawTree.Node, b: RawTree.Node) {
   return (
     filterNode(b) &&
     !a.isMastery &&
@@ -206,10 +210,10 @@ function filterConnection(a: SkillTree.Node, b: SkillTree.Node) {
 }
 
 function buildNode(
-  node: SkillTree.Node,
-  pos: PassiveTree.Coord
-): PassiveTree.Node {
-  let kind: PassiveTree.Node["k"];
+  node: RawTree.Node,
+  pos: SkillTree.Coord
+): SkillTree.Node | null {
+  let kind: SkillTree.Node["k"];
   if (node.isAscendancyStart) {
     kind = "Ascendancy_Start";
   } else if (node.isMastery) {
@@ -224,9 +228,12 @@ function buildNode(
     kind = "Normal";
   }
 
+  if (!node.name) return null;
+
   return {
     ...pos,
     k: kind,
-    text: node?.name,
+    text: node.name,
+    stats: node.stats,
   };
 }

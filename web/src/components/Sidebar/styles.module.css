@@ -12,7 +12,6 @@
   border-color: var(--accent-primary);
   border-radius: var(--border-radius);
   z-index: 2;
-  overflow: hidden;
 }
 
 .header {
@@ -23,6 +22,7 @@
   color: var(--on-secondary);
   font-weight: var(--font-heavy);
   background-color: var(--secondary);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
 .toggle {

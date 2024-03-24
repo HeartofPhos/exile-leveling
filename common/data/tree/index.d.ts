@@ -1,4 +1,4 @@
-export namespace PassiveTree {
+export namespace SkillTree {
   export interface Data {
     bounds: Bounds;
     classes: Class[];
@@ -40,7 +40,8 @@ export namespace PassiveTree {
       | "Mastery"
       | "Jewel"
       | "Ascendancy_Start";
-    text?: string;
+    text: string;
+    stats?: string[];
   }
 
   export interface Coord {

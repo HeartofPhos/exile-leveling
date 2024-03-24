@@ -1,4 +1,4 @@
-import { PassiveTree } from "../../../../common/data/tree";
+import { SkillTree } from "../../../../common/data/tree";
 
 const PADDING = 550;
 
@@ -20,7 +20,7 @@ const NODE_NORMAL_CLASS = "normal";
 const ASCENDANCY_CLASS = "ascendancy";
 const BORDER_CLASS = "border";
 
-type ConstantsLookup = Partial<Record<PassiveTree.Node["k"], Constants>>;
+type ConstantsLookup = Partial<Record<SkillTree.Node["k"], Constants>>;
 
 interface Constants {
   radius: number;
@@ -76,8 +76,8 @@ export interface ViewBox {
 }
 
 export function buildTemplate(
-  tree: PassiveTree.Data,
-  nodeLookup: PassiveTree.NodeLookup
+  tree: SkillTree.Data,
+  nodeLookup: SkillTree.NodeLookup
 ) {
   const viewBox: ViewBox = {
     x: tree.bounds.minX - PADDING,
@@ -182,8 +182,8 @@ export function buildTemplate(
 }
 
 function buildSubTree(
-  graph: PassiveTree.Graph,
-  nodeLookup: PassiveTree.NodeLookup,
+  graph: SkillTree.Graph,
+  nodeLookup: SkillTree.NodeLookup,
   constantsLookup: ConstantsLookup
 ) {
   let template = ``;
@@ -205,7 +205,7 @@ function buildSubTree(
 
 function buildNode(
   nodeId: string,
-  node: PassiveTree.Node,
+  node: SkillTree.Node,
   constantsLookup: ConstantsLookup
 ) {
   const constants = constantsLookup[node.k];
@@ -213,15 +213,14 @@ function buildNode(
 
   let template = ``;
   template += `<circle cx="${node.x}" cy="${node.y}" id="n${nodeId}" r="${constants.radius}" class="${constants.class}">\n`;
-  if (node.text) template += `<title>${node.text}</title>\n`;
   template += `</circle>\n`;
 
   return template;
 }
 
 function buildConnection(
-  connection: PassiveTree.Connection,
-  nodeLookup: PassiveTree.NodeLookup
+  connection: SkillTree.Connection,
+  nodeLookup: SkillTree.NodeLookup
 ) {
   const id = `${connection.a}-${connection.b}`;
 

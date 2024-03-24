@@ -33,8 +33,8 @@ const COMMAND_PROCESSORS: Record<string, () => Promise<any>> = {
   },
   ["tree"]: async () => {
     const templates = await buildTemplates();
-    for (const { version, passiveTree } of templates) {
-      saveTreeJSON(version, passiveTree);
+    for (const { version, skillTree } of templates) {
+      saveTreeJSON(version, skillTree);
     }
   },
 };

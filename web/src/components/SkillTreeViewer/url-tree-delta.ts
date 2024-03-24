@@ -1,4 +1,4 @@
-import { PassiveTree } from "../../../../common/data/tree";
+import { SkillTree } from "../../../../common/data/tree";
 import { ViewBox } from "../../state/tree/svg";
 import { UrlTree } from "../../state/tree/url-tree";
 
@@ -27,19 +27,19 @@ export interface UrlTreeDelta {
   connectionsActive: string[];
   connectionsAdded: string[];
   connectionsRemoved: string[];
-  masteryInfos: Record<string, MasteryInfo>;
+  masteries: Record<string, string>;
 }
 
 export function buildUrlTreeDelta(
   currentTree: UrlTree.Data,
   previousTree: UrlTree.Data,
-  passiveTree: PassiveTree.Data
+  skillTree: SkillTree.Data
 ): UrlTreeDelta {
   const nodesCurrent = new Set(currentTree.nodes);
   const nodesPrevious = new Set(previousTree.nodes);
 
-  for (const [nodeId, effectId] of Object.entries(currentTree.masteryLookup)) {
-    if (previousTree.masteryLookup[nodeId] !== effectId)
+  for (const [nodeId, effectId] of Object.entries(currentTree.masteries)) {
+    if (previousTree.masteries[nodeId] !== effectId)
       nodesPrevious.delete(nodeId);
   }
 
@@ -50,17 +50,13 @@ export function buildUrlTreeDelta(
   if (currentTree.ascendancy !== undefined)
     nodesActive.add(currentTree.ascendancy.startNodeId);
 
-  const masteryInfos = buildMasteryInfos(
-    currentTree,
-    previousTree,
-    passiveTree
-  );
+  const masteryEffects = buildMasteryEffects(currentTree, previousTree);
 
   const connections = buildConnections(
     nodesActive,
     nodesAdded,
     nodesRemoved,
-    passiveTree
+    skillTree
   );
 
   return {
@@ -68,47 +64,37 @@ export function buildUrlTreeDelta(
     nodesAdded: Array.from(nodesAdded),
     nodesRemoved: Array.from(nodesRemoved),
     ...connections,
-    masteryInfos,
+    masteries: masteryEffects,
   };
 }
 
-export interface MasteryInfo {
-  info: string;
-}
-
-function buildMasteryInfos(
+function buildMasteryEffects(
   currentTree: UrlTree.Data,
-  previousTree: UrlTree.Data,
-  passiveTree: PassiveTree.Data
+  previousTree: UrlTree.Data
 ) {
-  const masteryLookups = [
-    previousTree.masteryLookup,
-    currentTree.masteryLookup,
-  ];
+  const masteryLookups = [previousTree.masteries, currentTree.masteries];
 
-  const masteryInfos: UrlTreeDelta["masteryInfos"] = {};
+  const masteries: UrlTreeDelta["masteries"] = {};
   for (const masteryLookup of masteryLookups) {
     for (const [nodeId, effectId] of Object.entries(masteryLookup)) {
-      masteryInfos[nodeId] = {
-        info: passiveTree.masteryEffects[effectId].stats.join("\n"),
-      };
+      masteries[nodeId] = effectId;
     }
   }
 
-  return masteryInfos;
+  return masteries;
 }
 
 function buildConnections(
   nodesActive: Set<string>,
   nodesAdded: Set<string>,
   nodesRemoved: Set<string>,
-  passiveTree: PassiveTree.Data
+  skillTree: SkillTree.Data
 ) {
   const connectionsActive: string[] = [];
   const connectionsAdded: string[] = [];
   const connectionsRemoved: string[] = [];
 
-  for (const graph of passiveTree.graphs) {
+  for (const graph of skillTree.graphs) {
     for (const connection of graph.connections) {
       const id = `${connection.a}-${connection.b}`;
 
@@ -155,7 +141,7 @@ export function calculateBounds(
   nodesActive: string[],
   nodesAdded: string[],
   nodesRemoved: string[],
-  nodes: PassiveTree.NodeLookup,
+  nodes: SkillTree.NodeLookup,
   viewBox: ViewBox
 ): Bounds {
   let minX = Number.POSITIVE_INFINITY;

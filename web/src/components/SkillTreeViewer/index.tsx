@@ -1,4 +1,4 @@
-import { PassiveTree } from "../../../../common/data/tree";
+import { SkillTree } from "../../../../common/data/tree";
 import { TREE_DATA_LOOKUP } from "../../state/tree";
 import { UrlTree } from "../../state/tree/url-tree";
 import { formStyles } from "../../styles";
@@ -14,23 +14,25 @@ import classNames from "classnames";
 import { useEffect, useRef, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
-interface PassiveTreeViewerProps {
+interface SkillTreeViewerProps {
   urlTrees: UrlTree.Data[];
 }
 
 interface RenderData {
   svg: string;
   style: string;
-  nodes: PassiveTree.NodeLookup;
+  skillTree: SkillTree.Data;
+  nodes: SkillTree.NodeLookup;
   intialFocus: ViewportProps["intialFocus"];
-  masteryInfos: UrlTreeDelta["masteryInfos"];
+  masteries: UrlTreeDelta["masteries"];
 }
 
-export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
+export function SkillTreeViewer({ urlTrees }: SkillTreeViewerProps) {
   const svgDivRef = useRef<HTMLDivElement>(null);
   const [curIndex, setCurIndex] = useState<number>(0);
   const [renderData, setRenderData] = useState<RenderData>();
   const [styleId] = useState(() => randomId(6));
+  const [tooltip, setTooltip] = useState<string | null>(null);
 
   useEffect(() => {
     async function fn() {
@@ -45,24 +47,24 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
           version: currentTree.version,
           ascendancy: currentTree.ascendancy,
           nodes: [],
-          masteryLookup: {},
+          masteries: {},
         };
       }
 
-      const [passiveTree, nodeLookup, svg, viewBox, compiledStyle] =
+      const [skillTree, nodes, svg, viewBox, compiledStyle] =
         await TREE_DATA_LOOKUP[currentTree.version];
 
       const urlTreeDelta = buildUrlTreeDelta(
         currentTree,
         previousTree,
-        passiveTree
+        skillTree
       );
 
       const bounds = calculateBounds(
         urlTreeDelta.nodesActive,
         urlTreeDelta.nodesAdded,
         urlTreeDelta.nodesRemoved,
-        nodeLookup,
+        nodes,
         viewBox
       );
 
@@ -93,9 +95,10 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
       setRenderData({
         svg,
         style,
-        nodes: nodeLookup,
+        skillTree,
+        nodes,
         intialFocus: bounds,
-        masteryInfos: urlTreeDelta.masteryInfos,
+        masteries: urlTreeDelta.masteries,
       });
     }
 
@@ -106,15 +109,19 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
     if (svgDivRef.current === null) return;
     if (renderData === undefined) return;
 
-    for (const [nodeId, masteryInfo] of Object.entries(
-      renderData.masteryInfos
-    )) {
-      const title = svgDivRef.current.querySelector<SVGTitleElement>(
-        `#n${nodeId} title`
+    for (const nodeId of Object.keys(renderData.nodes)) {
+      const element = svgDivRef.current.querySelector<SVGTitleElement>(
+        `#n${nodeId}`
       );
-      if (title === null) return;
+      if (element === null) continue;
 
-      title.textContent = `${renderData.nodes[nodeId].text}\n${masteryInfo.info}`;
+      element.addEventListener("pointerenter", () => {
+        setTooltip(nodeId);
+      });
+
+      element.addEventListener("pointerleave", () => {
+        setTooltip(null);
+      });
     }
   }, [svgDivRef, renderData]);
 
@@ -122,6 +129,14 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
     <>
       {renderData && (
         <div className={classNames(styles.viewer)}>
+          {tooltip && (
+            <NodeTooltip
+              skillTree={renderData.skillTree}
+              nodes={renderData.nodes}
+              masteries={renderData.masteries}
+              nodeId={tooltip}
+            />
+          )}
           <div className={styles.viewport}>
             <Viewport
               intialFocus={renderData.intialFocus}
@@ -159,5 +174,42 @@ export function PassiveTreeViewer({ urlTrees }: PassiveTreeViewerProps) {
         </div>
       )}
     </>
+  );
+}
+
+interface NodeTooltipProps {
+  skillTree: SkillTree.Data;
+  nodes: SkillTree.NodeLookup;
+  nodeId: keyof SkillTree.NodeLookup;
+  masteries: Record<string, string>;
+}
+function NodeTooltip({
+  skillTree,
+  nodes,
+  masteries,
+  nodeId,
+}: NodeTooltipProps) {
+  const node = nodes[nodeId];
+
+  let parts = [];
+
+  if (node.stats && node.stats.length > 0) {
+    parts.push(<pre>{node.stats.join("\n")}</pre>);
+  }
+
+  const masteryEffectId = masteries[nodeId];
+  if (masteryEffectId) {
+    const mastery = skillTree.masteryEffects[masteryEffectId];
+    if (mastery.stats.length > 0) {
+      parts.push(<pre>{mastery.stats.join("\n")}</pre>);
+    }
+  }
+
+  return (
+    <div className={classNames(styles.tooltip)}>
+      <span className={classNames(styles.tooltipTitle)}>{node.text}</span>
+      {parts.length > 0 && <hr />}
+      {parts}
+    </div>
   );
 }

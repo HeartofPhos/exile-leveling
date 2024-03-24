@@ -1,4 +1,4 @@
-export namespace SkillTree {
+export namespace RawTree {
   export interface Data {
     tree: string;
     classes: Class[];

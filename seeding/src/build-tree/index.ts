@@ -1,5 +1,5 @@
-import { buildPassiveTree } from "./tree";
-import { SkillTree } from "./types";
+import { buildSkillTree } from "./tree";
+import { RawTree } from "./types";
 import fetch from "cross-fetch";
 
 const PASSIVE_TREE_JSON = {
@@ -20,13 +20,13 @@ const PASSIVE_TREE_JSON = {
 export async function buildTemplates() {
   const result = [];
   for (const [version, url] of Object.entries(PASSIVE_TREE_JSON)) {
-    const skillTree: SkillTree.Data = await fetch(url).then((x) => x.json());
+    const rawTree: RawTree.Data = await fetch(url).then((x) => x.json());
 
-    const passiveTree = buildPassiveTree(skillTree);
+    const skillTree = buildSkillTree(rawTree);
 
     result.push({
       version,
-      passiveTree,
+      skillTree,
     });
   }
 
