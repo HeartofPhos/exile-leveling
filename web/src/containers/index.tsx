@@ -4,7 +4,7 @@ import { Navbar } from "../components/Navbar";
 import { pipe } from "../utility";
 import { withBlank } from "../utility/withBlank";
 import { withScrollRestoration } from "../utility/withScrollRestoration";
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import { Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
@@ -24,9 +24,30 @@ export function App() {
       <Suspense fallback={<Loading />}>
         <ErrorBoundary FallbackComponent={ErrorFallback}>
           <Routes>
-            <Route path="/" element={<RoutesContainer />} />
-            <Route path="/build" element={<BuildContainer />} />
-            <Route path="/edit-route" element={<EditRouteContainer />} />
+            <Route
+              path="/"
+              element={
+                <Page title="Exile Leveling" component={<RoutesContainer />} />
+              }
+            />
+            <Route
+              path="/build"
+              element={
+                <Page
+                  title="Exile Leveling - Build"
+                  component={<BuildContainer />}
+                />
+              }
+            />
+            <Route
+              path="/edit-route"
+              element={
+                <Page
+                  title="Exile Leveling - Edit Route"
+                  component={<EditRouteContainer />}
+                />
+              }
+            />
           </Routes>
         </ErrorBoundary>
       </Suspense>
@@ -40,4 +61,17 @@ export function App() {
       />
     </>
   );
+}
+
+interface PageProps {
+  title: string;
+  component: React.ReactNode;
+}
+
+function Page({ title, component }: PageProps) {
+  useEffect(() => {
+    document.title = title;
+  }, [title]);
+
+  return component;
 }

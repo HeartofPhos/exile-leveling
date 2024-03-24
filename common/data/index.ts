@@ -22,7 +22,7 @@ export namespace Data {
     VAAL_GEM_LOOKUP_JSON as GameData.VariantGemLookup;
 
   export const RouteSourceLookup = globImportLazy<string>(
-    import.meta.glob("./routes/*.txt", { as: "raw" }),
+    import.meta.glob("./routes/*.txt", { query: "?raw", import: "default" }),
     (key) => key,
     (value) => value
   );
