@@ -1,4 +1,3 @@
-import { findCharacterGems } from "../../../common/route-processing/gems";
 import { RouteData } from "../../../common/route-processing/types";
 import { buildDataSelector } from "./build-data";
 import { configSelector } from "./config";
@@ -47,7 +46,7 @@ const baseRouteSelector = selector({
 export const routeSelector = selector({
   key: "routeSelector",
   get: async ({ get }) => {
-    const { buildGemSteps } = await import(
+    const { buildGemSteps, findCharacterGems } = await import(
       "../../../common/route-processing/gems"
     );
 
