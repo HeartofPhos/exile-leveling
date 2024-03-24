@@ -3,6 +3,7 @@ import { routeSelector } from "../../state/route";
 import { routeFilesSelector } from "../../state/route-files";
 import { useClearRouteProgress } from "../../state/route-progress";
 import { borderListStyles, interactiveStyles } from "../../styles";
+import { trackEvent } from "../../utility/telemetry";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import React, { useEffect, useState } from "react";
@@ -148,6 +149,7 @@ export function Navbar({}: NavbarProps) {
               icon={<FaRegClipboard className={classNames("inlineIcon")} />}
               onClick={() => {
                 clipboardRoute();
+                trackEvent({ name: "3rd-Party Export" });
                 toast.success("Exported to Clipboard");
                 setNavExpand(false);
               }}
