@@ -40,7 +40,8 @@ export namespace SkillTree {
       | "Mastery"
       | "Jewel"
       | "Ascendancy_Start";
-    text?: string;
+    text: string;
+    stats?: string[];
   }
 
   export interface Coord {

@@ -27,7 +27,7 @@ export interface UrlTreeDelta {
   connectionsActive: string[];
   connectionsAdded: string[];
   connectionsRemoved: string[];
-  masteryInfos: Record<string, MasteryInfo>;
+  masteries: Record<string, string>;
 }
 
 export function buildUrlTreeDelta(
@@ -38,8 +38,8 @@ export function buildUrlTreeDelta(
   const nodesCurrent = new Set(currentTree.nodes);
   const nodesPrevious = new Set(previousTree.nodes);
 
-  for (const [nodeId, effectId] of Object.entries(currentTree.masteryLookup)) {
-    if (previousTree.masteryLookup[nodeId] !== effectId)
+  for (const [nodeId, effectId] of Object.entries(currentTree.masteries)) {
+    if (previousTree.masteries[nodeId] !== effectId)
       nodesPrevious.delete(nodeId);
   }
 
@@ -50,11 +50,7 @@ export function buildUrlTreeDelta(
   if (currentTree.ascendancy !== undefined)
     nodesActive.add(currentTree.ascendancy.startNodeId);
 
-  const masteryInfos = buildMasteryInfos(
-    currentTree,
-    previousTree,
-    skillTree
-  );
+  const masteryEffects = buildMasteryEffects(currentTree, previousTree);
 
   const connections = buildConnections(
     nodesActive,
@@ -68,34 +64,24 @@ export function buildUrlTreeDelta(
     nodesAdded: Array.from(nodesAdded),
     nodesRemoved: Array.from(nodesRemoved),
     ...connections,
-    masteryInfos,
+    masteries: masteryEffects,
   };
 }
 
-export interface MasteryInfo {
-  info: string;
-}
-
-function buildMasteryInfos(
+function buildMasteryEffects(
   currentTree: UrlTree.Data,
-  previousTree: UrlTree.Data,
-  skillTree: SkillTree.Data
+  previousTree: UrlTree.Data
 ) {
-  const masteryLookups = [
-    previousTree.masteryLookup,
-    currentTree.masteryLookup,
-  ];
+  const masteryLookups = [previousTree.masteries, currentTree.masteries];
 
-  const masteryInfos: UrlTreeDelta["masteryInfos"] = {};
+  const masteries: UrlTreeDelta["masteries"] = {};
   for (const masteryLookup of masteryLookups) {
     for (const [nodeId, effectId] of Object.entries(masteryLookup)) {
-      masteryInfos[nodeId] = {
-        info: skillTree.masteryEffects[effectId].stats.join("\n"),
-      };
+      masteries[nodeId] = effectId;
     }
   }
 
-  return masteryInfos;
+  return masteries;
 }
 
 function buildConnections(

@@ -40,7 +40,6 @@
 .tooltip {
   display: block;
   position: absolute;
-  text-align: right;
   transform: translateX(-100%) translateX(calc(-1 * var(--size-2)));
   overflow: visible;
   background-color: var(--primary);
@@ -49,4 +48,9 @@
   border-color: var(--accent-primary);
   border-radius: var(--border-radius);
   padding: var(--size-2);
+}
+
+.tooltipTitle {
+  color: var(--on-secondary);
+  font-weight: var(--font-heavy);
 }

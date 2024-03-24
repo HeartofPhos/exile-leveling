@@ -37,7 +37,7 @@ export namespace UrlTree {
     version: string;
     ascendancy?: SkillTree.Ascendancy;
     nodes: string[];
-    masteryLookup: Record<string, string>;
+    masteries: Record<string, string>;
   }
 }
 
@@ -79,7 +79,7 @@ export async function buildUrlTree(
     .map((x) => x.toString())
     .filter((x) => nodeLookup[x] !== undefined);
 
-  const masteries: UrlTree.Data["masteryLookup"] = {};
+  const masteries: UrlTree.Data["masteries"] = {};
   const masteryData = read_u16s(buffer, masteryOffset, masteryCount);
   for (let i = 0; i < masteryData.length; i += 2) {
     const nodeId = masteryData[i + 1].toString();
@@ -97,7 +97,7 @@ export async function buildUrlTree(
           ]
         : undefined,
     nodes: nodes,
-    masteryLookup: masteries,
+    masteries: masteries,
   };
 }
 

@@ -21,9 +21,10 @@ interface SkillTreeViewerProps {
 interface RenderData {
   svg: string;
   style: string;
+  skillTree: SkillTree.Data;
   nodes: SkillTree.NodeLookup;
   intialFocus: ViewportProps["intialFocus"];
-  masteryInfos: UrlTreeDelta["masteryInfos"];
+  masteries: UrlTreeDelta["masteries"];
 }
 
 export function SkillTreeViewer({ urlTrees }: SkillTreeViewerProps) {
@@ -46,11 +47,11 @@ export function SkillTreeViewer({ urlTrees }: SkillTreeViewerProps) {
           version: currentTree.version,
           ascendancy: currentTree.ascendancy,
           nodes: [],
-          masteryLookup: {},
+          masteries: {},
         };
       }
 
-      const [skillTree, nodeLookup, svg, viewBox, compiledStyle] =
+      const [skillTree, nodes, svg, viewBox, compiledStyle] =
         await TREE_DATA_LOOKUP[currentTree.version];
 
       const urlTreeDelta = buildUrlTreeDelta(
@@ -63,7 +64,7 @@ export function SkillTreeViewer({ urlTrees }: SkillTreeViewerProps) {
         urlTreeDelta.nodesActive,
         urlTreeDelta.nodesAdded,
         urlTreeDelta.nodesRemoved,
-        nodeLookup,
+        nodes,
         viewBox
       );
 
@@ -94,9 +95,10 @@ export function SkillTreeViewer({ urlTrees }: SkillTreeViewerProps) {
       setRenderData({
         svg,
         style,
-        nodes: nodeLookup,
+        skillTree,
+        nodes,
         intialFocus: bounds,
-        masteryInfos: urlTreeDelta.masteryInfos,
+        masteries: urlTreeDelta.masteries,
       });
     }
 
@@ -107,17 +109,7 @@ export function SkillTreeViewer({ urlTrees }: SkillTreeViewerProps) {
     if (svgDivRef.current === null) return;
     if (renderData === undefined) return;
 
-    for (const [nodeId, node] of Object.entries(renderData.nodes)) {
-      if (node.text === undefined) continue;
-
-      let title = node.text;
-      let text = "";
-
-      const masteryInfo = renderData.masteryInfos[nodeId];
-      if (masteryInfo) {
-        text = `${masteryInfo.info}`;
-      }
-
+    for (const nodeId of Object.keys(renderData.nodes)) {
       const element = svgDivRef.current.querySelector<SVGTitleElement>(
         `#n${nodeId}`
       );
@@ -137,7 +129,14 @@ export function SkillTreeViewer({ urlTrees }: SkillTreeViewerProps) {
     <>
       {renderData && (
         <div className={classNames(styles.viewer)}>
-          {tooltip && <NodeTooltip nodes={renderData.nodes} nodeId={tooltip} />}
+          {tooltip && (
+            <NodeTooltip
+              skillTree={renderData.skillTree}
+              nodes={renderData.nodes}
+              masteries={renderData.masteries}
+              nodeId={tooltip}
+            />
+          )}
           <div className={styles.viewport}>
             <Viewport
               intialFocus={renderData.intialFocus}
@@ -179,15 +178,38 @@ export function SkillTreeViewer({ urlTrees }: SkillTreeViewerProps) {
 }
 
 interface NodeTooltipProps {
+  skillTree: SkillTree.Data;
   nodes: SkillTree.NodeLookup;
   nodeId: keyof SkillTree.NodeLookup;
+  masteries: Record<string, string>;
 }
-function NodeTooltip({ nodes, nodeId }: NodeTooltipProps) {
+function NodeTooltip({
+  skillTree,
+  nodes,
+  masteries,
+  nodeId,
+}: NodeTooltipProps) {
+  const node = nodes[nodeId];
+
+  let parts = [];
+
+  if (node.stats && node.stats.length > 0) {
+    parts.push(<pre>{node.stats.join("\n")}</pre>);
+  }
+
+  const masteryEffectId = masteries[nodeId];
+  if (masteryEffectId) {
+    const mastery = skillTree.masteryEffects[masteryEffectId];
+    if (mastery.stats.length > 0) {
+      parts.push(<pre>{mastery.stats.join("\n")}</pre>);
+    }
+  }
+
   return (
     <div className={classNames(styles.tooltip)}>
-      title
-      <br />
-      text
+      <span className={classNames(styles.tooltipTitle)}>{node.text}</span>
+      {parts.length > 0 && <hr />}
+      {parts}
     </div>
   );
 }

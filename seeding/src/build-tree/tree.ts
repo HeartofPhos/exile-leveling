@@ -133,6 +133,10 @@ export function buildSkillTree(rawTree: RawTree.Data) {
       }
 
       const treeNode = buildNode(node, { x, y });
+      if (!treeNode) {
+        console.log(`skipping node: ${nodeId}`);
+        continue;
+      }
       graph.nodes[nodeId] = treeNode;
 
       if (node.out) {
@@ -208,7 +212,7 @@ function filterConnection(a: RawTree.Node, b: RawTree.Node) {
 function buildNode(
   node: RawTree.Node,
   pos: SkillTree.Coord
-): SkillTree.Node {
+): SkillTree.Node | null {
   let kind: SkillTree.Node["k"];
   if (node.isAscendancyStart) {
     kind = "Ascendancy_Start";
@@ -224,9 +228,12 @@ function buildNode(
     kind = "Normal";
   }
 
+  if (!node.name) return null;
+
   return {
     ...pos,
     k: kind,
-    text: node?.name,
+    text: node.name,
+    stats: node.stats,
   };
 }
