@@ -196,10 +196,8 @@ function NodeTooltip({
   ];
 
   if (node.stats && node.stats.length > 0) {
-    for (let stat of node.stats) {
-      parts.push(
-        <span className={classNames(styles.tooltipText)}>{stat}</span>
-      );
+    for (const stat of node.stats.flatMap((x) => x.split("\n"))) {
+      parts.push(<span>{stat}</span>);
     }
   }
 
@@ -207,10 +205,8 @@ function NodeTooltip({
   if (masteryEffectId) {
     const mastery = skillTree.masteryEffects[masteryEffectId];
     if (mastery.stats.length > 0) {
-      for (const stat of mastery.stats) {
-        parts.push(
-          <span className={classNames(styles.tooltipText)}>{stat}</span>
-        );
+      for (const stat of mastery.stats.flatMap((x) => x.split("\n"))) {
+        parts.push(<span>{stat}</span>);
       }
     }
   }

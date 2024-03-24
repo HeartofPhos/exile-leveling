@@ -55,7 +55,3 @@
   color: var(--on-secondary);
   font-weight: var(--font-heavy);
 }
-
-.tooltipText {
-  white-space: pre-line;
-}
