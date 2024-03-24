@@ -191,25 +191,33 @@ function NodeTooltip({
 }: NodeTooltipProps) {
   const node = nodes[nodeId];
 
-  let parts = [];
+  let parts = [
+    <span className={classNames(styles.tooltipTitle)}>{node.text}</span>,
+  ];
 
   if (node.stats && node.stats.length > 0) {
-    parts.push(<pre>{node.stats.join("\n")}</pre>);
+    for (let stat of node.stats) {
+      parts.push(
+        <span className={classNames(styles.tooltipText)}>{stat}</span>
+      );
+    }
   }
 
   const masteryEffectId = masteries[nodeId];
   if (masteryEffectId) {
     const mastery = skillTree.masteryEffects[masteryEffectId];
     if (mastery.stats.length > 0) {
-      parts.push(<pre>{mastery.stats.join("\n")}</pre>);
+      for (const stat of mastery.stats) {
+        parts.push(
+          <span className={classNames(styles.tooltipText)}>{stat}</span>
+        );
+      }
     }
   }
 
   return (
     <div className={classNames(styles.tooltip)}>
-      <span className={classNames(styles.tooltipTitle)}>{node.text}</span>
-      {parts.length > 0 && <hr />}
-      {parts}
+      {parts.flatMap<JSX.Element>((x, i) => (i === 0 ? x : [<hr />, x]))}
     </div>
   );
 }
