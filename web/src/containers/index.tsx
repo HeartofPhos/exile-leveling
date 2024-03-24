@@ -65,7 +65,7 @@ export function App() {
 
 interface PageProps {
   title: string;
-  component: React.ReactNode;
+  component: JSX.Element;
 }
 
 function Page({ title, component }: PageProps) {
