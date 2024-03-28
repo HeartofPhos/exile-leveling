@@ -30,6 +30,7 @@
 #endif
 Kill {kill|Fidelitas, the Mourning}, take {quest_text|Baleful Gem}
     #sub Look for the long hallway
+    #sub Recommended Level: 14-15
 {logout}
 Hand in {quest|a2q6} #Intruders in Black
 #ifdef LEAGUE_START
@@ -53,6 +54,7 @@ Get {waypoint_get}
     #sub Search the side of road opposite {waypoint}
 ➞ {arena|The Weaver's Nest}, kill {kill|The Weaver}, take {quest_text|Maligaro's Spike}
     #sub Try go {dir|270}, if it's blocked go {dir|45}
+    #sub Recommended Level: 16
 {logout}
 Hand in {quest|a2q4} #Sharp and Cruel
 #ifdef BANDIT_KILL
@@ -163,4 +165,5 @@ Get {crafting}
 ➞ {arena|Pyramid Apex}, kill {kill|Vaal Oversoul}
     #sub First floor exit will be in one of the 3 corners
     #sub Remaining floors will have the exit diagonally across from the entrance
+    #sub Recommended Level: 20-22
 Get {crafting}

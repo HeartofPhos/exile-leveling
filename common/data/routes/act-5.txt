@@ -15,6 +15,8 @@ Find and kill {kill|Justicar Casticus}, take {quest_text|Eyes of Zeal}
     #sub Go {dir|45}
 ➞ {enter|1_5_5} #The Chamber of Innocence
     #sub Loop around clockwise
+    #sub Recommended Level: 37+
+    #sub Farm Level: 40-42
 Get {crafting}
 ➞ {arena|Sanctum of Innocence}, kill {kill|High Templar Avarius}
     #sub Go {dir|315} counter-clockwise spiral

@@ -17,6 +17,7 @@ Find 3x{quest_text|Glyph}
     Find and kill {kill|Hailrake}, take {quest_text|Medicine Chest}
         #sub Go {dir|270}
         #sub If you find a ledge, turn around and go {dir|90}
+        #sub Recommended Level: 4
     {logout}
     Hand in {quest|a1q4} #Breaking Some Eggs
     Hand in {quest|a1q5} #Mercy Mission
@@ -47,6 +48,7 @@ Hand in {quest|a1q2|a1q2b} #The Caged Brute
 #endif
 ➞ {enter|1_1_7_2} #The Upper Prison
 ➞ {arena|The Warden's Quarters}, kill {kill|Brutus, Lord Incarcerator}
+    #sub Recommended Level: 8-10
 {logout}
 Hand in {quest|a1q2|a1q2} #The Caged Brute
 {waypoint|1_1_8} #Prisoner's Gate
@@ -71,3 +73,4 @@ Hand in {quest|a1q3} #The Siren's Cadence
     #sub Follow the water
 ➞ {arena|Merveil's Lair}, kill {kill|Merveil, the Siren}
     #sub Follow the water
+    #sub Recommended Level: 11-13
