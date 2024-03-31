@@ -375,6 +375,11 @@ function EvaluateCrafting(
     area = Data.Areas[rawFragment[1]];
     if (!area) return ERROR_MISSING_AREA;
   }
+
+  if (area.crafting_recipes.length == 0) {
+    logger.warn(`no crafting recipe in area ${area.id}`);
+  }
+
   state.craftingAreas.add(area.id);
 
   return {

@@ -1767,6 +1767,14 @@
     "is_support": false,
     "cost": "alteration"
   },
+  "Metadata/Items/Gems/SkillGemConvocationNew": {
+    "id": "Metadata/Items/Gems/SkillGemConvocationNew",
+    "name": "Convocation",
+    "primary_attribute": "intelligence",
+    "required_level": 31,
+    "is_support": false,
+    "cost": "chance"
+  },
   "Metadata/Items/Gems/SkillGemFireNovaMine": {
     "id": "Metadata/Items/Gems/SkillGemFireNovaMine",
     "name": "Pyroclast Mine",
@@ -4259,6 +4267,30 @@
     "id": "Metadata/Items/Gems/SupportGemVolatility",
     "name": "Volatility Support",
     "primary_attribute": "strength",
+    "required_level": 18,
+    "is_support": true,
+    "cost": "alteration"
+  },
+  "Metadata/Items/Gems/SkillGemAutomation": {
+    "id": "Metadata/Items/Gems/SkillGemAutomation",
+    "name": "Automation",
+    "primary_attribute": "intelligence",
+    "required_level": 24,
+    "is_support": false,
+    "cost": "alteration"
+  },
+  "Metadata/Items/Gems/SkillGemCallToArms": {
+    "id": "Metadata/Items/Gems/SkillGemCallToArms",
+    "name": "Call to Arms",
+    "primary_attribute": "strength",
+    "required_level": 24,
+    "is_support": false,
+    "cost": "alteration"
+  },
+  "Metadata/Items/Gems/SupportGemSacredWisps": {
+    "id": "Metadata/Items/Gems/SupportGemSacredWisps",
+    "name": "Sacred Wisps Support",
+    "primary_attribute": "intelligence",
     "required_level": 18,
     "is_support": true,
     "cost": "alteration"

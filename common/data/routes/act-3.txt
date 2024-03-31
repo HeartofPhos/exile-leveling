@@ -1,6 +1,7 @@
 #section Act 3
 ➞ {enter|1_3_1} #The City of Sarn
 Help and talk to {generic|Clarissa}
+Get {crafting}
 ➞ {enter|1_3_town} #The Sarn Encampment
 ➞ {enter|1_3_2} #The Slums
     #sub Go {dir|0}
@@ -85,6 +86,7 @@ Get {waypoint_get}
         #sub Go {dir|315}
     Get {waypoint_get}
     Find {generic|Loose Candle} ➞ {enter|1_3_17_2} #The Archives
+    Get {crafting}
     Find 4x{quest_text|Golden Page}
     {logout}
     {waypoint|1_3_17_1} #The Library
