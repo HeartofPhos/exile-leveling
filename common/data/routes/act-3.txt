@@ -1,7 +1,7 @@
 #section Act 3
 ➞ {enter|1_3_1} #The City of Sarn
-Help and talk to {generic|Clarissa}
 Get {crafting}
+Help and talk to {generic|Clarissa}
 ➞ {enter|1_3_town} #The Sarn Encampment
 ➞ {enter|1_3_2} #The Slums
     #sub Go {dir|0}
