@@ -60,11 +60,9 @@ Find {area|1_1_9a}, place {portal|set} #The Ship Graveyard Cave
 {waypoint|1_1_town} #Lioneye's Watch
 Take {portal|use}
 ➞ {enter|1_1_9a} #The Ship Graveyard Cave
-Find {quest_text|Allflame}
+Find {quest_text|Slave Girl}, take {quest_text|Allflame}
     #sub Search opposite the entrance
-{logout}
-{waypoint|1_1_9} #The Ship Graveyard
-Find and kill {kill|Captain Fairgraves}
+➞ {enter|1_1_9}, kill {kill|Captain Fairgraves} #The Ship Graveyard
 {logout}
 Hand in {quest|a1q6} #The Marooned Mariner
 Hand in {quest|a1q3} #The Siren's Cadence
