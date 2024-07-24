@@ -59,9 +59,10 @@ function cleanPobText(dirty: string) {
 
 function processSkills(
   requiredGems: RouteData.RequiredGem[],
-  gemLinks: RouteData.GemLink[],
+  gemLinks: RouteData.GemLinkGroup[],
   parentElement: Element,
-  parentTitle: string | undefined
+  parentTitle: string | undefined,
+  characterClass: string
 ) {
   const skillElements = Array.from(parentElement.getElementsByTagName("Skill"));
 
@@ -105,23 +106,57 @@ function processSkills(
     if (primaryGemIds.length > 0)
       gemLinks.push({
         title: gemLinkTitle,
-        primaryGemIds: primaryGemIds,
-        secondaryGemIds: secondaryGemIds,
+        primaryGems: primaryGemIds.map((x) =>
+          gemIdToGemLink(x, characterClass)
+        ),
+        secondaryGems: secondaryGemIds.map((x) =>
+          gemIdToGemLink(x, characterClass)
+        ),
       });
     else if (secondaryGemIds.length > 0)
       gemLinks.push({
         title: gemLinkTitle,
-        primaryGemIds: secondaryGemIds,
-        secondaryGemIds: [],
+        primaryGems: secondaryGemIds.map((x) =>
+          gemIdToGemLink(x, characterClass)
+        ),
+        secondaryGems: [],
       });
   }
+}
+
+function gemIdToGemLink(
+  gemId: GameData.Gem["id"],
+  characterClass: string
+): RouteData.GemLink {
+  const quests: RouteData.GemLink["quests"] = [];
+  // TODO needing to loop over quests is annoying, ideally want to be able use relation queries, look into IndexedDB
+  for (const quest of Object.values(Data.Quests)) {
+    for (const [rewardOfferId, rewardOffer] of Object.entries(
+      quest.reward_offers
+    )) {
+      if (rewardOffer) {
+        const vendor = rewardOffer.vendor[gemId];
+        const existsForClass =
+          vendor?.classes.length === 0 ||
+          vendor?.classes.includes(characterClass);
+
+        if (existsForClass) {
+          quests.push({ questId: quest.id, rewardOfferId });
+        }
+      }
+    }
+  }
+  return {
+    id: gemId,
+    quests,
+  };
 }
 
 export interface PobData {
   buildData: RouteData.BuildData;
   requiredGems: RouteData.RequiredGem[];
   buildTrees: RouteData.BuildTree[];
-  gemLinks: RouteData.GemLink[];
+  gemLinks: RouteData.GemLinkGroup[];
 }
 
 export function processPob(pobCode: string): PobData | undefined {
@@ -141,7 +176,7 @@ export function processPob(pobCode: string): PobData | undefined {
     buildElement[0].attributes.getNamedItem("bandit")?.value || "None";
 
   const requiredGems: RouteData.RequiredGem[] = [];
-  const gemLinks: RouteData.GemLink[] = [];
+  const gemLinks: RouteData.GemLinkGroup[] = [];
   const skillSetElements = Array.from(doc.getElementsByTagName("SkillSet"));
   if (skillSetElements.length > 0) {
     for (const skillSetElement of skillSetElements) {
@@ -149,11 +184,18 @@ export function processPob(pobCode: string): PobData | undefined {
         requiredGems,
         gemLinks,
         skillSetElement,
-        skillSetElement.attributes.getNamedItem("title")?.value
+        skillSetElement.attributes.getNamedItem("title")?.value,
+        characterClass
       );
     }
   } else {
-    processSkills(requiredGems, gemLinks, doc.documentElement, undefined);
+    processSkills(
+      requiredGems,
+      gemLinks,
+      doc.documentElement,
+      undefined,
+      characterClass
+    );
   }
 
   const buildTrees: RouteData.BuildTree[] = [];

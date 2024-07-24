@@ -47,6 +47,13 @@ Hand in {quest|a1q2|a1q2b} #The Caged Brute
         #sub Usually {dir|45}
 #endif
 ➞ {enter|1_1_7_2} #The Upper Prison
+#ifdef LEAGUE_START
+    Find {generic|Chemist's Strongbox}
+        #sub Look for map icon, access with nearby switch
+        #sub High chance for {generic|Quicksilver Flask}
+        #sub Vendor {generic|Quicksilver Flask} + {generic|Orb of Augmentation} + Normal {generic|Boots}
+        #sub Vendor {generic|Quicksilver Flask} + {generic|Orb of Augmentation} + Movement Speed {generic|Boots}
+#endif
 ➞ {arena|The Warden's Quarters}, kill {kill|Brutus, Lord Incarcerator}
     #sub Recommended Level: 8-10
 {logout}

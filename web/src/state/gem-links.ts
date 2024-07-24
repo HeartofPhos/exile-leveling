@@ -5,13 +5,13 @@ import { DefaultValue, atom, selector } from "recoil";
 
 const GEM_LINKS_VERSION = 0;
 
-const gemLinksAtom = atom<RouteData.GemLink[] | null>({
+const gemLinksAtom = atom<RouteData.GemLinkGroup[] | null>({
   key: "gemLinksAtom",
   default: getPersistent("gem-links", GEM_LINKS_VERSION, NO_MIGRATORS),
   effects: [persistentStorageEffect("gem-links", GEM_LINKS_VERSION)],
 });
 
-export const gemLinksSelector = selector<RouteData.GemLink[]>({
+export const gemLinksSelector = selector<RouteData.GemLinkGroup[]>({
   key: "gemLinksSelector",
   get: ({ get }) => {
     let gemLinks = get(gemLinksAtom);

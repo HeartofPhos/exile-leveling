@@ -3,6 +3,7 @@ import { TREE_DATA_LOOKUP } from "../../state/tree";
 import { UrlTree } from "../../state/tree/url-tree";
 import { formStyles } from "../../styles";
 import { randomId } from "../../utility";
+import { SidebarTooltip } from "../SidebarTooltip";
 import { Viewport, ViewportProps } from "../Viewport";
 import styles from "./styles.module.css";
 import {
@@ -32,7 +33,7 @@ export function SkillTreeViewer({ urlTrees }: SkillTreeViewerProps) {
   const [curIndex, setCurIndex] = useState<number>(0);
   const [renderData, setRenderData] = useState<RenderData>();
   const [styleId] = useState(() => randomId(6));
-  const [tooltip, setTooltip] = useState<string | null>(null);
+  const [tooltipNodeId, setTooltipNodeId] = useState<string | null>(null);
 
   useEffect(() => {
     async function fn() {
@@ -116,11 +117,11 @@ export function SkillTreeViewer({ urlTrees }: SkillTreeViewerProps) {
       if (element === null) continue;
 
       element.addEventListener("pointerenter", () => {
-        setTooltip(nodeId);
+        setTooltipNodeId(nodeId);
       });
 
       element.addEventListener("pointerleave", () => {
-        setTooltip(null);
+        setTooltipNodeId(null);
       });
     }
   }, [svgDivRef, renderData]);
@@ -129,12 +130,12 @@ export function SkillTreeViewer({ urlTrees }: SkillTreeViewerProps) {
     <>
       {renderData && (
         <div className={classNames(styles.viewer)}>
-          {tooltip && (
+          {tooltipNodeId && (
             <NodeTooltip
               skillTree={renderData.skillTree}
               nodes={renderData.nodes}
               masteries={renderData.masteries}
-              nodeId={tooltip}
+              nodeId={tooltipNodeId}
             />
           )}
           <div className={styles.viewport}>
@@ -191,9 +192,7 @@ function NodeTooltip({
 }: NodeTooltipProps) {
   const node = nodes[nodeId];
 
-  let parts = [
-    <span className={classNames(styles.tooltipTitle)}>{node.text}</span>,
-  ];
+  let parts = [];
 
   if (node.stats && node.stats.length > 0) {
     for (const stat of node.stats.flatMap((x) => x.split("\n"))) {
@@ -212,8 +211,8 @@ function NodeTooltip({
   }
 
   return (
-    <div className={classNames(styles.tooltip)}>
+    <SidebarTooltip title={node.text}>
       {parts.flatMap<JSX.Element>((x, i) => (i === 0 ? x : [<hr />, x]))}
-    </div>
+    </SidebarTooltip>
   );
 }

@@ -33,15 +33,18 @@ Kill {kill|Fidelitas, the Mourning}, take {quest_text|Baleful Gem}
     #sub Recommended Level: 14-15
 {logout}
 Hand in {quest|a2q6} #Intruders in Black
+{waypoint|1_2_3} #The Crossroads
+➞ {enter|1_2_15} #The Fellshrine Ruins
+    #sub Go {dir|135}
+➞ {enter|1_2_5_1} #The Crypt Level 1
+    #sub Follow the road
 #ifdef LEAGUE_START
-    {waypoint|1_2_3} #The Crossroads
-    ➞ {enter|1_2_15} #The Fellshrine Ruins
-        #sub Go {dir|135}
-    ➞ {enter|1_2_5_1} #The Crypt Level 1
-        #sub Follow the road
     Complete {trial}
-    {logout}
 #endif
+➞ {enter|1_2_5_2} #The Crypt Level 2
+Find {quest_text|Altar}, take {quest_text|Golden Hand}
+{logout}
+Hand in {quest|a2q5} #Through Sacred Ground
 ➞ {enter|1_2_7} #The Riverways
     #sub Go {dir|225}
 Get {waypoint_get}

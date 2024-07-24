@@ -40,6 +40,17 @@
   flex-direction: column;
 }
 
+.gemLinkQuestInfo {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  grid-column-gap: var(--size-4);
+  justify-content: space-between;
+}
+
+.questSeperator {
+  grid-column: 1/4;
+}
+
 .gemPrimary {
   font-weight: bold;
 }

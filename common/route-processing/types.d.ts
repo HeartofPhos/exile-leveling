@@ -1,3 +1,4 @@
+import { GameData } from "../types";
 import { Fragments } from "./fragment/types";
 
 export namespace RouteData {
@@ -42,14 +43,19 @@ export namespace RouteData {
   }
 
   export interface RequiredGem {
-    id: string;
+    id: GameData.Gem["id"];
     note: string;
     count: number;
   }
 
-  export interface GemLink {
+  export interface GemLinkGroup {
     title: string;
-    primaryGemIds: string[];
-    secondaryGemIds: string[];
+    primaryGems: GemLink[];
+    secondaryGems: GemLink[];
+  }
+
+  export interface GemLink {
+    id: GameData.Gem["id"];
+    quests: { questId: GameData.Quest["id"]; rewardOfferId: string }[];
   }
 }
