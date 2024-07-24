@@ -1,8 +1,9 @@
 import styles from "./styles.module.css";
 import classNames from "classnames";
+import { ReactNode } from "react";
 
 interface InlineFakeBlockProps {
-  child: React.ReactElement;
+  child: ReactNode;
 }
 
 export function InlineFakeBlock({ child }: InlineFakeBlockProps) {

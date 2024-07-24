@@ -2,6 +2,8 @@ import { Data } from "../../../../common/data";
 import { RouteData } from "../../../../common/route-processing/types";
 import { GameData } from "../../../../common/types";
 import { formStyles } from "../../styles";
+import { GemCost } from "../GemCost";
+import { InlineFakeBlock } from "../InlineFakeBlock";
 import { SidebarTooltip } from "../SidebarTooltip";
 import styles from "./styles.module.css";
 import classNames from "classnames";
@@ -103,7 +105,7 @@ interface GemLinkProps {
 }
 
 function GemLink({ gemLink, isPrimary, onTooltip }: GemLinkProps) {
-  const gemData = Data.Gems[gemLink.id];
+  const gem = Data.Gems[gemLink.id];
   return (
     <div
       className={isPrimary ? styles.gemPrimary : styles.gemSecondary}
@@ -115,10 +117,10 @@ function GemLink({ gemLink, isPrimary, onTooltip }: GemLinkProps) {
       }}
     >
       <MdCircle
-        color={Data.GemColours[gemData.primary_attribute]}
+        color={Data.GemColours[gem.primary_attribute]}
         className={classNames("inlineIcon")}
       />
-      <span>{gemData.name}</span>
+      <span>{gem.name}</span>
     </div>
   );
 }
@@ -129,20 +131,20 @@ interface GemTooltipProps {
 
 function GemTooltip({ gemLink }: GemTooltipProps) {
   const gem = Data.Gems[gemLink.id];
-  const quests = gemLink.quests.map(
-    ({ questId, rewardOfferId }) => Data.Quests[questId].reward_offers
-  );
 
   return (
     <SidebarTooltip
       title={
-        <>
-          <MdCircle
-            color={Data.GemColours[gem.primary_attribute]}
-            className={classNames("inlineIcon")}
-          />
-          <span>{gem.name}</span>
-        </>
+        <div className={classNames(styles.gemLinkTitleInfo)}>
+          <span>
+            <MdCircle
+              color={Data.GemColours[gem.primary_attribute]}
+              className={classNames("inlineIcon")}
+            />
+            {gem.name}
+          </span>
+          <InlineFakeBlock child={<GemCost gem={gem} />} />
+        </div>
       }
     >
       <div className={classNames(styles.gemLinkQuestInfo)}>
@@ -151,7 +153,7 @@ function GemTooltip({ gemLink }: GemTooltipProps) {
           const npc = quest.reward_offers[x.rewardOfferId]?.vendor[gem.id]?.npc;
           const text = (
             <>
-              {i !== 0 && <hr className={classNames(styles.questSeperator)}  />}
+              {i !== 0 && <hr className={classNames(styles.questSeperator)} />}
               <span>{quest.name}</span>
               <span>{npc}</span>
               <span>Act {quest.act}</span>

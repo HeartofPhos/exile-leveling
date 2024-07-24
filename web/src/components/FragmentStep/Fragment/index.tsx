@@ -18,6 +18,7 @@ import {
   BsArrowUpSquare,
 } from "react-icons/bs";
 
+
 function getImageUrl(path: string) {
   return new URL(`./images/${path}`, import.meta.url).href;
 }

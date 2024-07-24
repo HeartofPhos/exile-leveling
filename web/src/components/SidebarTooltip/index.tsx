@@ -9,7 +9,7 @@ type SidebarTooltip = {
 export function SidebarTooltip({ title, children }: SidebarTooltip) {
   return (
     <div className={classNames(styles.tooltip)}>
-      <span className={classNames(styles.tooltipTitle)}>{title}</span>
+      <div className={classNames(styles.tooltipTitle)}>{title}</div>
 
       {children && (
         <>

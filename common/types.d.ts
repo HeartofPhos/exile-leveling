@@ -13,7 +13,6 @@ export namespace GameData {
     primary_attribute: string;
     required_level: number;
     is_support: boolean;
-    cost: string;
   }
 
   export interface Character {

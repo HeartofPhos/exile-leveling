@@ -1,14 +1,6 @@
 import { GameData } from "../../../common/types";
 import { Dat } from "../data";
 
-function getGemCost(required_level: number) {
-  if (required_level < 8) return "wisdom";
-  if (required_level < 16) return "transmutation";
-  if (required_level < 28) return "alteration";
-  if (required_level < 38) return "chance";
-  return "alchemy";
-}
-
 const ATTRIBUTE_LOOKUP: Record<number, string> = {
   [1]: "strength",
   [2]: "dexterity",
@@ -36,7 +28,6 @@ export async function getGems() {
       primary_attribute: ATTRIBUTE_LOOKUP[grantedEffects.Attribute],
       required_level: grantedEffectsPerLevel.PlayerLevelReq,
       is_support: skillGem.IsSupport,
-      cost: getGemCost(grantedEffectsPerLevel.PlayerLevelReq),
     };
 
     if (skillGem.VaalVariant_BaseItemTypesKey !== null) {

@@ -1,15 +1,13 @@
 import { Data } from "../../../../common/data";
 import { RouteData } from "../../../../common/route-processing/types";
 import { CopyToClipboard } from "../CopyToClipboard";
+import { GemCost } from "../GemCost";
 import { InlineFakeBlock } from "../InlineFakeBlock";
 import { SplitRow } from "../SplitRow";
 import styles from "./styles.module.css";
 import classNames from "classnames";
+import { ReactNode } from "react";
 import { MdCircle } from "react-icons/md";
-
-function getImageUrl(path: string) {
-  return new URL(`./images/${path}`, import.meta.url).href;
-}
 
 function ItemRewardVerb(type: ItemRewardProps["rewardType"]) {
   switch (type) {
@@ -26,7 +24,7 @@ interface ItemRewardProps {
   item: string;
   count?: number;
   rewardType?: "quest" | "vendor";
-  cost?: string;
+  cost?: ReactNode;
 }
 
 export function ItemReward({ item, count, cost, rewardType }: ItemRewardProps) {
@@ -38,9 +36,7 @@ export function ItemReward({ item, count, cost, rewardType }: ItemRewardProps) {
       {rewardType === "vendor" && cost !== undefined && (
         <div className={classNames(styles.noWrap)}>
           <span> for </span>
-          <InlineFakeBlock
-            child={<img src={getImageUrl(`${cost}.png`)} alt="" />}
-          />
+          <InlineFakeBlock child={cost} />
         </div>
       )}
     </>
@@ -73,7 +69,7 @@ export function GemReward({ requiredGem, count, rewardType }: GemRewardProps) {
           />
           <ItemReward
             item={gem.name}
-            cost={gem.cost}
+            cost={<GemCost gem={gem} />}
             rewardType={rewardType}
             count={count}
           />
