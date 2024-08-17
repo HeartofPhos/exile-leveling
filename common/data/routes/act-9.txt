@@ -43,6 +43,7 @@ Hand in {quest|a9q2} #The Ruler of Highgate
 {waypoint|2_9_8} #The Quarry
 ➞ {enter|2_9_9} #The Refinery
     #sub {dir|315} or {dir|45}
+Get {crafting}
 Find and kill {kill|General Adus}, take {quest_text|Trarthan Powder}
     #sub Go {dir|45} follow cart tracks
 {logout}

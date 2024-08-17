@@ -18,7 +18,7 @@ const PASSIVE_TREE_JSON = {
   "3_24":
     "https://raw.githubusercontent.com/grindinggear/skilltree-export/fea1986f746d6c8ba9dfc391c755a91c2ef0baed/data.json",
   "3_25":
-    "https://raw.githubusercontent.com/grindinggear/skilltree-export/d3cb2819c4bb8b17fdf391efffe75623f1816acc/data.json",
+    "https://raw.githubusercontent.com/grindinggear/skilltree-export/1b435e5003808bd9ff65d732350e393e8ec07159/data.json",
 };
 
 export async function buildTemplates() {

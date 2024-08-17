@@ -12,6 +12,7 @@ import {
   calculateBounds,
 } from "./url-tree-delta";
 import classNames from "classnames";
+import React from "react";
 import { useEffect, useRef, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
@@ -212,7 +213,12 @@ function NodeTooltip({
 
   return (
     <SidebarTooltip title={node.text}>
-      {parts.flatMap<JSX.Element>((x, i) => (i === 0 ? x : [<hr />, x]))}
+      {parts.flatMap<JSX.Element>((x, i) => (
+        <React.Fragment key={i}>
+          {i !== 0 && <hr />}
+          {x}
+        </React.Fragment>
+      ))}
     </SidebarTooltip>
   );
 }
