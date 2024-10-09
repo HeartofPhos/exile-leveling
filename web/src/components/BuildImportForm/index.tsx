@@ -35,7 +35,7 @@ const URL_REWRITERS: UrlRewriter[] = [
 ];
 
 interface BuildImportFormProps {
-  onSubmit: (pobData: PobData) => void;
+  onSubmit: (pobData: PobData, pobCode: string) => void;
   onReset: () => void;
 }
 
@@ -61,7 +61,7 @@ export function BuildImportForm({ onSubmit, onReset }: BuildImportFormProps) {
               const pobData = processPob(pobCode);
               if (!pobData) return Promise.reject("parsing failed");
 
-              onSubmit(pobData);
+              onSubmit(pobData, pobCode);
             },
             {
               pending: "Importing Build",

@@ -1,4 +1,5 @@
 import { useClearGemProgress } from "../../state/gem-progress";
+import { pobCodeAtom } from "../../state/pob-code";
 import { routeSelector } from "../../state/route";
 import { routeFilesSelector } from "../../state/route-files";
 import { useClearRouteProgress } from "../../state/route-progress";
@@ -53,7 +54,13 @@ export function Navbar({}: NavbarProps) {
     ({ snapshot }) =>
       async () => {
         const route = await snapshot.getPromise(routeSelector);
-        navigator.clipboard.writeText(JSON.stringify(route));
+        const pobCode = await snapshot.getPromise(pobCodeAtom);
+
+        const output =
+          pobCode === null
+            ? [...route, `pob-code:none`]
+            : [...route, `pob-code:${pobCode}`];
+        navigator.clipboard.writeText(JSON.stringify(output));
       },
     []
   );

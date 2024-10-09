@@ -7,6 +7,7 @@ import { buildDataSelector } from "../../state/build-data";
 import { configSelector } from "../../state/config";
 import { requiredGemsSelector } from "../../state/gem";
 import { gemLinksSelector } from "../../state/gem-links";
+import { pobCodeAtom } from "../../state/pob-code";
 import { buildTreesSelector } from "../../state/tree/build-tree";
 import { formStyles } from "../../styles";
 import classNames from "classnames";
@@ -24,8 +25,11 @@ export default function BuildContainer() {
   const [, setBuildTreesSelector] = useRecoilState(buildTreesSelector);
   const resetBuildTreesSelector = useResetRecoilState(buildTreesSelector);
 
-  const [gemLinks, setGemLinks] = useRecoilState(gemLinksSelector);
+  const [, setGemLinks] = useRecoilState(gemLinksSelector);
   const resetGemLinks = useResetRecoilState(gemLinksSelector);
+
+  const [, setPobCode] = useRecoilState(pobCodeAtom);
+  const resetPobCode = useResetRecoilState(pobCodeAtom);
 
   return (
     <div>
@@ -46,17 +50,19 @@ export default function BuildContainer() {
       <div className={classNames(formStyles.form)}>
         <SearchStringsEditor />
         <BuildImportForm
-          onSubmit={(pobData) => {
+          onSubmit={(pobData, pobCode) => {
             setBuildData(pobData.buildData);
             setRequiredGems(pobData.requiredGems);
             setBuildTreesSelector(pobData.buildTrees);
             setGemLinks(pobData.gemLinks);
+            setPobCode(pobCode);
           }}
           onReset={() => {
             resetBuildData();
             resetRequiredGems();
             resetBuildTreesSelector();
             resetGemLinks();
+            resetPobCode();
           }}
         />
       </div>
