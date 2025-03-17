@@ -24,7 +24,7 @@ Find 3x{quest_text|Glyph}
 #endif
 #ifndef LEAGUE_START
     {waypoint|1_1_town} #Lioneye's Watch
-    Hand in {quest|a1q5} #Mercy Mission
+    Hand in {quest|a1q4} #Breaking Some Eggs
 #endif
 {waypoint|1_1_4_1} #The Submerged Passage
 Find bridge, place {portal|set}
