@@ -19,7 +19,7 @@ export const buildDataSelector = selector<RouteData.BuildData>({
     if (value === null)
       value = {
         characterClass: "None",
-        bandit: "None",
+        bandit: "Alira",
         leagueStart: true,
         library: true,
       };
