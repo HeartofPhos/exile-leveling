@@ -44,7 +44,7 @@ Hand in {quest|a9q2} #The Ruler of Highgate
 ➞ {enter|2_9_9} #The Refinery
     #sub {dir|315} or {dir|45}
 Get {crafting}
-    #sub Look for a sewer grate leading to {arena|Refinery Tunnels}
+    #sub Look for a sewer grate leading to {arena|Refinery Tunnels}, it is attached to the cart tracks
 Find and kill {kill|General Adus}, take {quest_text|Trarthan Powder}
     #sub Go {dir|45} follow cart tracks
 {logout}

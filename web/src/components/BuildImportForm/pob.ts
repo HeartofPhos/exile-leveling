@@ -101,7 +101,7 @@ function processSkills(
     }
 
     const gemLinkTitle = cleanPobText(
-      recentEmptySkillLabel || parentTitle || "Default"
+      parentTitle || recentEmptySkillLabel || "Default"
     );
     if (primaryGemIds.length > 0)
       gemLinks.push({

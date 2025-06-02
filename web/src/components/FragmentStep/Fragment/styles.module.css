@@ -13,6 +13,10 @@
   font-weight: var(--font-heavy);
 }
 
+.areaLevel {
+  color: rgb(128, 128, 128);
+}
+
 .quest {
   color: gold;
   font-weight: var(--font-heavy);

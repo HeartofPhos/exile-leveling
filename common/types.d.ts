@@ -47,6 +47,7 @@ export namespace GameData {
     name: string;
     map_name: string | null;
     act: number;
+    level: number;
     has_waypoint: boolean;
     is_town_area: boolean;
     parent_town_area_id: string | null;

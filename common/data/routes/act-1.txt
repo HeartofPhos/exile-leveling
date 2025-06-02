@@ -55,7 +55,7 @@ Hand in {quest|a1q2|a1q2b} #The Caged Brute
         #sub Vendor {generic|Quicksilver Flask} + {generic|Orb of Augmentation} + Movement Speed {generic|Boots}
 #endif
 ➞ {arena|The Warden's Quarters}, kill {kill|Brutus, Lord Incarcerator}
-    #sub Recommended Level: 8-10
+    #sub Recommended Level: 8
 {logout}
 Hand in {quest|a1q2|a1q2} #The Caged Brute
 {waypoint|1_1_8} #Prisoner's Gate
@@ -77,4 +77,4 @@ Hand in {quest|a1q3} #The Siren's Cadence
     #sub Follow the water
 ➞ {arena|Merveil's Lair}, kill {kill|Merveil, the Siren}
     #sub Follow the water
-    #sub Recommended Level: 11-13
+    #sub Recommended Level: 12

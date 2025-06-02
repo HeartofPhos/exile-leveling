@@ -18,19 +18,33 @@ import {
   BsArrowUpSquare,
 } from "react-icons/bs";
 
-
 function getImageUrl(path: string) {
   return new URL(`./images/${path}`, import.meta.url).href;
+}
+
+function minAreaLevel(areaLevel: number) {
+  return Math.max(1, areaLevel - (3 + Math.floor(areaLevel / 16)));
 }
 
 function EnemyComponent(enemy: string) {
   return <span className={classNames(styles.enemy)}>{enemy}</span>;
 }
 
-function AreaComponent(name: string, isTownArea: boolean) {
+function AreaComponent(
+  name: string,
+  isTownArea: boolean,
+  areaLevel: number | undefined
+) {
   return (
     <div className={classNames(styles.noWrap)}>
       <span className={classNames(styles.area)}>{name}</span>
+      {!isTownArea && areaLevel !== undefined && (
+        <span className={classNames(styles.areaLevel)}>
+          {" "}
+          {minAreaLevel(areaLevel)}
+          {"+"}
+        </span>
+      )}
       {isTownArea && (
         <img
           src={getImageUrl("town.png")}
@@ -103,7 +117,7 @@ function LogoutComponent(area: GameData.Area) {
     <>
       {GenericComponent("Logout")}
       <span> ➞ </span>
-      {AreaComponent(area.name, area.is_town_area)}
+      {AreaComponent(area.name, area.is_town_area, area.level)}
     </>
   );
 }
@@ -120,7 +134,7 @@ function PortalComponent(area?: GameData.Area) {
       {area && (
         <>
           <span> ➞ </span>
-          {AreaComponent(area.name, area.is_town_area)}
+          {AreaComponent(area.name, area.is_town_area, area.level)}
         </>
       )}
     </div>
@@ -200,14 +214,14 @@ export function Fragment(
     case "kill":
       return [EnemyComponent(fragment.value), null];
     case "arena":
-      return [AreaComponent(fragment.value, false), null];
+      return [AreaComponent(fragment.value, false, undefined), null];
     case "area": {
       const area = Data.Areas[fragment.areaId];
-      return [AreaComponent(area.name, area.is_town_area), null];
+      return [AreaComponent(area.name, area.is_town_area, area.level), null];
     }
     case "enter": {
       const area = Data.Areas[fragment.areaId];
-      return [AreaComponent(area.name, area.is_town_area), null];
+      return [AreaComponent(area.name, area.is_town_area, area.level), null];
     }
     case "logout":
       return [LogoutComponent(Data.Areas[fragment.areaId]), null];
@@ -222,7 +236,8 @@ export function Fragment(
           <span> ➞ </span>
           {AreaComponent(
             dstArea.map_name || dstArea.name,
-            dstArea.is_town_area
+            dstArea.is_town_area,
+            dstArea.level
           )}
           {dstArea.act !== srcArea.act &&
             dstArea.id !== "Labyrinth_Airlock" && (

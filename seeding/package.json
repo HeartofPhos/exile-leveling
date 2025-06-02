@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "seed": "ts-node src/index.ts ../common/data",
-    "generate-route-ids": "ts-node src/index.ts ../common/data/json generate-route-ids"
+    "seed": "tsx src/index.ts ../common/data",
+    "generate-route-ids": "tsx src/index.ts ../common/data/json generate-route-ids"
   },
   "author": "",
   "license": "ISC",
@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.45",
-    "ts-node": "^10.9.2",
+    "tsx": "^4.19.4",
     "typescript": "^4.9.5"
   }
 }

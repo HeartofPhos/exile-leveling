@@ -26,6 +26,8 @@ Get {crafting}
 ➞ {enter|2_6_9} #The Western Forest
     #sub Follow the road
 Get {crafting}
+    #sub Look for the torch touching the road
+    #sub Follow the trail in the direction of the torch
 ➞ {enter|2_6_10} #The Riverways
     #sub Follow the road
 Get {waypoint_get}

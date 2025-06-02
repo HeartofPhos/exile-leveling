@@ -3,9 +3,9 @@
 ➞ {enter|1_4_town} #Highgate
 ➞ {enter|1_4_2} #The Dried Lake
 Find and kill {kill|Voll, Emperor of Purity}, take {quest_text|Deshret's Banner}
-    #sub Recommended Level: 30
 Get {crafting}
 {logout}
+Break {quest_text|Deshret's Seal}
 Hand in {quest|a4q2} #Breaking the Seal
 ➞ {enter|1_4_3_1} #The Mines Level 1
 Get {crafting}
@@ -48,7 +48,6 @@ Find and kill {kill|Maligaro, The Inquisitor}, take {quest_text|Malachai's Heart
 Find and kill {kill|Shavronne of Umbra}, take {quest_text|Malachai's Entrails}
 Hand in {quest|a4q5} #Corpus Malachus
 ➞ {arena|The Black Core}, kill {kill|Malachai, The Nightmare}
-    #sub Recommended Level: 34-35
 {logout}
 Hand in {quest|a4q1} #The Eternal Nightmare
 ➞ {enter|1_4_7} #The Ascent

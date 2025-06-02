@@ -18,6 +18,7 @@ Talk to {generic|Clarissa}, kill {kill|Tolman}
 ➞ {enter|2_8_9} #The Grain Gate
 Find and kill {kill|Gemling Legionnaires}
     #sub Follow the dead guards by doorways
+    #sub Look for a book icon
 ➞ {enter|2_8_10} #The Imperial Fields
     #sub Follow the dead guards by doorways
 ➞ {enter|2_8_12_1} #The Solaris Temple Level 1
@@ -49,7 +50,6 @@ Get {crafting}
 ➞ {arena|The Sky Shrine}, activate {generic|Statue of the Sisters}
 Kill {kill|Lunaris, Eternal Moon} & {kill|Solaris, Eternal Sun}
 ➞ {enter|2_9_1} #The Blood Aqueduct
-    #sub Recommended Level: 54+
     #sub Farm Level: 58-62
 ➞ {enter|2_9_town} #Highgate
 {waypoint|2_8_6} #The Lunaris Concourse

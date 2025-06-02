@@ -1,8 +1,8 @@
 #section Act 5
 ➞ {enter|1_5_1} #The Slave Pens
 Find and kill {kill|Overseer Krow}
-    #sub Go {dir|180} as much as possible
-    #sub Go {dir|270}
+    #sub Go {dir|180} until you find the hanged Kauri
+    #sub Loop around clockwise to go {dir|270}
 ➞ {enter|1_5_town} #Overseer's Tower
 Hand in {quest|a5q1b} #Return to Oriath
 ➞ {enter|1_5_2} #The Control Blocks
@@ -15,7 +15,6 @@ Find and kill {kill|Justicar Casticus}, take {quest_text|Eyes of Zeal}
     #sub Go {dir|45}
 ➞ {enter|1_5_5} #The Chamber of Innocence
     #sub Loop around clockwise
-    #sub Recommended Level: 37+
     #sub Farm Level: 40-42
 Get {crafting}
 ➞ {arena|Sanctum of Innocence}, kill {kill|High Templar Avarius}

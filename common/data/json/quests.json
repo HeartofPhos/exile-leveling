@@ -365,12 +365,6 @@
             ],
             "npc": "Nessa"
           },
-          "Metadata/Items/Gems/SupportGemPrismaticBurst": {
-            "classes": [
-              "Scion"
-            ],
-            "npc": "Nessa"
-          },
           "Metadata/Items/Gems/SkillGemSanctify": {
             "classes": [
               "Scion",

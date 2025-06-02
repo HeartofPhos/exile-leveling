@@ -45,7 +45,6 @@ Find and take {quest_text|Ribbon Spool}
 {waypoint|1_3_7} #The Battlefront
 ➞ {enter|1_3_9} #The Docks
     #sub Go {dir|315}
-    #sub Recommended Level: 24
 Find and take {quest_text|Thaumetic Sulphite}
 {logout}
 {waypoint|1_3_8_2} #The Solaris Temple Level 2
@@ -64,7 +63,6 @@ Kill {kill|General Gravicius}
 Find and kill {kill|Piety}, take {quest_text|Tower Key}
     #sub Follow stairs that are going up
     #sub At the fork in the road with wagons, go the route with 1 wagon, not 2
-    #sub Recommended Level: 27
 Get {crafting}
 {logout}
 Hand in {quest|a3q9} #Piety's Pets
@@ -87,6 +85,7 @@ Get {waypoint_get}
     Get {waypoint_get}
     Find {generic|Loose Candle} ➞ {enter|1_3_17_2} #The Archives
     Get {crafting}
+        #sub Look for a candle in a narrow corridor
     Find 4x{quest_text|Golden Page}
     {logout}
     {waypoint|1_3_17_1} #The Library
@@ -96,7 +95,6 @@ Get {waypoint_get}
 #endif
 ➞ {enter|1_3_18_1} #The Sceptre of God
 ➞ {enter|1_3_18_2} #The Upper Sceptre of God
-    #sub The exits can often be found by travelling diagonally.
+    #sub Stairs spawn in one of the corners
 ➞ {arena|Tower Rooftop}, Kill {kill|Dominus, High Templar}
     #sub Look for barricades
-    #sub Recommended Level: 28

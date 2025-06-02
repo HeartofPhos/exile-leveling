@@ -46,6 +46,7 @@ export async function getAreas() {
       name: worldArea.Name,
       map_name: null,
       act: worldArea.Act,
+      level: worldArea.AreaLevel,
       has_waypoint: worldArea.HasWaypoint,
       is_town_area: worldArea.IsTown,
       parent_town_area_id: worldArea.ParentTown_WorldAreasKey
