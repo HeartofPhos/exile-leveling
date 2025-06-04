@@ -1,8 +1,10 @@
+import { sectionCollapseSelectorFamily } from "../../state/section-collapse";
 import { TaskList, TaskListProps } from "../TaskList";
 import styles from "./styles.module.css";
 import classNames from "classnames";
-import { useLayoutEffect, useState } from "react";
+import { useLayoutEffect } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { useRecoilState } from "recoil";
 
 interface SectionHolderProps {
   name: string;
@@ -10,41 +12,45 @@ interface SectionHolderProps {
 }
 
 export function SectionHolder({ name, items }: SectionHolderProps) {
-  const [expanded, setExpanded] = useState(true);
-
   const sectionId = `section-${name.replace(/\s+/g, "_")}`;
-  const scrollToAct = () => {
+  const [collapsed, setCollapsed] = useRecoilState(
+    sectionCollapseSelectorFamily(sectionId)
+  );
+
+  const scrollToSection = (collapsed: boolean) => {
+    if (!collapsed) return;
+
     const element = document.getElementById(sectionId);
     if (element) element.scrollIntoView({ behavior: "auto", block: "nearest" });
   };
 
   useLayoutEffect(() => {
-    // scrollToAct after sticky positioning is applied
-    if (!expanded) scrollToAct();
-  }, [expanded]);
+    // scrollToSection after sticky positioning is applied
+    scrollToSection(collapsed);
+  }, [collapsed]);
 
-  const expandIcon = expanded ? <FiChevronUp /> : <FiChevronDown />;
+  const icon = collapsed ? <FiChevronDown /> : <FiChevronUp />;
   return (
-    <div id={sectionId}>
-      <div className={classNames(styles.actbar)}>
+    <div>
+      <div id={sectionId} className={classNames(styles.sectionbar)}>
         <button
           aria-label={name}
-          className={classNames(styles.header, styles.actbarHeader)}
+          className={classNames(styles.header, styles.sectionbarHeader)}
           onClick={() => {
-            const updatedExpanded = !expanded;
-            setExpanded(updatedExpanded);
+            const updateCollapsed = !collapsed;
+            setCollapsed(updateCollapsed);
 
-            // scrollToAct before sticky positioning is applied
-            if (updatedExpanded) scrollToAct();
+            // scrollToSection before sticky positioning is applied
+            scrollToSection(updateCollapsed);
           }}
         >
-          {expandIcon}
+          {icon}
           <div>{`--== ${name} ==--`}</div>
-          {expandIcon}
+          {icon}
         </button>
         <hr />
       </div>
-      {expanded && (
+      {collapsed || (
         <>
           <TaskList items={items} />
           <hr />

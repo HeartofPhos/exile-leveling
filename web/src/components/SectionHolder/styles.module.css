@@ -1,11 +1,11 @@
-.actbar {
+.sectionbar {
   position: sticky;
   background-color: var(--primary);
   top: var(--navbar-height);
   z-index: 1;
 }
 
-.actbarHeader {
+.sectionbarHeader {
   display: flex;
   align-items: center;
   justify-content: space-between;

@@ -3,6 +3,7 @@ import { pobCodeAtom } from "../../state/pob-code";
 import { routeSelector } from "../../state/route";
 import { routeFilesSelector } from "../../state/route-files";
 import { useClearRouteProgress } from "../../state/route-progress";
+import { useClearCollapseProgress } from "../../state/section-collapse";
 import { borderListStyles, interactiveStyles } from "../../styles";
 import { trackEvent } from "../../utility/telemetry";
 import styles from "./styles.module.css";
@@ -66,6 +67,7 @@ export function Navbar({}: NavbarProps) {
   );
   const clearRouteProgress = useClearRouteProgress();
   const clearGemProgress = useClearGemProgress();
+  const clearCollapseProgress = useClearCollapseProgress();
 
   const routeFiles = useRecoilValue(routeFilesSelector);
 
@@ -147,6 +149,8 @@ export function Navbar({}: NavbarProps) {
               onClick={() => {
                 clearRouteProgress();
                 clearGemProgress();
+                clearCollapseProgress();
+
                 setNavExpand(false);
               }}
             />
