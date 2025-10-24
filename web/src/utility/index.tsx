@@ -158,6 +158,8 @@ export function getRewriteUrl(
   return null;
 }
 
+const CORS_PROXY_URL = "https://cors-proxy-weld-sigma.vercel.app";
+
 export async function fetchStringOrUrl(
   stringOrUrl: string,
   urlRewriters: UrlRewriter[]
@@ -165,9 +167,7 @@ export async function fetchStringOrUrl(
   let value: string = stringOrUrl;
   const url = getRewriteUrl(stringOrUrl, urlRewriters);
   if (url) {
-    value = await fetch(
-      `https://phos-cors-proxy.azurewebsites.net/${url}`
-    ).then((x) => {
+    value = await fetch(`${CORS_PROXY_URL}/${url}`).then((x) => {
       if (x.status >= 200 && x.status <= 299) return x.text();
       return Promise.reject("download failed");
     });
