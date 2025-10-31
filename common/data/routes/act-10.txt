@@ -54,5 +54,5 @@ Get {crafting}
 #endif
 #ifndef BANDIT_KILL
     Hand in {quest|a10q3} #An End to Hunger
-        #sub Type {generic|/passives} in chat to confirm that you have all 22 passives from quests
+        #sub Type {generic|/passives} in chat to confirm that you have all 23 passives from quests
 #endif
