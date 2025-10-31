@@ -10,7 +10,7 @@ const ANGLES_40: number[] = [
   300, 310, 315, 320, 330, 340, 350,
 ];
 
-// https://github.com/PathOfBuildingCommunity/PathOfBuilding/blob/e42c033ad0d1b46f714f902d00fd11fe9885afc2/fix_ascendancy_positions.py#L22
+// https://github.com/PathOfBuildingCommunity/PathOfBuilding/blob/abafbf757bf759e16bdefc16e6dbcbb49cf42608/fix_ascendancy_positions.py#L22
 const ASCENDANCY_OFFSETS: Record<string, SkillTree.Coord> = {
   ["Juggernaut"]: { x: -10400, y: 5200 },
   ["Berserker"]: { x: -10400, y: 3700 },
@@ -34,6 +34,16 @@ const ASCENDANCY_OFFSETS: Record<string, SkillTree.Coord> = {
   ["Warden"]: { x: 8250, y: 8350 },
   ["Primalist"]: { x: 7200, y: 9400 },
   ["Warlock"]: { x: 9300, y: 7300 },
+  ["Aul"]: { x: -6750, y: 12000 },
+  ["Breachlord"]: { x: -5250, y: 12000 },
+  ["Catarina"]: { x: -3750, y: 12000 },
+  ["Trialmaster"]: { x: -2250, y: 12000 },
+  ["Delirious"]: { x: -750, y: 12000 },
+  ["Farrul"]: { x: 750, y: 12000 },
+  ["Lycia"]: { x: 2250, y: 12000 },
+  ["KingInTheMists"]: { x: 3750, y: 12000 },
+  ["Olroth"]: { x: 5250, y: 12000 },
+  ["Oshabi"]: { x: 6750, y: 12000 },
 };
 
 const TWO_PI = Math.PI * 2;

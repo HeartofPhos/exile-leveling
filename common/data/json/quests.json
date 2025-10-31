@@ -5864,6 +5864,10 @@
             "classes": [],
             "npc": "Siosa"
           },
+          "Metadata/Items/Gems/SupportGemFocusedChannelling": {
+            "classes": [],
+            "npc": "Siosa"
+          },
           "Metadata/Items/Gems/SkillGemForbiddenRite": {
             "classes": [],
             "npc": "Siosa"
@@ -8768,6 +8772,10 @@
             "npc": "Lilly Roth"
           },
           "Metadata/Items/Gems/SupportGemFocusedBallista": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
+          "Metadata/Items/Gems/SupportGemFocusedChannelling": {
             "classes": [],
             "npc": "Lilly Roth"
           },

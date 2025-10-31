@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 
-export function withBlank<P>(Component: React.ComponentType<P>) {
-  function ComponentWithBlank(props: any) {
+export function withBlank<P extends {}>(
+  Component: React.ComponentType<P>
+): React.ComponentType<P> {
+  function ComponentWithBlank(props: P) {
     const [blank, setBlank] = useState(true);
 
     useEffect(() => {

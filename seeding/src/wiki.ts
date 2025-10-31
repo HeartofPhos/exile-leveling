@@ -28,7 +28,7 @@ export async function cargoQuery(queryBuilder: QueryBuilder) {
     url.searchParams.append("maxage", "0");
     url.searchParams.append("smaxage", "0");
 
-    const queryResult: any = await fetch(url.toString()).then((x) => x.json());
+    const queryResult = await fetch(url).then((x) => x.json());
     if (queryResult.cargoquery.length == 0) break;
     for (const item of queryResult.cargoquery) {
       result.push(item.title);

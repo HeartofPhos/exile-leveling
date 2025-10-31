@@ -7,8 +7,10 @@ const scrollOffsetState = atomFamily<number, string>({
   default: 0,
 });
 
-export function withScrollRestoration<P>(Component: React.ComponentType<P>) {
-  function ComponentWithScrollPosition(props: any) {
+export function withScrollRestoration<P extends {}>(
+  Component: React.ComponentType<P>
+): React.ComponentType<P> {
+  function ComponentWithScrollPosition(props: P) {
     const location = useLocation();
     const [scrollOffset, setScrollOffset] = useRecoilState(
       scrollOffsetState(location.pathname)
