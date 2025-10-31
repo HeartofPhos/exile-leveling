@@ -4,12 +4,14 @@ import { Dat } from "../data";
 const seedAreaIds = [
   // The Twilight Strand
   "1_1_1",
-  // Aspirant's Trial
+  // The Labyrinth
   "1_Labyrinth_boss_3",
-  // Cruel Aspirant's Trial
+  // The Cruel Labyrinth
   "2_Labyrinth_boss_3",
-  // Merciless Aspirant's Trial
+  // The Merciless Labyrinth
   "3_Labyrinth_boss_3",
+  // The Eternal Labyrinth
+  "EndGame_Labyrinth_boss_3",
 ];
 
 export async function getAreas() {

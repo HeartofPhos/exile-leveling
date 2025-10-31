@@ -37,7 +37,6 @@ export namespace Language {
           parameters: [{ name: "text", description: "Text to display" }],
         },
       ],
-
       ["arena"]: [
         {
           description: "Sub-areas inside true areas",

@@ -55,6 +55,20 @@
       "Double Resistances - Rank 3"
     ]
   },
+  "EndGame_Labyrinth_boss_3": {
+    "id": "EndGame_Labyrinth_boss_3",
+    "name": "Aspirant's Trial",
+    "map_name": null,
+    "act": 11,
+    "level": 75,
+    "has_waypoint": false,
+    "is_town_area": false,
+    "parent_town_area_id": "1_3_town",
+    "connection_ids": [],
+    "crafting_recipes": [
+      "All Resistances - Rank 2"
+    ]
+  },
   "1_1_town": {
     "id": "1_1_town",
     "name": "Lioneye's Watch",

@@ -26,6 +26,15 @@ function minAreaLevel(areaLevel: number) {
   return Math.max(1, areaLevel - (3 + Math.floor(areaLevel / 16)));
 }
 
+function MinAreaLevelComponent(areaLevel: number) {
+  return (
+    <span className={classNames(styles.areaLevel)}>
+      {minAreaLevel(areaLevel)}
+      {"+"}
+    </span>
+  );
+}
+
 function EnemyComponent(enemy: string) {
   return <span className={classNames(styles.enemy)}>{enemy}</span>;
 }
@@ -39,11 +48,7 @@ function AreaComponent(
     <div className={classNames(styles.noWrap)}>
       <span className={classNames(styles.area)}>{name}</span>
       {!isTownArea && areaLevel !== undefined && (
-        <span className={classNames(styles.areaLevel)}>
-          {" "}
-          {minAreaLevel(areaLevel)}
-          {"+"}
-        </span>
+        <> {MinAreaLevelComponent(areaLevel)}</>
       )}
       {isTownArea && (
         <img
@@ -176,14 +181,27 @@ function CraftingComponent(craftingRecipes: string[]) {
   );
 }
 
-const GUIDE_URL_LOOKUP: Record<string, string> = {
-  normal: "https://www.poelab.com/gtgax",
-  cruel: "https://www.poelab.com/r8aws",
-  merciless: "https://www.poelab.com/riikv",
-  eternal: "https://www.poelab.com/wfbra",
+const ASCEND_LOOKUP: Record<
+  Fragments.AscendFragment["version"],
+  { url: string; areaId: string }
+> = {
+  normal: { url: "https://www.poelab.com/gtgax", areaId: "1_Labyrinth_boss_3" },
+  cruel: { url: "https://www.poelab.com/r8aws", areaId: "2_Labyrinth_boss_3" },
+  merciless: {
+    url: "https://www.poelab.com/riikv",
+    areaId: "3_Labyrinth_boss_3",
+  },
+  eternal: {
+    url: "https://www.poelab.com/wfbra",
+    areaId: "EndGame_Labyrinth_boss_3",
+  },
 };
 
-function AscendComponent(version: string): [React.ReactNode, React.ReactNode] {
+function AscendComponent(
+  version: Fragments.AscendFragment["version"]
+): [React.ReactNode, React.ReactNode] {
+  const { url, areaId } = ASCEND_LOOKUP[version];
+  const area = Data.Areas[areaId];
   return [
     <div className={classNames(styles.noWrap)}>
       <img
@@ -192,9 +210,10 @@ function AscendComponent(version: string): [React.ReactNode, React.ReactNode] {
         alt=""
       />
       <span className={classNames(styles.trial)}>Ascend</span>
+      <> {MinAreaLevelComponent(area.level)}</>
     </div>,
     <a
-      href={GUIDE_URL_LOOKUP[version]}
+      href={url}
       target="_blank"
       onClick={(e) => {
         e.stopPropagation();
