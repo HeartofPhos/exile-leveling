@@ -14,13 +14,17 @@ export async function getGems() {
   const vaalGemLookup: GameData.VariantGemLookup = {};
   for (const skillGem of Dat.SkillGems.data) {
     const baseItemType = Dat.BaseItemTypes.data[skillGem.BaseItemTypesKey];
-    if (!baseItemType.SiteVisibility) continue;
 
     const gemEffects = Dat.GemEffects.data[skillGem.GemEffects[0]];
     const grantedEffects = Dat.GrantedEffects.data[gemEffects.GrantedEffect];
     const grantedEffectsPerLevel = Dat.GrantedEffectsPerLevel.data.find(
       (x) => x.Level == 1 && x.GrantedEffect == gemEffects.GrantedEffect
     );
+
+    if (!grantedEffectsPerLevel) {
+      console.log(`skip gem - ${baseItemType.Id}`);
+      continue;
+    }
 
     gems[baseItemType.Id] = {
       id: baseItemType.Id,

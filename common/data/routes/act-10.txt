@@ -16,8 +16,8 @@ Get {waypoint_get}
     ➞ {enter|2_10_9} #The Ossuary
     Get {crafting}
     Complete {trial}
+    {logout}
 #endif
-{logout}
 {waypoint|2_10_7} #The Control Blocks
 Find and kill {kill|Vilenta}
 {logout}

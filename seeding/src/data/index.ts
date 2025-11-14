@@ -19,35 +19,35 @@ function parseDat(path: string): DatJson {
 
 export namespace Dat {
   export const BaseItemTypes = parseDat(
-    "../../exports/data/BaseItemTypes.dat64.json"
+    "../../exports/data/BaseItemTypes.datc64.json"
   );
   export const Characters = parseDat(
-    "../../exports/data/Characters.dat64.json"
+    "../../exports/data/Characters.datc64.json"
   );
   export const GemEffects = parseDat(
-    "../../exports/data/GemEffects.dat64.json"
+    "../../exports/data/GemEffects.datc64.json"
   );
   export const GrantedEffects = parseDat(
-    "../../exports/data/GrantedEffects.dat64.json"
+    "../../exports/data/GrantedEffects.datc64.json"
   );
   export const GrantedEffectsPerLevel = parseDat(
-    "../../exports/data/GrantedEffectsPerLevel.dat64.json"
+    "../../exports/data/GrantedEffectsPerLevel.datc64.json"
   );
-  export const MapPins = parseDat("../../exports/data/MapPins.dat64.json");
-  export const NPCs = parseDat("../../exports/data/NPCs.dat64.json");
-  export const NPCTalk = parseDat("../../exports/data/NPCTalk.dat64.json");
-  export const Quest = parseDat("../../exports/data/Quest.dat64.json");
+  export const MapPins = parseDat("../../exports/data/MapPins.datc64.json");
+  export const NPCs = parseDat("../../exports/data/NPCs.datc64.json");
+  export const NPCTalk = parseDat("../../exports/data/NPCTalk.datc64.json");
+  export const Quest = parseDat("../../exports/data/Quest.datc64.json");
   export const QuestRewardOffers = parseDat(
-    "../../exports/data/QuestRewardOffers.dat64.json"
+    "../../exports/data/QuestRewardOffers.datc64.json"
   );
   export const QuestRewards = parseDat(
-    "../../exports/data/QuestRewards.dat64.json"
+    "../../exports/data/QuestRewards.datc64.json"
   );
   export const RecipeUnlockDisplay = parseDat(
-    "../../exports/data/RecipeUnlockDisplay.dat64.json"
+    "../../exports/data/RecipeUnlockDisplay.datc64.json"
   );
-  export const SkillGems = parseDat("../../exports/data/SkillGems.dat64.json");
+  export const SkillGems = parseDat("../../exports/data/SkillGems.datc64.json");
   export const WorldAreas = parseDat(
-    "../../exports/data/WorldAreas.dat64.json"
+    "../../exports/data/WorldAreas.datc64.json"
   );
 }

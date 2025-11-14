@@ -2295,6 +2295,14 @@
             ],
             "npc": "Nessa"
           },
+          "Metadata/Items/Gems/SkillGemKineticFusillade": {
+            "classes": [
+              "Scion",
+              "Shadow",
+              "Witch"
+            ],
+            "npc": "Nessa"
+          },
           "Metadata/Items/Gems/SkillGemLacerate": {
             "classes": [
               "Duelist",
@@ -2636,6 +2644,11 @@
             ]
           },
           "Metadata/Items/Gems/SkillGemGalvanicField": {
+            "classes": [
+              "Witch"
+            ]
+          },
+          "Metadata/Items/Gems/SkillGemWallOfForce": {
             "classes": [
               "Witch"
             ]
@@ -3033,6 +3046,14 @@
             ],
             "npc": "Yeena"
           },
+          "Metadata/Items/Gems/SkillGemWallOfForce": {
+            "classes": [
+              "Scion",
+              "Shadow",
+              "Witch"
+            ],
+            "npc": "Yeena"
+          },
           "Metadata/Items/Gems/SkillGemWarlordsMark": {
             "classes": [
               "Marauder",
@@ -3165,6 +3186,16 @@
             ]
           },
           "Metadata/Items/Gems/SupportGemSacredWisps": {
+            "classes": [
+              "Witch"
+            ]
+          },
+          "Metadata/Items/Gems/SupportGemKineticInstability": {
+            "classes": [
+              "Witch"
+            ]
+          },
+          "Metadata/Items/Gems/SupportGemLivingLightning": {
             "classes": [
               "Witch"
             ]
@@ -3408,6 +3439,22 @@
               "Marauder",
               "Scion",
               "Templar"
+            ],
+            "npc": "Yeena"
+          },
+          "Metadata/Items/Gems/SupportGemKineticInstability": {
+            "classes": [
+              "Scion",
+              "Shadow",
+              "Witch"
+            ],
+            "npc": "Yeena"
+          },
+          "Metadata/Items/Gems/SupportGemLivingLightning": {
+            "classes": [
+              "Scion",
+              "Templar",
+              "Witch"
             ],
             "npc": "Yeena"
           },
@@ -4334,6 +4381,16 @@
               "Witch"
             ]
           },
+          "Metadata/Items/Gems/SkillGemSomaticShell": {
+            "classes": [
+              "Witch"
+            ]
+          },
+          "Metadata/Items/Gems/SkillGemKineticRain": {
+            "classes": [
+              "Witch"
+            ]
+          },
           "Metadata/Items/Gems/SkillGemCorpseEruption": {
             "classes": [
               "Witch",
@@ -4447,6 +4504,12 @@
               "Ranger"
             ]
           },
+          "Metadata/Items/Gems/SkillGemThunderstorm": {
+            "classes": [
+              "Duelist",
+              "Ranger"
+            ]
+          },
           "Metadata/Items/Gems/SkillGemChargedDash": {
             "classes": [
               "Duelist",
@@ -4471,6 +4534,11 @@
             ]
           },
           "Metadata/Items/Gems/SkillGemScourgeArrow": {
+            "classes": [
+              "Ranger"
+            ]
+          },
+          "Metadata/Items/Gems/SkillGemConflagration": {
             "classes": [
               "Ranger"
             ]
@@ -4627,6 +4695,12 @@
               "Scion",
               "Shadow",
               "Templar"
+            ],
+            "npc": "Clarissa"
+          },
+          "Metadata/Items/Gems/SkillGemConflagration": {
+            "classes": [
+              "Ranger"
             ],
             "npc": "Clarissa"
           },
@@ -4805,6 +4879,15 @@
             ],
             "npc": "Clarissa"
           },
+          "Metadata/Items/Gems/SkillGemKineticRain": {
+            "classes": [
+              "Scion",
+              "Shadow",
+              "Templar",
+              "Witch"
+            ],
+            "npc": "Clarissa"
+          },
           "Metadata/Items/Gems/SkillGemLancingSteel": {
             "classes": [
               "Duelist",
@@ -4915,6 +4998,15 @@
             ],
             "npc": "Clarissa"
           },
+          "Metadata/Items/Gems/SkillGemSomaticShell": {
+            "classes": [
+              "Scion",
+              "Shadow",
+              "Templar",
+              "Witch"
+            ],
+            "npc": "Clarissa"
+          },
           "Metadata/Items/Gems/SkillGemSoulrend": {
             "classes": [
               "Scion",
@@ -4966,6 +5058,15 @@
               "Marauder",
               "Scion",
               "Templar"
+            ],
+            "npc": "Clarissa"
+          },
+          "Metadata/Items/Gems/SkillGemThunderstorm": {
+            "classes": [
+              "Ranger",
+              "Duelist",
+              "Scion",
+              "Shadow"
             ],
             "npc": "Clarissa"
           },
@@ -5107,6 +5208,12 @@
               "Witch"
             ]
           },
+          "Metadata/Items/Gems/SupportGemFocusedChannelling": {
+            "classes": [
+              "Witch",
+              "Shadow"
+            ]
+          },
           "Metadata/Items/Gems/SupportGemFortify": {
             "classes": [
               "Templar",
@@ -5186,6 +5293,12 @@
             ]
           },
           "Metadata/Items/Gems/SupportGemDamageAgainstChilled": {
+            "classes": [
+              "Duelist",
+              "Ranger"
+            ]
+          },
+          "Metadata/Items/Gems/SupportGemWindburst": {
             "classes": [
               "Duelist",
               "Ranger"
@@ -5537,6 +5650,10 @@
             "npc": "Siosa"
           },
           "Metadata/Items/Gems/SkillGemConductivity": {
+            "classes": [],
+            "npc": "Siosa"
+          },
+          "Metadata/Items/Gems/SkillGemConflagration": {
             "classes": [],
             "npc": "Siosa"
           },
@@ -6100,6 +6217,18 @@
             "classes": [],
             "npc": "Siosa"
           },
+          "Metadata/Items/Gems/SkillGemKineticFusillade": {
+            "classes": [],
+            "npc": "Siosa"
+          },
+          "Metadata/Items/Gems/SupportGemKineticInstability": {
+            "classes": [],
+            "npc": "Siosa"
+          },
+          "Metadata/Items/Gems/SkillGemKineticRain": {
+            "classes": [],
+            "npc": "Siosa"
+          },
           "Metadata/Items/Gems/SupportGemKnockback": {
             "classes": [],
             "npc": "Siosa"
@@ -6161,6 +6290,10 @@
             "npc": "Siosa"
           },
           "Metadata/Items/Gems/SkillGemLightningWarp": {
+            "classes": [],
+            "npc": "Siosa"
+          },
+          "Metadata/Items/Gems/SupportGemLivingLightning": {
             "classes": [],
             "npc": "Siosa"
           },
@@ -6488,6 +6621,10 @@
             "classes": [],
             "npc": "Siosa"
           },
+          "Metadata/Items/Gems/SkillGemSomaticShell": {
+            "classes": [],
+            "npc": "Siosa"
+          },
           "Metadata/Items/Gems/SkillGemSoulrend": {
             "classes": [],
             "npc": "Siosa"
@@ -6628,6 +6765,10 @@
             "classes": [],
             "npc": "Siosa"
           },
+          "Metadata/Items/Gems/SkillGemThunderstorm": {
+            "classes": [],
+            "npc": "Siosa"
+          },
           "Metadata/Items/Gems/SkillGemTornadoShot": {
             "classes": [],
             "npc": "Siosa"
@@ -6712,6 +6853,10 @@
             "classes": [],
             "npc": "Siosa"
           },
+          "Metadata/Items/Gems/SkillGemWallOfForce": {
+            "classes": [],
+            "npc": "Siosa"
+          },
           "Metadata/Items/Gems/SkillGemWarBanner": {
             "classes": [],
             "npc": "Siosa"
@@ -6729,6 +6874,10 @@
             "npc": "Siosa"
           },
           "Metadata/Items/Gems/SkillGemWildStrike": {
+            "classes": [],
+            "npc": "Siosa"
+          },
+          "Metadata/Items/Gems/SupportGemWindburst": {
             "classes": [],
             "npc": "Siosa"
           },
@@ -8455,6 +8604,10 @@
             "classes": [],
             "npc": "Lilly Roth"
           },
+          "Metadata/Items/Gems/SkillGemConflagration": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
           "Metadata/Items/Gems/SkillGemConsecratedPath": {
             "classes": [],
             "npc": "Lilly Roth"
@@ -9063,6 +9216,18 @@
             "classes": [],
             "npc": "Lilly Roth"
           },
+          "Metadata/Items/Gems/SkillGemKineticFusillade": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
+          "Metadata/Items/Gems/SupportGemKineticInstability": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
+          "Metadata/Items/Gems/SkillGemKineticRain": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
           "Metadata/Items/Gems/SupportGemKnockback": {
             "classes": [],
             "npc": "Lilly Roth"
@@ -9124,6 +9289,10 @@
             "npc": "Lilly Roth"
           },
           "Metadata/Items/Gems/SkillGemLightningWarp": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
+          "Metadata/Items/Gems/SupportGemLivingLightning": {
             "classes": [],
             "npc": "Lilly Roth"
           },
@@ -9467,6 +9636,10 @@
             "classes": [],
             "npc": "Lilly Roth"
           },
+          "Metadata/Items/Gems/SkillGemSomaticShell": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
           "Metadata/Items/Gems/SkillGemSoulLink": {
             "classes": [],
             "npc": "Lilly Roth"
@@ -9647,6 +9820,10 @@
             "classes": [],
             "npc": "Lilly Roth"
           },
+          "Metadata/Items/Gems/SkillGemThunderstorm": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
           "Metadata/Items/Gems/SkillGemTornado": {
             "classes": [],
             "npc": "Lilly Roth"
@@ -9751,6 +9928,10 @@
             "classes": [],
             "npc": "Lilly Roth"
           },
+          "Metadata/Items/Gems/SkillGemWallOfForce": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
           "Metadata/Items/Gems/SkillGemWarBanner": {
             "classes": [],
             "npc": "Lilly Roth"
@@ -9768,6 +9949,10 @@
             "npc": "Lilly Roth"
           },
           "Metadata/Items/Gems/SkillGemWildStrike": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
+          "Metadata/Items/Gems/SupportGemWindburst": {
             "classes": [],
             "npc": "Lilly Roth"
           },
@@ -10381,7 +10566,7 @@
               "Witch"
             ]
           },
-          "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand13": {
+          "Metadata/Items/Weapons/OneHandWeapons/Wands/Wand11": {
             "classes": [
               "Shadow",
               "Witch",
@@ -10405,6 +10590,12 @@
             "classes": [
               "Witch",
               "Templar"
+            ]
+          },
+          "Metadata/Items/Weapons/OneHandWeapons/Wands/WandK3": {
+            "classes": [
+              "Witch",
+              "Scion"
             ]
           },
           "Metadata/Items/Armours/Shields/ShieldInt13": {
@@ -10805,21 +10996,27 @@
       "atlas": {
         "quest_npc": "Commander Kirac",
         "quest": {
-          "Metadata/Items/Maps/MapWorldsSiege": {
+          "Metadata/Items/Maps/MapWorldsShipyard": {
             "classes": []
           },
-          "Metadata/Items/Maps/MapWorldsGardens": {
+          "Metadata/Items/Maps/MapWorldsThicket": {
             "classes": []
           },
           "Metadata/Items/Maps/MapWorldsBoneCrypt": {
             "classes": []
           },
-          "Metadata/Items/Maps/MapWorldsScriptorium": {
+          "Metadata/Items/Maps/MapWorldsAcademy": {
             "classes": []
           }
         },
         "vendor": {}
       }
     }
+  },
+  "ThreadsOfTheOriginator": {
+    "id": "ThreadsOfTheOriginator",
+    "name": "Threads of the Originator",
+    "act": "12",
+    "reward_offers": {}
   }
 }
