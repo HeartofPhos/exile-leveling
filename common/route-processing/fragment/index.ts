@@ -503,6 +503,7 @@ function EvaluateCopy(
     fragment: {
       type: "copy",
       text: rawFragment.slice(1).join(""),
+      side: "head",
     },
   };
 }

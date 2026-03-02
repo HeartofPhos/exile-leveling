@@ -50,6 +50,8 @@ export const routeSelector = selector({
       "../../../common/route-processing/gems"
     );
 
+    const { Data } = await import("../../../common/data");
+
     const baseRoute = get(baseRouteSelector);
     const buildData = get(buildDataSelector);
     const settings = get(configSelector);
@@ -69,27 +71,44 @@ export const routeSelector = selector({
         steps: [],
       };
 
-      for (const step of section.steps) {
+      for (const baseStep of section.steps) {
         const gemSteps: RouteData.GemStep[] = [];
+        if (baseStep.type != "fragment_step") continue;
 
-        if (step.type == "fragment_step") {
-          for (const part of step.parts) {
-            if (typeof part !== "string" && part.type === "quest") {
-              gemSteps.push(
-                ...buildGemSteps(
-                  part,
-                  buildData,
-                  requiredGems,
-                  questGems,
-                  vendorGems
-                )
-              );
-            }
+        for (const part of baseStep.parts) {
+          if (typeof part !== "string" && part.type === "quest") {
+            gemSteps.push(
+              ...buildGemSteps(
+                part,
+                buildData,
+                requiredGems,
+                questGems,
+                vendorGems
+              )
+            );
           }
         }
 
         const skipStep = settings.gemsOnly && gemSteps.length === 0;
-        if (!skipStep) buildSection.steps.push(step, ...gemSteps);
+        if (!skipStep) {
+          const searchString = gemSteps
+            .map((x) => Data.Gems[x.requiredGem.id].name)
+            .join("|");
+
+          let step;
+          if (searchString !== "") {
+            step = structuredClone(baseStep);
+            step.parts.push({
+              type: "copy",
+              text: `"${searchString}"`,
+              side: "tail",
+            });
+          } else {
+            step = baseStep;
+          }
+
+          buildSection.steps.push(step, ...gemSteps);
+        }
       }
 
       if (buildSection.steps.length > 0) route.push(buildSection);

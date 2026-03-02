@@ -298,7 +298,22 @@ export function Fragment(
     case "dir":
       return [DirectionComponent(fragment.dirIndex), null];
     case "copy":
-      return [<CopyToClipboard text={fragment.text} />, null];
+      let output: [React.ReactNode | null, React.ReactNode | null] = [
+        null,
+        null,
+      ];
+
+      const node = <CopyToClipboard text={fragment.text} />;
+      switch (fragment.side) {
+        case "head":
+          output[0] = node;
+          break;
+        case "tail":
+          output[1] = node;
+          break;
+      }
+
+      return output;
   }
 
   return [<>{`unmapped: ${JSON.stringify(fragment)}`}</>, null];
