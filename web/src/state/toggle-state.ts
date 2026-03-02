@@ -28,8 +28,8 @@ export const buildToggleState = (
     default: (param) => toggleState.has(param),
   });
 
-  const toggleCollapsedSelectorFamily = selectorFamily<boolean, string>({
-    key: `${key} toggleCollapsedSelectorFamily`,
+  const toggleFamily = selectorFamily<boolean, string>({
+    key: `${key} toggleSelectorFamily`,
     get:
       (param) =>
       ({ get }) => {
@@ -56,12 +56,12 @@ export const buildToggleState = (
       ({ set }) =>
         () => {
           for (const key of toggleState.keys()) {
-            set(toggleCollapsedSelectorFamily(key), false);
+            set(toggleFamily(key), false);
           }
         },
       []
     );
   };
 
-  return [toggleCollapsedSelectorFamily, toggleKeys, useClearToggle];
+  return [toggleFamily, toggleKeys, useClearToggle];
 };

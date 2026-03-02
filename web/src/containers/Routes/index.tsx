@@ -3,9 +3,9 @@ import { GemReward } from "../../components/ItemReward";
 import { SectionHolder } from "../../components/SectionHolder";
 import { Sidebar } from "../../components/Sidebar";
 import { TaskListProps } from "../../components/TaskList";
-import { gemProgressSelectorFamily } from "../../state/gem-progress";
+import { gemProgressFamily } from "../../state/gem-progress";
 import { routeSelector } from "../../state/route";
-import { routeProgressSelectorFamily } from "../../state/route-progress";
+import { routeProgressFamily } from "../../state/route-progress";
 import { ReactNode } from "react";
 import { useRecoilValue } from "recoil";
 
@@ -23,7 +23,7 @@ export default function RoutesContainer() {
       if (step.type == "fragment_step")
         taskItems.push({
           key: stepIndex,
-          isCompletedState: routeProgressSelectorFamily(
+          isCompletedState: routeProgressFamily(
             [sectionIndex, stepIndex].toString()
           ),
           children: <FragmentStep key={stepIndex} step={step} />,
@@ -32,7 +32,7 @@ export default function RoutesContainer() {
       if (step.type == "gem_step")
         taskItems.push({
           key: step.requiredGem.id,
-          isCompletedState: gemProgressSelectorFamily(step.requiredGem.id),
+          isCompletedState: gemProgressFamily(step.requiredGem.id),
           children: (
             <GemReward
               key={taskItems.length}

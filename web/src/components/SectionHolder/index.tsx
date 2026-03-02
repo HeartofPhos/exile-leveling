@@ -1,4 +1,4 @@
-import { sectionCollapseSelectorFamily } from "../../state/section-collapse";
+import { sectionCollapseFamily } from "../../state/section-collapse";
 import { TaskList, TaskListProps } from "../TaskList";
 import styles from "./styles.module.css";
 import classNames from "classnames";
@@ -14,7 +14,7 @@ interface SectionHolderProps {
 export function SectionHolder({ name, items }: SectionHolderProps) {
   const sectionId = `section-${name.replace(/\s+/g, "_")}`;
   const [collapsed, setCollapsed] = useRecoilState(
-    sectionCollapseSelectorFamily(sectionId)
+    sectionCollapseFamily(sectionId)
   );
 
   const scrollToSection = (collapsed: boolean) => {

@@ -1,7 +1,7 @@
 import { persistentStorageEffect } from ".";
 import { RouteData } from "../../../common/route-processing/types";
 import { NO_MIGRATORS, getPersistent } from "../utility";
-import { gemProgressKeys, gemProgressSelectorFamily } from "./gem-progress";
+import { gemProgressKeys, gemProgressFamily } from "./gem-progress";
 import { DefaultValue, atom, selector } from "recoil";
 
 const REQUIRED_GEMS_VERSION = 0;
@@ -26,7 +26,7 @@ export const requiredGemsSelector = selector<RouteData.RequiredGem[]>({
 
     for (const key of gemProgressKeys()) {
       const exists = value?.find((x) => x.id == key) !== undefined;
-      if (!exists) set(gemProgressSelectorFamily(key), false);
+      if (!exists) set(gemProgressFamily(key), false);
     }
   },
 });
