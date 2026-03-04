@@ -44,6 +44,7 @@ const ASCENDANCY_OFFSETS: Record<string, SkillTree.Coord> = {
   ["KingInTheMists"]: { x: 3750, y: 12000 },
   ["Olroth"]: { x: 5250, y: 12000 },
   ["Oshabi"]: { x: 6750, y: 12000 },
+  ["Necromantic"]: { x: 8250, y: 12000 },
 };
 
 const TWO_PI = Math.PI * 2;
