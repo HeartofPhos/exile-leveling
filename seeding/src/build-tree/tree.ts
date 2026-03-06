@@ -31,6 +31,7 @@ const ASCENDANCY_OFFSETS: Record<string, SkillTree.Coord> = {
   ["Trickster"]: { x: 10200, y: -3700 },
   ["Saboteur"]: { x: 10200, y: -2200 },
   ["Ascendant"]: { x: -7800, y: 7200 },
+  ["Reliquarian"]: { x: -7800, y: 8900 },
   ["Warden"]: { x: 8250, y: 8350 },
   ["Primalist"]: { x: 7200, y: 9400 },
   ["Warlock"]: { x: 9300, y: 7300 },
