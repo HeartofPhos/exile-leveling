@@ -1,6 +1,7 @@
 {
   "Metadata/Items/Gems/SupportGemAddedFireDamagePlus": "Metadata/Items/Gems/SupportGemAddedFireDamage",
   "Metadata/Items/Gems/SupportGemGreaterMultipleProjectilesPlus": "Metadata/Items/Gems/SupportGemGreaterMultipleProjectiles",
+  "Metadata/Items/Gems/SupportGemGreaterMultipleProjectiles": "Metadata/Items/Gems/SupportGemLesserMultipleProjectiles",
   "Metadata/Items/Gems/SupportGemAddedColdDamagePlus": "Metadata/Items/Gems/SupportGemAddedColdDamage",
   "Metadata/Items/Gems/SupportGemIncreasedAreaOfEffectPlus": "Metadata/Items/Gems/SupportGemIncreasedAreaOfEffect",
   "Metadata/Items/Gems/SupportGemAddedLightningDamagePlus": "Metadata/Items/Gems/SupportGemAddedLightningDamage",
@@ -8,6 +9,7 @@
   "Metadata/Items/Gems/SupportGemMeleePhysicalDamagePlus": "Metadata/Items/Gems/SupportGemMeleePhysicalDamage",
   "Metadata/Items/Gems/SupportGemMinionDamagePlus": "Metadata/Items/Gems/SupportGemMinionDamage",
   "Metadata/Items/Gems/SupportGemWeaponElementalDamagePlus": "Metadata/Items/Gems/SupportGemWeaponElementalDamage",
+  "Metadata/Items/Gems/SupportGemCullTheWeak": "Metadata/Items/Gems/SupportGemCullingStrike",
   "Metadata/Items/Gems/SupportGemFirePenetrationPlus": "Metadata/Items/Gems/SupportGemFirePenetration",
   "Metadata/Items/Gems/SupportGemColdPenetrationPlus": "Metadata/Items/Gems/SupportGemColdPenetration",
   "Metadata/Items/Gems/SupportGemLightningPenetrationPlus": "Metadata/Items/Gems/SupportGemLightningPenetration",
@@ -33,8 +35,15 @@
   "Metadata/Items/Gems/SupportGemDeadlyAilmentsPlus": "Metadata/Items/Gems/SupportGemDeadlyAilments",
   "Metadata/Items/Gems/SupportGemUnboundAilmentsPlus": "Metadata/Items/Gems/SupportGemUnboundAilments",
   "Metadata/Items/Gems/SupportGemBrutalityPlus": "Metadata/Items/Gems/SupportGemBrutality",
+  "Metadata/Items/Gems/SupportGemGreaterVolley": "Metadata/Items/Gems/SupportGemParallelProjectiles",
   "Metadata/Items/Gems/SupportGemSpellCascadePlus": "Metadata/Items/Gems/SupportGemSpellCascade",
   "Metadata/Items/Gems/SupportGemAncestralCallPlus": "Metadata/Items/Gems/SupportGemSpiritStrike",
   "Metadata/Items/Gems/SupportGemUnleashPlus": "Metadata/Items/Gems/SupportGemHandcastAnticipation",
-  "Metadata/Items/Gems/SupportGemArrowNovaPlus": "Metadata/Items/Gems/SupportGemArrowNova"
+  "Metadata/Items/Gems/SupportGemVoidShockwave": "Metadata/Items/Gems/SupportGemShockwave",
+  "Metadata/Items/Gems/SupportGemArrowNovaPlus": "Metadata/Items/Gems/SupportGemArrowNova",
+  "Metadata/Items/Gems/SupportGemFrostmage": "Metadata/Items/Gems/SupportGemArchmage",
+  "Metadata/Items/Gems/SupportGemUnholyTrinity": "Metadata/Items/Gems/SupportGemTrinity",
+  "Metadata/Items/Gems/SupportGemHextoad": "Metadata/Items/Gems/SupportGemCursedGround",
+  "Metadata/Items/Gems/SupportGemGreaterDevour": "Metadata/Items/Gems/SupportGemDevour",
+  "Metadata/Items/Gems/SupportGemGreaterKineticInstability": "Metadata/Items/Gems/SupportGemKineticInstability"
 }

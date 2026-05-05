@@ -15,7 +15,7 @@ export async function getGems() {
   for (const skillGem of Dat.SkillGems.data) {
     const baseItemType = Dat.BaseItemTypes.data[skillGem.BaseItemTypesKey];
 
-    const gemEffects = Dat.GemEffects.data[skillGem.GemEffects[0]];
+    const gemEffects = Dat.GemEffects.data[skillGem.GemVariants[0]];
     const grantedEffects = Dat.GrantedEffects.data[gemEffects.GrantedEffect];
     const grantedEffectsPerLevel = Dat.GrantedEffectsPerLevel.data.find(
       (x) => x.Level == 1 && x.GrantedEffect == gemEffects.GrantedEffect

@@ -24,7 +24,7 @@
     "chest_gem_id": "Metadata/Items/Gems/SupportGemLesserPoison"
   },
   "Templar": {
-    "start_gem_id": "Metadata/Items/Gems/SkillGemGlacialHammer",
+    "start_gem_id": "Metadata/Items/Gems/SkillGemHolyStrike",
     "chest_gem_id": "Metadata/Items/Gems/SupportGemElementalProliferation"
   }
 }

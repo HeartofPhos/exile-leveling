@@ -64,7 +64,7 @@
   },
   "Metadata/Items/Gems/SkillGemSweep": {
     "id": "Metadata/Items/Gems/SkillGemSweep",
-    "name": "Sweep",
+    "name": "Holy Sweep",
     "primary_attribute": "strength",
     "required_level": 12,
     "is_support": false
@@ -246,7 +246,7 @@
   },
   "Metadata/Items/Gems/SupportGemLesserMultipleProjectiles": {
     "id": "Metadata/Items/Gems/SupportGemLesserMultipleProjectiles",
-    "name": "Lesser Multiple Projectiles Support",
+    "name": "Multiple Projectiles Support",
     "primary_attribute": "dexterity",
     "required_level": 8,
     "is_support": true
@@ -4271,7 +4271,7 @@
   },
   "Metadata/Items/Gems/SupportGemLesserMultipleProjectilesRoyale": {
     "id": "Metadata/Items/Gems/SupportGemLesserMultipleProjectilesRoyale",
-    "name": "Lesser Multiple Projectiles Support",
+    "name": "Multiple Projectiles Support",
     "primary_attribute": "dexterity",
     "required_level": 4,
     "is_support": true
@@ -5172,6 +5172,34 @@
     "required_level": 12,
     "is_support": false
   },
+  "Metadata/Items/Gems/SkillGemHolyHammers": {
+    "id": "Metadata/Items/Gems/SkillGemHolyHammers",
+    "name": "Holy Hammers",
+    "primary_attribute": "strength",
+    "required_level": 28,
+    "is_support": false
+  },
+  "Metadata/Items/Gems/SkillGemShieldOfLight": {
+    "id": "Metadata/Items/Gems/SkillGemShieldOfLight",
+    "name": "Shield of Light",
+    "primary_attribute": "strength",
+    "required_level": 16,
+    "is_support": false
+  },
+  "Metadata/Items/Gems/SkillGemHolyStrike": {
+    "id": "Metadata/Items/Gems/SkillGemHolyStrike",
+    "name": "Holy Strike",
+    "primary_attribute": "strength",
+    "required_level": 1,
+    "is_support": false
+  },
+  "Metadata/Items/Gems/SkillGemDivineBlast": {
+    "id": "Metadata/Items/Gems/SkillGemDivineBlast",
+    "name": "Divine Blast",
+    "primary_attribute": "strength",
+    "required_level": 28,
+    "is_support": false
+  },
   "Metadata/Items/Gems/SkillGemQuickstep": {
     "id": "Metadata/Items/Gems/SkillGemQuickstep",
     "name": "Quickstep",
@@ -5317,6 +5345,335 @@
     "name": "Rupture Support",
     "primary_attribute": "dexterity",
     "required_level": 38,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemGreaterSpellCascade": {
+    "id": "Metadata/Items/Gems/SupportGemGreaterSpellCascade",
+    "name": "Greater Spell Cascade Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemEclipse": {
+    "id": "Metadata/Items/Gems/SupportGemEclipse",
+    "name": "Eclipse Support",
+    "primary_attribute": "none",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemInvertTheRules": {
+    "id": "Metadata/Items/Gems/SupportGemInvertTheRules",
+    "name": "Invert the Rules Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemCastOnWardBreak": {
+    "id": "Metadata/Items/Gems/SupportGemCastOnWardBreak",
+    "name": "Cast on Ward Break Support",
+    "primary_attribute": "dexterity",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemWard": {
+    "id": "Metadata/Items/Gems/SupportGemWard",
+    "name": "Ward Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemVaalSacrifice": {
+    "id": "Metadata/Items/Gems/SupportGemVaalSacrifice",
+    "name": "Vaal Sacrifice Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemGreaterSpellEcho": {
+    "id": "Metadata/Items/Gems/SupportGemGreaterSpellEcho",
+    "name": "Greater Spell Echo Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemVaalTemptation": {
+    "id": "Metadata/Items/Gems/SupportGemVaalTemptation",
+    "name": "Vaal Temptation Support",
+    "primary_attribute": "strength",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemMachinations": {
+    "id": "Metadata/Items/Gems/SupportGemMachinations",
+    "name": "Machinations Support",
+    "primary_attribute": "dexterity",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemPyre": {
+    "id": "Metadata/Items/Gems/SupportGemPyre",
+    "name": "Pyre Support",
+    "primary_attribute": "strength",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemBonespire": {
+    "id": "Metadata/Items/Gems/SupportGemBonespire",
+    "name": "Bonespire Support",
+    "primary_attribute": "strength",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemFoulgrasp": {
+    "id": "Metadata/Items/Gems/SupportGemFoulgrasp",
+    "name": "Foulgrasp Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemHiveborn": {
+    "id": "Metadata/Items/Gems/SupportGemHiveborn",
+    "name": "Hiveborn Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemScornfulHerald": {
+    "id": "Metadata/Items/Gems/SupportGemScornfulHerald",
+    "name": "Scornful Herald Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemCullTheWeak": {
+    "id": "Metadata/Items/Gems/SupportGemCullTheWeak",
+    "name": "Cull the Weak Support",
+    "primary_attribute": "dexterity",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemGreaterAncestralCall": {
+    "id": "Metadata/Items/Gems/SupportGemGreaterAncestralCall",
+    "name": "Greater Ancestral Call Support",
+    "primary_attribute": "strength",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemFissure": {
+    "id": "Metadata/Items/Gems/SupportGemFissure",
+    "name": "Fissure Support",
+    "primary_attribute": "strength",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemHextoad": {
+    "id": "Metadata/Items/Gems/SupportGemHextoad",
+    "name": "Hextoad Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemHexpass": {
+    "id": "Metadata/Items/Gems/SupportGemHexpass",
+    "name": "Hexpass Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemGreaterFork": {
+    "id": "Metadata/Items/Gems/SupportGemGreaterFork",
+    "name": "Greater Fork Support",
+    "primary_attribute": "dexterity",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemGreaterChain": {
+    "id": "Metadata/Items/Gems/SupportGemGreaterChain",
+    "name": "Greater Chain Support",
+    "primary_attribute": "dexterity",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemLethalDose": {
+    "id": "Metadata/Items/Gems/SupportGemLethalDose",
+    "name": "Lethal Dose Support",
+    "primary_attribute": "dexterity",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemCompanionship": {
+    "id": "Metadata/Items/Gems/SupportGemCompanionship",
+    "name": "Companionship Support",
+    "primary_attribute": "dexterity",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemDivineSentinel": {
+    "id": "Metadata/Items/Gems/SupportGemDivineSentinel",
+    "name": "Divine Sentinel Support",
+    "primary_attribute": "strength",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemAnnihilation": {
+    "id": "Metadata/Items/Gems/SupportGemAnnihilation",
+    "name": "Annihilation Support",
+    "primary_attribute": "strength",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemEdify": {
+    "id": "Metadata/Items/Gems/SupportGemEdify",
+    "name": "Edify Support",
+    "primary_attribute": "strength",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemInvention": {
+    "id": "Metadata/Items/Gems/SupportGemInvention",
+    "name": "Invention Support",
+    "primary_attribute": "dexterity",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemGreaterKineticInstability": {
+    "id": "Metadata/Items/Gems/SupportGemGreaterKineticInstability",
+    "name": "Greater Kinetic Instability Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemCooldownRecovery": {
+    "id": "Metadata/Items/Gems/SupportGemCooldownRecovery",
+    "name": "Cooldown Recovery Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemVoidstorm": {
+    "id": "Metadata/Items/Gems/SupportGemVoidstorm",
+    "name": "Voidstorm Support",
+    "primary_attribute": "dexterity",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemVoidShockwave": {
+    "id": "Metadata/Items/Gems/SupportGemVoidShockwave",
+    "name": "Void Shockwave Support",
+    "primary_attribute": "strength",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemEldritchBlasphemy": {
+    "id": "Metadata/Items/Gems/SupportGemEldritchBlasphemy",
+    "name": "Eldritch Blasphemy Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemGluttony": {
+    "id": "Metadata/Items/Gems/SupportGemGluttony",
+    "name": "Gluttony Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemOverheat": {
+    "id": "Metadata/Items/Gems/SupportGemOverheat",
+    "name": "Overheat Support",
+    "primary_attribute": "strength",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemGreaterMultistrike": {
+    "id": "Metadata/Items/Gems/SupportGemGreaterMultistrike",
+    "name": "Greater Multistrike Support",
+    "primary_attribute": "strength",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemCongregation": {
+    "id": "Metadata/Items/Gems/SupportGemCongregation",
+    "name": "Congregation Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemFrostmage": {
+    "id": "Metadata/Items/Gems/SupportGemFrostmage",
+    "name": "Frostmage Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemGreaterDevour": {
+    "id": "Metadata/Items/Gems/SupportGemGreaterDevour",
+    "name": "Greater Devour Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemMagnetism": {
+    "id": "Metadata/Items/Gems/SupportGemMagnetism",
+    "name": "Magnetism Support",
+    "primary_attribute": "dexterity",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemGreaterUnleash": {
+    "id": "Metadata/Items/Gems/SupportGemGreaterUnleash",
+    "name": "Greater Unleash Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemPacifism": {
+    "id": "Metadata/Items/Gems/SupportGemPacifism",
+    "name": "Pacifism Support",
+    "primary_attribute": "dexterity",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemBloodsoakedBanner": {
+    "id": "Metadata/Items/Gems/SupportGemBloodsoakedBanner",
+    "name": "Bloodsoaked Banner Support",
+    "primary_attribute": "strength",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemMinionPact": {
+    "id": "Metadata/Items/Gems/SupportGemMinionPact",
+    "name": "Minion Pact Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemHarrowingThrong": {
+    "id": "Metadata/Items/Gems/SupportGemHarrowingThrong",
+    "name": "Harrowing Throng Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemUnholyTrinity": {
+    "id": "Metadata/Items/Gems/SupportGemUnholyTrinity",
+    "name": "Unholy Trinity Support",
+    "primary_attribute": "dexterity",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemOverloadedIntensity": {
+    "id": "Metadata/Items/Gems/SupportGemOverloadedIntensity",
+    "name": "Overloaded Intensity Support",
+    "primary_attribute": "intelligence",
+    "required_level": 72,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemTransfusion": {
+    "id": "Metadata/Items/Gems/SupportGemTransfusion",
+    "name": "Transfusion Support",
+    "primary_attribute": "strength",
+    "required_level": 72,
     "is_support": true
   },
   "Metadata/Items/Chayula/XophGraftGem1": {
@@ -5478,6 +5835,34 @@
     "name": "Living Lightning Support",
     "primary_attribute": "intelligence",
     "required_level": 18,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemExcommunicate": {
+    "id": "Metadata/Items/Gems/SupportGemExcommunicate",
+    "name": "Excommunicate Support",
+    "primary_attribute": "strength",
+    "required_level": 31,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemExemplar": {
+    "id": "Metadata/Items/Gems/SupportGemExemplar",
+    "name": "Exemplar Support",
+    "primary_attribute": "intelligence",
+    "required_level": 18,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemBlessedCall": {
+    "id": "Metadata/Items/Gems/SupportGemBlessedCall",
+    "name": "Blessed Call Support",
+    "primary_attribute": "strength",
+    "required_level": 31,
+    "is_support": true
+  },
+  "Metadata/Items/Gems/SupportGemHallow": {
+    "id": "Metadata/Items/Gems/SupportGemHallow",
+    "name": "Hallow Support",
+    "primary_attribute": "strength",
+    "required_level": 1,
     "is_support": true
   },
   "Metadata/Items/Gem/SkillGemCallMercenary": {

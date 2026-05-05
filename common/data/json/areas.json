@@ -142,6 +142,7 @@
     "connection_ids": [
       "1_1_3",
       "1_1_5",
+      "1_1_4_0",
       "1_1_4_0"
     ],
     "crafting_recipes": []
@@ -185,6 +186,7 @@
     "is_town_area": false,
     "parent_town_area_id": "1_1_town",
     "connection_ids": [
+      "1_1_4_1",
       "1_1_4_1"
     ],
     "crafting_recipes": []
