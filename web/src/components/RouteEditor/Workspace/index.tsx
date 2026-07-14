@@ -2,8 +2,8 @@ import { CodeEditor } from "../../CodeEditor";
 import { SelectList } from "../../SelectList";
 import styles from "./styles.module.css";
 import classNames from "classnames";
-import { RouteData } from "common";
-import { Grammar } from "prismjs";
+import type { RouteData } from "common";
+import type { Grammar } from "prismjs";
 import { useEffect, useRef, useState } from "react";
 
 const RouteGrammar: Grammar = {
@@ -69,6 +69,7 @@ export function Workspace({ workingFiles, isDirty, onUpdate }: WorkspaceProps) {
             value={workingFiles[selectedIndex].contents}
             onValueChange={(value) => {
               const updatedRouteFiles = [...workingFiles];
+              console.log(value);
               updatedRouteFiles[selectedIndex].contents = value;
               onUpdate(updatedRouteFiles);
             }}

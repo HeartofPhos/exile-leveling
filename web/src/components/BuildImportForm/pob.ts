@@ -1,5 +1,5 @@
 import { decodeBase64Url } from "../../utility";
-import { Data, GameData, RouteData } from "common";
+import { Data, type GameData, type RouteData } from "common";
 import pako from "pako";
 
 const GEM_ID_REMAP: Record<string, string> = {

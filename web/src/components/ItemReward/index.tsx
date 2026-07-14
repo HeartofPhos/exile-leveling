@@ -4,8 +4,8 @@ import { InlineFakeBlock } from "../InlineFakeBlock";
 import { SplitRow } from "../SplitRow";
 import styles from "./styles.module.css";
 import classNames from "classnames";
-import { Data, RouteData } from "common";
-import { ReactNode } from "react";
+import { Data, type RouteData } from "common";
+import type { ReactNode } from "react";
 import { MdCircle } from "react-icons/md";
 
 function ItemRewardVerb(type: ItemRewardProps["rewardType"]) {

@@ -5,7 +5,7 @@ import {
   setPersistent,
 } from "../utility";
 import {
-  RecoilState,
+  type RecoilState,
   atomFamily,
   selectorFamily,
   useRecoilCallback,

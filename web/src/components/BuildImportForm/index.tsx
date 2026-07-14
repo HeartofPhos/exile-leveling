@@ -1,7 +1,11 @@
 import { formStyles } from "../../styles";
-import { UrlRewriter, fetchStringOrUrl, getRewriteUrl } from "../../utility";
+import {
+  type UrlRewriter,
+  fetchStringOrUrl,
+  getRewriteUrl,
+} from "../../utility";
 import { TextModal } from "../Modal";
-import { PobData, processPob } from "./pob";
+import { type PobData, processPob } from "./pob";
 import classNames from "classnames";
 import { useState } from "react";
 import { toast } from "react-toastify";

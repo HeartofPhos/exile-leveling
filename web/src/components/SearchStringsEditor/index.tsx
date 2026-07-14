@@ -3,7 +3,7 @@ import { formStyles } from "../../styles";
 import { CodeEditor } from "../CodeEditor";
 import styles from "./styles.module.css";
 import classNames from "classnames";
-import { Grammar } from "prismjs";
+import { type Grammar } from "prismjs";
 import { useRecoilState } from "recoil";
 
 const SearchStringGrammar: Grammar = {

@@ -10,7 +10,7 @@ export const RouteSourceLookup = globImportLazy<string>(
     query: "?raw",
     import: "default",
   }),
-  (key) => key,
+  (key) => /.*\/(.*?).txt$/.exec(key)![1],
   (value) => value
 );
 
@@ -18,16 +18,16 @@ async function loadDefaultRouteFiles() {
   const { getRouteFiles } = await import("common");
 
   const routeSources = await Promise.all([
-    RouteSourceLookup["./routes/act-1.txt"],
-    RouteSourceLookup["./routes/act-2.txt"],
-    RouteSourceLookup["./routes/act-3.txt"],
-    RouteSourceLookup["./routes/act-4.txt"],
-    RouteSourceLookup["./routes/act-5.txt"],
-    RouteSourceLookup["./routes/act-6.txt"],
-    RouteSourceLookup["./routes/act-7.txt"],
-    RouteSourceLookup["./routes/act-8.txt"],
-    RouteSourceLookup["./routes/act-9.txt"],
-    RouteSourceLookup["./routes/act-10.txt"],
+    RouteSourceLookup["act-1"],
+    RouteSourceLookup["act-2"],
+    RouteSourceLookup["act-3"],
+    RouteSourceLookup["act-4"],
+    RouteSourceLookup["act-5"],
+    RouteSourceLookup["act-6"],
+    RouteSourceLookup["act-7"],
+    RouteSourceLookup["act-8"],
+    RouteSourceLookup["act-9"],
+    RouteSourceLookup["act-10"],
   ]);
 
   return getRouteFiles(routeSources);

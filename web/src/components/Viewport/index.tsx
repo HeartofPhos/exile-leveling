@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 import classNames from "classnames";
 import * as d3 from "d3";
 import { useEffect, useMemo, useState } from "react";
-import useResizeObserver, { ObservedSize } from "use-resize-observer";
+import useResizeObserver, { type ObservedSize } from "use-resize-observer";
 
 export interface ViewportProps {
   intialFocus: Rect;

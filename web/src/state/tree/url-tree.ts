@@ -1,7 +1,7 @@
 import { TREE_DATA_LOOKUP } from ".";
 import { decodeBase64Url } from "../../utility";
 import { buildTreesSelector } from "./build-tree";
-import { RouteData, SkillTree } from "common";
+import type { RouteData, SkillTree } from "common";
 import { selector } from "recoil";
 
 export const urlTreesSelector = selector({

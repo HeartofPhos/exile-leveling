@@ -1,7 +1,7 @@
 import { borderListStyles, interactiveStyles } from "../../styles";
 import styles from "./styles.module.css";
 import classNames from "classnames";
-import { RecoilState, useRecoilState } from "recoil";
+import { type RecoilState, useRecoilState } from "recoil";
 
 interface TaskItemProps {
   children?: React.ReactNode;

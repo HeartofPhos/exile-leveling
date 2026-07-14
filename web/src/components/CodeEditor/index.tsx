@@ -1,9 +1,11 @@
 import { formStyles } from "../../styles";
 import styles from "./styles.module.css";
 import classNames from "classnames";
-import { Grammar, highlight } from "prismjs";
+import { type Grammar, highlight } from "prismjs";
 import React from "react";
-import Editor from "react-simple-code-editor";
+import ReactSimpleCodeEditor from "react-simple-code-editor";
+
+const Editor = (ReactSimpleCodeEditor as any).default as typeof ReactSimpleCodeEditor;
 
 interface CodeEditorProps {
   grammar: Grammar;

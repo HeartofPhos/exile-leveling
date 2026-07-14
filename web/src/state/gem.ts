@@ -1,7 +1,7 @@
 import { persistentStorageEffect } from ".";
 import { NO_MIGRATORS, getPersistent } from "../utility";
 import { gemProgressFamily, gemProgressKeys } from "./gem-progress";
-import { RouteData } from "common";
+import type { RouteData } from "common";
 import { DefaultValue, atom, selector } from "recoil";
 
 const REQUIRED_GEMS_VERSION = 0;

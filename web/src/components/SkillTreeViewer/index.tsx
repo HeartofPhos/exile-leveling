@@ -1,17 +1,17 @@
 import { TREE_DATA_LOOKUP } from "../../state/tree";
-import { UrlTree } from "../../state/tree/url-tree";
+import type { UrlTree } from "../../state/tree/url-tree";
 import { formStyles } from "../../styles";
 import { randomId } from "../../utility";
 import { SidebarTooltip } from "../SidebarTooltip";
-import { Viewport, ViewportProps } from "../Viewport";
+import { Viewport, type ViewportProps } from "../Viewport";
 import styles from "./styles.module.css";
 import {
-  UrlTreeDelta,
+  type UrlTreeDelta,
   buildUrlTreeDelta,
   calculateBounds,
 } from "./url-tree-delta";
 import classNames from "classnames";
-import { SkillTree } from "common";
+import type { SkillTree } from "common";
 import React from "react";
 import { useEffect, useRef, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";

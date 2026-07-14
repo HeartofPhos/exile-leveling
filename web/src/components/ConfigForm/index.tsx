@@ -1,4 +1,4 @@
-import { Config } from "../../state/config";
+import type { Config } from "../../state/config";
 import { SplitRow } from "../SplitRow";
 import styles from "./styles.module.css";
 import classNames from "classnames";

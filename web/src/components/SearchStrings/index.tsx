@@ -1,4 +1,4 @@
-import { SearchString } from "../../state/search-strings";
+import type { SearchString } from "../../state/search-strings";
 import { borderListStyles, interactiveStyles } from "../../styles";
 import styles from "./styles.module.css";
 import classNames from "classnames";

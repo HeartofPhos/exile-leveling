@@ -1,4 +1,4 @@
-import { RouteData } from "common";
+import type { RouteData } from "common";
 import { SplitRow } from "../SplitRow";
 import styles from "./styles.module.css";
 import classNames from "classnames";

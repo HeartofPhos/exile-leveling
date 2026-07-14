@@ -2,7 +2,7 @@ import { buildDataSelector } from "./build-data";
 import { configSelector } from "./config";
 import { requiredGemsSelector } from "./gem";
 import { routeFilesSelector } from "./route-files";
-import { RouteData } from "common";
+import type { RouteData } from "common";
 import { selector } from "recoil";
 
 const baseRouteSelector = selector({

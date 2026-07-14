@@ -1,8 +1,8 @@
-import { RouteData } from "common";
 import { formStyles, interactiveStyles } from "../../styles";
 import { GemReward } from "../ItemReward";
 import styles from "./styles.module.css";
 import classNames from "classnames";
+import type { RouteData } from "common";
 import { HiChevronDoubleUp, HiChevronDown, HiChevronUp } from "react-icons/hi";
 import { MdDeleteOutline } from "react-icons/md";
 

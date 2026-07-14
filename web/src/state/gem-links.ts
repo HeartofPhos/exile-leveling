@@ -1,6 +1,6 @@
 import { persistentStorageEffect } from ".";
-import { RouteData } from "common";
 import { NO_MIGRATORS, getPersistent } from "../utility";
+import type { RouteData } from "common";
 import { DefaultValue, atom, selector } from "recoil";
 
 const GEM_LINKS_VERSION = 0;

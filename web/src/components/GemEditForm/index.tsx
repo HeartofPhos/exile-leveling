@@ -1,7 +1,7 @@
-import { RouteData } from "common";
 import { gemProgressFamily } from "../../state/gem-progress";
 import { GemEdit } from "../GemEdit";
-import { TaskList, TaskListProps } from "../TaskList";
+import { TaskList, type TaskListProps } from "../TaskList";
+import type { RouteData } from "common";
 
 interface GemEditFormProps {
   requiredGems: RouteData.RequiredGem[];

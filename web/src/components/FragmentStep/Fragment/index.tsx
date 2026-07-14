@@ -3,7 +3,7 @@ import { InlineFakeBlock } from "../../InlineFakeBlock";
 import { ItemReward } from "../../ItemReward";
 import styles from "./styles.module.css";
 import classNames from "classnames";
-import { Data, Fragments, GameData } from "common";
+import { Data, type Fragments, type GameData } from "common";
 import React from "react";
 import {
   BsArrowDownLeftSquare,

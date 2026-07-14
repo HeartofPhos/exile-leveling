@@ -1,5 +1,5 @@
 import { sectionCollapseFamily } from "../../state/section-collapse";
-import { TaskList, TaskListProps } from "../TaskList";
+import { TaskList, type TaskListProps } from "../TaskList";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { useLayoutEffect } from "react";

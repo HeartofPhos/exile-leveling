@@ -2,11 +2,11 @@ import { FragmentStep } from "../../components/FragmentStep";
 import { GemReward } from "../../components/ItemReward";
 import { SectionHolder } from "../../components/SectionHolder";
 import { Sidebar } from "../../components/Sidebar";
-import { TaskListProps } from "../../components/TaskList";
+import type { TaskListProps } from "../../components/TaskList";
 import { gemProgressFamily } from "../../state/gem-progress";
 import { routeSelector } from "../../state/route";
 import { routeProgressFamily } from "../../state/route-progress";
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { useRecoilValue } from "recoil";
 
 export default function RoutesContainer() {

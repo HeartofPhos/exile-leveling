@@ -1,21 +1,22 @@
-import { buildTemplates } from "./build-tree";
-import { getAreas } from "./seeding/areas";
-import { getCharacters } from "./seeding/characters";
-import { getGems as seedGems } from "./seeding/gems";
-import { getQuests } from "./seeding/quests";
+import { buildTemplates } from "./build-tree/index.js";
+import { getAreas } from "./seeding/areas.js";
+import { getCharacters } from "./seeding/characters.js";
+import { getGems as seedGems } from "./seeding/gems.js";
+import { getQuests } from "./seeding/quests.js";
 import fs from "fs";
 
 const dataPath = process.argv[2];
 
 function saveJSON(name: string, data: any) {
-  fs.writeFileSync(
-    `${dataPath}/json/${name}.json`,
-    JSON.stringify(data, null, 2)
-  );
+  const folder = `${dataPath}/json`;
+  fs.mkdirSync(folder, { recursive: true });
+  fs.writeFileSync(`${folder}/${name}.json`, JSON.stringify(data, null, 2));
 }
 
 function saveTreeJSON(name: string, data: any) {
-  fs.writeFileSync(`${dataPath}/tree/${name}.json`, JSON.stringify(data));
+  const folder = `${dataPath}/tree`;
+  fs.mkdirSync(folder, { recursive: true });
+  fs.writeFileSync(`${folder}/${name}.json`, JSON.stringify(data));
 }
 
 const COMMAND_PROCESSORS: Record<string, () => Promise<any>> = {

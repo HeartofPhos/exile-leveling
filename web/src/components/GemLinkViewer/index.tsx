@@ -4,7 +4,7 @@ import { InlineFakeBlock } from "../InlineFakeBlock";
 import { SidebarTooltip } from "../SidebarTooltip";
 import styles from "./styles.module.css";
 import classNames from "classnames";
-import { Data, RouteData } from "common";
+import { Data, type RouteData } from "common";
 import React from "react";
 import { useEffect, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
@@ -150,13 +150,14 @@ function GemTooltip({ gemLink }: GemTooltipProps) {
           const quest = Data.Quests[x.questId];
           const npc = quest.reward_offers[x.rewardOfferId]?.vendor[gem.id]?.npc;
           const text = (
-            <>
+            <React.Fragment key={i}>
               {i !== 0 && <hr className={classNames(styles.questSeperator)} />}
               <span>{quest.name}</span>
               <span>{npc}</span>
               <span>Act {quest.act}</span>
-            </>
+            </React.Fragment>
           );
+
           return text;
         })}
       </div>

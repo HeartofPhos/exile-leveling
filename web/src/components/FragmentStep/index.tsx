@@ -1,4 +1,4 @@
-import { RouteData } from "common";
+import type { RouteData } from "common";
 import { configSelector } from "../../state/config";
 import { SplitRow } from "../SplitRow";
 import { Fragment } from "./Fragment";
