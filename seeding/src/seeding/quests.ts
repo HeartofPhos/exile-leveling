@@ -1,4 +1,4 @@
-import { GameData } from "../../../common/types";
+import { GameData } from "common";
 import { Dat } from "../data";
 import { cargoQuery } from "../wiki";
 

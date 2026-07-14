@@ -1,5 +1,5 @@
 import { persistentStorageEffect } from ".";
-import { RouteData } from "../../../common/route-processing/types";
+import { RouteData } from "common";
 import { NO_MIGRATORS, getPersistent } from "../utility";
 import { DefaultValue } from "recoil";
 import { atom, selector } from "recoil";

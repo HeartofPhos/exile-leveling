@@ -1,4 +1,4 @@
-import { RouteData } from "../../../../common/route-processing/types";
+import { RouteData } from "common";
 import { gemProgressFamily } from "../../state/gem-progress";
 import { GemEdit } from "../GemEdit";
 import { TaskList, TaskListProps } from "../TaskList";

@@ -1,4 +1,4 @@
-import { SkillTree } from "../../../../common/data/tree";
+import { SkillTree } from "common";
 import { ViewBox } from "../../state/tree/svg";
 import { UrlTree } from "../../state/tree/url-tree";
 

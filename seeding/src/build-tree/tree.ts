@@ -1,4 +1,4 @@
-import { SkillTree } from "../../../common/data/tree/index";
+import { SkillTree } from "common";
 import { RawTree } from "./types";
 
 const ANGLES_16: number[] = [

@@ -1,4 +1,4 @@
-import { RouteData } from "../../../../common/route-processing/types";
+import { RouteData } from "common";
 import { formStyles, interactiveStyles } from "../../styles";
 import { GemReward } from "../ItemReward";
 import styles from "./styles.module.css";

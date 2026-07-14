@@ -1,11 +1,9 @@
-import { Data } from "../../../../../common/data";
-import { Fragments } from "../../../../../common/route-processing/fragment/types";
-import { GameData } from "../../../../../common/types";
 import { CopyToClipboard } from "../../CopyToClipboard";
 import { InlineFakeBlock } from "../../InlineFakeBlock";
 import { ItemReward } from "../../ItemReward";
 import styles from "./styles.module.css";
 import classNames from "classnames";
+import { Data, Fragments, GameData } from "common";
 import React from "react";
 import {
   BsArrowDownLeftSquare,

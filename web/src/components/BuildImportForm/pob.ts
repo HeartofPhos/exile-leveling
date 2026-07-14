@@ -1,7 +1,5 @@
-import { Data } from "../../../../common/data";
-import { RouteData } from "../../../../common/route-processing/types";
-import { GameData } from "../../../../common/types";
-import { decodeBase64Url, randomId } from "../../utility";
+import { decodeBase64Url } from "../../utility";
+import { Data, GameData, RouteData } from "common";
 import pako from "pako";
 
 const GEM_ID_REMAP: Record<string, string> = {

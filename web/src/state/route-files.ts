@@ -1,27 +1,33 @@
 import { persistentStorageEffect } from ".";
-import { RouteData } from "../../../common/route-processing/types";
-import { NO_MIGRATORS, getPersistent } from "../utility";
+import { NO_MIGRATORS, getPersistent, globImportLazy } from "../utility";
+import { type RouteData } from "common";
 import { DefaultValue, atom, selector } from "recoil";
 
 const ROUTE_PROGRESS_VERSION = 1;
 
+export const RouteSourceLookup = globImportLazy<string>(
+  import.meta.glob("/../common/data/routes/*.txt", {
+    query: "?raw",
+    import: "default",
+  }),
+  (key) => key,
+  (value) => value
+);
+
 async function loadDefaultRouteFiles() {
-  const [{ Data }, { getRouteFiles }] = await Promise.all([
-    import("../../../common/data"),
-    import("../../../common/route-processing"),
-  ]);
+  const { getRouteFiles } = await import("common");
 
   const routeSources = await Promise.all([
-    Data.RouteSourceLookup["./routes/act-1.txt"],
-    Data.RouteSourceLookup["./routes/act-2.txt"],
-    Data.RouteSourceLookup["./routes/act-3.txt"],
-    Data.RouteSourceLookup["./routes/act-4.txt"],
-    Data.RouteSourceLookup["./routes/act-5.txt"],
-    Data.RouteSourceLookup["./routes/act-6.txt"],
-    Data.RouteSourceLookup["./routes/act-7.txt"],
-    Data.RouteSourceLookup["./routes/act-8.txt"],
-    Data.RouteSourceLookup["./routes/act-9.txt"],
-    Data.RouteSourceLookup["./routes/act-10.txt"],
+    RouteSourceLookup["./routes/act-1.txt"],
+    RouteSourceLookup["./routes/act-2.txt"],
+    RouteSourceLookup["./routes/act-3.txt"],
+    RouteSourceLookup["./routes/act-4.txt"],
+    RouteSourceLookup["./routes/act-5.txt"],
+    RouteSourceLookup["./routes/act-6.txt"],
+    RouteSourceLookup["./routes/act-7.txt"],
+    RouteSourceLookup["./routes/act-8.txt"],
+    RouteSourceLookup["./routes/act-9.txt"],
+    RouteSourceLookup["./routes/act-10.txt"],
   ]);
 
   return getRouteFiles(routeSources);

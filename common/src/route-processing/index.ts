@@ -1,9 +1,8 @@
-import { Data } from "../data";
-import { GameData } from "../types";
-import { parseFragments } from "./fragment";
-import { Pattern, matchPatterns } from "./patterns";
-import { ScopedLogger } from "./scoped-logger";
-import { RouteData } from "./types";
+import { Data } from "../data.js";
+import type { GameData, RouteData } from "../types.js";
+import { parseFragments } from "./fragment/index.js";
+import { type Pattern, matchPatterns } from "./patterns.js";
+import { ScopedLogger } from "./scoped-logger.js";
 
 const DEFAULT_SECTION_NAME = "Default";
 

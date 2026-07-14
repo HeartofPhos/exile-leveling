@@ -1,7 +1,5 @@
-import { Data } from "../data";
-import { GameData } from "../types";
-import { Fragments } from "./fragment/types";
-import { RouteData } from "./types";
+import { Data } from "../data.js";
+import type { Fragments, GameData, RouteData } from "../types.js";
 
 export function buildGemSteps(
   questFragment: Fragments.QuestFragment,

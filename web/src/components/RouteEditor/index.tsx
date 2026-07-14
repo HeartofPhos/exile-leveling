@@ -1,15 +1,11 @@
-import {
-  buildRouteSource,
-  getRouteFiles,
-} from "../../../../common/route-processing";
-import { Language } from "../../../../common/route-processing/fragment/language";
-import { RouteData } from "../../../../common/route-processing/types";
 import { formStyles } from "../../styles";
 import { UrlRewriter, fetchStringOrUrl } from "../../utility";
 import { Modal, TextModal } from "../Modal";
 import { Workspace } from "./Workspace";
 import styles from "./styles.module.css";
 import classNames from "classnames";
+import { Language, buildRouteSource, getRouteFiles } from "common";
+import { RouteData } from "common";
 import React from "react";
 import { useEffect, useState } from "react";
 import { BiHelpCircle } from "react-icons/bi";

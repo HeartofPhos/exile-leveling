@@ -1,10 +1,9 @@
-import { RouteState } from "..";
-import { Data } from "../../data";
-import { GameData } from "../../types";
-import { Pattern, matchPatterns } from "../patterns";
-import { ScopedLogger } from "../scoped-logger";
-import { Language } from "./language";
-import { Fragments } from "./types";
+import { type RouteState } from "../index.js";
+import { Data } from "../../data.js";
+import type { Fragments, GameData } from "../../types.js";
+import { type Pattern, matchPatterns } from "../patterns.js";
+import { ScopedLogger } from "../scoped-logger.js";
+import { Language } from "./language.js";
 
 type RawFragment = string[];
 

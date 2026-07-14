@@ -1,4 +1,4 @@
-import { RouteData } from "../../../../common/route-processing/types";
+import { RouteData } from "common";
 import { SplitRow } from "../SplitRow";
 import styles from "./styles.module.css";
 import classNames from "classnames";

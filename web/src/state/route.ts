@@ -1,16 +1,14 @@
-import { RouteData } from "../../../common/route-processing/types";
 import { buildDataSelector } from "./build-data";
 import { configSelector } from "./config";
 import { requiredGemsSelector } from "./gem";
 import { routeFilesSelector } from "./route-files";
+import { RouteData } from "common";
 import { selector } from "recoil";
 
 const baseRouteSelector = selector({
   key: "baseRouteSelector",
   get: async ({ get }) => {
-    const { initializeRouteState, parseRoute } = await import(
-      "../../../common/route-processing"
-    );
+    const { initializeRouteState, parseRoute } = await import("common");
 
     const routeFiles = get(routeFilesSelector);
     const buildData = get(buildDataSelector);
@@ -46,11 +44,7 @@ const baseRouteSelector = selector({
 export const routeSelector = selector({
   key: "routeSelector",
   get: async ({ get }) => {
-    const { buildGemSteps, findCharacterGems } = await import(
-      "../../../common/route-processing/gems"
-    );
-
-    const { Data } = await import("../../../common/data");
+    const { buildGemSteps, findCharacterGems, Data } = await import("common");
 
     const baseRoute = get(baseRouteSelector);
     const buildData = get(buildDataSelector);

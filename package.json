@@ -1,6 +1,7 @@
 {
   "name": "exile-leveling",
   "workspaces": [
+    "common",
     "seeding",
     "web"
   ],

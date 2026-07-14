@@ -1,4 +1,3 @@
-import { SkillTree } from "../../../../common/data/tree";
 import { TREE_DATA_LOOKUP } from "../../state/tree";
 import { UrlTree } from "../../state/tree/url-tree";
 import { formStyles } from "../../styles";
@@ -12,6 +11,7 @@ import {
   calculateBounds,
 } from "./url-tree-delta";
 import classNames from "classnames";
+import { SkillTree } from "common";
 import React from "react";
 import { useEffect, useRef, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";

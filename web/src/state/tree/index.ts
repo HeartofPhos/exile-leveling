@@ -1,4 +1,4 @@
-import { SkillTree } from "../../../../common/data/tree";
+import { SkillTree } from "common";
 import { globImportLazy } from "../../utility";
 import { ViewBox, buildTemplate } from "./svg";
 import Handlebars from "handlebars";
@@ -12,7 +12,7 @@ export const TREE_DATA_LOOKUP = globImportLazy<
     Handlebars.TemplateDelegate
   ]
 >(
-  import.meta.glob("../../../../common/data/tree/*.json"),
+  import.meta.glob("/../common/data/tree/*.json"),
   (key) => /.*\/(.*?).json$/.exec(key)![1],
   (value) => {
     const skillTree: SkillTree.Data = value.default;

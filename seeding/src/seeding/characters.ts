@@ -1,4 +1,4 @@
-import { GameData } from "../../../common/types";
+import { GameData } from "common";
 import { Dat } from "../data";
 
 const CHARACTER_CHEST_GEMS: Record<string, string> = {

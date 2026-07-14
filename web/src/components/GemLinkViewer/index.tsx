@@ -1,12 +1,10 @@
-import { Data } from "../../../../common/data";
-import { RouteData } from "../../../../common/route-processing/types";
-import { GameData } from "../../../../common/types";
 import { formStyles } from "../../styles";
 import { GemCost } from "../GemCost";
 import { InlineFakeBlock } from "../InlineFakeBlock";
 import { SidebarTooltip } from "../SidebarTooltip";
 import styles from "./styles.module.css";
 import classNames from "classnames";
+import { Data, RouteData } from "common";
 import React from "react";
 import { useEffect, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
