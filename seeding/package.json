@@ -6,15 +6,16 @@
     "seed": "tsx src/index.ts ../common/data",
     "generate-route-ids": "tsx src/index.ts ../common/data/json generate-route-ids"
   },
-  "author": "",
   "license": "ISC",
+  "author": "",
+  "type": "module",
   "dependencies": {
     "common": "file:../common",
     "cross-fetch": "^3.1.8"
   },
   "devDependencies": {
-    "@types/node": "^17.0.45",
-    "typescript": "^7.0.2",
-    "tsx": "^4.23.1"
+    "@types/node": "^26.1.1",
+    "tsx": "^4.23.1",
+    "typescript": "^7.0.2"
   }
 }

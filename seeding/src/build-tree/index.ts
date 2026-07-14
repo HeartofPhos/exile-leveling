@@ -1,5 +1,5 @@
-import { buildSkillTree } from "./tree";
-import { RawTree } from "./types";
+import { buildSkillTree } from "./tree.js";
+import type { RawTree } from "./types.js";
 import fetch from "cross-fetch";
 
 const PASSIVE_TREE_JSON = {

@@ -1,5 +1,5 @@
-import { SkillTree } from "common";
-import { RawTree } from "./types";
+import type { SkillTree } from "common";
+import type { RawTree } from "./types.js";
 
 const ANGLES_16: number[] = [
   0, 30, 45, 60, 90, 120, 135, 150, 180, 210, 225, 240, 270, 300, 315, 330,
