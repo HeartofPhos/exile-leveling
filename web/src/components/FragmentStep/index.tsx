@@ -1,9 +1,9 @@
-import type { RouteData } from "common";
 import { configSelector } from "../../state/config";
 import { SplitRow } from "../SplitRow";
 import { Fragment } from "./Fragment";
 import styles from "./styles.module.css";
 import classNames from "classnames";
+import type { RouteData } from "common";
 import React, { useState } from "react";
 import { BiInfoCircle, BiSolidInfoCircle } from "react-icons/bi";
 import { useRecoilValue } from "recoil";

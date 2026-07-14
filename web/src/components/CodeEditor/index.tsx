@@ -5,7 +5,8 @@ import { type Grammar, highlight } from "prismjs";
 import React from "react";
 import ReactSimpleCodeEditor from "react-simple-code-editor";
 
-const Editor = (ReactSimpleCodeEditor as any).default as typeof ReactSimpleCodeEditor;
+const Editor = (ReactSimpleCodeEditor as any)
+  .default as typeof ReactSimpleCodeEditor;
 
 interface CodeEditorProps {
   grammar: Grammar;

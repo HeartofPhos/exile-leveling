@@ -1,5 +1,5 @@
-import type { GameData } from "common";
 import { Dat } from "../data/index.js";
+import type { GameData } from "common";
 
 const ATTRIBUTE_LOOKUP: Record<number, string> = {
   [1]: "strength",

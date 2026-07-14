@@ -1,6 +1,6 @@
-import type { GameData } from "common";
 import { Dat } from "../data/index.js";
 import { cargoQuery } from "../wiki.js";
+import type { GameData } from "common";
 
 const BREAKING_SOME_EGGS_REWARD_2 = [
   "Metadata/Items/Gems/SkillGemSteelskin",

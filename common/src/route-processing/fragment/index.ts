@@ -1,6 +1,6 @@
-import { type RouteState } from "../index.js";
 import { Data } from "../../data.js";
 import type { Fragments, GameData } from "../../types.js";
+import { type RouteState } from "../index.js";
 import { type Pattern, matchPatterns } from "../patterns.js";
 import { ScopedLogger } from "../scoped-logger.js";
 import { Language } from "./language.js";

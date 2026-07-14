@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
 import styles from "./styles.module.css";
 import classNames from "classnames";
+import { ReactNode } from "react";
 
 type SidebarTooltip = {
   title: ReactNode;

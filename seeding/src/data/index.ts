@@ -12,7 +12,9 @@ interface DatJson {
 function parseDat(path: string): DatJson {
   const filePath = `${import.meta.dirname}/${path}`;
   if (fs.existsSync(filePath))
-    return JSON.parse(fs.readFileSync(`${import.meta.dirname}/${path}`, "utf-8"));
+    return JSON.parse(
+      fs.readFileSync(`${import.meta.dirname}/${path}`, "utf-8")
+    );
 
   return null!;
 }
