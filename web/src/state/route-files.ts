@@ -1,7 +1,8 @@
-import { persistentStorageEffect } from ".";
-import { NO_MIGRATORS, getPersistent, globImportLazy } from "../utility";
+import { atomWithStorage, RESET } from "jotai/utils";
+import { versionedStorage } from ".";
+import { globImportLazy } from "../utility";
 import { type RouteData } from "common";
-import { DefaultValue, atom, selector } from "recoil";
+import { atom } from "jotai";
 
 const ROUTE_PROGRESS_VERSION = 1;
 
@@ -11,7 +12,7 @@ export const RouteSourceLookup = globImportLazy<string>(
     import: "default",
   }),
   (key) => /.*\/(.*?).txt$/.exec(key)![1],
-  (value) => value
+  (value) => value,
 );
 
 async function loadDefaultRouteFiles() {
@@ -33,19 +34,23 @@ async function loadDefaultRouteFiles() {
   return getRouteFiles(routeSources);
 }
 
-const routeFilesAtom = atom<RouteData.RouteFile[] | null>({
-  key: "routeFilesAtom",
-  default: getPersistent("route-files", ROUTE_PROGRESS_VERSION, NO_MIGRATORS),
-  effects: [persistentStorageEffect("route-files", ROUTE_PROGRESS_VERSION)],
-});
+const routeFilesAtom = atomWithStorage<RouteData.RouteFile[] | null>(
+  "route-files",
+  null,
+  versionedStorage(ROUTE_PROGRESS_VERSION),
+);
 
-export const routeFilesSelector = selector<RouteData.RouteFile[]>({
-  key: "routeFilesSelector",
-  get: ({ get }) => {
-    return get(routeFilesAtom) || loadDefaultRouteFiles();
+export const routeFilesSelector = atom(
+  async (get) => {
+    const data = get(routeFilesAtom);
+
+    if (data === null) {
+      return await loadDefaultRouteFiles();
+    }
+
+    return data;
   },
-  set: ({ set }, newValue) => {
-    if (newValue instanceof DefaultValue) set(routeFilesAtom, null);
-    else set(routeFilesAtom, newValue);
+  (_get, set, value: RouteData.RouteFile[] | typeof RESET) => {
+    set(routeFilesAtom, value);
   },
-});
+);

@@ -8,15 +8,13 @@ import KILL_WAYPOINTS_JSON from "../data/json/kill-waypoints.json" with { type: 
 import QUESTS_JSON from "../data/json/quests.json" with { type: "json" };
 import VAAL_GEM_LOOKUP_JSON from "../data/json/vaal-gem-lookup.json" with { type: "json" };
 
-export namespace Data {
-  export const Areas = AREAS_JSON as GameData.Areas;
-  export const AwakenedGemLookup =
-    AWAKENED_GEM_LOOKUP_JSON as GameData.VariantGemLookup;
-  export const Characters = CHARACTERS_JSON as GameData.Characters;
-  export const GemColours = GEM_COLOURS_JSON as GameData.GemColours;
-  export const Gems = GEMS_JSON as GameData.Gems;
-  export const KillWaypoints = KILL_WAYPOINTS_JSON as GameData.KillWaypoints;
-  export const Quests = QUESTS_JSON as GameData.Quests;
-  export const VaalGemLookup =
-    VAAL_GEM_LOOKUP_JSON as GameData.VariantGemLookup;
-}
+export const Data = {
+  Areas: AREAS_JSON as GameData.Areas,
+  AwakenedGemLookup: AWAKENED_GEM_LOOKUP_JSON as GameData.VariantGemLookup,
+  Characters: CHARACTERS_JSON as GameData.Characters,
+  GemColours: GEM_COLOURS_JSON as GameData.GemColours,
+  Gems: GEMS_JSON as GameData.Gems,
+  KillWaypoints: KILL_WAYPOINTS_JSON as GameData.KillWaypoints,
+  Quests: QUESTS_JSON as GameData.Quests,
+  VaalGemLookup: VAAL_GEM_LOOKUP_JSON as GameData.VariantGemLookup,
+};

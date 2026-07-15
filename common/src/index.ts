@@ -9,5 +9,8 @@ export {
 } from "./route-processing/index.js";
 export type { parseFragments } from "./route-processing/fragment/index.js";
 export { buildGemSteps, findCharacterGems } from "./route-processing/gems.js";
-export { Language } from "./route-processing/fragment/language.js";
+export {
+  type Language,
+  FragmentDescriptionLookup,
+} from "./route-processing/fragment/language.js";
 export type { SkillTree } from "./tree.js";

@@ -1,16 +1,17 @@
+import { useAtom } from "jotai";
 import { borderListStyles, interactiveStyles } from "../../styles";
 import styles from "./styles.module.css";
 import classNames from "classnames";
-import { type RecoilState, useRecoilState } from "recoil";
+import type { WritableAtom } from "jotai";
 
 interface TaskItemProps {
   children?: React.ReactNode;
-  isCompletedState?: RecoilState<boolean>;
+  isCompletedState?: WritableAtom<boolean, [boolean], void>;
 }
 
 function TaskListItem({ children, isCompletedState }: TaskItemProps) {
   const [isCompleted, setIsCompleted] = isCompletedState
-    ? useRecoilState(isCompletedState)
+    ? useAtom(isCompletedState)
     : [undefined, undefined];
 
   return (
@@ -22,7 +23,7 @@ function TaskListItem({ children, isCompletedState }: TaskItemProps) {
         styles.listItem,
         {
           [styles.completed]: isCompleted,
-        }
+        },
       )}
       onClick={() => {
         if (setIsCompleted) setIsCompleted(!isCompleted);

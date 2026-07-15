@@ -1,11 +1,10 @@
-import { persistentStorageEffect } from ".";
-import { NO_MIGRATORS, getPersistent } from "../utility";
-import { atom } from "recoil";
+import { atomWithStorage } from "jotai/utils";
+import { versionedStorage } from ".";
 
-const POB_CODE_PROGRESS_VERSION = 0;
+const POB_CODE_VERSION = 0;
 
-export const pobCodeAtom = atom<string | null>({
-  key: "pobCodeAtom",
-  default: getPersistent("pob-code", POB_CODE_PROGRESS_VERSION, NO_MIGRATORS),
-  effects: [persistentStorageEffect("pob-code", POB_CODE_PROGRESS_VERSION)],
-});
+export const pobCodeAtom = atomWithStorage<string | null>(
+  "pob-code",
+  null,
+  versionedStorage(POB_CODE_VERSION),
+);

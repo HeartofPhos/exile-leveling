@@ -1,4 +1,4 @@
-export function trackEvent(event: {
+export function trackEvent(_event: {
   name: string;
   properties?: Record<string, any>;
 }) {

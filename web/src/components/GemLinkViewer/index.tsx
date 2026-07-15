@@ -5,10 +5,11 @@ import { SidebarTooltip } from "../SidebarTooltip";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { Data, type RouteData } from "common";
-import React from "react";
+import React, { type JSX } from "react";
 import { useEffect, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { MdCircle } from "react-icons/md";
+import flattenChildren from "react-keyed-flatten-children";
 
 interface GemLinkViewerProps {
   gemLinks: RouteData.GemLinkGroup[];
@@ -63,12 +64,12 @@ export function GemLinkViewer({ gemLinks }: GemLinkViewerProps) {
       </div>
       {activeGemLinks.length > 0 && (
         <div className={classNames(styles.gemLinkSection)}>
-          {React.Children.toArray(
+          {flattenChildren(
             activeGemLinks.map(({ primaryGems, secondaryGems }, i) => (
               <>
                 {i !== 0 && <hr />}
                 <div className={classNames(styles.gemLinkRow)}>
-                  {React.Children.toArray(
+                  {flattenChildren(
                     primaryGems.map((gem) => (
                       <GemLink
                         gemLink={gem}
@@ -77,7 +78,7 @@ export function GemLinkViewer({ gemLinks }: GemLinkViewerProps) {
                       />
                     ))
                   )}
-                  {React.Children.toArray(
+                  {flattenChildren(
                     secondaryGems.map((gem) => (
                       <GemLink
                         gemLink={gem}

@@ -1,32 +1,26 @@
-import { persistentStorageEffect } from ".";
-import { NO_MIGRATORS, getPersistent } from "../utility";
-import { gemProgressFamily, gemProgressKeys } from "./gem-progress";
+import { atomWithStorage, RESET } from "jotai/utils";
+import { clearGemProgress } from "./gem-progress";
 import type { RouteData } from "common";
-import { DefaultValue, atom, selector } from "recoil";
+import { atom } from "jotai";
+import { versionedStorage } from ".";
 
 const REQUIRED_GEMS_VERSION = 0;
 
-const requiredGemsAtom = atom<RouteData.RequiredGem[] | null>({
-  key: "requiredGemsAtom",
-  default: getPersistent("required-gems", REQUIRED_GEMS_VERSION, NO_MIGRATORS),
-  effects: [persistentStorageEffect("required-gems", REQUIRED_GEMS_VERSION)],
-});
+const requiredGemsAtom = atomWithStorage<RouteData.RequiredGem[]>(
+  "required-gems",
+  [],
+  versionedStorage(REQUIRED_GEMS_VERSION),
+);
 
-export const requiredGemsSelector = selector<RouteData.RequiredGem[]>({
-  key: "requiredGemsSelector",
-  get: ({ get }) => {
-    let requiredGems = get(requiredGemsAtom);
-    if (requiredGems === null) requiredGems = [];
-
-    return requiredGems;
+export const requiredGemsSelector = atom(
+  (get) => {
+    return get(requiredGemsAtom);
   },
-  set: ({ set }, newValue) => {
-    const value = newValue instanceof DefaultValue ? null : newValue;
-    set(requiredGemsAtom, value);
+  (_get, set, newValue: RouteData.RequiredGem[] | typeof RESET) => {
+    set(requiredGemsAtom, newValue);
 
-    for (const key of gemProgressKeys()) {
-      const exists = value?.find((x) => x.id == key) !== undefined;
-      if (!exists) set(gemProgressFamily(key), false);
+    if (newValue === RESET) {
+      clearGemProgress(set);
     }
   },
-});
+);

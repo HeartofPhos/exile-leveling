@@ -1,33 +1,33 @@
+import { atom } from "jotai";
 import { TREE_DATA_LOOKUP } from ".";
 import { decodeBase64Url } from "../../utility";
 import { buildTreesSelector } from "./build-tree";
 import type { RouteData, SkillTree } from "common";
-import { selector } from "recoil";
 
-export const urlTreesSelector = selector({
-  key: "urlTreesSelector",
-  get: async ({ get }) => {
-    const buildTrees = get(buildTreesSelector);
+export const urlTreesSelector = atom(async (get) => {
+  const buildTrees = get(buildTreesSelector);
+  if (buildTrees === null) {
+    return [];
+  }
 
-    let urlTrees: UrlTree.Data[] = [];
-    for (const buildTree of buildTrees) {
-      try {
-        const urlTree = await buildUrlTree(buildTree);
-        if (urlTree.nodes.length === 0) continue;
+  let urlTrees: UrlTree.Data[] = [];
+  for (const buildTree of buildTrees) {
+    try {
+      const urlTree = await buildUrlTree(buildTree);
+      if (urlTree.nodes.length === 0) continue;
 
-        urlTrees.push(urlTree);
-      } catch (e) {
-        console.error(`could not process BuildTree, ${e}, ${buildTree.name}`);
-      }
+      urlTrees.push(urlTree);
+    } catch (e) {
+      console.error(`could not process BuildTree, ${e}, ${buildTree.name}`);
     }
+  }
 
-    if (urlTrees.length > 0) {
-      const version = urlTrees[0].version;
-      urlTrees = urlTrees.filter((x) => x.version == version);
-    }
+  if (urlTrees.length > 0) {
+    const version = urlTrees[0].version;
+    urlTrees = urlTrees.filter((x) => x.version == version);
+  }
 
-    return { urlTrees };
-  },
+  return urlTrees;
 });
 
 export namespace UrlTree {
@@ -41,7 +41,7 @@ export namespace UrlTree {
 }
 
 export async function buildUrlTree(
-  buildTree: RouteData.BuildTree
+  buildTree: RouteData.BuildTree,
 ): Promise<UrlTree.Data> {
   const data = /.*\/(.*?)$/.exec(buildTree.url)?.[1];
   if (!data) throw `invalid url ${buildTree.url}`;

@@ -1,10 +1,10 @@
+import { useAtom } from "jotai";
 import { sectionCollapseFamily } from "../../state/section-collapse";
 import { TaskList, type TaskListProps } from "../TaskList";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { useLayoutEffect } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-import { useRecoilState } from "recoil";
 
 interface SectionHolderProps {
   name: string;
@@ -13,9 +13,7 @@ interface SectionHolderProps {
 
 export function SectionHolder({ name, items }: SectionHolderProps) {
   const sectionId = `section-${name.replace(/\s+/g, "_")}`;
-  const [collapsed, setCollapsed] = useRecoilState(
-    sectionCollapseFamily(sectionId)
-  );
+  const [collapsed, setCollapsed] = useAtom(sectionCollapseFamily(sectionId));
 
   const scrollToSection = (collapsed: boolean) => {
     if (!collapsed) return;

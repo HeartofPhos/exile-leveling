@@ -1,3 +1,4 @@
+import { useAtomValue } from "jotai";
 import { FragmentStep } from "../../components/FragmentStep";
 import { GemReward } from "../../components/ItemReward";
 import { SectionHolder } from "../../components/SectionHolder";
@@ -7,10 +8,9 @@ import { gemProgressFamily } from "../../state/gem-progress";
 import { routeSelector } from "../../state/route";
 import { routeProgressFamily } from "../../state/route-progress";
 import type { ReactNode } from "react";
-import { useRecoilValue } from "recoil";
 
 export default function RoutesContainer() {
-  const route = useRecoilValue(routeSelector);
+  const route = useAtomValue(routeSelector);
 
   const items: ReactNode[] = [];
   for (let sectionIndex = 0; sectionIndex < route.length; sectionIndex++) {
@@ -24,7 +24,7 @@ export default function RoutesContainer() {
         taskItems.push({
           key: stepIndex,
           isCompletedState: routeProgressFamily(
-            [sectionIndex, stepIndex].toString()
+            [sectionIndex, stepIndex].toString(),
           ),
           children: <FragmentStep key={stepIndex} step={step} />,
         });
@@ -45,7 +45,11 @@ export default function RoutesContainer() {
     }
 
     items.push(
-      <SectionHolder key={sectionIndex} name={section.name} items={taskItems} />
+      <SectionHolder
+        key={sectionIndex}
+        name={section.name}
+        items={taskItems}
+      />,
     );
   }
 

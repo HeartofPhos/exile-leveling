@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 import classNames from "classnames";
 import * as d3 from "d3";
 import { useEffect, useMemo, useState } from "react";
-import useResizeObserver, { type ObservedSize } from "use-resize-observer";
+import useResizeObserver from "@react-hook/resize-observer";
 
 export interface ViewportProps {
   intialFocus: Rect;
@@ -52,10 +52,7 @@ export function Viewport({
 }: ViewportProps) {
   const [viewportRef, setViewportRef] = useState<HTMLDivElement | null>(null);
   const [worldRef, setWorldRef] = useState<HTMLDivElement | null>(null);
-  const [prevSize, setPrevSize] = useState<ObservedSize>({
-    width: undefined,
-    height: undefined,
-  });
+  const [prevSize, setPrevSize] = useState<ResizeObserverSize | null>(null);
 
   const [getTransform, setTransform] = useMemo(() => {
     if (viewportRef === null || worldRef === null) return [];
@@ -68,7 +65,7 @@ export function Viewport({
       .on("zoom", ({ transform }) => {
         worldSelection.style(
           "transform",
-          `translate(${transform.x}px, ${transform.y}px) scale(${transform.k})`
+          `translate(${transform.x}px, ${transform.y}px) scale(${transform.k})`,
         );
       });
 
@@ -85,44 +82,49 @@ export function Viewport({
     return [getTransform, setTransform];
   }, [viewportRef, worldRef]);
 
-  useResizeObserver({
-    ref: viewportRef,
-    onResize: (size) => {
-      setPrevSize(size);
-      if (prevSize.width === undefined || prevSize.height === undefined) return;
-      if (size.width === undefined || size.height === undefined) return;
-      if (getTransform === undefined || setTransform === undefined) return;
+  useResizeObserver(viewportRef, (entry) => {
+    const size = entry.contentBoxSize.at(0) ?? null;
+    setPrevSize(size);
 
-      switch (resizeHandling) {
-        case "clip":
-          {
-            const dw = prevSize.width - size.width;
-            const dh = prevSize.height - size.height;
+    if (size === null) return;
+    if (prevSize === null) return;
+    if (getTransform === undefined || setTransform === undefined) return;
 
-            const { k, x, y } = getTransform();
+    const prevWidth = prevSize.inlineSize;
+    const prevHeight = prevSize.blockSize;
 
-            setTransform(k, x - dw * ANCHOR.x, y - dh * ANCHOR.y);
-          }
-          break;
-        case "contain":
-          {
-            const { k, x, y } = getTransform();
+    const currWidth = size.inlineSize;
+    const currHeight = size.blockSize;
 
-            const { newScale, newPos } = containRect(
-              { width: size.width, height: size.height },
-              {
-                x: -x / k,
-                y: -y / k,
-                width: prevSize.width / k,
-                height: prevSize.height / k,
-              }
-            );
+    switch (resizeHandling) {
+      case "clip":
+        {
+          const dw = prevWidth - currWidth;
+          const dh = prevHeight - currHeight;
 
-            setTransform(newScale, newPos.x, newPos.y);
-          }
-          break;
-      }
-    },
+          const { k, x, y } = getTransform();
+
+          setTransform(k, x - dw * ANCHOR.x, y - dh * ANCHOR.y);
+        }
+        break;
+      case "contain":
+        {
+          const { k, x, y } = getTransform();
+
+          const { newScale, newPos } = containRect(
+            { width: currWidth, height: currHeight },
+            {
+              x: -x / k,
+              y: -y / k,
+              width: prevWidth / k,
+              height: prevHeight / k,
+            },
+          );
+
+          setTransform(newScale, newPos.x, newPos.y);
+        }
+        break;
+    }
   });
 
   useEffect(() => {

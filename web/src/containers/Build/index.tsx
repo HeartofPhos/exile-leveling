@@ -1,3 +1,4 @@
+import { useAtom } from "jotai";
 import { BuildImportForm } from "../../components/BuildImportForm";
 import { BuildInfoForm } from "../../components/BuildInfoForm";
 import { ConfigForm } from "../../components/ConfigForm";
@@ -11,25 +12,15 @@ import { pobCodeAtom } from "../../state/pob-code";
 import { buildTreesSelector } from "../../state/tree/build-tree";
 import { formStyles } from "../../styles";
 import classNames from "classnames";
-import { useRecoilState, useResetRecoilState } from "recoil";
+import { RESET } from "jotai/utils";
 
 export default function BuildContainer() {
-  const [config, setConfig] = useRecoilState(configSelector);
-
-  const [buildData, setBuildData] = useRecoilState(buildDataSelector);
-  const resetBuildData = useResetRecoilState(buildDataSelector);
-
-  const [requiredGems, setRequiredGems] = useRecoilState(requiredGemsSelector);
-  const resetRequiredGems = useResetRecoilState(requiredGemsSelector);
-
-  const [, setBuildTreesSelector] = useRecoilState(buildTreesSelector);
-  const resetBuildTreesSelector = useResetRecoilState(buildTreesSelector);
-
-  const [, setGemLinks] = useRecoilState(gemLinksSelector);
-  const resetGemLinks = useResetRecoilState(gemLinksSelector);
-
-  const [, setPobCode] = useRecoilState(pobCodeAtom);
-  const resetPobCode = useResetRecoilState(pobCodeAtom);
+  const [config, setConfig] = useAtom(configSelector);
+  const [buildData, setBuildData] = useAtom(buildDataSelector);
+  const [requiredGems, setRequiredGems] = useAtom(requiredGemsSelector);
+  const [, setBuildTreesSelector] = useAtom(buildTreesSelector);
+  const [, setGemLinks] = useAtom(gemLinksSelector);
+  const [, setPobCode] = useAtom(pobCodeAtom);
 
   return (
     <div>
@@ -58,11 +49,11 @@ export default function BuildContainer() {
             setPobCode(pobCode);
           }}
           onReset={() => {
-            resetBuildData();
-            resetRequiredGems();
-            resetBuildTreesSelector();
-            resetGemLinks();
-            resetPobCode();
+            setBuildData(RESET);
+            setRequiredGems(RESET);
+            setBuildTreesSelector(RESET);
+            setGemLinks(RESET);
+            setPobCode(RESET);
           }}
         />
       </div>

@@ -23,7 +23,7 @@ export function Modal(props: ReactModal.Props & ModalSizeProps) {
 interface TextModalProps extends ModalSizeProps {
   label: string;
   isOpen: boolean;
-  onSubmit: (value: string | undefined) => void;
+  onSubmit: (value: string | null) => void;
   onRequestClose: () => void;
 }
 
@@ -34,10 +34,10 @@ export function TextModal({
   onRequestClose,
   size,
 }: TextModalProps) {
-  const valueRef = useRef<string>();
+  const valueRef = useRef<string>(null);
 
   useEffect(() => {
-    if (!isOpen) valueRef.current = undefined;
+    if (!isOpen) valueRef.current = null;
   }, [isOpen]);
 
   return (

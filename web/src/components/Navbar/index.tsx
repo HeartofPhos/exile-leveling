@@ -1,9 +1,9 @@
-import { useClearGemProgress } from "../../state/gem-progress";
+import { useAtomValue } from "jotai";
 import { pobCodeAtom } from "../../state/pob-code";
 import { routeSelector } from "../../state/route";
 import { routeFilesSelector } from "../../state/route-files";
-import { useClearRouteProgress } from "../../state/route-progress";
-import { useClearCollapseProgress } from "../../state/section-collapse";
+import { clearRouteProgress } from "../../state/route-progress";
+import { clearCollapseProgress } from "../../state/section-collapse";
 import { borderListStyles, interactiveStyles } from "../../styles";
 import { trackEvent } from "../../utility/telemetry";
 import styles from "./styles.module.css";
@@ -19,7 +19,8 @@ import {
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { useRecoilCallback, useRecoilValue } from "recoil";
+import { useAtomCallback } from "jotai/utils";
+import { clearGemProgress } from "../../state/gem-progress";
 
 interface NavbarItemProps {
   label: string;
@@ -51,25 +52,24 @@ export function Navbar({}: NavbarProps) {
   const [navExpand, setNavExpand] = useState<boolean>(false);
   const navigate = useNavigate();
 
-  const clipboardRoute = useRecoilCallback(
-    ({ snapshot }) =>
-      async () => {
-        const route = await snapshot.getPromise(routeSelector);
-        const pobCode = await snapshot.getPromise(pobCodeAtom);
+  const clipboardRoute = useAtomCallback(async (get) => {
+    const route = await get(routeSelector);
+    const pobCode = get(pobCodeAtom);
 
-        const output =
-          pobCode === null
-            ? [...route, `pob-code:none`]
-            : [...route, `pob-code:${pobCode}`];
-        navigator.clipboard.writeText(JSON.stringify(output));
-      },
-    []
-  );
-  const clearRouteProgress = useClearRouteProgress();
-  const clearGemProgress = useClearGemProgress();
-  const clearCollapseProgress = useClearCollapseProgress();
+    const output =
+      pobCode === null
+        ? [...route, `pob-code:none`]
+        : [...route, `pob-code:${pobCode}`];
+    navigator.clipboard.writeText(JSON.stringify(output));
+  });
 
-  const routeFiles = useRecoilValue(routeFilesSelector);
+  const reset = useAtomCallback((_get, set) => {
+    clearRouteProgress(set);
+    clearGemProgress(set);
+    clearCollapseProgress(set);
+  });
+
+  const routeFiles = useAtomValue(routeFilesSelector);
 
   return (
     <div
@@ -87,7 +87,7 @@ export function Navbar({}: NavbarProps) {
             aria-label="Menu"
             className={classNames(
               styles.navIcon,
-              interactiveStyles.activePrimary
+              interactiveStyles.activePrimary,
             )}
             display="block"
           />
@@ -147,10 +147,7 @@ export function Navbar({}: NavbarProps) {
               expand={navExpand}
               icon={<FaUndoAlt className={classNames("inlineIcon")} />}
               onClick={() => {
-                clearRouteProgress();
-                clearGemProgress();
-                clearCollapseProgress();
-
+                reset();
                 setNavExpand(false);
               }}
             />
@@ -173,7 +170,7 @@ export function Navbar({}: NavbarProps) {
                 window
                   .open(
                     "https://github.com/HeartofPhos/exile-leveling",
-                    "_blank"
+                    "_blank",
                   )
                   ?.focus();
                 setNavExpand(false);

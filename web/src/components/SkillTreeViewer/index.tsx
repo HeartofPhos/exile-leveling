@@ -12,7 +12,7 @@ import {
 } from "./url-tree-delta";
 import classNames from "classnames";
 import type { SkillTree } from "common";
-import React from "react";
+import React, { type JSX } from "react";
 import { useEffect, useRef, useState } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 
@@ -59,7 +59,7 @@ export function SkillTreeViewer({ urlTrees }: SkillTreeViewerProps) {
       const urlTreeDelta = buildUrlTreeDelta(
         currentTree,
         previousTree,
-        skillTree
+        skillTree,
       );
 
       const bounds = calculateBounds(
@@ -67,7 +67,7 @@ export function SkillTreeViewer({ urlTrees }: SkillTreeViewerProps) {
         urlTreeDelta.nodesAdded,
         urlTreeDelta.nodesRemoved,
         nodes,
-        viewBox
+        viewBox,
       );
 
       const style = compiledStyle({
@@ -111,20 +111,28 @@ export function SkillTreeViewer({ urlTrees }: SkillTreeViewerProps) {
     if (svgDivRef.current === null) return;
     if (renderData === undefined) return;
 
-    for (const nodeId of Object.keys(renderData.nodes)) {
-      const element = svgDivRef.current.querySelector<SVGTitleElement>(
-        `#n${nodeId}`
-      );
-      if (element === null) continue;
-
-      element.addEventListener("pointerenter", () => {
-        setTooltipNodeId(nodeId);
-      });
-
-      element.addEventListener("pointerleave", () => {
+    const handleEnter = (ev: PointerEvent) => {
+      const target = ev.target as SVGElement | null;
+      if (target !== null && target.id.startsWith("n")) {
+        setTooltipNodeId(target.id.slice(1));
+      }
+    };
+    const handleLeave = (ev: PointerEvent) => {
+      const target = ev.target as SVGElement | null;
+      if (target !== null && /n\d+/.test(target.id)) {
         setTooltipNodeId(null);
-      });
-    }
+      }
+    };
+
+    svgDivRef.current.addEventListener("pointerover", handleEnter);
+    svgDivRef.current.addEventListener("pointerout", handleLeave);
+
+    return () => {
+      if (svgDivRef.current === null) return;
+
+      svgDivRef.current.removeEventListener("pointerover", handleEnter);
+      svgDivRef.current.removeEventListener("pointerout", handleLeave);
+    };
   }, [svgDivRef, renderData]);
 
   return (
@@ -185,6 +193,7 @@ interface NodeTooltipProps {
   nodeId: keyof SkillTree.NodeLookup;
   masteries: Record<string, string>;
 }
+
 function NodeTooltip({
   skillTree,
   nodes,

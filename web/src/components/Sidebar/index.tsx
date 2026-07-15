@@ -1,3 +1,4 @@
+import { useAtomValue } from "jotai";
 import { gemLinksSelector } from "../../state/gem-links";
 import { searchStringsSelector } from "../../state/search-strings";
 import { urlTreesSelector } from "../../state/tree/url-tree";
@@ -12,7 +13,7 @@ import React from "react";
 import { FaLink, FaListUl } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight, FiSearch } from "react-icons/fi";
 import { TbHierarchy } from "react-icons/tb";
-import { useRecoilValue } from "recoil";
+import flattenChildren from "react-keyed-flatten-children";
 
 export function Sidebar() {
   const [expand, setExpand] = useState(true);
@@ -35,7 +36,7 @@ export function Sidebar() {
           [styles.expand]: expand,
         })}
       >
-        {React.Children.toArray(
+        {flattenChildren(
           sections.map((v, i) => (
             <>
               {activeTab === -1 && i > 0 && <hr />}
@@ -47,7 +48,7 @@ export function Sidebar() {
                 {v.content}
               </div>
             </>
-          ))
+          )),
         )}
       </div>
     </div>
@@ -60,9 +61,9 @@ interface Section {
 }
 
 function useSections() {
-  const searchStrings = useRecoilValue(searchStringsSelector);
-  const { urlTrees } = useRecoilValue(urlTreesSelector);
-  const gemLinks = useRecoilValue(gemLinksSelector);
+  const searchStrings = useAtomValue(searchStringsSelector);
+  const urlTrees = useAtomValue(urlTreesSelector);
+  const gemLinks = useAtomValue(gemLinksSelector);
 
   return useMemo(() => {
     const sections: { tab: React.ReactNode; content: React.ReactNode }[] = [];
@@ -128,7 +129,7 @@ function Header({
               key={i}
               className={classNames(
                 styles.tab,
-                interactiveStyles.activeSecondary
+                interactiveStyles.activeSecondary,
               )}
               onClick={() => {
                 onActiveTab(i);
@@ -141,7 +142,7 @@ function Header({
             className={classNames(
               styles.tab,
               styles.all,
-              interactiveStyles.activeSecondary
+              interactiveStyles.activeSecondary,
             )}
             onClick={() => {
               onActiveTab(-1);

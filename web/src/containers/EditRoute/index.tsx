@@ -1,16 +1,16 @@
+import { useAtom } from "jotai";
 import { RouteEditor } from "../../components/RouteEditor";
 import { routeFilesSelector } from "../../state/route-files";
-import { useRecoilState, useResetRecoilState } from "recoil";
+import { RESET } from "jotai/utils";
 
 export default function EditRouteContainer() {
-  const [routeFiles, setRouteFiles] = useRecoilState(routeFilesSelector);
-  const resetRouteFiles = useResetRecoilState(routeFilesSelector);
+  const [routeFiles, setRouteFiles] = useAtom(routeFilesSelector);
 
   return (
     <RouteEditor
       routeFiles={routeFiles}
       onSubmit={(routeFiles) => setRouteFiles(routeFiles)}
-      onReset={() => resetRouteFiles()}
+      onReset={() => setRouteFiles(RESET)}
     />
   );
 }

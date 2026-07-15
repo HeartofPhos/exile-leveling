@@ -1,6 +1,6 @@
-import { persistentStorageEffect } from ".";
-import { NO_MIGRATORS, getPersistent } from "../utility";
-import { atom, selector } from "recoil";
+import { atomWithStorage } from "jotai/utils";
+import { versionedStorage } from ".";
+import { atom } from "jotai";
 
 const SEARCH_STRINGS_VERSION = 0;
 
@@ -9,38 +9,31 @@ export interface SearchString {
   alias?: string;
 }
 
-export const searchStringsAtom = atom<string[] | null>({
-  key: "searchStringsAtom",
-  default: getPersistent(
-    "search-strings",
-    SEARCH_STRINGS_VERSION,
-    NO_MIGRATORS
-  ),
-  effects: [persistentStorageEffect("search-strings", SEARCH_STRINGS_VERSION)],
-});
+export const searchStringsAtom = atomWithStorage<string[] | null>(
+  "search-strings",
+  null,
+  versionedStorage(SEARCH_STRINGS_VERSION),
+);
 
-export const searchStringsSelector = selector({
-  key: "searchStringsSelector",
-  get: async ({ get }) => {
-    const rawSearchStrings = get(searchStringsAtom);
-    if (!rawSearchStrings) return null;
+export const searchStringsSelector = atom((get) => {
+  const rawSearchStrings = get(searchStringsAtom);
+  if (!rawSearchStrings) return null;
 
-    let alias: string | undefined = undefined;
-    let searchStrings: SearchString[] = [];
-    for (let i = 0; i < rawSearchStrings.length; i++) {
-      const line = rawSearchStrings[i];
-      if (line.startsWith("#")) {
-        alias = line.substring(1).trim();
-      } else if (/\S/.test(line)) {
-        searchStrings.push({
-          text: line.trim(),
-          alias: alias,
-        });
+  let alias: string | undefined = undefined;
+  let searchStrings: SearchString[] = [];
+  for (let i = 0; i < rawSearchStrings.length; i++) {
+    const line = rawSearchStrings[i];
+    if (line.startsWith("#")) {
+      alias = line.substring(1).trim();
+    } else if (/\S/.test(line)) {
+      searchStrings.push({
+        text: line.trim(),
+        alias: alias,
+      });
 
-        alias = undefined;
-      }
+      alias = undefined;
     }
+  }
 
-    return searchStrings;
-  },
+  return searchStrings;
 });

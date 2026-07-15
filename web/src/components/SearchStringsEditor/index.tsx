@@ -1,17 +1,17 @@
+import { useAtom } from "jotai";
 import { searchStringsAtom } from "../../state/search-strings";
 import { formStyles } from "../../styles";
 import { CodeEditor } from "../CodeEditor";
 import styles from "./styles.module.css";
 import classNames from "classnames";
 import { type Grammar } from "prismjs";
-import { useRecoilState } from "recoil";
 
 const SearchStringGrammar: Grammar = {
   comment: /#.*/,
 };
 
 export function SearchStringsEditor() {
-  const [searchStrings, setSearchStrings] = useRecoilState(searchStringsAtom);
+  const [searchStrings, setSearchStrings] = useAtom(searchStringsAtom);
 
   return (
     <div className={classNames(formStyles.formRow)}>

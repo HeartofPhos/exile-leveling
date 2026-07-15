@@ -1,33 +1,16 @@
-import { persistentStorageEffect } from ".";
-import { NO_MIGRATORS, getPersistent } from "../utility";
+import { versionedStorage } from ".";
 import type { RouteData } from "common";
-import { DefaultValue } from "recoil";
-import { atom, selector } from "recoil";
+import { atomWithStorage } from "jotai/utils";
 
 const BUILD_DATA_VERSION = 3;
 
-const buildDataAtom = atom<RouteData.BuildData | null>({
-  key: "buildDataAtom",
-  default: getPersistent("build-data", BUILD_DATA_VERSION, NO_MIGRATORS),
-  effects: [persistentStorageEffect("build-data", BUILD_DATA_VERSION)],
-});
-
-export const buildDataSelector = selector<RouteData.BuildData>({
-  key: "buildDataSelector",
-  get: ({ get }) => {
-    let value = get(buildDataAtom);
-    if (value === null)
-      value = {
-        characterClass: "None",
-        bandit: "Alira",
-        leagueStart: true,
-        library: true,
-      };
-
-    return value;
+export const buildDataSelector = atomWithStorage<RouteData.BuildData>(
+  "build-data",
+  {
+    characterClass: "None",
+    bandit: "Alira",
+    leagueStart: true,
+    library: true,
   },
-  set: ({ set }, newValue) => {
-    const value = newValue instanceof DefaultValue ? null : newValue;
-    set(buildDataAtom, value);
-  },
-});
+  versionedStorage(BUILD_DATA_VERSION),
+);
