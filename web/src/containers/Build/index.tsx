@@ -13,6 +13,7 @@ import { buildTreesSelector } from "../../state/tree/build-tree";
 import { formStyles } from "../../styles";
 import classNames from "classnames";
 import { RESET } from "jotai/utils";
+import { gemProgressFamily } from "../../state/gem-progress";
 
 export default function BuildContainer() {
   const [config, setConfig] = useAtom(configSelector);
@@ -21,6 +22,7 @@ export default function BuildContainer() {
   const [, setBuildTreesSelector] = useAtom(buildTreesSelector);
   const [, setGemLinks] = useAtom(gemLinksSelector);
   const [, setPobCode] = useAtom(pobCodeAtom);
+  const [, clearGemProgress] = useAtom(gemProgressFamily.clear);
 
   return (
     <div>
@@ -44,6 +46,7 @@ export default function BuildContainer() {
           onSubmit={(pobData, pobCode) => {
             setBuildData(pobData.buildData);
             setRequiredGems(pobData.requiredGems);
+            clearGemProgress();
             setBuildTreesSelector(pobData.buildTrees);
             setGemLinks(pobData.gemLinks);
             setPobCode(pobCode);
@@ -51,6 +54,7 @@ export default function BuildContainer() {
           onReset={() => {
             setBuildData(RESET);
             setRequiredGems(RESET);
+            clearGemProgress();
             setBuildTreesSelector(RESET);
             setGemLinks(RESET);
             setPobCode(RESET);

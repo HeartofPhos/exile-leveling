@@ -6,15 +6,19 @@ import {
   setPersistent,
 } from "../utility";
 import { atom, type WritableAtom } from "jotai";
-import { atomFamily } from "jotai-family";
+import { atomFamily, type AtomFamily } from "jotai-family";
+
+type ClearableAtomFamily = AtomFamily<
+  string,
+  WritableAtom<boolean, [newValue: boolean], void>
+> & {
+  clear: WritableAtom<null, [], void>;
+};
 
 export const buildToggleState = (
   version: number,
   key: string,
-): [
-  (key: string) => WritableAtom<boolean, [newValue: boolean], void>,
-  (set: Setter) => void,
-] => {
+): ClearableAtomFamily => {
   const toggleState = new Set<string>(
     getPersistent<string[]>(key, version, NO_MIGRATORS),
   );
@@ -24,8 +28,8 @@ export const buildToggleState = (
     set(refreshAtom, (prev) => prev + 1);
   }
 
-  const toggleFamily = atomFamily((param: string) =>
-    atom(
+  const toggleFamily = atomFamily((param: string) => {
+    return atom(
       (get) => {
         get(refreshAtom);
         return toggleState.has(param);
@@ -39,15 +43,15 @@ export const buildToggleState = (
 
         refresh(set);
       },
-    ),
-  );
+    );
+  });
 
-  const clearToggle = (set: Setter) => {
+  const clearAtom = atom(null, (_get, set) => {
     toggleState.clear();
     setPersistent(key, version, null);
 
     refresh(set);
-  };
+  });
 
-  return [toggleFamily, clearToggle];
+  return Object.assign(toggleFamily, { clear: clearAtom });
 };

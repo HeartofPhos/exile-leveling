@@ -1,5 +1,5 @@
 import { atomWithStorage, RESET } from "jotai/utils";
-import { clearGemProgress } from "./gem-progress";
+import { gemProgressFamily } from "./gem-progress";
 import type { RouteData } from "common";
 import { atom } from "jotai";
 import { versionedStorage } from ".";
@@ -20,7 +20,7 @@ export const requiredGemsSelector = atom(
     set(requiredGemsAtom, newValue);
 
     if (newValue === RESET) {
-      clearGemProgress(set);
+      set(gemProgressFamily.clear);
     }
   },
 );

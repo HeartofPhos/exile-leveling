@@ -2,8 +2,6 @@ import { useAtomValue } from "jotai";
 import { pobCodeAtom } from "../../state/pob-code";
 import { routeSelector } from "../../state/route";
 import { routeFilesSelector } from "../../state/route-files";
-import { clearRouteProgress } from "../../state/route-progress";
-import { clearCollapseProgress } from "../../state/section-collapse";
 import { borderListStyles, interactiveStyles } from "../../styles";
 import { trackEvent } from "../../utility/telemetry";
 import styles from "./styles.module.css";
@@ -20,7 +18,9 @@ import {
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useAtomCallback } from "jotai/utils";
-import { clearGemProgress } from "../../state/gem-progress";
+import { gemProgressFamily } from "../../state/gem-progress";
+import { routeProgressFamily } from "../../state/route-progress";
+import { sectionCollapseFamily } from "../../state/section-collapse";
 
 interface NavbarItemProps {
   label: string;
@@ -64,9 +64,9 @@ export function Navbar({}: NavbarProps) {
   });
 
   const reset = useAtomCallback((_get, set) => {
-    clearRouteProgress(set);
-    clearGemProgress(set);
-    clearCollapseProgress(set);
+    set(routeProgressFamily.clear);
+    set(gemProgressFamily.clear);
+    set(sectionCollapseFamily.clear);
   });
 
   const routeFiles = useAtomValue(routeFilesSelector);
