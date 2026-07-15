@@ -117,11 +117,8 @@ export function SkillTreeViewer({ urlTrees }: SkillTreeViewerProps) {
         setTooltipNodeId(target.id.slice(1));
       }
     };
-    const handleLeave = (ev: PointerEvent) => {
-      const target = ev.target as SVGElement | null;
-      if (target !== null && /n\d+/.test(target.id)) {
-        setTooltipNodeId(null);
-      }
+    const handleLeave = (_ev: PointerEvent) => {
+      setTooltipNodeId(null);
     };
 
     svgDivRef.current.addEventListener("pointerover", handleEnter);
