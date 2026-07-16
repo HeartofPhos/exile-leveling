@@ -15,9 +15,7 @@ interface StepProps {
 
 export function FragmentStep({ step }: StepProps) {
   const config = useAtomValue(configSelector);
-  const [showSubSteps, setShowSubSteps] = useState(
-    config.showSubsteps && step.subSteps.length > 0,
-  );
+  const [showSubSteps, setShowSubSteps] = useState(config.showSubsteps);
 
   const headNodes: React.ReactNode[] = [];
   const tailNodes: React.ReactNode[] = [];
@@ -61,7 +59,7 @@ export function FragmentStep({ step }: StepProps) {
       ) : (
         <span>{flattenChildren(headNodes)}</span>
       )}
-      {showSubSteps && (
+      {showSubSteps && step.subSteps.length > 0 && (
         <>
           <hr />
           {flattenChildren(
