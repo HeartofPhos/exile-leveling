@@ -1,5 +1,27 @@
+import type { WritableAtom } from "jotai";
+import { atomFamily, type AtomFamily } from "jotai-family";
 import { createJSONStorage } from "jotai/utils";
 import type { SyncStorage } from "jotai/vanilla/utils/atomWithStorage";
+
+export function transientAtomFamily<
+  Param,
+  AtomType extends WritableAtom<any, any[], any>,
+>(
+  initializeAtom: (param: Param) => AtomType,
+  areEqual?: (a: Param, b: Param) => boolean,
+): AtomFamily<Param, AtomType> {
+  const family = atomFamily((param: Param) => {
+    const atom = initializeAtom(param);
+    // TODO handle cleanup
+    // atom.onMount = () => {
+    //   return () => family.remove(param);
+    // };
+
+    return atom;
+  }, areEqual);
+
+  return family;
+}
 
 export function versionedStorage<T>(version: number): SyncStorage<T> {
   interface Entry {

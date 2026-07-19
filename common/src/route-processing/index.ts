@@ -1,5 +1,5 @@
 import { Data } from "../data.js";
-import type { GameData, RouteData } from "../types.js";
+import type { Fragments, GameData, RouteData } from "../types.js";
 import { parseFragments } from "./fragment/index.js";
 import { type Pattern, matchPatterns } from "./patterns.js";
 import { ScopedLogger } from "./scoped-logger.js";
@@ -57,9 +57,11 @@ export interface RouteState {
   preprocessorDefinitions: Set<string>;
 }
 
+type PartialFragmentStep = Omit<RouteData.FragmentStep, "edgeIndex">;
+
 interface ParseContext {
   state: RouteState;
-  section: RouteData.Section;
+  push: (step: PartialFragmentStep, isSubstep: boolean) => void;
   conditionalStack: boolean[];
   logger: ScopedLogger;
 }
@@ -110,7 +112,7 @@ const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
   // SubStep
   {
     regex: /^( *)#sub *(.*)/g,
-    processor: (match, { state, section, conditionalStack, logger }) => {
+    processor: (match, { state, push, conditionalStack, logger }) => {
       const evaluateLine =
         conditionalStack.length == 0 ||
         conditionalStack[conditionalStack.length - 1];
@@ -119,28 +121,17 @@ const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
       const [, padding, value] = match;
       assertPadding(padding, conditionalStack.length + 1, logger);
 
-      const prevStep =
-        section.steps.length > 0
-          ? section.steps[section.steps.length - 1]
-          : null;
-
-      if (prevStep === null) {
-        logger.warn("substep expected step");
-        return false;
-      }
-
-      if (prevStep.type !== "fragment_step") {
-        logger.warn("substep expected fragment_step");
-        return false;
-      }
-
       const fragments = parseFragments(value.trim(), state, logger);
-      if (fragments.length > 0)
-        prevStep.subSteps.push({
-          type: "fragment_step",
-          parts: fragments,
-          subSteps: [],
-        });
+      if (fragments.length > 0) {
+        push(
+          {
+            type: "fragment_step",
+            parts: fragments,
+            subSteps: [],
+          },
+          true,
+        );
+      }
 
       return false;
     },
@@ -148,7 +139,7 @@ const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
   // FragmentStep
   {
     regex: /^( *)(.*)/g,
-    processor: (match, { state, section, conditionalStack, logger }) => {
+    processor: (match, { state, push, conditionalStack, logger }) => {
       const evaluateLine =
         conditionalStack.length == 0 ||
         conditionalStack[conditionalStack.length - 1];
@@ -159,11 +150,14 @@ const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
 
       const fragments = parseFragments(value.trim(), state, logger);
       if (fragments.length > 0)
-        section.steps.push({
-          type: "fragment_step",
-          parts: fragments,
-          subSteps: [],
-        });
+        push(
+          {
+            type: "fragment_step",
+            parts: fragments,
+            subSteps: [],
+          },
+          false,
+        );
 
       return false;
     },
@@ -179,17 +173,21 @@ function assertPadding(text: string, depth: number, logger: ScopedLogger) {
 
   if (actualPadding !== expectedPadding)
     logger.warn(
-      `expected ${expectedPadding} whitespace, found ${actualPadding}`
+      `expected ${expectedPadding} whitespace, found ${actualPadding}`,
     );
 }
 
 export function parseRoute(
   routeFiles: RouteData.RouteFile[],
-  state: RouteState
+  state: RouteState,
 ) {
   const logger = new ScopedLogger();
 
-  const route: RouteData.Route = [];
+  const route: RouteData.Route = { sections: [], edges: [state.currentAreaId] };
+
+  let prev: { step: RouteData.FragmentStep; area: GameData.Area["id"] } | null =
+    null;
+
   for (const routeFile of routeFiles) {
     const routeLines = routeFile.contents.split(/\r\n|\r|\n/g);
 
@@ -197,13 +195,42 @@ export function parseRoute(
       name: routeFile.name,
       steps: [],
     };
-    route.push(section);
+    route.sections.push(section);
 
     logger.pushScope(section.name);
 
     const context: ParseContext = {
       state,
-      section,
+      push: (partialStep, isSubstep) => {
+        const step: RouteData.FragmentStep = {
+          ...partialStep,
+          edgeIndex: null,
+        };
+
+        let steps;
+        if (isSubstep) {
+          if (prev === null) {
+            logger.warn("substep expected step");
+            return;
+          }
+          if (prev.step.type !== "fragment_step") {
+            logger.warn("substep expected fragment_step");
+            return;
+          }
+
+          steps = prev.step.subSteps;
+        } else {
+          if (prev !== null && prev.area !== state.currentAreaId) {
+            step.edgeIndex = route.edges.length;
+            route.edges.push(state.currentAreaId);
+          }
+
+          prev = { step: step, area: state.currentAreaId };
+          steps = section.steps;
+        }
+
+        steps.push(step);
+      },
       conditionalStack: [],
       logger,
     };
@@ -232,8 +259,13 @@ export function parseRoute(
     const area = Data.Areas[key];
     if (area.crafting_recipes.length > 0 && !state.craftingAreas.has(area.id))
       logger.warn(
-        `missing crafting area ${area.id}, ${area.crafting_recipes.join(", ")}`
+        `missing crafting area ${area.id}, ${area.crafting_recipes.join(", ")}`,
       );
+  }
+
+  let firstStep = route.sections[0].steps[0];
+  if (firstStep.type === "fragment_step") {
+    firstStep.edgeIndex = 0;
   }
 
   logger.drain(console);

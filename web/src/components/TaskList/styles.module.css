@@ -6,6 +6,27 @@
 .listItem {
   display: flex;
   width: 100%;
+  scroll-margin: calc(var(--navbar-height) * 2);
+}
+
+.edgeTag {
+  height: var(--line-height);
+  font-weight: var(--font-heavy);
+  width: 1em;
+  cursor: pointer;
+}
+
+.edgeTag:first-child{
+  margin-right: var(--size-3);
+}
+
+.edgeTag:last-child{
+  margin-left: var(--size-3);
+}
+
+.listItemInner {
+  display: flex;
+  width: 100%;
   text-align: left;
   padding: var(--size-3);
 }

@@ -56,10 +56,7 @@ export function Navbar({}: NavbarProps) {
     const route = await get(routeSelector);
     const pobCode = get(pobCodeAtom);
 
-    const output =
-      pobCode === null
-        ? [...route, `pob-code:none`]
-        : [...route, `pob-code:${pobCode}`];
+    const output = [...route.sections, `pob-code:${pobCode ?? "none"}`];
     navigator.clipboard.writeText(JSON.stringify(output));
   });
 

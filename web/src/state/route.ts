@@ -4,6 +4,7 @@ import { configSelector } from "./config";
 import { requiredGemsSelector } from "./gem";
 import { routeFilesSelector } from "./route-files";
 import type { RouteData } from "common";
+import { transientAtomFamily } from ".";
 
 const baseRouteSelector = atom(async (get) => {
   const { initializeRouteState, parseRoute } = await import("common");
@@ -48,19 +49,19 @@ export const routeSelector = atom(async (get) => {
 
   if (requiredGems.length == 0) return baseRoute;
 
-  const route: RouteData.Route = [];
+  const route: RouteData.Route = { sections: [], edges: baseRoute.edges };
   const questGems: Set<number> = new Set();
   const vendorGems: Set<number> = new Set();
 
   findCharacterGems(buildData, requiredGems, questGems);
 
-  for (const section of baseRoute) {
-    const buildSection: RouteData.Section = {
-      name: section.name,
+  for (const baseSection of baseRoute.sections) {
+    const section: RouteData.Section = {
+      name: baseSection.name,
       steps: [],
     };
 
-    for (const baseStep of section.steps) {
+    for (const baseStep of baseSection.steps) {
       const gemSteps: RouteData.GemStep[] = [];
       if (baseStep.type != "fragment_step") continue;
 
@@ -96,12 +97,42 @@ export const routeSelector = atom(async (get) => {
           step = baseStep;
         }
 
-        buildSection.steps.push(step, ...gemSteps);
+        section.steps.push(step, ...gemSteps);
       }
     }
 
-    if (buildSection.steps.length > 0) route.push(buildSection);
+    if (section.steps.length > 0) route.sections.push(section);
   }
 
   return route;
+});
+
+const activeEdgeIndex = atom<[number]>([0]);
+export const activeEdgeAtom = atom(
+  (get) => get(activeEdgeIndex),
+  async (get, set, value: string) => {
+    const edges = (await get(routeSelector)).edges;
+    const nextEdgeIndex = get(activeEdgeAtom)[0] + 1;
+    const nextAreaId = edges[nextEdgeIndex];
+
+    let messageAreaId = null;
+    const matches = /Generating level \d+ area "(.*?)"/.exec(value);
+    if (matches !== null) {
+      messageAreaId = matches[1];
+    }
+
+    if (nextAreaId === messageAreaId) {
+      set(activeEdgeIndex, [nextEdgeIndex]);
+    }
+  },
+);
+
+export const nextEdgeAtom = transientAtomFamily((param: number | null) => {
+  if (param === null) return atom(null, () => {});
+  return atom(
+    (get) => get(activeEdgeAtom)[0] + 1 == param,
+    (_get, set) => {
+      set(activeEdgeIndex, [param]);
+    },
+  );
 });

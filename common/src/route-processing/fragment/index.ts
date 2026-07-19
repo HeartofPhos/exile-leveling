@@ -74,7 +74,7 @@ export function parseFragments(
   text: string,
   state: RouteState,
   logger: ScopedLogger,
-) {
+): Fragments.AnyFragment[] {
   const context: ParseContext = {
     state,
     fragments: [],
