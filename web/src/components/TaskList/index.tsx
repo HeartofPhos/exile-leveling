@@ -4,12 +4,17 @@ import styles from "./styles.module.css";
 import classNames from "classnames";
 import type { WritableAtom } from "jotai";
 import { FaRegCircle, FaRegPlayCircle } from "react-icons/fa";
-import { nextEdgeAtom } from "../../state/route";
+import { activeEdgeAtom, nextEdgeAtom } from "../../state/route";
+import { useEffect } from "react";
 
 interface TaskItemProps {
   children?: React.ReactNode;
   isCompletedState?: WritableAtom<boolean, [boolean], void>;
   edgeIndex: number | null;
+}
+
+function edgeId(edgeIndex: number) {
+  return `edge-${edgeIndex}`;
 }
 
 function TaskListItem({
@@ -25,7 +30,7 @@ function TaskListItem({
 
   return (
     <li
-      id={edgeIndex !== null ? `edge-${edgeIndex}` : undefined}
+      id={edgeIndex !== null ? edgeId(edgeIndex) : undefined}
       tabIndex={0}
       className={classNames(styles.listItem, borderListStyles.item, {
         [styles.completed]: isCompleted,
@@ -68,6 +73,22 @@ export interface TaskListProps {
 }
 
 export function TaskList({ items }: TaskListProps) {
+  const activeEdgeIndex = useAtomValue(activeEdgeAtom);
+
+  useEffect(() => {
+    const activeEdgeId = edgeId(activeEdgeIndex[0]);
+    const element = document.getElementById(activeEdgeId);
+    if (element)
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+        inline: "start",
+      });
+    else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [activeEdgeIndex]);
+
   return (
     <ol className={classNames(styles.list)}>
       {items &&

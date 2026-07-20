@@ -1,23 +1,9 @@
-import { useAtom } from "jotai";
+import { useSetAtom } from "jotai";
 import { useEffect } from "react";
 import { activeEdgeAtom } from "../../state/route";
 
 export function useLogListener() {
-  const [edgeIndex, write] = useAtom(activeEdgeAtom);
-
-  useEffect(() => {
-    const edgeId = `edge-${edgeIndex}`;
-    const element = document.getElementById(edgeId);
-    if (element)
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-        inline: "start",
-      });
-    else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  }, [edgeIndex]);
+  const write = useSetAtom(activeEdgeAtom);
 
   useEffect(() => {
     const socket = new WebSocket("ws://localhost:6754");
