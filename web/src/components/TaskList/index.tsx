@@ -32,19 +32,19 @@ function TaskListItem({
     <li
       id={edgeIndex !== null ? edgeId(edgeIndex) : undefined}
       tabIndex={0}
-      className={classNames(styles.listItem, borderListStyles.item, {
-        [styles.completed]: isCompleted,
-      })}
+      className={classNames(
+        styles.listItem,
+        borderListStyles.item,
+        interactiveStyles.hoverPrimary,
+        {
+          [styles.completed]: isCompleted,
+        },
+      )}
       onClick={() => {
         if (setIsCompleted) setIsCompleted(!isCompleted);
       }}
     >
-      <div
-        className={classNames(
-          styles.listItemInner,
-          interactiveStyles.hoverPrimary,
-        )}
-      >
+      <div className={classNames(styles.listItemInner)}>
         {
           <span
             aria-hidden
