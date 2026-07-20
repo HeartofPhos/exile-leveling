@@ -1,6 +1,6 @@
 import type { WritableAtom } from "jotai";
 import { atomFamily, type AtomFamily } from "jotai-family";
-import { createJSONStorage } from "jotai/utils";
+import { atomWithStorage, createJSONStorage } from "jotai/utils";
 import type { SyncStorage } from "jotai/vanilla/utils/atomWithStorage";
 
 export function transientAtomFamily<
@@ -23,7 +23,17 @@ export function transientAtomFamily<
   return family;
 }
 
-export function versionedStorage<T>(version: number): SyncStorage<T> {
+export function persistentAtom<T>(
+  key: string,
+  initialValue: T,
+  version: number,
+) {
+  return atomWithStorage(key, initialValue, versionedStorage(version), {
+    getOnInit: true,
+  });
+}
+
+function versionedStorage<T>(version: number): SyncStorage<T> {
   interface Entry {
     version: number;
     value: T;

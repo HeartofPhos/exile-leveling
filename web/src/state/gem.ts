@@ -1,15 +1,15 @@
-import { atomWithStorage, RESET } from "jotai/utils";
+import { RESET } from "jotai/utils";
 import { gemProgressFamily } from "./gem-progress";
 import type { RouteData } from "common";
 import { atom } from "jotai";
-import { versionedStorage } from ".";
+import { persistentAtom } from ".";
 
 const REQUIRED_GEMS_VERSION = 0;
 
-const requiredGemsAtom = atomWithStorage<RouteData.RequiredGem[]>(
+const requiredGemsAtom = persistentAtom<RouteData.RequiredGem[]>(
   "required-gems",
   [],
-  versionedStorage(REQUIRED_GEMS_VERSION),
+  REQUIRED_GEMS_VERSION,
 );
 
 export const requiredGemsSelector = atom(

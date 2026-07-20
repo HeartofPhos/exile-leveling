@@ -1,10 +1,9 @@
-import { atomWithStorage } from "jotai/utils";
-import { versionedStorage } from ".";
+import { persistentAtom } from ".";
 
 const POB_CODE_VERSION = 0;
 
-export const pobCodeAtom = atomWithStorage<string | null>(
+export const pobCodeAtom = persistentAtom<string | null>(
   "pob-code",
   null,
-  versionedStorage(POB_CODE_VERSION),
+  POB_CODE_VERSION,
 );

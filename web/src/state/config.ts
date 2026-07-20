@@ -1,5 +1,4 @@
-import { atomWithStorage } from "jotai/utils";
-import { versionedStorage } from ".";
+import { persistentAtom } from ".";
 
 export interface Config {
   gemsOnly: boolean;
@@ -8,11 +7,11 @@ export interface Config {
 
 const CONFIG_VERSION = 0;
 
-export const configSelector = atomWithStorage<Config>(
+export const configSelector = persistentAtom<Config>(
   "config",
   {
     gemsOnly: false,
     showSubsteps: true,
   },
-  versionedStorage(CONFIG_VERSION),
+  CONFIG_VERSION,
 );
