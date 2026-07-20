@@ -57,13 +57,11 @@ export interface RouteState {
   preprocessorDefinitions: Set<string>;
 }
 
-type PartialFragmentStep = Omit<RouteData.FragmentStep, "edgeIndex">;
-
 interface ParseContext {
   state: RouteState;
-  push: (step: PartialFragmentStep, isSubstep: boolean) => void;
   conditionalStack: boolean[];
   logger: ScopedLogger;
+  push: (fragments: Fragments.AnyFragment[], isSubstep: boolean) => void;
 }
 
 const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
@@ -122,16 +120,7 @@ const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
       assertPadding(padding, conditionalStack.length + 1, logger);
 
       const fragments = parseFragments(value.trim(), state, logger);
-      if (fragments.length > 0) {
-        push(
-          {
-            type: "fragment_step",
-            parts: fragments,
-            subSteps: [],
-          },
-          true,
-        );
-      }
+      push(fragments, true);
 
       return false;
     },
@@ -149,15 +138,7 @@ const ROUTE_PATTERNS: Pattern<ParseContext>[] = [
       assertPadding(padding, conditionalStack.length, logger);
 
       const fragments = parseFragments(value.trim(), state, logger);
-      if (fragments.length > 0)
-        push(
-          {
-            type: "fragment_step",
-            parts: fragments,
-            subSteps: [],
-          },
-          false,
-        );
+      push(fragments, false);
 
       return false;
     },
@@ -201,9 +182,15 @@ export function parseRoute(
 
     const context: ParseContext = {
       state,
-      push: (partialStep, isSubstep) => {
+      conditionalStack: [],
+      logger,
+      push: (fragments, isSubstep) => {
+        if (fragments.length == 0) return;
+
         const step: RouteData.FragmentStep = {
-          ...partialStep,
+          type: "fragment_step",
+          parts: fragments,
+          subSteps: [],
           edgeIndex: null,
         };
 
@@ -231,8 +218,6 @@ export function parseRoute(
 
         steps.push(step);
       },
-      conditionalStack: [],
-      logger,
     };
 
     for (let lineIndex = 0; lineIndex < routeLines.length; lineIndex++) {
