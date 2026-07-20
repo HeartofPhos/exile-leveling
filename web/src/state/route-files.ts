@@ -1,5 +1,5 @@
-import { atomWithStorage, RESET } from "jotai/utils";
-import { versionedStorage } from ".";
+import { RESET } from "jotai/utils";
+import { persistentAtom } from ".";
 import { globImportLazy } from "../utility";
 import { type RouteData } from "common";
 import { atom } from "jotai";
@@ -34,10 +34,10 @@ async function loadDefaultRouteFiles() {
   return getRouteFiles(routeSources);
 }
 
-const routeFilesAtom = atomWithStorage<RouteData.RouteFile[] | null>(
+const routeFilesAtom = persistentAtom<RouteData.RouteFile[] | null>(
   "route-files",
   null,
-  versionedStorage(ROUTE_PROGRESS_VERSION),
+  ROUTE_PROGRESS_VERSION,
 );
 
 export const routeFilesSelector = atom(

@@ -1,5 +1,4 @@
-import { atomWithStorage } from "jotai/utils";
-import { versionedStorage } from ".";
+import { persistentAtom } from ".";
 import { atom } from "jotai";
 
 const SEARCH_STRINGS_VERSION = 0;
@@ -9,10 +8,10 @@ export interface SearchString {
   alias?: string;
 }
 
-export const searchStringsAtom = atomWithStorage<string[] | null>(
+export const searchStringsAtom = persistentAtom<string[] | null>(
   "search-strings",
   null,
-  versionedStorage(SEARCH_STRINGS_VERSION),
+  SEARCH_STRINGS_VERSION,
 );
 
 export const searchStringsSelector = atom((get) => {

@@ -1,11 +1,10 @@
-import { atomWithStorage } from "jotai/utils";
-import { versionedStorage } from ".";
+import { persistentAtom } from ".";
 import type { RouteData } from "common";
 
 const GEM_LINKS_VERSION = 0;
 
-export const gemLinksSelector = atomWithStorage<RouteData.GemLinkGroup[]>(
+export const gemLinksSelector = persistentAtom<RouteData.GemLinkGroup[]>(
   "gem-links",
   [],
-  versionedStorage(GEM_LINKS_VERSION),
+  GEM_LINKS_VERSION,
 );
