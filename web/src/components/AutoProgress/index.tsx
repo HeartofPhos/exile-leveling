@@ -1,5 +1,5 @@
 import { useSetAtom } from "jotai";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { activeEdgeAtom } from "../../state/route";
 import { type Id, toast } from "react-toastify";
 import useWebSocket, { ReadyState } from "react-use-websocket-lite";

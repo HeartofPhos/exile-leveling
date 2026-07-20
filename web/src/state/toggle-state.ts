@@ -6,7 +6,7 @@ import {
   setPersistent,
 } from "../utility";
 import { atom, type WritableAtom } from "jotai";
-import { atomFamily, type AtomFamily } from "jotai-family";
+import { type AtomFamily } from "jotai-family";
 import { transientAtomFamily } from ".";
 
 type ClearableAtomFamily = AtomFamily<

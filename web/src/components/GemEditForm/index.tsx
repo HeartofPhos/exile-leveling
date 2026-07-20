@@ -15,6 +15,7 @@ export function GemEditForm({ requiredGems, onUpdate }: GemEditFormProps) {
   for (let i = 0; i < workingGems.length; i++) {
     const requiredGem = workingGems[i];
     taskItems.push({
+      edgeIndex: null,
       isCompletedState: gemProgressFamily(requiredGem.id),
       children: (
         <GemEdit

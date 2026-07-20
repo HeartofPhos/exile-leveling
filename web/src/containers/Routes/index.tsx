@@ -27,17 +27,17 @@ export default function RoutesContainer() {
 
         if (step.type == "fragment_step")
           taskItems.push({
+            edgeIndex: step.edgeIndex,
             isCompletedState: routeProgressFamily(
               [sectionIndex, stepIndex].toString(),
             ),
-            edgeIndex: step.edgeIndex,
             children: <FragmentStep key={stepIndex} step={step} />,
           });
 
         if (step.type == "gem_step")
           taskItems.push({
-            isCompletedState: gemProgressFamily(step.requiredGem.id),
             edgeIndex: null,
+            isCompletedState: gemProgressFamily(step.requiredGem.id),
             children: (
               <GemReward
                 key={taskItems.length}

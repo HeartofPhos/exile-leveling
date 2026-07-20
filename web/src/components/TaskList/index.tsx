@@ -8,9 +8,9 @@ import { activeEdgeAtom, nextEdgeAtom } from "../../state/route";
 import { useEffect } from "react";
 
 interface TaskItemProps {
-  children?: React.ReactNode;
-  isCompletedState?: WritableAtom<boolean, [boolean], void>;
   edgeIndex: number | null;
+  isCompletedState?: WritableAtom<boolean, [boolean], void>;
+  children?: React.ReactNode;
 }
 
 function edgeId(edgeIndex: number) {
