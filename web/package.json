@@ -28,7 +28,8 @@
     "react-modal": "^3.16.3",
     "react-router-dom": "^7.18.1",
     "react-simple-code-editor": "^0.14.1",
-    "react-toastify": "^11.1.0"
+    "react-toastify": "^11.1.0",
+    "react-use-websocket-lite": "^1.1.1"
   },
   "devDependencies": {
     "@types/d3": "^7.4.3",
