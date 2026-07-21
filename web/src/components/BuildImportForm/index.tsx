@@ -29,6 +29,12 @@ const URL_REWRITERS: UrlRewriter[] = [
     return `pobb.in/${match[1]}/raw`;
   },
   (url) => {
+    const match = /maxroll\.gg\/poe\/pob\/(.+)$/.exec(url);
+    if (!match) return null;
+
+    return `maxroll.gg/poe/api/pob/${match[1]}`;
+  },
+  (url) => {
     const match = /youtube.com\/redirect\?.+?q=(.+?)(?:&|$)/.exec(url);
     if (!match) return null;
     const redirectUrl = decodeURIComponent(match[1]);
