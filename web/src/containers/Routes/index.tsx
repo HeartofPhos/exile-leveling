@@ -1,15 +1,16 @@
-import { useAtomValue } from "jotai";
+import { useAtom, useAtomValue } from "jotai";
 import { FragmentStep } from "../../components/FragmentStep";
 import { GemReward } from "../../components/ItemReward";
 import { SectionHolder } from "../../components/SectionHolder";
 import { Sidebar } from "../../components/Sidebar";
 import type { TaskListProps } from "../../components/TaskList";
 import { gemProgressFamily } from "../../state/gem-progress";
-import { routeSelector } from "../../state/route";
+import { routeSelector, scrollToActiveEdgeEffect } from "../../state/route";
 import { routeProgressFamily } from "../../state/route-progress";
 import { useMemo, type ReactNode } from "react";
 
 export default function RoutesContainer() {
+  useAtom(scrollToActiveEdgeEffect);
   const route = useAtomValue(routeSelector);
 
   const items = useMemo(() => {
