@@ -61,6 +61,7 @@ export function App() {
         theme={"dark"}
         pauseOnFocusLoss={false}
         pauseOnHover={false}
+        newestOnTop={true}
       />
     </>
   );
