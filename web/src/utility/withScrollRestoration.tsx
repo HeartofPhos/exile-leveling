@@ -1,6 +1,6 @@
 import { atom, useAtom } from "jotai";
 import { atomFamily } from "jotai-family";
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const scrollOffsetState = atomFamily((_param: string) => atom(0));
@@ -14,7 +14,7 @@ export function withScrollRestoration<P extends {}>(
       scrollOffsetState(location.pathname),
     );
 
-    useLayoutEffect(() => {
+    useEffect(() => {
       window.scrollTo(0, scrollOffset);
 
       function handleScroll() {
