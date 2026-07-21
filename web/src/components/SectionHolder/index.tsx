@@ -19,7 +19,12 @@ export function SectionHolder({ name, items }: SectionHolderProps) {
     if (!collapsed) return;
 
     const element = document.getElementById(sectionId);
-    if (element) element.scrollIntoView({ behavior: "auto", block: "nearest" });
+    if (element)
+      element.scrollIntoView({
+        behavior: "auto",
+        block: "nearest",
+        inline: "nearest",
+      });
   };
 
   useLayoutEffect(() => {

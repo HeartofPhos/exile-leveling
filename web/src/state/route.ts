@@ -6,6 +6,7 @@ import { routeFilesSelector } from "./route-files";
 import type { RouteData } from "common";
 import { persistentAtom, transientAtomFamily } from ".";
 import { RESET } from "jotai/utils";
+import { observe } from "jotai-effect";
 
 const baseRouteSelector = atom(async (get) => {
   const { initializeRouteState, parseRoute } = await import("common");
@@ -110,6 +111,23 @@ export const routeSelector = atom(async (get) => {
 
 const ACTIVE_EDGE_VERSION = 0;
 const activeEdgeIndex = persistentAtom("active-edge", [0], ACTIVE_EDGE_VERSION);
+
+export function edgeId(edgeIndex: number) {
+  return `edge-${edgeIndex}`;
+}
+
+observe((get) => {
+  const edgeIndex = get(activeEdgeIndex);
+
+  const element = document.getElementById(edgeId(edgeIndex[0]));
+  if (element)
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+      inline: "start",
+    });
+});
+
 export const activeEdgeAtom = atom(
   (get) => get(activeEdgeIndex),
   async (get, set, value: string | typeof RESET) => {
