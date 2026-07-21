@@ -1,4 +1,4 @@
-import type { WritableAtom } from "jotai";
+import { atom, type WritableAtom } from "jotai";
 import { atomFamily, type AtomFamily } from "jotai-family";
 import { atomWithStorage, createJSONStorage } from "jotai/utils";
 import type { SyncStorage } from "jotai/vanilla/utils/atomWithStorage";

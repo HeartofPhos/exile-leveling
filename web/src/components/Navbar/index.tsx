@@ -1,5 +1,4 @@
 import { useAtomValue } from "jotai";
-import { pobCodeAtom } from "../../state/pob-code";
 import { routeSelector } from "../../state/route";
 import { routeFilesSelector } from "../../state/route-files";
 import { borderListStyles, interactiveStyles } from "../../styles";
@@ -16,10 +15,8 @@ import {
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { useAtomCallback } from "jotai/utils";
-import { gemProgressFamily } from "../../state/gem-progress";
-import { routeProgressFamily } from "../../state/route-progress";
-import { sectionCollapseFamily } from "../../state/section-collapse";
+import { RESET, useAtomCallback } from "jotai/utils";
+import { pobAtom } from "../../state/pob";
 
 interface NavbarItemProps {
   label: string;
@@ -53,16 +50,14 @@ export function Navbar({}: NavbarProps) {
 
   const clipboardRoute = useAtomCallback(async (get) => {
     const route = await get(routeSelector);
-    const pobCode = get(pobCodeAtom);
+    const pobCode = get(pobAtom);
 
     const output = [...route.sections, `pob-code:${pobCode ?? "none"}`];
     navigator.clipboard.writeText(JSON.stringify(output));
   });
 
   const reset = useAtomCallback((_get, set) => {
-    set(routeProgressFamily.clear);
-    set(gemProgressFamily.clear);
-    set(sectionCollapseFamily.clear);
+    set(pobAtom, RESET);
   });
 
   const routeFiles = useAtomValue(routeFilesSelector);
@@ -116,6 +111,15 @@ export function Navbar({}: NavbarProps) {
                 setNavExpand(false);
               }}
             />
+            <NavbarItem
+              label="Reset"
+              expand={navExpand}
+              icon={<FaUndoAlt className={classNames("inlineIcon")} />}
+              onClick={() => {
+                reset();
+                setNavExpand(false);
+              }}
+            />
             <NavAccordion label="Sections" navExpand={navExpand}>
               {routeFiles.map((x, i) => (
                 <NavbarItem
@@ -135,15 +139,6 @@ export function Navbar({}: NavbarProps) {
               icon={<FaTools className={classNames("inlineIcon")} />}
               onClick={() => {
                 navigate(`/edit-route`);
-                setNavExpand(false);
-              }}
-            />
-            <NavbarItem
-              label="Reset Progress"
-              expand={navExpand}
-              icon={<FaUndoAlt className={classNames("inlineIcon")} />}
-              onClick={() => {
-                reset();
                 setNavExpand(false);
               }}
             />

@@ -157,12 +157,12 @@ export interface PobData {
   gemLinks: RouteData.GemLinkGroup[];
 }
 
-export function processPob(pobCode: string): PobData | undefined {
+export function processPob(pobCode: string): PobData | null {
   let doc;
   try {
     doc = decodePathOfBuildingCode(pobCode);
   } catch (e) {
-    return undefined;
+    return null;
   }
 
   const buildElement = Array.from(doc.getElementsByTagName("Build"));

@@ -4,7 +4,8 @@ import { configSelector } from "./config";
 import { requiredGemsSelector } from "./gem";
 import { routeFilesSelector } from "./route-files";
 import type { RouteData } from "common";
-import { transientAtomFamily } from ".";
+import { persistentAtom, transientAtomFamily } from ".";
+import { RESET } from "jotai/utils";
 
 const baseRouteSelector = atom(async (get) => {
   const { initializeRouteState, parseRoute } = await import("common");
@@ -107,10 +108,16 @@ export const routeSelector = atom(async (get) => {
   return route;
 });
 
-const activeEdgeIndex = atom<[number]>([0]);
+const ACTIVE_EDGE_VERSION = 0;
+const activeEdgeIndex = persistentAtom("active-edge", [0], ACTIVE_EDGE_VERSION);
 export const activeEdgeAtom = atom(
   (get) => get(activeEdgeIndex),
-  async (get, set, value: string) => {
+  async (get, set, value: string | typeof RESET) => {
+    if (value === RESET) {
+      set(activeEdgeIndex, RESET);
+      return;
+    }
+
     const edges = (await get(routeSelector)).edges;
     const nextEdgeIndex = get(activeEdgeAtom)[0] + 1;
     const nextAreaId = edges[nextEdgeIndex];
