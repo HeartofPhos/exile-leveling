@@ -40,7 +40,7 @@ export function useAutoProgress() {
         style: { cursor: "pointer" },
         autoClose: false,
         closeOnClick: false,
-        closeButton: <></>,
+        closeButton: null,
       });
     } else {
       if (toastId.current === null || !toast.isActive(toastId.current)) {
