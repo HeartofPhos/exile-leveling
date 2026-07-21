@@ -28,23 +28,18 @@ export function SectionHolder({ name, items }: SectionHolderProps) {
   };
 
   useLayoutEffect(() => {
-    // scrollToSection after sticky positioning is applied
     scrollToSection(collapsed);
   }, [collapsed]);
 
   const icon = collapsed ? <FiChevronDown /> : <FiChevronUp />;
   return (
-    <div>
-      <div id={sectionId} className={classNames(styles.sectionbar)}>
+    <div id={sectionId}>
+      <div className={classNames(styles.sectionbar)}>
         <button
           aria-label={name}
           className={classNames(styles.header, styles.sectionbarHeader)}
           onClick={() => {
-            const updateCollapsed = !collapsed;
-            setCollapsed(updateCollapsed);
-
-            // scrollToSection before sticky positioning is applied
-            scrollToSection(updateCollapsed);
+            setCollapsed(!collapsed);
           }}
         >
           {icon}
