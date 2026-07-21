@@ -116,36 +116,32 @@ export function edgeId(edgeIndex: number) {
   return `edge-${edgeIndex}`;
 }
 
-const initialScroll = atom(true);
+const scrollBehaviour = atom<ScrollBehavior | null>("instant");
 export const scrollToActiveEdgeEffect = atomEffect((get, set) => {
-  if (get(initialScroll)) {
-    const edgeIndex = get(activeEdgeIndex);
-    const element = document.getElementById(edgeId(edgeIndex[0]));
+  const behavior = get(scrollBehaviour);
+  if (behavior === null) {
+    return;
+  }
 
-    if (element) {
-      requestAnimationFrame(() => {
-        element.scrollIntoView({
-          behavior: "auto",
-          block: "start",
-          inline: "nearest",
-        });
+  const edgeIndex = get.peek(activeEdgeIndex);
+  const element = document.getElementById(edgeId(edgeIndex[0]));
+
+  if (element) {
+    requestAnimationFrame(() => {
+      element.scrollIntoView({
+        behavior: behavior,
+        block: "start",
+        inline: "nearest",
       });
+    });
 
-      set(initialScroll, false);
-    }
+    set(scrollBehaviour, null);
   }
 });
 
-observe((get) => {
-  const edgeIndex = get(activeEdgeIndex);
-  const element = document.getElementById(edgeId(edgeIndex[0]));
-
-  if (element)
-    element.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-      inline: "nearest",
-    });
+observe((get, set) => {
+  const behavior = get(activeEdgeIndex)[0] === 0 ? "instant" : "smooth";
+  set(scrollBehaviour, (prev) => prev ?? behavior);
 });
 
 export const activeEdgeAtom = atom(
