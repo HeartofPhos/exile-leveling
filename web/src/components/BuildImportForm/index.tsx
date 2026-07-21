@@ -5,7 +5,6 @@ import {
   getRewriteUrl,
 } from "../../utility";
 import { TextModal } from "../Modal";
-import { type PobData, processPob } from "./pob";
 import classNames from "classnames";
 import { useState } from "react";
 import { toast } from "react-toastify";
@@ -39,7 +38,7 @@ const URL_REWRITERS: UrlRewriter[] = [
 ];
 
 interface BuildImportFormProps {
-  onSubmit: (pobData: PobData, pobCode: string) => void;
+  onSubmit: (pobCode: string) => void;
   onReset: () => void;
 }
 
@@ -59,19 +58,16 @@ export function BuildImportForm({ onSubmit, onReset }: BuildImportFormProps) {
               if (!pobCodeOrUrl) return Promise.reject("invalid pobCodeOrUrl");
               const pobCode = await fetchStringOrUrl(
                 pobCodeOrUrl,
-                URL_REWRITERS
+                URL_REWRITERS,
               );
 
-              const pobData = processPob(pobCode);
-              if (!pobData) return Promise.reject("parsing failed");
-
-              onSubmit(pobData, pobCode);
+              onSubmit(pobCode);
             },
             {
               pending: "Importing Build",
               success: "Import Success",
               error: "Import Failed",
-            }
+            },
           )
         }
       />
@@ -82,7 +78,7 @@ export function BuildImportForm({ onSubmit, onReset }: BuildImportFormProps) {
             onReset();
           }}
         >
-          Reset Build
+          Reset
         </button>
         <button
           className={classNames(formStyles.formButton)}

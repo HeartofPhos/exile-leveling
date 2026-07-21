@@ -15,6 +15,7 @@
     "d3": "^7.9.0",
     "handlebars": "^4.7.9",
     "jotai": "^2.20.2",
+    "jotai-effect": "^2.4.1",
     "jotai-family": "^1.0.2",
     "p-lazy": "^5.0.0",
     "pako": "^3.0.1",
@@ -28,7 +29,8 @@
     "react-modal": "^3.16.3",
     "react-router-dom": "^7.18.1",
     "react-simple-code-editor": "^0.14.1",
-    "react-toastify": "^11.1.0"
+    "react-toastify": "^11.1.0",
+    "react-use-websocket-lite": "^1.1.1"
   },
   "devDependencies": {
     "@types/d3": "^7.4.3",

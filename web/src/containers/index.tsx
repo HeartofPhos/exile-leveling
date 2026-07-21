@@ -1,5 +1,6 @@
 import { ErrorFallback } from "../components/ErrorFallback";
 import { Loading } from "../components/Loading";
+import { useAutoProgress } from "../components/AutoProgress";
 import { Navbar } from "../components/Navbar";
 import { pipe } from "../utility";
 import { withBlank } from "../utility/withBlank";
@@ -18,6 +19,8 @@ const BuildContainer = withBlank(lazy(() => import("./Build")));
 const EditRouteContainer = withBlank(lazy(() => import("./EditRoute")));
 
 export function App() {
+  useAutoProgress();
+
   return (
     <>
       <Navbar />

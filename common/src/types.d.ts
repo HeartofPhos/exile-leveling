@@ -57,7 +57,10 @@ export namespace GameData {
 }
 
 export namespace RouteData {
-  export type Route = Section[];
+  export type Route = {
+    sections: Section[];
+    edges: GameData.Area["id"][];
+  };
 
   export interface Section {
     name: string;
@@ -70,6 +73,7 @@ export namespace RouteData {
     type: "fragment_step";
     parts: Fragments.AnyFragment[];
     subSteps: FragmentStep[];
+    edgeIndex: number | null;
   }
 
   export interface GemStep {

@@ -6,7 +6,8 @@ import {
   setPersistent,
 } from "../utility";
 import { atom, type WritableAtom } from "jotai";
-import { atomFamily, type AtomFamily } from "jotai-family";
+import { type AtomFamily } from "jotai-family";
+import { transientAtomFamily } from ".";
 
 type ClearableAtomFamily = AtomFamily<
   string,
@@ -28,8 +29,8 @@ export const buildToggleState = (
     set(refreshAtom, (prev) => prev + 1);
   }
 
-  const toggleFamily = atomFamily((param: string) => {
-    return atom(
+  const toggleFamily = transientAtomFamily((param: string) =>
+    atom(
       (get) => {
         get(refreshAtom);
         return toggleState.has(param);
@@ -43,8 +44,8 @@ export const buildToggleState = (
 
         refresh(set);
       },
-    );
-  });
+    ),
+  );
 
   const clearAtom = atom(null, (_get, set) => {
     toggleState.clear();

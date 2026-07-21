@@ -19,27 +19,27 @@ export function SectionHolder({ name, items }: SectionHolderProps) {
     if (!collapsed) return;
 
     const element = document.getElementById(sectionId);
-    if (element) element.scrollIntoView({ behavior: "auto", block: "nearest" });
+    if (element)
+      element.scrollIntoView({
+        behavior: "auto",
+        block: "nearest",
+        inline: "nearest",
+      });
   };
 
   useLayoutEffect(() => {
-    // scrollToSection after sticky positioning is applied
     scrollToSection(collapsed);
   }, [collapsed]);
 
   const icon = collapsed ? <FiChevronDown /> : <FiChevronUp />;
   return (
-    <div>
-      <div id={sectionId} className={classNames(styles.sectionbar)}>
+    <div id={sectionId}>
+      <div className={classNames(styles.sectionbar)}>
         <button
           aria-label={name}
           className={classNames(styles.header, styles.sectionbarHeader)}
           onClick={() => {
-            const updateCollapsed = !collapsed;
-            setCollapsed(updateCollapsed);
-
-            // scrollToSection before sticky positioning is applied
-            scrollToSection(updateCollapsed);
+            setCollapsed(!collapsed);
           }}
         >
           {icon}

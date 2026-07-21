@@ -69,7 +69,6 @@ export function Workspace({ workingFiles, isDirty, onUpdate }: WorkspaceProps) {
             value={workingFiles[selectedIndex].contents}
             onValueChange={(value) => {
               const updatedRouteFiles = [...workingFiles];
-              console.log(value);
               updatedRouteFiles[selectedIndex].contents = value;
               onUpdate(updatedRouteFiles);
             }}
