@@ -16,6 +16,7 @@ Get {waypoint_get}
     ➞ {enter|2_10_9} #The Ossuary
     Get {crafting}
     Complete {trial}
+        #sub Interact with the switch just before the zig-zagging walls, go to the opposite side to access {generic|Hidden Gem: Facetor's Lens}
     {logout}
 #endif
 {waypoint|2_10_7} #The Control Blocks

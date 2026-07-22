@@ -84,8 +84,8 @@ Get {waypoint_get}
         #sub Go {dir|315}
     Get {waypoint_get}
     Find {generic|Loose Candle} ➞ {enter|1_3_17_2} #The Archives
-    Get {crafting}
         #sub Look for a candle in a narrow corridor
+    Get {crafting}
     Find 4x{quest_text|Golden Page}
     {logout}
     {waypoint|1_3_17_1} #The Library

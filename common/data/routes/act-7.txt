@@ -40,6 +40,7 @@ Hand in {quest|a7q3}, take {quest_text|Obsidian Key} #Web of Secrets
     #sub Go in same direction as {waypoint}
 #ifdef LEAGUE_START
     Complete {trial}
+        #sub Find the switch hidden behind {generic|Trial of Ascendancy Plaque} to access {generic|Hidden Gem: Quality}
     Get {crafting}
 #endif
 Open {generic|Secret Passage} ➞ {enter|2_7_6} #The Den
@@ -47,14 +48,7 @@ Open {generic|Secret Passage} ➞ {enter|2_7_6} #The Den
 ➞ {arena|The Forest Encampment}, kill {kill|Greust, Lord of the Forest}
     #sub Go {dir|225}
 ➞ {enter|2_7_8} #The Northern Forest
-{waypoint|2_7_town} #The Bridge Encampment
-Hand in {quest|a7q1} #The Master of a Million Faces
-{waypoint|2_6_8} #Prisoner's Gate
-➞ {arena|Valley of the Fire Drinker}, kill {kill|Abberath, the Cloven One}
-    #sub Go down the ledge next to the road
-{portal|use}
-Hand in {quest|a6q7} #The Cloven One
-{waypoint|2_7_8} #The Northern Forest
+Get {waypoint_get}
 ➞ {enter|2_7_10} #The Causeway
 Get {crafting}
 Find and take {quest_text|Kishara's Star}
@@ -66,6 +60,7 @@ Find and take 7x{quest_text|Firefly}
 Get {crafting}
 ➞ {arena|Den of Despair}, kill {kill|Gruthkul, Mother of Despair}
 {portal|use}
+Hand in {quest|a7q1} #The Master of a Million Faces
 Hand in {quest|a7q9} #Queen of Despair
 Hand in {quest|a7q6} #Kishara's Star
 {waypoint|Labyrinth_Airlock} #Aspirants' Plaza
@@ -74,6 +69,7 @@ Get {crafting|2_Labyrinth_boss_3}
 {waypoint|2_7_11} #The Vaal City
 Hand in {quest|a7q7} #Lighting the Way
 ➞ {enter|2_7_12_1} #The Temple of Decay Level 1
+    #sub In the room with a central pit, look {dir|225} or {dir|45} for a side area containing a {generic|Corrupted Unique}
 ➞ {enter|2_7_12_2} #The Temple of Decay Level 2
 Get {crafting}
 ➞ {arena|Arakaali's Web}, kill {kill|Arakaali, Spinner of Shadows}

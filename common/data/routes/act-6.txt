@@ -10,6 +10,10 @@ Find and kill {kill|The Dishonoured Queen}, take {quest_text|Eye of Conquest}
     #sub {dir|45} corner of area, normally by a house
 ➞ {enter|2_6_5} #The Karui Fortress
 ➞ {arena|Tukohama's Keep}, kill {kill|Tukohama, Karui God of War}
+    #sub Go {dir|45}
+#ifdef LEAGUE_START
+        #sub Find and kill the pack of monster on the island {dir|225} for a {generic|Tattoo}
+#endif
 Get {crafting}
 ➞ {enter|2_6_6} #The Ridge
     #sub Go {dir|0}
@@ -23,6 +27,11 @@ Get {crafting}
 ➞ {arena|The Warden's Chambers}
 Get {crafting}
 ➞ {enter|2_6_8} #Prisoner's Gate
+➞ {arena|Valley of the Fire Drinker}, kill {kill|Abberath, the Cloven One}
+    #sub Go down the ledge next to the road
+{portal|use}
+Hand in {quest|a6q7} #The Cloven One
+{waypoint|2_6_8} #Prisoner's Gate
 ➞ {enter|2_6_9} #The Western Forest
     #sub Follow the road
 Get {crafting}

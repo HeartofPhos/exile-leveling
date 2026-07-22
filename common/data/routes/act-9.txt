@@ -30,6 +30,7 @@ Hand in {quest|a9q5|a9q5} #Queen of the Sands
     #sub Go {dir|315}
 #ifdef LEAGUE_START
     Before {waypoint}, complete {trial}
+        #sub Look for the hidden switch halfway to {generic|Trial of Ascendancy Plaque} in the corner opposite the entrance to access {generic|Hidden Gem: Transfigured}
     Get {crafting}
 #endif
 ➞ {enter|2_9_8} #The Quarry
