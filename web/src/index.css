@@ -16,10 +16,10 @@
   --size-3: 0.5rem;
   --size-4: 1rem;
   --size-5: 1.5rem;
-  --line-height: 1.5em;
+  --line-height: 1em;
   --font-heavy: 700;
   /* Fractional pixel rounding varies between browsers, lower-bound picked based on Firefox */
-  --navbar-height: 2.625rem;
+  --navbar-height: calc(var(--line-height) + 1.125rem);
   --actbar-height: 2.75rem;
 }
 

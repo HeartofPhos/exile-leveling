@@ -1,5 +1,4 @@
 import styles from "./styles.module.css";
-import classNames from "classnames";
 import type { ReactNode } from "react";
 
 interface InlineFakeBlockProps {
@@ -7,5 +6,5 @@ interface InlineFakeBlockProps {
 }
 
 export function InlineFakeBlock({ child }: InlineFakeBlockProps) {
-  return <div className={classNames(styles.inlineFakeBlock)}>{child}</div>;
+  return <span className={styles.inlineFakeBlock}>{child}</span>;
 }

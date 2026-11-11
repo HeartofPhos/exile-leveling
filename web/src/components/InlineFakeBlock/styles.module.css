@@ -1,14 +1,19 @@
 .inlineFakeBlock {
+  --inline-icon-size: max(var(--line-height), 1.5em);
+
   position: relative;
   display: inline-block;
+  width: var(--inline-icon-size);
+  height: 0;
   vertical-align: middle;
   align-self: center;
-  width: var(--line-height);
 }
 
 .inlineFakeBlock > * {
   position: absolute;
-  transform: translate(0, -50%);
-  width: 100%;
+  top: 50%;
+  left: 50%;
+  width: var(--inline-icon-size);
   height: auto;
+  transform: translate(-50%, -50%);
 }
