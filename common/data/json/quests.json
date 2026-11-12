@@ -7714,6 +7714,15 @@
             ],
             "npc": "Petarus and Vanja"
           },
+          "Metadata/Items/Gems/SkillGemArcaneLink": {
+            "classes": [
+              "Scion",
+              "Marauder",
+              "Duelist",
+              "Templar"
+            ],
+            "npc": "Petarus and Vanja"
+          },
           "Metadata/Items/Gems/SkillGemBerserk": {
             "classes": [
               "Duelist",
@@ -8441,6 +8450,10 @@
             "npc": "Lilly Roth"
           },
           "Metadata/Items/Gems/SkillGemArcaneCloak": {
+            "classes": [],
+            "npc": "Lilly Roth"
+          },
+          "Metadata/Items/Gems/SkillGemArcaneLink": {
             "classes": [],
             "npc": "Lilly Roth"
           },
